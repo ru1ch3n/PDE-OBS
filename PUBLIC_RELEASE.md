@@ -32,9 +32,11 @@ from prediction validity and scientific quality.
 ## Paper
 
 `paper/PDE_OBS_preprint.pdf` is the named public version. Only public-release
-metadata, author affiliations, corresponding-author marks and repository wording
-change relative to the anonymous manuscript. Scientific text, results, figures,
-tables and references are preserved. The original anonymous manuscript is retained
+metadata, author affiliations, corresponding-author marks, repository wording
+and preprint layout change relative to the anonymous manuscript. Scientific text,
+results, figures, tables and references are preserved. The public PDF uses the
+single-column `arxiv-style` template; its MIT-licensed style and license file are
+in `paper/PDE_OBS_arxiv_source.zip`. The original anonymous manuscript is retained
 separately. A public preprint is not an accepted ICLR paper.
 
 An arXiv identifier has not yet been assigned. Do not fabricate one in citations.
