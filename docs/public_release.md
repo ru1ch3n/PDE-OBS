@@ -1,22 +1,23 @@
 # Public release: data and trained checkpoints
 
 This page records the data and model release inventory and verification procedure.
-The deposits were re-published on 2026-09-26 from de-identified copies (the first
-upload had carried generation provenance in shard attributes, sidecars, the corpus
-summary and model record files). On that date an unauthenticated client reached both
-repositories, and every published file was checked against the staged digests
-(`results/revision_v2/access_check.json`, `results/revision_v2/REPORT.md`, section 7).
-Accessibility is a dated observation, not a property of this page: re-run
-`tools/revision/check_access.py` before relying on it.
+The 2026-09-26 archived report audited the original neutral-namespace deposits
+after their de-identified re-emission (`results/revision_v2/access_check.json`,
+`results/revision_v2/REPORT.md`, section 7). The current user-owned copies are
+public, have the same file counts and byte-identical root manifests, and representative
+data and checkpoint objects have matching size and ETag. A second complete per-file
+audit of the copies has not been performed. The copied dataset manifests still
+contain absolute URLs to the original deposit, so downloading through a manifest
+at the new address can still fetch shards from the old address. Historical audit
+records are retained unchanged.
 
 | Resource | Location | Size |
 |---|---|---|
-| Physical records | `https://huggingface.co/datasets/PDE-OBS/pdeobs-data` | 3,360 shards, 244 GB with their verification sidecars under `data/`; `scrub-manifest.json` lists the rewritten files with their published digests; `summary.json` and `summary.quality.*` de-identified likewise (the correspondence to generation-time digests is `results/public_deposits/release_map.json` here) |
-| Trained checkpoints | `https://huggingface.co/PDE-OBS/pdeobs-models` | 441 checkpoints (bytes unchanged) with de-identified training records, about 13 GB; `models_manifest.cluster-{A,B,C}.json` carry the published digests only (manifest v3); `results/public_deposits/release_map.json` binds them to the archived checkpoint identities |
+| Physical records | `https://huggingface.co/datasets/ru1ch3n/PDE-OBS` | 3,360 shards, 244 GB with their verification sidecars under `data/`; `scrub-manifest.json` lists the rewritten files with their published digests; `summary.json` and `summary.quality.*` de-identified likewise (the correspondence to generation-time digests is `results/public_deposits/release_map.json` here) |
+| Trained checkpoints | `https://huggingface.co/ru1ch3n/PDE-OBS` | 441 checkpoints (bytes unchanged) with de-identified training records, about 13 GB; `models_manifest.cluster-{A,B,C}.json` carry the published digests only (manifest v3); `results/public_deposits/release_map.json` binds them to the archived checkpoint identities |
 
-Release metadata was prepared with neutral labels. Review safety additionally
-requires checking repository histories, cards, links and embedded file metadata;
-a neutral name alone is not an anonymity guarantee.
+These user-owned locations are public, not anonymous reviewer links. The
+historical review-access configuration remains under `configs/revision/`.
 
 ## Records
 
@@ -43,7 +44,7 @@ sidecars, so a downloaded tree passes `api.load_dataset(..., verify=True)`:
 
 ```bash
 pdeobs download --tier full --output ./pdeobs-data \
-  --manifest https://huggingface.co/datasets/PDE-OBS/pdeobs-data/resolve/main/release_manifest.json
+  --manifest https://huggingface.co/datasets/ru1ch3n/PDE-OBS/resolve/main/release_manifest.json
 ```
 
 The downloader validates the manifest's schema, status, tiers and digests before it fetches anything,

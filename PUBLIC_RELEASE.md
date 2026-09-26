@@ -28,6 +28,10 @@ Data and weights remain in their separately licensed Hugging Face deposits;
 large tensors, checkpoints, credentials and local working directories are not
 added to this repository. External availability and reproducibility are separate
 from prediction validity and scientific quality.
+Current public locations are the [dataset](https://huggingface.co/datasets/ru1ch3n/PDE-OBS)
+and [441-checkpoint model repository](https://huggingface.co/ru1ch3n/PDE-OBS).
+The dated receipts under `results/` retain the original deposit identifiers as
+historical evidence; they are not rewritten to imply a second complete file audit.
 
 ## Paper
 

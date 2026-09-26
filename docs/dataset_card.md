@@ -503,9 +503,9 @@ Python batch is not permission to use a field as a predictor input.
 | Question | Status in this release |
 |---|---|
 | Is the full dataset included in this source tree? | No. `release/candidate_metadata.json` records `"full_dataset_included": false`; the corpus is published separately, see [Public release](public_release.md) |
-| Has a public upload been verified? | Yes. 3,360 shards / 244 GB at `huggingface.co/datasets/PDE-OBS/pdeobs-data` (re-published 2026-09-26 as a de-identified re-emission: provenance fields replaced, numerical arrays bit-identical); every published file was checked against the staged digests, and `results/public_deposits/release_map.json` binds the generation-time digests to the published ones (the public scrub manifest lists published digests only) |
-| Is there a download URL? | Yes, through two manifests under `https://huggingface.co/datasets/PDE-OBS/pdeobs-data/resolve/main/`: `release_manifest.json` (the paper-evaluated slice, 6.5 GB) and `release_manifest_full.json` (the complete corpus, 244 GB), each listing its shards and verification sidecars with the published digests (files live under `data/`). The code still has no default endpoint; `--manifest` stays mandatory |
-| Are production checkpoints included in this source tree? | No. `"production_checkpoints_included": false`; all 441 credited checkpoints are published at `huggingface.co/PDE-OBS/pdeobs-models` |
+| Has a public upload been verified? | The original de-identified release of 3,360 shards / 244 GB received a full file-digest audit on 2026-09-26; `results/public_deposits/release_map.json` binds its digests to the generation archive. The current copy at `huggingface.co/datasets/ru1ch3n/PDE-OBS` is publicly reachable, has the same file count and byte-identical root manifests, and a representative shard has matching size and ETag. A second full per-file audit of the copy has not been performed |
+| Is there a download URL? | Yes, through two manifests under `https://huggingface.co/datasets/ru1ch3n/PDE-OBS/resolve/main/`: `release_manifest.json` (the paper-evaluated slice, 6.5 GB) and `release_manifest_full.json` (the complete corpus, 244 GB). Their embedded absolute shard URLs still point to the original deposit. The code has no default endpoint; `--manifest` stays mandatory |
+| Are production checkpoints included in this source tree? | No. `"production_checkpoints_included": false`; all 441 credited checkpoints are published at `huggingface.co/ru1ch3n/PDE-OBS` |
 | Does the code licence cover the data? | No. `"code_license_automatically_licenses_external_data": false`; `../LICENSE` covers code only |
 | Dataset terms of use? | Declared at deposit. No dataset licence is declared in this tree, and the code licence does not cover data |
 | DOI or archive identifier? | None. No DOI or archive identifier is claimed; the deposits are addressed by the Hugging Face locations above |
@@ -520,23 +520,22 @@ consumer of that manifest; it still has no default endpoint and fails rather tha
 [Public release](public_release.md) gives the locations, the verification result and what the deposit
 does not cover.
 
-The deposit exists and was reached and checked without credentials on 26 September 2026
-([Public release](public_release.md), `../results/revision_v2/access_check.json`); local regeneration
+The original deposit was reached and fully checked without credentials on 26 September 2026
+([Public release](public_release.md), `../results/revision_v2/access_check.json`); the current
+user-owned copy has the same public manifest bytes and file inventory. Local regeneration
 remains a supported route and rebuilds the same corpus from the recorded seeds and resolved
 configuration. The dataset licence is declared at deposit and is not implied by the code licence.
 
-For double-blind review, the deposits are anonymized, reviewer-visible records: links that do not
-identify authors, institutions or author-owned infrastructure (a neutral account, cluster labels
-`cluster-A/B/C`, de-identified records, one-commit histories). This card is the single place where
-such URLs are kept, so that one edit swaps review links for final ones without touching the rest of
-the documentation.
+The current user-owned deposits are public author-identified resources, not links for double-blind
+review. The original neutral-location checks remain in the dated archival receipts; their
+repository identifiers are not rewritten as if those checks had run at the new locations.
 
 | Link | Value in this release |
 |---|---|
-| Dataset archive (review) | `https://huggingface.co/datasets/PDE-OBS/pdeobs-data` (3,360 shards with sidecars, de-identified re-emission; every file checked against the staged digests on 2026-09-26) |
-| Checkpoint archive (review) | `https://huggingface.co/PDE-OBS/pdeobs-models` (441 weights-only checkpoints with de-identified records; checked the same day) |
-| Release manifest URL | `https://huggingface.co/datasets/PDE-OBS/pdeobs-data/resolve/main/release_manifest.json` (paper slice) and `.../release_manifest_full.json` (complete corpus); `--manifest` must still be supplied explicitly, the code has no default endpoint |
-| Dataset archive (final) | not yet designated; the review deposits above are the current record |
+| Dataset archive (public) | `https://huggingface.co/datasets/ru1ch3n/PDE-OBS` (3,360 shards with sidecars; root manifests match the audited release byte-for-byte) |
+| Checkpoint archive (public) | `https://huggingface.co/ru1ch3n/PDE-OBS` (441 weights-only checkpoints; three root manifests match the audited release byte-for-byte) |
+| Release manifest URL | `https://huggingface.co/datasets/ru1ch3n/PDE-OBS/resolve/main/release_manifest.json` (paper slice) and `.../release_manifest_full.json` (complete corpus); `--manifest` must still be supplied explicitly, the code has no default endpoint |
+| Dataset archive (final) | the public user-owned dataset link above; no DOI is claimed |
 | DOI | none |
 
 ## Known gaps in this card

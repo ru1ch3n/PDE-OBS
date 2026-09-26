@@ -5,8 +5,8 @@
 **Public research release.**
 [Project page](https://ru1ch3n.github.io/PartialObs--PDEBench/) ·
 [Paper PDF](paper/PDE_OBS_preprint.pdf) ·
-[Data](https://huggingface.co/datasets/PDE-OBS/pdeobs-data) ·
-[Models](https://huggingface.co/PDE-OBS/pdeobs-models)
+[Data](https://huggingface.co/datasets/ru1ch3n/PDE-OBS) ·
+[Models](https://huggingface.co/ru1ch3n/PDE-OBS)
 
 Ruichen Xu\*, Siyao Wang, Fang Wan, Jiacheng Qiu, Wenhan Gao, Jiaxing Zhang,
 Linsey Pang, Ravid Shwartz-Ziv, Yann LeCun, and Yuefan Deng\*.
@@ -29,9 +29,9 @@ cd PDE-OBS
 
 [![Python 3.10+](https://img.shields.io/badge/python-3.10%2B-3776AB?logo=python&logoColor=white)](docs/installation.md)
 [![Code: MIT](https://img.shields.io/badge/code-MIT-2ea44f)](LICENSE)
-[![Data: CC BY 4.0](https://img.shields.io/badge/data-CC%20BY%204.0-8a8f98)](https://huggingface.co/datasets/PDE-OBS/pdeobs-data)
-[![Dataset](https://img.shields.io/badge/%F0%9F%A4%97%20dataset-3%2C360%20shards-ffd21e)](https://huggingface.co/datasets/PDE-OBS/pdeobs-data)
-[![Checkpoints](https://img.shields.io/badge/%F0%9F%A4%97%20checkpoints-441-ffd21e)](https://huggingface.co/PDE-OBS/pdeobs-models)
+[![Data: CC BY 4.0](https://img.shields.io/badge/data-CC%20BY%204.0-8a8f98)](https://huggingface.co/datasets/ru1ch3n/PDE-OBS)
+[![Dataset](https://img.shields.io/badge/%F0%9F%A4%97%20dataset-3%2C360%20shards-ffd21e)](https://huggingface.co/datasets/ru1ch3n/PDE-OBS)
+[![Checkpoints](https://img.shields.io/badge/%F0%9F%A4%97%20checkpoints-441-ffd21e)](https://huggingface.co/ru1ch3n/PDE-OBS)
 [![Grid](https://img.shields.io/badge/grid-7%20PDEs%20%C3%97%207%20methods%20%C3%97%209%20views-1b3a6b)](docs/benchmark_overview.md)
 [![Scoring](https://img.shields.io/badge/scoring-pdeobs--strict--v1-36c5d8)](docs/scoring.md)
 [![Public release](https://img.shields.io/badge/status-public%20preprint-214A55)](paper/PDE_OBS_preprint.pdf)
@@ -69,11 +69,11 @@ only thing that changes between two evaluations.
 
 | | Contents | Where |
 |---|---|---|
-| **Records** | Darcy, Poisson, Helmholtz (stationary); Heat, reaction-diffusion, Burgers, Navier-Stokes (temporal). 2,000 records per family x boundary x construction at 128 x 128, 15 stored frames for temporal families. | [Dataset card](docs/dataset_card.md) · [🤗 pdeobs-data](https://huggingface.co/datasets/PDE-OBS/pdeobs-data) |
+| **Records** | Darcy, Poisson, Helmholtz (stationary); Heat, reaction-diffusion, Burgers, Navier-Stokes (temporal). 2,000 records per family x boundary x construction at 128 x 128, 15 stored frames for temporal families. | [Dataset card](docs/dataset_card.md) · [🤗 PDE-OBS data](https://huggingface.co/datasets/ru1ch3n/PDE-OBS) |
 | **Views** | R50, R65, R80, BL, LI, H, V, BD, CL: nine frozen observation patterns with exact observed-cell counts. | [Observation views](docs/observations.md) |
 | **Tasks** | Recovery (stationary) and rollout (temporal) in the paper; forward and inverse interfaces also ship. | [Tasks and permissions](docs/tasks_and_permissions.md) |
 | **Methods** | U-FNO, FNO, CNO, DeepONet, GNOT, Transolver, PINO as public learned baselines, plus classical interpolators and reduced-order comparators. | [Methods card](docs/methods_card.md) |
-| **Checkpoints** | All 441 credited (PDE, method, training view) rows, weights only, with de-identified training records; `results/public_deposits/release_map.json` binds the published digests to the campaign's checkpoint identities. | [Public release](docs/public_release.md) · [🤗 pdeobs-models](https://huggingface.co/PDE-OBS/pdeobs-models) |
+| **Checkpoints** | All 441 credited (PDE, method, training view) rows, weights only, with de-identified training records; `results/public_deposits/release_map.json` binds the published digests to the campaign's checkpoint identities. | [Public release](docs/public_release.md) · [🤗 PDE-OBS models](https://huggingface.co/ru1ch3n/PDE-OBS) |
 | **Results** | New prediction-checked scores for 441 checkpoints and 3,969 full-200 blocks, per-record errors and mean ± sample SD; historical scores retained separately. | [New results](results/prediction_verification_20260924/README.md) · [Verification](docs/prediction_verification.md) |
 | **Scorer** | `pdeobs-strict-v1`: contract, identity set, shapes and time indices fixed in advance; float64 per-identity relative L2, arithmetic mean over the complete expected set. | [Scoring](docs/scoring.md) |
 
@@ -130,17 +130,20 @@ verify mode checks against.
 ```bash
 # the evaluated slice (what the paper's grid was trained and scored on)
 pdeobs download --tier full --output ./pdeobs-data \
-    --manifest https://huggingface.co/datasets/PDE-OBS/pdeobs-data/resolve/main/release_manifest.json
+    --manifest https://huggingface.co/datasets/ru1ch3n/PDE-OBS/resolve/main/release_manifest.json
 
 # the complete corpus
 pdeobs download --tier full --output ./pdeobs-full \
-    --manifest https://huggingface.co/datasets/PDE-OBS/pdeobs-data/resolve/main/release_manifest_full.json
+    --manifest https://huggingface.co/datasets/ru1ch3n/PDE-OBS/resolve/main/release_manifest_full.json
 ```
 
 The downloader validates the manifest's schema, status, tiers and digests before it fetches anything,
 resumes interrupted files, and verifies every file's SHA-256 on arrival. It has **no default
 endpoint**: omitting `--manifest` fails before any network request. Local regeneration remains the
 route that produces *new* records ([Dataset card](docs/dataset_card.md)).
+The copied manifests currently retain absolute shard URLs at the original deposit;
+using the new manifest link does not yet guarantee that every shard is fetched
+from the new namespace ([release scope](docs/public_release.md)).
 
 ### 2. Build a task instance
 

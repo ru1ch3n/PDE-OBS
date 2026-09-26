@@ -2,6 +2,8 @@
 
 - [PDF](PDE_OBS_preprint.pdf)
 - [LaTeX source ZIP](PDE_OBS_arxiv_source.zip)
+- [Dataset](https://huggingface.co/datasets/ru1ch3n/PDE-OBS)
+- [Model checkpoints](https://huggingface.co/ru1ch3n/PDE-OBS)
 
 The named public version preserves the paper's scientific text, numerical results
 and figures. Ruichen Xu and Yuefan Deng are the corresponding authors. It uses
