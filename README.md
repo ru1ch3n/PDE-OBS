@@ -8,9 +8,9 @@
 [Data](https://huggingface.co/datasets/ru1ch3n/PDE-OBS) ·
 [Models](https://huggingface.co/ru1ch3n/PDE-OBS)
 
-Ruichen Xu\*, Siyao Wang, Fang Wan, Jiacheng Qiu, Wenhan Gao, Jiaxing Zhang,
-Linsey Pang, Ravid Shwartz-Ziv, Yann LeCun, and Yuefan Deng\*.
-\*Corresponding authors. See the paper for affiliations.
+Ruichen Xu†, Siyao Wang, Fang Wan, Jiacheng Qiu, Wenhan Gao, Jiaxing Zhang\*,
+Linsey Pang, Ravid Shwartz-Ziv, Prakhar Mehrotra, Yann LeCun, and Yuefan Deng†.
+\*Work done outside of company. †Corresponding authors. See the paper for affiliations.
 
 The current paper reports 441 retained checkpoints and 3,969 complete evaluation
 blocks, each containing 200 held-out records; the separate mixed-pattern study
