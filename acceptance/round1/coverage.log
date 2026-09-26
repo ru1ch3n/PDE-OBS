@@ -1,0 +1,154 @@
+=== coverage start Mon Sep 21 14:52:11 UTC 2026
+NVIDIA GeForce RTX 5090, 595.71.05, 32607 MiB, 12.0
+pdeobs 0.2.0 torch 2.7.1+cu128 cuda True
+4a7f59b054561492b3af915608694f0ba63c21d4e906a450461f2c8e153cc6bd  dist/PDE_OBS_v020_code.zip
+=== [E] benchmark essentials
+essentials_rc=1  2 failed, 32 passed in 2.45s
+=== [C] 14-tier coverage sweep
+===== T1 start
+T1 darcy done
+T1 poisson done
+T1 helmholtz done
+T1 heat done
+T1 reaction_diffusion done
+T1 burgers done
+T1 navier_stokes done
+===== T1 done {'combos': 840, 'supported': 840, 'unsupported_or_error': 0, 'seconds': 31.8} (31.9s)
+===== T2 start
+===== T2 done {'general_ok': 81, 'general_total': 86, 'paper_exact': True, 'errors_rejected': True} (0.0s)
+===== T3 start
+T3 fno:recovery passed
+T3 fno:forward passed
+T3 fno:inverse passed
+T3 fno:rollout passed
+T3 pino:recovery passed
+T3 pino:forward passed
+T3 pino:rollout passed
+===== T3 done {'passed': 9, 'total': 26} (1.7s)
+===== T4 start
+T4 fno passed
+T4 pino failed
+T4 ufno passed
+/opt/conda/lib/python3.11/site-packages/torch/autograd/graph.py:824: UserWarning: upsample_bilinear2d_aa_backward_out_cuda does not have a deterministic implementation, but you set 'torch.use_deterministic_algorithms(True, warn_only=True)'. You can file an issue at https://github.com/pytorch/pytorch/issues to help us prioritize adding deterministic support for this operation. (Triggered internally at /pytorch/aten/src/ATen/Context.cpp:93.)
+  return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+T4 cno passed
+/opt/conda/lib/python3.11/site-packages/torch/autograd/graph.py:824: UserWarning: adaptive_avg_pool2d_backward_cuda does not have a deterministic implementation, but you set 'torch.use_deterministic_algorithms(True, warn_only=True)'. You can file an issue at https://github.com/pytorch/pytorch/issues to help us prioritize adding deterministic support for this operation. (Triggered internally at /pytorch/aten/src/ATen/Context.cpp:93.)
+  return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+T4 deeponet passed
+T4 gnot passed
+T4 transolver passed
+T4 unet passed
+T4 unet_paper_guided passed
+T4 convlstm passed
+T4 mae_small passed
+===== T4 done {'passed': 14, 'total': 16} (4.4s)
+===== T5 start
+T5 fno:recovery@128 failed
+T5 fno:rollout@128 failed
+T5 pino:recovery@128 failed
+T5 pino:rollout@128 failed
+T5 ufno:recovery@128 failed
+T5 ufno:rollout@128 failed
+T5 cno:recovery@128 failed
+T5 cno:rollout@128 failed
+T5 deeponet:recovery@128 failed
+T5 deeponet:rollout@128 failed
+T5 gnot:recovery@128 failed
+T5 gnot:rollout@128 failed
+T5 transolver:recovery@128 failed
+T5 transolver:rollout@128 failed
+===== T5 done {'passed': 0, 'total': 14} (80.5s)
+===== T6 start
+T6 poisson/dirichlet/low passed
+T6 poisson/dirichlet/medium passed
+T6 poisson/dirichlet/high passed
+T6 poisson/neumann/low passed
+T6 poisson/neumann/medium passed
+T6 poisson/neumann/high passed
+T6 poisson/periodic/low passed
+T6 poisson/periodic/medium passed
+T6 poisson/periodic/high passed
+T6 poisson/robin_obstacle/low passed
+T6 poisson/robin_obstacle/medium passed
+T6 poisson/robin_obstacle/high passed
+T6 heat/dirichlet/low passed
+T6 heat/dirichlet/medium passed
+T6 heat/dirichlet/high passed
+T6 heat/neumann/low passed
+T6 heat/neumann/medium passed
+T6 heat/neumann/high passed
+T6 heat/periodic/low passed
+T6 heat/periodic/medium passed
+T6 heat/periodic/high passed
+T6 heat/robin_obstacle/low passed
+T6 heat/robin_obstacle/medium passed
+T6 heat/robin_obstacle/high passed
+===== T6 done {'passed': 24, 'total': 24} (1.8s)
+===== T7 start
+===== T7 crashed ValueError: production data have wrong regimes: ['low'] (6.7s)
+===== T8 start
+===== T8 crashed FileNotFoundError: Checkpoint does not exist: /workspace/pdeobs/sweep-run/work/full/t8/base/model/checkpoints/last.pt (0.2s)
+===== T9 start
+T9 easy list models 0
+T9 easy list observations 0
+T9 easy list pdes 0
+T9 easy list presets 0
+T9 easy describe transolver 0
+T9 easy describe bad 2
+T9 easy data generate 0
+T9 easy data local 0
+T9 easy train 0
+T9 easy train bad param 2
+T9 easy infer records 0
+T9 easy infer package 0
+T9 easy eval predictions 0
+T9 easy eval records 0
+T9 easy validate 0
+T9 easy plan 0
+T9 easy run dry 0
+T9 easy run yaml 0
+T9 easy run json 0
+T9 demo E1 0
+T9 demo E2 0
+T9 demo E3 0
+T9 demo E4 0
+T9 demo E5 0
+T9 demo E6 0
+T9 generate-case 0
+T9 list 0
+T9 doctor 0
+T9 protocol --check 0
+T9 paper-row-demo-data 0
+T9 identity-manifest 2
+T9 paper-row demo 2
+===== T9 done {'as_expected': 30, 'total': 32} (22.7s)
+===== T10 start
+/opt/conda/lib/python3.11/site-packages/torch/autograd/graph.py:824: UserWarning: upsample_bilinear2d_aa_backward_out_cuda does not have a deterministic implementation, but you set 'torch.use_deterministic_algorithms(True, warn_only=True)'. You can file an issue at https://github.com/pytorch/pytorch/issues to help us prioritize adding deterministic support for this operation. (Triggered internally at /pytorch/aten/src/ATen/Context.cpp:93.)
+  return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+/opt/conda/lib/python3.11/site-packages/torch/autograd/graph.py:824: UserWarning: adaptive_avg_pool2d_backward_cuda does not have a deterministic implementation, but you set 'torch.use_deterministic_algorithms(True, warn_only=True)'. You can file an issue at https://github.com/pytorch/pytorch/issues to help us prioritize adding deterministic support for this operation. (Triggered internally at /pytorch/aten/src/ATen/Context.cpp:93.)
+  return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+===== T10 done {'all_within_tol': True} (0.3s)
+===== T11 start
+===== T11 done {'gpu_bitwise': False, 'cpu_bitwise': True} (0.1s)
+===== T12 start
+===== T12 done {'core_passed': 521, 'core_failed': 0, 'api': '38 passed in 2.59s'} (14.4s)
+===== T13 start
+T13 fno:recovery@128 bs=8 passed 441.7
+T13 fno:rollout@128 bs=8 passed 1026.8
+T13 pino:recovery@128 bs=4 passed 727.7
+T13 pino:rollout@128 bs=4 passed 1705.6
+T13 ufno:recovery@128 bs=4 passed 426.0
+T13 ufno:rollout@128 bs=4 passed 956.5
+T13 cno:recovery@128 bs=8 passed 523.8
+T13 cno:rollout@128 bs=8 passed 1247.8
+T13 deeponet:recovery@128 bs=4 passed 342.5
+T13 deeponet:rollout@128 bs=4 passed 682.3
+T13 gnot:recovery@128 bs=4 passed 6738.8
+T13 gnot:rollout@128 bs=4 passed 19930.1
+T13 transolver:recovery@128 bs=4 passed 5217.8
+T13 transolver:rollout@128 bs=2 passed 9684.7
+===== T13 done {'passed': 14, 'total': 14, 'max_peak_gpu_mb': 19930.1, 'epochs_500_hours': {'fno:recovery@128 bs=8': 0.44, 'fno:rollout@128 bs=8': 0.72, 'pino:recovery@128 bs=4': 1.52, 'pino:rollout@128 bs=4': 2.91, 'ufno:recovery@128 bs=4': 2.1, 'ufno:rollout@128 bs=4': 3.39, 'cno:recovery@128 bs=8': 0.39, 'cno:rollout@128 bs=8': 0.78, 'deeponet:recovery@128 bs=4': 0.37, 'deeponet:rollout@128 bs=4': 0.61, 'gnot:recovery@128 bs=4': 6.51, 'gnot:rollout@128 bs=4': 15.43, 'transolver:recovery@128 bs=4': 7.12, 'transolver:rollout@128 bs=2': 34.95}} (11.6s)
+===== T14 start
+===== T14 done {'gated': True} (0.0s)
+ALL TIERS PROCESSED
+=== coverage DONE Mon Sep 21 14:55:20 UTC 2026

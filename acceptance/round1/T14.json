@@ -1,0 +1,35 @@
+{
+  "direct_registry_requires_attestation": {
+    "error": "TypeError: OfficialPaperFNO2d.__init__() missing 8 required keyword-only arguments: 'upstream_root', 'upstream_revision', 'source_file_sha256', 'paper_pde', 'width', 'modes', 'layers', and 'padding'",
+    "status": "rejected_ok"
+  },
+  "summary": {
+    "gated": true
+  },
+  "tier": "T14",
+  "utc": "2026-09-21T14:55:20Z",
+  "what": "optional exact upstream wrappers: dependency-gated, never substituted",
+  "wrappers": {
+    "paper_cno": {
+      "easy_api": {
+        "error": "ValueError: 'paper_cno' is an exact upstream wrapper requiring a pinned external checkout and explicit attestation arguments; it is not served through the easy API",
+        "status": "rejected_ok"
+      },
+      "status": "dependency_blocked"
+    },
+    "paper_fno": {
+      "easy_api": {
+        "error": "ValueError: 'paper_fno' is an exact upstream wrapper requiring a pinned external checkout and explicit attestation arguments; it is not served through the easy API",
+        "status": "rejected_ok"
+      },
+      "status": "dependency_blocked"
+    },
+    "paper_unet": {
+      "easy_api": {
+        "error": "ValueError: 'paper_unet' is an exact upstream wrapper requiring a pinned external checkout and explicit attestation arguments; it is not served through the easy API",
+        "status": "rejected_ok"
+      },
+      "status": "dependency_blocked"
+    }
+  }
+}

@@ -1,0 +1,145 @@
+schema_version: pdeobs.source-faithful-method-registry/v1
+status: candidate_preflight_only
+claim_scope: independently_implemented_pdeobs_adaptations_unless_explicitly_noted
+
+shared_contract:
+  inputs: [masked_field_or_condition, observation_mask, coordinates, geometry_if_required]
+  objective: mean_per_sample_relative_l2
+  epochs: 500
+  validation: none
+  checkpoint: final_epoch_only
+  temporal_adapter: free_autoregressive_t0_to_t1_to_t2_to_t3
+  scheduler_policy: method_specific_source_faithful_500_epoch_rescaling
+
+settings:
+  gaussian_rbf:
+    category: classical
+    implementation: src/pdeobs/methods/interpolation.py::RBFInterpolation
+    resolved: {kernel: gaussian, epsilon: 2.0, smoothing: 0.000001, max_centers: 512, normalized_coordinates: true}
+    temporal_adapter: reconstruct_t0_then_persistence_rollout
+    fit_scope: none
+
+  gappy_pod:
+    category: classical
+    implementation: src/pdeobs/methods/reduced_order.py::GappyPOD
+    reference: Everson_and_Sirovich_1995
+    resolved: {rank: 64, ridge: 0.000001}
+    temporal_adapter: gappy_coefficients_at_t0_plus_training_only_linear_DMD_transition
+    fit_scope: once_per_pde
+
+  ufno_2d:
+    category: learned
+    label: U-FNO-2D (PDE-OBS adaptation)
+    paper_url: https://arxiv.org/abs/2109.03697
+    official_code_url: https://github.com/gegewen/ufno
+    reviewed_revision: 8315fd7b5bd75282b7efe42ee6b8de86543d13cc
+    reviewed_license: CC-BY-NC-ND-4.0
+    local_code_policy: independent_implementation_no_upstream_code_copied_or_modified
+    implementation: src/pdeobs/methods/neural.py::UFNO2d
+    architecture: {width: 36, modes: 12, fourier_blocks: 3, u_fourier_blocks: 3, padding: 8}
+    optimizer: {name: adam, learning_rate: 0.001, weight_decay: 0.0001, batch_size: 4}
+    adaptation: official_release_is_3d_space_time_this_is_explicit_2d_mask_conditioned_variant
+
+  fno:
+    category: learned
+    label: Fourier Neural Operator
+    paper_url: https://arxiv.org/abs/2010.08895
+    official_code_url: https://github.com/zongyi-li/fourier_neural_operator
+    reviewed_revision: 00b7d86f8d74ff0af55da53eb585fe26df9c71f0
+    reviewed_license: MIT
+    implementation: src/pdeobs/methods/neural.py::CompactFNO2d
+    architecture: {width: 32, modes: 12, layers: 4}
+    optimizer: {name: adam, learning_rate: 0.001, weight_decay: 0.0001, batch_size: 8}
+
+  cno:
+    category: learned
+    label: Convolutional Neural Operator
+    paper_url: https://arxiv.org/abs/2302.01178
+    official_code_url: https://github.com/camlab-ethz/ConvolutionalNeuralOperator
+    reviewed_revision: 6e765198aa02b56352e0a3437104b9d9e337176e
+    reviewed_license: MIT
+    implementation: src/pdeobs/methods/neural.py::CompactCNO2d
+    architecture: {width: 32, anti_aliasing: fixed_binomial_low_pass}
+    optimizer: {name: adamw, learning_rate: 0.001, weight_decay: 0.000001, batch_size: 8}
+    adaptation: compact_mask_conditioned_scalar_2d_variant
+
+  deeponet:
+    category: learned
+    label: Variable-sensor DeepONet
+    paper_url: https://www.nature.com/articles/s42256-021-00302-5
+    official_code_url: https://github.com/lululxvi/deeponet
+    reviewed_revision: 8d62345afd39e1df9c2c8c8d0e7c41882b06a9bf
+    reviewed_license: CC-BY-NC-SA-4.0
+    local_code_policy: independent_implementation_no_upstream_code_copied
+    implementation: src/pdeobs/methods/operator_networks.py::VariableSensorDeepONet
+    architecture: {hidden: 128, latent: 128, branch_layers: 2, trunk_layers: 2, branch_mode: spatial_cnn, branch_grid: 4, branch_width: 64}
+    optimizer: {name: adam, learning_rate: 0.001, weight_decay: 0.0, batch_size: 4}
+    adaptation: ordered_mask_aware_spatial_branch_plus_canonical_branch_trunk_product
+
+  gnot:
+    category: learned
+    label: General Neural Operator Transformer
+    paper_url: https://proceedings.mlr.press/v202/hao23c.html
+    official_code_url: https://github.com/thu-ml/GNOT
+    reviewed_revision: 5ee2e6925a43f9a340a6016bad4da2c82a452cbe
+    reviewed_license: no_license_file_found_do_not_copy
+    local_code_policy: independent_implementation_no_upstream_code_copied
+    implementation: src/pdeobs/methods/operator_networks.py::MaskConditionedGNOT
+    architecture: {hidden: 128, layers: 3, heads: 1, experts: 2}
+    optimizer: {name: adamw, learning_rate: 0.001, weight_decay: 0.00005, batch_size: 4}
+    scheduler: {name: one_cycle, pct_start: 0.2, div_factor: 10000.0, final_div_factor: 10000.0, anneal_strategy: cos}
+    health: {grad_clip: 1000.0, gradient_norm_warning: 1000.0, gradient_warning_consecutive_windows: 3, gradient_warning_fatal: false}
+    adaptation: official_unit_normalization_not_applied_to_preserve_physical_relative_l2_objective
+
+  transolver:
+    category: learned
+    label: Transolver
+    paper_url: https://arxiv.org/abs/2402.02366
+    official_code_url: https://github.com/thuml/Transolver
+    reviewed_revision: 75e0f67643806a81cd1d3f6adc88dd8c02416fe7
+    reviewed_license: MIT
+    implementation: src/pdeobs/methods/operator_networks.py::MaskConditionedTransolver
+    architecture: {hidden: 128, layers: 8, heads: 8, physics_slices: 64, mlp_ratio: 1}
+    temporal_architecture: {hidden: 256, layers: 8, heads: 8, physics_slices: 32, mlp_ratio: 1}
+    optimizer: {name: adamw, learning_rate: 0.001, weight_decay: 0.00001, batch_size: 4}
+    temporal_optimizer: {batch_size: 2}
+    scheduler: {name: one_cycle, pct_start: 0.3, div_factor: 25.0, final_div_factor: 10000.0, anneal_strategy: cos}
+    health: {grad_clip: 0.1, gradient_norm_warning: 1000.0, gradient_warning_consecutive_windows: 3, gradient_warning_fatal: false}
+    temporal_health: {grad_clip: null, gradient_warning_fatal: true}
+    adaptation: structured_grid_mask_conditioned_variant_with_official_darcy_and_ns_dimensions
+
+  jeno:
+    category: learned
+    label: withheld
+    source: unreleased_method_not_included_in_this_copy
+    public_upstream: none_attested
+    implementation: private_adapter_not_copied_into_public_repository
+    review_copy_note: >-
+      This slot is retained only so that the campaign's row accounting stays consistent with
+      configs/campaign/all_pde_one_setting_10method_9x9.yaml, which counts eight learned slots.
+      The method is unreleased, is not part of the seven-method public grid, and is excluded from
+      every public code path (src/pdeobs/one_setting.py -> PUBLIC_LEARNED_METHODS). Its project
+      label, archive digest, reviewed-file digests, architecture and optimizer settings are
+      withheld from this anonymous copy; they identify unpublished work rather than describing
+      anything a reviewer can run.
+  pino:
+    category: learned
+    label: Physics-Informed Neural Operator (PDE-OBS adaptation)
+    paper_url: https://arxiv.org/abs/2111.03794
+    official_code_url: https://github.com/neuraloperator/physics_informed
+    reviewed_revision: 3b6bc307c63c64057d0496753bf1af5f44ac5108
+    reviewed_license: Apache-2.0
+    implementation:
+      model: src/pdeobs/methods/neural.py::PhysicsInformedFNO2d
+      residual: src/pdeobs/pino.py
+    architecture: {width: 64, modes: 20, layers: 5}
+    optimizer: {name: adam, learning_rate: 0.001, weight_decay: 0.0, batch_size: 4}
+    scheduler: {name: step, step_size_epochs: 100, gamma: 0.5}
+    health: {grad_clip: 1.0, gradient_norm_warning: 1000.0, gradient_warning_consecutive_windows: 3, gradient_warning_fatal: false}
+    objective:
+      data_loss_weight: 5.0
+      physics_loss_weight: 1.0
+      static_contract: pino_static_fd_v1
+      temporal_contract: pino_rollout_spectral_v1
+      temporal_normalization: differentiable_scale_neutral_for_homogeneous_rollouts
+    adaptation: masked_sparse_input_and_frozen_dataset_specific_residual_metadata_with_official_five_to_one_data_residual_weighting

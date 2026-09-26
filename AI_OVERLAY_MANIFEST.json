@@ -1,0 +1,214 @@
+{
+  "schema_version": "pdeobs-ai-overlay-manifest/v1",
+  "base_archive": "pdeobs-review-main.zip",
+  "base_archive_sha256": "ece1024b4d32b699e80a2918e77f3cd569ed57b4102dad2eb008035916ce0b79",
+  "overlay_id": "pdeobs-ai-review-overlay-1",
+  "instructions": "Extract full enhanced ZIP into a NEW working directory. This overlay is only against the exact base upload; do not overwrite an independently changed repository or running jobs. Original science/configs/tests preserved; malformed facade inputs now rejected.",
+  "changed_files": {
+    "AGENTS.md": {
+      "action": "added",
+      "base_sha256": null,
+      "overlay_sha256": "9eb674536f42f88d9d61bf8bf98394de7b1b4fc7e9b9ba76ee230567eb9fb180"
+    },
+    "AI_PATCH_NOTES.md": {
+      "action": "added",
+      "base_sha256": null,
+      "overlay_sha256": "5c1884981c8b7ed992e65f9a1bba6a5e956035996f57e0ef9c343583fbe5c815"
+    },
+    "AI_START_HERE.md": {
+      "action": "added",
+      "base_sha256": null,
+      "overlay_sha256": "afdd5d9b1492b59a9eb3d13f8adf37cd732c6a3a642d7a99b52d68f3d1a44ebf"
+    },
+    "README.md": {
+      "action": "modified",
+      "base_sha256": "072527ebfc3238e4b68956ea570c6f3b66e0ee2ad3d6755259141fde96ea5da7",
+      "overlay_sha256": "3fb32b2545e416efa8e5125cbffdd82049060e949d5e536d5012ef22a9e9a62a"
+    },
+    "docs/ai/AUDIT.zh-CN.md": {
+      "action": "added",
+      "base_sha256": null,
+      "overlay_sha256": "94b6b5bca39f0fab91d893e9baf76e55e669249e3b7ae8a26a3226be24f69c7d"
+    },
+    "docs/ai/PROTOCOLS.md": {
+      "action": "added",
+      "base_sha256": null,
+      "overlay_sha256": "b17486055ef3ea6a37fc88be151fb0b62bdc7db53e50fb4230688ef5084c286e"
+    },
+    "docs/ai/WORKFLOWS.md": {
+      "action": "added",
+      "base_sha256": null,
+      "overlay_sha256": "c1333630fd8fef9c964a821630f55c914b09fe8f85584070628eaf59dae0c5ad"
+    },
+    "docs/ai/evidence_status.json": {
+      "action": "added",
+      "base_sha256": null,
+      "overlay_sha256": "256976ccda71fffd4a14a7d4af903ba0f5ed3eed4e48779fa084cbd3a48483e2"
+    },
+    "docs/ai/frozen_science_sha256.json": {
+      "action": "added",
+      "base_sha256": null,
+      "overlay_sha256": "9f9dea9ef871573f53bf6c5c152ca2fdb6b540c647a187517a24df99df514fe3"
+    },
+    "docs/ai/repository_index.json": {
+      "action": "added",
+      "base_sha256": null,
+      "overlay_sha256": "f47a840e7bf6cf180977d15a71fcd9e7c690252cb3c40720c62ad2f8faa40a2a"
+    },
+    "llms.txt": {
+      "action": "added",
+      "base_sha256": null,
+      "overlay_sha256": "63f74f83397c86e5fb1cfacd9d54b9b52dd70951384dab08f30dfbc345e321b2"
+    },
+    "review_audit/README.md": {
+      "action": "added",
+      "base_sha256": null,
+      "overlay_sha256": "b908f1fd8f06cee7c20ac9434d86fc0034a49d64f3fa4ac897b1a59d6f7393cc"
+    },
+    "review_audit/adversarial-probes.json": {
+      "action": "added",
+      "base_sha256": null,
+      "overlay_sha256": "5931cb3bf83e88cda15dda04aba472a9ad85bd10aec8819449dae9455ea631a7"
+    },
+    "review_audit/ai-doctor.json": {
+      "action": "added",
+      "base_sha256": null,
+      "overlay_sha256": "d03c519c53590bfaff1b49d8a8b718a1c4b282e87e1300a3ae7a38b674f2a898"
+    },
+    "review_audit/ai-smoke.log": {
+      "action": "added",
+      "base_sha256": null,
+      "overlay_sha256": "414f336285b450a6bb71b680170ae8cd8ff1480f0b774f2415b0378d9a00cc97"
+    },
+    "review_audit/ai_smoke_receipt.json": {
+      "action": "added",
+      "base_sha256": null,
+      "overlay_sha256": "414f336285b450a6bb71b680170ae8cd8ff1480f0b774f2415b0378d9a00cc97"
+    },
+    "review_audit/all-junit.xml": {
+      "action": "added",
+      "base_sha256": null,
+      "overlay_sha256": "84065b263f3e08371ffe7c0dfa07a8681db227bef019e6ade5e22391cdf5b76a"
+    },
+    "review_audit/all-tests.log": {
+      "action": "added",
+      "base_sha256": null,
+      "overlay_sha256": "05013e244b15c4e2812bd521e284acb6e0902df0982336d1679cb61b1c0b3425"
+    },
+    "review_audit/api-junit.xml": {
+      "action": "added",
+      "base_sha256": null,
+      "overlay_sha256": "2a875b60c949d9a4e4a02c303d996a84e66105b8391098e5dcd52771e00a6cdb"
+    },
+    "review_audit/api.log": {
+      "action": "added",
+      "base_sha256": null,
+      "overlay_sha256": "080b789079661e49f89d386201dd9b1a82fc99aad0f822ff35c9ef758477b818"
+    },
+    "review_audit/core-launch.log": {
+      "action": "added",
+      "base_sha256": null,
+      "overlay_sha256": "bc50e083115e9e19acb79db65f15e5d24b455da8f259ec0581fce7be80227496"
+    },
+    "review_audit/final-all-junit.xml": {
+      "action": "added",
+      "base_sha256": null,
+      "overlay_sha256": "0a1dde8683cd68160d199e7e606e81f9a5e768dfff76eace692b345b0426c9ab"
+    },
+    "review_audit/final-all.log": {
+      "action": "added",
+      "base_sha256": null,
+      "overlay_sha256": "d99eac3ebaa26902f685a9c74cb08bdd631bf4f33382917376b9a8180e9838d0"
+    },
+    "review_audit/install-retry.log": {
+      "action": "added",
+      "base_sha256": null,
+      "overlay_sha256": "6e8300d30af298d972c6ed9fecf09581a1e81a7254043d072bf3bc54c0d06e2f"
+    },
+    "review_audit/installed-demos.json": {
+      "action": "added",
+      "base_sha256": null,
+      "overlay_sha256": "cb02780b1aaeddc91b92d2135e25f9cb29e196f9f9c75fd714c270402366bb89"
+    },
+    "review_audit/installed-doctor.log": {
+      "action": "added",
+      "base_sha256": null,
+      "overlay_sha256": "765672f69e82b61f9fe391b08764a9cea1cd9696a6018c99b0877f0146af50f1"
+    },
+    "review_audit/installed-patched-eval.json": {
+      "action": "added",
+      "base_sha256": null,
+      "overlay_sha256": "e4b082c40a01ec5d892648e1b90feaa77a5e8603755900727ac8dcb14dae6a69"
+    },
+    "review_audit/patched-adversarial-probes.json": {
+      "action": "added",
+      "base_sha256": null,
+      "overlay_sha256": "1cd269548b2925609257e362d61c0785ae707da3e09cf563e1b9f0d0e373dade"
+    },
+    "review_audit/patched-all-junit.xml": {
+      "action": "added",
+      "base_sha256": null,
+      "overlay_sha256": "9a17670138cd9e8cee574baa8f45f913caa7b288af584c73d7bdb28294382d62"
+    },
+    "review_audit/patched-all.log": {
+      "action": "added",
+      "base_sha256": null,
+      "overlay_sha256": "91498b417697021da722a0435d662fc05e10ea2aef3b3fcfb6933217c9bc8a3f"
+    },
+    "review_audit/patched-install.log": {
+      "action": "added",
+      "base_sha256": null,
+      "overlay_sha256": "6a9962bac2dffac118bf2337294e1f05b7996f2f2603034663ee87d7e6d19ef5"
+    },
+    "review_audit/reproduce_boundary_probes.py": {
+      "action": "added",
+      "base_sha256": null,
+      "overlay_sha256": "e04b82e64cec75da3b437c8afc7331e15a84ef34d1546b1a49301ca7537e7cec"
+    },
+    "review_audit/source_changes.patch": {
+      "action": "added",
+      "base_sha256": null,
+      "overlay_sha256": "368bb16ba8ae1add2b157d11cb4c59951d4b865f24744e6325c5484d470275a9"
+    },
+    "src/pdeobs/api/cli.py": {
+      "action": "modified",
+      "base_sha256": "faeebfebfe0999b4e5d21026be4cadc0dc00cf16d29d8d23d0e9913f2da4a504",
+      "overlay_sha256": "0e62a971c3014d8d7c4020decac906c1542db734170af36916728e9b8d193326"
+    },
+    "src/pdeobs/api/data.py": {
+      "action": "modified",
+      "base_sha256": "c3fee8939d95d25018bb3aa2ee341b0e44fae335c0e1683b9266ea850542cff2",
+      "overlay_sha256": "9c343ebba773cb2ffd1819e7ad08732f8762ed32f471278acdb8637d2916e62b"
+    },
+    "src/pdeobs/api/evaluate.py": {
+      "action": "modified",
+      "base_sha256": "d6ff5fa2593e0b467b574dde0783242eaee9953ec21bba94184681d7ac71916d",
+      "overlay_sha256": "5ab05d256472a1a7712e57c399446ae81447f65a34bf282d9e9bd7fc7599b028"
+    },
+    "src/pdeobs/api/infer.py": {
+      "action": "modified",
+      "base_sha256": "a9761c74b286788ba7b2a9d1d0e609e077a305613122aaf4347f731c86be442c",
+      "overlay_sha256": "19d5fc982650287de31e4c74c072f01635ab572cc7b23520dd51c69e7ccd65ce"
+    },
+    "src/pdeobs/api/pipeline.py": {
+      "action": "modified",
+      "base_sha256": "5b2b492c878d47f076c343218da612422ead1dccf797e06ee087a68daeebddb7",
+      "overlay_sha256": "033774397cafbd081f2789752933bd6b2c8c6c86928c8189e30ce7e4195ba146"
+    },
+    "tests/test_ai_facade_regressions.py": {
+      "action": "added",
+      "base_sha256": null,
+      "overlay_sha256": "84286933bee7a382a4a49d90ef2cf36601122bbf0bd6af103922bad59e1c16a3"
+    },
+    "tests/test_ai_tools.py": {
+      "action": "added",
+      "base_sha256": null,
+      "overlay_sha256": "e40a7abd3ef972d149ba1a6c8ad34aa1fd877855af16ae5992ad54c1b123402c"
+    },
+    "tools/ai_assist.py": {
+      "action": "added",
+      "base_sha256": null,
+      "overlay_sha256": "c6217b5895b765c1712f2c2ef20263ea0b6f2290b37820fdf2a8514d04315391"
+    }
+  }
+}

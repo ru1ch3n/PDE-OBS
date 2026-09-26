@@ -1,0 +1,580 @@
+{
+  "models": {
+    "cno": {
+      "custom_changes_structure": true,
+      "illegal": {
+        "error": "ValueError: model 'cno' does not accept ['depth']; valid parameters: ['geometry_channels', 'in_channels', 'out_channels', 'width']",
+        "status": "rejected_ok"
+      },
+      "param_count_custom": 15097,
+      "param_count_smoke": 6897,
+      "presets": {
+        "paper": {
+          "artifact": "/workspace/pdeobs/sweep-run/work/full/t4/cno-paper/model",
+          "params": 103617,
+          "peak_gpu_mb": 97.9,
+          "pred_shape": [
+            4,
+            64,
+            64,
+            1
+          ],
+          "rel_l2": 62.5489305302623,
+          "score_status": "valid",
+          "status": "passed",
+          "steps": 1,
+          "train_s": 0.061
+        },
+        "smoke": {
+          "artifact": "/workspace/pdeobs/sweep-run/work/full/t4/cno-smoke/model",
+          "params": 6897,
+          "peak_gpu_mb": 70.0,
+          "pred_shape": [
+            4,
+            32,
+            32,
+            1
+          ],
+          "rel_l2": 77.37484863885872,
+          "score_status": "valid",
+          "status": "passed",
+          "steps": 1,
+          "train_s": 0.103
+        }
+      },
+      "status": "passed",
+      "tasks": [
+        "recovery",
+        "forward",
+        "inverse",
+        "rollout"
+      ]
+    },
+    "convlstm": {
+      "custom_changes_structure": true,
+      "illegal": {
+        "error": "ValueError: model 'convlstm' does not accept ['width']; valid parameters: ['hidden_channels', 'in_channels', 'out_channels']",
+        "status": "rejected_ok"
+      },
+      "param_count_custom": 2851,
+      "param_count_smoke": 1325,
+      "presets": {
+        "smoke": {
+          "artifact": "/workspace/pdeobs/sweep-run/work/full/t4/convlstm-smoke/model",
+          "params": 1325,
+          "peak_gpu_mb": 69.6,
+          "pred_shape": [
+            4,
+            3,
+            32,
+            32,
+            1
+          ],
+          "rel_l2": 1.0790944472050912,
+          "score_status": "valid",
+          "status": "passed",
+          "steps": 1,
+          "train_s": 0.061
+        }
+      },
+      "status": "passed",
+      "tasks": [
+        "rollout"
+      ]
+    },
+    "deeponet": {
+      "custom_changes_structure": true,
+      "illegal": {
+        "error": "ValueError: model 'deeponet' does not accept ['width']; valid parameters: ['branch_grid', 'branch_layers', 'branch_mode', 'branch_width', 'geometry_channels', 'hidden', 'in_channels', 'latent', 'out_channels', 't",
+        "status": "rejected_ok"
+      },
+      "param_count_custom": 2457,
+      "param_count_smoke": 1505,
+      "presets": {
+        "paper": {
+          "artifact": "/workspace/pdeobs/sweep-run/work/full/t4/deeponet-paper/model",
+          "params": 221121,
+          "peak_gpu_mb": 103.0,
+          "pred_shape": [
+            4,
+            64,
+            64,
+            1
+          ],
+          "rel_l2": 13.03597265828209,
+          "score_status": "valid",
+          "status": "passed",
+          "steps": 1,
+          "train_s": 0.085
+        },
+        "smoke": {
+          "artifact": "/workspace/pdeobs/sweep-run/work/full/t4/deeponet-smoke/model",
+          "params": 1505,
+          "peak_gpu_mb": 70.9,
+          "pred_shape": [
+            4,
+            32,
+            32,
+            1
+          ],
+          "rel_l2": 1.5492819261918622,
+          "score_status": "valid",
+          "status": "passed",
+          "steps": 1,
+          "train_s": 0.049
+        }
+      },
+      "status": "passed",
+      "tasks": [
+        "recovery",
+        "forward",
+        "inverse",
+        "rollout"
+      ]
+    },
+    "fno": {
+      "custom_changes_structure": true,
+      "illegal": {
+        "error": "ValueError: fno: width=36 must be divisible by min(8, width)=8 (GroupNorm); e.g. 8, 16, 24, 32, 40, 48, 64",
+        "status": "rejected_ok"
+      },
+      "param_count_custom": 113929,
+      "param_count_smoke": 75009,
+      "presets": {
+        "paper": {
+          "artifact": "/workspace/pdeobs/sweep-run/work/full/t4/fno-paper/model",
+          "params": 2366145,
+          "peak_gpu_mb": 118.4,
+          "pred_shape": [
+            4,
+            64,
+            64,
+            1
+          ],
+          "rel_l2": 6.8178854003966,
+          "score_status": "valid",
+          "status": "passed",
+          "steps": 1,
+          "train_s": 0.44
+        },
+        "smoke": {
+          "artifact": "/workspace/pdeobs/sweep-run/work/full/t4/fno-smoke/model",
+          "params": 75009,
+          "peak_gpu_mb": 70.2,
+          "pred_shape": [
+            4,
+            32,
+            32,
+            1
+          ],
+          "rel_l2": 8.5809647163842,
+          "score_status": "valid",
+          "status": "passed",
+          "steps": 1,
+          "train_s": 0.233
+        }
+      },
+      "status": "passed",
+      "tasks": [
+        "recovery",
+        "forward",
+        "inverse",
+        "rollout"
+      ]
+    },
+    "fno:navier_stokes[velocity]": {
+      "artifact": "/workspace/pdeobs/sweep-run/work/full/t4/ns-velocity/model",
+      "params": 75058,
+      "peak_gpu_mb": 74.3,
+      "pred_shape": [
+        4,
+        3,
+        32,
+        32,
+        2
+      ],
+      "rel_l2": 1.0688986150429605,
+      "score_status": "valid",
+      "status": "passed",
+      "steps": 1,
+      "train_s": 0.071
+    },
+    "fno:navier_stokes[vorticity]": {
+      "artifact": "/workspace/pdeobs/sweep-run/work/full/t4/ns-vorticity/model",
+      "params": 75009,
+      "peak_gpu_mb": 73.3,
+      "pred_shape": [
+        4,
+        3,
+        32,
+        32,
+        1
+      ],
+      "rel_l2": 0.9762954865271437,
+      "score_status": "valid",
+      "status": "passed",
+      "steps": 1,
+      "train_s": 0.1
+    },
+    "fno[geometry_channels=0]": {
+      "artifact": "/workspace/pdeobs/sweep-run/work/full/t4/fno-nogeom/model",
+      "params": 74993,
+      "peak_gpu_mb": 70.3,
+      "pred_shape": [
+        4,
+        32,
+        32,
+        1
+      ],
+      "rel_l2": 32.50697507714324,
+      "score_status": "valid",
+      "status": "passed",
+      "steps": 1,
+      "train_s": 0.044
+    },
+    "gnot": {
+      "custom_changes_structure": true,
+      "illegal": {
+        "error": "ValueError: gnot: hidden=30 must be divisible by heads=4",
+        "status": "rejected_ok"
+      },
+      "param_count_custom": 21891,
+      "param_count_smoke": 5554,
+      "presets": {
+        "paper": {
+          "artifact": "/workspace/pdeobs/sweep-run/work/full/t4/gnot-paper/model",
+          "params": 2099975,
+          "peak_gpu_mb": 910.5,
+          "pred_shape": [
+            4,
+            64,
+            64,
+            1
+          ],
+          "rel_l2": 35.95769360302138,
+          "score_status": "valid",
+          "status": "passed",
+          "steps": 1,
+          "train_s": 0.331
+        },
+        "smoke": {
+          "artifact": "/workspace/pdeobs/sweep-run/work/full/t4/gnot-smoke/model",
+          "params": 5554,
+          "peak_gpu_mb": 77.4,
+          "pred_shape": [
+            4,
+            32,
+            32,
+            1
+          ],
+          "rel_l2": 63.228855063294326,
+          "score_status": "valid",
+          "status": "passed",
+          "steps": 1,
+          "train_s": 0.117
+        }
+      },
+      "status": "passed",
+      "tasks": [
+        "recovery",
+        "forward",
+        "inverse",
+        "rollout"
+      ]
+    },
+    "mae_small": {
+      "custom_changes_structure": true,
+      "illegal": {
+        "error": "ValueError: model 'mae_small' does not accept ['modes']; valid parameters: ['in_channels', 'latent_channels', 'mask_ratio', 'out_channels', 'patch_size', 'preserve_visible', 'width']",
+        "status": "rejected_ok"
+      },
+      "param_count_custom": 8827,
+      "param_count_smoke": 4013,
+      "presets": {
+        "smoke": {
+          "artifact": "/workspace/pdeobs/sweep-run/work/full/t4/mae_small-smoke/model",
+          "params": 4013,
+          "peak_gpu_mb": 68.8,
+          "pred_shape": [
+            4,
+            32,
+            32,
+            1
+          ],
+          "rel_l2": 42.651090101894056,
+          "score_status": "valid",
+          "status": "passed",
+          "steps": 1,
+          "train_s": 0.082
+        }
+      },
+      "status": "passed",
+      "tasks": [
+        "recovery",
+        "forward",
+        "inverse"
+      ]
+    },
+    "pino": {
+      "custom_changes_structure": true,
+      "illegal": {
+        "error": "ValueError: pino: width=36 must be divisible by min(8, width)=8 (GroupNorm); e.g. 8, 16, 24, 32, 40, 48, 64",
+        "status": "rejected_ok"
+      },
+      "param_count_custom": 113929,
+      "param_count_smoke": 75009,
+      "presets": {
+        "paper": {
+          "artifact": "/workspace/pdeobs/sweep-run/work/full/t4/pino-paper/model",
+          "params": 32798273,
+          "peak_gpu_mb": 725.1,
+          "pred_shape": [
+            4,
+            64,
+            64,
+            1
+          ],
+          "rel_l2": 20.169581715605368,
+          "score_status": "valid",
+          "status": "passed",
+          "steps": 1,
+          "train_s": 1.191
+        },
+        "smoke": {
+          "artifact": "/workspace/pdeobs/sweep-run/work/full/t4/pino-smoke/model",
+          "params": 75009,
+          "peak_gpu_mb": 100.5,
+          "pred_shape": [
+            4,
+            32,
+            32,
+            1
+          ],
+          "rel_l2": 8.862847770832634,
+          "score_status": "valid",
+          "status": "passed",
+          "steps": 1,
+          "train_s": 0.048
+        }
+      },
+      "status": "passed",
+      "tasks": [
+        "recovery",
+        "forward",
+        "rollout"
+      ]
+    },
+    "transolver": {
+      "custom_changes_structure": true,
+      "illegal": {
+        "error": "ValueError: transolver: hidden=30 must be divisible by heads=4",
+        "status": "rejected_ok"
+      },
+      "param_count_custom": 27133,
+      "param_count_smoke": 6519,
+      "presets": {
+        "paper": {
+          "artifact": "/workspace/pdeobs/sweep-run/work/full/t4/transolver-paper/model",
+          "params": 2811457,
+          "peak_gpu_mb": 722.9,
+          "pred_shape": [
+            4,
+            64,
+            64,
+            1
+          ],
+          "rel_l2": 3.3169053288447037,
+          "score_status": "valid",
+          "status": "passed",
+          "steps": 1,
+          "train_s": 0.397
+        },
+        "smoke": {
+          "artifact": "/workspace/pdeobs/sweep-run/work/full/t4/transolver-smoke/model",
+          "params": 6519,
+          "peak_gpu_mb": 70.4,
+          "pred_shape": [
+            4,
+            32,
+            32,
+            1
+          ],
+          "rel_l2": 27.044003709714453,
+          "score_status": "valid",
+          "status": "passed",
+          "steps": 1,
+          "train_s": 0.194
+        }
+      },
+      "status": "passed",
+      "tasks": [
+        "recovery",
+        "forward",
+        "inverse",
+        "rollout"
+      ]
+    },
+    "ufno": {
+      "custom_changes_structure": true,
+      "illegal": {
+        "error": "ValueError: model 'ufno' does not accept ['layers']; valid parameters: ['dropout', 'geometry_channels', 'in_channels', 'modes', 'out_channels', 'padding', 'width']",
+        "status": "rejected_ok"
+      },
+      "param_count_custom": 331497,
+      "param_count_smoke": 189497,
+      "presets": {
+        "paper": {
+          "artifact": "/workspace/pdeobs/sweep-run/work/full/t4/ufno-paper/model",
+          "params": 5049545,
+          "peak_gpu_mb": 169.7,
+          "pred_shape": [
+            4,
+            64,
+            64,
+            1
+          ],
+          "rel_l2": 8.201145841095999,
+          "score_status": "valid",
+          "status": "passed",
+          "steps": 1,
+          "train_s": 0.848
+        },
+        "smoke": {
+          "artifact": "/workspace/pdeobs/sweep-run/work/full/t4/ufno-smoke/model",
+          "params": 189497,
+          "peak_gpu_mb": 74.8,
+          "pred_shape": [
+            4,
+            32,
+            32,
+            1
+          ],
+          "rel_l2": 4.364694344644265,
+          "score_status": "valid",
+          "status": "passed",
+          "steps": 1,
+          "train_s": 0.818
+        }
+      },
+      "status": "passed",
+      "tasks": [
+        "recovery",
+        "forward",
+        "inverse",
+        "rollout"
+      ]
+    },
+    "unet": {
+      "custom_changes_structure": true,
+      "illegal": {
+        "error": "ValueError: model 'unet' does not accept ['levels']; valid parameters: ['geometry_channels', 'in_channels', 'out_channels', 'width']",
+        "status": "rejected_ok"
+      },
+      "param_count_custom": 17053,
+      "param_count_smoke": 7697,
+      "presets": {
+        "paper": {
+          "artifact": "/workspace/pdeobs/sweep-run/work/full/t4/unet-paper/model",
+          "params": 472833,
+          "peak_gpu_mb": 102.7,
+          "pred_shape": [
+            4,
+            64,
+            64,
+            1
+          ],
+          "rel_l2": 79.42491528224271,
+          "score_status": "valid",
+          "status": "passed",
+          "steps": 1,
+          "train_s": 0.092
+        },
+        "smoke": {
+          "artifact": "/workspace/pdeobs/sweep-run/work/full/t4/unet-smoke/model",
+          "params": 7697,
+          "peak_gpu_mb": 69.1,
+          "pred_shape": [
+            4,
+            32,
+            32,
+            1
+          ],
+          "rel_l2": 30.554919157962104,
+          "score_status": "valid",
+          "status": "passed",
+          "steps": 1,
+          "train_s": 0.104
+        }
+      },
+      "status": "passed",
+      "tasks": [
+        "recovery",
+        "forward",
+        "inverse",
+        "rollout"
+      ]
+    },
+    "unet:rollout(autoregressive)": {
+      "artifact": "/workspace/pdeobs/sweep-run/work/full/t4/unet-rollout/model",
+      "params": 7697,
+      "peak_gpu_mb": 71.8,
+      "pred_shape": [
+        4,
+        3,
+        32,
+        32,
+        1
+      ],
+      "rel_l2": 1.005997061310257,
+      "score_status": "valid",
+      "status": "passed",
+      "steps": 1,
+      "train_s": 0.098
+    },
+    "unet_paper_guided": {
+      "custom_changes_structure": true,
+      "illegal": {
+        "error": "ValueError: model 'unet_paper_guided' does not accept ['modes']; valid parameters: ['geometry_channels', 'in_channels', 'levels', 'out_channels', 'width']",
+        "status": "rejected_ok"
+      },
+      "param_count_custom": 68797,
+      "param_count_smoke": 7537,
+      "presets": {
+        "smoke": {
+          "artifact": "/workspace/pdeobs/sweep-run/work/full/t4/unet_paper_guided-smoke/model",
+          "params": 7537,
+          "peak_gpu_mb": 74.7,
+          "pred_shape": [
+            4,
+            32,
+            32,
+            1
+          ],
+          "rel_l2": 7.831164220374809,
+          "score_status": "valid",
+          "status": "passed",
+          "steps": 1,
+          "train_s": 0.06
+        }
+      },
+      "status": "passed",
+      "tasks": [
+        "recovery",
+        "forward",
+        "inverse",
+        "rollout"
+      ]
+    },
+    "upstream_wrapper_gated": {
+      "error": "ValueError: 'paper_fno' is an exact upstream wrapper requiring a pinned external checkout and explicit attestation arguments; it is not served through the easy API",
+      "status": "rejected_ok"
+    }
+  },
+  "summary": {
+    "passed": 16,
+    "total": 16
+  },
+  "tier": "T4",
+  "utc": "2026-09-21T15:48:32Z",
+  "what": "every public model: presets, custom, illegal, geometry variants, multichannel"
+}

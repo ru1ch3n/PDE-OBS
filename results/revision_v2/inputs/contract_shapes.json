@@ -1,0 +1,95 @@
+{
+ "schema": "pdeobs-revision-contract-shapes/v1",
+ "shapes": {
+  "burgers": {
+   "expected_shape": [
+    3,
+    128,
+    128,
+    1
+   ],
+   "target_time_indices": [
+    1,
+    2,
+    3
+   ],
+   "task": "rollout"
+  },
+  "darcy": {
+   "expected_shape": [
+    128,
+    128,
+    1
+   ],
+   "target_time_indices": [
+    0
+   ],
+   "task": "recovery"
+  },
+  "heat": {
+   "expected_shape": [
+    3,
+    128,
+    128,
+    1
+   ],
+   "target_time_indices": [
+    1,
+    2,
+    3
+   ],
+   "task": "rollout"
+  },
+  "helmholtz": {
+   "expected_shape": [
+    128,
+    128,
+    1
+   ],
+   "target_time_indices": [
+    0
+   ],
+   "task": "recovery"
+  },
+  "navier_stokes": {
+   "expected_shape": [
+    3,
+    128,
+    128,
+    1
+   ],
+   "target_time_indices": [
+    1,
+    2,
+    3
+   ],
+   "task": "rollout"
+  },
+  "poisson": {
+   "expected_shape": [
+    128,
+    128,
+    1
+   ],
+   "target_time_indices": [
+    0
+   ],
+   "task": "recovery"
+  },
+  "reaction_diffusion": {
+   "expected_shape": [
+    3,
+    128,
+    128,
+    1
+   ],
+   "target_time_indices": [
+    1,
+    2,
+    3
+   ],
+   "task": "rollout"
+  }
+ },
+ "source": "contract.json of one verification block per PDE"
+}

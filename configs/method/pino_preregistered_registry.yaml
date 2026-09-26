@@ -1,0 +1,38 @@
+schema_version: pdeobs.pino-method-registry/v1
+status: implemented_preflight_blocked
+method_id: pino
+label: Physics-Informed Neural Operator recovery adapter
+paper:
+  title: Physics-Informed Neural Operator for Learning Partial Differential Equations
+  url: https://arxiv.org/abs/2111.03794
+official_code:
+  url: https://github.com/neuraloperator/physics_informed
+local_adaptation:
+  backbone: mask-conditioned CompactFNO2d
+  model_input: [observed_value, observation_mask, geometry_mask]
+  training_only_context: [pde_condition, geometry, pde_metadata]
+  data_loss: mse
+  residual_contracts: [pino_static_fd_v1, pino_rollout_spectral_v1]
+  data_loss_weight: 1.0
+  physics_loss_weight: 1.0
+  mixed_precision: false
+  implementation: src/pdeobs/pino.py
+  experiment_configs:
+    static: configs/experiment/full_to_partial_pino_static.yaml
+    temporal: configs/experiment/full_to_partial_pino_rollout.yaml
+  claim: pdeobs_recovery_adaptation_not_exact_upstream_reproduction
+coverage:
+  implemented_static_pdes: [darcy, poisson, helmholtz]
+  implemented_temporal_pdes: [heat, reaction_diffusion, burgers, navier_stokes]
+  temporal_scope: periodic_2d_free_autoregressive_t0_to_t1_to_t2_to_t3
+  future_truth_recurrent_input: forbidden
+release_gate:
+  eligible: false
+  required_before_execution:
+    - clean_immutable_private_commit
+    - exact_dataset_and_config_hash_receipt
+    - static_residual_unit_and_gradient_tests
+    - temporal_residual_unit_gradient_and_free_recurrence_tests
+    - replicated_domain_preflight_on_each_gpu_domain
+    - zero_nonfinite_or_health_pathology_events
+    - temporal_trajectory_contract_before_any_temporal_row

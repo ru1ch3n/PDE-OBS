@@ -1,0 +1,49 @@
+{
+ "expected_strata": 3,
+ "factor_counts": {
+  "boundary": {
+   "dirichlet": 1800
+  },
+  "pde": {
+   "helmholtz": 1800
+  },
+  "regime": {
+   "high": 600,
+   "low": 600,
+   "medium": 600
+  },
+  "setting": {
+   "smooth_grf": 1800
+  }
+ },
+ "fields": [
+  "pde",
+  "boundary",
+  "setting",
+  "regime"
+ ],
+ "maximum_samples_per_expected_stratum": 600,
+ "minimum_samples_per_expected_stratum": 600,
+ "missing_strata": [],
+ "observed_expected_strata": 3,
+ "required": {
+  "boundary": [
+   "dirichlet"
+  ],
+  "pde": [
+   "helmholtz"
+  ],
+  "regime": [
+   "low",
+   "medium",
+   "high"
+  ],
+  "setting": [
+   "smooth_grf"
+  ]
+ },
+ "sample_count": 1800,
+ "schema_version": "pdeobs.factor-coverage/v1",
+ "status": "passed",
+ "unexpected_strata": []
+}

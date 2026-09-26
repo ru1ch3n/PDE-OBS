@@ -1,0 +1,39 @@
+command: python tools/ai_assist.py smoke --out <WORK>/smoke-003   (CUDA_VISIBLE_DEVICES=-1, OMP_NUM_THREADS=1)
+started_utc: 2026-09-23T01:23:08Z
+torch 2.7.1+cu118 cuda_available False
+{
+  "schema_version": "pdeobs-ai-smoke/v1",
+  "status": "passed",
+  "scope": "software acceptance ONLY; 16x16 demo data, NOT paper results",
+  "device": "cpu",
+  "threads": 1,
+  "torch": "2.7.1+cu118",
+  "cases": [
+    {
+      "pde": "poisson",
+      "task": "recovery",
+      "train_count": 4,
+      "test_count": 2,
+      "train_test_overlap": 0,
+      "optimizer_steps": 2,
+      "strict_status": "valid",
+      "reload_identical": true,
+      "targets_used_for_predict": false,
+      "note": "same-process fresh model reload; not independent production reproduction"
+    },
+    {
+      "pde": "heat",
+      "task": "rollout",
+      "train_count": 4,
+      "test_count": 2,
+      "train_test_overlap": 0,
+      "optimizer_steps": 2,
+      "strict_status": "valid",
+      "reload_identical": true,
+      "targets_used_for_predict": false,
+      "note": "same-process fresh model reload; not independent production reproduction"
+    }
+  ],
+  "seconds": 3.086
+}
+exit=0

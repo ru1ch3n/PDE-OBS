@@ -1,0 +1,473 @@
+{
+  "corpus": {
+    "complete_pde_coverage": true,
+    "input_count": 560000,
+    "invalid_quality_count": 0,
+    "missing_pdes": [],
+    "missing_quality_count": 0,
+    "record_count": 560000,
+    "sample_quality_gate_ready_count": 0,
+    "schema_version": "1.3",
+    "status_counts": {
+      "pass": 560000
+    }
+  },
+  "corpus_by_pde": {
+    "burgers": {
+      "check_counts": {
+        "active_domain": {
+          "pass": 80000
+        },
+        "array_contract": {
+          "pass": 80000
+        },
+        "boundary_condition": {
+          "pass": 80000
+        },
+        "finite": {
+          "pass": 80000
+        },
+        "geometry_binary": {
+          "pass": 80000
+        },
+        "geometry_contract": {
+          "pass": 80000
+        },
+        "initial_condition": {
+          "pass": 80000
+        },
+        "initial_transition_contract": {
+          "pass": 80000
+        },
+        "initial_transition_replay": {
+          "pass": 80000
+        },
+        "pde_loss": {
+          "pass": 80000
+        },
+        "pde_residual_contract": {
+          "pass": 80000
+        }
+      },
+      "pde_loss_normalized": {
+        "count": 80000,
+        "max": 0.04950670001521073,
+        "max_sample_id": "seed-20260804/burgers/periodic/front_ring_shock/high/000613",
+        "mean": 0.012243171110660268,
+        "min": 0.0001573678673770668,
+        "std": 0.007527614457179349
+      },
+      "sample_count": 80000
+    },
+    "darcy": {
+      "check_counts": {
+        "active_domain": {
+          "pass": 80000
+        },
+        "array_contract": {
+          "pass": 80000
+        },
+        "boundary_condition": {
+          "pass": 80000
+        },
+        "finite": {
+          "pass": 80000
+        },
+        "geometry_binary": {
+          "pass": 80000
+        },
+        "geometry_contract": {
+          "pass": 80000
+        },
+        "initial_condition": {
+          "not_applicable": 80000
+        },
+        "pde_loss": {
+          "pass": 80000
+        },
+        "pde_residual_contract": {
+          "pass": 80000
+        }
+      },
+      "pde_loss_normalized": {
+        "count": 80000,
+        "max": 0.0006428388415954191,
+        "max_sample_id": "seed-20260804/darcy/neumann/threshold_level_set/high/000314",
+        "mean": 2.343608039490739e-05,
+        "min": 6.152508047192695e-06,
+        "std": 2.710246104087585e-05
+      },
+      "sample_count": 80000
+    },
+    "heat": {
+      "check_counts": {
+        "active_domain": {
+          "pass": 80000
+        },
+        "array_contract": {
+          "pass": 80000
+        },
+        "boundary_condition": {
+          "pass": 80000
+        },
+        "finite": {
+          "pass": 80000
+        },
+        "geometry_binary": {
+          "pass": 80000
+        },
+        "geometry_contract": {
+          "pass": 80000
+        },
+        "initial_condition": {
+          "pass": 80000
+        },
+        "initial_transition_contract": {
+          "pass": 80000
+        },
+        "initial_transition_replay": {
+          "pass": 80000
+        },
+        "pde_loss": {
+          "pass": 80000
+        },
+        "pde_residual_contract": {
+          "pass": 80000
+        }
+      },
+      "pde_loss_normalized": {
+        "count": 80000,
+        "max": 5.362849868674929e-05,
+        "max_sample_id": "seed-20260804/heat/neumann/low_frequency_fourier/low/000414",
+        "mean": 3.7696848833295128e-06,
+        "min": 9.398402988352515e-09,
+        "std": 5.3637890288424825e-06
+      },
+      "sample_count": 80000
+    },
+    "helmholtz": {
+      "check_counts": {
+        "active_domain": {
+          "pass": 80000
+        },
+        "array_contract": {
+          "pass": 80000
+        },
+        "boundary_condition": {
+          "pass": 80000
+        },
+        "finite": {
+          "pass": 80000
+        },
+        "geometry_binary": {
+          "pass": 80000
+        },
+        "geometry_contract": {
+          "pass": 80000
+        },
+        "initial_condition": {
+          "not_applicable": 80000
+        },
+        "pde_loss": {
+          "pass": 80000
+        },
+        "pde_residual_contract": {
+          "pass": 80000
+        }
+      },
+      "pde_loss_normalized": {
+        "count": 80000,
+        "max": 0.0012892006338720166,
+        "max_sample_id": "seed-20260804/helmholtz/neumann/threshold_level_set/low/000282",
+        "mean": 3.047368331472695e-05,
+        "min": 2.150526018786618e-08,
+        "std": 8.927239992687324e-05
+      },
+      "sample_count": 80000
+    },
+    "navier_stokes": {
+      "check_counts": {
+        "active_domain": {
+          "pass": 80000
+        },
+        "array_contract": {
+          "pass": 80000
+        },
+        "boundary_condition": {
+          "pass": 80000
+        },
+        "finite": {
+          "pass": 80000
+        },
+        "geometry_binary": {
+          "pass": 80000
+        },
+        "geometry_contract": {
+          "pass": 80000
+        },
+        "incompressibility": {
+          "pass": 80000
+        },
+        "initial_condition": {
+          "pass": 80000
+        },
+        "initial_transition_contract": {
+          "pass": 80000
+        },
+        "initial_transition_replay": {
+          "pass": 80000
+        },
+        "pde_loss": {
+          "pass": 80000
+        },
+        "pde_residual_contract": {
+          "pass": 80000
+        }
+      },
+      "pde_loss_normalized": {
+        "count": 80000,
+        "max": 0.0485157612782196,
+        "max_sample_id": "seed-20260804/navier_stokes/neumann/multi_frequency_fourier/high/000024",
+        "mean": 0.010470413065160812,
+        "min": 3.9734793208314515e-06,
+        "std": 0.008357342288112435
+      },
+      "sample_count": 80000
+    },
+    "poisson": {
+      "check_counts": {
+        "active_domain": {
+          "pass": 80000
+        },
+        "array_contract": {
+          "pass": 80000
+        },
+        "boundary_condition": {
+          "pass": 80000
+        },
+        "finite": {
+          "pass": 80000
+        },
+        "geometry_binary": {
+          "pass": 80000
+        },
+        "geometry_contract": {
+          "pass": 80000
+        },
+        "initial_condition": {
+          "not_applicable": 80000
+        },
+        "pde_loss": {
+          "pass": 80000
+        },
+        "pde_residual_contract": {
+          "pass": 80000
+        }
+      },
+      "pde_loss_normalized": {
+        "count": 80000,
+        "max": 8.828035553827985e-05,
+        "max_sample_id": "seed-20260804/poisson/neumann/piecewise_blocks/high/000417",
+        "mean": 1.56769453724842e-05,
+        "min": 0.0,
+        "std": 1.3846627598885488e-05
+      },
+      "sample_count": 80000
+    },
+    "reaction_diffusion": {
+      "check_counts": {
+        "active_domain": {
+          "pass": 80000
+        },
+        "array_contract": {
+          "pass": 80000
+        },
+        "boundary_condition": {
+          "pass": 80000
+        },
+        "finite": {
+          "pass": 80000
+        },
+        "geometry_binary": {
+          "pass": 80000
+        },
+        "geometry_contract": {
+          "pass": 80000
+        },
+        "initial_condition": {
+          "pass": 80000
+        },
+        "initial_transition_contract": {
+          "pass": 80000
+        },
+        "initial_transition_replay": {
+          "pass": 80000
+        },
+        "pde_loss": {
+          "pass": 80000
+        },
+        "pde_residual_contract": {
+          "pass": 80000
+        }
+      },
+      "pde_loss_normalized": {
+        "count": 80000,
+        "max": 0.04991468784379508,
+        "max_sample_id": "seed-20260804/reaction_diffusion/periodic/multi_frequency_fourier/medium/000537",
+        "mean": 0.002354175723315583,
+        "min": 5.293036628313135e-06,
+        "std": 0.005965376659151748
+      },
+      "sample_count": 80000
+    }
+  },
+  "evaluated_slice": {
+    "burgers": {
+      "boundary": "periodic",
+      "condition": "smooth_grf",
+      "max_normalized_residual": 0.03852977681519583,
+      "mean_normalized_residual": 0.012630052776674441,
+      "min_normalized_residual": 0.0007306144693766497,
+      "normalization_thresholds": [
+        0.05
+      ],
+      "operator_ids": [
+        "pdeobs.quality.burgers.post_initial_dealiased_spectral_plus_replay_v2"
+      ],
+      "records": 2000,
+      "regime_counts": {
+        "high": 666,
+        "low": 667,
+        "medium": 667
+      },
+      "std_normalized_residual": 0.00828382582503339
+    },
+    "darcy": {
+      "boundary": "dirichlet",
+      "condition": "smooth_grf",
+      "max_normalized_residual": 1.567409082261305e-05,
+      "mean_normalized_residual": 1.1408362559777353e-05,
+      "min_normalized_residual": 1.0046308695783328e-05,
+      "normalization_thresholds": [
+        0.05
+      ],
+      "operator_ids": [
+        "pdeobs.quality.darcy.fd2_v1"
+      ],
+      "records": 2000,
+      "regime_counts": {
+        "high": 666,
+        "low": 667,
+        "medium": 667
+      },
+      "std_normalized_residual": 4.786011612991998e-07
+    },
+    "heat": {
+      "boundary": "periodic",
+      "condition": "smooth_grf",
+      "max_normalized_residual": 1.5109280658223655e-08,
+      "mean_normalized_residual": 1.3239560152128577e-08,
+      "min_normalized_residual": 1.2406604170144912e-08,
+      "normalization_thresholds": [
+        0.05
+      ],
+      "operator_ids": [
+        "pdeobs.quality.heat.periodic_spectral_semigroup_plus_fd2_v3"
+      ],
+      "records": 2000,
+      "regime_counts": {
+        "high": 666,
+        "low": 667,
+        "medium": 667
+      },
+      "std_normalized_residual": 6.821444433749623e-10
+    },
+    "helmholtz": {
+      "boundary": "dirichlet",
+      "condition": "smooth_grf",
+      "max_normalized_residual": 3.515267205764849e-05,
+      "mean_normalized_residual": 1.8015463186808047e-05,
+      "min_normalized_residual": 7.331832353393609e-06,
+      "normalization_thresholds": [
+        0.05
+      ],
+      "operator_ids": [
+        "pdeobs.quality.helmholtz.fd2_boundary_v1"
+      ],
+      "records": 2000,
+      "regime_counts": {
+        "high": 666,
+        "low": 667,
+        "medium": 667
+      },
+      "std_normalized_residual": 4.313685113992361e-06
+    },
+    "navier_stokes": {
+      "boundary": "periodic",
+      "condition": "smooth_grf",
+      "max_normalized_residual": 0.0001374805646803005,
+      "mean_normalized_residual": 5.079631017523875e-05,
+      "min_normalized_residual": 1.516765029938718e-05,
+      "normalization_thresholds": [
+        0.05
+      ],
+      "operator_ids": [
+        "pdeobs.quality.navier_stokes.post_initial_vorticity_spectral_plus_replay_v3"
+      ],
+      "records": 2000,
+      "regime_counts": {
+        "high": 666,
+        "low": 667,
+        "medium": 667
+      },
+      "std_normalized_residual": 2.9419301221164477e-05
+    },
+    "poisson": {
+      "boundary": "dirichlet",
+      "condition": "smooth_grf",
+      "max_normalized_residual": 2.842604231614584e-05,
+      "mean_normalized_residual": 1.6883656618851614e-05,
+      "min_normalized_residual": 6.721521117097978e-06,
+      "normalization_thresholds": [
+        0.05
+      ],
+      "operator_ids": [
+        "pdeobs.quality.poisson.fd2_v1"
+      ],
+      "records": 2000,
+      "regime_counts": {
+        "high": 666,
+        "low": 667,
+        "medium": 667
+      },
+      "std_normalized_residual": 3.5489639665179456e-06
+    },
+    "reaction_diffusion": {
+      "boundary": "periodic",
+      "condition": "smooth_grf",
+      "max_normalized_residual": 0.00015511597226446736,
+      "mean_normalized_residual": 3.392681343670606e-05,
+      "min_normalized_residual": 1.4382199869986214e-05,
+      "normalization_thresholds": [
+        0.05
+      ],
+      "operator_ids": [
+        "pdeobs.quality.reaction_diffusion.post_initial_spectral_plus_replay_v2"
+      ],
+      "records": 2000,
+      "regime_counts": {
+        "high": 666,
+        "low": 667,
+        "medium": 667
+      },
+      "std_normalized_residual": 2.3835785076740723e-05
+    }
+  },
+  "interpretation": "Recorded generation-time discrete residual and consistency checks; not independent reference-solution or grid-convergence validation.",
+  "method": "Counts, weighted first/second moments and extrema combined across disjoint calibration groups after exact boundary/condition filtering.",
+  "posthoc_regeneration": false,
+  "schema_version": "pdeobs-production-qc-summary-audit-v1",
+  "source_artifact": "production summary.json; dataset.quality.by_calibration_key",
+  "source_summary_sha256": "b0141eec2199615a27facc75e2517ec4ec7e00913638e48c84ab2c88a2be77c1",
+  "total_evaluated_slice_records": 14000
+}

@@ -1,0 +1,18 @@
+include: full_to_partial_base.yaml
+name: full-to-partial-gnot
+method:
+  name: gnot
+  kwargs:
+    in_channels: 1
+    out_channels: 1
+    hidden: 128
+    layers: 3
+    heads: 1
+    experts: 2
+    inner_ratio: 4
+    mlp_layers: 3
+    dropout: 0.0
+    geometry_channels: 1
+training:
+  batch_size: 1
+

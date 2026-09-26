@@ -1,0 +1,142 @@
+{
+  "utc": "2026-09-21T14:52:23Z",
+  "tiers": {
+    "T1": {
+      "status": "done",
+      "summary": {
+        "combos": 840,
+        "supported": 840,
+        "unsupported_or_error": 0,
+        "seconds": 31.8
+      },
+      "seconds": 31.9
+    },
+    "T2": {
+      "status": "done",
+      "summary": {
+        "general_ok": 81,
+        "general_total": 86,
+        "paper_exact": true,
+        "errors_rejected": true
+      },
+      "seconds": 0.0
+    },
+    "T3": {
+      "status": "done",
+      "summary": {
+        "passed": 9,
+        "total": 26
+      },
+      "seconds": 1.7
+    },
+    "T4": {
+      "status": "done",
+      "summary": {
+        "passed": 14,
+        "total": 16
+      },
+      "seconds": 4.4
+    },
+    "T5": {
+      "status": "done",
+      "summary": {
+        "passed": 0,
+        "total": 14
+      },
+      "seconds": 80.5
+    },
+    "T6": {
+      "status": "done",
+      "summary": {
+        "passed": 24,
+        "total": 24
+      },
+      "seconds": 1.8
+    },
+    "T7": {
+      "status": "crashed",
+      "error": "ValueError: production data have wrong regimes: ['low']",
+      "trace": "Traceback (most recent call last):\n  File \"/workspace/pdeobs/sweep-run/remote_full_coverage.py\", line 680, in main\n    s = TIERS[t]()\n        ^^^^^^^^^^\n  File \"/workspace/pdeobs/sweep-run/remote_full_coverage.py\", line 355, in t7_splits_budgets\n    p = api.plan_split(meta, \"paper\", seed=20260804, identity=ident)\n        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/pdeobs/sweep-run/envs/v020/lib/python3.11/site-packages/pdeobs/api/train.py\", line 134, in plan_split\n    train_idx, test_idx, receipt = stable_split(list(metadata), seed, identity)\n                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/pdeobs/sweep-run/envs/v020/lib/python3.11/site-packages/pdeobs/one_setting.py\", line 132, in stable_split\n    raise ValueError(f\"production data have wrong regimes: {sorted(groups)}\")\nValueError: production data have wrong regimes: ['low']\n",
+      "seconds": 6.7
+    },
+    "T8": {
+      "status": "crashed",
+      "error": "FileNotFoundError: Checkpoint does not exist: /workspace/pdeobs/sweep-run/work/full/t8/base/model/checkpoints/last.pt",
+      "trace": "Traceback (most recent call last):\n  File \"/workspace/pdeobs/sweep-run/remote_full_coverage.py\", line 680, in main\n    s = TIERS[t]()\n        ^^^^^^^^^^\n  File \"/workspace/pdeobs/sweep-run/remote_full_coverage.py\", line 431, in t8_artifacts_inference\n    leg = api.load_legacy_checkpoint(art / \"checkpoints\" / \"last.pt\", model=\"fno\", task=\"recovery\", params=r.resolved[\"model\"][\"kwargs\"], device=\"cuda\")\n          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/pdeobs/sweep-run/envs/v020/lib/python3.11/site-packages/pdeobs/api/artifacts.py\", line 222, in load_legacy_checkpoint\n    payload = load_checkpoint_payload(path, map_location=\"cpu\")\n              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/pdeobs/sweep-run/envs/v020/lib/python3.11/site-packages/pdeobs/training.py\", line 256, in load_checkpoint_payload\n    raise FileNotFoundError(f\"Checkpoint does not exist: {source}\")\nFileNotFoundError: Checkpoint does not exist: /workspace/pdeobs/sweep-run/work/full/t8/base/model/checkpoints/last.pt\n",
+      "seconds": 0.2
+    },
+    "T9": {
+      "status": "done",
+      "summary": {
+        "as_expected": 30,
+        "total": 32
+      },
+      "seconds": 22.7
+    },
+    "T10": {
+      "status": "done",
+      "summary": {
+        "all_within_tol": true
+      },
+      "seconds": 0.3
+    },
+    "T11": {
+      "status": "done",
+      "summary": {
+        "gpu_bitwise": false,
+        "cpu_bitwise": true
+      },
+      "seconds": 0.1
+    },
+    "T12": {
+      "status": "done",
+      "summary": {
+        "core_passed": 521,
+        "core_failed": 0,
+        "api": "38 passed in 2.59s"
+      },
+      "seconds": 14.4
+    },
+    "T13": {
+      "status": "done",
+      "summary": {
+        "passed": 14,
+        "total": 14,
+        "max_peak_gpu_mb": 19930.1,
+        "epochs_500_hours": {
+          "fno:recovery@128 bs=8": 0.44,
+          "fno:rollout@128 bs=8": 0.72,
+          "pino:recovery@128 bs=4": 1.52,
+          "pino:rollout@128 bs=4": 2.91,
+          "ufno:recovery@128 bs=4": 2.1,
+          "ufno:rollout@128 bs=4": 3.39,
+          "cno:recovery@128 bs=8": 0.39,
+          "cno:rollout@128 bs=8": 0.78,
+          "deeponet:recovery@128 bs=4": 0.37,
+          "deeponet:rollout@128 bs=4": 0.61,
+          "gnot:recovery@128 bs=4": 6.51,
+          "gnot:rollout@128 bs=4": 15.43,
+          "transolver:recovery@128 bs=4": 7.12,
+          "transolver:rollout@128 bs=2": 34.95
+        }
+      },
+      "seconds": 11.6
+    },
+    "T14": {
+      "status": "done",
+      "summary": {
+        "gated": true
+      },
+      "seconds": 0.0
+    }
+  },
+  "env": {
+    "torch": "2.7.1+cu128",
+    "cuda": "12.8",
+    "device": "NVIDIA GeForce RTX 5090",
+    "capability": [
+      12,
+      0
+    ]
+  }
+}

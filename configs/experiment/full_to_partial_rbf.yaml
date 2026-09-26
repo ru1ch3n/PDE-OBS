@@ -1,0 +1,8 @@
+include: full_to_partial_base.yaml
+name: full-to-partial-rbf
+method:
+  name: rbf
+  kwargs:
+    epsilon: 2.0
+    smoothing: 0.000001
+    max_centers: 512

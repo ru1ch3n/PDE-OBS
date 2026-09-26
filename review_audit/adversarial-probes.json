@@ -1,0 +1,110 @@
+[
+  {
+    "case": "canonical_target_order",
+    "result": "valid"
+  },
+  {
+    "case": "reordered_targets_correct_ids",
+    "result": {
+      "scoring_version": "pdeobs-strict-v1",
+      "status": "invalid",
+      "errors": [
+        "observed values disagree with the noiseless recovery target"
+      ],
+      "expected_identity_count": 2,
+      "actual_prediction_identity_count": 2,
+      "actual_target_identity_count": 2,
+      "scored_identity_count": 0,
+      "summary": null,
+      "per_identity": [],
+      "task": "recovery",
+      "observation_id": "stored",
+      "checkpoint_id": "unknown-checkpoint",
+      "provenance_note": "Caller-declared contract; identity validation is not provenance authentication.",
+      "easy_api": {
+        "api_version": "pdeobs-easy-api/v1",
+        "prediction_provenance": {}
+      }
+    }
+  },
+  {
+    "case": "numpy_target_ids",
+    "exception": "ValueError",
+    "message": "The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()"
+  },
+  {
+    "case": "float_target_time_indices",
+    "result": "valid"
+  },
+  {
+    "case": "raw_mask_nan",
+    "result": {
+      "converted_mask": 0.0,
+      "score_status": "valid"
+    }
+  },
+  {
+    "case": "raw_mask_inf",
+    "result": {
+      "converted_mask": 1.0,
+      "score_status": "valid"
+    }
+  },
+  {
+    "case": "raw_mask_-1.0",
+    "result": {
+      "converted_mask": 0.0,
+      "score_status": "valid"
+    }
+  },
+  {
+    "case": "raw_mask_0.5",
+    "result": {
+      "converted_mask": 1.0,
+      "score_status": "valid"
+    }
+  },
+  {
+    "case": "raw_mask_2.0",
+    "result": {
+      "converted_mask": 1.0,
+      "score_status": "valid"
+    }
+  },
+  {
+    "case": "unknown_stage_validates",
+    "result": {
+      "schema_version": "pdeobs-pipeline/v1",
+      "api_version": "pdeobs-easy-api/v1",
+      "name": null,
+      "seed": 0,
+      "device": "auto",
+      "out": "/tmp/pdeobs-probe-cm0juvgp",
+      "stages": [
+        "trian"
+      ],
+      "task": null
+    }
+  },
+  {
+    "case": "unknown_stage_runs",
+    "result": {
+      "schema_version": "pdeobs-pipeline/v1",
+      "resolved": {
+        "schema_version": "pdeobs-pipeline/v1",
+        "api_version": "pdeobs-easy-api/v1",
+        "name": null,
+        "seed": 0,
+        "device": "auto",
+        "out": "/tmp/pdeobs-probe-cm0juvgp",
+        "stages": [
+          "trian"
+        ],
+        "task": null
+      },
+      "stages": {},
+      "status": "complete",
+      "seconds": 0.0
+    }
+  }
+]

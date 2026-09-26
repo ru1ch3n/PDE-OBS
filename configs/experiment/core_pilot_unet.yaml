@@ -1,0 +1,52 @@
+schema_version: 1
+name: core-pilot-unet
+seed: 20260804
+task: recovery
+
+data:
+  root: ${PDEOBS_DATA}
+  train_glob: "**/*.h5"
+  # The immutable 3360-shard release is checksum-validated once by the final
+  # aggregate step; per-job rehashing would add I/O without new evidence.
+  verify_shards: false
+  allow_split_fallback: false
+  split: iid
+  target_time: -1
+  # Every NS route stores scalar vorticity; periodic records tag it "vorticity"
+  # while bounded and obstacle records tag it "bounded_vorticity" and
+  # "bounded_obstacle_vorticity".  Requesting the canonical vorticity view
+  # collapses those tags so every NS checkpoint has one output channel.
+  state_representation: vorticity
+  filters:
+    pde: poisson
+  mask:
+    protocol: random_3pct
+
+method:
+  name: unet
+  kwargs:
+    in_channels: 1
+    out_channels: 1
+    width: 32
+
+training:
+  epochs: 100
+  batch_size: 16
+  learning_rate: 0.001
+  weight_decay: 0.0001
+  num_workers: 4
+  pin_memory: true
+  persistent_workers: true
+  checkpoint_every: 5
+  device: auto
+  mixed_precision: true
+  grad_clip: 1.0
+  early_stopping_patience: 12
+  deterministic: true
+
+evaluation:
+  include_frequency_bands: true
+  include_stability: true
+
+output:
+  root: ${PDEOBS_RUNS}

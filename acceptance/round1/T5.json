@@ -1,0 +1,81 @@
+{
+  "flows": {
+    "cno:recovery@128": {
+      "error": "FileExistsError: [Errno 17] File exists: '/workspace/pdeobs/sweep-run/work/full/t5/cno:recovery@128/general/random'",
+      "status": "failed",
+      "trace": "^^^^^^^^^^^^^^^^\n  File \"/workspace/pdeobs/sweep-run/envs/v020/lib/python3.11/site-packages/pdeobs/api/evaluate.py\", line 160, in evaluate_views\n    report = evaluate_records(predictor, data, spec, out=out_dir / spec.name, sample_ids=sample_ids, batch_size=batch_size,\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/pdeobs/sweep-run/envs/v020/lib/python3.11/site-packages/pdeobs/api/evaluate.py\", line 126, in evaluate_records\n    out_dir.mkdir(parents=True, exist_ok=False)\n  File \"/opt/conda/lib/python3.11/pathlib.py\", line 1116, in mkdir\n    os.mkdir(self, mode)\nFileExistsError: [Errno 17] File exists: '/workspace/pdeobs/sweep-run/work/full/t5/cno:recovery@128/general/random'\n"
+    },
+    "cno:rollout@128": {
+      "error": "FileExistsError: [Errno 17] File exists: '/workspace/pdeobs/sweep-run/work/full/t5/cno:rollout@128/general/random'",
+      "status": "failed",
+      "trace": "^^^^^^^^^^^^^^^^^\n  File \"/workspace/pdeobs/sweep-run/envs/v020/lib/python3.11/site-packages/pdeobs/api/evaluate.py\", line 160, in evaluate_views\n    report = evaluate_records(predictor, data, spec, out=out_dir / spec.name, sample_ids=sample_ids, batch_size=batch_size,\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/pdeobs/sweep-run/envs/v020/lib/python3.11/site-packages/pdeobs/api/evaluate.py\", line 126, in evaluate_records\n    out_dir.mkdir(parents=True, exist_ok=False)\n  File \"/opt/conda/lib/python3.11/pathlib.py\", line 1116, in mkdir\n    os.mkdir(self, mode)\nFileExistsError: [Errno 17] File exists: '/workspace/pdeobs/sweep-run/work/full/t5/cno:rollout@128/general/random'\n"
+    },
+    "deeponet:recovery@128": {
+      "error": "FileExistsError: [Errno 17] File exists: '/workspace/pdeobs/sweep-run/work/full/t5/deeponet:recovery@128/general/random'",
+      "status": "failed",
+      "trace": "^^^^^^^^^^^\n  File \"/workspace/pdeobs/sweep-run/envs/v020/lib/python3.11/site-packages/pdeobs/api/evaluate.py\", line 160, in evaluate_views\n    report = evaluate_records(predictor, data, spec, out=out_dir / spec.name, sample_ids=sample_ids, batch_size=batch_size,\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/pdeobs/sweep-run/envs/v020/lib/python3.11/site-packages/pdeobs/api/evaluate.py\", line 126, in evaluate_records\n    out_dir.mkdir(parents=True, exist_ok=False)\n  File \"/opt/conda/lib/python3.11/pathlib.py\", line 1116, in mkdir\n    os.mkdir(self, mode)\nFileExistsError: [Errno 17] File exists: '/workspace/pdeobs/sweep-run/work/full/t5/deeponet:recovery@128/general/random'\n"
+    },
+    "deeponet:rollout@128": {
+      "error": "FileExistsError: [Errno 17] File exists: '/workspace/pdeobs/sweep-run/work/full/t5/deeponet:rollout@128/general/random'",
+      "status": "failed",
+      "trace": "^^^^^^^^^^^^\n  File \"/workspace/pdeobs/sweep-run/envs/v020/lib/python3.11/site-packages/pdeobs/api/evaluate.py\", line 160, in evaluate_views\n    report = evaluate_records(predictor, data, spec, out=out_dir / spec.name, sample_ids=sample_ids, batch_size=batch_size,\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/pdeobs/sweep-run/envs/v020/lib/python3.11/site-packages/pdeobs/api/evaluate.py\", line 126, in evaluate_records\n    out_dir.mkdir(parents=True, exist_ok=False)\n  File \"/opt/conda/lib/python3.11/pathlib.py\", line 1116, in mkdir\n    os.mkdir(self, mode)\nFileExistsError: [Errno 17] File exists: '/workspace/pdeobs/sweep-run/work/full/t5/deeponet:rollout@128/general/random'\n"
+    },
+    "fno:recovery@128": {
+      "error": "FileExistsError: [Errno 17] File exists: '/workspace/pdeobs/sweep-run/work/full/t5/fno:recovery@128/general/random'",
+      "status": "failed",
+      "trace": "^^^^^^^^^^^^^^^^\n  File \"/workspace/pdeobs/sweep-run/envs/v020/lib/python3.11/site-packages/pdeobs/api/evaluate.py\", line 160, in evaluate_views\n    report = evaluate_records(predictor, data, spec, out=out_dir / spec.name, sample_ids=sample_ids, batch_size=batch_size,\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/pdeobs/sweep-run/envs/v020/lib/python3.11/site-packages/pdeobs/api/evaluate.py\", line 126, in evaluate_records\n    out_dir.mkdir(parents=True, exist_ok=False)\n  File \"/opt/conda/lib/python3.11/pathlib.py\", line 1116, in mkdir\n    os.mkdir(self, mode)\nFileExistsError: [Errno 17] File exists: '/workspace/pdeobs/sweep-run/work/full/t5/fno:recovery@128/general/random'\n"
+    },
+    "fno:rollout@128": {
+      "error": "FileExistsError: [Errno 17] File exists: '/workspace/pdeobs/sweep-run/work/full/t5/fno:rollout@128/general/random'",
+      "status": "failed",
+      "trace": "^^^^^^^^^^^^^^^^^\n  File \"/workspace/pdeobs/sweep-run/envs/v020/lib/python3.11/site-packages/pdeobs/api/evaluate.py\", line 160, in evaluate_views\n    report = evaluate_records(predictor, data, spec, out=out_dir / spec.name, sample_ids=sample_ids, batch_size=batch_size,\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/pdeobs/sweep-run/envs/v020/lib/python3.11/site-packages/pdeobs/api/evaluate.py\", line 126, in evaluate_records\n    out_dir.mkdir(parents=True, exist_ok=False)\n  File \"/opt/conda/lib/python3.11/pathlib.py\", line 1116, in mkdir\n    os.mkdir(self, mode)\nFileExistsError: [Errno 17] File exists: '/workspace/pdeobs/sweep-run/work/full/t5/fno:rollout@128/general/random'\n"
+    },
+    "gnot:recovery@128": {
+      "error": "FileExistsError: [Errno 17] File exists: '/workspace/pdeobs/sweep-run/work/full/t5/gnot:recovery@128/general/random'",
+      "status": "failed",
+      "trace": "^^^^^^^^^^^^^^^\n  File \"/workspace/pdeobs/sweep-run/envs/v020/lib/python3.11/site-packages/pdeobs/api/evaluate.py\", line 160, in evaluate_views\n    report = evaluate_records(predictor, data, spec, out=out_dir / spec.name, sample_ids=sample_ids, batch_size=batch_size,\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/pdeobs/sweep-run/envs/v020/lib/python3.11/site-packages/pdeobs/api/evaluate.py\", line 126, in evaluate_records\n    out_dir.mkdir(parents=True, exist_ok=False)\n  File \"/opt/conda/lib/python3.11/pathlib.py\", line 1116, in mkdir\n    os.mkdir(self, mode)\nFileExistsError: [Errno 17] File exists: '/workspace/pdeobs/sweep-run/work/full/t5/gnot:recovery@128/general/random'\n"
+    },
+    "gnot:rollout@128": {
+      "error": "FileExistsError: [Errno 17] File exists: '/workspace/pdeobs/sweep-run/work/full/t5/gnot:rollout@128/general/random'",
+      "status": "failed",
+      "trace": "^^^^^^^^^^^^^^^^\n  File \"/workspace/pdeobs/sweep-run/envs/v020/lib/python3.11/site-packages/pdeobs/api/evaluate.py\", line 160, in evaluate_views\n    report = evaluate_records(predictor, data, spec, out=out_dir / spec.name, sample_ids=sample_ids, batch_size=batch_size,\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/pdeobs/sweep-run/envs/v020/lib/python3.11/site-packages/pdeobs/api/evaluate.py\", line 126, in evaluate_records\n    out_dir.mkdir(parents=True, exist_ok=False)\n  File \"/opt/conda/lib/python3.11/pathlib.py\", line 1116, in mkdir\n    os.mkdir(self, mode)\nFileExistsError: [Errno 17] File exists: '/workspace/pdeobs/sweep-run/work/full/t5/gnot:rollout@128/general/random'\n"
+    },
+    "pino:recovery@128": {
+      "error": "FileExistsError: [Errno 17] File exists: '/workspace/pdeobs/sweep-run/work/full/t5/pino:recovery@128/general/random'",
+      "status": "failed",
+      "trace": "^^^^^^^^^^^^^^^\n  File \"/workspace/pdeobs/sweep-run/envs/v020/lib/python3.11/site-packages/pdeobs/api/evaluate.py\", line 160, in evaluate_views\n    report = evaluate_records(predictor, data, spec, out=out_dir / spec.name, sample_ids=sample_ids, batch_size=batch_size,\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/pdeobs/sweep-run/envs/v020/lib/python3.11/site-packages/pdeobs/api/evaluate.py\", line 126, in evaluate_records\n    out_dir.mkdir(parents=True, exist_ok=False)\n  File \"/opt/conda/lib/python3.11/pathlib.py\", line 1116, in mkdir\n    os.mkdir(self, mode)\nFileExistsError: [Errno 17] File exists: '/workspace/pdeobs/sweep-run/work/full/t5/pino:recovery@128/general/random'\n"
+    },
+    "pino:rollout@128": {
+      "error": "FileExistsError: [Errno 17] File exists: '/workspace/pdeobs/sweep-run/work/full/t5/pino:rollout@128/general/random'",
+      "status": "failed",
+      "trace": "^^^^^^^^^^^^^^^^\n  File \"/workspace/pdeobs/sweep-run/envs/v020/lib/python3.11/site-packages/pdeobs/api/evaluate.py\", line 160, in evaluate_views\n    report = evaluate_records(predictor, data, spec, out=out_dir / spec.name, sample_ids=sample_ids, batch_size=batch_size,\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/pdeobs/sweep-run/envs/v020/lib/python3.11/site-packages/pdeobs/api/evaluate.py\", line 126, in evaluate_records\n    out_dir.mkdir(parents=True, exist_ok=False)\n  File \"/opt/conda/lib/python3.11/pathlib.py\", line 1116, in mkdir\n    os.mkdir(self, mode)\nFileExistsError: [Errno 17] File exists: '/workspace/pdeobs/sweep-run/work/full/t5/pino:rollout@128/general/random'\n"
+    },
+    "transolver:recovery@128": {
+      "error": "FileExistsError: [Errno 17] File exists: '/workspace/pdeobs/sweep-run/work/full/t5/transolver:recovery@128/general/random'",
+      "status": "failed",
+      "trace": "^^^^^^^^^\n  File \"/workspace/pdeobs/sweep-run/envs/v020/lib/python3.11/site-packages/pdeobs/api/evaluate.py\", line 160, in evaluate_views\n    report = evaluate_records(predictor, data, spec, out=out_dir / spec.name, sample_ids=sample_ids, batch_size=batch_size,\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/pdeobs/sweep-run/envs/v020/lib/python3.11/site-packages/pdeobs/api/evaluate.py\", line 126, in evaluate_records\n    out_dir.mkdir(parents=True, exist_ok=False)\n  File \"/opt/conda/lib/python3.11/pathlib.py\", line 1116, in mkdir\n    os.mkdir(self, mode)\nFileExistsError: [Errno 17] File exists: '/workspace/pdeobs/sweep-run/work/full/t5/transolver:recovery@128/general/random'\n"
+    },
+    "transolver:rollout@128": {
+      "error": "FileExistsError: [Errno 17] File exists: '/workspace/pdeobs/sweep-run/work/full/t5/transolver:rollout@128/general/random'",
+      "status": "failed",
+      "trace": "^^^^^^^^^^\n  File \"/workspace/pdeobs/sweep-run/envs/v020/lib/python3.11/site-packages/pdeobs/api/evaluate.py\", line 160, in evaluate_views\n    report = evaluate_records(predictor, data, spec, out=out_dir / spec.name, sample_ids=sample_ids, batch_size=batch_size,\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/pdeobs/sweep-run/envs/v020/lib/python3.11/site-packages/pdeobs/api/evaluate.py\", line 126, in evaluate_records\n    out_dir.mkdir(parents=True, exist_ok=False)\n  File \"/opt/conda/lib/python3.11/pathlib.py\", line 1116, in mkdir\n    os.mkdir(self, mode)\nFileExistsError: [Errno 17] File exists: '/workspace/pdeobs/sweep-run/work/full/t5/transolver:rollout@128/general/random'\n"
+    },
+    "ufno:recovery@128": {
+      "error": "FileExistsError: [Errno 17] File exists: '/workspace/pdeobs/sweep-run/work/full/t5/ufno:recovery@128/general/random'",
+      "status": "failed",
+      "trace": "^^^^^^^^^^^^^^^\n  File \"/workspace/pdeobs/sweep-run/envs/v020/lib/python3.11/site-packages/pdeobs/api/evaluate.py\", line 160, in evaluate_views\n    report = evaluate_records(predictor, data, spec, out=out_dir / spec.name, sample_ids=sample_ids, batch_size=batch_size,\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/pdeobs/sweep-run/envs/v020/lib/python3.11/site-packages/pdeobs/api/evaluate.py\", line 126, in evaluate_records\n    out_dir.mkdir(parents=True, exist_ok=False)\n  File \"/opt/conda/lib/python3.11/pathlib.py\", line 1116, in mkdir\n    os.mkdir(self, mode)\nFileExistsError: [Errno 17] File exists: '/workspace/pdeobs/sweep-run/work/full/t5/ufno:recovery@128/general/random'\n"
+    },
+    "ufno:rollout@128": {
+      "error": "FileExistsError: [Errno 17] File exists: '/workspace/pdeobs/sweep-run/work/full/t5/ufno:rollout@128/general/random'",
+      "status": "failed",
+      "trace": "^^^^^^^^^^^^^^^^\n  File \"/workspace/pdeobs/sweep-run/envs/v020/lib/python3.11/site-packages/pdeobs/api/evaluate.py\", line 160, in evaluate_views\n    report = evaluate_records(predictor, data, spec, out=out_dir / spec.name, sample_ids=sample_ids, batch_size=batch_size,\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/pdeobs/sweep-run/envs/v020/lib/python3.11/site-packages/pdeobs/api/evaluate.py\", line 126, in evaluate_records\n    out_dir.mkdir(parents=True, exist_ok=False)\n  File \"/opt/conda/lib/python3.11/pathlib.py\", line 1116, in mkdir\n    os.mkdir(self, mode)\nFileExistsError: [Errno 17] File exists: '/workspace/pdeobs/sweep-run/work/full/t5/ufno:rollout@128/general/random'\n"
+    }
+  },
+  "summary": {
+    "passed": 0,
+    "total": 14
+  },
+  "tier": "T5",
+  "utc": "2026-09-21T14:53:02Z",
+  "what": "7 main models x all observation views at 128^2 (paper nine + general)"
+}

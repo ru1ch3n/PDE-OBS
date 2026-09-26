@@ -1,0 +1,129 @@
+{
+ "checks": {
+  "burgers": {
+   "identities": 200,
+   "identity_set_sha256": "aeaead4c5a0f3228d2bad53178015b743a3d0e79c7c1e823169b304fe57e701f",
+   "regime_groups": {
+    "high": 66,
+    "low": 67,
+    "medium": 67
+   },
+   "worst_point_vs_index": 3.552713678800501e-15
+  },
+  "darcy": {
+   "identities": 200,
+   "identity_set_sha256": "f236435f719883a49f9c2964f194bfbbdb86115624990b79c29c63dd0574df2c",
+   "regime_groups": {
+    "high": 66,
+    "low": 67,
+    "medium": 67
+   },
+   "worst_point_vs_index": 7.105427357601002e-15
+  },
+  "heat": {
+   "identities": 200,
+   "identity_set_sha256": "35aa2bd5ed84e8fe16d567a69f659a0aee51e1c79cd3d5b2553e906e2b56e001",
+   "regime_groups": {
+    "high": 66,
+    "low": 67,
+    "medium": 67
+   },
+   "worst_point_vs_index": 1.4210854715202004e-14
+  },
+  "helmholtz": {
+   "identities": 200,
+   "identity_set_sha256": "9cdf6d79112825a74c320182b665590e1183819251d35440fe048320ad2fc8b0",
+   "regime_groups": {
+    "high": 66,
+    "low": 67,
+    "medium": 67
+   },
+   "worst_point_vs_index": 7.105427357601002e-15
+  },
+  "navier_stokes": {
+   "identities": 200,
+   "identity_set_sha256": "47f5416cf0bac204f3767f0aa20cc988273ec4c0d82d85be197da3ab47e12690",
+   "regime_groups": {
+    "high": 66,
+    "low": 67,
+    "medium": 67
+   },
+   "worst_point_vs_index": 8.881784197001252e-16
+  },
+  "poisson": {
+   "identities": 200,
+   "identity_set_sha256": "22fbbba10e437d29e34f9b9a687dfde7d147a42f8feeabb8972ccbd54009786d",
+   "regime_groups": {
+    "high": 66,
+    "low": 67,
+    "medium": 67
+   },
+   "worst_point_vs_index": 2.842170943040401e-14
+  },
+  "reaction_diffusion": {
+   "identities": 200,
+   "identity_set_sha256": "2d488574462d2aedcb5ed9ad4a9844da9417192934e2237295027c51ea2d628a",
+   "regime_groups": {
+    "high": 66,
+    "low": 67,
+    "medium": 67
+   },
+   "worst_point_vs_index": 1.4210854715202004e-14
+  }
+ },
+ "generated_utc": "2026-09-26T03:08:54+00:00",
+ "global": {
+  "fixed13_median_C_over_D": {
+   "ci": [
+    10.436708520297728,
+    11.118080446451785
+   ],
+   "estimate": 10.738459398679225
+  },
+  "median_C_over_D": {
+   "ci": [
+    10.066204833785866,
+    10.712541307248282
+   ],
+   "estimate": 10.460488860494763
+  },
+  "pairs_C_gt_D": {
+   "ci": [
+    49.0,
+    49.0
+   ],
+   "estimate": 49.0
+  }
+ },
+ "interpretation": "conditional test-identity intervals for the fixed trained models; not training-seed uncertainty",
+ "interval": "95 % percentile",
+ "point_estimates_reproduce_released_statistics": true,
+ "replicates": 5000,
+ "resampling": "identities drawn with replacement within each regime group; one draw per replicate shared by all methods, views and horizons of a PDE (paired)",
+ "rows": 7542,
+ "schema": "pdeobs-revision-bootstrap/20260926-v1",
+ "seed": 20260926,
+ "sources": {
+  "index_sha256": "5ae567e151c71fda46aa0cf3c6c08861f7d3ed01096fb2e89a9bf22e817b09d1",
+  "per_identity_sha256": {
+   "burgers": "736d9afaa6d627979abb8bad4e9cd799e3dcc66e80a3a1513754bf1d50026fe0",
+   "darcy": "a93670fca718408ba588a76895a1d36920d57e8d8617455fbdaeba3d2c4052bd",
+   "heat": "fea33bfe18cc2690f843b1b7fcc0d87fd0f65ee495c164820b48f086b982c1da",
+   "helmholtz": "094c32d01c66c65cc9690423004ba8eb53b6d06c3b366a4bb7215b8533178b29",
+   "navier_stokes": "55567b7e7d795103f5ef9261c2facc924f589d88af35bf62022107e65adc99e9",
+   "poisson": "cb1b5d2509ad6a50c6355af12f1eb7e1457ace77609c28e15bff5eb521ce70ca",
+   "reaction_diffusion": "628203783399979c2fc8c387ca7de4cb41cea7c7ad4fb9625e65ed6215701b82"
+  },
+  "statistics_sha256": "923c337a16b2e9401bffc547b5bdcfb3e2d27bed621b789e91d3181720c6a706"
+ },
+ "statistics": [
+  "C_minus_D",
+  "C_over_D",
+  "transfer_diff (E[v,w]-E[w,w])",
+  "transfer_ratio (E[v,w]/E[w,w])",
+  "density_ratio (E[v,w]/E[v,R50])",
+  "horizon_C_over_D (rollout)",
+  "median_C_over_D (pde, global 49 pairs, fixed 13 pairs)",
+  "pairs_with_C_greater_than_D"
+ ]
+}

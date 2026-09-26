@@ -1,0 +1,140 @@
+[
+  {
+    "case": "canonical_target_order",
+    "result": "valid"
+  },
+  {
+    "case": "reordered_targets_correct_ids",
+    "result": {
+      "scoring_version": "pdeobs-strict-v1",
+      "status": "valid",
+      "errors": [],
+      "expected_identity_count": 2,
+      "actual_prediction_identity_count": 2,
+      "actual_target_identity_count": 2,
+      "scored_identity_count": 2,
+      "summary": {
+        "rel_l2_joint_mean": 0.0,
+        "identity_count": 2,
+        "static_diagnostics": {
+          "full_common_denominator_mean": 0.0,
+          "observed_common_denominator_mean": 0.0,
+          "hidden_common_denominator_mean": 0.0,
+          "hidden_only_applicable_count": 0,
+          "hidden_only_status": "not_applicable_for_all_identities",
+          "hidden_only_rel_l2_mean": null
+        }
+      },
+      "per_identity": [
+        {
+          "identity": "a",
+          "rel_l2_joint": 0.0,
+          "static_diagnostics": {
+            "full_common_denominator": 0.0,
+            "observed_common_denominator": 0.0,
+            "hidden_common_denominator": 0.0,
+            "observed_scalar_count": 16,
+            "hidden_scalar_count": 0,
+            "hidden_only_status": "not_applicable",
+            "hidden_only_rel_l2": null
+          }
+        },
+        {
+          "identity": "b",
+          "rel_l2_joint": 0.0,
+          "static_diagnostics": {
+            "full_common_denominator": 0.0,
+            "observed_common_denominator": 0.0,
+            "hidden_common_denominator": 0.0,
+            "observed_scalar_count": 16,
+            "hidden_scalar_count": 0,
+            "hidden_only_status": "not_applicable",
+            "hidden_only_rel_l2": null
+          }
+        }
+      ],
+      "task": "recovery",
+      "observation_id": "stored",
+      "checkpoint_id": "unknown-checkpoint",
+      "provenance_note": "Caller-declared contract; identity validation is not provenance authentication.",
+      "config": {
+        "schema_version": "pdeobs-strict-contract-v1",
+        "task": "recovery",
+        "split": "demo",
+        "expected_ids": [
+          "a",
+          "b"
+        ],
+        "expected_shape": [
+          4,
+          4,
+          1
+        ],
+        "target_time_indices": [
+          0
+        ],
+        "observation_id": "stored",
+        "checkpoint_id": "unknown-checkpoint",
+        "scope": "user evaluation through the easy API; not a paper performance estimate",
+        "projection": false
+      },
+      "config_sha256": "821b43317c5f7236077eb6fb536a7bd0201061b702ffd87377ff05558c22a38c",
+      "identity_set_sha256": "0473ef2dc0d324ab659d3580c1134e9d812035905c4781fdd6d529b0c6860e13",
+      "expected_identity_order": [
+        "a",
+        "b"
+      ],
+      "epsilon": 1e-12,
+      "reduction": "float64 per-identity relative L2, then arithmetic mean",
+      "projection_applied": false,
+      "raw_arrays_checked": true,
+      "easy_api": {
+        "api_version": "pdeobs-easy-api/v1",
+        "prediction_provenance": {}
+      }
+    }
+  },
+  {
+    "case": "numpy_target_ids",
+    "result": "valid"
+  },
+  {
+    "case": "float_target_time_indices",
+    "result": "invalid"
+  },
+  {
+    "case": "raw_mask_nan",
+    "exception": "ValueError",
+    "message": "mask must contain finite real binary values"
+  },
+  {
+    "case": "raw_mask_inf",
+    "exception": "ValueError",
+    "message": "mask must contain finite real binary values"
+  },
+  {
+    "case": "raw_mask_-1.0",
+    "exception": "ValueError",
+    "message": "mask must contain only 0 and 1"
+  },
+  {
+    "case": "raw_mask_0.5",
+    "exception": "ValueError",
+    "message": "mask must contain only 0 and 1"
+  },
+  {
+    "case": "raw_mask_2.0",
+    "exception": "ValueError",
+    "message": "mask must contain only 0 and 1"
+  },
+  {
+    "case": "unknown_stage_validates",
+    "exception": "ValueError",
+    "message": "unknown pipeline stage; valid stages: ['data', 'observation', 'model', 'train', 'predict', 'evaluate']"
+  },
+  {
+    "case": "unknown_stage_runs",
+    "exception": "ValueError",
+    "message": "unknown pipeline stage; valid stages: ['data', 'observation', 'model', 'train', 'predict', 'evaluate']"
+  }
+]

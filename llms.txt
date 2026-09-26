@@ -1,0 +1,19 @@
+# PDE-OBS
+
+> Entry map for assistants. This is a local navigation convention, not a guarantee that any AI tool reads it automatically.
+
+- AI_START_HERE.md: first read, scope and command routing.
+- AGENTS.md: safety and scientific invariants.
+- docs/ai/QUICKSTART.md: commands by cost level (read-only, small CPU, evidence check, authorization-required).
+- docs/ai/PROTOCOLS.md: paper/custom/demo distinctions.
+- docs/paper_evidence.md: how a paper cell links to checkpoint, predictions and score; `python -m pdeobs.evidence`.
+- docs/observation_specs.md: v0.2.1 - protocol + parameter shorthand, train/test mixtures, `data.mask_seed` and `training.seed` for controlled multi-seed runs.
+- docs/archived_results.md: how the archived campaign runs are indexed, checked and tabulated without re-running; `tools/archived_results.py`.
+- results/archived_campaign/README.md: the generated index of all 441 identities (legacy campaign-evaluator metrics, cohort per row; complete grid, cohort-mixed).
+- docs/ai/ACCEPTANCE_INDEX.md, docs/ai/acceptance_index.json: which acceptance record applies, with hashes and superseded markers.
+- docs/ai/evidence_status.json: separately labeled archived claims and local measurements.
+- docs/ai/repository_index.json: code-path map.
+- docs/ai/WORKFLOWS.md: bounded examples and handoff instructions.
+- docs/ai/AUDIT.md: independent ZIP review and remaining blockers (overlay 1).
+- docs/ai/ACCEPTANCE_REPORT_overlay2.md: what overlay 2 changed, ran and did not establish.
+- AI_PATCH_NOTES.md: exact scope of the overlays.

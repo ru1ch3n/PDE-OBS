@@ -1,0 +1,103 @@
+{
+ "audit_entry": "mixed_train.py",
+ "authorization_sha256": "a8fc4f247ccf697646a449100191197b8a7bc17b22147167bd29a42e13b37c0d",
+ "automatic_retry": false,
+ "bundle_pins": {
+  "acceptance_policy.py": "e97f0dd8ae62b7fabff47cf0cbb27d6d423649ce4a1901c14ea8180099a3252a",
+  "base200.py": "27c30c8742a2f0305e4dee0a4ca1f7cea1d56310d4f4a0ac468a84b160b1c46d",
+  "budget200.py": "fbab4de183e5dfb43d369ce44ccec5cff6b100cd63c9c35ca4604096fe384bcc",
+  "budget_eva.py": "bbb793f12ebe8ce2aa60ed613c5888a15d4deffc918603cb8a726d61ad5fe24b",
+  "compat_mixed.py": "38223298e4bd0102dd051ad375145a66364f3f14546198be8dbfeaad927126be",
+  "mixed_builder.py": "1a89248d4c127c1d94377107baa39897db57e7e8606d27ec744dccb1f67ce888",
+  "mixed_eva.py": "1fd8f338880117937d8b42a907ae2a98411c70483c60ca94fff54b6c98d8fdaf",
+  "mixed_train.py": "ebd4bc8e900fed7db84a6e259260da2e2b9ee2eebe233a7e2aabc1ed37f7dc35",
+  "required-data.json": "8f06d6c8f81f3c70a66ab31747115f2e241a50378a262f65c95f232ab5ec6b9d",
+  "same_job_eva.py": "8a53df409ca89304a0c1b31eaff78acf7d73793b4496452125cb3b1edb47e960",
+  "scientific-patches.json": "8c9712baeb0d5ad89d33226c5ca1a1dda572ceba3f8d25deaacefbd0a6550794",
+  "study-authorization.json": "a8fc4f247ccf697646a449100191197b8a7bc17b22147167bd29a42e13b37c0d",
+  "study_guard.py": "53123f9e618da1a7e516284b2123573f88d36e988e496c9f5433e60d91a1c831",
+  "study_worker.py": "4c752bb6196df090d531b519725277f025ee671496be740386f7b465d50bd718",
+  "user-policy-amendment.json": "eb0d01cb3d63d4d9a89fb9146764212a0e348697990c8cdb42aa3311fd35b9ba"
+ },
+ "campaign": "<study-root>/_staging/all-pde-one-setting-v7r6-<COMMIT-1>/configs/campaign/all_pde_one_setting_10method_9x9_v7.yaml",
+ "cpus_per_worker": 6,
+ "dataset": "<study-root>/data/numerics-full-t15-full-<COMMIT-2>",
+ "dataset_summary_sha256": "b0141eec2199615a27facc75e2517ec4ec7e00913638e48c84ab2c88a2be77c1",
+ "device_names": [
+  "V100"
+ ],
+ "evaluation_gate": "<study-root>/_runtime-gates/pdeobs-mixed-study-evaluation",
+ "evaluation_root": "<study-root>/benchmark-runs/_study-mixed-pattern-evaluation/mixed-nine-views-20260925",
+ "gpus": {
+  "0": "<GPU-1>",
+  "1": "<GPU-2>",
+  "2": "<GPU-3>",
+  "3": "<GPU-4>"
+ },
+ "host": "<host>",
+ "mem_gib": 32,
+ "order": "one worker per row, one GPU each; EVA under the shared single-EVA lock",
+ "overlay_manifest": "<study-root>/_staging/pdeobs-mixed-study-20260925/overlay-manifest.json",
+ "overlay_manifest_sha256": "9c4b75d3a43a42005dca4c776b9ff86144eb3c9c5f1054853e58f5db44dc6ff0",
+ "overlay_src": "<study-root>/_staging/pdeobs-mixed-study-20260925/overlay-src",
+ "paper_cell": false,
+ "python": "<study-root>/envs/<ENV>/bin/python",
+ "repository": "<study-root>/_staging/all-pde-one-setting-v7r6-<COMMIT-1>",
+ "repository_commit": "<COMMIT-1>",
+ "repository_pins": {
+  "configs/campaign/all_pde_one_setting_10method_9x9_v7.yaml": "5fb5aae1a1f098537c286db020759b2578f124fd70df2f7520103c02e403080b",
+  "configs/method/all_pde_source_faithful_registry_v7.yaml": "7d56a79c9ac7f08252a15e8bf0707c7dc3c630e1a7c9448034ba1b50d1f738da",
+  "scripts/run_one_setting_v7.py": "e66b3551fcd75127b7452bf72b114e098f5c659ccc283ab03b9db4bdd08e8713",
+  "src/pdeobs/one_setting.py": "e3b7b34f794f150808b4e3512786e41a374b2e730626cfb4d0ca229727c8ec0f",
+  "src/pdeobs/runner.py": "a393ed8ca3c145af3752bf56127dbedbef9e74fb6fadf6b27dbb5f2aadedf578",
+  "src/pdeobs/training.py": "9d7758ddafa973dddafbeab7c03fdd32b9ca94da771cf6e2f78189340d17cb59"
+ },
+ "rows": [
+  {
+   "comparison": "the poisson/ufno_2d per-pattern rows; the recovered ones (block, boundary, clustered) ran this exact settings-v3 recipe",
+   "cpus": 6,
+   "epochs": 200,
+   "estimated_hours": 2.1,
+   "identity": "poisson/ufno_2d/mixed_nine_views",
+   "identity_sha256": "beef86537d35abce5ff20143baa21cd681adfd65120556911099ff50c8b878c3",
+   "mode": "new",
+   "model_patch": {},
+   "output": "<study-root>/benchmark-runs/_study-mixed-pattern/mixed-nine-views-20260925/poisson/ufno_2d/mixed_nine_views",
+   "planned_max_epochs": 200,
+   "prior_credited_blocks": 0,
+   "protocol": "pdeobs.max200-min120-then-train-data-patience10/20260920",
+   "scientific_patch_manifest_sha256": "8c9712baeb0d5ad89d33226c5ca1a1dda572ceba3f8d25deaacefbd0a6550794",
+   "source_epoch": 0,
+   "training_gate": "<study-root>/_runtime-gates/pdeobs-mixed-study/mixed-nine-views-20260925/beef86537d35abce5ff20143baa21cd681adfd65120556911099ff50c8b878c3",
+   "training_owner": "mixed-nine-views-20260925",
+   "training_patch": {
+    "learning_rate": {
+     "from": 0.001,
+     "to": 0.0005
+    },
+    "scheduler": {
+     "from": "step",
+     "to": "one_cycle"
+    }
+   },
+   "worker_mem_gib": 16
+  }
+ ],
+ "same_job_train_and_evaluation": true,
+ "schema": "pdeobs.mixed-pattern-study-plan/v1",
+ "site_packages": "<study-root>/envs/<ENV>/lib/python3.12/site-packages",
+ "source_pins": {
+  "<study-root>/_staging/all-pde-one-setting-v7r6-<COMMIT-1>/configs/campaign/all_pde_one_setting_10method_9x9_v7.yaml": "5fb5aae1a1f098537c286db020759b2578f124fd70df2f7520103c02e403080b",
+  "<study-root>/_staging/all-pde-one-setting-v7r6-<COMMIT-1>/configs/method/all_pde_source_faithful_registry_v7.yaml": "7d56a79c9ac7f08252a15e8bf0707c7dc3c630e1a7c9448034ba1b50d1f738da",
+  "<study-root>/_staging/all-pde-one-setting-v7r6-<COMMIT-1>/scripts/run_one_setting_v7.py": "e66b3551fcd75127b7452bf72b114e098f5c659ccc283ab03b9db4bdd08e8713",
+  "<study-root>/_staging/all-pde-one-setting-v7r6-<COMMIT-1>/src/pdeobs/one_setting.py": "e3b7b34f794f150808b4e3512786e41a374b2e730626cfb4d0ca229727c8ec0f",
+  "<study-root>/_staging/all-pde-one-setting-v7r6-<COMMIT-1>/src/pdeobs/runner.py": "a393ed8ca3c145af3752bf56127dbedbef9e74fb6fadf6b27dbb5f2aadedf578",
+  "<study-root>/_staging/all-pde-one-setting-v7r6-<COMMIT-1>/src/pdeobs/training.py": "9d7758ddafa973dddafbeab7c03fdd32b9ca94da771cf6e2f78189340d17cb59"
+ },
+ "stage": "<study-root>/_staging/pdeobs-mixed-study-20260925/study-poisson-ufno-r2",
+ "study_id": "mixed-nine-views-20260925",
+ "training_gate_root": "<study-root>/_runtime-gates/pdeobs-mixed-study/mixed-nine-views-20260925",
+ "training_protocol": "pdeobs.max200-min120-then-train-data-patience10/20260920",
+ "training_root": "<study-root>/benchmark-runs/_study-mixed-pattern/mixed-nine-views-20260925",
+ "wave": "mixed-nine-views-20260925"
+}

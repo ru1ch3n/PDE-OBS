@@ -1,0 +1,6 @@
+include: ../experiment/inverse_darcy_unet.yaml
+name: extension-inverse-darcy-unet
+data:
+  root: ${PDEOBS_DATA:-./extension-data}
+output:
+  root: ${PDEOBS_RUNS:-./extension-runs}

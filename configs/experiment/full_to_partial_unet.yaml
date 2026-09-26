@@ -1,0 +1,16 @@
+include: full_to_partial_base.yaml
+name: full-to-partial-unet
+method:
+  name: unet_paper_guided
+  kwargs:
+    in_channels: 1
+    out_channels: 1
+    width: 64
+    levels: 4
+    geometry_channels: 1
+training:
+  batch_size: 8
+  # Production diagnostics on Poisson and Heat showed that the same recipe is
+  # finite and pathology-free in FP32 while AMP produced large/non-finite
+  # gradients. Keep the paper-guided U-Net optimization fail-closed in FP32.
+  mixed_precision: false

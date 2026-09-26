@@ -1,0 +1,7607 @@
+{
+  "arrays": {
+    "burgers_rejected": {
+      "error": "ValueError: create_dataset_from_arrays supports poisson, darcy, helmholtz and heat; burgers requires the full generator route (source='generate')",
+      "status": "rejected_ok"
+    },
+    "darcy": {
+      "T": 1,
+      "samples": 2,
+      "status": "ok"
+    },
+    "darcy_without_coefficient_rejected": {
+      "error": "ValueError: darcy needs arrays['coefficient'] (N,H,W); the coefficient is not inferred",
+      "status": "rejected_ok"
+    },
+    "heat": {
+      "T": 4,
+      "samples": 2,
+      "status": "ok"
+    },
+    "helmholtz": {
+      "T": 1,
+      "samples": 2,
+      "status": "ok"
+    },
+    "poisson": {
+      "T": 1,
+      "samples": 2,
+      "status": "ok"
+    }
+  },
+  "combos": {
+    "burgers/dirichlet/dipole_vortex_pair/high": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "burgers/dirichlet/dipole_vortex_pair/low": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "burgers/dirichlet/dipole_vortex_pair/medium": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "burgers/dirichlet/front_ring_shock/high": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "burgers/dirichlet/front_ring_shock/low": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "burgers/dirichlet/front_ring_shock/medium": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "burgers/dirichlet/gaussian_blobs/high": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "burgers/dirichlet/gaussian_blobs/low": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "burgers/dirichlet/gaussian_blobs/medium": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "burgers/dirichlet/low_frequency_fourier/high": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "burgers/dirichlet/low_frequency_fourier/low": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "burgers/dirichlet/low_frequency_fourier/medium": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "burgers/dirichlet/medium_grf/high": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "burgers/dirichlet/medium_grf/low": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "burgers/dirichlet/medium_grf/medium": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "burgers/dirichlet/multi_frequency_fourier/high": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "burgers/dirichlet/multi_frequency_fourier/low": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "burgers/dirichlet/multi_frequency_fourier/medium": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "burgers/dirichlet/piecewise_blocks/high": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "burgers/dirichlet/piecewise_blocks/low": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "burgers/dirichlet/piecewise_blocks/medium": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "burgers/dirichlet/rough_grf/high": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "burgers/dirichlet/rough_grf/low": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "burgers/dirichlet/rough_grf/medium": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "burgers/dirichlet/smooth_grf/high": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "burgers/dirichlet/smooth_grf/low": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "burgers/dirichlet/smooth_grf/medium": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "burgers/dirichlet/threshold_level_set/high": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "burgers/dirichlet/threshold_level_set/low": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "burgers/dirichlet/threshold_level_set/medium": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "burgers/neumann/dipole_vortex_pair/high": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "burgers/neumann/dipole_vortex_pair/low": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "burgers/neumann/dipole_vortex_pair/medium": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "burgers/neumann/front_ring_shock/high": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "burgers/neumann/front_ring_shock/low": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "burgers/neumann/front_ring_shock/medium": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "burgers/neumann/gaussian_blobs/high": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "burgers/neumann/gaussian_blobs/low": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "burgers/neumann/gaussian_blobs/medium": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "burgers/neumann/low_frequency_fourier/high": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "burgers/neumann/low_frequency_fourier/low": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "burgers/neumann/low_frequency_fourier/medium": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "burgers/neumann/medium_grf/high": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "burgers/neumann/medium_grf/low": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "burgers/neumann/medium_grf/medium": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "burgers/neumann/multi_frequency_fourier/high": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "burgers/neumann/multi_frequency_fourier/low": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "burgers/neumann/multi_frequency_fourier/medium": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "burgers/neumann/piecewise_blocks/high": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "burgers/neumann/piecewise_blocks/low": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "burgers/neumann/piecewise_blocks/medium": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "burgers/neumann/rough_grf/high": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "burgers/neumann/rough_grf/low": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "burgers/neumann/rough_grf/medium": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "burgers/neumann/smooth_grf/high": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "burgers/neumann/smooth_grf/low": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "burgers/neumann/smooth_grf/medium": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "burgers/neumann/threshold_level_set/high": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "burgers/neumann/threshold_level_set/low": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "burgers/neumann/threshold_level_set/medium": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "burgers/periodic/dipole_vortex_pair/high": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "burgers/periodic/dipole_vortex_pair/low": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "burgers/periodic/dipole_vortex_pair/medium": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "burgers/periodic/front_ring_shock/high": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "burgers/periodic/front_ring_shock/low": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "burgers/periodic/front_ring_shock/medium": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "burgers/periodic/gaussian_blobs/high": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "burgers/periodic/gaussian_blobs/low": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "burgers/periodic/gaussian_blobs/medium": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "burgers/periodic/low_frequency_fourier/high": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "burgers/periodic/low_frequency_fourier/low": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "burgers/periodic/low_frequency_fourier/medium": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "burgers/periodic/medium_grf/high": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "burgers/periodic/medium_grf/low": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "burgers/periodic/medium_grf/medium": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "burgers/periodic/multi_frequency_fourier/high": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "burgers/periodic/multi_frequency_fourier/low": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "burgers/periodic/multi_frequency_fourier/medium": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "burgers/periodic/piecewise_blocks/high": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "burgers/periodic/piecewise_blocks/low": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "burgers/periodic/piecewise_blocks/medium": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "burgers/periodic/rough_grf/high": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "burgers/periodic/rough_grf/low": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "burgers/periodic/rough_grf/medium": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "burgers/periodic/smooth_grf/high": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "burgers/periodic/smooth_grf/low": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "burgers/periodic/smooth_grf/medium": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "burgers/periodic/threshold_level_set/high": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "burgers/periodic/threshold_level_set/low": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "burgers/periodic/threshold_level_set/medium": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "burgers/robin_obstacle/dipole_vortex_pair/high": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "burgers/robin_obstacle/dipole_vortex_pair/low": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "burgers/robin_obstacle/dipole_vortex_pair/medium": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "burgers/robin_obstacle/front_ring_shock/high": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "burgers/robin_obstacle/front_ring_shock/low": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "burgers/robin_obstacle/front_ring_shock/medium": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "burgers/robin_obstacle/gaussian_blobs/high": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "burgers/robin_obstacle/gaussian_blobs/low": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "burgers/robin_obstacle/gaussian_blobs/medium": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "burgers/robin_obstacle/low_frequency_fourier/high": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "burgers/robin_obstacle/low_frequency_fourier/low": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "burgers/robin_obstacle/low_frequency_fourier/medium": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "burgers/robin_obstacle/medium_grf/high": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "burgers/robin_obstacle/medium_grf/low": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "burgers/robin_obstacle/medium_grf/medium": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "burgers/robin_obstacle/multi_frequency_fourier/high": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "burgers/robin_obstacle/multi_frequency_fourier/low": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "burgers/robin_obstacle/multi_frequency_fourier/medium": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "burgers/robin_obstacle/piecewise_blocks/high": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "burgers/robin_obstacle/piecewise_blocks/low": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "burgers/robin_obstacle/piecewise_blocks/medium": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "burgers/robin_obstacle/rough_grf/high": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "burgers/robin_obstacle/rough_grf/low": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "burgers/robin_obstacle/rough_grf/medium": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "burgers/robin_obstacle/smooth_grf/high": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "burgers/robin_obstacle/smooth_grf/low": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "burgers/robin_obstacle/smooth_grf/medium": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "burgers/robin_obstacle/threshold_level_set/high": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "burgers/robin_obstacle/threshold_level_set/low": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "burgers/robin_obstacle/threshold_level_set/medium": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "darcy/dirichlet/dipole_vortex_pair/high": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "darcy/dirichlet/dipole_vortex_pair/low": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "darcy/dirichlet/dipole_vortex_pair/medium": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "darcy/dirichlet/front_ring_shock/high": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "darcy/dirichlet/front_ring_shock/low": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "darcy/dirichlet/front_ring_shock/medium": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "darcy/dirichlet/gaussian_blobs/high": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "darcy/dirichlet/gaussian_blobs/low": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "darcy/dirichlet/gaussian_blobs/medium": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "darcy/dirichlet/low_frequency_fourier/high": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "darcy/dirichlet/low_frequency_fourier/low": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "darcy/dirichlet/low_frequency_fourier/medium": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "darcy/dirichlet/medium_grf/high": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "darcy/dirichlet/medium_grf/low": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "darcy/dirichlet/medium_grf/medium": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "darcy/dirichlet/multi_frequency_fourier/high": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "darcy/dirichlet/multi_frequency_fourier/low": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "darcy/dirichlet/multi_frequency_fourier/medium": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "darcy/dirichlet/piecewise_blocks/high": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "darcy/dirichlet/piecewise_blocks/low": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "darcy/dirichlet/piecewise_blocks/medium": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "darcy/dirichlet/rough_grf/high": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "darcy/dirichlet/rough_grf/low": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "darcy/dirichlet/rough_grf/medium": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "darcy/dirichlet/smooth_grf/high": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "darcy/dirichlet/smooth_grf/low": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "darcy/dirichlet/smooth_grf/medium": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "darcy/dirichlet/threshold_level_set/high": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "darcy/dirichlet/threshold_level_set/low": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "darcy/dirichlet/threshold_level_set/medium": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "darcy/neumann/dipole_vortex_pair/high": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "darcy/neumann/dipole_vortex_pair/low": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "darcy/neumann/dipole_vortex_pair/medium": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "darcy/neumann/front_ring_shock/high": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "darcy/neumann/front_ring_shock/low": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "darcy/neumann/front_ring_shock/medium": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "darcy/neumann/gaussian_blobs/high": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "darcy/neumann/gaussian_blobs/low": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "darcy/neumann/gaussian_blobs/medium": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "darcy/neumann/low_frequency_fourier/high": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "darcy/neumann/low_frequency_fourier/low": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "darcy/neumann/low_frequency_fourier/medium": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "darcy/neumann/medium_grf/high": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "darcy/neumann/medium_grf/low": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "darcy/neumann/medium_grf/medium": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "darcy/neumann/multi_frequency_fourier/high": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "darcy/neumann/multi_frequency_fourier/low": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "darcy/neumann/multi_frequency_fourier/medium": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "darcy/neumann/piecewise_blocks/high": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "darcy/neumann/piecewise_blocks/low": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "darcy/neumann/piecewise_blocks/medium": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "darcy/neumann/rough_grf/high": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "darcy/neumann/rough_grf/low": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "darcy/neumann/rough_grf/medium": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "darcy/neumann/smooth_grf/high": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "darcy/neumann/smooth_grf/low": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "darcy/neumann/smooth_grf/medium": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "darcy/neumann/threshold_level_set/high": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "darcy/neumann/threshold_level_set/low": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "darcy/neumann/threshold_level_set/medium": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "darcy/periodic/dipole_vortex_pair/high": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "darcy/periodic/dipole_vortex_pair/low": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "darcy/periodic/dipole_vortex_pair/medium": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "darcy/periodic/front_ring_shock/high": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "darcy/periodic/front_ring_shock/low": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "darcy/periodic/front_ring_shock/medium": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "darcy/periodic/gaussian_blobs/high": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "darcy/periodic/gaussian_blobs/low": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "darcy/periodic/gaussian_blobs/medium": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "darcy/periodic/low_frequency_fourier/high": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "darcy/periodic/low_frequency_fourier/low": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "darcy/periodic/low_frequency_fourier/medium": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "darcy/periodic/medium_grf/high": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "darcy/periodic/medium_grf/low": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "darcy/periodic/medium_grf/medium": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "darcy/periodic/multi_frequency_fourier/high": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "darcy/periodic/multi_frequency_fourier/low": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "darcy/periodic/multi_frequency_fourier/medium": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "darcy/periodic/piecewise_blocks/high": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "darcy/periodic/piecewise_blocks/low": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "darcy/periodic/piecewise_blocks/medium": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "darcy/periodic/rough_grf/high": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "darcy/periodic/rough_grf/low": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "darcy/periodic/rough_grf/medium": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "darcy/periodic/smooth_grf/high": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "darcy/periodic/smooth_grf/low": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "darcy/periodic/smooth_grf/medium": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "darcy/periodic/threshold_level_set/high": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "darcy/periodic/threshold_level_set/low": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "darcy/periodic/threshold_level_set/medium": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "darcy/robin_obstacle/dipole_vortex_pair/high": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "darcy/robin_obstacle/dipole_vortex_pair/low": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "darcy/robin_obstacle/dipole_vortex_pair/medium": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "darcy/robin_obstacle/front_ring_shock/high": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "darcy/robin_obstacle/front_ring_shock/low": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "darcy/robin_obstacle/front_ring_shock/medium": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "darcy/robin_obstacle/gaussian_blobs/high": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "darcy/robin_obstacle/gaussian_blobs/low": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "darcy/robin_obstacle/gaussian_blobs/medium": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "darcy/robin_obstacle/low_frequency_fourier/high": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "darcy/robin_obstacle/low_frequency_fourier/low": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "darcy/robin_obstacle/low_frequency_fourier/medium": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "darcy/robin_obstacle/medium_grf/high": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "darcy/robin_obstacle/medium_grf/low": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "darcy/robin_obstacle/medium_grf/medium": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "darcy/robin_obstacle/multi_frequency_fourier/high": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "darcy/robin_obstacle/multi_frequency_fourier/low": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "darcy/robin_obstacle/multi_frequency_fourier/medium": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "darcy/robin_obstacle/piecewise_blocks/high": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "darcy/robin_obstacle/piecewise_blocks/low": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "darcy/robin_obstacle/piecewise_blocks/medium": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "darcy/robin_obstacle/rough_grf/high": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "darcy/robin_obstacle/rough_grf/low": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "darcy/robin_obstacle/rough_grf/medium": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "darcy/robin_obstacle/smooth_grf/high": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "darcy/robin_obstacle/smooth_grf/low": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "darcy/robin_obstacle/smooth_grf/medium": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "darcy/robin_obstacle/threshold_level_set/high": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "darcy/robin_obstacle/threshold_level_set/low": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "darcy/robin_obstacle/threshold_level_set/medium": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "heat/dirichlet/dipole_vortex_pair/high": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "heat/dirichlet/dipole_vortex_pair/low": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "heat/dirichlet/dipole_vortex_pair/medium": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "heat/dirichlet/front_ring_shock/high": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "heat/dirichlet/front_ring_shock/low": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "heat/dirichlet/front_ring_shock/medium": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "heat/dirichlet/gaussian_blobs/high": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "heat/dirichlet/gaussian_blobs/low": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "heat/dirichlet/gaussian_blobs/medium": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "heat/dirichlet/low_frequency_fourier/high": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "heat/dirichlet/low_frequency_fourier/low": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "heat/dirichlet/low_frequency_fourier/medium": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "heat/dirichlet/medium_grf/high": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "heat/dirichlet/medium_grf/low": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "heat/dirichlet/medium_grf/medium": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "heat/dirichlet/multi_frequency_fourier/high": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "heat/dirichlet/multi_frequency_fourier/low": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "heat/dirichlet/multi_frequency_fourier/medium": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "heat/dirichlet/piecewise_blocks/high": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "heat/dirichlet/piecewise_blocks/low": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "heat/dirichlet/piecewise_blocks/medium": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "heat/dirichlet/rough_grf/high": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "heat/dirichlet/rough_grf/low": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "heat/dirichlet/rough_grf/medium": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "heat/dirichlet/smooth_grf/high": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "heat/dirichlet/smooth_grf/low": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "heat/dirichlet/smooth_grf/medium": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "heat/dirichlet/threshold_level_set/high": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "heat/dirichlet/threshold_level_set/low": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "heat/dirichlet/threshold_level_set/medium": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "heat/neumann/dipole_vortex_pair/high": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "heat/neumann/dipole_vortex_pair/low": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "heat/neumann/dipole_vortex_pair/medium": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "heat/neumann/front_ring_shock/high": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "heat/neumann/front_ring_shock/low": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "heat/neumann/front_ring_shock/medium": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "heat/neumann/gaussian_blobs/high": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "heat/neumann/gaussian_blobs/low": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "heat/neumann/gaussian_blobs/medium": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "heat/neumann/low_frequency_fourier/high": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "heat/neumann/low_frequency_fourier/low": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "heat/neumann/low_frequency_fourier/medium": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "heat/neumann/medium_grf/high": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "heat/neumann/medium_grf/low": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "heat/neumann/medium_grf/medium": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "heat/neumann/multi_frequency_fourier/high": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "heat/neumann/multi_frequency_fourier/low": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "heat/neumann/multi_frequency_fourier/medium": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "heat/neumann/piecewise_blocks/high": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "heat/neumann/piecewise_blocks/low": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "heat/neumann/piecewise_blocks/medium": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "heat/neumann/rough_grf/high": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "heat/neumann/rough_grf/low": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "heat/neumann/rough_grf/medium": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "heat/neumann/smooth_grf/high": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "heat/neumann/smooth_grf/low": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "heat/neumann/smooth_grf/medium": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "heat/neumann/threshold_level_set/high": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "heat/neumann/threshold_level_set/low": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "heat/neumann/threshold_level_set/medium": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "heat/periodic/dipole_vortex_pair/high": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "heat/periodic/dipole_vortex_pair/low": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "heat/periodic/dipole_vortex_pair/medium": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "heat/periodic/front_ring_shock/high": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "heat/periodic/front_ring_shock/low": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "heat/periodic/front_ring_shock/medium": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "heat/periodic/gaussian_blobs/high": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "heat/periodic/gaussian_blobs/low": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "heat/periodic/gaussian_blobs/medium": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "heat/periodic/low_frequency_fourier/high": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "heat/periodic/low_frequency_fourier/low": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "heat/periodic/low_frequency_fourier/medium": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "heat/periodic/medium_grf/high": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "heat/periodic/medium_grf/low": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "heat/periodic/medium_grf/medium": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "heat/periodic/multi_frequency_fourier/high": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "heat/periodic/multi_frequency_fourier/low": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "heat/periodic/multi_frequency_fourier/medium": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "heat/periodic/piecewise_blocks/high": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "heat/periodic/piecewise_blocks/low": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "heat/periodic/piecewise_blocks/medium": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "heat/periodic/rough_grf/high": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "heat/periodic/rough_grf/low": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "heat/periodic/rough_grf/medium": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "heat/periodic/smooth_grf/high": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "heat/periodic/smooth_grf/low": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "heat/periodic/smooth_grf/medium": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "heat/periodic/threshold_level_set/high": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "heat/periodic/threshold_level_set/low": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "heat/periodic/threshold_level_set/medium": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "heat/robin_obstacle/dipole_vortex_pair/high": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "heat/robin_obstacle/dipole_vortex_pair/low": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "heat/robin_obstacle/dipole_vortex_pair/medium": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "heat/robin_obstacle/front_ring_shock/high": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "heat/robin_obstacle/front_ring_shock/low": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "heat/robin_obstacle/front_ring_shock/medium": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "heat/robin_obstacle/gaussian_blobs/high": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "heat/robin_obstacle/gaussian_blobs/low": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "heat/robin_obstacle/gaussian_blobs/medium": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "heat/robin_obstacle/low_frequency_fourier/high": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "heat/robin_obstacle/low_frequency_fourier/low": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "heat/robin_obstacle/low_frequency_fourier/medium": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "heat/robin_obstacle/medium_grf/high": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "heat/robin_obstacle/medium_grf/low": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "heat/robin_obstacle/medium_grf/medium": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "heat/robin_obstacle/multi_frequency_fourier/high": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "heat/robin_obstacle/multi_frequency_fourier/low": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "heat/robin_obstacle/multi_frequency_fourier/medium": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "heat/robin_obstacle/piecewise_blocks/high": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "heat/robin_obstacle/piecewise_blocks/low": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "heat/robin_obstacle/piecewise_blocks/medium": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "heat/robin_obstacle/rough_grf/high": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "heat/robin_obstacle/rough_grf/low": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "heat/robin_obstacle/rough_grf/medium": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "heat/robin_obstacle/smooth_grf/high": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "heat/robin_obstacle/smooth_grf/low": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "heat/robin_obstacle/smooth_grf/medium": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "heat/robin_obstacle/threshold_level_set/high": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "heat/robin_obstacle/threshold_level_set/low": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "heat/robin_obstacle/threshold_level_set/medium": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "helmholtz/dirichlet/dipole_vortex_pair/high": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "helmholtz/dirichlet/dipole_vortex_pair/low": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "helmholtz/dirichlet/dipole_vortex_pair/medium": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "helmholtz/dirichlet/front_ring_shock/high": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "helmholtz/dirichlet/front_ring_shock/low": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "helmholtz/dirichlet/front_ring_shock/medium": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "helmholtz/dirichlet/gaussian_blobs/high": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "helmholtz/dirichlet/gaussian_blobs/low": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "helmholtz/dirichlet/gaussian_blobs/medium": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "helmholtz/dirichlet/low_frequency_fourier/high": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "helmholtz/dirichlet/low_frequency_fourier/low": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "helmholtz/dirichlet/low_frequency_fourier/medium": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "helmholtz/dirichlet/medium_grf/high": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "helmholtz/dirichlet/medium_grf/low": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "helmholtz/dirichlet/medium_grf/medium": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "helmholtz/dirichlet/multi_frequency_fourier/high": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "helmholtz/dirichlet/multi_frequency_fourier/low": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "helmholtz/dirichlet/multi_frequency_fourier/medium": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "helmholtz/dirichlet/piecewise_blocks/high": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "helmholtz/dirichlet/piecewise_blocks/low": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "helmholtz/dirichlet/piecewise_blocks/medium": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "helmholtz/dirichlet/rough_grf/high": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "helmholtz/dirichlet/rough_grf/low": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "helmholtz/dirichlet/rough_grf/medium": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "helmholtz/dirichlet/smooth_grf/high": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "helmholtz/dirichlet/smooth_grf/low": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "helmholtz/dirichlet/smooth_grf/medium": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "helmholtz/dirichlet/threshold_level_set/high": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "helmholtz/dirichlet/threshold_level_set/low": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "helmholtz/dirichlet/threshold_level_set/medium": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "helmholtz/neumann/dipole_vortex_pair/high": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "helmholtz/neumann/dipole_vortex_pair/low": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "helmholtz/neumann/dipole_vortex_pair/medium": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "helmholtz/neumann/front_ring_shock/high": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "helmholtz/neumann/front_ring_shock/low": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "helmholtz/neumann/front_ring_shock/medium": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "helmholtz/neumann/gaussian_blobs/high": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "helmholtz/neumann/gaussian_blobs/low": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "helmholtz/neumann/gaussian_blobs/medium": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "helmholtz/neumann/low_frequency_fourier/high": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "helmholtz/neumann/low_frequency_fourier/low": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "helmholtz/neumann/low_frequency_fourier/medium": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "helmholtz/neumann/medium_grf/high": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "helmholtz/neumann/medium_grf/low": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "helmholtz/neumann/medium_grf/medium": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "helmholtz/neumann/multi_frequency_fourier/high": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "helmholtz/neumann/multi_frequency_fourier/low": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "helmholtz/neumann/multi_frequency_fourier/medium": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "helmholtz/neumann/piecewise_blocks/high": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "helmholtz/neumann/piecewise_blocks/low": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "helmholtz/neumann/piecewise_blocks/medium": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "helmholtz/neumann/rough_grf/high": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "helmholtz/neumann/rough_grf/low": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "helmholtz/neumann/rough_grf/medium": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "helmholtz/neumann/smooth_grf/high": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "helmholtz/neumann/smooth_grf/low": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "helmholtz/neumann/smooth_grf/medium": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "helmholtz/neumann/threshold_level_set/high": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "helmholtz/neumann/threshold_level_set/low": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "helmholtz/neumann/threshold_level_set/medium": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "helmholtz/periodic/dipole_vortex_pair/high": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "helmholtz/periodic/dipole_vortex_pair/low": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "helmholtz/periodic/dipole_vortex_pair/medium": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "helmholtz/periodic/front_ring_shock/high": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "helmholtz/periodic/front_ring_shock/low": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "helmholtz/periodic/front_ring_shock/medium": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "helmholtz/periodic/gaussian_blobs/high": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "helmholtz/periodic/gaussian_blobs/low": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "helmholtz/periodic/gaussian_blobs/medium": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "helmholtz/periodic/low_frequency_fourier/high": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "helmholtz/periodic/low_frequency_fourier/low": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "helmholtz/periodic/low_frequency_fourier/medium": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "helmholtz/periodic/medium_grf/high": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "helmholtz/periodic/medium_grf/low": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "helmholtz/periodic/medium_grf/medium": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "helmholtz/periodic/multi_frequency_fourier/high": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "helmholtz/periodic/multi_frequency_fourier/low": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "helmholtz/periodic/multi_frequency_fourier/medium": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "helmholtz/periodic/piecewise_blocks/high": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "helmholtz/periodic/piecewise_blocks/low": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "helmholtz/periodic/piecewise_blocks/medium": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "helmholtz/periodic/rough_grf/high": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "helmholtz/periodic/rough_grf/low": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "helmholtz/periodic/rough_grf/medium": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "helmholtz/periodic/smooth_grf/high": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "helmholtz/periodic/smooth_grf/low": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "helmholtz/periodic/smooth_grf/medium": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "helmholtz/periodic/threshold_level_set/high": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "helmholtz/periodic/threshold_level_set/low": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "helmholtz/periodic/threshold_level_set/medium": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "helmholtz/robin_obstacle/dipole_vortex_pair/high": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "helmholtz/robin_obstacle/dipole_vortex_pair/low": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "helmholtz/robin_obstacle/dipole_vortex_pair/medium": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "helmholtz/robin_obstacle/front_ring_shock/high": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "helmholtz/robin_obstacle/front_ring_shock/low": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "helmholtz/robin_obstacle/front_ring_shock/medium": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "helmholtz/robin_obstacle/gaussian_blobs/high": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "helmholtz/robin_obstacle/gaussian_blobs/low": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "helmholtz/robin_obstacle/gaussian_blobs/medium": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "helmholtz/robin_obstacle/low_frequency_fourier/high": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "helmholtz/robin_obstacle/low_frequency_fourier/low": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "helmholtz/robin_obstacle/low_frequency_fourier/medium": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "helmholtz/robin_obstacle/medium_grf/high": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "helmholtz/robin_obstacle/medium_grf/low": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "helmholtz/robin_obstacle/medium_grf/medium": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "helmholtz/robin_obstacle/multi_frequency_fourier/high": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "helmholtz/robin_obstacle/multi_frequency_fourier/low": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "helmholtz/robin_obstacle/multi_frequency_fourier/medium": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "helmholtz/robin_obstacle/piecewise_blocks/high": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "helmholtz/robin_obstacle/piecewise_blocks/low": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "helmholtz/robin_obstacle/piecewise_blocks/medium": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "helmholtz/robin_obstacle/rough_grf/high": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "helmholtz/robin_obstacle/rough_grf/low": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "helmholtz/robin_obstacle/rough_grf/medium": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "helmholtz/robin_obstacle/smooth_grf/high": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "helmholtz/robin_obstacle/smooth_grf/low": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "helmholtz/robin_obstacle/smooth_grf/medium": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "helmholtz/robin_obstacle/threshold_level_set/high": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "helmholtz/robin_obstacle/threshold_level_set/low": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "helmholtz/robin_obstacle/threshold_level_set/medium": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "navier_stokes/dirichlet/dipole_vortex_pair/high": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "navier_stokes/dirichlet/dipole_vortex_pair/low": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "navier_stokes/dirichlet/dipole_vortex_pair/medium": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "navier_stokes/dirichlet/front_ring_shock/high": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "navier_stokes/dirichlet/front_ring_shock/low": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "navier_stokes/dirichlet/front_ring_shock/medium": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "navier_stokes/dirichlet/gaussian_blobs/high": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "navier_stokes/dirichlet/gaussian_blobs/low": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "navier_stokes/dirichlet/gaussian_blobs/medium": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "navier_stokes/dirichlet/low_frequency_fourier/high": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "navier_stokes/dirichlet/low_frequency_fourier/low": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "navier_stokes/dirichlet/low_frequency_fourier/medium": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "navier_stokes/dirichlet/medium_grf/high": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "navier_stokes/dirichlet/medium_grf/low": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "navier_stokes/dirichlet/medium_grf/medium": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "navier_stokes/dirichlet/multi_frequency_fourier/high": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "navier_stokes/dirichlet/multi_frequency_fourier/low": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "navier_stokes/dirichlet/multi_frequency_fourier/medium": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "navier_stokes/dirichlet/piecewise_blocks/high": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "navier_stokes/dirichlet/piecewise_blocks/low": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "navier_stokes/dirichlet/piecewise_blocks/medium": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "navier_stokes/dirichlet/rough_grf/high": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "navier_stokes/dirichlet/rough_grf/low": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "navier_stokes/dirichlet/rough_grf/medium": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "navier_stokes/dirichlet/smooth_grf/high": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "navier_stokes/dirichlet/smooth_grf/low": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "navier_stokes/dirichlet/smooth_grf/medium": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "navier_stokes/dirichlet/threshold_level_set/high": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "navier_stokes/dirichlet/threshold_level_set/low": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "navier_stokes/dirichlet/threshold_level_set/medium": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "navier_stokes/neumann/dipole_vortex_pair/high": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "navier_stokes/neumann/dipole_vortex_pair/low": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "navier_stokes/neumann/dipole_vortex_pair/medium": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "navier_stokes/neumann/front_ring_shock/high": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "navier_stokes/neumann/front_ring_shock/low": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "navier_stokes/neumann/front_ring_shock/medium": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "navier_stokes/neumann/gaussian_blobs/high": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "navier_stokes/neumann/gaussian_blobs/low": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "navier_stokes/neumann/gaussian_blobs/medium": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "navier_stokes/neumann/low_frequency_fourier/high": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "navier_stokes/neumann/low_frequency_fourier/low": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "navier_stokes/neumann/low_frequency_fourier/medium": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "navier_stokes/neumann/medium_grf/high": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "navier_stokes/neumann/medium_grf/low": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "navier_stokes/neumann/medium_grf/medium": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "navier_stokes/neumann/multi_frequency_fourier/high": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "navier_stokes/neumann/multi_frequency_fourier/low": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "navier_stokes/neumann/multi_frequency_fourier/medium": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "navier_stokes/neumann/piecewise_blocks/high": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "navier_stokes/neumann/piecewise_blocks/low": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "navier_stokes/neumann/piecewise_blocks/medium": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "navier_stokes/neumann/rough_grf/high": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "navier_stokes/neumann/rough_grf/low": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "navier_stokes/neumann/rough_grf/medium": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "navier_stokes/neumann/smooth_grf/high": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "navier_stokes/neumann/smooth_grf/low": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "navier_stokes/neumann/smooth_grf/medium": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "navier_stokes/neumann/threshold_level_set/high": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "navier_stokes/neumann/threshold_level_set/low": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "navier_stokes/neumann/threshold_level_set/medium": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "navier_stokes/periodic/dipole_vortex_pair/high": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "navier_stokes/periodic/dipole_vortex_pair/low": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "navier_stokes/periodic/dipole_vortex_pair/medium": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "navier_stokes/periodic/front_ring_shock/high": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "navier_stokes/periodic/front_ring_shock/low": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "navier_stokes/periodic/front_ring_shock/medium": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "navier_stokes/periodic/gaussian_blobs/high": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "navier_stokes/periodic/gaussian_blobs/low": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "navier_stokes/periodic/gaussian_blobs/medium": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "navier_stokes/periodic/low_frequency_fourier/high": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "navier_stokes/periodic/low_frequency_fourier/low": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "navier_stokes/periodic/low_frequency_fourier/medium": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "navier_stokes/periodic/medium_grf/high": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "navier_stokes/periodic/medium_grf/low": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "navier_stokes/periodic/medium_grf/medium": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "navier_stokes/periodic/multi_frequency_fourier/high": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "navier_stokes/periodic/multi_frequency_fourier/low": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "navier_stokes/periodic/multi_frequency_fourier/medium": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "navier_stokes/periodic/piecewise_blocks/high": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "navier_stokes/periodic/piecewise_blocks/low": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "navier_stokes/periodic/piecewise_blocks/medium": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "navier_stokes/periodic/rough_grf/high": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "navier_stokes/periodic/rough_grf/low": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "navier_stokes/periodic/rough_grf/medium": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "navier_stokes/periodic/smooth_grf/high": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "navier_stokes/periodic/smooth_grf/low": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "navier_stokes/periodic/smooth_grf/medium": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "navier_stokes/periodic/threshold_level_set/high": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "navier_stokes/periodic/threshold_level_set/low": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "navier_stokes/periodic/threshold_level_set/medium": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "navier_stokes/robin_obstacle/dipole_vortex_pair/high": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "navier_stokes/robin_obstacle/dipole_vortex_pair/low": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "navier_stokes/robin_obstacle/dipole_vortex_pair/medium": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "navier_stokes/robin_obstacle/front_ring_shock/high": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "navier_stokes/robin_obstacle/front_ring_shock/low": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "navier_stokes/robin_obstacle/front_ring_shock/medium": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "navier_stokes/robin_obstacle/gaussian_blobs/high": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "navier_stokes/robin_obstacle/gaussian_blobs/low": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "navier_stokes/robin_obstacle/gaussian_blobs/medium": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "navier_stokes/robin_obstacle/low_frequency_fourier/high": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "navier_stokes/robin_obstacle/low_frequency_fourier/low": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "navier_stokes/robin_obstacle/low_frequency_fourier/medium": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "navier_stokes/robin_obstacle/medium_grf/high": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "navier_stokes/robin_obstacle/medium_grf/low": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "navier_stokes/robin_obstacle/medium_grf/medium": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "navier_stokes/robin_obstacle/multi_frequency_fourier/high": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "navier_stokes/robin_obstacle/multi_frequency_fourier/low": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "navier_stokes/robin_obstacle/multi_frequency_fourier/medium": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "navier_stokes/robin_obstacle/piecewise_blocks/high": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "navier_stokes/robin_obstacle/piecewise_blocks/low": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "navier_stokes/robin_obstacle/piecewise_blocks/medium": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "navier_stokes/robin_obstacle/rough_grf/high": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "navier_stokes/robin_obstacle/rough_grf/low": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "navier_stokes/robin_obstacle/rough_grf/medium": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "navier_stokes/robin_obstacle/smooth_grf/high": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "navier_stokes/robin_obstacle/smooth_grf/low": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "navier_stokes/robin_obstacle/smooth_grf/medium": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "navier_stokes/robin_obstacle/threshold_level_set/high": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "navier_stokes/robin_obstacle/threshold_level_set/low": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "navier_stokes/robin_obstacle/threshold_level_set/medium": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "poisson/dirichlet/dipole_vortex_pair/high": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "poisson/dirichlet/dipole_vortex_pair/low": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "poisson/dirichlet/dipole_vortex_pair/medium": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "poisson/dirichlet/front_ring_shock/high": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "poisson/dirichlet/front_ring_shock/low": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "poisson/dirichlet/front_ring_shock/medium": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "poisson/dirichlet/gaussian_blobs/high": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "poisson/dirichlet/gaussian_blobs/low": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "poisson/dirichlet/gaussian_blobs/medium": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "poisson/dirichlet/low_frequency_fourier/high": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "poisson/dirichlet/low_frequency_fourier/low": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "poisson/dirichlet/low_frequency_fourier/medium": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "poisson/dirichlet/medium_grf/high": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "poisson/dirichlet/medium_grf/low": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "poisson/dirichlet/medium_grf/medium": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "poisson/dirichlet/multi_frequency_fourier/high": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "poisson/dirichlet/multi_frequency_fourier/low": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "poisson/dirichlet/multi_frequency_fourier/medium": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "poisson/dirichlet/piecewise_blocks/high": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "poisson/dirichlet/piecewise_blocks/low": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "poisson/dirichlet/piecewise_blocks/medium": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "poisson/dirichlet/rough_grf/high": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "poisson/dirichlet/rough_grf/low": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "poisson/dirichlet/rough_grf/medium": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "poisson/dirichlet/smooth_grf/high": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "poisson/dirichlet/smooth_grf/low": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "poisson/dirichlet/smooth_grf/medium": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "poisson/dirichlet/threshold_level_set/high": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "poisson/dirichlet/threshold_level_set/low": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "poisson/dirichlet/threshold_level_set/medium": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "poisson/neumann/dipole_vortex_pair/high": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "poisson/neumann/dipole_vortex_pair/low": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "poisson/neumann/dipole_vortex_pair/medium": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "poisson/neumann/front_ring_shock/high": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "poisson/neumann/front_ring_shock/low": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "poisson/neumann/front_ring_shock/medium": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "poisson/neumann/gaussian_blobs/high": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "poisson/neumann/gaussian_blobs/low": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "poisson/neumann/gaussian_blobs/medium": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "poisson/neumann/low_frequency_fourier/high": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "poisson/neumann/low_frequency_fourier/low": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "poisson/neumann/low_frequency_fourier/medium": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "poisson/neumann/medium_grf/high": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "poisson/neumann/medium_grf/low": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "poisson/neumann/medium_grf/medium": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "poisson/neumann/multi_frequency_fourier/high": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "poisson/neumann/multi_frequency_fourier/low": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "poisson/neumann/multi_frequency_fourier/medium": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "poisson/neumann/piecewise_blocks/high": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "poisson/neumann/piecewise_blocks/low": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "poisson/neumann/piecewise_blocks/medium": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "poisson/neumann/rough_grf/high": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "poisson/neumann/rough_grf/low": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "poisson/neumann/rough_grf/medium": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "poisson/neumann/smooth_grf/high": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "poisson/neumann/smooth_grf/low": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "poisson/neumann/smooth_grf/medium": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "poisson/neumann/threshold_level_set/high": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "poisson/neumann/threshold_level_set/low": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "poisson/neumann/threshold_level_set/medium": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "poisson/periodic/dipole_vortex_pair/high": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "poisson/periodic/dipole_vortex_pair/low": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "poisson/periodic/dipole_vortex_pair/medium": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "poisson/periodic/front_ring_shock/high": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "poisson/periodic/front_ring_shock/low": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "poisson/periodic/front_ring_shock/medium": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "poisson/periodic/gaussian_blobs/high": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "poisson/periodic/gaussian_blobs/low": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "poisson/periodic/gaussian_blobs/medium": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "poisson/periodic/low_frequency_fourier/high": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "poisson/periodic/low_frequency_fourier/low": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "poisson/periodic/low_frequency_fourier/medium": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "poisson/periodic/medium_grf/high": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "poisson/periodic/medium_grf/low": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "poisson/periodic/medium_grf/medium": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "poisson/periodic/multi_frequency_fourier/high": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "poisson/periodic/multi_frequency_fourier/low": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "poisson/periodic/multi_frequency_fourier/medium": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "poisson/periodic/piecewise_blocks/high": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "poisson/periodic/piecewise_blocks/low": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "poisson/periodic/piecewise_blocks/medium": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "poisson/periodic/rough_grf/high": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "poisson/periodic/rough_grf/low": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "poisson/periodic/rough_grf/medium": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "poisson/periodic/smooth_grf/high": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "poisson/periodic/smooth_grf/low": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "poisson/periodic/smooth_grf/medium": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "poisson/periodic/threshold_level_set/high": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "poisson/periodic/threshold_level_set/low": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "poisson/periodic/threshold_level_set/medium": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "poisson/robin_obstacle/dipole_vortex_pair/high": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "poisson/robin_obstacle/dipole_vortex_pair/low": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "poisson/robin_obstacle/dipole_vortex_pair/medium": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "poisson/robin_obstacle/front_ring_shock/high": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "poisson/robin_obstacle/front_ring_shock/low": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "poisson/robin_obstacle/front_ring_shock/medium": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "poisson/robin_obstacle/gaussian_blobs/high": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "poisson/robin_obstacle/gaussian_blobs/low": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "poisson/robin_obstacle/gaussian_blobs/medium": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "poisson/robin_obstacle/low_frequency_fourier/high": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "poisson/robin_obstacle/low_frequency_fourier/low": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "poisson/robin_obstacle/low_frequency_fourier/medium": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "poisson/robin_obstacle/medium_grf/high": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "poisson/robin_obstacle/medium_grf/low": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "poisson/robin_obstacle/medium_grf/medium": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "poisson/robin_obstacle/multi_frequency_fourier/high": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "poisson/robin_obstacle/multi_frequency_fourier/low": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "poisson/robin_obstacle/multi_frequency_fourier/medium": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "poisson/robin_obstacle/piecewise_blocks/high": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "poisson/robin_obstacle/piecewise_blocks/low": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "poisson/robin_obstacle/piecewise_blocks/medium": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "poisson/robin_obstacle/rough_grf/high": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "poisson/robin_obstacle/rough_grf/low": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "poisson/robin_obstacle/rough_grf/medium": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "poisson/robin_obstacle/smooth_grf/high": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "poisson/robin_obstacle/smooth_grf/low": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "poisson/robin_obstacle/smooth_grf/medium": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "poisson/robin_obstacle/threshold_level_set/high": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "poisson/robin_obstacle/threshold_level_set/low": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "poisson/robin_obstacle/threshold_level_set/medium": {
+      "shape": [
+        1,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "reaction_diffusion/dirichlet/dipole_vortex_pair/high": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "reaction_diffusion/dirichlet/dipole_vortex_pair/low": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "reaction_diffusion/dirichlet/dipole_vortex_pair/medium": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "reaction_diffusion/dirichlet/front_ring_shock/high": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "reaction_diffusion/dirichlet/front_ring_shock/low": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "reaction_diffusion/dirichlet/front_ring_shock/medium": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "reaction_diffusion/dirichlet/gaussian_blobs/high": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "reaction_diffusion/dirichlet/gaussian_blobs/low": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "reaction_diffusion/dirichlet/gaussian_blobs/medium": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "reaction_diffusion/dirichlet/low_frequency_fourier/high": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "reaction_diffusion/dirichlet/low_frequency_fourier/low": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "reaction_diffusion/dirichlet/low_frequency_fourier/medium": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "reaction_diffusion/dirichlet/medium_grf/high": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "reaction_diffusion/dirichlet/medium_grf/low": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "reaction_diffusion/dirichlet/medium_grf/medium": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "reaction_diffusion/dirichlet/multi_frequency_fourier/high": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "reaction_diffusion/dirichlet/multi_frequency_fourier/low": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "reaction_diffusion/dirichlet/multi_frequency_fourier/medium": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "reaction_diffusion/dirichlet/piecewise_blocks/high": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "reaction_diffusion/dirichlet/piecewise_blocks/low": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "reaction_diffusion/dirichlet/piecewise_blocks/medium": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "reaction_diffusion/dirichlet/rough_grf/high": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "reaction_diffusion/dirichlet/rough_grf/low": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "reaction_diffusion/dirichlet/rough_grf/medium": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "reaction_diffusion/dirichlet/smooth_grf/high": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "reaction_diffusion/dirichlet/smooth_grf/low": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "reaction_diffusion/dirichlet/smooth_grf/medium": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "reaction_diffusion/dirichlet/threshold_level_set/high": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "reaction_diffusion/dirichlet/threshold_level_set/low": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "reaction_diffusion/dirichlet/threshold_level_set/medium": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "reaction_diffusion/neumann/dipole_vortex_pair/high": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "reaction_diffusion/neumann/dipole_vortex_pair/low": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "reaction_diffusion/neumann/dipole_vortex_pair/medium": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "reaction_diffusion/neumann/front_ring_shock/high": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "reaction_diffusion/neumann/front_ring_shock/low": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "reaction_diffusion/neumann/front_ring_shock/medium": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "reaction_diffusion/neumann/gaussian_blobs/high": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "reaction_diffusion/neumann/gaussian_blobs/low": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "reaction_diffusion/neumann/gaussian_blobs/medium": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "reaction_diffusion/neumann/low_frequency_fourier/high": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "reaction_diffusion/neumann/low_frequency_fourier/low": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "reaction_diffusion/neumann/low_frequency_fourier/medium": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "reaction_diffusion/neumann/medium_grf/high": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "reaction_diffusion/neumann/medium_grf/low": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "reaction_diffusion/neumann/medium_grf/medium": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "reaction_diffusion/neumann/multi_frequency_fourier/high": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "reaction_diffusion/neumann/multi_frequency_fourier/low": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "reaction_diffusion/neumann/multi_frequency_fourier/medium": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "reaction_diffusion/neumann/piecewise_blocks/high": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "reaction_diffusion/neumann/piecewise_blocks/low": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "reaction_diffusion/neumann/piecewise_blocks/medium": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "reaction_diffusion/neumann/rough_grf/high": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "reaction_diffusion/neumann/rough_grf/low": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "reaction_diffusion/neumann/rough_grf/medium": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "reaction_diffusion/neumann/smooth_grf/high": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "reaction_diffusion/neumann/smooth_grf/low": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "reaction_diffusion/neumann/smooth_grf/medium": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "reaction_diffusion/neumann/threshold_level_set/high": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "reaction_diffusion/neumann/threshold_level_set/low": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "reaction_diffusion/neumann/threshold_level_set/medium": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "reaction_diffusion/periodic/dipole_vortex_pair/high": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "reaction_diffusion/periodic/dipole_vortex_pair/low": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "reaction_diffusion/periodic/dipole_vortex_pair/medium": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "reaction_diffusion/periodic/front_ring_shock/high": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "reaction_diffusion/periodic/front_ring_shock/low": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "reaction_diffusion/periodic/front_ring_shock/medium": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "reaction_diffusion/periodic/gaussian_blobs/high": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "reaction_diffusion/periodic/gaussian_blobs/low": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "reaction_diffusion/periodic/gaussian_blobs/medium": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "reaction_diffusion/periodic/low_frequency_fourier/high": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "reaction_diffusion/periodic/low_frequency_fourier/low": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "reaction_diffusion/periodic/low_frequency_fourier/medium": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "reaction_diffusion/periodic/medium_grf/high": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "reaction_diffusion/periodic/medium_grf/low": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "reaction_diffusion/periodic/medium_grf/medium": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "reaction_diffusion/periodic/multi_frequency_fourier/high": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "reaction_diffusion/periodic/multi_frequency_fourier/low": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "reaction_diffusion/periodic/multi_frequency_fourier/medium": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "reaction_diffusion/periodic/piecewise_blocks/high": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "reaction_diffusion/periodic/piecewise_blocks/low": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "reaction_diffusion/periodic/piecewise_blocks/medium": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "reaction_diffusion/periodic/rough_grf/high": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "reaction_diffusion/periodic/rough_grf/low": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "reaction_diffusion/periodic/rough_grf/medium": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "reaction_diffusion/periodic/smooth_grf/high": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "reaction_diffusion/periodic/smooth_grf/low": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "reaction_diffusion/periodic/smooth_grf/medium": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "reaction_diffusion/periodic/threshold_level_set/high": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "reaction_diffusion/periodic/threshold_level_set/low": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "reaction_diffusion/periodic/threshold_level_set/medium": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "reaction_diffusion/robin_obstacle/dipole_vortex_pair/high": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "reaction_diffusion/robin_obstacle/dipole_vortex_pair/low": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "reaction_diffusion/robin_obstacle/dipole_vortex_pair/medium": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "reaction_diffusion/robin_obstacle/front_ring_shock/high": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "reaction_diffusion/robin_obstacle/front_ring_shock/low": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "reaction_diffusion/robin_obstacle/front_ring_shock/medium": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "reaction_diffusion/robin_obstacle/gaussian_blobs/high": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "reaction_diffusion/robin_obstacle/gaussian_blobs/low": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "reaction_diffusion/robin_obstacle/gaussian_blobs/medium": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "reaction_diffusion/robin_obstacle/low_frequency_fourier/high": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "reaction_diffusion/robin_obstacle/low_frequency_fourier/low": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "reaction_diffusion/robin_obstacle/low_frequency_fourier/medium": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "reaction_diffusion/robin_obstacle/medium_grf/high": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "reaction_diffusion/robin_obstacle/medium_grf/low": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "reaction_diffusion/robin_obstacle/medium_grf/medium": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "reaction_diffusion/robin_obstacle/multi_frequency_fourier/high": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "reaction_diffusion/robin_obstacle/multi_frequency_fourier/low": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "reaction_diffusion/robin_obstacle/multi_frequency_fourier/medium": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "reaction_diffusion/robin_obstacle/piecewise_blocks/high": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "reaction_diffusion/robin_obstacle/piecewise_blocks/low": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "reaction_diffusion/robin_obstacle/piecewise_blocks/medium": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "reaction_diffusion/robin_obstacle/rough_grf/high": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "reaction_diffusion/robin_obstacle/rough_grf/low": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "reaction_diffusion/robin_obstacle/rough_grf/medium": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "reaction_diffusion/robin_obstacle/smooth_grf/high": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "reaction_diffusion/robin_obstacle/smooth_grf/low": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "reaction_diffusion/robin_obstacle/smooth_grf/medium": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "reaction_diffusion/robin_obstacle/threshold_level_set/high": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "reaction_diffusion/robin_obstacle/threshold_level_set/low": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    },
+    "reaction_diffusion/robin_obstacle/threshold_level_set/medium": {
+      "shape": [
+        3,
+        16,
+        16,
+        1
+      ],
+      "status": "supported"
+    }
+  },
+  "download_refused": {
+    "error": "ValueError: no verified public download endpoint is registered for this release candidate; use source='generate' to compute records locally or source='local' for records you already hold",
+    "status": "rejected_ok"
+  },
+  "summary": {
+    "combos": 840,
+    "seconds": 79.2,
+    "supported": 840,
+    "unsupported_or_error": 0
+  },
+  "tier": "T1",
+  "utc": "2026-09-21T15:47:08Z",
+  "what": "numerical generation coverage"
+}

@@ -1,0 +1,407 @@
+{
+  "flows": {
+    "heat/dirichlet/high": {
+      "artifact": "/workspace/pdeobs/sweep-run/work/full/t6/heat-dirichlet-high/model",
+      "params": 75009,
+      "peak_gpu_mb": 99.4,
+      "pred_shape": [
+        4,
+        3,
+        32,
+        32,
+        1
+      ],
+      "rel_l2": 0.9893407852608525,
+      "score_status": "valid",
+      "status": "passed",
+      "steps": 1,
+      "train_s": 0.064
+    },
+    "heat/dirichlet/low": {
+      "artifact": "/workspace/pdeobs/sweep-run/work/full/t6/heat-dirichlet-low/model",
+      "params": 75009,
+      "peak_gpu_mb": 97.6,
+      "pred_shape": [
+        4,
+        3,
+        32,
+        32,
+        1
+      ],
+      "rel_l2": 0.9622945123253537,
+      "score_status": "valid",
+      "status": "passed",
+      "steps": 1,
+      "train_s": 0.064
+    },
+    "heat/dirichlet/medium": {
+      "artifact": "/workspace/pdeobs/sweep-run/work/full/t6/heat-dirichlet-medium/model",
+      "params": 75009,
+      "peak_gpu_mb": 98.5,
+      "pred_shape": [
+        4,
+        3,
+        32,
+        32,
+        1
+      ],
+      "rel_l2": 0.9700011713460479,
+      "score_status": "valid",
+      "status": "passed",
+      "steps": 1,
+      "train_s": 0.064
+    },
+    "heat/neumann/high": {
+      "artifact": "/workspace/pdeobs/sweep-run/work/full/t6/heat-neumann-high/model",
+      "params": 75009,
+      "peak_gpu_mb": 99.4,
+      "pred_shape": [
+        4,
+        3,
+        32,
+        32,
+        1
+      ],
+      "rel_l2": 0.975192595308519,
+      "score_status": "valid",
+      "status": "passed",
+      "steps": 1,
+      "train_s": 0.064
+    },
+    "heat/neumann/low": {
+      "artifact": "/workspace/pdeobs/sweep-run/work/full/t6/heat-neumann-low/model",
+      "params": 75009,
+      "peak_gpu_mb": 97.6,
+      "pred_shape": [
+        4,
+        3,
+        32,
+        32,
+        1
+      ],
+      "rel_l2": 0.9926104364847765,
+      "score_status": "valid",
+      "status": "passed",
+      "steps": 1,
+      "train_s": 0.064
+    },
+    "heat/neumann/medium": {
+      "artifact": "/workspace/pdeobs/sweep-run/work/full/t6/heat-neumann-medium/model",
+      "params": 75009,
+      "peak_gpu_mb": 98.5,
+      "pred_shape": [
+        4,
+        3,
+        32,
+        32,
+        1
+      ],
+      "rel_l2": 0.968747401815147,
+      "score_status": "valid",
+      "status": "passed",
+      "steps": 1,
+      "train_s": 0.064
+    },
+    "heat/periodic/high": {
+      "artifact": "/workspace/pdeobs/sweep-run/work/full/t6/heat-periodic-high/model",
+      "params": 75009,
+      "peak_gpu_mb": 99.4,
+      "pred_shape": [
+        4,
+        3,
+        32,
+        32,
+        1
+      ],
+      "rel_l2": 0.9872546699233047,
+      "score_status": "valid",
+      "status": "passed",
+      "steps": 1,
+      "train_s": 0.063
+    },
+    "heat/periodic/low": {
+      "artifact": "/workspace/pdeobs/sweep-run/work/full/t6/heat-periodic-low/model",
+      "params": 75009,
+      "peak_gpu_mb": 100.3,
+      "pred_shape": [
+        4,
+        3,
+        32,
+        32,
+        1
+      ],
+      "rel_l2": 0.9877561335231062,
+      "score_status": "valid",
+      "status": "passed",
+      "steps": 1,
+      "train_s": 0.065
+    },
+    "heat/periodic/medium": {
+      "artifact": "/workspace/pdeobs/sweep-run/work/full/t6/heat-periodic-medium/model",
+      "params": 75009,
+      "peak_gpu_mb": 98.5,
+      "pred_shape": [
+        4,
+        3,
+        32,
+        32,
+        1
+      ],
+      "rel_l2": 0.9565074024193297,
+      "score_status": "valid",
+      "status": "passed",
+      "steps": 1,
+      "train_s": 0.063
+    },
+    "heat/robin_obstacle/high": {
+      "artifact": "/workspace/pdeobs/sweep-run/work/full/t6/heat-robin_obstacle-high/model",
+      "params": 75009,
+      "peak_gpu_mb": 100.3,
+      "pred_shape": [
+        4,
+        3,
+        32,
+        32,
+        1
+      ],
+      "rel_l2": 0.9579563365041263,
+      "score_status": "valid",
+      "status": "passed",
+      "steps": 1,
+      "train_s": 0.064
+    },
+    "heat/robin_obstacle/low": {
+      "artifact": "/workspace/pdeobs/sweep-run/work/full/t6/heat-robin_obstacle-low/model",
+      "params": 75009,
+      "peak_gpu_mb": 100.3,
+      "pred_shape": [
+        4,
+        3,
+        32,
+        32,
+        1
+      ],
+      "rel_l2": 0.9765877541404988,
+      "score_status": "valid",
+      "status": "passed",
+      "steps": 1,
+      "train_s": 0.064
+    },
+    "heat/robin_obstacle/medium": {
+      "artifact": "/workspace/pdeobs/sweep-run/work/full/t6/heat-robin_obstacle-medium/model",
+      "params": 75009,
+      "peak_gpu_mb": 99.4,
+      "pred_shape": [
+        4,
+        3,
+        32,
+        32,
+        1
+      ],
+      "rel_l2": 0.9496763226219684,
+      "score_status": "valid",
+      "status": "passed",
+      "steps": 1,
+      "train_s": 0.064
+    },
+    "poisson/dirichlet/high": {
+      "artifact": "/workspace/pdeobs/sweep-run/work/full/t6/poisson-dirichlet-high/model",
+      "params": 75009,
+      "peak_gpu_mb": 96.3,
+      "pred_shape": [
+        4,
+        32,
+        32,
+        1
+      ],
+      "rel_l2": 2.2741862786334606,
+      "score_status": "valid",
+      "status": "passed",
+      "steps": 1,
+      "train_s": 0.041
+    },
+    "poisson/dirichlet/low": {
+      "artifact": "/workspace/pdeobs/sweep-run/work/full/t6/poisson-dirichlet-low/model",
+      "params": 75009,
+      "peak_gpu_mb": 94.5,
+      "pred_shape": [
+        4,
+        32,
+        32,
+        1
+      ],
+      "rel_l2": 8.5809647163842,
+      "score_status": "valid",
+      "status": "passed",
+      "steps": 1,
+      "train_s": 0.042
+    },
+    "poisson/dirichlet/medium": {
+      "artifact": "/workspace/pdeobs/sweep-run/work/full/t6/poisson-dirichlet-medium/model",
+      "params": 75009,
+      "peak_gpu_mb": 95.4,
+      "pred_shape": [
+        4,
+        32,
+        32,
+        1
+      ],
+      "rel_l2": 4.159332090410864,
+      "score_status": "valid",
+      "status": "passed",
+      "steps": 1,
+      "train_s": 0.039
+    },
+    "poisson/neumann/high": {
+      "artifact": "/workspace/pdeobs/sweep-run/work/full/t6/poisson-neumann-high/model",
+      "params": 75009,
+      "peak_gpu_mb": 96.3,
+      "pred_shape": [
+        4,
+        32,
+        32,
+        1
+      ],
+      "rel_l2": 1.2236574022934814,
+      "score_status": "valid",
+      "status": "passed",
+      "steps": 1,
+      "train_s": 0.043
+    },
+    "poisson/neumann/low": {
+      "artifact": "/workspace/pdeobs/sweep-run/work/full/t6/poisson-neumann-low/model",
+      "params": 75009,
+      "peak_gpu_mb": 94.5,
+      "pred_shape": [
+        4,
+        32,
+        32,
+        1
+      ],
+      "rel_l2": 3.161662008474292,
+      "score_status": "valid",
+      "status": "passed",
+      "steps": 1,
+      "train_s": 0.043
+    },
+    "poisson/neumann/medium": {
+      "artifact": "/workspace/pdeobs/sweep-run/work/full/t6/poisson-neumann-medium/model",
+      "params": 75009,
+      "peak_gpu_mb": 95.4,
+      "pred_shape": [
+        4,
+        32,
+        32,
+        1
+      ],
+      "rel_l2": 1.7715108781177338,
+      "score_status": "valid",
+      "status": "passed",
+      "steps": 1,
+      "train_s": 0.045
+    },
+    "poisson/periodic/high": {
+      "artifact": "/workspace/pdeobs/sweep-run/work/full/t6/poisson-periodic-high/model",
+      "params": 75009,
+      "peak_gpu_mb": 96.3,
+      "pred_shape": [
+        4,
+        32,
+        32,
+        1
+      ],
+      "rel_l2": 1.8411298648606833,
+      "score_status": "valid",
+      "status": "passed",
+      "steps": 1,
+      "train_s": 0.043
+    },
+    "poisson/periodic/low": {
+      "artifact": "/workspace/pdeobs/sweep-run/work/full/t6/poisson-periodic-low/model",
+      "params": 75009,
+      "peak_gpu_mb": 94.5,
+      "pred_shape": [
+        4,
+        32,
+        32,
+        1
+      ],
+      "rel_l2": 5.916717059258708,
+      "score_status": "valid",
+      "status": "passed",
+      "steps": 1,
+      "train_s": 0.076
+    },
+    "poisson/periodic/medium": {
+      "artifact": "/workspace/pdeobs/sweep-run/work/full/t6/poisson-periodic-medium/model",
+      "params": 75009,
+      "peak_gpu_mb": 95.4,
+      "pred_shape": [
+        4,
+        32,
+        32,
+        1
+      ],
+      "rel_l2": 2.9319077988653346,
+      "score_status": "valid",
+      "status": "passed",
+      "steps": 1,
+      "train_s": 0.043
+    },
+    "poisson/robin_obstacle/high": {
+      "artifact": "/workspace/pdeobs/sweep-run/work/full/t6/poisson-robin_obstacle-high/model",
+      "params": 75009,
+      "peak_gpu_mb": 96.3,
+      "pred_shape": [
+        4,
+        32,
+        32,
+        1
+      ],
+      "rel_l2": 1.951859511811288,
+      "score_status": "valid",
+      "status": "passed",
+      "steps": 1,
+      "train_s": 0.044
+    },
+    "poisson/robin_obstacle/low": {
+      "artifact": "/workspace/pdeobs/sweep-run/work/full/t6/poisson-robin_obstacle-low/model",
+      "params": 75009,
+      "peak_gpu_mb": 94.5,
+      "pred_shape": [
+        4,
+        32,
+        32,
+        1
+      ],
+      "rel_l2": 6.926260037586074,
+      "score_status": "valid",
+      "status": "passed",
+      "steps": 1,
+      "train_s": 0.043
+    },
+    "poisson/robin_obstacle/medium": {
+      "artifact": "/workspace/pdeobs/sweep-run/work/full/t6/poisson-robin_obstacle-medium/model",
+      "params": 75009,
+      "peak_gpu_mb": 95.4,
+      "pred_shape": [
+        4,
+        32,
+        32,
+        1
+      ],
+      "rel_l2": 3.2555269282422095,
+      "score_status": "valid",
+      "status": "passed",
+      "steps": 1,
+      "train_s": 0.043
+    }
+  },
+  "summary": {
+    "passed": 24,
+    "total": 24
+  },
+  "tier": "T6",
+  "utc": "2026-09-21T15:53:11Z",
+  "what": "fno smoke across boundary x regime for a static and a temporal PDE"
+}

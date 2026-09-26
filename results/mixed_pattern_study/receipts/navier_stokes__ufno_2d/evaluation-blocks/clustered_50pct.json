@@ -1,0 +1,72 @@
+{
+ "boundary": "periodic",
+ "checkpoint_sha256": "be05345dec760c5a252e8b185710135c67b713c309a5ef237d8bde146fdef084",
+ "config_hash": "6b0bfb76d1d188fd",
+ "evaluation_config": {
+  "channel_axis": -1,
+  "data_layout": "auto",
+  "device": "auto",
+  "history_steps": 1,
+  "horizon": 3,
+  "horizons": [
+   1,
+   2,
+   3
+  ],
+  "include_frequency_bands": true,
+  "include_stability": true,
+  "mask_protocols": [],
+  "observation_mode": "matched",
+  "observation_protocols": [],
+  "ood_views": [],
+  "physical_representation": null,
+  "predictions_path": null,
+  "report_path": null,
+  "rollout_target_offset": 0,
+  "spatial_axes": [
+   -3,
+   -2
+  ],
+  "target_step": -1,
+  "task": "rollout"
+ },
+ "evaluation_view": "clustered_50pct",
+ "mask_protocol": "clustered_sensors",
+ "method": "autoregressive",
+ "metrics": {
+  "growth_failure_rate": 0.0,
+  "high_frequency_energy_error": 11491390538.639605,
+  "mae": 0.20090895710719725,
+  "max_norm_growth": 1.0,
+  "mse": 0.13916882359303887,
+  "mse_h1": 0.14834902430735963,
+  "mse_h2": 0.13781077955422563,
+  "mse_h3": 0.1313466669175319,
+  "nonfinite_rate": 0.0,
+  "rel_l2_h1": 0.11434765758422503,
+  "rel_l2_h2": 0.11010219070178388,
+  "rel_l2_h3": 0.10754262887059163,
+  "rel_l2_rollout": 0.11078421772181038,
+  "relative_l2": 0.11078421772181038,
+  "rollout_rel_l2": 0.11078421772181038,
+  "spectral_centroid_error": 6.798948147626805e-05,
+  "spectral_high": 101861.19409070248,
+  "spectral_low": 0.11066440796302639,
+  "spectral_mid": 252062.035782169,
+  "stability_failure_rate": 0.0
+ },
+ "observation_mode": "matched",
+ "observation_ratio": 0.5,
+ "pde": "navier_stokes",
+ "regime_values": [
+  "high",
+  "low",
+  "medium"
+ ],
+ "samples": 200,
+ "setting": "smooth_grf",
+ "split": "test",
+ "task": "rollout",
+ "test_sample_ids_sha256": "47f5416cf0bac204f3767f0aa20cc988273ec4c0d82d85be197da3ab47e12690",
+ "training_view": "mixed_nine_views"
+}

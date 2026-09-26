@@ -1,0 +1,24 @@
+........................................................................ [ 11%]
+........................................................................ [ 22%]
+........................................................................ [ 34%]
+........................................................................ [ 45%]
+........................................................................ [ 57%]
+........................................................................ [ 68%]
+........................................................................ [ 80%]
+........................................................................ [ 91%]
+......................................................                   [100%]
+=============================== warnings summary ===============================
+tests/test_pino.py::test_heat_temporal_normalization_has_no_artificial_amplitude_gradient
+  <AUDIT_ROOT>/enhanced/pdeobs-review-main/tests/test_pino.py:185: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+  Consider using tensor.detach() first. (Triggered internally at /pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:836.)
+    assert abs(float(radial_derivative)) <= 2.0e-5 * max(abs(float(loss)), 1.0)
+
+tests/test_runner.py::test_explicit_observation_views_do_not_insert_a_training_mask
+tests/test_runner.py::test_runner_fits_and_loads_gappy_pod_without_a_torch_checkpoint
+tests/test_runner.py::test_paired_ood_results_feed_benchmark_and_analysis
+tests/test_runner.py::test_paired_ood_results_feed_benchmark_and_analysis
+  /opt/pyvenv/lib/python3.13/site-packages/torch/utils/data/dataloader.py:775: UserWarning: 'pin_memory' argument is set as true but no accelerator is found, then device pinned memory won't be used.
+    super().__init__(loader)
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+630 passed, 5 warnings in 23.12s

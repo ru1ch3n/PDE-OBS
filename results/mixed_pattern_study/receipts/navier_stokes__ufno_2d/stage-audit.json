@@ -1,0 +1,160 @@
+{
+ "config": {
+  "data": {
+   "filters": {
+    "boundary": "periodic",
+    "pde": "navier_stokes",
+    "setting": "smooth_grf"
+   },
+   "input_horizon": 1,
+   "mask": {
+    "protocol": "random_3pct(ratio=0.5) + random_3pct(ratio=0.65) + random_3pct(ratio=0.8) + block_missing(missing_fraction=0.49) + line_sensors(num_lines=76, orientation=both) + line_sensors(num_lines=64, orientation=horizontal) + line_sensors(num_lines=64, orientation=vertical) + boundary_sensors(width=19) + clustered_sensors(ratio=0.5)"
+   },
+   "root": "<study-root>/data/numerics-full-t15-full-<COMMIT-2>",
+   "split": "iid",
+   "state_representation": "vorticity",
+   "train_glob": "navier_stokes/periodic/smooth_grf/**/*.h5",
+   "training_horizons": [
+    3
+   ],
+   "verify_shards": false
+  },
+  "evaluation": {
+   "horizons": [
+    1,
+    2,
+    3
+   ]
+  },
+  "method": {
+   "base": {
+    "kwargs": {
+     "dropout": 0.0,
+     "geometry_channels": 1,
+     "in_channels": 1,
+     "modes": 12,
+     "out_channels": 1,
+     "padding": 8,
+     "width": 36
+    },
+    "name": "ufno"
+   },
+   "name": "autoregressive"
+  },
+  "name": "v7-navier_stokes-ufno_2d-mixed_nine_views-500epoch",
+  "schema_version": "pdeobs.experiment/v1",
+  "seed": 20260804,
+  "task": "rollout",
+  "training": {
+   "batch_size": 4,
+   "checkpoint_every": 1,
+   "collapse_consecutive_windows": 20,
+   "data_loss_weight": 1.0,
+   "deterministic": true,
+   "early_stopping_patience": null,
+   "epochs": 500,
+   "grad_clip": 1.0,
+   "gradient_norm_warning": 1000.0,
+   "gradient_warning_consecutive_windows": 3,
+   "gradient_warning_fatal": true,
+   "health_policy": "fail",
+   "learning_rate": 0.001,
+   "loss": "relative_l2",
+   "loss_spike_consecutive_windows": 3,
+   "loss_spike_ratio": 10.0,
+   "loss_spike_scope": "epoch",
+   "mixed_precision": false,
+   "num_workers": 4,
+   "optimizer": "adam",
+   "output_std_ratio_collapse_max": 0.0001,
+   "persistent_workers": true,
+   "physics_loss": "none",
+   "physics_loss_epsilon": 1e-12,
+   "physics_loss_weight": 0.0,
+   "pin_memory": true,
+   "scheduler": "step",
+   "scheduler_anneal_strategy": "cos",
+   "scheduler_div_factor": 25.0,
+   "scheduler_final_div_factor": 10000.0,
+   "scheduler_gamma": 0.5,
+   "scheduler_pct_start": 0.3,
+   "scheduler_step_size": 100,
+   "scheduler_steps_per_epoch": 450,
+   "teacher_forcing_ratio": 0.0,
+   "validation_improvement_min_fraction": null,
+   "weight_decay": 0.0001
+  }
+ },
+ "config_sha256": "99eec38fc920ddf578783834e4d0b67163bbe49bab7eebbe8749bf015bb3aac0",
+ "diff_vs_frozen_base_view": {
+  "data.mask": {
+   "frozen": {
+    "protocol": "random_3pct",
+    "ratio": 0.5
+   },
+   "study": {
+    "protocol": "random_3pct(ratio=0.5) + random_3pct(ratio=0.65) + random_3pct(ratio=0.8) + block_missing(missing_fraction=0.49) + line_sensors(num_lines=76, orientation=both) + line_sensors(num_lines=64, orientation=horizontal) + line_sensors(num_lines=64, orientation=vertical) + boundary_sensors(width=19) + clustered_sensors(ratio=0.5)"
+   }
+  },
+  "name": {
+   "frozen": "v7-navier_stokes-ufno_2d-random_50pct-500epoch",
+   "study": "v7-navier_stokes-ufno_2d-mixed_nine_views-500epoch"
+  }
+ },
+ "mask_assignment": {
+  "field_records_touched": 0,
+  "metadata_records_read": 2000,
+  "per_regime": {
+   "high": {
+    "block_missing-missing_fraction-0.49": 66,
+    "boundary_sensors-width-19": 70,
+    "clustered_sensors-ratio-0.5": 63,
+    "line_sensors-num_lines-64-orientation-horizontal": 66,
+    "line_sensors-num_lines-64-orientation-vertical": 64,
+    "line_sensors-num_lines-76-orientation-both": 69,
+    "random_3pct-ratio-0.5": 69,
+    "random_3pct-ratio-0.65": 65,
+    "random_3pct-ratio-0.8": 68
+   },
+   "low": {
+    "block_missing-missing_fraction-0.49": 70,
+    "boundary_sensors-width-19": 69,
+    "clustered_sensors-ratio-0.5": 70,
+    "line_sensors-num_lines-64-orientation-horizontal": 66,
+    "line_sensors-num_lines-64-orientation-vertical": 65,
+    "line_sensors-num_lines-76-orientation-both": 64,
+    "random_3pct-ratio-0.5": 63,
+    "random_3pct-ratio-0.65": 66,
+    "random_3pct-ratio-0.8": 67
+   },
+   "medium": {
+    "block_missing-missing_fraction-0.49": 61,
+    "boundary_sensors-width-19": 65,
+    "clustered_sensors-ratio-0.5": 69,
+    "line_sensors-num_lines-64-orientation-horizontal": 66,
+    "line_sensors-num_lines-64-orientation-vertical": 70,
+    "line_sensors-num_lines-76-orientation-both": 67,
+    "random_3pct-ratio-0.5": 69,
+    "random_3pct-ratio-0.65": 69,
+    "random_3pct-ratio-0.8": 64
+   }
+  },
+  "records_without_regime_sample_index": 0,
+  "test_records": 200,
+  "test_records_touched": 0,
+  "test_sample_ids_sha256": "47f5416cf0bac204f3767f0aa20cc988273ec4c0d82d85be197da3ab47e12690",
+  "total": {
+   "block_missing-missing_fraction-0.49": 197,
+   "boundary_sensors-width-19": 204,
+   "clustered_sensors-ratio-0.5": 202,
+   "line_sensors-num_lines-64-orientation-horizontal": 198,
+   "line_sensors-num_lines-64-orientation-vertical": 199,
+   "line_sensors-num_lines-76-orientation-both": 200,
+   "random_3pct-ratio-0.5": 201,
+   "random_3pct-ratio-0.65": 200,
+   "random_3pct-ratio-0.8": 199
+  },
+  "training_records": 1800
+ },
+ "protocol": "pdeobs.fixed500-last-checkpoint/v7"
+}

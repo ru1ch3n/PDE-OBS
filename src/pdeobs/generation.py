@@ -1,0 +1,952 @@
+"""Deterministic local and Slurm-array dataset generation orchestration."""
+
+from __future__ import annotations
+
+import os
+from collections.abc import Iterable, Mapping, Sequence
+from dataclasses import asdict, dataclass, replace
+from pathlib import Path
+from typing import Any
+
+import numpy as np
+
+from . import __solver_version__, __version__
+from .registry import PDE_REGISTRY, SETTING_REGISTRY, RegistryError, normalize_name
+from .schema import GenerationSpec, Sample, derive_seed, json_safe, normalize_resolution
+from .settings import SETTING_NAMES
+from .splits import (
+    REGIMES,
+    build_split_plan,
+    official_ood_labels,
+    regime_counts,
+    resolve_tier,
+    tier_regime_counts,
+)
+from .storage import (
+    AtomicHDF5ShardWriter,
+    read_jsonl_manifest,
+    write_jsonl_manifest,
+)
+
+PDE_FAMILIES = (
+    "darcy",
+    "poisson",
+    "helmholtz",
+    "heat",
+    "reaction_diffusion",
+    "burgers",
+    "navier_stokes",
+)
+
+
+def _canonical_pde(name: str) -> str:
+    """Resolve a built-in or installed plugin PDE to a safe canonical name."""
+
+    # A fresh generation worker must discover explicit built-in replacements as
+    # well as new family names. The PDE module caches this entry-point scan.
+    from .pdes import discover_generators
+
+    discover_generators(on_error="warn")
+    try:
+        token = normalize_name(name)
+    except (TypeError, ValueError) as exc:
+        raise ValueError(f"unknown PDE family {name!r}") from exc
+    if token in PDE_FAMILIES:
+        return token
+    if token in PDE_REGISTRY:
+        canonical = PDE_REGISTRY.resolve_name(token)
+        if canonical in PDE_REGISTRY.names():
+            return canonical
+    choices = ", ".join(sorted(set(PDE_FAMILIES) | set(PDE_REGISTRY.names())))
+    raise ValueError(f"unknown PDE family {name!r}; choose one of: {choices}")
+
+
+def _canonical_setting(name: str) -> str:
+    """Resolve one registered setting name for stable IDs and safe paths."""
+
+    try:
+        SETTING_REGISTRY.get(name)
+    except (RegistryError, TypeError, ValueError) as exc:
+        raise ValueError(f"unknown setting {name!r}") from exc
+    return SETTING_REGISTRY.resolve_name(name)
+
+
+BOUNDARIES = ("dirichlet", "neumann", "periodic", "robin_obstacle")
+TEMPORAL_FAMILIES = frozenset({"heat", "reaction_diffusion", "burgers", "navier_stokes"})
+
+
+def _regime_offset(regime: str, total: int) -> int:
+    counts = regime_counts(total)
+    if regime not in counts:
+        raise ValueError(f"unknown regime {regime!r}")
+    offset = 0
+    for name, count in counts.items():
+        if name == regime:
+            return offset
+        offset += count
+    raise AssertionError("unreachable")
+
+
+def _case_override(
+    values: Mapping[str, Any] | None,
+    family: str,
+    boundary: str,
+    setting: str,
+    regime: str,
+) -> Any:
+    """Resolve flat case overrides from broadest to most specific key.
+
+    Supported keys are ``family``, ``family/boundary``,
+    ``family/boundary/setting``, and ``family/boundary/setting/regime``.
+    This keeps solver and saved-frame choices explicit in the plan without
+    entangling them with observation protocols.
+    """
+
+    mapping = dict(values or {})
+    selected: Any = None
+    for key in (
+        family,
+        f"{family}/{boundary}",
+        f"{family}/{boundary}/{setting}",
+        f"{family}/{boundary}/{setting}/{regime}",
+    ):
+        if key in mapping:
+            selected = mapping[key]
+    return selected
+
+
+@dataclass(frozen=True, slots=True)
+class GenerationJob:
+    pde: str
+    boundary: str
+    setting: str
+    regime: str
+    sample_start: int
+    sample_count: int
+    shard_index: int
+    output_path: str
+    resolution: int | tuple[int, int] = 128
+    seed: int = 0
+    time_steps: int | None = None
+    stored_time_steps: int | None = None
+    dtype: str = "float32"
+    compression: str | None = "gzip"
+    compression_level: int | None = 4
+    tier: str = "full"
+    macro_size: int = 2000
+    options: Mapping[str, Any] | None = None
+    quality: Mapping[str, Any] | None = None
+    provenance: Mapping[str, Any] | None = None
+
+    def __post_init__(self) -> None:
+        object.__setattr__(self, "pde", _canonical_pde(self.pde))
+        if self.boundary not in BOUNDARIES:
+            raise ValueError(f"unknown boundary {self.boundary!r}")
+        if self.regime not in REGIMES:
+            raise ValueError(f"unknown regime {self.regime!r}")
+        object.__setattr__(self, "setting", _canonical_setting(self.setting))
+        if self.sample_start < 0 or self.sample_count < 1 or self.shard_index < 0:
+            raise ValueError("sample_start/shard_index must be non-negative and count positive")
+        object.__setattr__(self, "resolution", normalize_resolution(self.resolution))
+        if self.time_steps is not None and int(self.time_steps) < 1:
+            raise ValueError("time_steps must be positive")
+        storage_dtype = np.dtype(self.dtype)
+        if not np.issubdtype(storage_dtype, np.floating):
+            raise TypeError("generation dtype must be floating-point")
+        if self.compression_level is not None and int(self.compression_level) < 0:
+            raise ValueError("compression_level must be non-negative")
+        if self.stored_time_steps is not None:
+            stored_time_steps = int(self.stored_time_steps)
+            if stored_time_steps < 2:
+                raise ValueError("stored_time_steps must be at least 2 for temporal data")
+            object.__setattr__(self, "stored_time_steps", stored_time_steps)
+            if self.pde in TEMPORAL_FAMILIES and self.time_steps is None:
+                raise ValueError(
+                    "built-in temporal jobs with stored_time_steps require explicit time_steps"
+                )
+            if self.time_steps is not None:
+                dense_intervals = int(self.time_steps) - 1
+                stored_intervals = stored_time_steps - 1
+                if dense_intervals < stored_intervals:
+                    raise ValueError("stored_time_steps cannot exceed time_steps")
+                if dense_intervals % stored_intervals:
+                    raise ValueError(
+                        "time_steps - 1 must be divisible by stored_time_steps - 1 "
+                        "so stored snapshots have a uniform physical cadence"
+                    )
+        regime_limit = regime_counts(self.macro_size)[self.regime]
+        if self.sample_start + self.sample_count > regime_limit:
+            raise ValueError("job sample range exceeds its full regime allocation")
+        object.__setattr__(self, "options", dict(json_safe(self.options or {})))
+        from .quality import normalize_quality_config
+
+        object.__setattr__(self, "quality", normalize_quality_config(self.quality))
+        object.__setattr__(self, "provenance", dict(json_safe(self.provenance or {})))
+
+    @property
+    def family(self) -> str:
+        return self.pde
+
+    @property
+    def case_key(self) -> str:
+        return "/".join((self.pde, self.boundary, self.setting))
+
+    @property
+    def job_id(self) -> str:
+        return "/".join(
+            (
+                self.case_key,
+                self.regime,
+                f"shard-{self.shard_index:05d}",
+            )
+        )
+
+    def sample_seed(self, regime_sample_index: int) -> int:
+        return derive_seed(
+            self.seed,
+            self.pde,
+            self.boundary,
+            self.setting,
+            self.regime,
+            int(regime_sample_index),
+        )
+
+    def to_dict(self) -> dict[str, Any]:
+        return {
+            "pde": self.pde,
+            "boundary": self.boundary,
+            "setting": self.setting,
+            "regime": self.regime,
+            "sample_start": self.sample_start,
+            "sample_count": self.sample_count,
+            "shard_index": self.shard_index,
+            "output_path": self.output_path,
+            "resolution": list(normalize_resolution(self.resolution)),
+            "seed": self.seed,
+            "time_steps": self.time_steps,
+            "stored_time_steps": self.stored_time_steps,
+            "dtype": self.dtype,
+            "compression": self.compression,
+            "compression_level": self.compression_level,
+            "tier": self.tier,
+            "macro_size": self.macro_size,
+            "options": dict(self.options or {}),
+            "quality": dict(self.quality or {}),
+            "provenance": dict(self.provenance or {}),
+            "job_id": self.job_id,
+        }
+
+    @classmethod
+    def from_dict(cls, row: Mapping[str, Any]) -> GenerationJob:
+        values = dict(row)
+        values.pop("job_id", None)
+        if "pde" not in values and "family" in values:
+            values["pde"] = values.pop("family")
+        if isinstance(values.get("resolution"), list):
+            values["resolution"] = tuple(values["resolution"])
+        return cls(**values)
+
+
+@dataclass(frozen=True, slots=True)
+class GenerationResult:
+    job_id: str
+    output_path: str
+    sample_count: int
+    skipped: bool
+    sha256: str
+
+
+def build_job_grid(
+    output_dir: str | Path,
+    *,
+    tier: str | int = "full",
+    resolution: int | tuple[int, int] = 128,
+    shard_size: int = 100,
+    seed: int = 0,
+    time_steps: int | None = None,
+    stored_time_steps: int | None = None,
+    time_steps_by_family: Mapping[str, int] | None = None,
+    time_steps_by_case: Mapping[str, int] | None = None,
+    dtype: str = "float32",
+    compression: str | None = "gzip",
+    compression_level: int | None = 4,
+    families: Sequence[str] = PDE_FAMILIES,
+    boundaries: Sequence[str] = BOUNDARIES,
+    settings: Sequence[str] = SETTING_NAMES,
+    regimes: Sequence[str] = REGIMES,
+    macro_size: int = 2000,
+    options: Mapping[str, Any] | None = None,
+    options_by_case: Mapping[str, Mapping[str, Any]] | None = None,
+    quality: Mapping[str, Any] | None = None,
+    provenance: Mapping[str, Any] | None = None,
+    include_tier_dir: bool = True,
+) -> list[GenerationJob]:
+    """Expand the semantic product into independent, array-safe shard jobs."""
+
+    if shard_size < 1:
+        raise ValueError("shard_size must be positive")
+    tier_size = resolve_tier(tier, full_size=macro_size)
+    tier_name = str(tier).lower() if isinstance(tier, str) else f"n{tier_size}"
+    counts = tier_regime_counts(tier_size, full_size=macro_size)
+    root = Path(output_dir)
+    jobs: list[GenerationJob] = []
+    canonical_families = tuple(_canonical_pde(name) for name in families)
+    canonical_settings = tuple(_canonical_setting(name) for name in settings)
+    canonical_time_steps: dict[str, int] = {}
+    for name, value in dict(time_steps_by_family or {}).items():
+        family_name = _canonical_pde(name)
+        if family_name in canonical_time_steps:
+            raise ValueError(f"time_steps_by_family contains duplicate aliases for {family_name!r}")
+        family_steps = int(value)
+        if family_steps < 1:
+            raise ValueError("time_steps_by_family values must be positive")
+        canonical_time_steps[family_name] = family_steps
+    if len(set(canonical_families)) != len(canonical_families):
+        raise ValueError("families contain duplicate aliases for the same canonical PDE")
+    if len(set(canonical_settings)) != len(canonical_settings):
+        raise ValueError("settings contain aliases that resolve to the same canonical setting")
+    for factor_name, factor_values in (
+        ("boundaries", tuple(boundaries)),
+        ("regimes", tuple(regimes)),
+    ):
+        if len(set(factor_values)) != len(factor_values):
+            raise ValueError(f"{factor_name} contain duplicate semantic values")
+    for family in canonical_families:
+        for boundary in boundaries:
+            for setting in canonical_settings:
+                for regime in regimes:
+                    case_steps = _case_override(
+                        time_steps_by_case,
+                        family,
+                        boundary,
+                        setting,
+                        regime,
+                    )
+                    if case_steps is not None and int(case_steps) < 1:
+                        raise ValueError("time_steps_by_case values must be positive")
+                    case_options = dict(options or {})
+                    option_override = _case_override(
+                        options_by_case,
+                        family,
+                        boundary,
+                        setting,
+                        regime,
+                    )
+                    if option_override is not None:
+                        if not isinstance(option_override, Mapping):
+                            raise TypeError("options_by_case values must be mappings")
+                        case_options.update(option_override)
+                    count = counts[regime]
+                    for shard_index, start in enumerate(range(0, count, shard_size)):
+                        current_count = min(shard_size, count - start)
+                        case_root = root / tier_name if include_tier_dir else root
+                        output = (
+                            case_root
+                            / family
+                            / boundary
+                            / setting
+                            / regime
+                            / f"shard_{shard_index:05d}.h5"
+                        )
+                        jobs.append(
+                            GenerationJob(
+                                pde=family,
+                                boundary=boundary,
+                                setting=setting,
+                                regime=regime,
+                                sample_start=start,
+                                sample_count=current_count,
+                                shard_index=shard_index,
+                                output_path=str(output),
+                                resolution=resolution,
+                                seed=seed,
+                                time_steps=(
+                                    int(case_steps)
+                                    if case_steps is not None
+                                    else canonical_time_steps.get(family, time_steps)
+                                ),
+                                stored_time_steps=(
+                                    stored_time_steps if family in TEMPORAL_FAMILIES else None
+                                ),
+                                dtype=dtype,
+                                compression=compression,
+                                compression_level=compression_level,
+                                tier=tier_name,
+                                macro_size=macro_size,
+                                options=case_options,
+                                quality=quality,
+                                provenance=provenance,
+                            )
+                        )
+    return jobs
+
+
+def write_job_manifest(jobs: Iterable[GenerationJob], path: str | Path) -> Path:
+    planned = list(jobs)
+    job_ids = [job.job_id for job in planned]
+    output_paths = [str(Path(job.output_path).resolve()) for job in planned]
+    if len(set(job_ids)) != len(job_ids):
+        raise ValueError("generation plan contains duplicate job IDs")
+    if len(set(output_paths)) != len(output_paths):
+        raise ValueError("generation plan contains duplicate output paths")
+    return write_jsonl_manifest((job.to_dict() for job in planned), path)
+
+
+def load_job_manifest(path: str | Path) -> list[GenerationJob]:
+    return [GenerationJob.from_dict(row) for row in read_jsonl_manifest(path)]
+
+
+def resolve_array_index(index: int | None = None) -> int:
+    """Use an explicit zero-based index or ``SLURM_ARRAY_TASK_ID``."""
+
+    if index is None:
+        value = os.environ.get("SLURM_ARRAY_TASK_ID")
+        if value is None:
+            raise ValueError("array index was not supplied and SLURM_ARRAY_TASK_ID is unset")
+        index = int(value)
+    if int(index) < 0:
+        raise ValueError("array index must be non-negative")
+    return int(index)
+
+
+def select_array_job(
+    jobs_or_manifest: Sequence[GenerationJob] | str | Path,
+    index: int | None = None,
+) -> GenerationJob:
+    jobs = (
+        load_job_manifest(jobs_or_manifest)
+        if isinstance(jobs_or_manifest, (str, Path))
+        else list(jobs_or_manifest)
+    )
+    selected = resolve_array_index(index)
+    if selected >= len(jobs):
+        raise IndexError(f"array index {selected} is outside 0..{len(jobs) - 1}")
+    return jobs[selected]
+
+
+def _sample_from_output(output: Any, metadata: Mapping[str, Any]) -> Sample:
+    if isinstance(output, Sample):
+        combined = dict(output.metadata)
+        combined.update(metadata)
+        return Sample(output.condition, output.trajectory, output.geometry, combined)
+    try:
+        condition = output.condition
+        trajectory = output.trajectory
+        geometry = output.geometry
+    except AttributeError as exc:
+        raise TypeError(
+            "PDE generator output must be Sample-like with condition, trajectory, geometry"
+        ) from exc
+    combined = dict(metadata)
+    combined["parameters"] = json_safe(getattr(output, "parameters", {}))
+    diagnostics = json_safe(getattr(output, "diagnostics", {}))
+    if diagnostics:
+        combined["diagnostics"] = diagnostics
+    return Sample(condition, trajectory, geometry, combined)
+
+
+def _stored_frame_indices(dense_steps: int, stored_steps: int | None) -> np.ndarray:
+    """Select uniformly spaced exact solver frames for persistent storage.
+
+    The dense trajectory remains in memory long enough to evaluate the PDE
+    quality contract.  Only this deterministic subset is written to HDF5.
+    Requiring an integer stride avoids interpolating or fabricating states.
+    """
+
+    dense_steps = int(dense_steps)
+    if dense_steps < 1:
+        raise ValueError("a trajectory must contain at least one frame")
+    if stored_steps is None or dense_steps == 1:
+        return np.arange(dense_steps, dtype=np.int64)
+    stored_steps = int(stored_steps)
+    if stored_steps < 2 or stored_steps > dense_steps:
+        raise ValueError("stored_time_steps must be between 2 and the dense trajectory T")
+    dense_intervals = dense_steps - 1
+    stored_intervals = stored_steps - 1
+    if dense_intervals % stored_intervals:
+        raise ValueError(
+            "dense trajectory intervals must be divisible by stored intervals; "
+            "increase trajectory_steps so no temporal interpolation is required"
+        )
+    stride = dense_intervals // stored_intervals
+    return np.arange(stored_steps, dtype=np.int64) * stride
+
+
+def generate_job(
+    job: GenerationJob,
+    *,
+    resume: bool = True,
+    overwrite: bool = False,
+) -> GenerationResult:
+    """Generate or resume one independent shard."""
+
+    # Importing here keeps manifest inspection and ``--dry-run`` light-weight.
+    from .pdes import BUILTIN_FAMILY_GENERATORS, generate_sample, get_generator
+
+    generator = get_generator(job.pde)
+    builtin_generator = BUILTIN_FAMILY_GENERATORS.get(job.pde)
+    is_builtin_generator = builtin_generator is generator
+    generator_options = dict(job.options or {})
+    solver_fidelity = str(
+        generator_options.pop(
+            "solver_fidelity",
+            "compact_reference" if is_builtin_generator else "external_plugin",
+        )
+    )
+    solver_version = str(
+        generator_options.pop(
+            "solver_version",
+            __solver_version__ if is_builtin_generator else "unreported",
+        )
+    )
+    solver_validation_evidence = json_safe(
+        generator_options.pop("solver_validation_evidence", None)
+    )
+    if is_builtin_generator:
+        generator_options.setdefault("dtype", np.dtype(job.dtype))
+    solver_implementation = (
+        f"{getattr(generator, '__module__', '<unknown>')}:"
+        f"{getattr(generator, '__qualname__', generator.__class__.__qualname__)}"
+    )
+
+    writer = AtomicHDF5ShardWriter(
+        job.output_path,
+        expected_count=job.sample_count,
+        spec=job.to_dict(),
+        resume=resume,
+        overwrite=overwrite,
+        compression=job.compression,
+        compression_opts=job.compression_level,
+    )
+    if writer.completed:
+        from .storage import read_shard_manifest
+
+        manifest = read_shard_manifest(job.output_path)
+        return GenerationResult(
+            job.job_id,
+            job.output_path,
+            int(manifest["sample_count"]),
+            True,
+            str(manifest["sha256"]),
+        )
+
+    case_plan = build_split_plan(job.macro_size, seed=job.seed, case_key=job.case_key, shuffle=True)
+    regime_offset = _regime_offset(job.regime, job.macro_size)
+    try:
+        for row in range(writer.count, job.sample_count):
+            regime_index = job.sample_start + row
+            macro_index = regime_offset + regime_index
+            assignment = case_plan[macro_index]
+            if assignment.regime != job.regime:
+                raise RuntimeError(
+                    "generation split plan is inconsistent with the requested regime: "
+                    f"{assignment.regime!r} != {job.regime!r} at macro index {macro_index}"
+                )
+            sample_seed = job.sample_seed(regime_index)
+            output = generate_sample(
+                family=job.pde,
+                boundary=job.boundary,
+                setting=job.setting,
+                regime=job.regime,
+                seed=sample_seed,
+                resolution=normalize_resolution(job.resolution),
+                # A dataset-wide trajectory setting applies only to temporal
+                # equations; elliptic families are canonically T=1.
+                # Built-in elliptic families are canonically static.  External
+                # plugins receive the configured value and decide their own
+                # static/temporal contract.
+                time_steps=(
+                    1
+                    if job.pde in PDE_FAMILIES and job.pde not in TEMPORAL_FAMILIES
+                    else job.time_steps
+                ),
+                **generator_options,
+            )
+            ood_labels = official_ood_labels(
+                pde=job.pde,
+                boundary=job.boundary,
+                setting=job.setting,
+                regime=job.regime,
+            )
+            if is_builtin_generator:
+                if job.pde == "navier_stokes":
+                    state_representation = str(
+                        output.parameters.get("state_representation", "vorticity")
+                    )
+                else:
+                    state_representation = "scalar"
+            else:
+                output_metadata = getattr(output, "metadata", {})
+                output_parameters = getattr(output, "parameters", {})
+                declared_representation = (
+                    output_metadata.get("state_representation")
+                    if isinstance(output_metadata, Mapping)
+                    else None
+                )
+                if not declared_representation and isinstance(output_parameters, Mapping):
+                    declared_representation = output_parameters.get("state_representation")
+                state_representation = str(declared_representation or "generic").strip()
+                if not state_representation:
+                    state_representation = "generic"
+            provenance = dict(job.provenance or {})
+            git = provenance.get("git", {})
+            metadata = {
+                "sample_id": (
+                    f"seed-{job.seed}/{job.pde}/{job.boundary}/{job.setting}/"
+                    f"{job.regime}/{regime_index:06d}"
+                ),
+                "schema_version": "1.0",
+                "pde": job.pde,
+                "boundary": job.boundary,
+                "setting": job.setting,
+                "regime": job.regime,
+                "state_representation": state_representation,
+                "solver_fidelity": solver_fidelity,
+                "solver_version": solver_version,
+                "solver_implementation": solver_implementation,
+                "solver_validation_evidence": solver_validation_evidence,
+                "pdeobs_version": __version__,
+                "resolution": list(normalize_resolution(job.resolution)),
+                "T": int(np.asarray(output.trajectory).shape[0]),
+                "regime_sample_index": regime_index,
+                "macro_sample_index": macro_index,
+                "split": assignment.split,
+                "tier": job.tier,
+                "seed": sample_seed,
+                "generation_seed": job.seed,
+                "config_hash": provenance.get("config_hash"),
+                "git_commit": git.get("commit") if isinstance(git, Mapping) else None,
+                **ood_labels,
+            }
+            # Quality is computed after conversion to the requested field dtype.
+            # A dense temporal trajectory may be retained only in memory for the
+            # saved-field PDE residual; publication HDF5 stores a uniform exact
+            # subset selected below.
+            raw_sample = _sample_from_output(output, metadata)
+            geometry = raw_sample.geometry
+            if geometry.dtype != np.bool_:
+                geometry = geometry.astype(job.dtype, copy=False)
+            quality_sample = Sample(
+                raw_sample.condition.astype(job.dtype, copy=False),
+                raw_sample.trajectory.astype(job.dtype, copy=False),
+                geometry,
+                raw_sample.metadata,
+            )
+            from .quality import (
+                enforce_generation_quality,
+                evaluate_sample_quality,
+                generation_quality_rejected,
+            )
+
+            quality = evaluate_sample_quality(quality_sample, config=job.quality)
+            if generation_quality_rejected(quality):
+                failure_path = Path(job.output_path).with_suffix(".quality-failures.jsonl")
+                write_jsonl_manifest(
+                    [
+                        {
+                            "sample_id": quality_sample.metadata.get("sample_id"),
+                            "seed": quality_sample.metadata.get("seed"),
+                            "job_id": job.job_id,
+                            "accepted": False,
+                            "quality": quality,
+                        }
+                    ],
+                    failure_path,
+                )
+            enforce_generation_quality(quality)
+            dense_steps = int(quality_sample.trajectory.shape[0])
+            frame_indices = _stored_frame_indices(dense_steps, job.stored_time_steps)
+            stored_metadata = dict(quality_sample.metadata)
+            stored_metadata["T"] = int(frame_indices.size)
+            stored_metadata["quality_T"] = dense_steps
+            stored_metadata["quality_source"] = (
+                "dense_pre_storage_trajectory"
+                if frame_indices.size != dense_steps
+                else "stored_trajectory"
+            )
+            stored_metadata["stored_frame_indices"] = frame_indices.tolist()
+            parameters = stored_metadata.get("parameters", {})
+            final_time = parameters.get("final_time") if isinstance(parameters, Mapping) else None
+            if dense_steps > 1 and final_time is not None:
+                stored_metadata["stored_time_values"] = (
+                    frame_indices.astype(np.float64) * float(final_time) / (dense_steps - 1)
+                ).tolist()
+            stored_metadata["quality"] = quality
+            sample = Sample(
+                quality_sample.condition,
+                quality_sample.trajectory[frame_indices],
+                quality_sample.geometry,
+                stored_metadata,
+            )
+            writer.append(sample)
+        manifest = writer.finalize()
+    except BaseException:
+        writer.close()  # retain *.partial for the next array resubmission
+        raise
+    return GenerationResult(
+        job.job_id,
+        job.output_path,
+        int(manifest["sample_count"]),
+        False,
+        str(manifest["sha256"]),
+    )
+
+
+def run_array_job(
+    manifest_path: str | Path,
+    *,
+    index: int | None = None,
+    resume: bool = True,
+) -> GenerationResult:
+    return generate_job(select_array_job(manifest_path, index=index), resume=resume)
+
+
+def jobs_from_spec(
+    spec: GenerationSpec,
+    output_dir: str | Path,
+    *,
+    include_tier_dir: bool = True,
+) -> list[GenerationJob]:
+    """Split one explicit regime spec into shard-sized jobs."""
+
+    jobs: list[GenerationJob] = []
+    root = Path(output_dir).resolve()
+    pde = _canonical_pde(spec.pde)
+    setting = _canonical_setting(spec.setting)
+    for shard_index, start in enumerate(range(0, spec.num_samples, spec.shard_size)):
+        count = min(spec.shard_size, spec.num_samples - start)
+        case_root = root / spec.tier if include_tier_dir else root
+        path = (
+            case_root / pde / spec.boundary / setting / spec.regime / f"shard_{shard_index:05d}.h5"
+        )
+        if not path.resolve().is_relative_to(root):
+            raise ValueError("generation output escapes the requested output directory")
+        jobs.append(
+            GenerationJob(
+                pde=pde,
+                boundary=spec.boundary,
+                setting=setting,
+                regime=spec.regime,
+                sample_start=start,
+                sample_count=count,
+                shard_index=shard_index,
+                output_path=str(path),
+                resolution=spec.resolution,
+                seed=spec.seed,
+                time_steps=spec.time_steps,
+                dtype=spec.dtype,
+                compression="gzip",
+                compression_level=4,
+                tier=spec.tier,
+                # An explicit spec may be a smaller standalone case; ensure its
+                # range is valid while retaining official full-size semantics.
+                macro_size=max(2000, spec.num_samples * len(REGIMES)),
+                options=spec.options,
+                quality=spec.quality,
+            )
+        )
+    return jobs
+
+
+def generate_from_spec(
+    spec: GenerationSpec,
+    output_dir: str | Path,
+    *,
+    resume: bool = True,
+    include_tier_dir: bool = True,
+) -> list[GenerationResult]:
+    return [
+        generate_job(job, resume=resume)
+        for job in jobs_from_spec(spec, output_dir, include_tier_dir=include_tier_dir)
+    ]
+
+
+def _config_sequence(
+    config: Mapping[str, Any], key: str, default: Sequence[str]
+) -> tuple[str, ...]:
+    value = config.get(key, default)
+    if isinstance(value, str):
+        value = (value,)
+    if not isinstance(value, Sequence) or isinstance(value, (bytes, bytearray)):
+        raise TypeError(f"generation config {key!r} must be a list of names")
+    result = tuple(str(item) for item in value)
+    if not result:
+        raise ValueError(f"generation config {key!r} cannot be empty")
+    return result
+
+
+def _configured_output(config: Mapping[str, Any]) -> Path:
+    value = config.get("output", "datasets")
+    if isinstance(value, Mapping):
+        value = value.get("root", "datasets")
+    return Path(str(value))
+
+
+def jobs_from_config(
+    config: Mapping[str, Any],
+    *,
+    output_root: str | Path | None = None,
+    include_tier_dir: bool = True,
+) -> list[GenerationJob]:
+    """Adapt a resolved YAML mapping to the explicit generation job grid."""
+
+    tier = config.get("tier", "full")
+    configured_tiers = config.get("tiers")
+    if isinstance(tier, str) and isinstance(configured_tiers, Mapping):
+        configured_size = configured_tiers.get(tier)
+        official_size = resolve_tier(tier, full_size=int(config.get("samples_per_case", 2000)))
+        if configured_size is not None and int(configured_size) != official_size:
+            raise ValueError(
+                f"tier {tier!r} must contain {official_size} samples per macro case; "
+                f"configuration requested {configured_size}"
+            )
+    compression = config.get("compression", "gzip")
+    if compression in {"", "none", "None", False}:
+        compression = None
+    level = config.get("compression_level", 4 if compression else None)
+    return build_job_grid(
+        _configured_output(config) if output_root is None else output_root,
+        tier=tier,
+        resolution=config.get("resolution", 128),
+        shard_size=int(config.get("shard_size", 100)),
+        seed=int(config.get("seed", 0)),
+        time_steps=config.get("trajectory_steps", config.get("time_steps")),
+        stored_time_steps=config.get("stored_trajectory_steps"),
+        time_steps_by_family=config.get("trajectory_steps_by_family", {}),
+        time_steps_by_case=config.get("trajectory_steps_by_case", {}),
+        dtype=str(config.get("dtype", "float32")),
+        compression=None if compression is None else str(compression),
+        compression_level=None if level is None else int(level),
+        families=_config_sequence(config, "families", PDE_FAMILIES),
+        boundaries=_config_sequence(config, "boundaries", BOUNDARIES),
+        settings=_config_sequence(config, "settings", SETTING_NAMES),
+        regimes=_config_sequence(config, "regimes", REGIMES),
+        macro_size=int(config.get("samples_per_case", 2000)),
+        options=config.get("solver_options", {}),
+        options_by_case=config.get("solver_options_by_case", {}),
+        quality=config.get("quality", {}),
+        provenance=config.get("_provenance", {}),
+        include_tier_dir=include_tier_dir,
+    )
+
+
+def write_generation_plan(config: Mapping[str, Any], path: str | Path) -> list[GenerationJob]:
+    """Write a manifest-driven Slurm array plan and return its ordered jobs."""
+
+    jobs = jobs_from_config(config, include_tier_dir=True)
+    write_job_manifest(jobs, path)
+    return jobs
+
+
+def _rebase_job(job: GenerationJob, output_root: str | Path) -> GenerationJob:
+    """Place a manifest row below an explicit CLI output root."""
+
+    output = (
+        Path(output_root)
+        / job.pde
+        / job.boundary
+        / job.setting
+        / job.regime
+        / f"shard_{job.shard_index:05d}.h5"
+    )
+    return replace(job, output_path=str(output))
+
+
+def run_generation(
+    config: Mapping[str, Any],
+    output_root: str | Path,
+    plan_path: str | Path | None = None,
+    array_index: int | None = None,
+    array_bundle_size: int = 1,
+    force: bool = False,
+    dry_run: bool = False,
+    num_workers: int = 1,
+) -> dict[str, Any]:
+    """CLI adapter for a local tier or one manifest-selected array bundle.
+
+    The returned mapping contains only JSON-compatible values so it can be
+    printed directly or captured as scheduler provenance.
+    """
+
+    workers = int(num_workers)
+    if workers < 1:
+        raise ValueError("num_workers must be positive")
+    bundle_size = int(array_bundle_size)
+    if bundle_size < 1:
+        raise ValueError("array_bundle_size must be positive")
+    if plan_path is None:
+        all_jobs = jobs_from_config(config, output_root=output_root, include_tier_dir=False)
+    else:
+        from .provenance import generation_identity
+
+        loaded_jobs = load_job_manifest(plan_path)
+        if not loaded_jobs:
+            raise ValueError("generation plan is empty")
+        identities = [generation_identity(job.provenance) for job in loaded_jobs]
+        if any(identity != identities[0] for identity in identities[1:]):
+            raise ValueError("generation plan rows contain inconsistent code/config provenance")
+        planned_identity = generation_identity(loaded_jobs[0].provenance)
+        current_identity = generation_identity(config.get("_provenance", {}))
+        if planned_identity != current_identity:
+            raise ValueError(
+                "generation plan code/config provenance differs from the current checkout; "
+                "checkout the planned revision or regenerate the plan"
+            )
+        all_jobs = [_rebase_job(job, output_root) for job in loaded_jobs]
+    if array_index is None:
+        if bundle_size != 1:
+            raise ValueError("array_bundle_size requires array_index")
+        selected_jobs = all_jobs
+    else:
+        if array_index < 0:
+            raise IndexError("array index must be non-negative")
+        start = array_index * bundle_size
+        stop = min(start + bundle_size, len(all_jobs))
+        if start >= len(all_jobs):
+            raise IndexError(
+                f"array bundle {array_index} starts at plan row {start}, "
+                f"but the plan has {len(all_jobs)} rows"
+            )
+        selected_jobs = all_jobs[start:stop]
+
+    summary: dict[str, Any] = {
+        "status": "dry_run" if dry_run else "complete",
+        "planned_job_count": len(all_jobs),
+        "selected_job_count": len(selected_jobs),
+        "array_index": array_index,
+        "array_bundle_size": bundle_size,
+        "selected_plan_start": None if array_index is None else start,
+        "selected_plan_stop": None if array_index is None else stop - 1,
+        "output_root": str(Path(output_root)),
+        "plan_path": None if plan_path is None else str(Path(plan_path)),
+        "force": bool(force),
+        "num_workers": min(workers, max(1, len(selected_jobs))),
+        "sample_count": sum(job.sample_count for job in selected_jobs),
+    }
+    if dry_run:
+        summary["jobs"] = [job.to_dict() for job in selected_jobs]
+        return summary
+
+    if workers == 1 or len(selected_jobs) <= 1:
+        results = [generate_job(job, resume=not force, overwrite=force) for job in selected_jobs]
+    else:
+        # Each job owns one immutable shard path, so independent processes do
+        # not share an HDF5 handle. ``executor.map`` preserves manifest order.
+        from concurrent.futures import ProcessPoolExecutor
+
+        payloads = [(job, not force, force) for job in selected_jobs]
+        with ProcessPoolExecutor(max_workers=min(workers, len(selected_jobs))) as executor:
+            results = list(executor.map(_generate_job_with_policy, payloads))
+    summary["generated_job_count"] = sum(not result.skipped for result in results)
+    summary["skipped_job_count"] = sum(result.skipped for result in results)
+    summary["results"] = [json_safe(asdict(result)) for result in results]
+    return summary
+
+
+def _generate_job_with_policy(
+    payload: tuple[GenerationJob, bool, bool],
+) -> GenerationResult:
+    """Pickle-safe process-pool adapter used by local parallel generation."""
+
+    job, resume, overwrite = payload
+    return generate_job(job, resume=resume, overwrite=overwrite)

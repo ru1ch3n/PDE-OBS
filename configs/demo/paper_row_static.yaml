@@ -1,0 +1,12 @@
+schema_version: pdeobs-paper-row-v1
+cohort: demo
+campaign: ../campaign/all_pde_one_setting_10method_9x9.yaml
+registry: ../method/all_pde_source_faithful_registry.yaml
+pde: poisson
+method: fno
+train_view: random_50pct
+training_seed: 20260804
+run_id: demo-poisson-fno-r50
+attempt_id: demo-attempt-1
+demo_epochs: 1
+demo_test_views: [random_50pct, random_80pct]

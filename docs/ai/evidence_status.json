@@ -1,0 +1,439 @@
+{
+  "added_source_paths_overlay_2": [
+    "src/pdeobs/evidence.py",
+    "tools/build_acceptance_index.py",
+    "tests/test_ai_overlay2_regressions.py",
+    "tests/test_evidence_bundle.py"
+  ],
+  "archived_author_reported_not_independently_repeated": {
+    "gpu": "RTX5090 acceptance/round2 T1..T14; logs included by uploader",
+    "runtime_estimates": "T13 extrapolates 500 epochs from very few steps; not completed C500 runs",
+    "summary_conflict": "ACCEPTANCE_SUMMARY 64^2/49 flows/two general views differs from release note 128^2/batch1/nine paper views; round2 describes different tier scopes; do not merge into one validation claim"
+  },
+  "archived_campaign_index": {
+    "blocks_indexed": 3969,
+    "complete_matrices": {
+      "all_nine_views": 49,
+      "original500_only": 13,
+      "original500_plus_recovered": 22,
+      "pooled_all_cohorts": 49,
+      "total_pairs": 49
+    },
+    "credit_status": "preliminary as recorded by the runner (formal_credit 0)",
+    "generated_utc": "2026-09-23",
+    "identities_pending": 0,
+    "identities_with_selected_evaluation": 441,
+    "location": "results/archived_campaign/",
+    "not_established": [
+      "numerical-reference accuracy of the evaluated targets",
+      "external reproduction",
+      "recomputation of any metric",
+      "checkpoint files were not re-hashed in this pass (bindings are between records)"
+    ],
+    "note": "regenerated after the campaign reached 441/441; the five U-FNO identities previously recorded as terminal failures train under a one-cycle schedule at learning rate 5e-4 and are now indexed like any other row",
+    "planned_identities": 441,
+    "regenerated_utc": "2026-09-23T16:05:00Z",
+    "scoring": "campaign evaluator legacy relative L2; no prediction tensors retained; not pdeobs-strict-v1; not the release's paper-evaluated level",
+    "tool": "tools/archived_results.py (scan on the archive machines, pair and index locally)",
+    "training_cohorts": {
+      "budget200_min120": 44,
+      "budget200_patience10_no_floor": 10,
+      "fixed200_recovered": 36,
+      "interrupted_or_recovered": 28,
+      "original500": 257,
+      "original500_recovered": 66
+    },
+    "verification_status": {
+      "consistent": 441
+    }
+  },
+  "basis": "uploaded pdeobs-review-main.zip; no remote repository or production job accessed",
+  "counts_overlap": true,
+  "independently_executed": {
+    "ai_cpu_smoke": {
+      "gpu_requested": 0,
+      "grid": [
+        16,
+        16
+      ],
+      "optimizer_steps_per_case": 2,
+      "passed": [
+        "poisson/recovery",
+        "heat/rollout"
+      ],
+      "purpose": "software interface validation, not paper evidence",
+      "test_records_per_case": 2,
+      "train_records_per_case": 4
+    },
+    "environment": {
+      "PyYAML": "6.0.3",
+      "gpu_available": false,
+      "h5py": "3.15.1",
+      "numpy": "2.3.5",
+      "platform": "Linux-6.18.44-x86_64-with-glibc2.41",
+      "pytest": "9.0.2",
+      "python": "3.13.5",
+      "scipy": "1.17.0",
+      "torch": "2.10.0+cpu"
+    },
+    "final_overlay_all_shipped_tests": {
+      "failed": 0,
+      "includes_original_tests": 597,
+      "new_facade_regressions": 29,
+      "new_helper_tests": 4,
+      "passed": 630,
+      "seconds": 23.12,
+      "skipped": 0,
+      "warnings": 5
+    },
+    "install": "non-editable wheel built/installed with --no-deps --no-build-isolation; preinstalled dependencies reused; not a clean minimum-dependency install",
+    "installed_original_demos": {
+      "passed": [
+        "E1",
+        "E2",
+        "E3",
+        "E4",
+        "E5",
+        "E6"
+      ],
+      "source_cwd_required": false
+    },
+    "installed_overlay_eval": {
+      "cuda": false,
+      "heldout_demo_identities": 2,
+      "status": "valid"
+    },
+    "negative_probes": "NaN/Inf/nonbinary masks, reordered targets, NumPy IDs, fractional frames, and unknown pipeline stage behavior checked before and after overlay",
+    "original_all_shipped_tests": {
+      "failed": 0,
+      "passed": 597,
+      "seconds": 21.67,
+      "skipped": 0,
+      "warnings": 5
+    },
+    "original_api_tests": {
+      "failed": 0,
+      "passed": 42,
+      "seconds": 5.57,
+      "skipped": 0
+    },
+    "original_portable_scope": {
+      "failed": 0,
+      "passed": 521,
+      "seconds": 17.26,
+      "skipped": 0
+    },
+    "patched_all_tests_before_tools_tests": {
+      "failed": 0,
+      "passed": 626,
+      "seconds": 21.23,
+      "skipped": 0,
+      "warnings": 5
+    },
+    "protected_scientific_files": {
+      "changed": 0,
+      "checked": 143
+    }
+  },
+  "input_archive_sha256": "ece1024b4d32b699e80a2918e77f3cd569ed57b4102dad2eb008035916ce0b79",
+  "modified_source_paths": [
+    "src/pdeobs/api/cli.py",
+    "src/pdeobs/api/data.py",
+    "src/pdeobs/api/evaluate.py",
+    "src/pdeobs/api/infer.py",
+    "src/pdeobs/api/pipeline.py"
+  ],
+  "modified_source_paths_overlay_2": [
+    "src/pdeobs/api/infer.py"
+  ],
+  "not_established_by_this_zip_or_audit": [
+    "publicly accessible original evaluated dataset and exact identity/checksum manifest",
+    "production trained checkpoints and paper raw predictions",
+    "strict rescoring of the historical main-table matrices",
+    "multi-seed scientific control results",
+    "independent numerical-reference validation of the evaluated production targets",
+    "GPU execution of the overlay",
+    "actual ICLR2027 acceptance or official compliance certification"
+  ],
+  "original_file_count": 268,
+  "overlay_2_this_run": {
+    "ai_cpu_smoke": {
+      "cases": [
+        {
+          "optimizer_steps": 2,
+          "pde": "poisson",
+          "reload_identical": true,
+          "strict_status": "valid",
+          "targets_used_for_predict": false,
+          "task": "recovery",
+          "test_count": 2,
+          "train_count": 4,
+          "train_test_overlap": 0
+        },
+        {
+          "optimizer_steps": 2,
+          "pde": "heat",
+          "reload_identical": true,
+          "strict_status": "valid",
+          "targets_used_for_predict": false,
+          "task": "rollout",
+          "test_count": 2,
+          "train_count": 4,
+          "train_test_overlap": 0
+        }
+      ],
+      "device": "cpu",
+      "output": "<WORK>/smoke-003 (fresh directory, outside the tree)",
+      "purpose": "software interface validation, not paper evidence",
+      "scope": "software acceptance ONLY; 16x16 demo data, NOT paper results",
+      "seconds": 3.086,
+      "status": "passed",
+      "threads": 1
+    },
+    "anonymous_review_tree_full_suite": {
+      "command": "python -m pytest -q -p no:cacheprovider -rA --basetemp=<new dir> --junitxml=<new file> with CUDA_VISIBLE_DEVICES=-1",
+      "exit_code": 0,
+      "failed": 0,
+      "log": "review_audit/overlay2/anon-tree-pytest.log",
+      "passed": 659,
+      "seconds": 62.42,
+      "skipped": 0,
+      "tree": "the anonymous review tree as committed (overlay 2, English review reports, tools/archived_results.py, results/archived_campaign/)",
+      "warnings": 3
+    },
+    "base_archive": "pdeobs-review-ai-ready.zip",
+    "base_archive_sha256": "43dbd102bf7ae703d8ae42e20fe25a4c52e364864e34ca7c8fd71576bfb05112",
+    "baseline_before_overlay2_all_shipped_tests": {
+      "failed": 0,
+      "passed": 630,
+      "seconds": 59.71,
+      "skipped": 0,
+      "warnings": 3,
+      "xfailed": 0,
+      "xpassed": 0
+    },
+    "basis": "local CPU verification of this tree only; no remote repository, GPU, scheduler, cloud instance or production job was used",
+    "commands": [
+      "python tools/ai_assist.py doctor --json",
+      "python -m pytest -q -p no:cacheprovider -rA --basetemp=<new dir> --junitxml=<new file>",
+      "python tools/ai_assist.py smoke --out <new dir>",
+      "python -m pdeobs.evidence plan|check|export on <WORK>/fixtures/row-demo-runs/{poisson,heat}",
+      "bash <WORK>/logs/install_check.sh (wheel build, venv install, installed-package checks)"
+    ],
+    "environment": {
+      "PyYAML": "6.0.3",
+      "cuda_available": false,
+      "cuda_masked_with": "CUDA_VISIBLE_DEVICES=-1 (an empty string does not mask CUDA on Windows; the first unmasked runs were discarded as superseded)",
+      "gpu_available": false,
+      "h5py": "3.16.0",
+      "numpy": "2.0.1",
+      "os": "Windows 11",
+      "platform": "Windows-11-10.0.26200-SP0",
+      "pytest": "-q",
+      "python": "-m",
+      "scipy": "1.17.1",
+      "torch": "2.7.1+cu118"
+    },
+    "evidence_checker_on_demo_rows": {
+      "meaning": "the checker verifies its own link semantics on real paper-row output; the scores are meaningless one-epoch demo numbers and no paper cell is verified",
+      "row_source": "the two demo rows of docs/reproducing_the_paper.md (paper-row-demo-data + paper-row, cohort demo, 16x16, one epoch, CPU)",
+      "rows": {
+        "heat": {
+          "checks": {
+            "artifact_completeness": "passed",
+            "checkpoint_binding": "passed",
+            "external_reproduction": "not_attempted",
+            "identity_shape_finiteness": "passed",
+            "metric_recomputation": "passed",
+            "numerical_reference_evidence": "not_attempted",
+            "purpose_guard": "passed",
+            "split_provenance": "passed"
+          },
+          "cohort": "demo",
+          "demo_export": {
+            "copied": 10,
+            "label": "software-demo export, not paper evidence",
+            "referenced_only": 3
+          },
+          "exit_code": 0,
+          "experiment_id": "demo-heat-fno-r50/demo-attempt-1",
+          "identities_per_block": [
+            3,
+            3
+          ],
+          "paper_export_without_flag": {
+            "category": "demo_into_paper_export",
+            "exit_code": 2
+          },
+          "purpose": "software-demo",
+          "verification_status": "complete"
+        },
+        "poisson": {
+          "checks": {
+            "artifact_completeness": "passed",
+            "checkpoint_binding": "passed",
+            "external_reproduction": "not_attempted",
+            "identity_shape_finiteness": "passed",
+            "metric_recomputation": "passed",
+            "numerical_reference_evidence": "not_attempted",
+            "purpose_guard": "passed",
+            "split_provenance": "passed"
+          },
+          "cohort": "demo",
+          "demo_export": {
+            "copied": 10,
+            "label": "software-demo export, not paper evidence",
+            "referenced_only": 3
+          },
+          "exit_code": 0,
+          "experiment_id": "demo-poisson-fno-r50/demo-attempt-1",
+          "identities_per_block": [
+            3,
+            3
+          ],
+          "paper_export_without_flag": {
+            "category": "demo_into_paper_export",
+            "exit_code": 2
+          },
+          "purpose": "software-demo",
+          "verification_status": "complete"
+        }
+      }
+    },
+    "full_test_suite": {
+      "command": "python -m pytest -q -p no:cacheprovider -rA --basetemp=<WORK>/pytest-basetemp-final --junitxml=<WORK>/logs/final-junit.xml",
+      "composition_not_additive": "the whole shipped suite of this tree: the 597 original tests, the 33 overlay-1 tests and the 29 overlay-2 tests (18 PredictionBundle regressions + 11 evidence-bundle tests); overlaps every earlier count",
+      "errors": 0,
+      "exit_code": 0,
+      "failed": 0,
+      "finished_utc": "2026-09-23T01:23:28Z",
+      "junit": {
+        "errors": 0,
+        "failures": 0,
+        "skipped": 0,
+        "tests": 659
+      },
+      "junit_file": "review_audit/overlay2/final-junit.xml",
+      "log": "review_audit/overlay2/final-pytest.log",
+      "passed": 659,
+      "seconds": 64.15,
+      "skipped": 0,
+      "started_utc": "2026-09-23T01:22:21Z",
+      "tree_state": "run after every source change; files added or edited afterwards are documentation and metadata only: docs/ai/QUICKSTART.md and its links (AI_START_HERE.md, llms.txt, docs/ai/repository_index.json, README.md banner), docs/ai/ACCEPTANCE_REPORT_overlay2.md, docs/ai/evidence_status.json (this block), docs/ai/acceptance_index.json + ACCEPTANCE_INDEX.md, review_audit/overlay2/, AI_OVERLAY2_MANIFEST.json; tests/test_ai_tools.py (doctor/index checks) was re-run after those edits, see review_audit/overlay2/post-docs-tools-tests.log",
+      "warnings": 3,
+      "xfailed": 0,
+      "xpassed": 0
+    },
+    "install": {
+      "dependencies_seen_by_venv": "torch 2.7.1+cu118 numpy 2.0.1 scipy 1.17.1 h5py 3.16.0 PyYAML 6.0.3 cuda False",
+      "dependency_reuse": "the fresh venv sees the base environment's already-installed torch/numpy/scipy/h5py/PyYAML; this is NOT a clean minimum-dependency install and no dependency was downloaded",
+      "exit_codes": {
+        "console entry point": 0,
+        "easy describe fno": 0,
+        "easy list models": 0,
+        "import-check": 0,
+        "installed evidence check": 0,
+        "installed evidence export without --allow-demo": 2,
+        "installed evidence plan": 0,
+        "pip install": 0,
+        "pip wheel": 0,
+        "venv": 0
+      },
+      "imported_from": "<WORK>\\venv-install\\Lib\\site-packages\\pdeobs\\__init__.py",
+      "imported_from_source_tree": false,
+      "installed_evidence_check_status": "complete",
+      "installed_export_refusal_category": "demo_into_paper_export",
+      "log": "review_audit/overlay2/install-check.log",
+      "method": "python -m pip wheel . --no-deps --no-build-isolation (from a cache-free copy of the tree), then python -m venv --system-site-packages + pip install --no-deps --no-build-isolation <wheel>; used from a neutral directory with PYTHONPATH unset"
+    },
+    "logs": {
+      "baseline": "review_audit/overlay2/baseline-before-overlay2-pytest.log",
+      "doctor": "review_audit/overlay2/final-doctor.json",
+      "evidence_checks": "review_audit/overlay2/evidence-demo/",
+      "gap_probe": "review_audit/overlay2/probe-save-launders-float-frame.txt",
+      "install": "review_audit/overlay2/install-check.log",
+      "junit": "review_audit/overlay2/final-junit.xml",
+      "path_mapping": "review_audit/overlay2/PATH_MAPPING.json",
+      "smoke": "review_audit/overlay2/ai-smoke-003.log",
+      "tests": "review_audit/overlay2/final-pytest.log"
+    },
+    "not_established_by_overlay_2": [
+      "any paper cell: no production dataset, checkpoint, prediction artifact or score is in the tree",
+      "GPU execution of any part of this tree",
+      "a clean minimum-dependency install (dependencies were reused, not downloaded)",
+      "numerical-reference accuracy of any evaluated target",
+      "external reproduction of any run"
+    ],
+    "overlay_id": "pdeobs-ai-review-overlay-2",
+    "protected_scientific_files": {
+      "baseline_file": "docs/ai/frozen_science_sha256.json (input baseline, not rewritten)",
+      "changed": [],
+      "checked": 143,
+      "missing_indexed_files": []
+    },
+    "second_audit_corrections": {
+      "archived_index_after_corrections": {
+        "by_verification_status": {
+          "consistent": 431
+        },
+        "evaluator_sha_recorded": 147,
+        "evaluator_sha_unrecorded": 284
+      },
+      "changed": [
+        "src/pdeobs/evidence.py",
+        "tools/archived_results.py",
+        "tests/test_second_audit_regressions.py",
+        "tests/test_evidence_bundle.py (category names)",
+        "results/archived_campaign/checks.json + index.json + summary.json (regenerated checks; stored values unchanged)",
+        "current documentation entry points"
+      ],
+      "date_utc": "2026-09-23",
+      "full_test_suite_after_corrections": {
+        "exit_code": 0,
+        "failed": 0,
+        "log": "review_audit/overlay2/r2-full-pytest.log",
+        "passed": 679,
+        "seconds": 74.93,
+        "skipped": 0,
+        "warnings": 3
+      },
+      "protected_scientific_files": "unchanged (doctor)",
+      "reviewer_standalone_regressions": {
+        "failed": 0,
+        "file": "the reviewer's test_pdeobs_second_audit.py run unmodified against this tree",
+        "passed": 44,
+        "seconds": 36.7
+      },
+      "trigger": "independent second review of the pushed tree (evidence checker accepted inconsistent labels/configuration; archived-results checker did not propagate every failure)"
+    },
+    "source_changes": {
+      "added": [
+        "src/pdeobs/evidence.py",
+        "tools/build_acceptance_index.py",
+        "tests/test_ai_overlay2_regressions.py",
+        "tests/test_evidence_bundle.py"
+      ],
+      "file_level_manifest": "AI_OVERLAY2_MANIFEST.json",
+      "modified": [
+        "src/pdeobs/api/infer.py"
+      ]
+    }
+  },
+  "overlay_id": "pdeobs-ai-review-overlay-1",
+  "overlay_ids": [
+    "pdeobs-ai-review-overlay-1",
+    "pdeobs-ai-review-overlay-2"
+  ],
+  "package_version": "0.2.0",
+  "public_release_20260924": {
+    "checkpoints": "all 441 credited checkpoints published, weights only (huggingface.co/PDE-OBS/pdeobs-models)",
+    "records": "3360 shards published and hash-verified (huggingface.co/datasets/PDE-OBS/pdeobs-data)",
+    "still_absent": [
+      "prediction arrays",
+      "strict-v1 rescoring of archived metrics",
+      "independent numerical reference"
+    ]
+  },
+  "schema_version": "pdeobs-ai-evidence-status/v1",
+  "scientific_kernels_masks_splits_training_configs_strict_score_changed": false
+}

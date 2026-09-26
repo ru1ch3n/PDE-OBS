@@ -1,0 +1,10 @@
+include: full_to_partial_base.yaml
+name: full-to-partial-gappy-pod
+method:
+  name: gappy_pod
+  kwargs:
+    rank_candidates: [8, 16, 32, 64, 128]
+    validation_samples_per_stratum: 3
+    oversampling: 16
+    fit_batch_size: 64
+    ridge: 0.000001

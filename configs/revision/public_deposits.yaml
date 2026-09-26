@@ -1,0 +1,45 @@
+# Public deposits that the paper points to, as declared by the release tooling and cards.
+# tools/revision/check_access.py checks every entry without credentials and records the status codes.
+schema: pdeobs-revision-public-deposits/v1
+repositories:
+  - id: PDE-OBS/pdeobs-data
+    type: dataset
+    revision: main
+    role: >-
+      de-identified re-emission of the generated corpus: data/<family>/<boundary>/<construction>/<regime>/shard_*.h5 with
+      sidecars (paper slice = data/<family>/<paper boundary>/smooth_grf/, 84 shards), release_manifest.json (slice),
+      release_manifest_full.json (all 3,360 shards), scrub-manifest.json (rewritten files with their published digests),
+      summary.json and summary.quality.* (de-identified generation-time summaries)
+    files:
+      - release_manifest.json
+      - release_manifest_full.json
+      - scrub-manifest.json
+      - summary.json
+      - data/poisson/dirichlet/smooth_grf/high/shard_00000.h5
+      - data/poisson/dirichlet/smooth_grf/high/shard_00000.manifest.json
+      - data/heat/periodic/smooth_grf/high/shard_00000.h5
+  - id: PDE-OBS/pdeobs-models
+    type: model
+    revision: main
+    role: >-
+      441 released weights-only checkpoints under models/<cluster-label>/<pde>/<method>/<train_view>/ with their
+      de-identified training records; models_manifest.cluster-{A,B,C}.json (published digests only, manifest v3)
+      and scrub-manifest.json at the repository root
+    files:
+      - models_manifest.cluster-A.json
+      - models_manifest.cluster-B.json
+      - models_manifest.cluster-C.json
+      - scrub-manifest.json
+      - models/cluster-A/burgers/cno/block_observed_50pct/checkpoints/last.pt
+      - models/cluster-B/burgers/cno/boundary_band_50pct/resolved.yaml
+      - models/cluster-C/burgers/gnot/block_observed_50pct/checkpoints/last.pt
+local_cards:
+  - docs/dataset_card.md
+  - docs/methods_card.md
+  - README.md
+smoke_test:
+  # one stationary and one temporal evaluation; digests are taken from the release manifests at run time when present
+  - repository: PDE-OBS/pdeobs-data
+    path: release_manifest.json
+  - repository: PDE-OBS/pdeobs-models
+    path: models_manifest.cluster-A.json

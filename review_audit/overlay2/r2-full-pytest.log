@@ -1,0 +1,869 @@
+command: python -m pytest -q -p no:cacheprovider -rA --basetemp=<WORK>/pytest-basetemp-r2full --junitxml=<WORK>/logs/r2-full-junit.xml
+tree: anonymous review tree after the second-audit corrections (final state before commit); CUDA_VISIBLE_DEVICES=-1
+started_utc: 2026-09-23T03:12:08Z
+python 3.12.8 platform Windows-11-10.0.26200-SP0
+torch 2.7.1+cu118 cuda_available False
+numpy 2.0.1
+........................................................................ [ 10%]
+........................................................................ [ 21%]
+........................................................................ [ 31%]
+........................................................................ [ 42%]
+........................................................................ [ 53%]
+........................................................................ [ 63%]
+........................................................................ [ 74%]
+........................................................................ [ 84%]
+........................................................................ [ 95%]
+...............................                                          [100%]
+============================== warnings summary ===============================
+tests/test_runner.py::test_explicit_observation_views_do_not_insert_a_training_mask
+tests/test_runner.py::test_runner_fits_and_loads_gappy_pod_without_a_torch_checkpoint
+tests/test_runner.py::test_paired_ood_results_feed_benchmark_and_analysis
+  <HOME>\<PYTHON_PREFIX>\Lib\site-packages\torch\utils\data\dataloader.py:665: UserWarning: 'pin_memory' argument is set as true but no accelerator is found, then device pinned memory won't be used.
+    warnings.warn(warn_msg)
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=================================== PASSES ====================================
+____ test_missing_data_is_failure_receipt_cli_nonzero_and_never_generates _____
+---------------------------- Captured stdout call -----------------------------
+{"attempt_id": "demo-attempt-1", "campaign": "<REPO>\\configs\\campaign\\all_pde_one_setting_10method_9x9.yaml", "campaign_sha256": "4ed7e7de03557c1b95a6b544cc1e7c292b575130b427a8e4fdc34a4e87f48966", "cohort": "original500", "epochs": 500, "errors": ["explicit data root does not exist: <WORK>\\pytest-basetemp-r2full\\test_missing_data_is_failure_r0\\missing"], "historical_results_replayed": false, "method": "fno", "pde": "poisson", "registry": "<REPO>\\configs\\method\\all_pde_source_faithful_registry.yaml", "registry_sha256": "8e7119d62df139832554ff81ab7023f849fe0115d41c1e34bfb5e6e373dc3968", "run_id": "demo-poisson-fno-r50", "schema_version": "pdeobs-paper-row-v1", "split_seed": 20260804, "stage": "manifest_and_metadata", "status": "failed", "test_arrays_accessed_before_final_checkpoint": 0, "test_views": ["random_50pct", "random_65pct", "random_80pct", "block_observed_50pct", "line_sensors_50pct", "horizontal_lines_50pct", "vertical_lines_50pct", "boundary_band_50pct", "clustered_50pct"], "train_view": "random_50pct", "training_seed": 20260804, "validation_records": 0}
+____________________ test_export_can_be_rechecked_directly ____________________
+---------------------------- Captured stdout call -----------------------------
+{
+  "bundle_schema": "pdeobs-evidence-bundle/v1",
+  "checks": {
+    "artifact_completeness": {
+      "details": [
+        "13 declared artifact(s) present, 0 missing"
+      ],
+      "status": "passed"
+    },
+    "checkpoint_binding": {
+      "details": [
+        "checkpoint 5f8537474584... is the checkpoint_id in the receipt, the completion record and every contract; dataset_manifest_sha256 equals the canonical hash of the identity manifest; split_sha256 equals the canonical hash of the split receipt; final_last_only selection recorded"
+      ],
+      "status": "passed"
+    },
+    "configuration_identity": {
+      "details": [
+        "training_config_sha256 2e29e0cca7c8... and training_recipe_sha256 8dfb1632e31e... recomputed from row_resolved.json with the writer's rules match every record; the trainer file agrees with the resolved training section on every shared key"
+      ],
+      "status": "passed"
+    },
+    "external_reproduction": {
+      "details": [
+        "not attempted: this tool checks internal consistency of the supplied artifacts only; an external reproduction needs an independent run from the resolved configuration, identity manifest and split receipt"
+      ],
+      "status": "not_attempted"
+    },
+    "finiteness": {
+      "details": [
+        "random_50pct: every stored prediction and target array is finite under pdeobs-strict-v1",
+        "random_80pct: every stored prediction and target array is finite under pdeobs-strict-v1"
+      ],
+      "status": "passed"
+    },
+    "identity_shape": {
+      "details": [
+        "random_50pct: 3 identities, stored shape [16, 16, 1] as contracted, artifact version pdeobs-strict-inference-v1",
+        "random_80pct: 3 identities, stored shape [16, 16, 1] as contracted, artifact version pdeobs-strict-inference-v1"
+      ],
+      "status": "passed"
+    },
+    "identity_shape_finiteness": {
+      "details": [
+        "alias of identity_shape + finiteness; see those categories"
+      ],
+      "status": "passed"
+    },
+    "manifest_structure": {
+      "details": [
+        "every required field, artifact and block declaration is present"
+      ],
+      "status": "passed"
+    },
+    "metadata_consistency": {
+      "details": [
+        "pde, method, training view, task, cohort, epochs, seeds, run/attempt ids and the block inventory agree across manifest, receipt, resolved configuration, completion record and contracts; every score.json hashes to the receipt's score_sha256"
+      ],
+      "status": "passed"
+    },
+    "metric_recomputation": {
+      "details": [
+        "random_50pct: re-scored 3 identities with pdeobs-strict-v1; mean and per-identity values reproduce the stored report",
+        "random_80pct: re-scored 3 identities with pdeobs-strict-v1; mean and per-identity values reproduce the stored report"
+      ],
+      "status": "passed"
+    },
+    "numerical_reference_evidence": {
+      "details": [
+        "no numerical-reference report declared; independent accuracy of the evaluated targets is not established here"
+      ],
+      "status": "not_attempted"
+    },
+    "purpose_guard": {
+      "details": [
+        "purpose 'software-demo' is consistent with the artifacts (derived 'software-demo')",
+        "this guard catches accidental mislabeling; it is not a tamper-proof provenance authentication"
+      ],
+      "status": "passed"
+    },
+    "split_provenance": {
+      "details": [
+        "demo: 6 train / 3 test identities, disjoint, seed 20260804, macrodomain poisson|dirichlet|smooth_grf; every block contract lists exactly the split's test identities in order"
+      ],
+      "status": "passed"
+    }
+  },
+  "claims": {
+    "local_artifact_consistency": "complete",
+    "note": "complete means the supplied files are mutually consistent, their metadata and configuration identities agree, and the stored score follows from the stored arrays; it does not authenticate data origin, numerical fidelity, or that the run matches the paper table",
+    "scientific_reproduction": "not established by this tool"
+  },
+  "cohort": "demo",
+  "exit_code": 0,
+  "experiment_id": "demo-poisson-fno-r50/demo-attempt-1",
+  "files": {
+    "checkpoints/last.pt": {
+      "bytes": 28443981,
+      "sha256": "5f8537474584cfe0c9decfadd1533922c9e9c3da298ecf6a87b76c924af767dd"
+    },
+    "checkpoints/training_config.json": {
+      "bytes": 1485,
+      "sha256": "dfa66b70ea3e98e305a432c20c5678b8d2ce1093d3b6861e93d306af351a378c"
+    },
+    "evaluation/random_50pct/contract.json": {
+      "bytes": 1471,
+      "sha256": "28a181d6599f6070f54fefef3d4b85d01c4c28e0c2bd8f29091f2813d0adb0e0"
+    },
+    "evaluation/random_50pct/predictions.h5": {
+      "bytes": 66816,
+      "sha256": "44af0031bdd346b2c4db0072c21f8deee54d53f4521cb6905b92581279cb0fe5"
+    },
+    "evaluation/random_50pct/score.json": {
+      "bytes": 4696,
+      "sha256": "07ac3e435b9186dd02c71de0f789e389f4b23f695b2c67bcede78bb89b905d8c"
+    },
+    "evaluation/random_80pct/contract.json": {
+      "bytes": 1471,
+      "sha256": "9d39598a4bbb87c4d511b0ee62b4efb332a3fc32610da4ff656b1de8953de125"
+    },
+    "evaluation/random_80pct/predictions.h5": {
+      "bytes": 66806,
+      "sha256": "79695a088918c86c4605229b19db463b1dad13c06fe6d80c6b068fa2a20ce9f1"
+    },
+    "evaluation/random_80pct/score.json": {
+      "bytes": 4692,
+      "sha256": "af2b837f90ec48770c76caa11c94f6ec021ea8dc4e0b5afbda1b6a591cd69083"
+    },
+    "identity_manifest.json": {
+      "bytes": 1049,
+      "sha256": "e60f26cff8c09070dd61650947608189ef7adf30b4cad08b48ff94f5ebfa0d5c"
+    },
+    "receipt.json": {
+      "bytes": 1972,
+      "sha256": "f5209f5d8779bd9263898ea1808d68502ee2dfa499083c1348644885a78d49bb"
+    },
+    "row_resolved.json": {
+      "bytes": 3258,
+      "sha256": "dfa81c4a14246152cd0c60f147df77b6ffaf74007e246fcac270293d5fc65b98"
+    },
+    "split.json": {
+      "bytes": 1174,
+      "sha256": "04fc4923c067e0f6d18594322796726ab65109adb1094e9c3529e1bb90b48b2c"
+    },
+    "training_completion.json": {
+      "bytes": 1677,
+      "sha256": "7957ccdd1ecfeddc977bf0fdcb38ee0d9c06d142929604ad076461bc6e657d6a"
+    }
+  },
+  "purpose": "software-demo",
+  "root": "<WORK>\\pytest-basetemp-r2full\\test_export_can_be_rechecked_d0\\export\\artifacts",
+  "schema_version": "pdeobs-evidence-check/v1",
+  "verification_status": "complete"
+}
+_______ test_malformed_contract_gets_standard_invalid_json_cli_nonzero ________
+---------------------------- Captured stdout call -----------------------------
+{"actual_prediction_identity_count": null, "actual_target_identity_count": null, "checkpoint_id": null, "errors": ["strict inference setup failed: scoring contract must be a JSON object"], "expected_identity_count": 0, "observation_id": null, "per_identity": [], "provenance_note": "Caller-declared contract; identity validation is not provenance authentication.", "scored_identity_count": 0, "scoring_version": "pdeobs-strict-v1", "status": "invalid", "summary": null, "task": null}
+=========================== short test summary info ===========================
+PASSED tests/test_aggregate.py::test_validate_and_summarize_small_shard
+PASSED tests/test_aggregate.py::test_quality_sidecar_dataset_summary_and_aggregate_outputs
+PASSED tests/test_aggregate.py::test_strict_quality_gate_rejects_missing_records_and_detects_tampering
+PASSED tests/test_aggregate.py::test_strict_summary_rejects_zero_shards
+PASSED tests/test_aggregate.py::test_strict_validation_rejects_missing_integrity_components[manifest-missing completion manifest]
+PASSED tests/test_aggregate.py::test_strict_validation_rejects_missing_integrity_components[checksum-missing checksum sidecar]
+PASSED tests/test_aggregate.py::test_strict_validation_rejects_missing_integrity_components[metadata_csv-missing metadata_csv sidecar]
+PASSED tests/test_aggregate.py::test_strict_validation_rejects_missing_integrity_components[metadata_json-missing metadata_json sidecar]
+PASSED tests/test_aggregate.py::test_strict_validation_rejects_missing_integrity_components[metadata_dataset-lacks datasets]
+PASSED tests/test_aggregate.py::test_strict_validation_rejects_missing_integrity_components[schema-HDF5 schema differs]
+PASSED tests/test_aggregate.py::test_expected_plan_requires_exact_paths_and_counts
+PASSED tests/test_ai_facade_regressions.py::test_input_rejects_invalid_mask_before_conversion[nan]
+PASSED tests/test_ai_facade_regressions.py::test_input_rejects_invalid_mask_before_conversion[inf]
+PASSED tests/test_ai_facade_regressions.py::test_input_rejects_invalid_mask_before_conversion[-inf]
+PASSED tests/test_ai_facade_regressions.py::test_input_rejects_invalid_mask_before_conversion[-1.0]
+PASSED tests/test_ai_facade_regressions.py::test_input_rejects_invalid_mask_before_conversion[0.5]
+PASSED tests/test_ai_facade_regressions.py::test_input_rejects_invalid_mask_before_conversion[2.0]
+PASSED tests/test_ai_facade_regressions.py::test_input_rejects_nonfinite_geometry[nan]
+PASSED tests/test_ai_facade_regressions.py::test_input_rejects_nonfinite_geometry[inf]
+PASSED tests/test_ai_facade_regressions.py::test_input_rejects_nonfinite_geometry[-inf]
+PASSED tests/test_ai_facade_regressions.py::test_correct_target_reordering_is_accepted_and_preserves_score
+PASSED tests/test_ai_facade_regressions.py::test_numpy_target_ids_are_supported
+PASSED tests/test_ai_facade_regressions.py::test_invalid_target_times_are_not_silently_coerced[times0]
+PASSED tests/test_ai_facade_regressions.py::test_invalid_target_times_are_not_silently_coerced[times1]
+PASSED tests/test_ai_facade_regressions.py::test_invalid_target_times_are_not_silently_coerced[times2]
+PASSED tests/test_ai_facade_regressions.py::test_invalid_target_times_are_not_silently_coerced[times3]
+PASSED tests/test_ai_facade_regressions.py::test_invalid_target_times_are_not_silently_coerced[times4]
+PASSED tests/test_ai_facade_regressions.py::test_input_time_indices_are_validated_before_coercion
+PASSED tests/test_ai_facade_regressions.py::test_postconstruction_mutation_of_mask_is_still_rejected[nan]
+PASSED tests/test_ai_facade_regressions.py::test_postconstruction_mutation_of_mask_is_still_rejected[0.5]
+PASSED tests/test_ai_facade_regressions.py::test_postconstruction_mutation_of_mask_is_still_rejected[2.0]
+PASSED tests/test_ai_facade_regressions.py::test_prediction_bundle_wrong_schema_is_rejected
+PASSED tests/test_ai_facade_regressions.py::test_prediction_bundle_float_frames_are_rejected
+PASSED tests/test_ai_facade_regressions.py::test_pipeline_rejects_misspelled_or_malformed_stages[stages0]
+PASSED tests/test_ai_facade_regressions.py::test_pipeline_rejects_misspelled_or_malformed_stages[stages1]
+PASSED tests/test_ai_facade_regressions.py::test_pipeline_rejects_misspelled_or_malformed_stages[train]
+PASSED tests/test_ai_facade_regressions.py::test_pipeline_rejects_misspelled_or_malformed_stages[stages3]
+PASSED tests/test_ai_facade_regressions.py::test_pipeline_rejects_misspelled_or_malformed_stages[stages4]
+PASSED tests/test_ai_facade_regressions.py::test_unknown_stage_does_not_create_success_receipt
+PASSED tests/test_ai_facade_regressions.py::test_invalid_score_propagates_to_failed_pipeline_receipt
+PASSED tests/test_ai_overlay2_regressions.py::test_bundle_rejects_non_integer_or_non_increasing_frames[bad0]
+PASSED tests/test_ai_overlay2_regressions.py::test_bundle_rejects_non_integer_or_non_increasing_frames[bad1]
+PASSED tests/test_ai_overlay2_regressions.py::test_bundle_rejects_non_integer_or_non_increasing_frames[bad2]
+PASSED tests/test_ai_overlay2_regressions.py::test_bundle_rejects_non_integer_or_non_increasing_frames[bad3]
+PASSED tests/test_ai_overlay2_regressions.py::test_bundle_rejects_non_integer_or_non_increasing_frames[bad4]
+PASSED tests/test_ai_overlay2_regressions.py::test_bundle_rejects_non_integer_or_non_increasing_frames[bad5]
+PASSED tests/test_ai_overlay2_regressions.py::test_bundle_rejects_non_integer_or_non_increasing_frames[bad6]
+PASSED tests/test_ai_overlay2_regressions.py::test_bundle_rejects_duplicate_missing_extra_or_blank_ids[ids0]
+PASSED tests/test_ai_overlay2_regressions.py::test_bundle_rejects_duplicate_missing_extra_or_blank_ids[ids1]
+PASSED tests/test_ai_overlay2_regressions.py::test_bundle_rejects_duplicate_missing_extra_or_blank_ids[ids2]
+PASSED tests/test_ai_overlay2_regressions.py::test_bundle_rejects_duplicate_missing_extra_or_blank_ids[ids3]
+PASSED tests/test_ai_overlay2_regressions.py::test_bundle_rejects_duplicate_missing_extra_or_blank_ids[ids4]
+PASSED tests/test_ai_overlay2_regressions.py::test_bundle_rejects_duplicate_missing_extra_or_blank_ids[ids5]
+PASSED tests/test_ai_overlay2_regressions.py::test_bundle_frame_count_must_match_prediction_frames
+PASSED tests/test_ai_overlay2_regressions.py::test_bundle_rejects_inputs_whose_ids_disagree
+PASSED tests/test_ai_overlay2_regressions.py::test_bundle_rejects_non_channels_last_rank
+PASSED tests/test_ai_overlay2_regressions.py::test_valid_bundle_round_trips_and_scores_unchanged
+PASSED tests/test_ai_overlay2_regressions.py::test_laundering_path_is_closed
+PASSED tests/test_ai_tools.py::test_ai_doctor_readonly_protected_sources
+PASSED tests/test_ai_tools.py::test_context_is_bounded_and_reports_truncation
+PASSED tests/test_ai_tools.py::test_smoke_refuses_existing_output_before_loading_model
+PASSED tests/test_ai_tools.py::test_smoke_refuses_writing_into_source_tree
+PASSED tests/test_api_specs.py::test_main_paper_models_present
+PASSED tests/test_api_specs.py::test_model_alias_resolution
+PASSED tests/test_api_specs.py::test_paper_preset_resolves[fno]
+PASSED tests/test_api_specs.py::test_paper_preset_resolves[pino]
+PASSED tests/test_api_specs.py::test_paper_preset_resolves[ufno]
+PASSED tests/test_api_specs.py::test_paper_preset_resolves[cno]
+PASSED tests/test_api_specs.py::test_paper_preset_resolves[deeponet]
+PASSED tests/test_api_specs.py::test_paper_preset_resolves[gnot]
+PASSED tests/test_api_specs.py::test_paper_preset_resolves[transolver]
+PASSED tests/test_api_specs.py::test_fno_groupnorm_constraint_rejected
+PASSED tests/test_api_specs.py::test_unknown_and_alias_confused_params_rejected
+PASSED tests/test_api_specs.py::test_pino_contract_follows_task
+PASSED tests/test_api_specs.py::test_task_support_enforced
+PASSED tests/test_api_specs.py::test_static_pde_rollout_rejected
+PASSED tests/test_api_specs.py::test_upstream_wrapper_not_served
+PASSED tests/test_api_specs.py::test_rollout_wraps_autoregressive
+PASSED tests/test_api_specs.py::test_grid_compatibility_flags_modes
+PASSED tests/test_api_specs.py::test_observation_general_and_paper_split
+PASSED tests/test_api_specs.py::test_observation_conflicts_and_unknown_params
+PASSED tests/test_api_specs.py::test_paper_realized_counts_match[random_50pct-8192]
+PASSED tests/test_api_specs.py::test_paper_realized_counts_match[random_65pct-10650]
+PASSED tests/test_api_specs.py::test_paper_realized_counts_match[random_80pct-13107]
+PASSED tests/test_api_specs.py::test_paper_realized_counts_match[boundary_band_50pct-8284]
+PASSED tests/test_api_specs.py::test_paper_realized_counts_match[clustered_50pct-8192]
+PASSED tests/test_api_specs.py::test_paper_realized_counts_match[horizontal_lines_50pct-8192]
+PASSED tests/test_api_specs.py::test_paper_realized_counts_match[vertical_lines_50pct-8192]
+PASSED tests/test_api_specs.py::test_stored_observation_namespace
+PASSED tests/test_api_specs.py::test_pipeline_validation_rejects_download_and_missing_time_steps
+PASSED tests/test_api_workflow.py::test_create_and_load_dataset
+PASSED tests/test_api_workflow.py::test_dataset_from_user_arrays
+PASSED tests/test_api_workflow.py::test_recovery_train_predict_evaluate
+PASSED tests/test_api_workflow.py::test_rollout_train_predict_reload
+PASSED tests/test_api_workflow.py::test_predict_requires_trained_weights
+PASSED tests/test_api_workflow.py::test_evaluate_needs_target
+PASSED tests/test_api_workflow.py::test_training_requires_explicit_budget
+PASSED tests/test_api_workflow.py::test_runs_not_overwritten
+PASSED tests/test_api_workflow.py::test_old_and_new_entrypoint_equivalence
+PASSED tests/test_api_workflow.py::test_paper_view_evaluation
+PASSED tests/test_api_workflow.py::test_parameter_free_models_round_trip
+PASSED tests/test_api_workflow.py::test_evaluate_views_accepts_same_protocol_at_two_settings
+PASSED tests/test_api_workflow.py::test_block_shape_side_length_is_a_public_int
+PASSED tests/test_api_workflow.py::test_navier_stokes_served_representation_sets_channels
+PASSED tests/test_benchmark_essentials.py::test_A_poisson_manufactured_solution_periodic
+PASSED tests/test_benchmark_essentials.py::test_A_heat_single_mode_decay_periodic
+PASSED tests/test_benchmark_essentials.py::test_B_generation_is_seed_deterministic
+PASSED tests/test_benchmark_essentials.py::test_C_paper_view_counts_are_frozen[random_50pct]
+PASSED tests/test_benchmark_essentials.py::test_C_paper_view_counts_are_frozen[random_65pct]
+PASSED tests/test_benchmark_essentials.py::test_C_paper_view_counts_are_frozen[random_80pct]
+PASSED tests/test_benchmark_essentials.py::test_C_paper_view_counts_are_frozen[block_observed_50pct]
+PASSED tests/test_benchmark_essentials.py::test_C_paper_view_counts_are_frozen[line_sensors_50pct]
+PASSED tests/test_benchmark_essentials.py::test_C_paper_view_counts_are_frozen[horizontal_lines_50pct]
+PASSED tests/test_benchmark_essentials.py::test_C_paper_view_counts_are_frozen[vertical_lines_50pct]
+PASSED tests/test_benchmark_essentials.py::test_C_paper_view_counts_are_frozen[boundary_band_50pct]
+PASSED tests/test_benchmark_essentials.py::test_C_paper_view_counts_are_frozen[clustered_50pct]
+PASSED tests/test_benchmark_essentials.py::test_C_stable_split_is_exact_and_frozen
+PASSED tests/test_benchmark_essentials.py::test_D_scorer_perfect_zero_and_invalid_cases
+PASSED tests/test_benchmark_essentials.py::test_D_scorer_is_batch_invariant
+PASSED tests/test_benchmark_essentials.py::test_E_trivial_baselines_have_expected_order
+PASSED tests/test_benchmark_essentials.py::test_F_train_and_test_identities_never_overlap
+PASSED tests/test_benchmark_essentials.py::test_G_every_public_model_resolves_for_its_declared_tasks
+PASSED tests/test_benchmark_essentials.py::test_G_every_observation_protocol_resolves_and_rejects_conflicts
+PASSED tests/test_benchmark_essentials.py::test_H_neural_model_forward_backward_is_finite[fno]
+PASSED tests/test_benchmark_essentials.py::test_H_neural_model_forward_backward_is_finite[pino]
+PASSED tests/test_benchmark_essentials.py::test_H_neural_model_forward_backward_is_finite[ufno]
+PASSED tests/test_benchmark_essentials.py::test_H_neural_model_forward_backward_is_finite[cno]
+PASSED tests/test_benchmark_essentials.py::test_H_neural_model_forward_backward_is_finite[deeponet]
+PASSED tests/test_benchmark_essentials.py::test_H_neural_model_forward_backward_is_finite[gnot]
+PASSED tests/test_benchmark_essentials.py::test_H_neural_model_forward_backward_is_finite[transolver]
+PASSED tests/test_benchmark_essentials.py::test_H_neural_model_forward_backward_is_finite[unet]
+PASSED tests/test_benchmark_essentials.py::test_H_neural_model_forward_backward_is_finite[unet_paper_guided]
+PASSED tests/test_benchmark_essentials.py::test_H_neural_model_forward_backward_is_finite[convlstm]
+PASSED tests/test_benchmark_essentials.py::test_H_neural_model_forward_backward_is_finite[mae_small]
+PASSED tests/test_benchmark_essentials.py::test_I_same_seed_same_weights_cpu
+PASSED tests/test_benchmark_essentials.py::test_J_artifact_records_weight_hash_and_detects_tampering
+PASSED tests/test_benchmark_essentials.py::test_K_readme_one_liners_parse
+PASSED tests/test_benchmark_essentials.py::test_L_kernel_version_is_independent_of_package_version
+PASSED tests/test_campaign.py::test_core_pilot_expands_to_27_unique_owned_outputs
+PASSED tests/test_campaign.py::test_core_rbf_baseline_expands_to_nine_evaluation_rows
+PASSED tests/test_campaign.py::test_core_medium_executable_expands_to_189_nonoverlapping_rows
+PASSED tests/test_campaign.py::test_core_full_anchors_expand_to_112_executable_rows
+PASSED tests/test_campaign.py::test_dataset_attestation_requires_exact_summary_digest
+PASSED tests/test_campaign.py::test_full_observation_diagnosis_requires_a_preregistered_cutoff
+PASSED tests/test_campaign.py::test_v2_campaign_requires_and_attests_exact_verified_paper_setting
+PASSED tests/test_campaign.py::test_paper_campaigns_cover_only_verified_poisson_and_navier_stokes
+PASSED tests/test_cli.py::test_cli_lists_components
+PASSED tests/test_cli.py::test_download_one_line_uses_the_publication_gated_default_endpoint
+PASSED tests/test_cli.py::test_quality_profiles_and_gate_flags_parse
+PASSED tests/test_cli.py::test_cli_dispatches_doctor_download_and_aggregate
+PASSED tests/test_cli.py::test_cli_dispatches_quality_audit
+PASSED tests/test_cli.py::test_cli_lists_builtins_in_fresh_process
+PASSED tests/test_cli.py::test_cli_plan_and_generation_dry_run
+PASSED tests/test_cli.py::test_config_free_generation_and_generate_case_contracts
+PASSED tests/test_cli.py::test_config_free_train_infer_eval_and_benchmark_preflights
+PASSED tests/test_config.py::test_config_include_override_and_environment
+PASSED tests/test_config.py::test_checked_in_experiments_select_one_data_tier
+PASSED tests/test_coverage.py::test_factor_coverage_requires_complete_cartesian_product
+PASSED tests/test_coverage.py::test_factor_coverage_rejects_unexpected_factor_value
+PASSED tests/test_dataset.py::test_recovery_dataset_filters_and_applies_exact_mask
+PASSED tests/test_dataset.py::test_spatial_adapter_area_downsamples_before_masking
+PASSED tests/test_dataset.py::test_medium_release_tier_reconstructs_the_canonical_nested_prefix
+PASSED tests/test_dataset.py::test_release_tier_requires_canonical_regime_metadata
+PASSED tests/test_dataset.py::test_observation_protocol_never_changes_stored_ground_truth
+PASSED tests/test_dataset.py::test_rollout_uses_requested_sparse_history_and_future_horizon
+PASSED tests/test_dataset.py::test_rollout_rejects_a_short_trajectory_instead_of_truncating
+PASSED tests/test_dataset.py::test_forward_masks_the_condition
+PASSED tests/test_dataset.py::test_inverse_targets_the_original_condition
+PASSED tests/test_dataset.py::test_bounded_vorticity_tags_are_canonical_vorticity_without_conversion[bounded_vorticity]
+PASSED tests/test_dataset.py::test_bounded_vorticity_tags_are_canonical_vorticity_without_conversion[bounded_obstacle_vorticity]
+PASSED tests/test_dataset.py::test_full_observation_mask_exposes_every_cell
+PASSED tests/test_dataset.py::test_mixed_partial_mask_is_deterministic_and_uses_declared_protocols
+PASSED tests/test_dependency_floor.py::test_elliptic_public_entry_uses_supported_rtol_api[darcy-cg]
+PASSED tests/test_dependency_floor.py::test_elliptic_public_entry_uses_supported_rtol_api[poisson-cg]
+PASSED tests/test_dependency_floor.py::test_elliptic_public_entry_uses_supported_rtol_api[helmholtz-minres]
+PASSED tests/test_difficulty.py::test_analysis_covers_difficulty_axes_and_is_deterministic
+PASSED tests/test_difficulty.py::test_cli_and_long_form_records
+PASSED tests/test_difficulty.py::test_analysis_rejects_records_without_metrics
+PASSED tests/test_difficulty.py::test_official_analysis_config_matches_evaluator_relative_l2_metric
+PASSED tests/test_difficulty.py::test_retrieval_scores_are_inferred_as_higher_is_better[recall@1]
+PASSED tests/test_difficulty.py::test_retrieval_scores_are_inferred_as_higher_is_better[recall_at_1]
+PASSED tests/test_difficulty.py::test_retrieval_scores_are_inferred_as_higher_is_better[map]
+PASSED tests/test_difficulty.py::test_retrieval_scores_are_inferred_as_higher_is_better[map_at_5]
+PASSED tests/test_difficulty.py::test_retrieval_scores_are_inferred_as_higher_is_better[ndcg]
+PASSED tests/test_difficulty.py::test_retrieval_scores_are_inferred_as_higher_is_better[ndcg@10]
+PASSED tests/test_difficulty.py::test_retrieval_scores_are_inferred_as_higher_is_better[ndcg_at_10]
+PASSED tests/test_difficulty.py::test_retrieval_error_metrics_remain_lower_is_better[recall_error]
+PASSED tests/test_difficulty.py::test_retrieval_error_metrics_remain_lower_is_better[map_error]
+PASSED tests/test_difficulty.py::test_retrieval_error_metrics_remain_lower_is_better[ndcg_loss]
+PASSED tests/test_difficulty.py::test_retrieval_error_metrics_remain_lower_is_better[map_regret]
+PASSED tests/test_doctor.py::test_local_doctor_returns_readable_checks
+PASSED tests/test_doctor.py::test_generic_slurm_doctor_uses_declared_roots_and_allocation
+PASSED tests/test_doctor.py::test_doctor_rejects_undeclared_cluster
+PASSED tests/test_download.py::test_missing_manifest_never_contacts_an_author_endpoint
+PASSED tests/test_download.py::test_local_manifest_download_is_verified_and_resumable
+PASSED tests/test_download.py::test_release_manifest_schema_is_enforced
+PASSED tests/test_download.py::test_gated_release_manifest_fails_closed
+PASSED tests/test_download.py::test_published_release_manifest_cannot_be_empty
+PASSED tests/test_evaluation.py::test_physical_metrics_default_to_channels_last
+PASSED tests/test_evaluation.py::test_physical_metrics_exclude_solid_geometry
+PASSED tests/test_evaluation.py::test_streamed_metrics_do_not_depend_on_batch_boundaries
+PASSED tests/test_evaluation.py::test_full_observation_is_a_separate_numpy_diagnostic
+PASSED tests/test_evaluation.py::test_full_observation_overrides_torch_inputs_and_mask
+PASSED tests/test_evaluation.py::test_full_observation_rejects_non_recovery_and_mask_ood
+PASSED tests/test_evaluation.py::test_evaluate_model_streams_prediction_export
+PASSED tests/test_evaluation.py::test_prediction_file_eval_filters_groups_and_reports_unavailable_physics
+PASSED tests/test_evidence_bundle.py::test_plan_lists_every_artifact_and_derives_demo_purpose
+PASSED tests/test_evidence_bundle.py::test_check_is_read_only_and_complete_on_untouched_row
+PASSED tests/test_evidence_bundle.py::test_tampered_score_summary_fails_metric_recomputation_only
+PASSED tests/test_evidence_bundle.py::test_missing_prediction_artifact_is_blocked_not_failed
+PASSED tests/test_evidence_bundle.py::test_swapped_checkpoint_breaks_binding
+PASSED tests/test_evidence_bundle.py::test_demo_row_cannot_be_labelled_paper_evidence
+PASSED tests/test_evidence_bundle.py::test_synthetic_original500_split_rules
+PASSED tests/test_evidence_bundle.py::test_export_refuses_existing_dir_and_demo_without_flag
+PASSED tests/test_evidence_bundle.py::test_export_references_large_files_by_hash_unless_asked
+PASSED tests/test_evidence_bundle.py::test_cli_errors_are_json_on_stderr_with_exit_2
+PASSED tests/test_evidence_bundle.py::test_cli_check_exit_codes_and_stdout_json
+PASSED tests/test_full_to_partial_execution.py::test_preflight_bundle_requires_four_consistent_pathology_free_replicas
+PASSED tests/test_generation.py::test_job_grid_balances_tiny_tier_and_manifest_round_trip
+PASSED tests/test_generation.py::test_job_grid_canonicalizes_setting_aliases_in_ids_and_paths
+PASSED tests/test_generation.py::test_job_grid_supports_family_specific_saved_time_resolution
+PASSED tests/test_generation.py::test_job_grid_supports_case_specific_solver_and_saved_frames
+PASSED tests/test_generation.py::test_job_grid_rejects_invalid_family_time_steps[0]
+PASSED tests/test_generation.py::test_job_grid_rejects_invalid_family_time_steps[-1]
+PASSED tests/test_generation.py::test_job_grid_rejects_unregistered_setting_path
+PASSED tests/test_generation.py::test_generation_rejects_non_floating_storage_dtype
+PASSED tests/test_generation.py::test_job_grid_rejects_unknown_pde_after_plugin_discovery
+PASSED tests/test_generation.py::test_external_pde_plugin_is_discovered_and_generated
+PASSED tests/test_generation.py::test_job_grid_rejects_duplicate_setting_aliases
+PASSED tests/test_generation.py::test_job_grid_rejects_duplicate_factors[families-values0]
+PASSED tests/test_generation.py::test_job_grid_rejects_duplicate_factors[boundaries-values1]
+PASSED tests/test_generation.py::test_job_grid_rejects_duplicate_factors[regimes-values2]
+PASSED tests/test_generation.py::test_jobs_from_spec_uses_canonical_setting_path
+PASSED tests/test_generation.py::test_config_adapters_write_plan_and_produce_json_safe_dry_run
+PASSED tests/test_generation.py::test_array_bundle_selects_consecutive_plan_rows_and_workers
+PASSED tests/test_generation.py::test_plan_rejects_a_different_runtime_code_identity
+PASSED tests/test_generation.py::test_atomic_writer_resumes_partial_and_lazy_reader
+PASSED tests/test_generation.py::test_atomic_writer_excludes_concurrent_shard_writers
+PASSED tests/test_generation.py::test_atomic_writer_rejects_completed_or_partial_shards_from_another_spec
+PASSED tests/test_generation.py::test_generate_job_skips_identical_content_with_fresh_provenance
+PASSED tests/test_generation.py::test_small_generation_job_is_deterministic_and_resumable
+PASSED tests/test_generation.py::test_dense_quality_trajectory_stores_exact_uniform_30_frame_subset
+PASSED tests/test_generation.py::test_stored_time_axis_rejects_interpolation_or_upsampling
+PASSED tests/test_generation.py::test_quality_describes_exact_float64_storage_and_rejected_sample_is_audited
+PASSED tests/test_masks.py::test_exact_random_mask_has_exact_count_and_is_deterministic
+PASSED tests/test_masks.py::test_main_training_mask_uses_500_points_at_128
+PASSED tests/test_masks.py::test_nine_official_protocols_return_valid_deterministic_masks
+PASSED tests/test_masks.py::test_apply_mask_broadcasts_through_time_and_channels
+PASSED tests/test_masks.py::test_line_sensor_budget_is_stable_across_seeds
+PASSED tests/test_methods.py::test_fill_baselines_keep_observations
+PASSED tests/test_methods.py::test_gappy_pod_fits_reconstructs_and_round_trips_checkpoint
+PASSED tests/test_methods.py::test_rbf_rollout_reconstructs_only_t0_then_persists
+PASSED tests/test_methods.py::test_gappy_pod_dmd_uses_sparse_t0_and_free_rollout_and_round_trips
+PASSED tests/test_methods.py::test_mean_fill_is_per_channel
+PASSED tests/test_methods.py::test_persistence_rollout_shape
+PASSED tests/test_methods.py::test_external_method_decorator
+PASSED tests/test_methods.py::test_formal_paper_adapters_are_explicit_but_not_publicly_enumerated
+PASSED tests/test_methods.py::test_official_source_hash_uses_committed_blob
+PASSED tests/test_methods.py::test_compact_neural_shapes_and_reference_label
+PASSED tests/test_methods.py::test_paper_guided_operator_adapters_shape_backward_and_context[unet_paper_guided-kwargs0]
+PASSED tests/test_methods.py::test_paper_guided_operator_adapters_shape_backward_and_context[deeponet-kwargs1]
+PASSED tests/test_methods.py::test_paper_guided_operator_adapters_shape_backward_and_context[transolver-kwargs2]
+PASSED tests/test_methods.py::test_paper_guided_operator_adapters_shape_backward_and_context[gnot-kwargs3]
+PASSED tests/test_methods.py::test_compact_recovery_models_can_require_geometry[unet]
+PASSED tests/test_methods.py::test_compact_recovery_models_can_require_geometry[fno]
+PASSED tests/test_methods.py::test_compact_recovery_models_can_require_geometry[ufno]
+PASSED tests/test_methods.py::test_compact_recovery_models_can_require_geometry[cno]
+PASSED tests/test_methods.py::test_compact_fno_keeps_fft_outside_mixed_precision
+PASSED tests/test_methods.py::test_rollout_neural_shapes
+PASSED tests/test_methods.py::test_autoregressive_wrapper_never_uses_future_truth
+PASSED tests/test_methods.py::test_runner_wraps_registered_operator_adapters_for_free_rollout[deeponet]
+PASSED tests/test_methods.py::test_runner_wraps_registered_operator_adapters_for_free_rollout[gnot]
+PASSED tests/test_methods.py::test_runner_wraps_registered_operator_adapters_for_free_rollout[transolver]
+PASSED tests/test_methods.py::test_residual_encoder_multitask_shapes_and_registry
+PASSED tests/test_methods.py::test_mae_small_masks_reconstructs_and_preserves_visible_values
+PASSED tests/test_metrics.py::test_basic_metrics_identity_and_scale
+PASSED tests/test_metrics.py::test_high_frequency_energy_distinguishes_checkerboard
+PASSED tests/test_metrics.py::test_rollout_and_stability_metrics
+PASSED tests/test_metrics.py::test_vorticity_and_ood_degradation
+PASSED tests/test_metrics.py::test_periodic_vorticity_physics_includes_reconstructed_kinetic_energy
+PASSED tests/test_numerics.py::test_static_solvers_converge_with_boundary_in_operator[dirichlet-darcy]
+PASSED tests/test_numerics.py::test_static_solvers_converge_with_boundary_in_operator[dirichlet-poisson]
+PASSED tests/test_numerics.py::test_static_solvers_converge_with_boundary_in_operator[dirichlet-helmholtz]
+PASSED tests/test_numerics.py::test_static_solvers_converge_with_boundary_in_operator[neumann-darcy]
+PASSED tests/test_numerics.py::test_static_solvers_converge_with_boundary_in_operator[neumann-poisson]
+PASSED tests/test_numerics.py::test_static_solvers_converge_with_boundary_in_operator[neumann-helmholtz]
+PASSED tests/test_numerics.py::test_static_solvers_converge_with_boundary_in_operator[periodic-darcy]
+PASSED tests/test_numerics.py::test_static_solvers_converge_with_boundary_in_operator[periodic-poisson]
+PASSED tests/test_numerics.py::test_static_solvers_converge_with_boundary_in_operator[periodic-helmholtz]
+PASSED tests/test_numerics.py::test_static_solvers_converge_with_boundary_in_operator[robin-darcy]
+PASSED tests/test_numerics.py::test_static_solvers_converge_with_boundary_in_operator[robin-poisson]
+PASSED tests/test_numerics.py::test_static_solvers_converge_with_boundary_in_operator[robin-helmholtz]
+PASSED tests/test_numerics.py::test_scalar_temporal_solver_never_uses_periodic_step_for_bounded_bc[dirichlet-heat]
+PASSED tests/test_numerics.py::test_scalar_temporal_solver_never_uses_periodic_step_for_bounded_bc[dirichlet-reaction_diffusion]
+PASSED tests/test_numerics.py::test_scalar_temporal_solver_never_uses_periodic_step_for_bounded_bc[dirichlet-burgers]
+PASSED tests/test_numerics.py::test_scalar_temporal_solver_never_uses_periodic_step_for_bounded_bc[neumann-heat]
+PASSED tests/test_numerics.py::test_scalar_temporal_solver_never_uses_periodic_step_for_bounded_bc[neumann-reaction_diffusion]
+PASSED tests/test_numerics.py::test_scalar_temporal_solver_never_uses_periodic_step_for_bounded_bc[neumann-burgers]
+PASSED tests/test_numerics.py::test_scalar_temporal_solver_never_uses_periodic_step_for_bounded_bc[periodic-heat]
+PASSED tests/test_numerics.py::test_scalar_temporal_solver_never_uses_periodic_step_for_bounded_bc[periodic-reaction_diffusion]
+PASSED tests/test_numerics.py::test_scalar_temporal_solver_never_uses_periodic_step_for_bounded_bc[periodic-burgers]
+PASSED tests/test_numerics.py::test_scalar_temporal_solver_never_uses_periodic_step_for_bounded_bc[robin-heat]
+PASSED tests/test_numerics.py::test_scalar_temporal_solver_never_uses_periodic_step_for_bounded_bc[robin-reaction_diffusion]
+PASSED tests/test_numerics.py::test_scalar_temporal_solver_never_uses_periodic_step_for_bounded_bc[robin-burgers]
+PASSED tests/test_numerics.py::test_periodic_navier_stokes_uses_fno_protocol_and_reports_forcing
+PASSED tests/test_numerics.py::test_periodic_nonsmooth_burgers_uses_conservative_finite_volume_route[piecewise_blocks]
+PASSED tests/test_numerics.py::test_periodic_nonsmooth_burgers_uses_conservative_finite_volume_route[threshold_level_set]
+PASSED tests/test_numerics.py::test_periodic_nonsmooth_burgers_uses_conservative_finite_volume_route[front_ring_shock]
+PASSED tests/test_numerics.py::test_bounded_navier_stokes_uses_topology_matched_vorticity_solver[dirichlet]
+PASSED tests/test_numerics.py::test_bounded_navier_stokes_uses_topology_matched_vorticity_solver[neumann]
+PASSED tests/test_numerics.py::test_bounded_navier_stokes_uses_topology_matched_vorticity_solver[robin]
+PASSED tests/test_one_setting.py::test_campaign_rejects_noncanonical_scalar_representation
+PASSED tests/test_one_setting.py::test_campaign_has_unique_non_pseudoreplicated_accounting
+PASSED tests/test_one_setting.py::test_public_configs_preserve_static_and_free_rollout_contracts
+PASSED tests/test_one_setting.py::test_exact_production_split_and_preflight_subset_are_disjoint_contracts
+PASSED tests/test_paper_row.py::test_c500_calls_real_stable_split_and_ignores_shard_split_labels
+PASSED tests/test_paper_row.py::test_production_count_mismatch_cannot_be_relabeled_demo[1999]
+PASSED tests/test_paper_row.py::test_production_count_mismatch_cannot_be_relabeled_demo[2001]
+PASSED tests/test_paper_row.py::test_production_count_mismatch_cannot_be_relabeled_demo[9]
+PASSED tests/test_paper_row.py::test_c500_materialization_preserves_registry_and_budget[poisson-ufno_2d]
+PASSED tests/test_paper_row.py::test_c500_materialization_preserves_registry_and_budget[poisson-fno]
+PASSED tests/test_paper_row.py::test_c500_materialization_preserves_registry_and_budget[poisson-cno]
+PASSED tests/test_paper_row.py::test_c500_materialization_preserves_registry_and_budget[poisson-deeponet]
+PASSED tests/test_paper_row.py::test_c500_materialization_preserves_registry_and_budget[poisson-gnot]
+PASSED tests/test_paper_row.py::test_c500_materialization_preserves_registry_and_budget[poisson-transolver]
+PASSED tests/test_paper_row.py::test_c500_materialization_preserves_registry_and_budget[poisson-pino]
+PASSED tests/test_paper_row.py::test_c500_materialization_preserves_registry_and_budget[heat-ufno_2d]
+PASSED tests/test_paper_row.py::test_c500_materialization_preserves_registry_and_budget[heat-fno]
+PASSED tests/test_paper_row.py::test_c500_materialization_preserves_registry_and_budget[heat-cno]
+PASSED tests/test_paper_row.py::test_c500_materialization_preserves_registry_and_budget[heat-deeponet]
+PASSED tests/test_paper_row.py::test_c500_materialization_preserves_registry_and_budget[heat-gnot]
+PASSED tests/test_paper_row.py::test_c500_materialization_preserves_registry_and_budget[heat-transolver]
+PASSED tests/test_paper_row.py::test_c500_materialization_preserves_registry_and_budget[heat-pino]
+PASSED tests/test_paper_row.py::test_unpublished_cohort_adapters_are_explicitly_rejected[fixed200]
+PASSED tests/test_paper_row.py::test_unpublished_cohort_adapters_are_explicitly_rejected[budget200_min120]
+PASSED tests/test_paper_row.py::test_unpublished_cohort_adapters_are_explicitly_rejected[interrupted_or_recovered]
+PASSED tests/test_paper_row.py::test_c500_rejects_budget_override
+PASSED tests/test_paper_row.py::test_real_demo_row_trains_then_loads_last_then_strict_scores_without_test_leakage[poisson]
+PASSED tests/test_paper_row.py::test_real_demo_row_trains_then_loads_last_then_strict_scores_without_test_leakage[heat]
+PASSED tests/test_paper_row.py::test_missing_data_is_failure_receipt_cli_nonzero_and_never_generates
+PASSED tests/test_paper_row.py::test_config_typo_cannot_silently_change_scientific_settings
+PASSED tests/test_paper_row.py::test_invalid_seed_and_run_identity_rejected_before_training[training_seed--1]
+PASSED tests/test_paper_row.py::test_invalid_seed_and_run_identity_rejected_before_training[training_seed-4294967296]
+PASSED tests/test_paper_row.py::test_invalid_seed_and_run_identity_rejected_before_training[training_seed-True]
+PASSED tests/test_paper_row.py::test_invalid_seed_and_run_identity_rejected_before_training[run_id-../bad]
+PASSED tests/test_paper_row.py::test_invalid_seed_and_run_identity_rejected_before_training[attempt_id-space forbidden]
+PASSED tests/test_paper_row.py::test_c500_does_not_silently_relabel_thinned_time_coordinates
+PASSED tests/test_pdes.py::test_nonfinite_solver_output_is_rejected_instead_of_sanitized
+PASSED tests/test_pdes.py::test_all_pde_families_and_boundaries_have_canonical_finite_output[dirichlet-darcy]
+PASSED tests/test_pdes.py::test_all_pde_families_and_boundaries_have_canonical_finite_output[dirichlet-poisson]
+PASSED tests/test_pdes.py::test_all_pde_families_and_boundaries_have_canonical_finite_output[dirichlet-helmholtz]
+PASSED tests/test_pdes.py::test_all_pde_families_and_boundaries_have_canonical_finite_output[dirichlet-heat]
+PASSED tests/test_pdes.py::test_all_pde_families_and_boundaries_have_canonical_finite_output[dirichlet-reaction_diffusion]
+PASSED tests/test_pdes.py::test_all_pde_families_and_boundaries_have_canonical_finite_output[dirichlet-burgers]
+PASSED tests/test_pdes.py::test_all_pde_families_and_boundaries_have_canonical_finite_output[dirichlet-navier_stokes]
+PASSED tests/test_pdes.py::test_all_pde_families_and_boundaries_have_canonical_finite_output[neumann-darcy]
+PASSED tests/test_pdes.py::test_all_pde_families_and_boundaries_have_canonical_finite_output[neumann-poisson]
+PASSED tests/test_pdes.py::test_all_pde_families_and_boundaries_have_canonical_finite_output[neumann-helmholtz]
+PASSED tests/test_pdes.py::test_all_pde_families_and_boundaries_have_canonical_finite_output[neumann-heat]
+PASSED tests/test_pdes.py::test_all_pde_families_and_boundaries_have_canonical_finite_output[neumann-reaction_diffusion]
+PASSED tests/test_pdes.py::test_all_pde_families_and_boundaries_have_canonical_finite_output[neumann-burgers]
+PASSED tests/test_pdes.py::test_all_pde_families_and_boundaries_have_canonical_finite_output[neumann-navier_stokes]
+PASSED tests/test_pdes.py::test_all_pde_families_and_boundaries_have_canonical_finite_output[periodic-darcy]
+PASSED tests/test_pdes.py::test_all_pde_families_and_boundaries_have_canonical_finite_output[periodic-poisson]
+PASSED tests/test_pdes.py::test_all_pde_families_and_boundaries_have_canonical_finite_output[periodic-helmholtz]
+PASSED tests/test_pdes.py::test_all_pde_families_and_boundaries_have_canonical_finite_output[periodic-heat]
+PASSED tests/test_pdes.py::test_all_pde_families_and_boundaries_have_canonical_finite_output[periodic-reaction_diffusion]
+PASSED tests/test_pdes.py::test_all_pde_families_and_boundaries_have_canonical_finite_output[periodic-burgers]
+PASSED tests/test_pdes.py::test_all_pde_families_and_boundaries_have_canonical_finite_output[periodic-navier_stokes]
+PASSED tests/test_pdes.py::test_all_pde_families_and_boundaries_have_canonical_finite_output[robin-darcy]
+PASSED tests/test_pdes.py::test_all_pde_families_and_boundaries_have_canonical_finite_output[robin-poisson]
+PASSED tests/test_pdes.py::test_all_pde_families_and_boundaries_have_canonical_finite_output[robin-helmholtz]
+PASSED tests/test_pdes.py::test_all_pde_families_and_boundaries_have_canonical_finite_output[robin-heat]
+PASSED tests/test_pdes.py::test_all_pde_families_and_boundaries_have_canonical_finite_output[robin-reaction_diffusion]
+PASSED tests/test_pdes.py::test_all_pde_families_and_boundaries_have_canonical_finite_output[robin-burgers]
+PASSED tests/test_pdes.py::test_all_pde_families_and_boundaries_have_canonical_finite_output[robin-navier_stokes]
+PASSED tests/test_pdes.py::test_pde_generation_is_seed_deterministic[darcy]
+PASSED tests/test_pdes.py::test_pde_generation_is_seed_deterministic[poisson]
+PASSED tests/test_pdes.py::test_pde_generation_is_seed_deterministic[helmholtz]
+PASSED tests/test_pdes.py::test_pde_generation_is_seed_deterministic[heat]
+PASSED tests/test_pdes.py::test_pde_generation_is_seed_deterministic[reaction_diffusion]
+PASSED tests/test_pdes.py::test_pde_generation_is_seed_deterministic[burgers]
+PASSED tests/test_pdes.py::test_pde_generation_is_seed_deterministic[navier_stokes]
+PASSED tests/test_pdes.py::test_navier_stokes_state_channels_follow_geometry_protocol
+PASSED tests/test_pdes.py::test_darcy_regimes_realize_exact_contrast_across_settings[low-smooth_grf]
+PASSED tests/test_pdes.py::test_darcy_regimes_realize_exact_contrast_across_settings[low-medium_grf]
+PASSED tests/test_pdes.py::test_darcy_regimes_realize_exact_contrast_across_settings[low-rough_grf]
+PASSED tests/test_pdes.py::test_darcy_regimes_realize_exact_contrast_across_settings[low-low_frequency_fourier]
+PASSED tests/test_pdes.py::test_darcy_regimes_realize_exact_contrast_across_settings[low-multi_frequency_fourier]
+PASSED tests/test_pdes.py::test_darcy_regimes_realize_exact_contrast_across_settings[low-gaussian_blobs]
+PASSED tests/test_pdes.py::test_darcy_regimes_realize_exact_contrast_across_settings[low-piecewise_blocks]
+PASSED tests/test_pdes.py::test_darcy_regimes_realize_exact_contrast_across_settings[low-threshold_level_set]
+PASSED tests/test_pdes.py::test_darcy_regimes_realize_exact_contrast_across_settings[low-dipole_vortex_pair]
+PASSED tests/test_pdes.py::test_darcy_regimes_realize_exact_contrast_across_settings[low-front_ring_shock]
+PASSED tests/test_pdes.py::test_darcy_regimes_realize_exact_contrast_across_settings[medium-smooth_grf]
+PASSED tests/test_pdes.py::test_darcy_regimes_realize_exact_contrast_across_settings[medium-medium_grf]
+PASSED tests/test_pdes.py::test_darcy_regimes_realize_exact_contrast_across_settings[medium-rough_grf]
+PASSED tests/test_pdes.py::test_darcy_regimes_realize_exact_contrast_across_settings[medium-low_frequency_fourier]
+PASSED tests/test_pdes.py::test_darcy_regimes_realize_exact_contrast_across_settings[medium-multi_frequency_fourier]
+PASSED tests/test_pdes.py::test_darcy_regimes_realize_exact_contrast_across_settings[medium-gaussian_blobs]
+PASSED tests/test_pdes.py::test_darcy_regimes_realize_exact_contrast_across_settings[medium-piecewise_blocks]
+PASSED tests/test_pdes.py::test_darcy_regimes_realize_exact_contrast_across_settings[medium-threshold_level_set]
+PASSED tests/test_pdes.py::test_darcy_regimes_realize_exact_contrast_across_settings[medium-dipole_vortex_pair]
+PASSED tests/test_pdes.py::test_darcy_regimes_realize_exact_contrast_across_settings[medium-front_ring_shock]
+PASSED tests/test_pdes.py::test_darcy_regimes_realize_exact_contrast_across_settings[high-smooth_grf]
+PASSED tests/test_pdes.py::test_darcy_regimes_realize_exact_contrast_across_settings[high-medium_grf]
+PASSED tests/test_pdes.py::test_darcy_regimes_realize_exact_contrast_across_settings[high-rough_grf]
+PASSED tests/test_pdes.py::test_darcy_regimes_realize_exact_contrast_across_settings[high-low_frequency_fourier]
+PASSED tests/test_pdes.py::test_darcy_regimes_realize_exact_contrast_across_settings[high-multi_frequency_fourier]
+PASSED tests/test_pdes.py::test_darcy_regimes_realize_exact_contrast_across_settings[high-gaussian_blobs]
+PASSED tests/test_pdes.py::test_darcy_regimes_realize_exact_contrast_across_settings[high-piecewise_blocks]
+PASSED tests/test_pdes.py::test_darcy_regimes_realize_exact_contrast_across_settings[high-threshold_level_set]
+PASSED tests/test_pdes.py::test_darcy_regimes_realize_exact_contrast_across_settings[high-dipole_vortex_pair]
+PASSED tests/test_pdes.py::test_darcy_regimes_realize_exact_contrast_across_settings[high-front_ring_shock]
+PASSED tests/test_pdes.py::test_builtin_pdes_are_available_through_extension_registry
+PASSED tests/test_pdes.py::test_direct_generation_discovers_an_explicit_builtin_replacement
+PASSED tests/test_pino.py::test_static_pino_residual_is_differentiable_and_equation_exact
+PASSED tests/test_pino.py::test_static_pino_residual_matches_registered_dataset_equations[dirichlet-darcy]
+PASSED tests/test_pino.py::test_static_pino_residual_matches_registered_dataset_equations[dirichlet-poisson]
+PASSED tests/test_pino.py::test_static_pino_residual_matches_registered_dataset_equations[dirichlet-helmholtz]
+PASSED tests/test_pino.py::test_static_pino_residual_matches_registered_dataset_equations[neumann-darcy]
+PASSED tests/test_pino.py::test_static_pino_residual_matches_registered_dataset_equations[neumann-poisson]
+PASSED tests/test_pino.py::test_static_pino_residual_matches_registered_dataset_equations[neumann-helmholtz]
+PASSED tests/test_pino.py::test_static_pino_residual_matches_registered_dataset_equations[periodic-darcy]
+PASSED tests/test_pino.py::test_static_pino_residual_matches_registered_dataset_equations[periodic-poisson]
+PASSED tests/test_pino.py::test_static_pino_residual_matches_registered_dataset_equations[periodic-helmholtz]
+PASSED tests/test_pino.py::test_static_pino_residual_matches_registered_dataset_equations[robin-darcy]
+PASSED tests/test_pino.py::test_static_pino_residual_matches_registered_dataset_equations[robin-poisson]
+PASSED tests/test_pino.py::test_static_pino_residual_matches_registered_dataset_equations[robin-helmholtz]
+PASSED tests/test_pino.py::test_temporal_final_field_fails_closed
+PASSED tests/test_pino.py::test_temporal_pino_residual_is_finite_and_differentiable[heat]
+PASSED tests/test_pino.py::test_temporal_pino_residual_is_finite_and_differentiable[reaction_diffusion]
+PASSED tests/test_pino.py::test_temporal_pino_residual_is_finite_and_differentiable[burgers]
+PASSED tests/test_pino.py::test_temporal_pino_residual_is_finite_and_differentiable[navier_stokes]
+PASSED tests/test_pino.py::test_heat_temporal_normalization_has_no_artificial_amplitude_gradient
+PASSED tests/test_pino.py::test_temporal_pino_trainer_uses_free_three_step_rollout
+PASSED tests/test_pino.py::test_pino_model_and_trainer_contract_is_fail_closed
+PASSED tests/test_presets.py::test_generation_preset_freezes_the_factorized_release_design
+PASSED tests/test_presets.py::test_validation20_uses_dense_frames_only_for_failed_burgers_strata
+PASSED tests/test_presets.py::test_validation20_densifies_only_failed_ns_regimes
+PASSED tests/test_presets.py::test_full_t15_plan_has_exact_size_and_uniform_frame_stride
+PASSED tests/test_presets.py::test_experiment_preset_is_strict_and_uses_paper_aliases
+PASSED tests/test_presets.py::test_protocol_only_tasks_do_not_pretend_to_use_field_trainer
+PASSED tests/test_presets.py::test_benchmark_preset_embeds_wheel_safe_experiment_mapping
+PASSED tests/test_presets.py::test_checked_in_paper_matrix_has_leak_free_factor_configs
+PASSED tests/test_presets.py::test_public_ood_split_aliases_build_shape_compatible_presets
+PASSED tests/test_protocol.py::test_contract_freezes_cardinality_tasks_and_claim_limits
+PASSED tests/test_protocol.py::test_observation_training_contract_freezes_matched_mask_policy_and_counts
+PASSED tests/test_protocol.py::test_observation_training_statuses_match_the_method_registry
+PASSED tests/test_protocol.py::test_checked_in_medium_campaign_is_planning_only_and_matches_contract
+PASSED tests/test_protocol.py::test_code_and_yaml_generation_defaults_conform_to_contract
+PASSED tests/test_protocol.py::test_protocol_validator_reports_factor_and_tier_drift
+PASSED tests/test_protocol.py::test_protocol_validator_rejects_stored_time_axis_drift
+PASSED tests/test_protocol.py::test_protocol_validator_rejects_mask_and_regime_allocation_drift
+PASSED tests/test_protocol.py::test_protocol_validator_requires_default_quality_reporting
+PASSED tests/test_protocol.py::test_protocol_cli_check_and_json
+PASSED tests/test_quality.py::test_every_builtin_family_reports_finite_json_quality[darcy]
+PASSED tests/test_quality.py::test_every_builtin_family_reports_finite_json_quality[poisson]
+PASSED tests/test_quality.py::test_every_builtin_family_reports_finite_json_quality[helmholtz]
+PASSED tests/test_quality.py::test_every_builtin_family_reports_finite_json_quality[heat]
+PASSED tests/test_quality.py::test_every_builtin_family_reports_finite_json_quality[reaction_diffusion]
+PASSED tests/test_quality.py::test_every_builtin_family_reports_finite_json_quality[burgers]
+PASSED tests/test_quality.py::test_every_builtin_family_reports_finite_json_quality[navier_stokes]
+PASSED tests/test_quality.py::test_periodic_temporal_quality_uses_declared_spectral_operator[heat]
+PASSED tests/test_quality.py::test_periodic_temporal_quality_uses_declared_spectral_operator[reaction_diffusion]
+PASSED tests/test_quality.py::test_periodic_temporal_quality_uses_declared_spectral_operator[burgers]
+PASSED tests/test_quality.py::test_periodic_temporal_quality_uses_declared_spectral_operator[navier_stokes]
+PASSED tests/test_quality.py::test_temporal_quality_separates_initial_replay_from_saved_frame_balance[heat]
+PASSED tests/test_quality.py::test_temporal_quality_separates_initial_replay_from_saved_frame_balance[reaction_diffusion]
+PASSED tests/test_quality.py::test_temporal_quality_separates_initial_replay_from_saved_frame_balance[burgers]
+PASSED tests/test_quality.py::test_temporal_quality_separates_initial_replay_from_saved_frame_balance[navier_stokes]
+PASSED tests/test_quality.py::test_periodic_heat_uses_exact_semigroup_loss_and_reports_fd2_strong_form
+PASSED tests/test_quality.py::test_family_residual_is_sensitive_to_grid_scale_trajectory_error[darcy]
+PASSED tests/test_quality.py::test_family_residual_is_sensitive_to_grid_scale_trajectory_error[poisson]
+PASSED tests/test_quality.py::test_family_residual_is_sensitive_to_grid_scale_trajectory_error[helmholtz]
+PASSED tests/test_quality.py::test_family_residual_is_sensitive_to_grid_scale_trajectory_error[heat]
+PASSED tests/test_quality.py::test_family_residual_is_sensitive_to_grid_scale_trajectory_error[reaction_diffusion]
+PASSED tests/test_quality.py::test_family_residual_is_sensitive_to_grid_scale_trajectory_error[burgers]
+PASSED tests/test_quality.py::test_family_residual_is_sensitive_to_grid_scale_trajectory_error[navier_stokes]
+PASSED tests/test_quality.py::test_quality_profiles_separate_reporting_enforcement_and_publication
+PASSED tests/test_quality.py::test_publication_profile_requires_an_explicit_threshold_and_validated_solver
+PASSED tests/test_quality.py::test_publication_profile_selects_effective_threshold_by_calibration_key
+PASSED tests/test_quality.py::test_all_solid_geometry_fails_active_domain_and_cannot_pass_publication
+PASSED tests/test_quality.py::test_helmholtz_report_is_nominal_equation_loss_not_a_validation_claim
+PASSED tests/test_quality.py::test_bounded_navier_stokes_reports_vorticity_and_divergence
+PASSED tests/test_quality.py::test_summary_keeps_explicit_rows_for_all_pde_losses
+PASSED tests/test_quality.py::test_dataset_gate_rejects_missing_records_and_partial_pde_losses
+PASSED tests/test_quality.py::test_normalized_quality_config_has_stable_versioned_profiles[report]
+PASSED tests/test_quality.py::test_normalized_quality_config_has_stable_versioned_profiles[strict]
+PASSED tests/test_quality.py::test_normalized_quality_config_has_stable_versioned_profiles[publication]
+PASSED tests/test_quality.py::test_quality_reporting_cannot_be_disabled
+PASSED tests/test_quality_regressions.py::test_spatial_mask_uses_trailing_hw_when_time_equals_height
+PASSED tests/test_quality_regressions.py::test_every_builtin_family_generates_robin_data[darcy]
+PASSED tests/test_quality_regressions.py::test_every_builtin_family_generates_robin_data[poisson]
+PASSED tests/test_quality_regressions.py::test_every_builtin_family_generates_robin_data[helmholtz]
+PASSED tests/test_quality_regressions.py::test_every_builtin_family_generates_robin_data[heat]
+PASSED tests/test_quality_regressions.py::test_every_builtin_family_generates_robin_data[reaction_diffusion]
+PASSED tests/test_quality_regressions.py::test_every_builtin_family_generates_robin_data[burgers]
+PASSED tests/test_quality_regressions.py::test_every_builtin_family_generates_robin_data[navier_stokes]
+PASSED tests/test_quality_regressions.py::test_missing_required_domain_contract_is_unsupported_and_fails[darcy]
+PASSED tests/test_quality_regressions.py::test_missing_required_domain_contract_is_unsupported_and_fails[poisson]
+PASSED tests/test_quality_regressions.py::test_missing_required_domain_contract_is_unsupported_and_fails[helmholtz]
+PASSED tests/test_quality_regressions.py::test_missing_required_domain_contract_is_unsupported_and_fails[heat]
+PASSED tests/test_quality_regressions.py::test_missing_required_domain_contract_is_unsupported_and_fails[reaction_diffusion]
+PASSED tests/test_quality_regressions.py::test_missing_required_domain_contract_is_unsupported_and_fails[burgers]
+PASSED tests/test_quality_regressions.py::test_missing_required_domain_contract_is_unsupported_and_fails[navier_stokes]
+PASSED tests/test_quality_regressions.py::test_nonfinite_required_equation_parameter_is_unsupported_and_never_emitted[darcy-forcing_amplitude]
+PASSED tests/test_quality_regressions.py::test_nonfinite_required_equation_parameter_is_unsupported_and_never_emitted[helmholtz-wavenumber]
+PASSED tests/test_quality_regressions.py::test_nonfinite_required_equation_parameter_is_unsupported_and_never_emitted[heat-diffusivity]
+PASSED tests/test_quality_regressions.py::test_nonfinite_required_equation_parameter_is_unsupported_and_never_emitted[reaction_diffusion-reaction_rate]
+PASSED tests/test_quality_regressions.py::test_nonfinite_required_equation_parameter_is_unsupported_and_never_emitted[burgers-viscosity]
+PASSED tests/test_quality_regressions.py::test_nonfinite_required_equation_parameter_is_unsupported_and_never_emitted[navier_stokes-viscosity]
+PASSED tests/test_quality_regressions.py::test_calibration_key_changes_with_equation_parameter[darcy-forcing_amplitude]
+PASSED tests/test_quality_regressions.py::test_calibration_key_changes_with_equation_parameter[darcy-solver_steps]
+PASSED tests/test_quality_regressions.py::test_calibration_key_changes_with_equation_parameter[poisson-solver_steps]
+PASSED tests/test_quality_regressions.py::test_calibration_key_changes_with_equation_parameter[helmholtz-wavenumber]
+PASSED tests/test_quality_regressions.py::test_calibration_key_changes_with_equation_parameter[helmholtz-damping_ratio]
+PASSED tests/test_quality_regressions.py::test_calibration_key_changes_with_equation_parameter[heat-diffusivity]
+PASSED tests/test_quality_regressions.py::test_calibration_key_changes_with_equation_parameter[reaction_diffusion-reaction_rate]
+PASSED tests/test_quality_regressions.py::test_calibration_key_changes_with_equation_parameter[burgers-viscosity]
+PASSED tests/test_quality_regressions.py::test_calibration_key_changes_with_equation_parameter[navier_stokes-viscosity]
+PASSED tests/test_quality_regressions.py::test_extra_channel_builtin_sample_fails_array_contract
+PASSED tests/test_quality_regressions.py::test_external_multichannel_sample_keeps_generic_contract_reportable
+PASSED tests/test_quality_regressions.py::test_report_mode_quarantines_builtin_with_missing_temporal_residual
+PASSED tests/test_quality_regressions.py::test_nonfinite_bounded_navier_stokes_parameter_remains_unsupported
+PASSED tests/test_quality_regressions.py::test_strict_aggregate_rejects_cross_array_spatial_mismatch
+PASSED tests/test_quality_regressions.py::test_strict_aggregate_rejects_cross_array_channel_mismatch
+PASSED tests/test_quality_regressions.py::test_strict_aggregate_rejects_state_representation_mismatch
+PASSED tests/test_quality_regressions.py::test_quality_audit_does_not_silently_recompute_missing_records
+PASSED tests/test_quality_regressions.py::test_new_quality_spec_requires_intact_quality_sidecar
+PASSED tests/test_registry.py::test_discovery_supports_registration_bundle_hooks
+PASSED tests/test_release_contracts.py::test_heat_periodic_continuous_fourier_reference[16]
+PASSED tests/test_release_contracts.py::test_heat_periodic_continuous_fourier_reference[32]
+PASSED tests/test_release_contracts.py::test_custom_physics_rejects_nonfinite_before_existing_solver[nan]
+PASSED tests/test_release_contracts.py::test_custom_physics_rejects_nonfinite_before_existing_solver[inf]
+PASSED tests/test_release_contracts.py::test_custom_physical_demo_receipt_serializes_numpy_solver_flags
+PASSED tests/test_release_contracts.py::test_paper_mask_exact_counts[random_3pct-kwargs0-8192]
+PASSED tests/test_release_contracts.py::test_paper_mask_exact_counts[random_3pct-kwargs1-10650]
+PASSED tests/test_release_contracts.py::test_paper_mask_exact_counts[random_3pct-kwargs2-13107]
+PASSED tests/test_release_contracts.py::test_paper_mask_exact_counts[block_missing-kwargs3-8284]
+PASSED tests/test_release_contracts.py::test_paper_mask_exact_counts[line_sensors-kwargs4-8284]
+PASSED tests/test_release_contracts.py::test_paper_mask_exact_counts[line_sensors-kwargs5-8192]
+PASSED tests/test_release_contracts.py::test_paper_mask_exact_counts[line_sensors-kwargs6-8192]
+PASSED tests/test_release_contracts.py::test_paper_mask_exact_counts[boundary_sensors-kwargs7-8284]
+PASSED tests/test_release_contracts.py::test_paper_mask_exact_counts[clustered_sensors-kwargs8-8192]
+PASSED tests/test_release_contracts.py::test_random_density_masks_are_not_claimed_nested
+PASSED tests/test_release_contracts.py::test_builtin_prediction_ignores_hidden_target_and_future_values[False-recovery]
+PASSED tests/test_release_contracts.py::test_builtin_prediction_ignores_hidden_target_and_future_values[False-rollout]
+PASSED tests/test_release_contracts.py::test_builtin_prediction_ignores_hidden_target_and_future_values[True-recovery]
+PASSED tests/test_release_contracts.py::test_builtin_prediction_ignores_hidden_target_and_future_values[True-rollout]
+PASSED tests/test_retrieval.py::test_continuous_ann_finds_self
+PASSED tests/test_retrieval.py::test_unsupervised_vq_and_rq_anchors_are_deterministic
+PASSED tests/test_retrieval.py::test_symbolic_metadata_prefers_full_match
+PASSED tests/test_retrieval.py::test_random_retriever_is_seed_reproducible
+PASSED tests/test_retrieval.py::test_semantic_ambiguity_metrics
+PASSED tests/test_routing.py::test_routing_oracle_metrics
+PASSED tests/test_routing.py::test_metadata_and_family_routers
+PASSED tests/test_routing.py::test_continuous_latent_router
+PASSED tests/test_routing.py::test_csv_json_report_round_trip_and_aggregation
+PASSED tests/test_runner.py::test_runner_materializes_official_ood_membership
+PASSED tests/test_runner.py::test_rollout_training_and_evaluation_horizons_are_separate
+PASSED tests/test_runner.py::test_explicit_observation_views_do_not_insert_a_training_mask
+PASSED tests/test_runner.py::test_runner_fits_and_loads_gappy_pod_without_a_torch_checkpoint
+PASSED tests/test_runner.py::test_paired_ood_results_feed_benchmark_and_analysis
+PASSED tests/test_second_audit_regressions.py::test_untouched_evidence_passes
+PASSED tests/test_second_audit_regressions.py::test_inconsistent_metadata_must_not_pass[training_config]
+PASSED tests/test_second_audit_regressions.py::test_inconsistent_metadata_must_not_pass[resolved_model]
+PASSED tests/test_second_audit_regressions.py::test_inconsistent_metadata_must_not_pass[bundle_model]
+PASSED tests/test_second_audit_regressions.py::test_inconsistent_metadata_must_not_pass[training_view]
+PASSED tests/test_second_audit_regressions.py::test_inconsistent_metadata_must_not_pass[test_view]
+PASSED tests/test_second_audit_regressions.py::test_inconsistent_metadata_must_not_pass[omitted_configs]
+PASSED tests/test_second_audit_regressions.py::test_inconsistent_metadata_must_not_pass[receipt_inventory]
+PASSED tests/test_second_audit_regressions.py::test_inconsistent_metadata_must_not_pass[bundle_seed]
+PASSED tests/test_second_audit_regressions.py::test_inconsistent_metadata_must_not_pass[trainer_seed]
+PASSED tests/test_second_audit_regressions.py::test_inconsistent_metadata_must_not_pass[score_hash]
+PASSED tests/test_second_audit_regressions.py::test_no_rescore_cannot_certify_finiteness
+PASSED tests/test_second_audit_regressions.py::test_unreadable_prediction_cannot_pass_recomputation
+PASSED tests/test_second_audit_regressions.py::test_export_can_be_rechecked_directly
+PASSED tests/test_second_audit_regressions.py::test_untouched_archive_metadata_passes
+PASSED tests/test_second_audit_regressions.py::test_archive_corruption_must_propagate[split_hash]
+PASSED tests/test_second_audit_regressions.py::test_archive_corruption_must_propagate[nan_metric]
+PASSED tests/test_second_audit_regressions.py::test_archive_corruption_must_propagate[metrics_file_hash]
+PASSED tests/test_second_audit_regressions.py::test_archive_corruption_must_propagate[missing_ids_hash]
+PASSED tests/test_second_audit_regressions.py::test_archive_corruption_must_propagate[test_records_touched]
+PASSED tests/test_settings.py::test_all_ten_settings_are_deterministic_and_finite
+PASSED tests/test_settings.py::test_setting_seed_changes_the_field
+PASSED tests/test_settings.py::test_pde_generators_use_the_public_setting_registry
+PASSED tests/test_settings.py::test_sample_normalizes_scalar_shape_and_validates_spatial_axes
+PASSED tests/test_settings.py::test_generation_spec_round_trip_and_stable_seed
+PASSED tests/test_settings.py::test_generation_spec_rejects_unsafe_tier
+PASSED tests/test_splits.py::test_official_counts_resolve_integer_remainders_exactly
+PASSED tests/test_splits.py::test_release_tiers_are_nested_prefixes
+PASSED tests/test_splits.py::test_split_plan_is_deterministic_and_exact
+PASSED tests/test_splits.py::test_factorized_ood_split_helpers
+PASSED tests/test_strict_inference.py::test_normal_static_and_rollout_inference_exports_strict_file[poisson]
+PASSED tests/test_strict_inference.py::test_normal_static_and_rollout_inference_exports_strict_file[heat]
+PASSED tests/test_strict_inference.py::test_cli_inference_needs_no_manual_prediction_repackaging[poisson]
+PASSED tests/test_strict_inference.py::test_cli_inference_needs_no_manual_prediction_repackaging[heat]
+PASSED tests/test_strict_inference.py::test_exporter_rejects_misbound_setup[poisson-view]
+PASSED tests/test_strict_inference.py::test_exporter_rejects_misbound_setup[poisson-identity]
+PASSED tests/test_strict_inference.py::test_exporter_rejects_misbound_setup[poisson-time]
+PASSED tests/test_strict_inference.py::test_exporter_rejects_misbound_setup[poisson-shape]
+PASSED tests/test_strict_inference.py::test_exporter_rejects_misbound_setup[poisson-checkpoint]
+PASSED tests/test_strict_inference.py::test_exporter_rejects_misbound_setup[poisson-manifest]
+PASSED tests/test_strict_inference.py::test_exporter_rejects_misbound_setup[heat-view]
+PASSED tests/test_strict_inference.py::test_exporter_rejects_misbound_setup[heat-identity]
+PASSED tests/test_strict_inference.py::test_exporter_rejects_misbound_setup[heat-time]
+PASSED tests/test_strict_inference.py::test_exporter_rejects_misbound_setup[heat-shape]
+PASSED tests/test_strict_inference.py::test_exporter_rejects_misbound_setup[heat-checkpoint]
+PASSED tests/test_strict_inference.py::test_exporter_rejects_misbound_setup[heat-manifest]
+PASSED tests/test_strict_inference.py::test_contract_binding_blocks_posthoc_relabeling[poisson]
+PASSED tests/test_strict_inference.py::test_contract_binding_blocks_posthoc_relabeling[heat]
+PASSED tests/test_strict_inference.py::test_duplicate_metadata_and_missing_time_are_fail_closed[poisson]
+PASSED tests/test_strict_inference.py::test_duplicate_metadata_and_missing_time_are_fail_closed[heat]
+PASSED tests/test_strict_inference.py::test_legacy_writer_api_unchanged_and_explicitly_not_strict[poisson]
+PASSED tests/test_strict_inference.py::test_legacy_writer_api_unchanged_and_explicitly_not_strict[heat]
+PASSED tests/test_strict_inference.py::test_nonfinite_raw_prediction_is_preserved_but_never_scored[poisson]
+PASSED tests/test_strict_inference.py::test_nonfinite_raw_prediction_is_preserved_but_never_scored[heat]
+PASSED tests/test_strict_inference.py::test_changed_shard_rejected_before_any_target_loading[poisson]
+PASSED tests/test_strict_inference.py::test_changed_shard_rejected_before_any_target_loading[heat]
+PASSED tests/test_strict_inference.py::test_manifest_escape_rejected_without_fallback
+PASSED tests/test_strict_inference.py::test_malformed_contract_gets_standard_invalid_json_cli_nonzero
+PASSED tests/test_strict_score.py::test_valid_mean_is_per_identity_not_global_norm
+PASSED tests/test_strict_score.py::test_finite_strict_scores_preserve_legacy_relative_l2_mean[recovery]
+PASSED tests/test_strict_score.py::test_finite_strict_scores_preserve_legacy_relative_l2_mean[rollout]
+PASSED tests/test_strict_score.py::test_nonfinite_rejected_before_projection[nan-prediction]
+PASSED tests/test_strict_score.py::test_nonfinite_rejected_before_projection[nan-target]
+PASSED tests/test_strict_score.py::test_nonfinite_rejected_before_projection[nan-observation]
+PASSED tests/test_strict_score.py::test_nonfinite_rejected_before_projection[inf-prediction]
+PASSED tests/test_strict_score.py::test_nonfinite_rejected_before_projection[inf-target]
+PASSED tests/test_strict_score.py::test_nonfinite_rejected_before_projection[inf-observation]
+PASSED tests/test_strict_score.py::test_nonfinite_rejected_before_projection[-inf-prediction]
+PASSED tests/test_strict_score.py::test_nonfinite_rejected_before_projection[-inf-target]
+PASSED tests/test_strict_score.py::test_nonfinite_rejected_before_projection[-inf-observation]
+PASSED tests/test_strict_score.py::test_all_nan_rejected
+PASSED tests/test_strict_score.py::test_identity_violations[duplicate-prediction_ids]
+PASSED tests/test_strict_score.py::test_identity_violations[duplicate-target_ids]
+PASSED tests/test_strict_score.py::test_identity_violations[missing-prediction_ids]
+PASSED tests/test_strict_score.py::test_identity_violations[missing-target_ids]
+PASSED tests/test_strict_score.py::test_identity_violations[extra-prediction_ids]
+PASSED tests/test_strict_score.py::test_identity_violations[extra-target_ids]
+PASSED tests/test_strict_score.py::test_identity_violations[blank-prediction_ids]
+PASSED tests/test_strict_score.py::test_identity_violations[blank-target_ids]
+PASSED tests/test_strict_score.py::test_identity_order_is_explicitly_aligned
+PASSED tests/test_strict_score.py::test_shape_violations[shape0]
+PASSED tests/test_strict_score.py::test_shape_violations[shape1]
+PASSED tests/test_strict_score.py::test_shape_violations[shape2]
+PASSED tests/test_strict_score.py::test_time_index_violations[times0]
+PASSED tests/test_strict_score.py::test_time_index_violations[times1]
+PASSED tests/test_strict_score.py::test_time_index_violations[times2]
+PASSED tests/test_strict_score.py::test_time_index_violations[times3]
+PASSED tests/test_strict_score.py::test_time_index_violations[times4]
+PASSED tests/test_strict_score.py::test_joint_and_horizon_are_distinct_names_and_reductions
+PASSED tests/test_strict_score.py::test_all_observed_hidden_is_not_applicable
+PASSED tests/test_strict_score.py::test_one_observed_common_denominators_and_projection
+PASSED tests/test_strict_score.py::test_constant_bad_finite_prediction_is_scored_not_quarantined
+PASSED tests/test_strict_score.py::test_near_zero_target_epsilon_is_finite_and_not_false_zero
+PASSED tests/test_strict_score.py::test_paper_split_requires_explicit_200
+PASSED tests/test_strict_score.py::test_future_projection_rejected
+PASSED tests/test_strict_score.py::test_tail_batch_scored_without_losing_identity
+PASSED tests/test_strict_score.py::test_cli_nonzero_and_standard_json_on_invalid[False]
+PASSED tests/test_strict_score.py::test_cli_nonzero_and_standard_json_on_invalid[True]
+PASSED tests/test_strict_score.py::test_missing_artifact_and_malformed_contract_emit_invalid
+PASSED tests/test_strict_score.py::test_no_overwrite_of_old_score
+PASSED tests/test_strict_score.py::test_nonstandard_nan_contract_still_emits_standard_invalid_json[checkpoint_id]
+PASSED tests/test_strict_score.py::test_nonstandard_nan_contract_still_emits_standard_invalid_json[task]
+PASSED tests/test_strict_score.py::test_nonstandard_nan_contract_still_emits_standard_invalid_json[extra_unvalidated_metadata]
+PASSED tests/test_training.py::test_resolve_device_adds_visible_cuda_index
+PASSED tests/test_training.py::test_amp_initial_scale_is_fail_closed
+PASSED tests/test_training.py::test_loss_spike_scope_is_explicit
+PASSED tests/test_training.py::test_epoch_loss_spike_scope_does_not_compare_heterogeneous_batches
+PASSED tests/test_training.py::test_relative_losses_reduce_in_float32
+PASSED tests/test_training.py::test_checkpoint_is_weights_only_safe_and_restores_model
+PASSED tests/test_training.py::test_step_scheduler_state_and_history_resume_exactly
+PASSED tests/test_training.py::test_one_cycle_scheduler_steps_per_batch_and_resumes_exactly
+PASSED tests/test_training.py::test_checkpoint_loader_rejects_unsafe_pickle_payload
+PASSED tests/test_training.py::test_training_health_records_optimizer_signals_and_survives_checkpoint
+PASSED tests/test_training.py::test_fail_fast_health_policy_stops_a_sustained_large_gradient
+PASSED tests/test_training.py::test_source_faithful_clipping_records_raw_gradient_as_nonfatal_warning
+679 passed, 3 warnings in 74.93s (0:01:14)
+exit=0
+finished_utc: 2026-09-23T03:13:26Z

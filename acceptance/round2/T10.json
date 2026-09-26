@@ -1,0 +1,45 @@
+{
+  "models": {
+    "cno": {
+      "max_abs_diff": 1.8477439880371094e-06,
+      "rel_to_scale": 8.059450667838965e-07,
+      "within_1e-3_rel": true
+    },
+    "deeponet": {
+      "max_abs_diff": 2.2351741790771484e-08,
+      "rel_to_scale": 5.595862344630684e-07,
+      "within_1e-3_rel": true
+    },
+    "fno": {
+      "max_abs_diff": 3.976747393608093e-07,
+      "rel_to_scale": 1.341583192329566e-06,
+      "within_1e-3_rel": true
+    },
+    "gnot": {
+      "max_abs_diff": 1.7881393432617188e-07,
+      "rel_to_scale": 3.349243729595437e-07,
+      "within_1e-3_rel": true
+    },
+    "pino": {
+      "max_abs_diff": 4.153698682785034e-07,
+      "rel_to_scale": 1.3834947071292913e-06,
+      "within_1e-3_rel": true
+    },
+    "transolver": {
+      "max_abs_diff": 7.450580596923828e-08,
+      "rel_to_scale": 3.2223149174674123e-07,
+      "within_1e-3_rel": true
+    },
+    "ufno": {
+      "max_abs_diff": 3.725290298461914e-08,
+      "rel_to_scale": 1.0133735926118553e-06,
+      "within_1e-3_rel": true
+    }
+  },
+  "summary": {
+    "all_within_tol": true
+  },
+  "tier": "T10",
+  "utc": "2026-09-21T15:54:34Z",
+  "what": "CPU vs CUDA prediction parity for the same weights"
+}

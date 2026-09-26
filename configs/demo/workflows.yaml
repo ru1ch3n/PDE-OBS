@@ -1,0 +1,16 @@
+schema_version: pdeobs-release-demo-v1
+scope: small CPU workflow demonstrations, not paper performance experiments
+entrypoint: pdeobs demo
+resolution: [16, 16]
+threads: 1
+gpu_requested: 0
+mask: {protocol: random_3pct, ratio: 0.5}
+scoring_version: pdeobs-strict-v1
+examples:
+  E1: {pde: poisson, task: generation_and_multiple_observations, samples: 3}
+  E2: {pde: poisson, task: recovery, method: nearest, samples: 3}
+  E3: {pde: heat, task: rollout, method: persistence, samples: 3, history: 1, horizon: 3}
+  E4: {task: custom_physical_arrays, elliptic_kernel: solve_elliptic, heat_kernel: crank_nicolson_diffusion}
+  E5: {pde: poisson, task: recovery, method: unet, width: 4, train_ids: 4, test_ids: 3, epochs: 2, optimizer_steps: 4}
+  E6: {pde: poisson, task: recovery, mask: demo_checkerboard, method: demo_visible_identity, samples: 3}
+note: This descriptive manifest documents the fixed tiny CLI workflows; it is not a training-runner YAML.

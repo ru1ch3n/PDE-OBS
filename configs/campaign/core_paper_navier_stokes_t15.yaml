@@ -1,0 +1,34 @@
+schema_version: pdeobs.training-campaign/v2
+name: core-paper-navier-stokes-t15
+task: recovery
+model_setting_registry: configs/method/paper_setting_registry.yaml
+
+dataset:
+  summary_file: summary.json
+  summary_sha256: b0141eec2199615a27facc75e2517ec4ec7e00913638e48c84ab2c88a2be77c1
+  expected_shards: 3360
+  expected_samples: 560000
+  expected_samples_per_pde: 80000
+  required_pdes: [navier_stokes]
+  strict_max_pde_loss: 0.05
+
+matrix:
+  pdes: [navier_stokes]
+  observation_protocols: [random_3pct, block_missing, boundary_sensors]
+  seeds: [4]
+  methods:
+    - id: paper_unet
+      config: configs/experiment/paper_cno2023_navier_stokes_unet.yaml
+      setting_id: cno2023_navier_stokes_unet
+    - id: paper_fno
+      config: configs/experiment/paper_cno2023_navier_stokes_fno.yaml
+      setting_id: cno2023_navier_stokes_fno
+    - id: paper_cno
+      config: configs/experiment/paper_cno2023_navier_stokes_cno.yaml
+      setting_id: cno2023_navier_stokes_cno
+
+artifacts:
+  prediction_example_samples: 64
+  require_best_checkpoint: true
+  require_last_checkpoint: true
+  require_finite_metrics: true

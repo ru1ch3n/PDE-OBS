@@ -1,0 +1,213 @@
+{
+  "flows": {
+    "bilinear:forward": {
+      "error": "AttributeError: 'NoneType' object has no attribute 'get'",
+      "status": "failed"
+    },
+    "bilinear:inverse": {
+      "error": "AttributeError: 'NoneType' object has no attribute 'get'",
+      "status": "failed"
+    },
+    "bilinear:recovery": {
+      "error": "AttributeError: 'NoneType' object has no attribute 'get'",
+      "status": "failed"
+    },
+    "convlstm:recovery_rejected": {
+      "error": "ValueError: model 'convlstm' does not support task 'recovery'; supported: ['rollout']",
+      "status": "rejected_ok"
+    },
+    "fno:forward": {
+      "artifact": "/workspace/pdeobs/sweep-run/work/full/t3/fno:forward/model",
+      "params": 75009,
+      "peak_gpu_mb": 69.8,
+      "pred_shape": [
+        4,
+        16,
+        16,
+        1
+      ],
+      "rel_l2": 8.124139575739392,
+      "score_status": "valid",
+      "status": "passed",
+      "steps": 2,
+      "train_s": 0.028
+    },
+    "fno:inverse": {
+      "artifact": "/workspace/pdeobs/sweep-run/work/full/t3/fno:inverse/model",
+      "params": 75009,
+      "peak_gpu_mb": 70.7,
+      "pred_shape": [
+        4,
+        16,
+        16,
+        1
+      ],
+      "rel_l2": 1.0695890397874301,
+      "score_status": "valid",
+      "status": "passed",
+      "steps": 2,
+      "train_s": 0.027
+    },
+    "fno:recovery": {
+      "artifact": "/workspace/pdeobs/sweep-run/work/full/t3/fno:recovery/model",
+      "params": 75009,
+      "peak_gpu_mb": 68.9,
+      "pred_shape": [
+        4,
+        16,
+        16,
+        1
+      ],
+      "rel_l2": 8.667714591333775,
+      "score_status": "valid",
+      "status": "passed",
+      "steps": 2,
+      "train_s": 1.172
+    },
+    "fno:rollout": {
+      "artifact": "/workspace/pdeobs/sweep-run/work/full/t3/fno:rollout/model",
+      "params": 75009,
+      "peak_gpu_mb": 71.5,
+      "pred_shape": [
+        4,
+        3,
+        16,
+        16,
+        1
+      ],
+      "rel_l2": 0.9830640018906498,
+      "score_status": "valid",
+      "status": "passed",
+      "steps": 2,
+      "train_s": 0.037
+    },
+    "gappy_pod:recovery(fitted)": {
+      "artifact": "/workspace/pdeobs/sweep-run/work/full/t3/gappy/model",
+      "params": 0,
+      "peak_gpu_mb": 0.0,
+      "pred_shape": [
+        4,
+        16,
+        16,
+        1
+      ],
+      "rel_l2": 2.1327242879663215e-06,
+      "score_status": "valid",
+      "status": "failed",
+      "steps": 0,
+      "train_s": null
+    },
+    "mean:forward": {
+      "error": "AttributeError: 'NoneType' object has no attribute 'get'",
+      "status": "failed"
+    },
+    "mean:inverse": {
+      "error": "AttributeError: 'NoneType' object has no attribute 'get'",
+      "status": "failed"
+    },
+    "mean:recovery": {
+      "error": "AttributeError: 'NoneType' object has no attribute 'get'",
+      "status": "failed"
+    },
+    "nearest:forward": {
+      "error": "AttributeError: 'NoneType' object has no attribute 'get'",
+      "status": "failed"
+    },
+    "nearest:inverse": {
+      "error": "AttributeError: 'NoneType' object has no attribute 'get'",
+      "status": "failed"
+    },
+    "nearest:recovery": {
+      "error": "AttributeError: 'NoneType' object has no attribute 'get'",
+      "status": "failed"
+    },
+    "persistence:rollout": {
+      "error": "AttributeError: 'NoneType' object has no attribute 'get'",
+      "status": "failed"
+    },
+    "pino:forward": {
+      "artifact": "/workspace/pdeobs/sweep-run/work/full/t3/pino:forward/model",
+      "params": 75009,
+      "peak_gpu_mb": 70.7,
+      "pred_shape": [
+        4,
+        16,
+        16,
+        1
+      ],
+      "rel_l2": 8.44719820630978,
+      "score_status": "valid",
+      "status": "passed",
+      "steps": 2,
+      "train_s": 0.032
+    },
+    "pino:inverse_rejected": {
+      "error": "ValueError: model 'pino' does not support task 'inverse'; supported: ['recovery', 'forward', 'rollout']",
+      "status": "rejected_ok"
+    },
+    "pino:recovery": {
+      "artifact": "/workspace/pdeobs/sweep-run/work/full/t3/pino:recovery/model",
+      "params": 75009,
+      "peak_gpu_mb": 69.8,
+      "pred_shape": [
+        4,
+        16,
+        16,
+        1
+      ],
+      "rel_l2": 8.334704889305986,
+      "score_status": "valid",
+      "status": "passed",
+      "steps": 2,
+      "train_s": 0.123
+    },
+    "pino:rollout": {
+      "artifact": "/workspace/pdeobs/sweep-run/work/full/t3/pino:rollout/model",
+      "params": 75009,
+      "peak_gpu_mb": 72.5,
+      "pred_shape": [
+        4,
+        3,
+        16,
+        16,
+        1
+      ],
+      "rel_l2": 0.9932068334000935,
+      "score_status": "valid",
+      "status": "passed",
+      "steps": 2,
+      "train_s": 0.047
+    },
+    "rbf:forward": {
+      "error": "AttributeError: 'NoneType' object has no attribute 'get'",
+      "status": "failed"
+    },
+    "rbf:inverse": {
+      "error": "AttributeError: 'NoneType' object has no attribute 'get'",
+      "status": "failed"
+    },
+    "rbf:recovery": {
+      "error": "AttributeError: 'NoneType' object has no attribute 'get'",
+      "status": "failed"
+    },
+    "zero:forward": {
+      "error": "AttributeError: 'NoneType' object has no attribute 'get'",
+      "status": "failed"
+    },
+    "zero:inverse": {
+      "error": "AttributeError: 'NoneType' object has no attribute 'get'",
+      "status": "failed"
+    },
+    "zero:recovery": {
+      "error": "AttributeError: 'NoneType' object has no attribute 'get'",
+      "status": "failed"
+    }
+  },
+  "summary": {
+    "passed": 9,
+    "total": 26
+  },
+  "tier": "T3",
+  "utc": "2026-09-21T14:52:56Z",
+  "what": "task interfaces x models (neural + classical)"
+}

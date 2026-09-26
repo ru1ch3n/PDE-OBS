@@ -1,0 +1,32 @@
+schema_version: pdeobs.optional-interface-description/v1
+purpose: capability_description_not_an_experiment_result
+task_extensions:
+  forward:
+    implementation: pdeobs.dataset.BenchmarkDataset
+    predictor_input: masked_condition
+    target: complete_selected_state
+    paper_primary: false
+  inverse:
+    implementation: pdeobs.dataset.BenchmarkDataset
+    predictor_input: masked_selected_state
+    target: complete_condition
+    paper_primary: false
+retrieval:
+  module: pdeobs.retrieval
+  implemented_python_api: true
+  config_free_field_runner: protocol_only
+  continuous_ann_search: exact_chunked_distance_search
+  paper_primary: false
+routing:
+  module: pdeobs.routing
+  implemented_python_api: true
+  requires_existing_per_method_loss_table: true
+  active_learning_loop: false
+  config_free_field_runner: protocol_only
+  paper_primary: false
+official_model_wrappers:
+  module: pdeobs.methods.paper_official
+  external_checkout_required: true
+  pinned_checkout_and_blob_verification: true
+  silent_model_fallback_allowed: false
+generic_task_plugin_registry: false

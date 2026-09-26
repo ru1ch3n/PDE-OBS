@@ -1,0 +1,406 @@
+{
+  "flows": {
+    "bilinear:forward": {
+      "artifact": "/workspace/pdeobs/sweep-run/work/full/t3/bilinear:forward/model",
+      "params": 0,
+      "peak_gpu_mb": 0.0,
+      "pred_shape": [
+        4,
+        16,
+        16,
+        1
+      ],
+      "rel_l2": 49.36624232523114,
+      "score_status": "valid",
+      "status": "passed",
+      "steps": 0,
+      "train_s": null
+    },
+    "bilinear:inverse": {
+      "artifact": "/workspace/pdeobs/sweep-run/work/full/t3/bilinear:inverse/model",
+      "params": 0,
+      "peak_gpu_mb": 0.0,
+      "pred_shape": [
+        4,
+        16,
+        16,
+        1
+      ],
+      "rel_l2": 0.9998822402777896,
+      "score_status": "valid",
+      "status": "passed",
+      "steps": 0,
+      "train_s": null
+    },
+    "bilinear:recovery": {
+      "artifact": "/workspace/pdeobs/sweep-run/work/full/t3/bilinear:recovery/model",
+      "params": 0,
+      "peak_gpu_mb": 0.0,
+      "pred_shape": [
+        4,
+        16,
+        16,
+        1
+      ],
+      "rel_l2": 0.06385802974905676,
+      "score_status": "valid",
+      "status": "passed",
+      "steps": 0,
+      "train_s": null
+    },
+    "convlstm:recovery_rejected": {
+      "error": "ValueError: model 'convlstm' does not support task 'recovery'; supported: ['rollout']",
+      "status": "rejected_ok"
+    },
+    "fno:forward": {
+      "artifact": "/workspace/pdeobs/sweep-run/work/full/t3/fno:forward/model",
+      "params": 75009,
+      "peak_gpu_mb": 69.8,
+      "pred_shape": [
+        4,
+        16,
+        16,
+        1
+      ],
+      "rel_l2": 5.193818683839073,
+      "score_status": "valid",
+      "status": "passed",
+      "steps": 2,
+      "train_s": 0.071
+    },
+    "fno:inverse": {
+      "artifact": "/workspace/pdeobs/sweep-run/work/full/t3/fno:inverse/model",
+      "params": 75009,
+      "peak_gpu_mb": 70.7,
+      "pred_shape": [
+        4,
+        16,
+        16,
+        1
+      ],
+      "rel_l2": 0.9183123575416311,
+      "score_status": "valid",
+      "status": "passed",
+      "steps": 2,
+      "train_s": 0.068
+    },
+    "fno:recovery": {
+      "artifact": "/workspace/pdeobs/sweep-run/work/full/t3/fno:recovery/model",
+      "params": 75009,
+      "peak_gpu_mb": 68.9,
+      "pred_shape": [
+        4,
+        16,
+        16,
+        1
+      ],
+      "rel_l2": 5.161825037383293,
+      "score_status": "valid",
+      "status": "passed",
+      "steps": 2,
+      "train_s": 3.204
+    },
+    "fno:rollout": {
+      "artifact": "/workspace/pdeobs/sweep-run/work/full/t3/fno:rollout/model",
+      "params": 75009,
+      "peak_gpu_mb": 71.5,
+      "pred_shape": [
+        4,
+        3,
+        16,
+        16,
+        1
+      ],
+      "rel_l2": 0.9458852887122353,
+      "score_status": "valid",
+      "status": "passed",
+      "steps": 2,
+      "train_s": 0.112
+    },
+    "gappy_pod:recovery(fitted)": {
+      "artifact": "/workspace/pdeobs/sweep-run/work/full/t3/gappy/model",
+      "params": 0,
+      "peak_gpu_mb": 0.0,
+      "pred_shape": [
+        4,
+        16,
+        16,
+        1
+      ],
+      "rel_l2": 2.132702337411563e-06,
+      "score_status": "valid",
+      "status": "passed",
+      "steps": 0,
+      "train_s": null
+    },
+    "mean:forward": {
+      "artifact": "/workspace/pdeobs/sweep-run/work/full/t3/mean:forward/model",
+      "params": 0,
+      "peak_gpu_mb": 0.0,
+      "pred_shape": [
+        4,
+        16,
+        16,
+        1
+      ],
+      "rel_l2": 35.456830688903935,
+      "score_status": "valid",
+      "status": "passed",
+      "steps": 0,
+      "train_s": null
+    },
+    "mean:inverse": {
+      "artifact": "/workspace/pdeobs/sweep-run/work/full/t3/mean:inverse/model",
+      "params": 0,
+      "peak_gpu_mb": 0.0,
+      "pred_shape": [
+        4,
+        16,
+        16,
+        1
+      ],
+      "rel_l2": 1.0001563383108363,
+      "score_status": "valid",
+      "status": "passed",
+      "steps": 0,
+      "train_s": null
+    },
+    "mean:recovery": {
+      "artifact": "/workspace/pdeobs/sweep-run/work/full/t3/mean:recovery/model",
+      "params": 0,
+      "peak_gpu_mb": 0.0,
+      "pred_shape": [
+        4,
+        16,
+        16,
+        1
+      ],
+      "rel_l2": 0.6269495121000116,
+      "score_status": "valid",
+      "status": "passed",
+      "steps": 0,
+      "train_s": null
+    },
+    "nearest:forward": {
+      "artifact": "/workspace/pdeobs/sweep-run/work/full/t3/nearest:forward/model",
+      "params": 0,
+      "peak_gpu_mb": 0.0,
+      "pred_shape": [
+        4,
+        16,
+        16,
+        1
+      ],
+      "rel_l2": 50.984990158184495,
+      "score_status": "valid",
+      "status": "passed",
+      "steps": 0,
+      "train_s": null
+    },
+    "nearest:inverse": {
+      "artifact": "/workspace/pdeobs/sweep-run/work/full/t3/nearest:inverse/model",
+      "params": 0,
+      "peak_gpu_mb": 0.0,
+      "pred_shape": [
+        4,
+        16,
+        16,
+        1
+      ],
+      "rel_l2": 0.9999242206984671,
+      "score_status": "valid",
+      "status": "passed",
+      "steps": 0,
+      "train_s": null
+    },
+    "nearest:recovery": {
+      "artifact": "/workspace/pdeobs/sweep-run/work/full/t3/nearest:recovery/model",
+      "params": 0,
+      "peak_gpu_mb": 0.0,
+      "pred_shape": [
+        4,
+        16,
+        16,
+        1
+      ],
+      "rel_l2": 0.2138522422014733,
+      "score_status": "valid",
+      "status": "passed",
+      "steps": 0,
+      "train_s": null
+    },
+    "persistence:rollout": {
+      "artifact": "/workspace/pdeobs/sweep-run/work/full/t3/persistence/model",
+      "params": 0,
+      "peak_gpu_mb": 0.0,
+      "pred_shape": [
+        4,
+        3,
+        16,
+        16,
+        1
+      ],
+      "rel_l2": 0.7190035787194644,
+      "score_status": "valid",
+      "status": "passed",
+      "steps": 0,
+      "train_s": null
+    },
+    "pino:forward": {
+      "artifact": "/workspace/pdeobs/sweep-run/work/full/t3/pino:forward/model",
+      "params": 75009,
+      "peak_gpu_mb": 70.7,
+      "pred_shape": [
+        4,
+        16,
+        16,
+        1
+      ],
+      "rel_l2": 5.3097268268472035,
+      "score_status": "valid",
+      "status": "passed",
+      "steps": 2,
+      "train_s": 0.087
+    },
+    "pino:inverse_rejected": {
+      "error": "ValueError: model 'pino' does not support task 'inverse'; supported: ['recovery', 'forward', 'rollout']",
+      "status": "rejected_ok"
+    },
+    "pino:recovery": {
+      "artifact": "/workspace/pdeobs/sweep-run/work/full/t3/pino:recovery/model",
+      "params": 75009,
+      "peak_gpu_mb": 69.8,
+      "pred_shape": [
+        4,
+        16,
+        16,
+        1
+      ],
+      "rel_l2": 5.4464334077296,
+      "score_status": "valid",
+      "status": "passed",
+      "steps": 2,
+      "train_s": 0.431
+    },
+    "pino:rollout": {
+      "artifact": "/workspace/pdeobs/sweep-run/work/full/t3/pino:rollout/model",
+      "params": 75009,
+      "peak_gpu_mb": 72.5,
+      "pred_shape": [
+        4,
+        3,
+        16,
+        16,
+        1
+      ],
+      "rel_l2": 0.9723164577173579,
+      "score_status": "valid",
+      "status": "passed",
+      "steps": 2,
+      "train_s": 0.151
+    },
+    "rbf:forward": {
+      "artifact": "/workspace/pdeobs/sweep-run/work/full/t3/rbf:forward/model",
+      "params": 0,
+      "peak_gpu_mb": 0.0,
+      "pred_shape": [
+        4,
+        16,
+        16,
+        1
+      ],
+      "rel_l2": 41.51477876006026,
+      "score_status": "valid",
+      "status": "passed",
+      "steps": 0,
+      "train_s": null
+    },
+    "rbf:inverse": {
+      "artifact": "/workspace/pdeobs/sweep-run/work/full/t3/rbf:inverse/model",
+      "params": 0,
+      "peak_gpu_mb": 0.0,
+      "pred_shape": [
+        4,
+        16,
+        16,
+        1
+      ],
+      "rel_l2": 1.0000252561140286,
+      "score_status": "valid",
+      "status": "passed",
+      "steps": 0,
+      "train_s": null
+    },
+    "rbf:recovery": {
+      "artifact": "/workspace/pdeobs/sweep-run/work/full/t3/rbf:recovery/model",
+      "params": 0,
+      "peak_gpu_mb": 0.0,
+      "pred_shape": [
+        4,
+        16,
+        16,
+        1
+      ],
+      "rel_l2": 0.31514990534751697,
+      "score_status": "valid",
+      "status": "passed",
+      "steps": 0,
+      "train_s": null
+    },
+    "zero:forward": {
+      "artifact": "/workspace/pdeobs/sweep-run/work/full/t3/zero:forward/model",
+      "params": 0,
+      "peak_gpu_mb": 0.0,
+      "pred_shape": [
+        4,
+        16,
+        16,
+        1
+      ],
+      "rel_l2": 35.402913736558176,
+      "score_status": "valid",
+      "status": "passed",
+      "steps": 0,
+      "train_s": null
+    },
+    "zero:inverse": {
+      "artifact": "/workspace/pdeobs/sweep-run/work/full/t3/zero:inverse/model",
+      "params": 0,
+      "peak_gpu_mb": 0.0,
+      "pred_shape": [
+        4,
+        16,
+        16,
+        1
+      ],
+      "rel_l2": 1.0000159083123192,
+      "score_status": "valid",
+      "status": "passed",
+      "steps": 0,
+      "train_s": null
+    },
+    "zero:recovery": {
+      "artifact": "/workspace/pdeobs/sweep-run/work/full/t3/zero:recovery/model",
+      "params": 0,
+      "peak_gpu_mb": 0.0,
+      "pred_shape": [
+        4,
+        16,
+        16,
+        1
+      ],
+      "rel_l2": 0.7247199819641783,
+      "score_status": "valid",
+      "status": "passed",
+      "steps": 0,
+      "train_s": null
+    }
+  },
+  "summary": {
+    "passed": 26,
+    "total": 26
+  },
+  "tier": "T3",
+  "utc": "2026-09-21T15:48:27Z",
+  "what": "task interfaces x models (neural + classical)"
+}

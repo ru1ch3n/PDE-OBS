@@ -1,0 +1,8 @@
+include: core_pilot_unet.yaml
+
+name: core-medium-unet
+
+data:
+  # Reconstruct the official 500/2,000 nested prefix inside every macro case.
+  # This reuses the immutable full release and selects exactly 140,000 records.
+  release_tier: medium

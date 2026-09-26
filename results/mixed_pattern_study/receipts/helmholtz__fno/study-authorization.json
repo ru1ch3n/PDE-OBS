@@ -1,0 +1,138 @@
+{
+ "acceptance": "terminal train_data_loss in [0, 0.40] (user policy 2026-09-20); a rejected row is reported, never silently retried",
+ "automatic_retry": false,
+ "base_view": "random_50pct",
+ "code": "production checkout <COMMIT-1> (pinned files) plus an overlay package: production src/pdeobs with dataset.py and mask_specs.py from release v0.2.1 (additive spec branch, mask_seed); masks.py and evaluation.py are production bytes",
+ "created_utc": "2026-09-25T17:58:58.622428+00:00",
+ "evaluation": "nine frozen views on the same 200 held-out identities by the frozen evaluator base200.py (27c30c87...), epoch constant set to the row ceiling; same-job EVA on <host> under the single-EVA lock",
+ "mask_components": [
+  {
+   "arguments": {
+    "ratio": 0.5
+   },
+   "component_id": "random_3pct-ratio-0.5",
+   "protocol": "random_3pct",
+   "weight": 1
+  },
+  {
+   "arguments": {
+    "ratio": 0.65
+   },
+   "component_id": "random_3pct-ratio-0.65",
+   "protocol": "random_3pct",
+   "weight": 1
+  },
+  {
+   "arguments": {
+    "ratio": 0.8
+   },
+   "component_id": "random_3pct-ratio-0.8",
+   "protocol": "random_3pct",
+   "weight": 1
+  },
+  {
+   "arguments": {
+    "missing_fraction": 0.49
+   },
+   "component_id": "block_missing-missing_fraction-0.49",
+   "protocol": "block_missing",
+   "weight": 1
+  },
+  {
+   "arguments": {
+    "num_lines": 76,
+    "orientation": "both"
+   },
+   "component_id": "line_sensors-num_lines-76-orientation-both",
+   "protocol": "line_sensors",
+   "weight": 1
+  },
+  {
+   "arguments": {
+    "num_lines": 64,
+    "orientation": "horizontal"
+   },
+   "component_id": "line_sensors-num_lines-64-orientation-horizontal",
+   "protocol": "line_sensors",
+   "weight": 1
+  },
+  {
+   "arguments": {
+    "num_lines": 64,
+    "orientation": "vertical"
+   },
+   "component_id": "line_sensors-num_lines-64-orientation-vertical",
+   "protocol": "line_sensors",
+   "weight": 1
+  },
+  {
+   "arguments": {
+    "width": 19
+   },
+   "component_id": "boundary_sensors-width-19",
+   "protocol": "boundary_sensors",
+   "weight": 1
+  },
+  {
+   "arguments": {
+    "ratio": 0.5
+   },
+   "component_id": "clustered_sensors-ratio-0.5",
+   "protocol": "clustered_sensors",
+   "weight": 1
+  }
+ ],
+ "mask_seed": 20260804,
+ "mask_seed_note": "data.mask_seed defaults to the campaign seed in the release dataset.py; the per-sample sensor seed is derived from the resolved protocol name exactly as for a frozen view, so each training sample sees the same sensors as under its per-pattern row",
+ "mask_spec": "random_3pct(ratio=0.5) + random_3pct(ratio=0.65) + random_3pct(ratio=0.8) + block_missing(missing_fraction=0.49) + line_sensors(num_lines=76, orientation=both) + line_sensors(num_lines=64, orientation=horizontal) + line_sensors(num_lines=64, orientation=vertical) + boundary_sensors(width=19) + clustered_sensors(ratio=0.5)",
+ "note": "operator instructions and host names removed for anonymity; the scientific fields are unchanged",
+ "paper_views": [
+  "random_50pct",
+  "random_65pct",
+  "random_80pct",
+  "block_observed_50pct",
+  "line_sensors_50pct",
+  "horizontal_lines_50pct",
+  "vertical_lines_50pct",
+  "boundary_band_50pct",
+  "clustered_50pct"
+ ],
+ "production_dataset_sha256": "4ac06e37e30260bd5fa89c77be454a32f8824591e169768730465f68608bee0a",
+ "protocols": {
+  "pdeobs.fixed500-last-checkpoint/v7": {
+   "adapter": "mixed_train.py",
+   "early_stopping": false,
+   "epochs": 500,
+   "trainer": "production"
+  },
+  "pdeobs.max200-min120-then-train-data-patience10/20260920": {
+   "adapter": "mixed_train.py over budget200.py",
+   "early_stopping": "train_data_loss patience 10 after epoch 120",
+   "epochs": 200,
+   "trainer": "budget200 BudgetTrainer (T2, byte-identical)"
+  }
+ },
+ "release_dataset_sha256": "2bdae0ae7977a19a980831318bacecb923ddc91da0fe1c4ba9d790693ebd88ed",
+ "release_mask_specs_sha256": "5b32812b8c542fd2a32c5eca3b65fe804f96a019a69105445b5a404c850dd46b",
+ "rows": [
+  {
+   "comparison": "the nine helmholtz/fno per-pattern rows (500-epoch original protocol); a robust architecture with a 29x mean off-diagonal degradation",
+   "epochs": 500,
+   "identity": "helmholtz/fno/mixed_nine_views",
+   "protocol": "pdeobs.fixed500-last-checkpoint/v7",
+   "training_patch": {}
+  },
+  {
+   "comparison": "the nine helmholtz/gnot per-pattern rows (500-epoch original protocol); the grid pair with the worst off-diagonal degradation (576x)",
+   "epochs": 500,
+   "identity": "helmholtz/gnot/mixed_nine_views",
+   "protocol": "pdeobs.fixed500-last-checkpoint/v7",
+   "training_patch": {}
+  }
+ ],
+ "schema": "pdeobs.mixed-pattern-study-authorization/v1",
+ "scope": "study rows, not paper cells: separate output, evaluation and gate roots; the 441-row campaign and its archived index are untouched",
+ "study_id": "mixed-nine-views-20260925",
+ "test_metrics_used_for_tuning": false,
+ "training_view": "mixed_nine_views"
+}

@@ -1,0 +1,1730 @@
+{
+ "counts": {
+  "comparison_rows": 45,
+  "extra_view_rows": 15,
+  "max_ratio_all_rows": 4.070424542781268,
+  "min_ratio_all_rows": 0.052654689522636626,
+  "pairs_complete": 5,
+  "pairs_pending": 0,
+  "rows_mix_below_transfer_median": 45,
+  "rows_mix_below_transfer_min": 34
+ },
+ "definitions": {
+  "E_mix_w": "strict rel-L2 (joint, float64 per-identity then arithmetic mean over the 200 held-out identities) of the mixed model tested on view w",
+  "E_ww": "same statistic for the specialist trained on view w (main-grid strict score)",
+  "extra_views": "views absent from every training set; no specialist exists, so no ratio is formed",
+  "geomean_ratio_W": "exp(mean over w in W of log(E_mix_w / E_ww)); all three statistics of a population use the same W",
+  "mean_mix_W": "arithmetic mean of E_mix_w over the declared destination set W",
+  "mean_specialist_W": "arithmetic mean of E_ww over the same W",
+  "ratio_w": "E_mix_w / E_ww",
+  "transfer_stats_w": "descriptive: median/min/max over the eight specialists trained on v != w and tested on w (E_vw); not budget matched"
+ },
+ "generated_utc": "2026-09-26T04:50:34+00:00",
+ "pairs": {
+  "heat/deeponet/mixed_nine_views": {
+   "extra_views": {
+    "line_sensors-orientation-both-p30__random_3pct-p20": {
+     "horizons": [
+      {
+       "horizon": 1,
+       "rel_l2_mean": 0.15907707070611507,
+       "target_time_index": 1
+      },
+      {
+       "horizon": 2,
+       "rel_l2_mean": 0.18195485469032033,
+       "target_time_index": 2
+      },
+      {
+       "horizon": 3,
+       "rel_l2_mean": 0.2222130553597593,
+       "target_time_index": 3
+      }
+     ],
+     "legacy_abs_diff": 0.0,
+     "legacy_evaluator_rel_l2": 0.18917037873644588,
+     "mask_config": {
+      "protocol": "line_sensors(orientation=both) 30 + random_3pct 20"
+     },
+     "mix_rel_l2": 0.18917037873644588,
+     "predictions_sha256": "7ba2a73317a92eb27668ebee2fba68f61540d95f76e66875ed3fe47a901af012",
+     "realized_observed_fraction": null,
+     "score_sha256": "62ffd9b7aa6f127b83a672cac7ff961737ab12a18972886a90466bebfb4d45a8",
+     "spec": "line_sensors(orientation=both) 30 + random_3pct 20"
+    },
+    "random_3pct-p20": {
+     "horizons": [
+      {
+       "horizon": 1,
+       "rel_l2_mean": 0.18991121558149845,
+       "target_time_index": 1
+      },
+      {
+       "horizon": 2,
+       "rel_l2_mean": 0.2227714546970371,
+       "target_time_index": 2
+      },
+      {
+       "horizon": 3,
+       "rel_l2_mean": 0.2780519941091195,
+       "target_time_index": 3
+      }
+     ],
+     "legacy_abs_diff": 1.1102230246251565e-16,
+     "legacy_evaluator_rel_l2": 0.2320756530264889,
+     "mask_config": {
+      "protocol": "random_3pct",
+      "ratio": 0.2
+     },
+     "mix_rel_l2": 0.232075653026489,
+     "predictions_sha256": "1bb4de968b6b7adc3bac7514047659aed7bea1dd4a9227963d4d76a8e14ee539",
+     "realized_observed_fraction": null,
+     "score_sha256": "b7dc6e5f3a1428b7e8ee90edc7461ed38e6308d113c5af674c85dd7847766451",
+     "spec": "random_3pct 20"
+    },
+    "random_3pct-p35": {
+     "horizons": [
+      {
+       "horizon": 1,
+       "rel_l2_mean": 0.10670353240208304,
+       "target_time_index": 1
+      },
+      {
+       "horizon": 2,
+       "rel_l2_mean": 0.12700613692796886,
+       "target_time_index": 2
+      },
+      {
+       "horizon": 3,
+       "rel_l2_mean": 0.15959700732092966,
+       "target_time_index": 3
+      }
+     ],
+     "legacy_abs_diff": 8.326672684688674e-17,
+     "legacy_evaluator_rel_l2": 0.13222529709296493,
+     "mask_config": {
+      "protocol": "random_3pct",
+      "ratio": 0.35
+     },
+     "mix_rel_l2": 0.13222529709296502,
+     "predictions_sha256": "4e999d488eb1c110802b6a2b6832c693fa0d3018ba7a1c3f0927ec8f1e8a5b07",
+     "realized_observed_fraction": null,
+     "score_sha256": "7b8419d3a44c7f5637cf95595e2a7ccac4b90b7ff33fa63e5031e6c7c4da5dd7",
+     "spec": "random_3pct 35"
+    }
+   },
+   "inference": {
+    "adapter": "pdeobs-archived-prediction-verification-v1",
+    "code": {
+     "driver_sha256": "281e1d347058ae780f98a3e888bf38cf32ac0abf31f196d57d00722b8465052c",
+     "files": {
+      "driver/mix_strict_inference.py": "281e1d347058ae780f98a3e888bf38cf32ac0abf31f196d57d00722b8465052c",
+      "inputs/dataset_bindings.json": "7eed0fa6641e26048cf5960ba7c4e9b5df4be605b78fab24785cec0ca6348fe5",
+      "source/configs/campaign/all_pde_one_setting_10method_9x9.yaml": "4ed7e7de03557c1b95a6b544cc1e7c292b575130b427a8e4fdc34a4e87f48966",
+      "source/src/pdeobs/__init__.py": "6bb908ccc71cf3c19722c83371a64acb05e0d7ec7546968d56fed7a11f16215f",
+      "source/src/pdeobs/__main__.py": "8b0eb839b58ac5f56db61c3f78b2ecfdb9573c0d90136cda1fd1a7f4f371da88",
+      "source/src/pdeobs/aggregate.py": "049a19c55376ec5eb85ac31616be1fd957d16aeb2f6a760af1f02b844ca26b0c",
+      "source/src/pdeobs/api/__init__.py": "b1ca501eb6cae7cb20d246e60e1cd9f766430d958171b5c202d8dcbf4318fddc",
+      "source/src/pdeobs/api/artifacts.py": "79d5e148523cb20fcda65487df2c2b8016ae7bc1357f6559c59b505eb48fd2c2",
+      "source/src/pdeobs/api/cli.py": "0e62a971c3014d8d7c4020decac906c1542db734170af36916728e9b8d193326",
+      "source/src/pdeobs/api/data.py": "9c343ebba773cb2ffd1819e7ad08732f8762ed32f471278acdb8637d2916e62b",
+      "source/src/pdeobs/api/evaluate.py": "5ab05d256472a1a7712e57c399446ae81447f65a34bf282d9e9bd7fc7599b028",
+      "source/src/pdeobs/api/infer.py": "8dcdcf69af0ef4bbd35c03dc64aaf8c27c9fc7bfff1abddb906eccc3dcdb63a5",
+      "source/src/pdeobs/api/models.py": "3014817742608a4c64ea836f10427f8b34c1f5ca1c112f1eb6520326886a4184",
+      "source/src/pdeobs/api/observation.py": "22db37a9747b3020406f7da632a2dadfb09f4af36f97b383924a41b242caac9e",
+      "source/src/pdeobs/api/pipeline.py": "033774397cafbd081f2789752933bd6b2c8c6c86928c8189e30ce7e4195ba146",
+      "source/src/pdeobs/api/specs.py": "631ce78a117aecccc5d8eb5e5f86dda557476e14d42c138f9b041387a5e09541",
+      "source/src/pdeobs/api/train.py": "09967a3f8e48ad7a082d7ce9520a53551b3dc9858ad185ea6425f6f7a48fd193",
+      "source/src/pdeobs/archived_verification.py": "8d0e38183159bf91ae73425719572664e044e0a174bb28ef1fb8933b43162d80",
+      "source/src/pdeobs/campaign.py": "5c56e1bfb1386ce4499c7ca0e9be386b8591d45873f8c0f835fb840e8cf1f049",
+      "source/src/pdeobs/cli.py": "d772ecb99a2461d71501ddfeb76dce0da8c2ddad7ff8fa7a38e137be811bf2fd",
+      "source/src/pdeobs/config.py": "5ad2e9a58a62c995ac43daa0b38631679d9f8304a08a08adec36882449122669",
+      "source/src/pdeobs/coverage.py": "70ed5aa5744c4812bc9660ae2bcc4480b8a0da878504c916d6c964178cd13c16",
+      "source/src/pdeobs/dataset.py": "2bdae0ae7977a19a980831318bacecb923ddc91da0fe1c4ba9d790693ebd88ed",
+      "source/src/pdeobs/difficulty.py": "2653b2c4ec6b88a99bcde654aa62894509f99c69e29ff7961c9c35f874ef2461",
+      "source/src/pdeobs/doctor.py": "bd4e85a555e038a6bd794fadb4b9512129a025e8ea4a147e2307f2a820d94c43",
+      "source/src/pdeobs/download.py": "4a94d571f284d7f55317eb0b23184f35594ebf5fd698fed660fed7f7cf8d5eed",
+      "source/src/pdeobs/evaluation.py": "93a6d2ae0ad52a937e6db86d28f0b4419c2b6abae4e0832c6f2add9055c4a77a",
+      "source/src/pdeobs/evidence.py": "b7b43267bb309d1e73a6849ea2dd5bef48f8172487db2bd6f65420be5bd69bac",
+      "source/src/pdeobs/full_to_partial.py": "fe371c5d1297cc36380a49033fe7f7007956ad3f072b20d385868dbb5ef84ee1",
+      "source/src/pdeobs/full_to_partial_execution.py": "64b3b2d1aa87e33b68becc61d36c9fb6bd86489992dd78824fcf73ac828dad1f",
+      "source/src/pdeobs/generation.py": "be64a5b5331fc6cdea8548a0c8c5191fbfd43cff092059df13028b74ea72ec29",
+      "source/src/pdeobs/mask_specs.py": "5b32812b8c542fd2a32c5eca3b65fe804f96a019a69105445b5a404c850dd46b",
+      "source/src/pdeobs/masks.py": "a05083c0e0cc63d2b5c3d918e6a93c365c5237f88577e0dac6e9866af32cef00",
+      "source/src/pdeobs/methods/__init__.py": "97dc55614b125665d8a4ccc622d482d8b6b73ea4ce91d759b61dd52d7c6aa8c9",
+      "source/src/pdeobs/methods/base.py": "6c73f8aae9920303c5aa273ab5b3e187c028f6773c327c258fcc765835332cd8",
+      "source/src/pdeobs/methods/interpolation.py": "d1e00c43498179563c5391f584a69ed0e0d4a4ed65b29b87be901e1054fbc3a2",
+      "source/src/pdeobs/methods/neural.py": "424e3d056e10eea0662c4593046f5c366b43954f0b8f5e304446d4eb508df3d1",
+      "source/src/pdeobs/methods/operator_networks.py": "b2f556c73a5f3bc676c13add2963cb06f3b4b4ffc4d6ba4cbc458083f1896fc0",
+      "source/src/pdeobs/methods/paper_official.py": "64d4bfb2ca745f16627473ac201e7588a655b506aaadfdffe5ab107306b0bd17",
+      "source/src/pdeobs/methods/reduced_order.py": "5358f659845ca8a108dc61df75f02ca3c6faecf2f8372340338a19ec4c41fabb",
+      "source/src/pdeobs/metrics.py": "0788c520a70acfa7c422856c2d2acef7fb3fc96c1b99755c4be20929e6f1bf36",
+      "source/src/pdeobs/migration.py": "ae49c403777d4e5221eae3e90f6530be0721122c990fb4fee411332e523e8619",
+      "source/src/pdeobs/one_setting.py": "f1eed0bed85e0c91c8a18b694ec9022f3e2c0dc5d5fb165f9e9d37f2030653e7",
+      "source/src/pdeobs/paper_row.py": "1ca84008d504d933c044ad2510fefd3a2281532278ef44ec988d0b745b651316",
+      "source/src/pdeobs/pdes/__init__.py": "512de65acb6ddc124e1332023135df06d4ab70e95da0ca3266296f74923549f9",
+      "source/src/pdeobs/pdes/burgers.py": "f52af6c535552e9ce1863d431436cfc72c803e54069ca3395e203ad194a75b4f",
+      "source/src/pdeobs/pdes/common.py": "f0e3884c664d28fc42fc09489e6d36a7d0c0f5fe0188c3e6d4b20c283e051cc6",
+      "source/src/pdeobs/pdes/darcy.py": "66a470be2a3b0dbe0e9fb8ea43467e83b09477e7db0ba2535e10763b3b049a6c",
+      "source/src/pdeobs/pdes/heat.py": "0a661958733f2886e4877512bd5d90d2bb39eaf9dc36b6e259699ce28e03a204",
+      "source/src/pdeobs/pdes/helmholtz.py": "47f5d17b0c6cf9d52a01e9ed41c97b83d75d767df54a1fe3eaeb621ca5699f66",
+      "source/src/pdeobs/pdes/navier_stokes.py": "f6feb2bf52063882fb7c7b60f21f6e40a75b1ee034ef47139b00861a100d18ae",
+      "source/src/pdeobs/pdes/numerics.py": "4f8ac1f8fd067a56b5025bb46d74ad015a87d5c3d0f892b26cb73127f53d438a",
+      "source/src/pdeobs/pdes/poisson.py": "45e0798bfcc7d624d609e40db0ed4eac4916c549277143a3b66182892d77b7c5",
+      "source/src/pdeobs/pdes/reaction_diffusion.py": "ec97fa7e8b0da2d6218f3911e194ed8383330cba4fed200e2c980a8b09ef954b",
+      "source/src/pdeobs/physical_inputs.py": "a68766b07f65e71c80293eddc39ce13383e646d310ffa9f34a451bb6d62a6798",
+      "source/src/pdeobs/pino.py": "a4484938487454d9cd9d4bf7d946e676db099a893df8f5924540dc4d2f703710",
+      "source/src/pdeobs/presets.py": "101d61bd47d35b56e5931f8f6b73f446bab5c7c4e63cc1a16b3d4691caf38d5f",
+      "source/src/pdeobs/protocol.py": "11ad2b99c709d3eacb17caf0778132b5c0b8226a74669d7b4274068352ae18fc",
+      "source/src/pdeobs/provenance.py": "c235d689eaa47f917ece55271bcca8d067f9842114d0ef464314ed84a8d3dc2b",
+      "source/src/pdeobs/quality.py": "93fe1c126ed852d40fb1c049f1610013244f693c3372c635c56ce35149fbe3e7",
+      "source/src/pdeobs/registry.py": "3fd783ea436c693678378ad7b83de9535b6c41b499ccc3e6f670dd786d031d7e",
+      "source/src/pdeobs/release_demo.py": "1a4a6bec2995fcf1d20ce52ce6efb93a1ae73a3ab7ffc97da7b775b1c0ef76c8",
+      "source/src/pdeobs/reports.py": "b92653bdebf84cd32b1fc11f91d160e6e1a0bdf12f5a439908872cd42e8f4c25",
+      "source/src/pdeobs/retrieval.py": "d72f9f6efd58f96041dacb3b7e81111b121da148a637a23d97efb9b0b9ec80b0",
+      "source/src/pdeobs/routing.py": "40bb2b9c4536ee58a3b3c4894675d8376fcdea732dcf8f45c4a70d41797dd848",
+      "source/src/pdeobs/runner.py": "06039f0654fcdb7bff9768adb20e7f92052111b7c64645d9dea88512fe00ad60",
+      "source/src/pdeobs/schema.py": "fae274baad440e329a01dcfb19ce1ca4ba6010d8a7ff2cb05e1bb2aeded00b64",
+      "source/src/pdeobs/settings.py": "8e16e11c9cc79d03905e6624ea79b6427b717763882344a8ba7aef08dcd4f235",
+      "source/src/pdeobs/splits.py": "4e9e6da1b78de2bff726192fb47e8853b62213024d555e50bea0342bfdf39452",
+      "source/src/pdeobs/storage.py": "f05f6c50446aac122e5bb0d351c0f29d7b4e96079b42b0c4f1d762226dd0c127",
+      "source/src/pdeobs/strict_inference.py": "cdd23f450b9953e0ab8f32c6863e5eb8d8aed39018048a78c8626527fd776750",
+      "source/src/pdeobs/strict_score.py": "d4613f8517a0686242cf244f88d55bb36ca8672c78b2fb4401ce41a53260fc0c",
+      "source/src/pdeobs/training.py": "48d421a1729852261b0992db5cbaab764926b862d77e61a8f6bfe249e9a3400d"
+     },
+     "note": "anon repository HEAD source; the driver file is tracked in the same commit only after the launch commit",
+     "repository_commit": "<COMMIT-6>",
+     "schema": "pdeobs-revision-inference-source/v1"
+    },
+    "device": "NVIDIA Tesla V100S-PCIE-32GB",
+    "driver": "pdeobs-mixed-strict-inference/20260926-v1",
+    "row_completion_sha256": "2db13ff248f2c65fca6b798ca944aab3fb21d151ff980dc2c746745bcbb5cd11",
+    "torch": "2.2.0",
+    "weights": {
+     "checkpoint_original_sha256": "1f6b099a3365f1791818420940060c980fa3780f2aeb7232a4f768ff5f0793e7",
+     "loaded_from": "<study-root>/benchmark-runs/_study-mixed-pattern/mixed-nine-views-20260925/heat/deeponet/mixed_nine_views/checkpoints/last.pt",
+     "state_repair": null
+    }
+   },
+   "legacy_evaluator_audit": {
+    "all_within_tolerance": true,
+    "max_abs_diff": 8.326672684688674e-17,
+    "n": 9,
+    "note": "legacy evaluator scalars are an audit column, never a numerator"
+   },
+   "method": "deeponet",
+   "pde": "heat",
+   "per_view": {
+    "block_observed_50pct": {
+     "legacy_evaluator_rel_l2": 0.16401143275896665,
+     "legacy_within_tolerance": true,
+     "mix_rel_l2": 0.16401143275896657,
+     "ratio_mix_over_specialist": 1.468993604973177,
+     "specialist_actual_epochs": 500,
+     "specialist_cohort": "original500_recovered",
+     "specialist_rel_l2": 0.11164884054206711,
+     "transfer_max": 10.29582140532119,
+     "transfer_median": 0.7573157404318411,
+     "transfer_min": 0.4857460172088562
+    },
+    "boundary_band_50pct": {
+     "legacy_evaluator_rel_l2": 0.10562183761041753,
+     "legacy_within_tolerance": true,
+     "mix_rel_l2": 0.10562183761041755,
+     "ratio_mix_over_specialist": 1.409763477372269,
+     "specialist_actual_epochs": 500,
+     "specialist_cohort": "original500_recovered",
+     "specialist_rel_l2": 0.07492167253991538,
+     "transfer_max": 5.6886095452278145,
+     "transfer_median": 0.6942633659977874,
+     "transfer_min": 0.09538275643339063
+    },
+    "clustered_50pct": {
+     "legacy_evaluator_rel_l2": 0.28804082785649304,
+     "legacy_within_tolerance": true,
+     "mix_rel_l2": 0.288040827856493,
+     "ratio_mix_over_specialist": 1.47691813300217,
+     "specialist_actual_epochs": 500,
+     "specialist_cohort": "original500_recovered",
+     "specialist_rel_l2": 0.1950282967079461,
+     "transfer_max": 7.974650076213811,
+     "transfer_median": 0.8651498553480474,
+     "transfer_min": 0.6250220302731434
+    },
+    "horizontal_lines_50pct": {
+     "legacy_evaluator_rel_l2": 0.12293597421937723,
+     "legacy_within_tolerance": true,
+     "mix_rel_l2": 0.12293597421937719,
+     "ratio_mix_over_specialist": 1.3656625842030803,
+     "specialist_actual_epochs": 500,
+     "specialist_cohort": "original500",
+     "specialist_rel_l2": 0.09001928854272252,
+     "transfer_max": 93.62796526387162,
+     "transfer_median": 0.9413757568417824,
+     "transfer_min": 0.19067682203723538
+    },
+    "line_sensors_50pct": {
+     "legacy_evaluator_rel_l2": 0.10481847332118209,
+     "legacy_within_tolerance": true,
+     "mix_rel_l2": 0.10481847332118203,
+     "ratio_mix_over_specialist": 1.2507757449655115,
+     "specialist_actual_epochs": 500,
+     "specialist_cohort": "original500",
+     "specialist_rel_l2": 0.08380277099478953,
+     "transfer_max": 75.20940388047126,
+     "transfer_median": 0.729566218941945,
+     "transfer_min": 0.4587209465412884
+    },
+    "random_50pct": {
+     "legacy_evaluator_rel_l2": 0.1001852199071145,
+     "legacy_within_tolerance": true,
+     "mix_rel_l2": 0.10018521990711453,
+     "ratio_mix_over_specialist": 1.2105640038689796,
+     "specialist_actual_epochs": 500,
+     "specialist_cohort": "original500",
+     "specialist_rel_l2": 0.08275912680942202,
+     "transfer_max": 36.904310212524415,
+     "transfer_median": 0.39821062152112974,
+     "transfer_min": 0.25201313246191626
+    },
+    "random_65pct": {
+     "legacy_evaluator_rel_l2": 0.09059472449961045,
+     "legacy_within_tolerance": true,
+     "mix_rel_l2": 0.09059472449961051,
+     "ratio_mix_over_specialist": 1.139094424202013,
+     "specialist_actual_epochs": 500,
+     "specialist_cohort": "original500_recovered",
+     "specialist_rel_l2": 0.07953223418074072,
+     "transfer_max": 32.88288250484159,
+     "transfer_median": 0.4786465029154705,
+     "transfer_min": 0.20448112076747477
+    },
+    "random_80pct": {
+     "legacy_evaluator_rel_l2": 0.08801423961000823,
+     "legacy_within_tolerance": true,
+     "mix_rel_l2": 0.08801423961000818,
+     "ratio_mix_over_specialist": 1.1245253710363818,
+     "specialist_actual_epochs": 500,
+     "specialist_cohort": "original500",
+     "specialist_rel_l2": 0.07826790028658291,
+     "transfer_max": 17.670040615778774,
+     "transfer_median": 0.28136479668263514,
+     "transfer_min": 0.12419667630209862
+    },
+    "vertical_lines_50pct": {
+     "legacy_evaluator_rel_l2": 0.13210614474326624,
+     "legacy_within_tolerance": true,
+     "mix_rel_l2": 0.1321061447432662,
+     "ratio_mix_over_specialist": 1.4956975900387166,
+     "specialist_actual_epochs": 500,
+     "specialist_cohort": "original500",
+     "specialist_rel_l2": 0.08832410082297892,
+     "transfer_max": 71.98173001589296,
+     "transfer_median": 0.9475816267625807,
+     "transfer_min": 0.18495168565402964
+    }
+   },
+   "populations": {
+    "all_nine_descriptive": {
+     "descriptive_transfer_median_over_views": 0.729566218941945,
+     "geomean_ratio": 1.3194059617048486,
+     "mean_mix": 0.13292543050293731,
+     "mean_specialist": 0.09825602571412946,
+     "n": 9,
+     "n_mix_below_transfer_median": 9,
+     "n_mix_below_transfer_min": 8,
+     "n_ratio_below_one": 0,
+     "population": "all_nine_descriptive",
+     "ratio_max": 1.4956975900387166,
+     "ratio_max_view": "vertical_lines_50pct",
+     "ratio_min": 1.1245253710363818,
+     "ratio_min_view": "random_80pct",
+     "reason": "as above; descriptive comparison, not uniformly budget matched (forecasting task, joint three-frame error)",
+     "specialist_actual_epochs": [
+      500
+     ],
+     "specialist_cohorts": [
+      "original500",
+      "original500_recovered"
+     ],
+     "subject_to": null,
+     "views": [
+      "random_50pct",
+      "random_65pct",
+      "random_80pct",
+      "block_observed_50pct",
+      "line_sensors_50pct",
+      "horizontal_lines_50pct",
+      "vertical_lines_50pct",
+      "boundary_band_50pct",
+      "clustered_50pct"
+     ]
+    }
+   },
+   "status": "complete",
+   "task": "rollout",
+   "training": {
+    "actual_epochs": 500,
+    "checkpoint_sha256": "1f6b099a3365f1791818420940060c980fa3780f2aeb7232a4f768ff5f0793e7",
+    "mask_seed": 20260804,
+    "mask_spec": "random_3pct(ratio=0.5) + random_3pct(ratio=0.65) + random_3pct(ratio=0.8) + block_missing(missing_fraction=0.49) + line_sensors(num_lines=76, orientation=both) + line_sensors(num_lines=64, orientation=horizontal) + line_sensors(num_lines=64, orientation=vertical) + boundary_sensors(width=19) + clustered_sensors(ratio=0.5)",
+    "optimizer_steps": 225000,
+    "planned_epochs": 500,
+    "protocol": "pdeobs.fixed500-last-checkpoint/v7",
+    "stop_reason": "max_epochs_500",
+    "training_code": {
+     "overlay_manifest_sha256": "9c4b75d3a43a42005dca4c776b9ff86144eb3c9c5f1054853e58f5db44dc6ff0",
+     "protocol_adapter_sha256": "ebd4bc8e900fed7db84a6e259260da2e2b9ee2eebe233a7e2aabc1ed37f7dc35",
+     "repository_commit": "<COMMIT-1>",
+     "study_adapter_sha256": "ebd4bc8e900fed7db84a6e259260da2e2b9ee2eebe233a7e2aabc1ed37f7dc35"
+    }
+   }
+  },
+  "helmholtz/deeponet/mixed_nine_views": {
+   "extra_views": {
+    "line_sensors-orientation-both-p30__random_3pct-p20": {
+     "horizons": null,
+     "legacy_abs_diff": 2.7755575615628914e-17,
+     "legacy_evaluator_rel_l2": 0.1502771808716071,
+     "mask_config": {
+      "protocol": "line_sensors(orientation=both) 30 + random_3pct 20"
+     },
+     "mix_rel_l2": 0.15027718087160713,
+     "predictions_sha256": "593f67622f7b237a7022a1ca91707be19db61a35132fa0c8034375aca17c5309",
+     "realized_observed_fraction": null,
+     "score_sha256": "b669bed31555ccc6b288588b2bba68b2b18a15e7c386d414e3bab239ac3daaa2",
+     "spec": "line_sensors(orientation=both) 30 + random_3pct 20"
+    },
+    "random_3pct-p20": {
+     "horizons": null,
+     "legacy_abs_diff": 5.551115123125783e-17,
+     "legacy_evaluator_rel_l2": 0.18311106716227843,
+     "mask_config": {
+      "protocol": "random_3pct",
+      "ratio": 0.2
+     },
+     "mix_rel_l2": 0.18311106716227848,
+     "predictions_sha256": "57000f4fb40dc235869cffb0f1467fad8b6d1f6f35473c2a6d10cf77e2c788d6",
+     "realized_observed_fraction": null,
+     "score_sha256": "cedbc33846b39420b9e4ce468605f67085ad758821673627dc14e26c458b90d7",
+     "spec": "random_3pct 20"
+    },
+    "random_3pct-p35": {
+     "horizons": null,
+     "legacy_abs_diff": 1.3877787807814457e-17,
+     "legacy_evaluator_rel_l2": 0.06728446220684711,
+     "mask_config": {
+      "protocol": "random_3pct",
+      "ratio": 0.35
+     },
+     "mix_rel_l2": 0.06728446220684713,
+     "predictions_sha256": "dffc47c406c458f63074b8b2bd6fc2c8a016f679774392bd11c074305e5a2fb4",
+     "realized_observed_fraction": null,
+     "score_sha256": "336c0bdf46525d9057cd0ace74bce24ceb36051e16c3f2565adc66272111124c",
+     "spec": "random_3pct 35"
+    }
+   },
+   "inference": {
+    "adapter": "pdeobs-archived-prediction-verification-v1",
+    "code": {
+     "driver_sha256": "281e1d347058ae780f98a3e888bf38cf32ac0abf31f196d57d00722b8465052c",
+     "files": {
+      "driver/mix_strict_inference.py": "281e1d347058ae780f98a3e888bf38cf32ac0abf31f196d57d00722b8465052c",
+      "inputs/dataset_bindings.json": "7eed0fa6641e26048cf5960ba7c4e9b5df4be605b78fab24785cec0ca6348fe5",
+      "source/configs/campaign/all_pde_one_setting_10method_9x9.yaml": "4ed7e7de03557c1b95a6b544cc1e7c292b575130b427a8e4fdc34a4e87f48966",
+      "source/src/pdeobs/__init__.py": "6bb908ccc71cf3c19722c83371a64acb05e0d7ec7546968d56fed7a11f16215f",
+      "source/src/pdeobs/__main__.py": "8b0eb839b58ac5f56db61c3f78b2ecfdb9573c0d90136cda1fd1a7f4f371da88",
+      "source/src/pdeobs/aggregate.py": "049a19c55376ec5eb85ac31616be1fd957d16aeb2f6a760af1f02b844ca26b0c",
+      "source/src/pdeobs/api/__init__.py": "b1ca501eb6cae7cb20d246e60e1cd9f766430d958171b5c202d8dcbf4318fddc",
+      "source/src/pdeobs/api/artifacts.py": "79d5e148523cb20fcda65487df2c2b8016ae7bc1357f6559c59b505eb48fd2c2",
+      "source/src/pdeobs/api/cli.py": "0e62a971c3014d8d7c4020decac906c1542db734170af36916728e9b8d193326",
+      "source/src/pdeobs/api/data.py": "9c343ebba773cb2ffd1819e7ad08732f8762ed32f471278acdb8637d2916e62b",
+      "source/src/pdeobs/api/evaluate.py": "5ab05d256472a1a7712e57c399446ae81447f65a34bf282d9e9bd7fc7599b028",
+      "source/src/pdeobs/api/infer.py": "8dcdcf69af0ef4bbd35c03dc64aaf8c27c9fc7bfff1abddb906eccc3dcdb63a5",
+      "source/src/pdeobs/api/models.py": "3014817742608a4c64ea836f10427f8b34c1f5ca1c112f1eb6520326886a4184",
+      "source/src/pdeobs/api/observation.py": "22db37a9747b3020406f7da632a2dadfb09f4af36f97b383924a41b242caac9e",
+      "source/src/pdeobs/api/pipeline.py": "033774397cafbd081f2789752933bd6b2c8c6c86928c8189e30ce7e4195ba146",
+      "source/src/pdeobs/api/specs.py": "631ce78a117aecccc5d8eb5e5f86dda557476e14d42c138f9b041387a5e09541",
+      "source/src/pdeobs/api/train.py": "09967a3f8e48ad7a082d7ce9520a53551b3dc9858ad185ea6425f6f7a48fd193",
+      "source/src/pdeobs/archived_verification.py": "8d0e38183159bf91ae73425719572664e044e0a174bb28ef1fb8933b43162d80",
+      "source/src/pdeobs/campaign.py": "5c56e1bfb1386ce4499c7ca0e9be386b8591d45873f8c0f835fb840e8cf1f049",
+      "source/src/pdeobs/cli.py": "d772ecb99a2461d71501ddfeb76dce0da8c2ddad7ff8fa7a38e137be811bf2fd",
+      "source/src/pdeobs/config.py": "5ad2e9a58a62c995ac43daa0b38631679d9f8304a08a08adec36882449122669",
+      "source/src/pdeobs/coverage.py": "70ed5aa5744c4812bc9660ae2bcc4480b8a0da878504c916d6c964178cd13c16",
+      "source/src/pdeobs/dataset.py": "2bdae0ae7977a19a980831318bacecb923ddc91da0fe1c4ba9d790693ebd88ed",
+      "source/src/pdeobs/difficulty.py": "2653b2c4ec6b88a99bcde654aa62894509f99c69e29ff7961c9c35f874ef2461",
+      "source/src/pdeobs/doctor.py": "bd4e85a555e038a6bd794fadb4b9512129a025e8ea4a147e2307f2a820d94c43",
+      "source/src/pdeobs/download.py": "4a94d571f284d7f55317eb0b23184f35594ebf5fd698fed660fed7f7cf8d5eed",
+      "source/src/pdeobs/evaluation.py": "93a6d2ae0ad52a937e6db86d28f0b4419c2b6abae4e0832c6f2add9055c4a77a",
+      "source/src/pdeobs/evidence.py": "b7b43267bb309d1e73a6849ea2dd5bef48f8172487db2bd6f65420be5bd69bac",
+      "source/src/pdeobs/full_to_partial.py": "fe371c5d1297cc36380a49033fe7f7007956ad3f072b20d385868dbb5ef84ee1",
+      "source/src/pdeobs/full_to_partial_execution.py": "64b3b2d1aa87e33b68becc61d36c9fb6bd86489992dd78824fcf73ac828dad1f",
+      "source/src/pdeobs/generation.py": "be64a5b5331fc6cdea8548a0c8c5191fbfd43cff092059df13028b74ea72ec29",
+      "source/src/pdeobs/mask_specs.py": "5b32812b8c542fd2a32c5eca3b65fe804f96a019a69105445b5a404c850dd46b",
+      "source/src/pdeobs/masks.py": "a05083c0e0cc63d2b5c3d918e6a93c365c5237f88577e0dac6e9866af32cef00",
+      "source/src/pdeobs/methods/__init__.py": "97dc55614b125665d8a4ccc622d482d8b6b73ea4ce91d759b61dd52d7c6aa8c9",
+      "source/src/pdeobs/methods/base.py": "6c73f8aae9920303c5aa273ab5b3e187c028f6773c327c258fcc765835332cd8",
+      "source/src/pdeobs/methods/interpolation.py": "d1e00c43498179563c5391f584a69ed0e0d4a4ed65b29b87be901e1054fbc3a2",
+      "source/src/pdeobs/methods/neural.py": "424e3d056e10eea0662c4593046f5c366b43954f0b8f5e304446d4eb508df3d1",
+      "source/src/pdeobs/methods/operator_networks.py": "b2f556c73a5f3bc676c13add2963cb06f3b4b4ffc4d6ba4cbc458083f1896fc0",
+      "source/src/pdeobs/methods/paper_official.py": "64d4bfb2ca745f16627473ac201e7588a655b506aaadfdffe5ab107306b0bd17",
+      "source/src/pdeobs/methods/reduced_order.py": "5358f659845ca8a108dc61df75f02ca3c6faecf2f8372340338a19ec4c41fabb",
+      "source/src/pdeobs/metrics.py": "0788c520a70acfa7c422856c2d2acef7fb3fc96c1b99755c4be20929e6f1bf36",
+      "source/src/pdeobs/migration.py": "ae49c403777d4e5221eae3e90f6530be0721122c990fb4fee411332e523e8619",
+      "source/src/pdeobs/one_setting.py": "f1eed0bed85e0c91c8a18b694ec9022f3e2c0dc5d5fb165f9e9d37f2030653e7",
+      "source/src/pdeobs/paper_row.py": "1ca84008d504d933c044ad2510fefd3a2281532278ef44ec988d0b745b651316",
+      "source/src/pdeobs/pdes/__init__.py": "512de65acb6ddc124e1332023135df06d4ab70e95da0ca3266296f74923549f9",
+      "source/src/pdeobs/pdes/burgers.py": "f52af6c535552e9ce1863d431436cfc72c803e54069ca3395e203ad194a75b4f",
+      "source/src/pdeobs/pdes/common.py": "f0e3884c664d28fc42fc09489e6d36a7d0c0f5fe0188c3e6d4b20c283e051cc6",
+      "source/src/pdeobs/pdes/darcy.py": "66a470be2a3b0dbe0e9fb8ea43467e83b09477e7db0ba2535e10763b3b049a6c",
+      "source/src/pdeobs/pdes/heat.py": "0a661958733f2886e4877512bd5d90d2bb39eaf9dc36b6e259699ce28e03a204",
+      "source/src/pdeobs/pdes/helmholtz.py": "47f5d17b0c6cf9d52a01e9ed41c97b83d75d767df54a1fe3eaeb621ca5699f66",
+      "source/src/pdeobs/pdes/navier_stokes.py": "f6feb2bf52063882fb7c7b60f21f6e40a75b1ee034ef47139b00861a100d18ae",
+      "source/src/pdeobs/pdes/numerics.py": "4f8ac1f8fd067a56b5025bb46d74ad015a87d5c3d0f892b26cb73127f53d438a",
+      "source/src/pdeobs/pdes/poisson.py": "45e0798bfcc7d624d609e40db0ed4eac4916c549277143a3b66182892d77b7c5",
+      "source/src/pdeobs/pdes/reaction_diffusion.py": "ec97fa7e8b0da2d6218f3911e194ed8383330cba4fed200e2c980a8b09ef954b",
+      "source/src/pdeobs/physical_inputs.py": "a68766b07f65e71c80293eddc39ce13383e646d310ffa9f34a451bb6d62a6798",
+      "source/src/pdeobs/pino.py": "a4484938487454d9cd9d4bf7d946e676db099a893df8f5924540dc4d2f703710",
+      "source/src/pdeobs/presets.py": "101d61bd47d35b56e5931f8f6b73f446bab5c7c4e63cc1a16b3d4691caf38d5f",
+      "source/src/pdeobs/protocol.py": "11ad2b99c709d3eacb17caf0778132b5c0b8226a74669d7b4274068352ae18fc",
+      "source/src/pdeobs/provenance.py": "c235d689eaa47f917ece55271bcca8d067f9842114d0ef464314ed84a8d3dc2b",
+      "source/src/pdeobs/quality.py": "93fe1c126ed852d40fb1c049f1610013244f693c3372c635c56ce35149fbe3e7",
+      "source/src/pdeobs/registry.py": "3fd783ea436c693678378ad7b83de9535b6c41b499ccc3e6f670dd786d031d7e",
+      "source/src/pdeobs/release_demo.py": "1a4a6bec2995fcf1d20ce52ce6efb93a1ae73a3ab7ffc97da7b775b1c0ef76c8",
+      "source/src/pdeobs/reports.py": "b92653bdebf84cd32b1fc11f91d160e6e1a0bdf12f5a439908872cd42e8f4c25",
+      "source/src/pdeobs/retrieval.py": "d72f9f6efd58f96041dacb3b7e81111b121da148a637a23d97efb9b0b9ec80b0",
+      "source/src/pdeobs/routing.py": "40bb2b9c4536ee58a3b3c4894675d8376fcdea732dcf8f45c4a70d41797dd848",
+      "source/src/pdeobs/runner.py": "06039f0654fcdb7bff9768adb20e7f92052111b7c64645d9dea88512fe00ad60",
+      "source/src/pdeobs/schema.py": "fae274baad440e329a01dcfb19ce1ca4ba6010d8a7ff2cb05e1bb2aeded00b64",
+      "source/src/pdeobs/settings.py": "8e16e11c9cc79d03905e6624ea79b6427b717763882344a8ba7aef08dcd4f235",
+      "source/src/pdeobs/splits.py": "4e9e6da1b78de2bff726192fb47e8853b62213024d555e50bea0342bfdf39452",
+      "source/src/pdeobs/storage.py": "f05f6c50446aac122e5bb0d351c0f29d7b4e96079b42b0c4f1d762226dd0c127",
+      "source/src/pdeobs/strict_inference.py": "cdd23f450b9953e0ab8f32c6863e5eb8d8aed39018048a78c8626527fd776750",
+      "source/src/pdeobs/strict_score.py": "d4613f8517a0686242cf244f88d55bb36ca8672c78b2fb4401ce41a53260fc0c",
+      "source/src/pdeobs/training.py": "48d421a1729852261b0992db5cbaab764926b862d77e61a8f6bfe249e9a3400d"
+     },
+     "note": "anon repository HEAD source; the driver file is tracked in the same commit only after the launch commit",
+     "repository_commit": "<COMMIT-6>",
+     "schema": "pdeobs-revision-inference-source/v1"
+    },
+    "device": "NVIDIA Tesla V100S-PCIE-32GB",
+    "driver": "pdeobs-mixed-strict-inference/20260926-v1",
+    "row_completion_sha256": "e5f054ed9727c3e9b6f4ead1f9b4252d7d838a10a49a713bc5e438ee29b034b2",
+    "torch": "2.2.0",
+    "weights": {
+     "checkpoint_original_sha256": "763ece950ca0219942a47dd252cef9053e3c15f6d8361e25ca9009d47df309b0",
+     "loaded_from": "<study-root>/benchmark-runs/_study-mixed-pattern/mixed-nine-views-20260925/helmholtz/deeponet/mixed_nine_views/checkpoints/last.pt",
+     "state_repair": null
+    }
+   },
+   "legacy_evaluator_audit": {
+    "all_within_tolerance": true,
+    "max_abs_diff": 5.551115123125783e-17,
+    "n": 9,
+    "note": "legacy evaluator scalars are an audit column, never a numerator"
+   },
+   "method": "deeponet",
+   "pde": "helmholtz",
+   "per_view": {
+    "block_observed_50pct": {
+     "legacy_evaluator_rel_l2": 0.27101174007851175,
+     "legacy_within_tolerance": true,
+     "mix_rel_l2": 0.2710117400785117,
+     "ratio_mix_over_specialist": 2.8458032226165018,
+     "specialist_actual_epochs": 500,
+     "specialist_cohort": "original500",
+     "specialist_rel_l2": 0.0952320729433066,
+     "transfer_max": 1.0045313511177243,
+     "transfer_median": 0.8346298093804077,
+     "transfer_min": 0.7707694536200168
+    },
+    "boundary_band_50pct": {
+     "legacy_evaluator_rel_l2": 0.07903390965801142,
+     "legacy_within_tolerance": true,
+     "mix_rel_l2": 0.07903390965801142,
+     "ratio_mix_over_specialist": 1.1273799645230194,
+     "specialist_actual_epochs": 500,
+     "specialist_cohort": "original500",
+     "specialist_rel_l2": 0.07010405732325543,
+     "transfer_max": 0.9273936238515421,
+     "transfer_median": 0.8303389307085747,
+     "transfer_min": 0.055269331501657054
+    },
+    "clustered_50pct": {
+     "legacy_evaluator_rel_l2": 0.3364816991307111,
+     "legacy_within_tolerance": true,
+     "mix_rel_l2": 0.3364816991307111,
+     "ratio_mix_over_specialist": 2.155959469731217,
+     "specialist_actual_epochs": 500,
+     "specialist_cohort": "original500",
+     "specialist_rel_l2": 0.1560705123889273,
+     "transfer_max": 7.10272281467862,
+     "transfer_median": 0.5194364243291923,
+     "transfer_min": 0.479605418241346
+    },
+    "horizontal_lines_50pct": {
+     "legacy_evaluator_rel_l2": 0.09470844064466831,
+     "legacy_within_tolerance": true,
+     "mix_rel_l2": 0.09470844064466835,
+     "ratio_mix_over_specialist": 3.912941376706006,
+     "specialist_actual_epochs": 500,
+     "specialist_cohort": "original500",
+     "specialist_rel_l2": 0.02420389970789592,
+     "transfer_max": 15.278696718285708,
+     "transfer_median": 0.3056381857331619,
+     "transfer_min": 0.1319838480337063
+    },
+    "line_sensors_50pct": {
+     "legacy_evaluator_rel_l2": 0.08115359830493524,
+     "legacy_within_tolerance": true,
+     "mix_rel_l2": 0.08115359830493526,
+     "ratio_mix_over_specialist": 3.12625393493027,
+     "specialist_actual_epochs": 500,
+     "specialist_cohort": "original500",
+     "specialist_rel_l2": 0.025958735276808337,
+     "transfer_max": 12.735699407551401,
+     "transfer_median": 0.20040555009692645,
+     "transfer_min": 0.10947785012200127
+    },
+    "random_50pct": {
+     "legacy_evaluator_rel_l2": 0.046758267181921644,
+     "legacy_within_tolerance": true,
+     "mix_rel_l2": 0.04675826718192166,
+     "ratio_mix_over_specialist": 2.423108645400789,
+     "specialist_actual_epochs": 500,
+     "specialist_cohort": "original500",
+     "specialist_rel_l2": 0.019296810017442576,
+     "transfer_max": 7.602846967704272,
+     "transfer_median": 0.29562419212442276,
+     "transfer_min": 0.04230218281569335
+    },
+    "random_65pct": {
+     "legacy_evaluator_rel_l2": 0.042115010668122316,
+     "legacy_within_tolerance": true,
+     "mix_rel_l2": 0.04211501066812232,
+     "ratio_mix_over_specialist": 2.193828349329331,
+     "specialist_actual_epochs": 500,
+     "specialist_cohort": "original500",
+     "specialist_rel_l2": 0.019197040042352072,
+     "transfer_max": 6.76544383484033,
+     "transfer_median": 0.24192461172949375,
+     "transfer_min": 0.03624567050528835
+    },
+    "random_80pct": {
+     "legacy_evaluator_rel_l2": 0.044055234424357916,
+     "legacy_within_tolerance": true,
+     "mix_rel_l2": 0.04405523442435788,
+     "ratio_mix_over_specialist": 2.5968569151829097,
+     "specialist_actual_epochs": 500,
+     "specialist_cohort": "original500",
+     "specialist_rel_l2": 0.016964829354587235,
+     "transfer_max": 6.121434608625373,
+     "transfer_median": 0.19954245519333322,
+     "transfer_min": 0.04291998171825208
+    },
+    "vertical_lines_50pct": {
+     "legacy_evaluator_rel_l2": 0.09768188271333371,
+     "legacy_within_tolerance": true,
+     "mix_rel_l2": 0.09768188271333371,
+     "ratio_mix_over_specialist": 4.070424542781268,
+     "specialist_actual_epochs": 500,
+     "specialist_cohort": "original500",
+     "specialist_rel_l2": 0.02399795934961343,
+     "transfer_max": 13.813053110192998,
+     "transfer_median": 0.28646231966,
+     "transfer_min": 0.13475884957975082
+    }
+   },
+   "populations": {
+    "all_nine_descriptive": {
+     "descriptive_transfer_median_over_views": 0.29562419212442276,
+     "geomean_ratio": 2.5619308464097577,
+     "mean_mix": 0.12144442031161927,
+     "mean_specialist": 0.050113990711576545,
+     "n": 9,
+     "n_mix_below_transfer_median": 9,
+     "n_mix_below_transfer_min": 5,
+     "n_ratio_below_one": 0,
+     "population": "all_nine_descriptive",
+     "ratio_max": 4.070424542781268,
+     "ratio_max_view": "vertical_lines_50pct",
+     "ratio_min": 1.1273799645230194,
+     "ratio_min_view": "boundary_band_50pct",
+     "reason": "as above; descriptive comparison, not uniformly budget matched",
+     "specialist_actual_epochs": [
+      500
+     ],
+     "specialist_cohorts": [
+      "original500"
+     ],
+     "subject_to": null,
+     "views": [
+      "random_50pct",
+      "random_65pct",
+      "random_80pct",
+      "block_observed_50pct",
+      "line_sensors_50pct",
+      "horizontal_lines_50pct",
+      "vertical_lines_50pct",
+      "boundary_band_50pct",
+      "clustered_50pct"
+     ]
+    }
+   },
+   "status": "complete",
+   "task": "recovery",
+   "training": {
+    "actual_epochs": 500,
+    "checkpoint_sha256": "763ece950ca0219942a47dd252cef9053e3c15f6d8361e25ca9009d47df309b0",
+    "mask_seed": 20260804,
+    "mask_spec": "random_3pct(ratio=0.5) + random_3pct(ratio=0.65) + random_3pct(ratio=0.8) + block_missing(missing_fraction=0.49) + line_sensors(num_lines=76, orientation=both) + line_sensors(num_lines=64, orientation=horizontal) + line_sensors(num_lines=64, orientation=vertical) + boundary_sensors(width=19) + clustered_sensors(ratio=0.5)",
+    "optimizer_steps": 225000,
+    "planned_epochs": 500,
+    "protocol": "pdeobs.fixed500-last-checkpoint/v7",
+    "stop_reason": "max_epochs_500",
+    "training_code": {
+     "overlay_manifest_sha256": "9c4b75d3a43a42005dca4c776b9ff86144eb3c9c5f1054853e58f5db44dc6ff0",
+     "protocol_adapter_sha256": "ebd4bc8e900fed7db84a6e259260da2e2b9ee2eebe233a7e2aabc1ed37f7dc35",
+     "repository_commit": "<COMMIT-1>",
+     "study_adapter_sha256": "ebd4bc8e900fed7db84a6e259260da2e2b9ee2eebe233a7e2aabc1ed37f7dc35"
+    }
+   }
+  },
+  "helmholtz/fno/mixed_nine_views": {
+   "extra_views": {
+    "line_sensors-orientation-both-p30__random_3pct-p20": {
+     "horizons": null,
+     "legacy_abs_diff": 2.7755575615628914e-17,
+     "legacy_evaluator_rel_l2": 0.11495328233276574,
+     "mask_config": {
+      "protocol": "line_sensors(orientation=both) 30 + random_3pct 20"
+     },
+     "mix_rel_l2": 0.11495328233276571,
+     "predictions_sha256": "8f37ea4a58ca968506a9aabc053826f041345f1e99521643e5c891d73f641a79",
+     "realized_observed_fraction": null,
+     "score_sha256": "0a76a343f0c48b8d0b2ab92335f98c638174b83fd11988ef67394fd91af74d27",
+     "spec": "line_sensors(orientation=both) 30 + random_3pct 20"
+    },
+    "random_3pct-p20": {
+     "horizons": null,
+     "legacy_abs_diff": 2.7755575615628914e-17,
+     "legacy_evaluator_rel_l2": 0.14219628968666786,
+     "mask_config": {
+      "protocol": "random_3pct",
+      "ratio": 0.2
+     },
+     "mix_rel_l2": 0.14219628968666784,
+     "predictions_sha256": "04746b0e00547664fe1d3ce85db8f2cada2d083fa641641c62757bf0a75fa42e",
+     "realized_observed_fraction": null,
+     "score_sha256": "4c5312f9c1ba376cb7512c1fe6f8c374dea37f4bd4229ea8e82ae53aa426f70e",
+     "spec": "random_3pct 20"
+    },
+    "random_3pct-p35": {
+     "horizons": null,
+     "legacy_abs_diff": 6.938893903907228e-18,
+     "legacy_evaluator_rel_l2": 0.043376473518525575,
+     "mask_config": {
+      "protocol": "random_3pct",
+      "ratio": 0.35
+     },
+     "mix_rel_l2": 0.04337647351852558,
+     "predictions_sha256": "ba041b8faaba63e945daf0f7d2b2c792211786b8820d382af82307fde16004af",
+     "realized_observed_fraction": null,
+     "score_sha256": "592c92b98a8630b0c2d10e90de8f4dcb7f32661fbf60d78cbfc61d638f4ae1eb",
+     "spec": "random_3pct 35"
+    }
+   },
+   "inference": {
+    "adapter": "pdeobs-archived-prediction-verification-v1",
+    "code": {
+     "driver_sha256": "281e1d347058ae780f98a3e888bf38cf32ac0abf31f196d57d00722b8465052c",
+     "files": {
+      "driver/mix_strict_inference.py": "281e1d347058ae780f98a3e888bf38cf32ac0abf31f196d57d00722b8465052c",
+      "inputs/dataset_bindings.json": "7eed0fa6641e26048cf5960ba7c4e9b5df4be605b78fab24785cec0ca6348fe5",
+      "source/configs/campaign/all_pde_one_setting_10method_9x9.yaml": "4ed7e7de03557c1b95a6b544cc1e7c292b575130b427a8e4fdc34a4e87f48966",
+      "source/src/pdeobs/__init__.py": "6bb908ccc71cf3c19722c83371a64acb05e0d7ec7546968d56fed7a11f16215f",
+      "source/src/pdeobs/__main__.py": "8b0eb839b58ac5f56db61c3f78b2ecfdb9573c0d90136cda1fd1a7f4f371da88",
+      "source/src/pdeobs/aggregate.py": "049a19c55376ec5eb85ac31616be1fd957d16aeb2f6a760af1f02b844ca26b0c",
+      "source/src/pdeobs/api/__init__.py": "b1ca501eb6cae7cb20d246e60e1cd9f766430d958171b5c202d8dcbf4318fddc",
+      "source/src/pdeobs/api/artifacts.py": "79d5e148523cb20fcda65487df2c2b8016ae7bc1357f6559c59b505eb48fd2c2",
+      "source/src/pdeobs/api/cli.py": "0e62a971c3014d8d7c4020decac906c1542db734170af36916728e9b8d193326",
+      "source/src/pdeobs/api/data.py": "9c343ebba773cb2ffd1819e7ad08732f8762ed32f471278acdb8637d2916e62b",
+      "source/src/pdeobs/api/evaluate.py": "5ab05d256472a1a7712e57c399446ae81447f65a34bf282d9e9bd7fc7599b028",
+      "source/src/pdeobs/api/infer.py": "8dcdcf69af0ef4bbd35c03dc64aaf8c27c9fc7bfff1abddb906eccc3dcdb63a5",
+      "source/src/pdeobs/api/models.py": "3014817742608a4c64ea836f10427f8b34c1f5ca1c112f1eb6520326886a4184",
+      "source/src/pdeobs/api/observation.py": "22db37a9747b3020406f7da632a2dadfb09f4af36f97b383924a41b242caac9e",
+      "source/src/pdeobs/api/pipeline.py": "033774397cafbd081f2789752933bd6b2c8c6c86928c8189e30ce7e4195ba146",
+      "source/src/pdeobs/api/specs.py": "631ce78a117aecccc5d8eb5e5f86dda557476e14d42c138f9b041387a5e09541",
+      "source/src/pdeobs/api/train.py": "09967a3f8e48ad7a082d7ce9520a53551b3dc9858ad185ea6425f6f7a48fd193",
+      "source/src/pdeobs/archived_verification.py": "8d0e38183159bf91ae73425719572664e044e0a174bb28ef1fb8933b43162d80",
+      "source/src/pdeobs/campaign.py": "5c56e1bfb1386ce4499c7ca0e9be386b8591d45873f8c0f835fb840e8cf1f049",
+      "source/src/pdeobs/cli.py": "d772ecb99a2461d71501ddfeb76dce0da8c2ddad7ff8fa7a38e137be811bf2fd",
+      "source/src/pdeobs/config.py": "5ad2e9a58a62c995ac43daa0b38631679d9f8304a08a08adec36882449122669",
+      "source/src/pdeobs/coverage.py": "70ed5aa5744c4812bc9660ae2bcc4480b8a0da878504c916d6c964178cd13c16",
+      "source/src/pdeobs/dataset.py": "2bdae0ae7977a19a980831318bacecb923ddc91da0fe1c4ba9d790693ebd88ed",
+      "source/src/pdeobs/difficulty.py": "2653b2c4ec6b88a99bcde654aa62894509f99c69e29ff7961c9c35f874ef2461",
+      "source/src/pdeobs/doctor.py": "bd4e85a555e038a6bd794fadb4b9512129a025e8ea4a147e2307f2a820d94c43",
+      "source/src/pdeobs/download.py": "4a94d571f284d7f55317eb0b23184f35594ebf5fd698fed660fed7f7cf8d5eed",
+      "source/src/pdeobs/evaluation.py": "93a6d2ae0ad52a937e6db86d28f0b4419c2b6abae4e0832c6f2add9055c4a77a",
+      "source/src/pdeobs/evidence.py": "b7b43267bb309d1e73a6849ea2dd5bef48f8172487db2bd6f65420be5bd69bac",
+      "source/src/pdeobs/full_to_partial.py": "fe371c5d1297cc36380a49033fe7f7007956ad3f072b20d385868dbb5ef84ee1",
+      "source/src/pdeobs/full_to_partial_execution.py": "64b3b2d1aa87e33b68becc61d36c9fb6bd86489992dd78824fcf73ac828dad1f",
+      "source/src/pdeobs/generation.py": "be64a5b5331fc6cdea8548a0c8c5191fbfd43cff092059df13028b74ea72ec29",
+      "source/src/pdeobs/mask_specs.py": "5b32812b8c542fd2a32c5eca3b65fe804f96a019a69105445b5a404c850dd46b",
+      "source/src/pdeobs/masks.py": "a05083c0e0cc63d2b5c3d918e6a93c365c5237f88577e0dac6e9866af32cef00",
+      "source/src/pdeobs/methods/__init__.py": "97dc55614b125665d8a4ccc622d482d8b6b73ea4ce91d759b61dd52d7c6aa8c9",
+      "source/src/pdeobs/methods/base.py": "6c73f8aae9920303c5aa273ab5b3e187c028f6773c327c258fcc765835332cd8",
+      "source/src/pdeobs/methods/interpolation.py": "d1e00c43498179563c5391f584a69ed0e0d4a4ed65b29b87be901e1054fbc3a2",
+      "source/src/pdeobs/methods/neural.py": "424e3d056e10eea0662c4593046f5c366b43954f0b8f5e304446d4eb508df3d1",
+      "source/src/pdeobs/methods/operator_networks.py": "b2f556c73a5f3bc676c13add2963cb06f3b4b4ffc4d6ba4cbc458083f1896fc0",
+      "source/src/pdeobs/methods/paper_official.py": "64d4bfb2ca745f16627473ac201e7588a655b506aaadfdffe5ab107306b0bd17",
+      "source/src/pdeobs/methods/reduced_order.py": "5358f659845ca8a108dc61df75f02ca3c6faecf2f8372340338a19ec4c41fabb",
+      "source/src/pdeobs/metrics.py": "0788c520a70acfa7c422856c2d2acef7fb3fc96c1b99755c4be20929e6f1bf36",
+      "source/src/pdeobs/migration.py": "ae49c403777d4e5221eae3e90f6530be0721122c990fb4fee411332e523e8619",
+      "source/src/pdeobs/one_setting.py": "f1eed0bed85e0c91c8a18b694ec9022f3e2c0dc5d5fb165f9e9d37f2030653e7",
+      "source/src/pdeobs/paper_row.py": "1ca84008d504d933c044ad2510fefd3a2281532278ef44ec988d0b745b651316",
+      "source/src/pdeobs/pdes/__init__.py": "512de65acb6ddc124e1332023135df06d4ab70e95da0ca3266296f74923549f9",
+      "source/src/pdeobs/pdes/burgers.py": "f52af6c535552e9ce1863d431436cfc72c803e54069ca3395e203ad194a75b4f",
+      "source/src/pdeobs/pdes/common.py": "f0e3884c664d28fc42fc09489e6d36a7d0c0f5fe0188c3e6d4b20c283e051cc6",
+      "source/src/pdeobs/pdes/darcy.py": "66a470be2a3b0dbe0e9fb8ea43467e83b09477e7db0ba2535e10763b3b049a6c",
+      "source/src/pdeobs/pdes/heat.py": "0a661958733f2886e4877512bd5d90d2bb39eaf9dc36b6e259699ce28e03a204",
+      "source/src/pdeobs/pdes/helmholtz.py": "47f5d17b0c6cf9d52a01e9ed41c97b83d75d767df54a1fe3eaeb621ca5699f66",
+      "source/src/pdeobs/pdes/navier_stokes.py": "f6feb2bf52063882fb7c7b60f21f6e40a75b1ee034ef47139b00861a100d18ae",
+      "source/src/pdeobs/pdes/numerics.py": "4f8ac1f8fd067a56b5025bb46d74ad015a87d5c3d0f892b26cb73127f53d438a",
+      "source/src/pdeobs/pdes/poisson.py": "45e0798bfcc7d624d609e40db0ed4eac4916c549277143a3b66182892d77b7c5",
+      "source/src/pdeobs/pdes/reaction_diffusion.py": "ec97fa7e8b0da2d6218f3911e194ed8383330cba4fed200e2c980a8b09ef954b",
+      "source/src/pdeobs/physical_inputs.py": "a68766b07f65e71c80293eddc39ce13383e646d310ffa9f34a451bb6d62a6798",
+      "source/src/pdeobs/pino.py": "a4484938487454d9cd9d4bf7d946e676db099a893df8f5924540dc4d2f703710",
+      "source/src/pdeobs/presets.py": "101d61bd47d35b56e5931f8f6b73f446bab5c7c4e63cc1a16b3d4691caf38d5f",
+      "source/src/pdeobs/protocol.py": "11ad2b99c709d3eacb17caf0778132b5c0b8226a74669d7b4274068352ae18fc",
+      "source/src/pdeobs/provenance.py": "c235d689eaa47f917ece55271bcca8d067f9842114d0ef464314ed84a8d3dc2b",
+      "source/src/pdeobs/quality.py": "93fe1c126ed852d40fb1c049f1610013244f693c3372c635c56ce35149fbe3e7",
+      "source/src/pdeobs/registry.py": "3fd783ea436c693678378ad7b83de9535b6c41b499ccc3e6f670dd786d031d7e",
+      "source/src/pdeobs/release_demo.py": "1a4a6bec2995fcf1d20ce52ce6efb93a1ae73a3ab7ffc97da7b775b1c0ef76c8",
+      "source/src/pdeobs/reports.py": "b92653bdebf84cd32b1fc11f91d160e6e1a0bdf12f5a439908872cd42e8f4c25",
+      "source/src/pdeobs/retrieval.py": "d72f9f6efd58f96041dacb3b7e81111b121da148a637a23d97efb9b0b9ec80b0",
+      "source/src/pdeobs/routing.py": "40bb2b9c4536ee58a3b3c4894675d8376fcdea732dcf8f45c4a70d41797dd848",
+      "source/src/pdeobs/runner.py": "06039f0654fcdb7bff9768adb20e7f92052111b7c64645d9dea88512fe00ad60",
+      "source/src/pdeobs/schema.py": "fae274baad440e329a01dcfb19ce1ca4ba6010d8a7ff2cb05e1bb2aeded00b64",
+      "source/src/pdeobs/settings.py": "8e16e11c9cc79d03905e6624ea79b6427b717763882344a8ba7aef08dcd4f235",
+      "source/src/pdeobs/splits.py": "4e9e6da1b78de2bff726192fb47e8853b62213024d555e50bea0342bfdf39452",
+      "source/src/pdeobs/storage.py": "f05f6c50446aac122e5bb0d351c0f29d7b4e96079b42b0c4f1d762226dd0c127",
+      "source/src/pdeobs/strict_inference.py": "cdd23f450b9953e0ab8f32c6863e5eb8d8aed39018048a78c8626527fd776750",
+      "source/src/pdeobs/strict_score.py": "d4613f8517a0686242cf244f88d55bb36ca8672c78b2fb4401ce41a53260fc0c",
+      "source/src/pdeobs/training.py": "48d421a1729852261b0992db5cbaab764926b862d77e61a8f6bfe249e9a3400d"
+     },
+     "note": "anon repository HEAD source; the driver file is tracked in the same commit only after the launch commit",
+     "repository_commit": "<COMMIT-6>",
+     "schema": "pdeobs-revision-inference-source/v1"
+    },
+    "device": "NVIDIA Tesla V100S-PCIE-32GB",
+    "driver": "pdeobs-mixed-strict-inference/20260926-v1",
+    "row_completion_sha256": "f982b57f982de8befc67ff62ca5c670afa329be33c8e67c227746c9af640e9d1",
+    "torch": "2.2.0",
+    "weights": {
+     "checkpoint_original_sha256": "463929123b38777bc7471159388f5a0e406c8388ecd2c199914813e18c5ca7bb",
+     "loaded_from": "<study-root>/benchmark-runs/_study-mixed-pattern/mixed-nine-views-20260925/helmholtz/fno/mixed_nine_views/checkpoints/last.pt",
+     "state_repair": null
+    }
+   },
+   "legacy_evaluator_audit": {
+    "all_within_tolerance": true,
+    "max_abs_diff": 8.326672684688674e-17,
+    "n": 9,
+    "note": "legacy evaluator scalars are an audit column, never a numerator"
+   },
+   "method": "fno",
+   "pde": "helmholtz",
+   "per_view": {
+    "block_observed_50pct": {
+     "legacy_evaluator_rel_l2": 0.16007180356398762,
+     "legacy_within_tolerance": true,
+     "mix_rel_l2": 0.1600718035639877,
+     "ratio_mix_over_specialist": 2.839303120609628,
+     "specialist_actual_epochs": 500,
+     "specialist_cohort": "original500",
+     "specialist_rel_l2": 0.05637714494168506,
+     "transfer_max": 2.0392293979345575,
+     "transfer_median": 1.106689928653097,
+     "transfer_min": 0.3332206010074701
+    },
+    "boundary_band_50pct": {
+     "legacy_evaluator_rel_l2": 0.06295480774091147,
+     "legacy_within_tolerance": true,
+     "mix_rel_l2": 0.06295480774091149,
+     "ratio_mix_over_specialist": 2.472964849314705,
+     "specialist_actual_epochs": 500,
+     "specialist_cohort": "original500",
+     "specialist_rel_l2": 0.02545721899700968,
+     "transfer_max": 2.1170369114442367,
+     "transfer_median": 1.1382977686695743,
+     "transfer_min": 0.041802659328702634
+    },
+    "clustered_50pct": {
+     "legacy_evaluator_rel_l2": 0.14387958835074005,
+     "legacy_within_tolerance": true,
+     "mix_rel_l2": 0.14387958835074005,
+     "ratio_mix_over_specialist": 3.334351846784941,
+     "specialist_actual_epochs": 500,
+     "specialist_cohort": "original500",
+     "specialist_rel_l2": 0.0431506916372584,
+     "transfer_max": 1.706092772380241,
+     "transfer_median": 0.7640971572665285,
+     "transfer_min": 0.5347984106933318
+    },
+    "horizontal_lines_50pct": {
+     "legacy_evaluator_rel_l2": 0.020995795415860018,
+     "legacy_within_tolerance": true,
+     "mix_rel_l2": 0.02099579541586002,
+     "ratio_mix_over_specialist": 1.688822638241487,
+     "specialist_actual_epochs": 500,
+     "specialist_cohort": "original500",
+     "specialist_rel_l2": 0.01243220865260441,
+     "transfer_max": 1.2878740209635435,
+     "transfer_median": 0.1861987388124141,
+     "transfer_min": 0.020934347736503753
+    },
+    "line_sensors_50pct": {
+     "legacy_evaluator_rel_l2": 0.02009455877378947,
+     "legacy_within_tolerance": true,
+     "mix_rel_l2": 0.020094558773789482,
+     "ratio_mix_over_specialist": 1.2870173568371381,
+     "specialist_actual_epochs": 500,
+     "specialist_cohort": "original500",
+     "specialist_rel_l2": 0.015613277215757308,
+     "transfer_max": 1.168800762748708,
+     "transfer_median": 0.14355544468728595,
+     "transfer_min": 0.03702453405094782
+    },
+    "random_50pct": {
+     "legacy_evaluator_rel_l2": 0.016009795365644935,
+     "legacy_within_tolerance": true,
+     "mix_rel_l2": 0.016009795365644928,
+     "ratio_mix_over_specialist": 1.7724685700261913,
+     "specialist_actual_epochs": 500,
+     "specialist_cohort": "original500",
+     "specialist_rel_l2": 0.00903248477089123,
+     "transfer_max": 1.261232980527664,
+     "transfer_median": 0.08041853420176834,
+     "transfer_min": 0.019435707612214425
+    },
+    "random_65pct": {
+     "legacy_evaluator_rel_l2": 0.015410891990801766,
+     "legacy_within_tolerance": true,
+     "mix_rel_l2": 0.015410891990801761,
+     "ratio_mix_over_specialist": 2.9651465225857674,
+     "specialist_actual_epochs": 500,
+     "specialist_cohort": "original500",
+     "specialist_rel_l2": 0.0051973458557328335,
+     "transfer_max": 1.3429008556212114,
+     "transfer_median": 0.1502520967611707,
+     "transfer_min": 0.06762197343562125
+    },
+    "random_80pct": {
+     "legacy_evaluator_rel_l2": 0.016553388701130257,
+     "legacy_within_tolerance": true,
+     "mix_rel_l2": 0.016553388701130257,
+     "ratio_mix_over_specialist": 1.3452652222945927,
+     "specialist_actual_epochs": 500,
+     "specialist_cohort": "original500",
+     "specialist_rel_l2": 0.012304925769875671,
+     "transfer_max": 1.3864770599421326,
+     "transfer_median": 0.40228389939774867,
+     "transfer_min": 0.12501370920489527
+    },
+    "vertical_lines_50pct": {
+     "legacy_evaluator_rel_l2": 0.021985814774911842,
+     "legacy_within_tolerance": true,
+     "mix_rel_l2": 0.021985814774911842,
+     "ratio_mix_over_specialist": 1.8991576140821822,
+     "specialist_actual_epochs": 500,
+     "specialist_cohort": "original500",
+     "specialist_rel_l2": 0.011576614079783507,
+     "transfer_max": 1.5164229242318044,
+     "transfer_median": 0.15273696465266579,
+     "transfer_min": 0.020530323029878596
+    }
+   },
+   "populations": {
+    "all_nine_descriptive": {
+     "descriptive_transfer_median_over_views": 0.1861987388124141,
+     "geomean_ratio": 2.065170492397045,
+     "mean_mix": 0.05310627163086417,
+     "mean_specialist": 0.02123799021339979,
+     "n": 9,
+     "n_mix_below_transfer_median": 9,
+     "n_mix_below_transfer_min": 6,
+     "n_ratio_below_one": 0,
+     "population": "all_nine_descriptive",
+     "ratio_max": 3.334351846784941,
+     "ratio_max_view": "clustered_50pct",
+     "ratio_min": 1.2870173568371381,
+     "ratio_min_view": "line_sensors_50pct",
+     "reason": "same planned budget as the original protocol (500 epochs, last checkpoint) but the nine specialists come from heterogeneous training cohorts (training_inventory.csv); descriptive comparison",
+     "specialist_actual_epochs": [
+      500
+     ],
+     "specialist_cohorts": [
+      "original500"
+     ],
+     "subject_to": null,
+     "views": [
+      "random_50pct",
+      "random_65pct",
+      "random_80pct",
+      "block_observed_50pct",
+      "line_sensors_50pct",
+      "horizontal_lines_50pct",
+      "vertical_lines_50pct",
+      "boundary_band_50pct",
+      "clustered_50pct"
+     ]
+    }
+   },
+   "status": "complete",
+   "task": "recovery",
+   "training": {
+    "actual_epochs": 500,
+    "checkpoint_sha256": "463929123b38777bc7471159388f5a0e406c8388ecd2c199914813e18c5ca7bb",
+    "mask_seed": 20260804,
+    "mask_spec": "random_3pct(ratio=0.5) + random_3pct(ratio=0.65) + random_3pct(ratio=0.8) + block_missing(missing_fraction=0.49) + line_sensors(num_lines=76, orientation=both) + line_sensors(num_lines=64, orientation=horizontal) + line_sensors(num_lines=64, orientation=vertical) + boundary_sensors(width=19) + clustered_sensors(ratio=0.5)",
+    "optimizer_steps": 112500,
+    "planned_epochs": 500,
+    "protocol": "pdeobs.fixed500-last-checkpoint/v7",
+    "stop_reason": "max_epochs_500",
+    "training_code": {
+     "overlay_manifest_sha256": "9c4b75d3a43a42005dca4c776b9ff86144eb3c9c5f1054853e58f5db44dc6ff0",
+     "protocol_adapter_sha256": "ebd4bc8e900fed7db84a6e259260da2e2b9ee2eebe233a7e2aabc1ed37f7dc35",
+     "repository_commit": "<COMMIT-1>",
+     "study_adapter_sha256": "ebd4bc8e900fed7db84a6e259260da2e2b9ee2eebe233a7e2aabc1ed37f7dc35"
+    }
+   }
+  },
+  "navier_stokes/ufno_2d/mixed_nine_views": {
+   "extra_views": {
+    "line_sensors-orientation-both-p30__random_3pct-p20": {
+     "horizons": [
+      {
+       "horizon": 1,
+       "rel_l2_mean": 0.06614117775659548,
+       "target_time_index": 1
+      },
+      {
+       "horizon": 2,
+       "rel_l2_mean": 0.06157552981325959,
+       "target_time_index": 2
+      },
+      {
+       "horizon": 3,
+       "rel_l2_mean": 0.059904339646715814,
+       "target_time_index": 3
+      }
+     ],
+     "legacy_abs_diff": 2.7755575615628914e-17,
+     "legacy_evaluator_rel_l2": 0.06269548662583478,
+     "mask_config": {
+      "protocol": "line_sensors(orientation=both) 30 + random_3pct 20"
+     },
+     "mix_rel_l2": 0.06269548662583475,
+     "predictions_sha256": "18d96b8b061d0e7ce50e802aec0135aed74e76ef2796a28c98af90ac939a9222",
+     "realized_observed_fraction": null,
+     "score_sha256": "6aeb0bc5851c4b949d70e3cf6f727b27af278a127e8f4f0eddd8f424ad0c36fb",
+     "spec": "line_sensors(orientation=both) 30 + random_3pct 20"
+    },
+    "random_3pct-p20": {
+     "horizons": [
+      {
+       "horizon": 1,
+       "rel_l2_mean": 0.08732468538510296,
+       "target_time_index": 1
+      },
+      {
+       "horizon": 2,
+       "rel_l2_mean": 0.08275154576857839,
+       "target_time_index": 2
+      },
+      {
+       "horizon": 3,
+       "rel_l2_mean": 0.08114104331012438,
+       "target_time_index": 3
+      }
+     ],
+     "legacy_abs_diff": 0.0,
+     "legacy_evaluator_rel_l2": 0.08389261787887124,
+     "mask_config": {
+      "protocol": "random_3pct",
+      "ratio": 0.2
+     },
+     "mix_rel_l2": 0.08389261787887124,
+     "predictions_sha256": "71b1c5d5b33db2e7ec8cb84facd743eca4fab7651b5a54caebd36c54815e589b",
+     "realized_observed_fraction": null,
+     "score_sha256": "3be8bfd30e59acda72a02e15bf3521899b27990b07a4ab08943202fefb5bc6f1",
+     "spec": "random_3pct 20"
+    },
+    "random_3pct-p35": {
+     "horizons": [
+      {
+       "horizon": 1,
+       "rel_l2_mean": 0.018223807659103915,
+       "target_time_index": 1
+      },
+      {
+       "horizon": 2,
+       "rel_l2_mean": 0.016659992943543946,
+       "target_time_index": 2
+      },
+      {
+       "horizon": 3,
+       "rel_l2_mean": 0.017086974396014466,
+       "target_time_index": 3
+      }
+     ],
+     "legacy_abs_diff": 6.938893903907228e-18,
+     "legacy_evaluator_rel_l2": 0.017360167840547402,
+     "mask_config": {
+      "protocol": "random_3pct",
+      "ratio": 0.35
+     },
+     "mix_rel_l2": 0.01736016784054741,
+     "predictions_sha256": "37b75c502eac23c1b70f6abb715af1ef1ceda0d3ae43122f9c22a22bb5be8e44",
+     "realized_observed_fraction": null,
+     "score_sha256": "e3f82ccf95c0234caeff4b31ceb1730733a69c7da0f9f36938cd0af3a0fd13a8",
+     "spec": "random_3pct 35"
+    }
+   },
+   "inference": {
+    "adapter": "pdeobs-archived-prediction-verification-v1",
+    "code": {
+     "driver_sha256": "281e1d347058ae780f98a3e888bf38cf32ac0abf31f196d57d00722b8465052c",
+     "files": {
+      "driver/mix_strict_inference.py": "281e1d347058ae780f98a3e888bf38cf32ac0abf31f196d57d00722b8465052c",
+      "inputs/dataset_bindings.json": "7eed0fa6641e26048cf5960ba7c4e9b5df4be605b78fab24785cec0ca6348fe5",
+      "source/configs/campaign/all_pde_one_setting_10method_9x9.yaml": "4ed7e7de03557c1b95a6b544cc1e7c292b575130b427a8e4fdc34a4e87f48966",
+      "source/src/pdeobs/__init__.py": "6bb908ccc71cf3c19722c83371a64acb05e0d7ec7546968d56fed7a11f16215f",
+      "source/src/pdeobs/__main__.py": "8b0eb839b58ac5f56db61c3f78b2ecfdb9573c0d90136cda1fd1a7f4f371da88",
+      "source/src/pdeobs/aggregate.py": "049a19c55376ec5eb85ac31616be1fd957d16aeb2f6a760af1f02b844ca26b0c",
+      "source/src/pdeobs/api/__init__.py": "b1ca501eb6cae7cb20d246e60e1cd9f766430d958171b5c202d8dcbf4318fddc",
+      "source/src/pdeobs/api/artifacts.py": "79d5e148523cb20fcda65487df2c2b8016ae7bc1357f6559c59b505eb48fd2c2",
+      "source/src/pdeobs/api/cli.py": "0e62a971c3014d8d7c4020decac906c1542db734170af36916728e9b8d193326",
+      "source/src/pdeobs/api/data.py": "9c343ebba773cb2ffd1819e7ad08732f8762ed32f471278acdb8637d2916e62b",
+      "source/src/pdeobs/api/evaluate.py": "5ab05d256472a1a7712e57c399446ae81447f65a34bf282d9e9bd7fc7599b028",
+      "source/src/pdeobs/api/infer.py": "8dcdcf69af0ef4bbd35c03dc64aaf8c27c9fc7bfff1abddb906eccc3dcdb63a5",
+      "source/src/pdeobs/api/models.py": "3014817742608a4c64ea836f10427f8b34c1f5ca1c112f1eb6520326886a4184",
+      "source/src/pdeobs/api/observation.py": "22db37a9747b3020406f7da632a2dadfb09f4af36f97b383924a41b242caac9e",
+      "source/src/pdeobs/api/pipeline.py": "033774397cafbd081f2789752933bd6b2c8c6c86928c8189e30ce7e4195ba146",
+      "source/src/pdeobs/api/specs.py": "631ce78a117aecccc5d8eb5e5f86dda557476e14d42c138f9b041387a5e09541",
+      "source/src/pdeobs/api/train.py": "09967a3f8e48ad7a082d7ce9520a53551b3dc9858ad185ea6425f6f7a48fd193",
+      "source/src/pdeobs/archived_verification.py": "8d0e38183159bf91ae73425719572664e044e0a174bb28ef1fb8933b43162d80",
+      "source/src/pdeobs/campaign.py": "5c56e1bfb1386ce4499c7ca0e9be386b8591d45873f8c0f835fb840e8cf1f049",
+      "source/src/pdeobs/cli.py": "d772ecb99a2461d71501ddfeb76dce0da8c2ddad7ff8fa7a38e137be811bf2fd",
+      "source/src/pdeobs/config.py": "5ad2e9a58a62c995ac43daa0b38631679d9f8304a08a08adec36882449122669",
+      "source/src/pdeobs/coverage.py": "70ed5aa5744c4812bc9660ae2bcc4480b8a0da878504c916d6c964178cd13c16",
+      "source/src/pdeobs/dataset.py": "2bdae0ae7977a19a980831318bacecb923ddc91da0fe1c4ba9d790693ebd88ed",
+      "source/src/pdeobs/difficulty.py": "2653b2c4ec6b88a99bcde654aa62894509f99c69e29ff7961c9c35f874ef2461",
+      "source/src/pdeobs/doctor.py": "bd4e85a555e038a6bd794fadb4b9512129a025e8ea4a147e2307f2a820d94c43",
+      "source/src/pdeobs/download.py": "4a94d571f284d7f55317eb0b23184f35594ebf5fd698fed660fed7f7cf8d5eed",
+      "source/src/pdeobs/evaluation.py": "93a6d2ae0ad52a937e6db86d28f0b4419c2b6abae4e0832c6f2add9055c4a77a",
+      "source/src/pdeobs/evidence.py": "b7b43267bb309d1e73a6849ea2dd5bef48f8172487db2bd6f65420be5bd69bac",
+      "source/src/pdeobs/full_to_partial.py": "fe371c5d1297cc36380a49033fe7f7007956ad3f072b20d385868dbb5ef84ee1",
+      "source/src/pdeobs/full_to_partial_execution.py": "64b3b2d1aa87e33b68becc61d36c9fb6bd86489992dd78824fcf73ac828dad1f",
+      "source/src/pdeobs/generation.py": "be64a5b5331fc6cdea8548a0c8c5191fbfd43cff092059df13028b74ea72ec29",
+      "source/src/pdeobs/mask_specs.py": "5b32812b8c542fd2a32c5eca3b65fe804f96a019a69105445b5a404c850dd46b",
+      "source/src/pdeobs/masks.py": "a05083c0e0cc63d2b5c3d918e6a93c365c5237f88577e0dac6e9866af32cef00",
+      "source/src/pdeobs/methods/__init__.py": "97dc55614b125665d8a4ccc622d482d8b6b73ea4ce91d759b61dd52d7c6aa8c9",
+      "source/src/pdeobs/methods/base.py": "6c73f8aae9920303c5aa273ab5b3e187c028f6773c327c258fcc765835332cd8",
+      "source/src/pdeobs/methods/interpolation.py": "d1e00c43498179563c5391f584a69ed0e0d4a4ed65b29b87be901e1054fbc3a2",
+      "source/src/pdeobs/methods/neural.py": "424e3d056e10eea0662c4593046f5c366b43954f0b8f5e304446d4eb508df3d1",
+      "source/src/pdeobs/methods/operator_networks.py": "b2f556c73a5f3bc676c13add2963cb06f3b4b4ffc4d6ba4cbc458083f1896fc0",
+      "source/src/pdeobs/methods/paper_official.py": "64d4bfb2ca745f16627473ac201e7588a655b506aaadfdffe5ab107306b0bd17",
+      "source/src/pdeobs/methods/reduced_order.py": "5358f659845ca8a108dc61df75f02ca3c6faecf2f8372340338a19ec4c41fabb",
+      "source/src/pdeobs/metrics.py": "0788c520a70acfa7c422856c2d2acef7fb3fc96c1b99755c4be20929e6f1bf36",
+      "source/src/pdeobs/migration.py": "ae49c403777d4e5221eae3e90f6530be0721122c990fb4fee411332e523e8619",
+      "source/src/pdeobs/one_setting.py": "f1eed0bed85e0c91c8a18b694ec9022f3e2c0dc5d5fb165f9e9d37f2030653e7",
+      "source/src/pdeobs/paper_row.py": "1ca84008d504d933c044ad2510fefd3a2281532278ef44ec988d0b745b651316",
+      "source/src/pdeobs/pdes/__init__.py": "512de65acb6ddc124e1332023135df06d4ab70e95da0ca3266296f74923549f9",
+      "source/src/pdeobs/pdes/burgers.py": "f52af6c535552e9ce1863d431436cfc72c803e54069ca3395e203ad194a75b4f",
+      "source/src/pdeobs/pdes/common.py": "f0e3884c664d28fc42fc09489e6d36a7d0c0f5fe0188c3e6d4b20c283e051cc6",
+      "source/src/pdeobs/pdes/darcy.py": "66a470be2a3b0dbe0e9fb8ea43467e83b09477e7db0ba2535e10763b3b049a6c",
+      "source/src/pdeobs/pdes/heat.py": "0a661958733f2886e4877512bd5d90d2bb39eaf9dc36b6e259699ce28e03a204",
+      "source/src/pdeobs/pdes/helmholtz.py": "47f5d17b0c6cf9d52a01e9ed41c97b83d75d767df54a1fe3eaeb621ca5699f66",
+      "source/src/pdeobs/pdes/navier_stokes.py": "f6feb2bf52063882fb7c7b60f21f6e40a75b1ee034ef47139b00861a100d18ae",
+      "source/src/pdeobs/pdes/numerics.py": "4f8ac1f8fd067a56b5025bb46d74ad015a87d5c3d0f892b26cb73127f53d438a",
+      "source/src/pdeobs/pdes/poisson.py": "45e0798bfcc7d624d609e40db0ed4eac4916c549277143a3b66182892d77b7c5",
+      "source/src/pdeobs/pdes/reaction_diffusion.py": "ec97fa7e8b0da2d6218f3911e194ed8383330cba4fed200e2c980a8b09ef954b",
+      "source/src/pdeobs/physical_inputs.py": "a68766b07f65e71c80293eddc39ce13383e646d310ffa9f34a451bb6d62a6798",
+      "source/src/pdeobs/pino.py": "a4484938487454d9cd9d4bf7d946e676db099a893df8f5924540dc4d2f703710",
+      "source/src/pdeobs/presets.py": "101d61bd47d35b56e5931f8f6b73f446bab5c7c4e63cc1a16b3d4691caf38d5f",
+      "source/src/pdeobs/protocol.py": "11ad2b99c709d3eacb17caf0778132b5c0b8226a74669d7b4274068352ae18fc",
+      "source/src/pdeobs/provenance.py": "c235d689eaa47f917ece55271bcca8d067f9842114d0ef464314ed84a8d3dc2b",
+      "source/src/pdeobs/quality.py": "93fe1c126ed852d40fb1c049f1610013244f693c3372c635c56ce35149fbe3e7",
+      "source/src/pdeobs/registry.py": "3fd783ea436c693678378ad7b83de9535b6c41b499ccc3e6f670dd786d031d7e",
+      "source/src/pdeobs/release_demo.py": "1a4a6bec2995fcf1d20ce52ce6efb93a1ae73a3ab7ffc97da7b775b1c0ef76c8",
+      "source/src/pdeobs/reports.py": "b92653bdebf84cd32b1fc11f91d160e6e1a0bdf12f5a439908872cd42e8f4c25",
+      "source/src/pdeobs/retrieval.py": "d72f9f6efd58f96041dacb3b7e81111b121da148a637a23d97efb9b0b9ec80b0",
+      "source/src/pdeobs/routing.py": "40bb2b9c4536ee58a3b3c4894675d8376fcdea732dcf8f45c4a70d41797dd848",
+      "source/src/pdeobs/runner.py": "06039f0654fcdb7bff9768adb20e7f92052111b7c64645d9dea88512fe00ad60",
+      "source/src/pdeobs/schema.py": "fae274baad440e329a01dcfb19ce1ca4ba6010d8a7ff2cb05e1bb2aeded00b64",
+      "source/src/pdeobs/settings.py": "8e16e11c9cc79d03905e6624ea79b6427b717763882344a8ba7aef08dcd4f235",
+      "source/src/pdeobs/splits.py": "4e9e6da1b78de2bff726192fb47e8853b62213024d555e50bea0342bfdf39452",
+      "source/src/pdeobs/storage.py": "f05f6c50446aac122e5bb0d351c0f29d7b4e96079b42b0c4f1d762226dd0c127",
+      "source/src/pdeobs/strict_inference.py": "cdd23f450b9953e0ab8f32c6863e5eb8d8aed39018048a78c8626527fd776750",
+      "source/src/pdeobs/strict_score.py": "d4613f8517a0686242cf244f88d55bb36ca8672c78b2fb4401ce41a53260fc0c",
+      "source/src/pdeobs/training.py": "48d421a1729852261b0992db5cbaab764926b862d77e61a8f6bfe249e9a3400d"
+     },
+     "note": "anon repository HEAD source; the driver file is tracked in the same commit only after the launch commit",
+     "repository_commit": "<COMMIT-7>",
+     "schema": "pdeobs-revision-inference-source/v1"
+    },
+    "device": "NVIDIA Tesla V100S-PCIE-32GB",
+    "driver": "pdeobs-mixed-strict-inference/20260926-v1",
+    "row_completion_sha256": "5b6f3a86b00417552b1409b23a3813fc11fafe2eca49652f36c61d667f0a03af",
+    "torch": "2.2.0",
+    "weights": {
+     "checkpoint_original_sha256": "be05345dec760c5a252e8b185710135c67b713c309a5ef237d8bde146fdef084",
+     "loaded_from": "<study-root>/benchmark-runs/_study-mixed-pattern/mixed-nine-views-20260925/navier_stokes/ufno_2d/mixed_nine_views/checkpoints/last.pt",
+     "state_repair": null
+    }
+   },
+   "legacy_evaluator_audit": {
+    "all_within_tolerance": true,
+    "max_abs_diff": 2.7755575615628914e-17,
+    "n": 9,
+    "note": "legacy evaluator scalars are an audit column, never a numerator"
+   },
+   "method": "ufno_2d",
+   "pde": "navier_stokes",
+   "per_view": {
+    "block_observed_50pct": {
+     "legacy_evaluator_rel_l2": 0.08073317230181473,
+     "legacy_within_tolerance": true,
+     "mix_rel_l2": 0.08073317230181473,
+     "ratio_mix_over_specialist": 1.486340401571558,
+     "specialist_actual_epochs": 500,
+     "specialist_cohort": "original500_recovered",
+     "specialist_rel_l2": 0.05431674481596061,
+     "transfer_max": 0.553385072883555,
+     "transfer_median": 0.36808665100844074,
+     "transfer_min": 0.1358784207593384
+    },
+    "boundary_band_50pct": {
+     "legacy_evaluator_rel_l2": 0.0655569238546389,
+     "legacy_within_tolerance": true,
+     "mix_rel_l2": 0.06555692385463888,
+     "ratio_mix_over_specialist": 2.47460682343559,
+     "specialist_actual_epochs": 500,
+     "specialist_cohort": "original500",
+     "specialist_rel_l2": 0.026491854477158405,
+     "transfer_max": 0.5486542051785341,
+     "transfer_median": 0.3596660240305363,
+     "transfer_min": 0.04708339277743368
+    },
+    "clustered_50pct": {
+     "legacy_evaluator_rel_l2": 0.11078421772181038,
+     "legacy_within_tolerance": true,
+     "mix_rel_l2": 0.1107842177218104,
+     "ratio_mix_over_specialist": 1.2215024290281258,
+     "specialist_actual_epochs": 500,
+     "specialist_cohort": "original500_recovered",
+     "specialist_rel_l2": 0.09069504496192822,
+     "transfer_max": 0.4867119409646743,
+     "transfer_median": 0.3874086028597619,
+     "transfer_min": 0.2323717116913057
+    },
+    "horizontal_lines_50pct": {
+     "legacy_evaluator_rel_l2": 0.011090116510982757,
+     "legacy_within_tolerance": true,
+     "mix_rel_l2": 0.011090116510982755,
+     "ratio_mix_over_specialist": 1.1232314301160269,
+     "specialist_actual_epochs": 500,
+     "specialist_cohort": "original500_recovered",
+     "specialist_rel_l2": 0.009873402945853442,
+     "transfer_max": 0.3594263717339614,
+     "transfer_median": 0.07223468310872672,
+     "transfer_min": 0.012929566036841835
+    },
+    "line_sensors_50pct": {
+     "legacy_evaluator_rel_l2": 0.010433186636376142,
+     "legacy_within_tolerance": true,
+     "mix_rel_l2": 0.010433186636376149,
+     "ratio_mix_over_specialist": 0.9599111857265418,
+     "specialist_actual_epochs": 500,
+     "specialist_cohort": "original500_recovered",
+     "specialist_rel_l2": 0.010868908281842171,
+     "transfer_max": 0.3620445832288634,
+     "transfer_median": 0.057901793999904055,
+     "transfer_min": 0.029471473270829388
+    },
+    "random_50pct": {
+     "legacy_evaluator_rel_l2": 0.008298488100257753,
+     "legacy_within_tolerance": true,
+     "mix_rel_l2": 0.008298488100257746,
+     "ratio_mix_over_specialist": 0.6254568963393273,
+     "specialist_actual_epochs": 500,
+     "specialist_cohort": "original500_recovered",
+     "specialist_rel_l2": 0.013267881685895731,
+     "transfer_max": 0.2971092100727899,
+     "transfer_median": 0.042040337991767304,
+     "transfer_min": 0.011833391258910333
+    },
+    "random_65pct": {
+     "legacy_evaluator_rel_l2": 0.008094245730801084,
+     "legacy_within_tolerance": true,
+     "mix_rel_l2": 0.008094245730801086,
+     "ratio_mix_over_specialist": 1.269279948980819,
+     "specialist_actual_epochs": 500,
+     "specialist_cohort": "original500_recovered",
+     "specialist_rel_l2": 0.006377037419759479,
+     "transfer_max": 0.09493742050449669,
+     "transfer_median": 0.034225773515484545,
+     "transfer_min": 0.009177162312438758
+    },
+    "random_80pct": {
+     "legacy_evaluator_rel_l2": 0.008205769206791405,
+     "legacy_within_tolerance": true,
+     "mix_rel_l2": 0.008205769206791407,
+     "ratio_mix_over_specialist": 1.228637102957046,
+     "specialist_actual_epochs": 500,
+     "specialist_cohort": "original500_recovered",
+     "specialist_rel_l2": 0.006678757451685297,
+     "transfer_max": 0.04760630912414381,
+     "transfer_median": 0.02541504206106152,
+     "transfer_min": 0.006592694563268605
+    },
+    "vertical_lines_50pct": {
+     "legacy_evaluator_rel_l2": 0.011184421075432584,
+     "legacy_within_tolerance": true,
+     "mix_rel_l2": 0.011184421075432582,
+     "ratio_mix_over_specialist": 0.984994109692609,
+     "specialist_actual_epochs": 500,
+     "specialist_cohort": "original500_recovered",
+     "specialist_rel_l2": 0.011354810110410658,
+     "transfer_max": 0.41670980350684234,
+     "transfer_median": 0.06756384754968418,
+     "transfer_min": 0.012250112697021814
+    }
+   },
+   "populations": {
+    "all_nine_descriptive": {
+     "descriptive_transfer_median_over_views": 0.06756384754968418,
+     "geomean_ratio": 1.1863244066156058,
+     "mean_mix": 0.03493117123765619,
+     "mean_specialist": 0.02554716023894378,
+     "n": 9,
+     "n_mix_below_transfer_median": 9,
+     "n_mix_below_transfer_min": 7,
+     "n_ratio_below_one": 3,
+     "population": "all_nine_descriptive",
+     "ratio_max": 2.47460682343559,
+     "ratio_max_view": "boundary_band_50pct",
+     "ratio_min": 0.6254568963393273,
+     "ratio_min_view": "random_50pct",
+     "reason": "as above; descriptive comparison, not uniformly budget matched (forecasting task, joint three-frame error)",
+     "specialist_actual_epochs": [
+      500
+     ],
+     "specialist_cohorts": [
+      "original500",
+      "original500_recovered"
+     ],
+     "subject_to": null,
+     "views": [
+      "random_50pct",
+      "random_65pct",
+      "random_80pct",
+      "block_observed_50pct",
+      "line_sensors_50pct",
+      "horizontal_lines_50pct",
+      "vertical_lines_50pct",
+      "boundary_band_50pct",
+      "clustered_50pct"
+     ]
+    }
+   },
+   "status": "complete",
+   "task": "rollout",
+   "training": {
+    "actual_epochs": 500,
+    "checkpoint_sha256": "be05345dec760c5a252e8b185710135c67b713c309a5ef237d8bde146fdef084",
+    "mask_seed": 20260804,
+    "mask_spec": "random_3pct(ratio=0.5) + random_3pct(ratio=0.65) + random_3pct(ratio=0.8) + block_missing(missing_fraction=0.49) + line_sensors(num_lines=76, orientation=both) + line_sensors(num_lines=64, orientation=horizontal) + line_sensors(num_lines=64, orientation=vertical) + boundary_sensors(width=19) + clustered_sensors(ratio=0.5)",
+    "optimizer_steps": 225000,
+    "planned_epochs": 500,
+    "protocol": "pdeobs.fixed500-last-checkpoint/v7",
+    "stop_reason": "max_epochs_500",
+    "training_code": {
+     "overlay_manifest_sha256": "9c4b75d3a43a42005dca4c776b9ff86144eb3c9c5f1054853e58f5db44dc6ff0",
+     "protocol_adapter_sha256": "ebd4bc8e900fed7db84a6e259260da2e2b9ee2eebe233a7e2aabc1ed37f7dc35",
+     "repository_commit": "<COMMIT-1>",
+     "study_adapter_sha256": "ebd4bc8e900fed7db84a6e259260da2e2b9ee2eebe233a7e2aabc1ed37f7dc35"
+    }
+   }
+  },
+  "poisson/ufno_2d/mixed_nine_views": {
+   "extra_views": {
+    "line_sensors-orientation-both-p30__random_3pct-p20": {
+     "horizons": null,
+     "legacy_abs_diff": 2.0682265622351537e-10,
+     "legacy_evaluator_rel_l2": 0.12486780617074066,
+     "mask_config": {
+      "protocol": "line_sensors(orientation=both) 30 + random_3pct 20"
+     },
+     "mix_rel_l2": 0.124867805963918,
+     "predictions_sha256": "6d54c8745bcb65ea31d7de63df5ca54a4d0dc537ff74a49e31708576cf708624",
+     "realized_observed_fraction": null,
+     "score_sha256": "c7e04e9d6b58338cad591f4ed1eaeb6b2fe742b96f6f648ca0abf61c40c2360c",
+     "spec": "line_sensors(orientation=both) 30 + random_3pct 20"
+    },
+    "random_3pct-p20": {
+     "horizons": null,
+     "legacy_abs_diff": 4.2310119297006565e-10,
+     "legacy_evaluator_rel_l2": 0.152959730272075,
+     "mask_config": {
+      "protocol": "random_3pct",
+      "ratio": 0.2
+     },
+     "mix_rel_l2": 0.1529597298489738,
+     "predictions_sha256": "7be9987703d88fde69a9df0542e10589b7a9cbc2c59a2ba030ef65d64d04a855",
+     "realized_observed_fraction": null,
+     "score_sha256": "58ca939d81941f37a74be9fee57ab45034208d6ee941327f56391b3e38d70598",
+     "spec": "random_3pct 20"
+    },
+    "random_3pct-p35": {
+     "horizons": null,
+     "legacy_abs_diff": 2.6632761968015117e-10,
+     "legacy_evaluator_rel_l2": 0.04465601791075557,
+     "mask_config": {
+      "protocol": "random_3pct",
+      "ratio": 0.35
+     },
+     "mix_rel_l2": 0.04465601764442795,
+     "predictions_sha256": "cb61c2b69f2bbbba97ba3a3117843570a7592b1f055c0ec0ec478f47be7a0048",
+     "realized_observed_fraction": null,
+     "score_sha256": "2ae008ba238087f46844b64a74facfbb19a05a48930499d68e44c49c36d108b4",
+     "spec": "random_3pct 35"
+    }
+   },
+   "inference": {
+    "adapter": "pdeobs-archived-prediction-verification-v1",
+    "code": {
+     "driver_sha256": "281e1d347058ae780f98a3e888bf38cf32ac0abf31f196d57d00722b8465052c",
+     "files": {
+      "driver/mix_strict_inference.py": "281e1d347058ae780f98a3e888bf38cf32ac0abf31f196d57d00722b8465052c",
+      "inputs/dataset_bindings.json": "7eed0fa6641e26048cf5960ba7c4e9b5df4be605b78fab24785cec0ca6348fe5",
+      "source/configs/campaign/all_pde_one_setting_10method_9x9.yaml": "4ed7e7de03557c1b95a6b544cc1e7c292b575130b427a8e4fdc34a4e87f48966",
+      "source/src/pdeobs/__init__.py": "6bb908ccc71cf3c19722c83371a64acb05e0d7ec7546968d56fed7a11f16215f",
+      "source/src/pdeobs/__main__.py": "8b0eb839b58ac5f56db61c3f78b2ecfdb9573c0d90136cda1fd1a7f4f371da88",
+      "source/src/pdeobs/aggregate.py": "049a19c55376ec5eb85ac31616be1fd957d16aeb2f6a760af1f02b844ca26b0c",
+      "source/src/pdeobs/api/__init__.py": "b1ca501eb6cae7cb20d246e60e1cd9f766430d958171b5c202d8dcbf4318fddc",
+      "source/src/pdeobs/api/artifacts.py": "79d5e148523cb20fcda65487df2c2b8016ae7bc1357f6559c59b505eb48fd2c2",
+      "source/src/pdeobs/api/cli.py": "0e62a971c3014d8d7c4020decac906c1542db734170af36916728e9b8d193326",
+      "source/src/pdeobs/api/data.py": "9c343ebba773cb2ffd1819e7ad08732f8762ed32f471278acdb8637d2916e62b",
+      "source/src/pdeobs/api/evaluate.py": "5ab05d256472a1a7712e57c399446ae81447f65a34bf282d9e9bd7fc7599b028",
+      "source/src/pdeobs/api/infer.py": "8dcdcf69af0ef4bbd35c03dc64aaf8c27c9fc7bfff1abddb906eccc3dcdb63a5",
+      "source/src/pdeobs/api/models.py": "3014817742608a4c64ea836f10427f8b34c1f5ca1c112f1eb6520326886a4184",
+      "source/src/pdeobs/api/observation.py": "22db37a9747b3020406f7da632a2dadfb09f4af36f97b383924a41b242caac9e",
+      "source/src/pdeobs/api/pipeline.py": "033774397cafbd081f2789752933bd6b2c8c6c86928c8189e30ce7e4195ba146",
+      "source/src/pdeobs/api/specs.py": "631ce78a117aecccc5d8eb5e5f86dda557476e14d42c138f9b041387a5e09541",
+      "source/src/pdeobs/api/train.py": "09967a3f8e48ad7a082d7ce9520a53551b3dc9858ad185ea6425f6f7a48fd193",
+      "source/src/pdeobs/archived_verification.py": "8d0e38183159bf91ae73425719572664e044e0a174bb28ef1fb8933b43162d80",
+      "source/src/pdeobs/campaign.py": "5c56e1bfb1386ce4499c7ca0e9be386b8591d45873f8c0f835fb840e8cf1f049",
+      "source/src/pdeobs/cli.py": "d772ecb99a2461d71501ddfeb76dce0da8c2ddad7ff8fa7a38e137be811bf2fd",
+      "source/src/pdeobs/config.py": "5ad2e9a58a62c995ac43daa0b38631679d9f8304a08a08adec36882449122669",
+      "source/src/pdeobs/coverage.py": "70ed5aa5744c4812bc9660ae2bcc4480b8a0da878504c916d6c964178cd13c16",
+      "source/src/pdeobs/dataset.py": "2bdae0ae7977a19a980831318bacecb923ddc91da0fe1c4ba9d790693ebd88ed",
+      "source/src/pdeobs/difficulty.py": "2653b2c4ec6b88a99bcde654aa62894509f99c69e29ff7961c9c35f874ef2461",
+      "source/src/pdeobs/doctor.py": "bd4e85a555e038a6bd794fadb4b9512129a025e8ea4a147e2307f2a820d94c43",
+      "source/src/pdeobs/download.py": "4a94d571f284d7f55317eb0b23184f35594ebf5fd698fed660fed7f7cf8d5eed",
+      "source/src/pdeobs/evaluation.py": "93a6d2ae0ad52a937e6db86d28f0b4419c2b6abae4e0832c6f2add9055c4a77a",
+      "source/src/pdeobs/evidence.py": "b7b43267bb309d1e73a6849ea2dd5bef48f8172487db2bd6f65420be5bd69bac",
+      "source/src/pdeobs/full_to_partial.py": "fe371c5d1297cc36380a49033fe7f7007956ad3f072b20d385868dbb5ef84ee1",
+      "source/src/pdeobs/full_to_partial_execution.py": "64b3b2d1aa87e33b68becc61d36c9fb6bd86489992dd78824fcf73ac828dad1f",
+      "source/src/pdeobs/generation.py": "be64a5b5331fc6cdea8548a0c8c5191fbfd43cff092059df13028b74ea72ec29",
+      "source/src/pdeobs/mask_specs.py": "5b32812b8c542fd2a32c5eca3b65fe804f96a019a69105445b5a404c850dd46b",
+      "source/src/pdeobs/masks.py": "a05083c0e0cc63d2b5c3d918e6a93c365c5237f88577e0dac6e9866af32cef00",
+      "source/src/pdeobs/methods/__init__.py": "97dc55614b125665d8a4ccc622d482d8b6b73ea4ce91d759b61dd52d7c6aa8c9",
+      "source/src/pdeobs/methods/base.py": "6c73f8aae9920303c5aa273ab5b3e187c028f6773c327c258fcc765835332cd8",
+      "source/src/pdeobs/methods/interpolation.py": "d1e00c43498179563c5391f584a69ed0e0d4a4ed65b29b87be901e1054fbc3a2",
+      "source/src/pdeobs/methods/neural.py": "424e3d056e10eea0662c4593046f5c366b43954f0b8f5e304446d4eb508df3d1",
+      "source/src/pdeobs/methods/operator_networks.py": "b2f556c73a5f3bc676c13add2963cb06f3b4b4ffc4d6ba4cbc458083f1896fc0",
+      "source/src/pdeobs/methods/paper_official.py": "64d4bfb2ca745f16627473ac201e7588a655b506aaadfdffe5ab107306b0bd17",
+      "source/src/pdeobs/methods/reduced_order.py": "5358f659845ca8a108dc61df75f02ca3c6faecf2f8372340338a19ec4c41fabb",
+      "source/src/pdeobs/metrics.py": "0788c520a70acfa7c422856c2d2acef7fb3fc96c1b99755c4be20929e6f1bf36",
+      "source/src/pdeobs/migration.py": "ae49c403777d4e5221eae3e90f6530be0721122c990fb4fee411332e523e8619",
+      "source/src/pdeobs/one_setting.py": "f1eed0bed85e0c91c8a18b694ec9022f3e2c0dc5d5fb165f9e9d37f2030653e7",
+      "source/src/pdeobs/paper_row.py": "1ca84008d504d933c044ad2510fefd3a2281532278ef44ec988d0b745b651316",
+      "source/src/pdeobs/pdes/__init__.py": "512de65acb6ddc124e1332023135df06d4ab70e95da0ca3266296f74923549f9",
+      "source/src/pdeobs/pdes/burgers.py": "f52af6c535552e9ce1863d431436cfc72c803e54069ca3395e203ad194a75b4f",
+      "source/src/pdeobs/pdes/common.py": "f0e3884c664d28fc42fc09489e6d36a7d0c0f5fe0188c3e6d4b20c283e051cc6",
+      "source/src/pdeobs/pdes/darcy.py": "66a470be2a3b0dbe0e9fb8ea43467e83b09477e7db0ba2535e10763b3b049a6c",
+      "source/src/pdeobs/pdes/heat.py": "0a661958733f2886e4877512bd5d90d2bb39eaf9dc36b6e259699ce28e03a204",
+      "source/src/pdeobs/pdes/helmholtz.py": "47f5d17b0c6cf9d52a01e9ed41c97b83d75d767df54a1fe3eaeb621ca5699f66",
+      "source/src/pdeobs/pdes/navier_stokes.py": "f6feb2bf52063882fb7c7b60f21f6e40a75b1ee034ef47139b00861a100d18ae",
+      "source/src/pdeobs/pdes/numerics.py": "4f8ac1f8fd067a56b5025bb46d74ad015a87d5c3d0f892b26cb73127f53d438a",
+      "source/src/pdeobs/pdes/poisson.py": "45e0798bfcc7d624d609e40db0ed4eac4916c549277143a3b66182892d77b7c5",
+      "source/src/pdeobs/pdes/reaction_diffusion.py": "ec97fa7e8b0da2d6218f3911e194ed8383330cba4fed200e2c980a8b09ef954b",
+      "source/src/pdeobs/physical_inputs.py": "a68766b07f65e71c80293eddc39ce13383e646d310ffa9f34a451bb6d62a6798",
+      "source/src/pdeobs/pino.py": "a4484938487454d9cd9d4bf7d946e676db099a893df8f5924540dc4d2f703710",
+      "source/src/pdeobs/presets.py": "101d61bd47d35b56e5931f8f6b73f446bab5c7c4e63cc1a16b3d4691caf38d5f",
+      "source/src/pdeobs/protocol.py": "11ad2b99c709d3eacb17caf0778132b5c0b8226a74669d7b4274068352ae18fc",
+      "source/src/pdeobs/provenance.py": "c235d689eaa47f917ece55271bcca8d067f9842114d0ef464314ed84a8d3dc2b",
+      "source/src/pdeobs/quality.py": "93fe1c126ed852d40fb1c049f1610013244f693c3372c635c56ce35149fbe3e7",
+      "source/src/pdeobs/registry.py": "3fd783ea436c693678378ad7b83de9535b6c41b499ccc3e6f670dd786d031d7e",
+      "source/src/pdeobs/release_demo.py": "1a4a6bec2995fcf1d20ce52ce6efb93a1ae73a3ab7ffc97da7b775b1c0ef76c8",
+      "source/src/pdeobs/reports.py": "b92653bdebf84cd32b1fc11f91d160e6e1a0bdf12f5a439908872cd42e8f4c25",
+      "source/src/pdeobs/retrieval.py": "d72f9f6efd58f96041dacb3b7e81111b121da148a637a23d97efb9b0b9ec80b0",
+      "source/src/pdeobs/routing.py": "40bb2b9c4536ee58a3b3c4894675d8376fcdea732dcf8f45c4a70d41797dd848",
+      "source/src/pdeobs/runner.py": "06039f0654fcdb7bff9768adb20e7f92052111b7c64645d9dea88512fe00ad60",
+      "source/src/pdeobs/schema.py": "fae274baad440e329a01dcfb19ce1ca4ba6010d8a7ff2cb05e1bb2aeded00b64",
+      "source/src/pdeobs/settings.py": "8e16e11c9cc79d03905e6624ea79b6427b717763882344a8ba7aef08dcd4f235",
+      "source/src/pdeobs/splits.py": "4e9e6da1b78de2bff726192fb47e8853b62213024d555e50bea0342bfdf39452",
+      "source/src/pdeobs/storage.py": "f05f6c50446aac122e5bb0d351c0f29d7b4e96079b42b0c4f1d762226dd0c127",
+      "source/src/pdeobs/strict_inference.py": "cdd23f450b9953e0ab8f32c6863e5eb8d8aed39018048a78c8626527fd776750",
+      "source/src/pdeobs/strict_score.py": "d4613f8517a0686242cf244f88d55bb36ca8672c78b2fb4401ce41a53260fc0c",
+      "source/src/pdeobs/training.py": "48d421a1729852261b0992db5cbaab764926b862d77e61a8f6bfe249e9a3400d"
+     },
+     "note": "anon repository HEAD source; the driver file is tracked in the same commit only after the launch commit",
+     "repository_commit": "<COMMIT-6>",
+     "schema": "pdeobs-revision-inference-source/v1"
+    },
+    "device": "NVIDIA Tesla V100S-PCIE-32GB",
+    "driver": "pdeobs-mixed-strict-inference/20260926-v1",
+    "row_completion_sha256": "b8433db040ce8bdb7aaa9f5988eca71c9c4ba7faedae0d2ec1f5f64823d1c86d",
+    "torch": "2.2.0",
+    "weights": {
+     "checkpoint_original_sha256": "3a6658ddd58ceb8833b6143c3a5b3b0085667f650f680d2e0207c1c385754a6b",
+     "loaded_from": "<study-root>/benchmark-runs/_study-mixed-pattern/mixed-nine-views-20260925/poisson/ufno_2d/mixed_nine_views/checkpoints/last.pt",
+     "state_repair": null
+    }
+   },
+   "legacy_evaluator_audit": {
+    "all_within_tolerance": true,
+    "max_abs_diff": 1.5844520695473818e-09,
+    "n": 9,
+    "note": "legacy evaluator scalars are an audit column, never a numerator"
+   },
+   "method": "ufno_2d",
+   "pde": "poisson",
+   "per_view": {
+    "block_observed_50pct": {
+     "legacy_evaluator_rel_l2": 0.23642955299971724,
+     "legacy_within_tolerance": true,
+     "mix_rel_l2": 0.23642955141526517,
+     "ratio_mix_over_specialist": 3.486839934271146,
+     "specialist_actual_epochs": 200,
+     "specialist_cohort": "budget200_min120",
+     "specialist_rel_l2": 0.06780625318973411,
+     "transfer_max": 3.9749760455842487,
+     "transfer_median": 1.0080823135001813,
+     "transfer_min": 0.382878869990447
+    },
+    "boundary_band_50pct": {
+     "legacy_evaluator_rel_l2": 0.14307700565062834,
+     "legacy_within_tolerance": true,
+     "mix_rel_l2": 0.1430770058141771,
+     "ratio_mix_over_specialist": 3.2396936420114906,
+     "specialist_actual_epochs": 200,
+     "specialist_cohort": "budget200_min120",
+     "specialist_rel_l2": 0.0441637455958157,
+     "transfer_max": 3.923860903884854,
+     "transfer_median": 0.9910192856367794,
+     "transfer_min": 0.047414496195833086
+    },
+    "clustered_50pct": {
+     "legacy_evaluator_rel_l2": 0.1335299765930307,
+     "legacy_within_tolerance": true,
+     "mix_rel_l2": 0.1335299772521815,
+     "ratio_mix_over_specialist": 2.5132210597403146,
+     "specialist_actual_epochs": 200,
+     "specialist_cohort": "budget200_min120",
+     "specialist_rel_l2": 0.05313101158955705,
+     "transfer_max": 3.2983920202724994,
+     "transfer_median": 0.8557400000510909,
+     "transfer_min": 0.3576182073809353
+    },
+    "horizontal_lines_50pct": {
+     "legacy_evaluator_rel_l2": 0.024852488129623512,
+     "legacy_within_tolerance": true,
+     "mix_rel_l2": 0.024852488123240462,
+     "ratio_mix_over_specialist": 0.30488578610434397,
+     "specialist_actual_epochs": 130,
+     "specialist_cohort": "budget200_min120",
+     "specialist_rel_l2": 0.081514092345174,
+     "transfer_max": 4.105933735394015,
+     "transfer_median": 0.3027809932964816,
+     "transfer_min": 0.06685123420676736
+    },
+    "line_sensors_50pct": {
+     "legacy_evaluator_rel_l2": 0.0217016631014158,
+     "legacy_within_tolerance": true,
+     "mix_rel_l2": 0.021701663130128494,
+     "ratio_mix_over_specialist": 0.13175548811294255,
+     "specialist_actual_epochs": 134,
+     "specialist_cohort": "budget200_min120",
+     "specialist_rel_l2": 0.1647116445845925,
+     "transfer_max": 3.825222290373274,
+     "transfer_median": 0.29067867198864117,
+     "transfer_min": 0.05311721584373743
+    },
+    "random_50pct": {
+     "legacy_evaluator_rel_l2": 0.01773977203947822,
+     "legacy_within_tolerance": true,
+     "mix_rel_l2": 0.017739771580556448,
+     "ratio_mix_over_specialist": 0.09657761923503765,
+     "specialist_actual_epochs": 130,
+     "specialist_cohort": "budget200_min120",
+     "specialist_rel_l2": 0.18368408458468802,
+     "transfer_max": 2.568748972306572,
+     "transfer_median": 0.32018358611757824,
+     "transfer_min": 0.06175241039816417
+    },
+    "random_65pct": {
+     "legacy_evaluator_rel_l2": 0.017861278772077927,
+     "legacy_within_tolerance": true,
+     "mix_rel_l2": 0.01786127865707127,
+     "ratio_mix_over_specialist": 0.052654689522636626,
+     "specialist_actual_epochs": 151,
+     "specialist_cohort": "budget200_min120",
+     "specialist_rel_l2": 0.33921534471098874,
+     "transfer_max": 2.430380764812898,
+     "transfer_median": 0.25772719420818413,
+     "transfer_min": 0.049373377359643304
+    },
+    "random_80pct": {
+     "legacy_evaluator_rel_l2": 0.020420094453003426,
+     "legacy_within_tolerance": true,
+     "mix_rel_l2": 0.0204200944935413,
+     "ratio_mix_over_specialist": 0.3687615978371336,
+     "specialist_actual_epochs": 163,
+     "specialist_cohort": "budget200_min120",
+     "specialist_rel_l2": 0.05537478580554365,
+     "transfer_max": 1.9696925698479537,
+     "transfer_median": 0.4475757554692054,
+     "transfer_min": 0.038755754008560225
+    },
+    "vertical_lines_50pct": {
+     "legacy_evaluator_rel_l2": 0.025581426112559695,
+     "legacy_within_tolerance": true,
+     "mix_rel_l2": 0.02558142617620508,
+     "ratio_mix_over_specialist": 0.4348395431758834,
+     "specialist_actual_epochs": 137,
+     "specialist_cohort": "budget200_min120",
+     "specialist_rel_l2": 0.058829576513141385,
+     "transfer_max": 4.0560623865690255,
+     "transfer_median": 0.30638872941107814,
+     "transfer_min": 0.07145400259301957
+    }
+   },
+   "populations": {
+    "all_nine_descriptive": {
+     "descriptive_transfer_median_over_views": 0.32018358611757824,
+     "geomean_ratio": 0.46042862069422513,
+     "mean_mix": 0.0712436951824852,
+     "mean_specialist": 0.11649228210213725,
+     "n": 9,
+     "n_mix_below_transfer_median": 9,
+     "n_mix_below_transfer_min": 8,
+     "n_ratio_below_one": 6,
+     "population": "all_nine_descriptive",
+     "ratio_max": 3.486839934271146,
+     "ratio_max_view": "block_observed_50pct",
+     "ratio_min": 0.052654689522636626,
+     "ratio_min_view": "random_65pct",
+     "reason": "descriptive; six of the nine specialists ran the original step schedule with patience stops, not the mixed model's recipe",
+     "specialist_actual_epochs": [
+      130,
+      134,
+      137,
+      151,
+      163,
+      200
+     ],
+     "specialist_cohorts": [
+      "budget200_min120"
+     ],
+     "subject_to": null,
+     "views": [
+      "random_50pct",
+      "random_65pct",
+      "random_80pct",
+      "block_observed_50pct",
+      "line_sensors_50pct",
+      "horizontal_lines_50pct",
+      "vertical_lines_50pct",
+      "boundary_band_50pct",
+      "clustered_50pct"
+     ]
+    },
+    "recipe_matched": {
+     "descriptive_transfer_median_over_views": 0.9910192856367794,
+     "geomean_ratio": 3.0506253982690574,
+     "mean_mix": 0.17101217816054126,
+     "mean_specialist": 0.05503367012503562,
+     "n": 3,
+     "n_mix_below_transfer_median": 3,
+     "n_mix_below_transfer_min": 2,
+     "n_ratio_below_one": 0,
+     "population": "recipe_matched",
+     "ratio_max": 3.486839934271146,
+     "ratio_max_view": "block_observed_50pct",
+     "ratio_min": 2.5132210597403146,
+     "ratio_min_view": "clustered_50pct",
+     "reason": "these three specialists ran the same recipe as the mixed model (one_cycle schedule, learning rate 5e-4, 200-epoch ceiling with the min-120 / train-data-patience-10 stop, 200 completed epochs, 90,000 updates each, recorded in the receipts and in training_inventory.csv); restricted comparison",
+     "specialist_actual_epochs": [
+      200
+     ],
+     "specialist_cohorts": [
+      "budget200_min120"
+     ],
+     "subject_to": null,
+     "views": [
+      "block_observed_50pct",
+      "boundary_band_50pct",
+      "clustered_50pct"
+     ]
+    }
+   },
+   "status": "complete",
+   "task": "recovery",
+   "training": {
+    "actual_epochs": 200,
+    "checkpoint_sha256": "3a6658ddd58ceb8833b6143c3a5b3b0085667f650f680d2e0207c1c385754a6b",
+    "mask_seed": 20260804,
+    "mask_spec": "random_3pct(ratio=0.5) + random_3pct(ratio=0.65) + random_3pct(ratio=0.8) + block_missing(missing_fraction=0.49) + line_sensors(num_lines=76, orientation=both) + line_sensors(num_lines=64, orientation=horizontal) + line_sensors(num_lines=64, orientation=vertical) + boundary_sensors(width=19) + clustered_sensors(ratio=0.5)",
+    "optimizer_steps": 90000,
+    "planned_epochs": 200,
+    "protocol": "pdeobs.max200-min120-then-train-data-patience10/20260920",
+    "stop_reason": "max_epochs_200",
+    "training_code": {
+     "overlay_manifest_sha256": "9c4b75d3a43a42005dca4c776b9ff86144eb3c9c5f1054853e58f5db44dc6ff0",
+     "protocol_adapter_sha256": "fbab4de183e5dfb43d369ce44ccec5cff6b100cd63c9c35ca4604096fe384bcc",
+     "repository_commit": "<COMMIT-1>",
+     "study_adapter_sha256": "ebd4bc8e900fed7db84a6e259260da2e2b9ee2eebe233a7e2aabc1ed37f7dc35"
+    }
+   }
+  }
+ },
+ "pending": {},
+ "provenance": {
+  "analysis_code": {
+   "commit": "<COMMIT-7>",
+   "dirty_paths": [
+    "M configs/revision/result_sources.yaml",
+    "?? results/mixed_pattern_study/receipts/navier_stokes__ufno_2d/",
+    "?? results/revision_v2/mix_strict/navier_stokes__ufno_2d/"
+   ],
+   "tool": "tools/revision/build_results.py",
+   "version": "pdeobs-revision-build-results/20260926-v1"
+  },
+  "inference_code": {
+   "main_grid": "frozen verification source on the GPU host (plan driver sha256 e3adee3f34bbdb3795784cb6959fa300c2da0424c5b21c3f107ddec3ed248b60, archived index sha256 56cbe439e90ff244211ebb23f335a522f70c4c3dbd940306ac50058d6a1cdff9); its tree equals this repository at commit 92eef2111c338c72660528839268e60cc0ab4abf (65 of 69 package files identical to commit 4873a43; dataset.py, runner.py, __init__.py and api/observation.py differ only by the v0.2.1 observation-spec additions, the frozen-view code path is unchanged)",
+   "mixed_models": "this repository at commit <COMMIT-6> shipped to the GPU host; per-file digests and the driver digest are recorded in results/revision_v2/mix_strict/<row>/provenance.json (inference_code)"
+  },
+  "training_code": {
+   "main_grid": "per identity in the prediction-verification index (training_cohort, actual_epochs, stop_reason, training_config, cohort_evidence, checkpoint_original_sha256); training happened before this repository existed and is not re-attributed to it",
+   "mixed_models": "production repository commit <COMMIT-1> plus the additive v0.2.1 overlay (dataset.py 2bdae0ae..., mask_specs.py 5b32812b...; overlay manifest sha256 9c4b75d3a43a42005dca4c776b9ff86144eb3c9c5f1054853e58f5db44dc6ff0), per row in receipts/completion.json (repository_commit, overlay_manifest_sha256, study_adapter_sha256, protocol_adapter_sha256)"
+  }
+ },
+ "release_input_version": "pdeobs-prediction-verification/20260925-v1",
+ "schema": "pdeobs-revision-build-results/20260926-v1",
+ "scoring_version": "pdeobs-strict-v1"
+}

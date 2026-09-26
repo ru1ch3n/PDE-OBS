@@ -1,0 +1,44 @@
+schema_version: pdeobs.paper-observations/v1
+resolution: [128, 128]
+true_means: observed
+random_density_masks_guaranteed_nested: false
+reuse_physical_record_without_resolving: true
+views:
+  random_50pct:
+    label: R50
+    mask: {protocol: random_3pct, ratio: 0.50}
+    expected_count: 8192
+  random_65pct:
+    label: R65
+    mask: {protocol: random_3pct, ratio: 0.65}
+    expected_count: 10650
+  random_80pct:
+    label: R80
+    mask: {protocol: random_3pct, ratio: 0.80}
+    expected_count: 13107
+  block_observed_50pct:
+    label: BL
+    mask: {protocol: block_missing, missing_fraction: 0.49}
+    expected_count: 8284
+    semantic: observed_outside_nonwrapping_90_by_90_missing_square
+  line_sensors_50pct:
+    label: LI
+    mask: {protocol: line_sensors, num_lines: 76, orientation: both}
+    expected_count: 8284
+  horizontal_lines_50pct:
+    label: H
+    mask: {protocol: line_sensors, num_lines: 64, orientation: horizontal}
+    expected_count: 8192
+  vertical_lines_50pct:
+    label: V
+    mask: {protocol: line_sensors, num_lines: 64, orientation: vertical}
+    expected_count: 8192
+  boundary_band_50pct:
+    label: BD
+    mask: {protocol: boundary_sensors, width: 19}
+    expected_count: 8284
+    semantic: outer_array_band_not_a_new_physical_boundary_condition
+  clustered_50pct:
+    label: CL
+    mask: {protocol: clustered_sensors, ratio: 0.50}
+    expected_count: 8192

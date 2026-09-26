@@ -1,0 +1,123 @@
+# Release-input manifest for the revision comparisons (tools/revision/build_results.py).
+# Every path is relative to the repository root. Digests are checked before any number is read.
+# There is no archive fallback: a missing declared strict score is an error.
+schema: pdeobs-revision-result-sources/v1
+release_input_version: pdeobs-prediction-verification/20260925-v1
+
+main_grid:
+  root: results/prediction_verification_20260924
+  manifest: results/prediction_verification_20260924/manifest.json
+  manifest_sha256: edc201a8069391cd767f94adbfff656227a50c10f022a72a7a0d56d3b914281c
+  index: results/prediction_verification_20260924/index.json            # sha256 5ae567e1... (listed in the manifest)
+  per_identity: results/prediction_verification_20260924/per_identity_{pde}.jsonl.gz
+  dataset_bindings: results/prediction_verification_20260924/dataset_bindings.json
+  statistics: results/prediction_verification_20260924/statistics.json
+  scoring_version: pdeobs-strict-v1
+  required_evaluation_status: complete_prediction_valid
+  denominator_definition: >-
+    E[w,w] is the strict joint relative-L2 mean over the 200 held-out identities of the specialist
+    trained on view w and tested on view w; E[v,w] (v != w) are the descriptive transfer references.
+
+# Legacy evaluator scalars. They may be read for an audit column only, never as a numerator or denominator.
+forbidden_sources:
+  - results/archived_campaign
+  - results/mixed_pattern_study/results_long.csv
+  - results/mixed_pattern_study/comparison.csv
+  - results/mixed_pattern_study/summary.json
+
+frozen_contracts:
+  campaign: configs/campaign/all_pde_one_setting_10method_9x9.yaml     # nine view masks, problem settings, temporal contract
+  campaign_sha256: 4ed7e7de03557c1b95a6b544cc1e7c292b575130b427a8e4fdc34a4e87f48966
+  mask_seed: 20260804
+  split:
+    algorithm: sha256_rank_within_regime_largest_remainder_exact_ten_percent_test
+    records_per_macrodomain: 2000
+    train: 1800
+    test: 200
+  target_frames:
+    recovery: [0]
+    rollout: [1, 2, 3]
+  test_identity_digest: sha256 of the newline-joined sorted sample identities (split manifests and dataset_bindings.json)
+  scoring_version: pdeobs-strict-v1
+
+# One entry per mixed-pattern study model. `strict_scores` are produced by tools/revision/mix_strict_inference.py
+# (inference only, zero optimizer updates) from the retained study checkpoint whose digest is in `completion.json`.
+mixed_models:
+  - identity: helmholtz/fno/mixed_nine_views
+    status: complete
+    receipts: results/mixed_pattern_study/receipts/helmholtz__fno
+    strict_scores: results/revision_v2/mix_strict/helmholtz__fno
+    legacy_evaluator_blocks: results/mixed_pattern_study/receipts/helmholtz__fno/evaluation-blocks
+    populations:
+      all_nine_descriptive:
+        views: all_nine
+        reason: >-
+          same planned budget as the original protocol (500 epochs, last checkpoint) but the nine specialists
+          come from heterogeneous training cohorts (training_inventory.csv); descriptive comparison
+    extra_views: [random_3pct-p20, random_3pct-p35, line_sensors-orientation-both-p30__random_3pct-p20]
+  - identity: helmholtz/deeponet/mixed_nine_views
+    status: complete
+    receipts: results/mixed_pattern_study/receipts/helmholtz__deeponet
+    strict_scores: results/revision_v2/mix_strict/helmholtz__deeponet
+    legacy_evaluator_blocks: results/mixed_pattern_study/receipts/helmholtz__deeponet/evaluation-blocks
+    populations:
+      all_nine_descriptive:
+        views: all_nine
+        reason: as above; descriptive comparison, not uniformly budget matched
+    extra_views: [random_3pct-p20, random_3pct-p35, line_sensors-orientation-both-p30__random_3pct-p20]
+  - identity: heat/deeponet/mixed_nine_views
+    status: complete
+    receipts: results/mixed_pattern_study/receipts/heat__deeponet
+    strict_scores: results/revision_v2/mix_strict/heat__deeponet
+    legacy_evaluator_blocks: results/mixed_pattern_study/receipts/heat__deeponet/evaluation-blocks
+    populations:
+      all_nine_descriptive:
+        views: all_nine
+        reason: as above; descriptive comparison, not uniformly budget matched (forecasting task, joint three-frame error)
+    extra_views: [random_3pct-p20, random_3pct-p35, line_sensors-orientation-both-p30__random_3pct-p20]
+  - identity: poisson/ufno_2d/mixed_nine_views
+    status: complete
+    receipts: results/mixed_pattern_study/receipts/poisson__ufno_2d
+    strict_scores: results/revision_v2/mix_strict/poisson__ufno_2d
+    legacy_evaluator_blocks: results/mixed_pattern_study/receipts/poisson__ufno_2d/evaluation-blocks
+    populations:
+      all_nine_descriptive:
+        views: all_nine
+        reason: descriptive; six of the nine specialists ran the original step schedule with patience stops, not the mixed model's recipe
+      recipe_matched:
+        views: [block_observed_50pct, boundary_band_50pct, clustered_50pct]
+        reason: >-
+          these three specialists ran the same recipe as the mixed model (one_cycle schedule, learning rate 5e-4,
+          200-epoch ceiling with the min-120 / train-data-patience-10 stop, 200 completed epochs, 90,000 updates
+          each, recorded in the receipts and in training_inventory.csv); restricted comparison
+    extra_views: [random_3pct-p20, random_3pct-p35, line_sensors-orientation-both-p30__random_3pct-p20]
+  - identity: navier_stokes/ufno_2d/mixed_nine_views
+    status: complete
+    receipts: results/mixed_pattern_study/receipts/navier_stokes__ufno_2d
+    strict_scores: results/revision_v2/mix_strict/navier_stokes__ufno_2d
+    legacy_evaluator_blocks: results/mixed_pattern_study/receipts/navier_stokes__ufno_2d/evaluation-blocks
+    populations:
+      all_nine_descriptive:
+        views: all_nine
+        reason: as above; descriptive comparison, not uniformly budget matched (forecasting task, joint three-frame error)
+    extra_views: [random_3pct-p20, random_3pct-p35, line_sensors-orientation-both-p30__random_3pct-p20]
+
+provenance:
+  training_code:
+    mixed_models: >-
+      production repository commit <COMMIT-1> plus the additive v0.2.1 overlay
+      (dataset.py 2bdae0ae..., mask_specs.py 5b32812b...; overlay manifest sha256 9c4b75d3a43a42005dca4c776b9ff86144eb3c9c5f1054853e58f5db44dc6ff0),
+      per row in receipts/completion.json (repository_commit, overlay_manifest_sha256, study_adapter_sha256, protocol_adapter_sha256)
+    main_grid: >-
+      per identity in the prediction-verification index (training_cohort, actual_epochs, stop_reason, training_config,
+      cohort_evidence, checkpoint_original_sha256); training happened before this repository existed and is not re-attributed to it
+  inference_code:
+    main_grid: >-
+      frozen verification source on the GPU host (plan driver sha256 e3adee3f34bbdb3795784cb6959fa300c2da0424c5b21c3f107ddec3ed248b60,
+      archived index sha256 56cbe439e90ff244211ebb23f335a522f70c4c3dbd940306ac50058d6a1cdff9); its tree equals this repository at
+      commit 92eef2111c338c72660528839268e60cc0ab4abf (65 of 69 package files identical to commit 4873a43; dataset.py, runner.py,
+      __init__.py and api/observation.py differ only by the v0.2.1 observation-spec additions, the frozen-view code path is unchanged)
+    mixed_models: >-
+      this repository at commit <COMMIT-6> shipped to the GPU host; per-file digests and the driver
+      digest are recorded in results/revision_v2/mix_strict/<row>/provenance.json (inference_code)
+  analysis_code: git HEAD when tools/revision/build_results.py runs; recorded in mixed_summary.json and mixed_comparison_inputs.json

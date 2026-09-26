@@ -1,0 +1,58 @@
+{
+ "blocks": {
+  "line_sensors-orientation-both-p30__random_3pct-p20": {
+   "metrics_sha256": "c55e6cd56e30d7409a7f56e255bfe361975120cd75087a59d993b765a323c0a5",
+   "realized_observation_ratio": 0.2490924072265625,
+   "relative_l2": 0.18917037873644588,
+   "resolved_mask": {
+    "protocol": "line_sensors(orientation=both) 30 + random_3pct 20"
+   },
+   "samples": 200,
+   "spec": "line_sensors(orientation=both) 30 + random_3pct 20",
+   "test_sample_ids_sha256": "35aa2bd5ed84e8fe16d567a69f659a0aee51e1c79cd3d5b2553e906e2b56e001"
+  },
+  "random_3pct-p20": {
+   "metrics_sha256": "b81cbdf358fc964b68ee073129fcd6b6d92419161ccd9b7fd6bae1cec3ca5750",
+   "realized_observation_ratio": 0.20001220703125,
+   "relative_l2": 0.2320756530264889,
+   "resolved_mask": {
+    "protocol": "random_3pct",
+    "ratio": 0.2
+   },
+   "samples": 200,
+   "spec": "random_3pct 20",
+   "test_sample_ids_sha256": "35aa2bd5ed84e8fe16d567a69f659a0aee51e1c79cd3d5b2553e906e2b56e001"
+  },
+  "random_3pct-p35": {
+   "metrics_sha256": "164aae5552823e83cc2a91acdcc9bd842d979ee535e74953857c80cb5b678647",
+   "realized_observation_ratio": 0.3499755859375,
+   "relative_l2": 0.13222529709296493,
+   "resolved_mask": {
+    "protocol": "random_3pct",
+    "ratio": 0.35
+   },
+   "samples": 200,
+   "spec": "random_3pct 35",
+   "test_sample_ids_sha256": "35aa2bd5ed84e8fe16d567a69f659a0aee51e1c79cd3d5b2553e906e2b56e001"
+  }
+ },
+ "checkpoint_sha256": "1f6b099a3365f1791818420940060c980fa3780f2aeb7232a4f768ff5f0793e7",
+ "completed_unix": 1790365563.9027874,
+ "device": {
+  "name": "NVIDIA Tesla V100S-PCIE-32GB",
+  "type": "cuda",
+  "uuid": "<GPU-3>"
+ },
+ "eligibility_sha256": "46c22c76f2c3b02ab6402a8e9b8623854b6f6267b4b23d22423cf60ded1f6aee",
+ "extra_adapter_sha256": "f4d4c52ed48c6f3bc96fc269796e0454da046c298e839e591d5ce912292d3d49",
+ "method": "deeponet",
+ "paper_cell": false,
+ "pde": "heat",
+ "schema_version": "pdeobs.mixed-study-extra-views/v1",
+ "started_unix": 1790365549.6198525,
+ "status": "completed",
+ "study_id": "mixed-nine-views-20260925",
+ "test_sample_ids_sha256": "35aa2bd5ed84e8fe16d567a69f659a0aee51e1c79cd3d5b2553e906e2b56e001",
+ "training_protocol": "pdeobs.fixed500-last-checkpoint/v7",
+ "training_view": "mixed_nine_views"
+}

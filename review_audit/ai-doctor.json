@@ -1,0 +1,25 @@
+{
+  "schema_version": "pdeobs-ai-doctor/v1",
+  "scope": "static local check; no package imports/model tests",
+  "status": "static_checks_passed",
+  "python": "3.13.5",
+  "repository_root": "<AUDIT_ROOT>/enhanced/pdeobs-review-main",
+  "installed_distributions": {
+    "numpy": "2.3.5",
+    "scipy": "1.17.0",
+    "h5py": "3.15.1",
+    "PyYAML": "6.0.3",
+    "torch": "2.10.0+cpu",
+    "pytest": "9.0.2",
+    "pdeobs": null
+  },
+  "missing_indexed_files": [],
+  "protected_scientific_files_checked": 143,
+  "changed_protected_files": [],
+  "warnings": [
+    "Installed distributions may differ from repository-local source; smoke uses this source explicitly.",
+    "Dependency presence does not prove version/platform/GPU compatibility.",
+    "No production dataset, checkpoint or scientific-result correctness was checked.",
+    "Old acceptance counts overlap; do not add 521, 42, 34, and all-suite totals together."
+  ]
+}

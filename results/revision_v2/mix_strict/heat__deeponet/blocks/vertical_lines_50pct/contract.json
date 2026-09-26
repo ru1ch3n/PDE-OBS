@@ -1,0 +1,3641 @@
+{
+  "actual_epochs": 500,
+  "checkpoint_id": "1f6b099a3365f1791818420940060c980fa3780f2aeb7232a4f768ff5f0793e7",
+  "dataset_manifest_sha256": "6e8a238ceafecd2829cdd564597941dbf92627ada57edafaaa5c3bc637715a81",
+  "driver": "pdeobs-mixed-strict-inference/20260926-v1",
+  "expected_ids": [
+    "seed-20260804/heat/periodic/smooth_grf/high/000326",
+    "seed-20260804/heat/periodic/smooth_grf/high/000383",
+    "seed-20260804/heat/periodic/smooth_grf/high/000109",
+    "seed-20260804/heat/periodic/smooth_grf/high/000398",
+    "seed-20260804/heat/periodic/smooth_grf/high/000008",
+    "seed-20260804/heat/periodic/smooth_grf/high/000414",
+    "seed-20260804/heat/periodic/smooth_grf/high/000043",
+    "seed-20260804/heat/periodic/smooth_grf/high/000477",
+    "seed-20260804/heat/periodic/smooth_grf/high/000328",
+    "seed-20260804/heat/periodic/smooth_grf/high/000073",
+    "seed-20260804/heat/periodic/smooth_grf/high/000463",
+    "seed-20260804/heat/periodic/smooth_grf/high/000449",
+    "seed-20260804/heat/periodic/smooth_grf/high/000281",
+    "seed-20260804/heat/periodic/smooth_grf/high/000433",
+    "seed-20260804/heat/periodic/smooth_grf/high/000508",
+    "seed-20260804/heat/periodic/smooth_grf/high/000496",
+    "seed-20260804/heat/periodic/smooth_grf/high/000385",
+    "seed-20260804/heat/periodic/smooth_grf/high/000612",
+    "seed-20260804/heat/periodic/smooth_grf/high/000562",
+    "seed-20260804/heat/periodic/smooth_grf/high/000632",
+    "seed-20260804/heat/periodic/smooth_grf/high/000319",
+    "seed-20260804/heat/periodic/smooth_grf/high/000344",
+    "seed-20260804/heat/periodic/smooth_grf/high/000332",
+    "seed-20260804/heat/periodic/smooth_grf/high/000465",
+    "seed-20260804/heat/periodic/smooth_grf/high/000348",
+    "seed-20260804/heat/periodic/smooth_grf/high/000118",
+    "seed-20260804/heat/periodic/smooth_grf/high/000293",
+    "seed-20260804/heat/periodic/smooth_grf/high/000313",
+    "seed-20260804/heat/periodic/smooth_grf/high/000613",
+    "seed-20260804/heat/periodic/smooth_grf/high/000490",
+    "seed-20260804/heat/periodic/smooth_grf/high/000299",
+    "seed-20260804/heat/periodic/smooth_grf/high/000195",
+    "seed-20260804/heat/periodic/smooth_grf/high/000260",
+    "seed-20260804/heat/periodic/smooth_grf/high/000337",
+    "seed-20260804/heat/periodic/smooth_grf/high/000262",
+    "seed-20260804/heat/periodic/smooth_grf/high/000445",
+    "seed-20260804/heat/periodic/smooth_grf/high/000251",
+    "seed-20260804/heat/periodic/smooth_grf/high/000634",
+    "seed-20260804/heat/periodic/smooth_grf/high/000395",
+    "seed-20260804/heat/periodic/smooth_grf/high/000207",
+    "seed-20260804/heat/periodic/smooth_grf/high/000476",
+    "seed-20260804/heat/periodic/smooth_grf/high/000511",
+    "seed-20260804/heat/periodic/smooth_grf/high/000423",
+    "seed-20260804/heat/periodic/smooth_grf/high/000454",
+    "seed-20260804/heat/periodic/smooth_grf/high/000194",
+    "seed-20260804/heat/periodic/smooth_grf/high/000145",
+    "seed-20260804/heat/periodic/smooth_grf/high/000053",
+    "seed-20260804/heat/periodic/smooth_grf/high/000315",
+    "seed-20260804/heat/periodic/smooth_grf/high/000090",
+    "seed-20260804/heat/periodic/smooth_grf/high/000418",
+    "seed-20260804/heat/periodic/smooth_grf/high/000261",
+    "seed-20260804/heat/periodic/smooth_grf/high/000218",
+    "seed-20260804/heat/periodic/smooth_grf/high/000384",
+    "seed-20260804/heat/periodic/smooth_grf/high/000294",
+    "seed-20260804/heat/periodic/smooth_grf/high/000290",
+    "seed-20260804/heat/periodic/smooth_grf/high/000322",
+    "seed-20260804/heat/periodic/smooth_grf/high/000457",
+    "seed-20260804/heat/periodic/smooth_grf/high/000173",
+    "seed-20260804/heat/periodic/smooth_grf/high/000032",
+    "seed-20260804/heat/periodic/smooth_grf/high/000092",
+    "seed-20260804/heat/periodic/smooth_grf/high/000592",
+    "seed-20260804/heat/periodic/smooth_grf/high/000576",
+    "seed-20260804/heat/periodic/smooth_grf/high/000558",
+    "seed-20260804/heat/periodic/smooth_grf/high/000417",
+    "seed-20260804/heat/periodic/smooth_grf/high/000122",
+    "seed-20260804/heat/periodic/smooth_grf/high/000105",
+    "seed-20260804/heat/periodic/smooth_grf/low/000030",
+    "seed-20260804/heat/periodic/smooth_grf/low/000258",
+    "seed-20260804/heat/periodic/smooth_grf/low/000410",
+    "seed-20260804/heat/periodic/smooth_grf/low/000319",
+    "seed-20260804/heat/periodic/smooth_grf/low/000458",
+    "seed-20260804/heat/periodic/smooth_grf/low/000573",
+    "seed-20260804/heat/periodic/smooth_grf/low/000045",
+    "seed-20260804/heat/periodic/smooth_grf/low/000340",
+    "seed-20260804/heat/periodic/smooth_grf/low/000428",
+    "seed-20260804/heat/periodic/smooth_grf/low/000488",
+    "seed-20260804/heat/periodic/smooth_grf/low/000102",
+    "seed-20260804/heat/periodic/smooth_grf/low/000056",
+    "seed-20260804/heat/periodic/smooth_grf/low/000313",
+    "seed-20260804/heat/periodic/smooth_grf/low/000097",
+    "seed-20260804/heat/periodic/smooth_grf/low/000636",
+    "seed-20260804/heat/periodic/smooth_grf/low/000174",
+    "seed-20260804/heat/periodic/smooth_grf/low/000276",
+    "seed-20260804/heat/periodic/smooth_grf/low/000649",
+    "seed-20260804/heat/periodic/smooth_grf/low/000226",
+    "seed-20260804/heat/periodic/smooth_grf/low/000473",
+    "seed-20260804/heat/periodic/smooth_grf/low/000010",
+    "seed-20260804/heat/periodic/smooth_grf/low/000658",
+    "seed-20260804/heat/periodic/smooth_grf/low/000202",
+    "seed-20260804/heat/periodic/smooth_grf/low/000347",
+    "seed-20260804/heat/periodic/smooth_grf/low/000122",
+    "seed-20260804/heat/periodic/smooth_grf/low/000416",
+    "seed-20260804/heat/periodic/smooth_grf/low/000272",
+    "seed-20260804/heat/periodic/smooth_grf/low/000007",
+    "seed-20260804/heat/periodic/smooth_grf/low/000156",
+    "seed-20260804/heat/periodic/smooth_grf/low/000029",
+    "seed-20260804/heat/periodic/smooth_grf/low/000015",
+    "seed-20260804/heat/periodic/smooth_grf/low/000027",
+    "seed-20260804/heat/periodic/smooth_grf/low/000640",
+    "seed-20260804/heat/periodic/smooth_grf/low/000113",
+    "seed-20260804/heat/periodic/smooth_grf/low/000500",
+    "seed-20260804/heat/periodic/smooth_grf/low/000291",
+    "seed-20260804/heat/periodic/smooth_grf/low/000167",
+    "seed-20260804/heat/periodic/smooth_grf/low/000274",
+    "seed-20260804/heat/periodic/smooth_grf/low/000587",
+    "seed-20260804/heat/periodic/smooth_grf/low/000570",
+    "seed-20260804/heat/periodic/smooth_grf/low/000254",
+    "seed-20260804/heat/periodic/smooth_grf/low/000338",
+    "seed-20260804/heat/periodic/smooth_grf/low/000627",
+    "seed-20260804/heat/periodic/smooth_grf/low/000438",
+    "seed-20260804/heat/periodic/smooth_grf/low/000332",
+    "seed-20260804/heat/periodic/smooth_grf/low/000529",
+    "seed-20260804/heat/periodic/smooth_grf/low/000051",
+    "seed-20260804/heat/periodic/smooth_grf/low/000118",
+    "seed-20260804/heat/periodic/smooth_grf/low/000551",
+    "seed-20260804/heat/periodic/smooth_grf/low/000453",
+    "seed-20260804/heat/periodic/smooth_grf/low/000633",
+    "seed-20260804/heat/periodic/smooth_grf/low/000048",
+    "seed-20260804/heat/periodic/smooth_grf/low/000229",
+    "seed-20260804/heat/periodic/smooth_grf/low/000185",
+    "seed-20260804/heat/periodic/smooth_grf/low/000434",
+    "seed-20260804/heat/periodic/smooth_grf/low/000521",
+    "seed-20260804/heat/periodic/smooth_grf/low/000154",
+    "seed-20260804/heat/periodic/smooth_grf/low/000431",
+    "seed-20260804/heat/periodic/smooth_grf/low/000095",
+    "seed-20260804/heat/periodic/smooth_grf/low/000392",
+    "seed-20260804/heat/periodic/smooth_grf/low/000099",
+    "seed-20260804/heat/periodic/smooth_grf/low/000203",
+    "seed-20260804/heat/periodic/smooth_grf/low/000367",
+    "seed-20260804/heat/periodic/smooth_grf/low/000506",
+    "seed-20260804/heat/periodic/smooth_grf/low/000442",
+    "seed-20260804/heat/periodic/smooth_grf/low/000168",
+    "seed-20260804/heat/periodic/smooth_grf/low/000253",
+    "seed-20260804/heat/periodic/smooth_grf/medium/000375",
+    "seed-20260804/heat/periodic/smooth_grf/medium/000351",
+    "seed-20260804/heat/periodic/smooth_grf/medium/000100",
+    "seed-20260804/heat/periodic/smooth_grf/medium/000422",
+    "seed-20260804/heat/periodic/smooth_grf/medium/000027",
+    "seed-20260804/heat/periodic/smooth_grf/medium/000550",
+    "seed-20260804/heat/periodic/smooth_grf/medium/000184",
+    "seed-20260804/heat/periodic/smooth_grf/medium/000125",
+    "seed-20260804/heat/periodic/smooth_grf/medium/000064",
+    "seed-20260804/heat/periodic/smooth_grf/medium/000116",
+    "seed-20260804/heat/periodic/smooth_grf/medium/000280",
+    "seed-20260804/heat/periodic/smooth_grf/medium/000198",
+    "seed-20260804/heat/periodic/smooth_grf/medium/000438",
+    "seed-20260804/heat/periodic/smooth_grf/medium/000103",
+    "seed-20260804/heat/periodic/smooth_grf/medium/000335",
+    "seed-20260804/heat/periodic/smooth_grf/medium/000016",
+    "seed-20260804/heat/periodic/smooth_grf/medium/000329",
+    "seed-20260804/heat/periodic/smooth_grf/medium/000275",
+    "seed-20260804/heat/periodic/smooth_grf/medium/000515",
+    "seed-20260804/heat/periodic/smooth_grf/medium/000513",
+    "seed-20260804/heat/periodic/smooth_grf/medium/000504",
+    "seed-20260804/heat/periodic/smooth_grf/medium/000482",
+    "seed-20260804/heat/periodic/smooth_grf/medium/000580",
+    "seed-20260804/heat/periodic/smooth_grf/medium/000377",
+    "seed-20260804/heat/periodic/smooth_grf/medium/000237",
+    "seed-20260804/heat/periodic/smooth_grf/medium/000532",
+    "seed-20260804/heat/periodic/smooth_grf/medium/000233",
+    "seed-20260804/heat/periodic/smooth_grf/medium/000145",
+    "seed-20260804/heat/periodic/smooth_grf/medium/000068",
+    "seed-20260804/heat/periodic/smooth_grf/medium/000240",
+    "seed-20260804/heat/periodic/smooth_grf/medium/000199",
+    "seed-20260804/heat/periodic/smooth_grf/medium/000211",
+    "seed-20260804/heat/periodic/smooth_grf/medium/000602",
+    "seed-20260804/heat/periodic/smooth_grf/medium/000490",
+    "seed-20260804/heat/periodic/smooth_grf/medium/000072",
+    "seed-20260804/heat/periodic/smooth_grf/medium/000663",
+    "seed-20260804/heat/periodic/smooth_grf/medium/000624",
+    "seed-20260804/heat/periodic/smooth_grf/medium/000371",
+    "seed-20260804/heat/periodic/smooth_grf/medium/000380",
+    "seed-20260804/heat/periodic/smooth_grf/medium/000536",
+    "seed-20260804/heat/periodic/smooth_grf/medium/000324",
+    "seed-20260804/heat/periodic/smooth_grf/medium/000654",
+    "seed-20260804/heat/periodic/smooth_grf/medium/000046",
+    "seed-20260804/heat/periodic/smooth_grf/medium/000312",
+    "seed-20260804/heat/periodic/smooth_grf/medium/000319",
+    "seed-20260804/heat/periodic/smooth_grf/medium/000629",
+    "seed-20260804/heat/periodic/smooth_grf/medium/000223",
+    "seed-20260804/heat/periodic/smooth_grf/medium/000186",
+    "seed-20260804/heat/periodic/smooth_grf/medium/000396",
+    "seed-20260804/heat/periodic/smooth_grf/medium/000006",
+    "seed-20260804/heat/periodic/smooth_grf/medium/000066",
+    "seed-20260804/heat/periodic/smooth_grf/medium/000153",
+    "seed-20260804/heat/periodic/smooth_grf/medium/000196",
+    "seed-20260804/heat/periodic/smooth_grf/medium/000369",
+    "seed-20260804/heat/periodic/smooth_grf/medium/000483",
+    "seed-20260804/heat/periodic/smooth_grf/medium/000298",
+    "seed-20260804/heat/periodic/smooth_grf/medium/000591",
+    "seed-20260804/heat/periodic/smooth_grf/medium/000563",
+    "seed-20260804/heat/periodic/smooth_grf/medium/000657",
+    "seed-20260804/heat/periodic/smooth_grf/medium/000451",
+    "seed-20260804/heat/periodic/smooth_grf/medium/000074",
+    "seed-20260804/heat/periodic/smooth_grf/medium/000022",
+    "seed-20260804/heat/periodic/smooth_grf/medium/000554",
+    "seed-20260804/heat/periodic/smooth_grf/medium/000019",
+    "seed-20260804/heat/periodic/smooth_grf/medium/000303",
+    "seed-20260804/heat/periodic/smooth_grf/medium/000597",
+    "seed-20260804/heat/periodic/smooth_grf/medium/000119"
+  ],
+  "expected_shape": [
+    3,
+    128,
+    128,
+    1
+  ],
+  "extra_view_spec": null,
+  "frame_mapping_by_identity": {
+    "seed-20260804/heat/periodic/smooth_grf/high/000008": {
+      "target_physical_time_values": [
+        0.017857142857142856,
+        0.03571428571428571,
+        0.05357142857142857
+      ],
+      "target_source_frame_indices": [
+        11,
+        22,
+        33
+      ],
+      "target_stored_positions": [
+        1,
+        2,
+        3
+      ]
+    },
+    "seed-20260804/heat/periodic/smooth_grf/high/000032": {
+      "target_physical_time_values": [
+        0.017857142857142856,
+        0.03571428571428571,
+        0.05357142857142857
+      ],
+      "target_source_frame_indices": [
+        11,
+        22,
+        33
+      ],
+      "target_stored_positions": [
+        1,
+        2,
+        3
+      ]
+    },
+    "seed-20260804/heat/periodic/smooth_grf/high/000043": {
+      "target_physical_time_values": [
+        0.017857142857142856,
+        0.03571428571428571,
+        0.05357142857142857
+      ],
+      "target_source_frame_indices": [
+        11,
+        22,
+        33
+      ],
+      "target_stored_positions": [
+        1,
+        2,
+        3
+      ]
+    },
+    "seed-20260804/heat/periodic/smooth_grf/high/000053": {
+      "target_physical_time_values": [
+        0.017857142857142856,
+        0.03571428571428571,
+        0.05357142857142857
+      ],
+      "target_source_frame_indices": [
+        11,
+        22,
+        33
+      ],
+      "target_stored_positions": [
+        1,
+        2,
+        3
+      ]
+    },
+    "seed-20260804/heat/periodic/smooth_grf/high/000073": {
+      "target_physical_time_values": [
+        0.017857142857142856,
+        0.03571428571428571,
+        0.05357142857142857
+      ],
+      "target_source_frame_indices": [
+        11,
+        22,
+        33
+      ],
+      "target_stored_positions": [
+        1,
+        2,
+        3
+      ]
+    },
+    "seed-20260804/heat/periodic/smooth_grf/high/000090": {
+      "target_physical_time_values": [
+        0.017857142857142856,
+        0.03571428571428571,
+        0.05357142857142857
+      ],
+      "target_source_frame_indices": [
+        11,
+        22,
+        33
+      ],
+      "target_stored_positions": [
+        1,
+        2,
+        3
+      ]
+    },
+    "seed-20260804/heat/periodic/smooth_grf/high/000092": {
+      "target_physical_time_values": [
+        0.017857142857142856,
+        0.03571428571428571,
+        0.05357142857142857
+      ],
+      "target_source_frame_indices": [
+        11,
+        22,
+        33
+      ],
+      "target_stored_positions": [
+        1,
+        2,
+        3
+      ]
+    },
+    "seed-20260804/heat/periodic/smooth_grf/high/000105": {
+      "target_physical_time_values": [
+        0.017857142857142856,
+        0.03571428571428571,
+        0.05357142857142857
+      ],
+      "target_source_frame_indices": [
+        11,
+        22,
+        33
+      ],
+      "target_stored_positions": [
+        1,
+        2,
+        3
+      ]
+    },
+    "seed-20260804/heat/periodic/smooth_grf/high/000109": {
+      "target_physical_time_values": [
+        0.017857142857142856,
+        0.03571428571428571,
+        0.05357142857142857
+      ],
+      "target_source_frame_indices": [
+        11,
+        22,
+        33
+      ],
+      "target_stored_positions": [
+        1,
+        2,
+        3
+      ]
+    },
+    "seed-20260804/heat/periodic/smooth_grf/high/000118": {
+      "target_physical_time_values": [
+        0.017857142857142856,
+        0.03571428571428571,
+        0.05357142857142857
+      ],
+      "target_source_frame_indices": [
+        11,
+        22,
+        33
+      ],
+      "target_stored_positions": [
+        1,
+        2,
+        3
+      ]
+    },
+    "seed-20260804/heat/periodic/smooth_grf/high/000122": {
+      "target_physical_time_values": [
+        0.017857142857142856,
+        0.03571428571428571,
+        0.05357142857142857
+      ],
+      "target_source_frame_indices": [
+        11,
+        22,
+        33
+      ],
+      "target_stored_positions": [
+        1,
+        2,
+        3
+      ]
+    },
+    "seed-20260804/heat/periodic/smooth_grf/high/000145": {
+      "target_physical_time_values": [
+        0.017857142857142856,
+        0.03571428571428571,
+        0.05357142857142857
+      ],
+      "target_source_frame_indices": [
+        11,
+        22,
+        33
+      ],
+      "target_stored_positions": [
+        1,
+        2,
+        3
+      ]
+    },
+    "seed-20260804/heat/periodic/smooth_grf/high/000173": {
+      "target_physical_time_values": [
+        0.017857142857142856,
+        0.03571428571428571,
+        0.05357142857142857
+      ],
+      "target_source_frame_indices": [
+        11,
+        22,
+        33
+      ],
+      "target_stored_positions": [
+        1,
+        2,
+        3
+      ]
+    },
+    "seed-20260804/heat/periodic/smooth_grf/high/000194": {
+      "target_physical_time_values": [
+        0.017857142857142856,
+        0.03571428571428571,
+        0.05357142857142857
+      ],
+      "target_source_frame_indices": [
+        11,
+        22,
+        33
+      ],
+      "target_stored_positions": [
+        1,
+        2,
+        3
+      ]
+    },
+    "seed-20260804/heat/periodic/smooth_grf/high/000195": {
+      "target_physical_time_values": [
+        0.017857142857142856,
+        0.03571428571428571,
+        0.05357142857142857
+      ],
+      "target_source_frame_indices": [
+        11,
+        22,
+        33
+      ],
+      "target_stored_positions": [
+        1,
+        2,
+        3
+      ]
+    },
+    "seed-20260804/heat/periodic/smooth_grf/high/000207": {
+      "target_physical_time_values": [
+        0.017857142857142856,
+        0.03571428571428571,
+        0.05357142857142857
+      ],
+      "target_source_frame_indices": [
+        11,
+        22,
+        33
+      ],
+      "target_stored_positions": [
+        1,
+        2,
+        3
+      ]
+    },
+    "seed-20260804/heat/periodic/smooth_grf/high/000218": {
+      "target_physical_time_values": [
+        0.017857142857142856,
+        0.03571428571428571,
+        0.05357142857142857
+      ],
+      "target_source_frame_indices": [
+        11,
+        22,
+        33
+      ],
+      "target_stored_positions": [
+        1,
+        2,
+        3
+      ]
+    },
+    "seed-20260804/heat/periodic/smooth_grf/high/000251": {
+      "target_physical_time_values": [
+        0.017857142857142856,
+        0.03571428571428571,
+        0.05357142857142857
+      ],
+      "target_source_frame_indices": [
+        11,
+        22,
+        33
+      ],
+      "target_stored_positions": [
+        1,
+        2,
+        3
+      ]
+    },
+    "seed-20260804/heat/periodic/smooth_grf/high/000260": {
+      "target_physical_time_values": [
+        0.017857142857142856,
+        0.03571428571428571,
+        0.05357142857142857
+      ],
+      "target_source_frame_indices": [
+        11,
+        22,
+        33
+      ],
+      "target_stored_positions": [
+        1,
+        2,
+        3
+      ]
+    },
+    "seed-20260804/heat/periodic/smooth_grf/high/000261": {
+      "target_physical_time_values": [
+        0.017857142857142856,
+        0.03571428571428571,
+        0.05357142857142857
+      ],
+      "target_source_frame_indices": [
+        11,
+        22,
+        33
+      ],
+      "target_stored_positions": [
+        1,
+        2,
+        3
+      ]
+    },
+    "seed-20260804/heat/periodic/smooth_grf/high/000262": {
+      "target_physical_time_values": [
+        0.017857142857142856,
+        0.03571428571428571,
+        0.05357142857142857
+      ],
+      "target_source_frame_indices": [
+        11,
+        22,
+        33
+      ],
+      "target_stored_positions": [
+        1,
+        2,
+        3
+      ]
+    },
+    "seed-20260804/heat/periodic/smooth_grf/high/000281": {
+      "target_physical_time_values": [
+        0.017857142857142856,
+        0.03571428571428571,
+        0.05357142857142857
+      ],
+      "target_source_frame_indices": [
+        11,
+        22,
+        33
+      ],
+      "target_stored_positions": [
+        1,
+        2,
+        3
+      ]
+    },
+    "seed-20260804/heat/periodic/smooth_grf/high/000290": {
+      "target_physical_time_values": [
+        0.017857142857142856,
+        0.03571428571428571,
+        0.05357142857142857
+      ],
+      "target_source_frame_indices": [
+        11,
+        22,
+        33
+      ],
+      "target_stored_positions": [
+        1,
+        2,
+        3
+      ]
+    },
+    "seed-20260804/heat/periodic/smooth_grf/high/000293": {
+      "target_physical_time_values": [
+        0.017857142857142856,
+        0.03571428571428571,
+        0.05357142857142857
+      ],
+      "target_source_frame_indices": [
+        11,
+        22,
+        33
+      ],
+      "target_stored_positions": [
+        1,
+        2,
+        3
+      ]
+    },
+    "seed-20260804/heat/periodic/smooth_grf/high/000294": {
+      "target_physical_time_values": [
+        0.017857142857142856,
+        0.03571428571428571,
+        0.05357142857142857
+      ],
+      "target_source_frame_indices": [
+        11,
+        22,
+        33
+      ],
+      "target_stored_positions": [
+        1,
+        2,
+        3
+      ]
+    },
+    "seed-20260804/heat/periodic/smooth_grf/high/000299": {
+      "target_physical_time_values": [
+        0.017857142857142856,
+        0.03571428571428571,
+        0.05357142857142857
+      ],
+      "target_source_frame_indices": [
+        11,
+        22,
+        33
+      ],
+      "target_stored_positions": [
+        1,
+        2,
+        3
+      ]
+    },
+    "seed-20260804/heat/periodic/smooth_grf/high/000313": {
+      "target_physical_time_values": [
+        0.017857142857142856,
+        0.03571428571428571,
+        0.05357142857142857
+      ],
+      "target_source_frame_indices": [
+        11,
+        22,
+        33
+      ],
+      "target_stored_positions": [
+        1,
+        2,
+        3
+      ]
+    },
+    "seed-20260804/heat/periodic/smooth_grf/high/000315": {
+      "target_physical_time_values": [
+        0.017857142857142856,
+        0.03571428571428571,
+        0.05357142857142857
+      ],
+      "target_source_frame_indices": [
+        11,
+        22,
+        33
+      ],
+      "target_stored_positions": [
+        1,
+        2,
+        3
+      ]
+    },
+    "seed-20260804/heat/periodic/smooth_grf/high/000319": {
+      "target_physical_time_values": [
+        0.017857142857142856,
+        0.03571428571428571,
+        0.05357142857142857
+      ],
+      "target_source_frame_indices": [
+        11,
+        22,
+        33
+      ],
+      "target_stored_positions": [
+        1,
+        2,
+        3
+      ]
+    },
+    "seed-20260804/heat/periodic/smooth_grf/high/000322": {
+      "target_physical_time_values": [
+        0.017857142857142856,
+        0.03571428571428571,
+        0.05357142857142857
+      ],
+      "target_source_frame_indices": [
+        11,
+        22,
+        33
+      ],
+      "target_stored_positions": [
+        1,
+        2,
+        3
+      ]
+    },
+    "seed-20260804/heat/periodic/smooth_grf/high/000326": {
+      "target_physical_time_values": [
+        0.017857142857142856,
+        0.03571428571428571,
+        0.05357142857142857
+      ],
+      "target_source_frame_indices": [
+        11,
+        22,
+        33
+      ],
+      "target_stored_positions": [
+        1,
+        2,
+        3
+      ]
+    },
+    "seed-20260804/heat/periodic/smooth_grf/high/000328": {
+      "target_physical_time_values": [
+        0.017857142857142856,
+        0.03571428571428571,
+        0.05357142857142857
+      ],
+      "target_source_frame_indices": [
+        11,
+        22,
+        33
+      ],
+      "target_stored_positions": [
+        1,
+        2,
+        3
+      ]
+    },
+    "seed-20260804/heat/periodic/smooth_grf/high/000332": {
+      "target_physical_time_values": [
+        0.017857142857142856,
+        0.03571428571428571,
+        0.05357142857142857
+      ],
+      "target_source_frame_indices": [
+        11,
+        22,
+        33
+      ],
+      "target_stored_positions": [
+        1,
+        2,
+        3
+      ]
+    },
+    "seed-20260804/heat/periodic/smooth_grf/high/000337": {
+      "target_physical_time_values": [
+        0.017857142857142856,
+        0.03571428571428571,
+        0.05357142857142857
+      ],
+      "target_source_frame_indices": [
+        11,
+        22,
+        33
+      ],
+      "target_stored_positions": [
+        1,
+        2,
+        3
+      ]
+    },
+    "seed-20260804/heat/periodic/smooth_grf/high/000344": {
+      "target_physical_time_values": [
+        0.017857142857142856,
+        0.03571428571428571,
+        0.05357142857142857
+      ],
+      "target_source_frame_indices": [
+        11,
+        22,
+        33
+      ],
+      "target_stored_positions": [
+        1,
+        2,
+        3
+      ]
+    },
+    "seed-20260804/heat/periodic/smooth_grf/high/000348": {
+      "target_physical_time_values": [
+        0.017857142857142856,
+        0.03571428571428571,
+        0.05357142857142857
+      ],
+      "target_source_frame_indices": [
+        11,
+        22,
+        33
+      ],
+      "target_stored_positions": [
+        1,
+        2,
+        3
+      ]
+    },
+    "seed-20260804/heat/periodic/smooth_grf/high/000383": {
+      "target_physical_time_values": [
+        0.017857142857142856,
+        0.03571428571428571,
+        0.05357142857142857
+      ],
+      "target_source_frame_indices": [
+        11,
+        22,
+        33
+      ],
+      "target_stored_positions": [
+        1,
+        2,
+        3
+      ]
+    },
+    "seed-20260804/heat/periodic/smooth_grf/high/000384": {
+      "target_physical_time_values": [
+        0.017857142857142856,
+        0.03571428571428571,
+        0.05357142857142857
+      ],
+      "target_source_frame_indices": [
+        11,
+        22,
+        33
+      ],
+      "target_stored_positions": [
+        1,
+        2,
+        3
+      ]
+    },
+    "seed-20260804/heat/periodic/smooth_grf/high/000385": {
+      "target_physical_time_values": [
+        0.017857142857142856,
+        0.03571428571428571,
+        0.05357142857142857
+      ],
+      "target_source_frame_indices": [
+        11,
+        22,
+        33
+      ],
+      "target_stored_positions": [
+        1,
+        2,
+        3
+      ]
+    },
+    "seed-20260804/heat/periodic/smooth_grf/high/000395": {
+      "target_physical_time_values": [
+        0.017857142857142856,
+        0.03571428571428571,
+        0.05357142857142857
+      ],
+      "target_source_frame_indices": [
+        11,
+        22,
+        33
+      ],
+      "target_stored_positions": [
+        1,
+        2,
+        3
+      ]
+    },
+    "seed-20260804/heat/periodic/smooth_grf/high/000398": {
+      "target_physical_time_values": [
+        0.017857142857142856,
+        0.03571428571428571,
+        0.05357142857142857
+      ],
+      "target_source_frame_indices": [
+        11,
+        22,
+        33
+      ],
+      "target_stored_positions": [
+        1,
+        2,
+        3
+      ]
+    },
+    "seed-20260804/heat/periodic/smooth_grf/high/000414": {
+      "target_physical_time_values": [
+        0.017857142857142856,
+        0.03571428571428571,
+        0.05357142857142857
+      ],
+      "target_source_frame_indices": [
+        11,
+        22,
+        33
+      ],
+      "target_stored_positions": [
+        1,
+        2,
+        3
+      ]
+    },
+    "seed-20260804/heat/periodic/smooth_grf/high/000417": {
+      "target_physical_time_values": [
+        0.017857142857142856,
+        0.03571428571428571,
+        0.05357142857142857
+      ],
+      "target_source_frame_indices": [
+        11,
+        22,
+        33
+      ],
+      "target_stored_positions": [
+        1,
+        2,
+        3
+      ]
+    },
+    "seed-20260804/heat/periodic/smooth_grf/high/000418": {
+      "target_physical_time_values": [
+        0.017857142857142856,
+        0.03571428571428571,
+        0.05357142857142857
+      ],
+      "target_source_frame_indices": [
+        11,
+        22,
+        33
+      ],
+      "target_stored_positions": [
+        1,
+        2,
+        3
+      ]
+    },
+    "seed-20260804/heat/periodic/smooth_grf/high/000423": {
+      "target_physical_time_values": [
+        0.017857142857142856,
+        0.03571428571428571,
+        0.05357142857142857
+      ],
+      "target_source_frame_indices": [
+        11,
+        22,
+        33
+      ],
+      "target_stored_positions": [
+        1,
+        2,
+        3
+      ]
+    },
+    "seed-20260804/heat/periodic/smooth_grf/high/000433": {
+      "target_physical_time_values": [
+        0.017857142857142856,
+        0.03571428571428571,
+        0.05357142857142857
+      ],
+      "target_source_frame_indices": [
+        11,
+        22,
+        33
+      ],
+      "target_stored_positions": [
+        1,
+        2,
+        3
+      ]
+    },
+    "seed-20260804/heat/periodic/smooth_grf/high/000445": {
+      "target_physical_time_values": [
+        0.017857142857142856,
+        0.03571428571428571,
+        0.05357142857142857
+      ],
+      "target_source_frame_indices": [
+        11,
+        22,
+        33
+      ],
+      "target_stored_positions": [
+        1,
+        2,
+        3
+      ]
+    },
+    "seed-20260804/heat/periodic/smooth_grf/high/000449": {
+      "target_physical_time_values": [
+        0.017857142857142856,
+        0.03571428571428571,
+        0.05357142857142857
+      ],
+      "target_source_frame_indices": [
+        11,
+        22,
+        33
+      ],
+      "target_stored_positions": [
+        1,
+        2,
+        3
+      ]
+    },
+    "seed-20260804/heat/periodic/smooth_grf/high/000454": {
+      "target_physical_time_values": [
+        0.017857142857142856,
+        0.03571428571428571,
+        0.05357142857142857
+      ],
+      "target_source_frame_indices": [
+        11,
+        22,
+        33
+      ],
+      "target_stored_positions": [
+        1,
+        2,
+        3
+      ]
+    },
+    "seed-20260804/heat/periodic/smooth_grf/high/000457": {
+      "target_physical_time_values": [
+        0.017857142857142856,
+        0.03571428571428571,
+        0.05357142857142857
+      ],
+      "target_source_frame_indices": [
+        11,
+        22,
+        33
+      ],
+      "target_stored_positions": [
+        1,
+        2,
+        3
+      ]
+    },
+    "seed-20260804/heat/periodic/smooth_grf/high/000463": {
+      "target_physical_time_values": [
+        0.017857142857142856,
+        0.03571428571428571,
+        0.05357142857142857
+      ],
+      "target_source_frame_indices": [
+        11,
+        22,
+        33
+      ],
+      "target_stored_positions": [
+        1,
+        2,
+        3
+      ]
+    },
+    "seed-20260804/heat/periodic/smooth_grf/high/000465": {
+      "target_physical_time_values": [
+        0.017857142857142856,
+        0.03571428571428571,
+        0.05357142857142857
+      ],
+      "target_source_frame_indices": [
+        11,
+        22,
+        33
+      ],
+      "target_stored_positions": [
+        1,
+        2,
+        3
+      ]
+    },
+    "seed-20260804/heat/periodic/smooth_grf/high/000476": {
+      "target_physical_time_values": [
+        0.017857142857142856,
+        0.03571428571428571,
+        0.05357142857142857
+      ],
+      "target_source_frame_indices": [
+        11,
+        22,
+        33
+      ],
+      "target_stored_positions": [
+        1,
+        2,
+        3
+      ]
+    },
+    "seed-20260804/heat/periodic/smooth_grf/high/000477": {
+      "target_physical_time_values": [
+        0.017857142857142856,
+        0.03571428571428571,
+        0.05357142857142857
+      ],
+      "target_source_frame_indices": [
+        11,
+        22,
+        33
+      ],
+      "target_stored_positions": [
+        1,
+        2,
+        3
+      ]
+    },
+    "seed-20260804/heat/periodic/smooth_grf/high/000490": {
+      "target_physical_time_values": [
+        0.017857142857142856,
+        0.03571428571428571,
+        0.05357142857142857
+      ],
+      "target_source_frame_indices": [
+        11,
+        22,
+        33
+      ],
+      "target_stored_positions": [
+        1,
+        2,
+        3
+      ]
+    },
+    "seed-20260804/heat/periodic/smooth_grf/high/000496": {
+      "target_physical_time_values": [
+        0.017857142857142856,
+        0.03571428571428571,
+        0.05357142857142857
+      ],
+      "target_source_frame_indices": [
+        11,
+        22,
+        33
+      ],
+      "target_stored_positions": [
+        1,
+        2,
+        3
+      ]
+    },
+    "seed-20260804/heat/periodic/smooth_grf/high/000508": {
+      "target_physical_time_values": [
+        0.017857142857142856,
+        0.03571428571428571,
+        0.05357142857142857
+      ],
+      "target_source_frame_indices": [
+        11,
+        22,
+        33
+      ],
+      "target_stored_positions": [
+        1,
+        2,
+        3
+      ]
+    },
+    "seed-20260804/heat/periodic/smooth_grf/high/000511": {
+      "target_physical_time_values": [
+        0.017857142857142856,
+        0.03571428571428571,
+        0.05357142857142857
+      ],
+      "target_source_frame_indices": [
+        11,
+        22,
+        33
+      ],
+      "target_stored_positions": [
+        1,
+        2,
+        3
+      ]
+    },
+    "seed-20260804/heat/periodic/smooth_grf/high/000558": {
+      "target_physical_time_values": [
+        0.017857142857142856,
+        0.03571428571428571,
+        0.05357142857142857
+      ],
+      "target_source_frame_indices": [
+        11,
+        22,
+        33
+      ],
+      "target_stored_positions": [
+        1,
+        2,
+        3
+      ]
+    },
+    "seed-20260804/heat/periodic/smooth_grf/high/000562": {
+      "target_physical_time_values": [
+        0.017857142857142856,
+        0.03571428571428571,
+        0.05357142857142857
+      ],
+      "target_source_frame_indices": [
+        11,
+        22,
+        33
+      ],
+      "target_stored_positions": [
+        1,
+        2,
+        3
+      ]
+    },
+    "seed-20260804/heat/periodic/smooth_grf/high/000576": {
+      "target_physical_time_values": [
+        0.017857142857142856,
+        0.03571428571428571,
+        0.05357142857142857
+      ],
+      "target_source_frame_indices": [
+        11,
+        22,
+        33
+      ],
+      "target_stored_positions": [
+        1,
+        2,
+        3
+      ]
+    },
+    "seed-20260804/heat/periodic/smooth_grf/high/000592": {
+      "target_physical_time_values": [
+        0.017857142857142856,
+        0.03571428571428571,
+        0.05357142857142857
+      ],
+      "target_source_frame_indices": [
+        11,
+        22,
+        33
+      ],
+      "target_stored_positions": [
+        1,
+        2,
+        3
+      ]
+    },
+    "seed-20260804/heat/periodic/smooth_grf/high/000612": {
+      "target_physical_time_values": [
+        0.017857142857142856,
+        0.03571428571428571,
+        0.05357142857142857
+      ],
+      "target_source_frame_indices": [
+        11,
+        22,
+        33
+      ],
+      "target_stored_positions": [
+        1,
+        2,
+        3
+      ]
+    },
+    "seed-20260804/heat/periodic/smooth_grf/high/000613": {
+      "target_physical_time_values": [
+        0.017857142857142856,
+        0.03571428571428571,
+        0.05357142857142857
+      ],
+      "target_source_frame_indices": [
+        11,
+        22,
+        33
+      ],
+      "target_stored_positions": [
+        1,
+        2,
+        3
+      ]
+    },
+    "seed-20260804/heat/periodic/smooth_grf/high/000632": {
+      "target_physical_time_values": [
+        0.017857142857142856,
+        0.03571428571428571,
+        0.05357142857142857
+      ],
+      "target_source_frame_indices": [
+        11,
+        22,
+        33
+      ],
+      "target_stored_positions": [
+        1,
+        2,
+        3
+      ]
+    },
+    "seed-20260804/heat/periodic/smooth_grf/high/000634": {
+      "target_physical_time_values": [
+        0.017857142857142856,
+        0.03571428571428571,
+        0.05357142857142857
+      ],
+      "target_source_frame_indices": [
+        11,
+        22,
+        33
+      ],
+      "target_stored_positions": [
+        1,
+        2,
+        3
+      ]
+    },
+    "seed-20260804/heat/periodic/smooth_grf/low/000007": {
+      "target_physical_time_values": [
+        0.017857142857142856,
+        0.03571428571428571,
+        0.05357142857142857
+      ],
+      "target_source_frame_indices": [
+        11,
+        22,
+        33
+      ],
+      "target_stored_positions": [
+        1,
+        2,
+        3
+      ]
+    },
+    "seed-20260804/heat/periodic/smooth_grf/low/000010": {
+      "target_physical_time_values": [
+        0.017857142857142856,
+        0.03571428571428571,
+        0.05357142857142857
+      ],
+      "target_source_frame_indices": [
+        11,
+        22,
+        33
+      ],
+      "target_stored_positions": [
+        1,
+        2,
+        3
+      ]
+    },
+    "seed-20260804/heat/periodic/smooth_grf/low/000015": {
+      "target_physical_time_values": [
+        0.017857142857142856,
+        0.03571428571428571,
+        0.05357142857142857
+      ],
+      "target_source_frame_indices": [
+        11,
+        22,
+        33
+      ],
+      "target_stored_positions": [
+        1,
+        2,
+        3
+      ]
+    },
+    "seed-20260804/heat/periodic/smooth_grf/low/000027": {
+      "target_physical_time_values": [
+        0.017857142857142856,
+        0.03571428571428571,
+        0.05357142857142857
+      ],
+      "target_source_frame_indices": [
+        11,
+        22,
+        33
+      ],
+      "target_stored_positions": [
+        1,
+        2,
+        3
+      ]
+    },
+    "seed-20260804/heat/periodic/smooth_grf/low/000029": {
+      "target_physical_time_values": [
+        0.017857142857142856,
+        0.03571428571428571,
+        0.05357142857142857
+      ],
+      "target_source_frame_indices": [
+        11,
+        22,
+        33
+      ],
+      "target_stored_positions": [
+        1,
+        2,
+        3
+      ]
+    },
+    "seed-20260804/heat/periodic/smooth_grf/low/000030": {
+      "target_physical_time_values": [
+        0.017857142857142856,
+        0.03571428571428571,
+        0.05357142857142857
+      ],
+      "target_source_frame_indices": [
+        11,
+        22,
+        33
+      ],
+      "target_stored_positions": [
+        1,
+        2,
+        3
+      ]
+    },
+    "seed-20260804/heat/periodic/smooth_grf/low/000045": {
+      "target_physical_time_values": [
+        0.017857142857142856,
+        0.03571428571428571,
+        0.05357142857142857
+      ],
+      "target_source_frame_indices": [
+        11,
+        22,
+        33
+      ],
+      "target_stored_positions": [
+        1,
+        2,
+        3
+      ]
+    },
+    "seed-20260804/heat/periodic/smooth_grf/low/000048": {
+      "target_physical_time_values": [
+        0.017857142857142856,
+        0.03571428571428571,
+        0.05357142857142857
+      ],
+      "target_source_frame_indices": [
+        11,
+        22,
+        33
+      ],
+      "target_stored_positions": [
+        1,
+        2,
+        3
+      ]
+    },
+    "seed-20260804/heat/periodic/smooth_grf/low/000051": {
+      "target_physical_time_values": [
+        0.017857142857142856,
+        0.03571428571428571,
+        0.05357142857142857
+      ],
+      "target_source_frame_indices": [
+        11,
+        22,
+        33
+      ],
+      "target_stored_positions": [
+        1,
+        2,
+        3
+      ]
+    },
+    "seed-20260804/heat/periodic/smooth_grf/low/000056": {
+      "target_physical_time_values": [
+        0.017857142857142856,
+        0.03571428571428571,
+        0.05357142857142857
+      ],
+      "target_source_frame_indices": [
+        11,
+        22,
+        33
+      ],
+      "target_stored_positions": [
+        1,
+        2,
+        3
+      ]
+    },
+    "seed-20260804/heat/periodic/smooth_grf/low/000095": {
+      "target_physical_time_values": [
+        0.017857142857142856,
+        0.03571428571428571,
+        0.05357142857142857
+      ],
+      "target_source_frame_indices": [
+        11,
+        22,
+        33
+      ],
+      "target_stored_positions": [
+        1,
+        2,
+        3
+      ]
+    },
+    "seed-20260804/heat/periodic/smooth_grf/low/000097": {
+      "target_physical_time_values": [
+        0.017857142857142856,
+        0.03571428571428571,
+        0.05357142857142857
+      ],
+      "target_source_frame_indices": [
+        11,
+        22,
+        33
+      ],
+      "target_stored_positions": [
+        1,
+        2,
+        3
+      ]
+    },
+    "seed-20260804/heat/periodic/smooth_grf/low/000099": {
+      "target_physical_time_values": [
+        0.017857142857142856,
+        0.03571428571428571,
+        0.05357142857142857
+      ],
+      "target_source_frame_indices": [
+        11,
+        22,
+        33
+      ],
+      "target_stored_positions": [
+        1,
+        2,
+        3
+      ]
+    },
+    "seed-20260804/heat/periodic/smooth_grf/low/000102": {
+      "target_physical_time_values": [
+        0.017857142857142856,
+        0.03571428571428571,
+        0.05357142857142857
+      ],
+      "target_source_frame_indices": [
+        11,
+        22,
+        33
+      ],
+      "target_stored_positions": [
+        1,
+        2,
+        3
+      ]
+    },
+    "seed-20260804/heat/periodic/smooth_grf/low/000113": {
+      "target_physical_time_values": [
+        0.017857142857142856,
+        0.03571428571428571,
+        0.05357142857142857
+      ],
+      "target_source_frame_indices": [
+        11,
+        22,
+        33
+      ],
+      "target_stored_positions": [
+        1,
+        2,
+        3
+      ]
+    },
+    "seed-20260804/heat/periodic/smooth_grf/low/000118": {
+      "target_physical_time_values": [
+        0.017857142857142856,
+        0.03571428571428571,
+        0.05357142857142857
+      ],
+      "target_source_frame_indices": [
+        11,
+        22,
+        33
+      ],
+      "target_stored_positions": [
+        1,
+        2,
+        3
+      ]
+    },
+    "seed-20260804/heat/periodic/smooth_grf/low/000122": {
+      "target_physical_time_values": [
+        0.017857142857142856,
+        0.03571428571428571,
+        0.05357142857142857
+      ],
+      "target_source_frame_indices": [
+        11,
+        22,
+        33
+      ],
+      "target_stored_positions": [
+        1,
+        2,
+        3
+      ]
+    },
+    "seed-20260804/heat/periodic/smooth_grf/low/000154": {
+      "target_physical_time_values": [
+        0.017857142857142856,
+        0.03571428571428571,
+        0.05357142857142857
+      ],
+      "target_source_frame_indices": [
+        11,
+        22,
+        33
+      ],
+      "target_stored_positions": [
+        1,
+        2,
+        3
+      ]
+    },
+    "seed-20260804/heat/periodic/smooth_grf/low/000156": {
+      "target_physical_time_values": [
+        0.017857142857142856,
+        0.03571428571428571,
+        0.05357142857142857
+      ],
+      "target_source_frame_indices": [
+        11,
+        22,
+        33
+      ],
+      "target_stored_positions": [
+        1,
+        2,
+        3
+      ]
+    },
+    "seed-20260804/heat/periodic/smooth_grf/low/000167": {
+      "target_physical_time_values": [
+        0.017857142857142856,
+        0.03571428571428571,
+        0.05357142857142857
+      ],
+      "target_source_frame_indices": [
+        11,
+        22,
+        33
+      ],
+      "target_stored_positions": [
+        1,
+        2,
+        3
+      ]
+    },
+    "seed-20260804/heat/periodic/smooth_grf/low/000168": {
+      "target_physical_time_values": [
+        0.017857142857142856,
+        0.03571428571428571,
+        0.05357142857142857
+      ],
+      "target_source_frame_indices": [
+        11,
+        22,
+        33
+      ],
+      "target_stored_positions": [
+        1,
+        2,
+        3
+      ]
+    },
+    "seed-20260804/heat/periodic/smooth_grf/low/000174": {
+      "target_physical_time_values": [
+        0.017857142857142856,
+        0.03571428571428571,
+        0.05357142857142857
+      ],
+      "target_source_frame_indices": [
+        11,
+        22,
+        33
+      ],
+      "target_stored_positions": [
+        1,
+        2,
+        3
+      ]
+    },
+    "seed-20260804/heat/periodic/smooth_grf/low/000185": {
+      "target_physical_time_values": [
+        0.017857142857142856,
+        0.03571428571428571,
+        0.05357142857142857
+      ],
+      "target_source_frame_indices": [
+        11,
+        22,
+        33
+      ],
+      "target_stored_positions": [
+        1,
+        2,
+        3
+      ]
+    },
+    "seed-20260804/heat/periodic/smooth_grf/low/000202": {
+      "target_physical_time_values": [
+        0.017857142857142856,
+        0.03571428571428571,
+        0.05357142857142857
+      ],
+      "target_source_frame_indices": [
+        11,
+        22,
+        33
+      ],
+      "target_stored_positions": [
+        1,
+        2,
+        3
+      ]
+    },
+    "seed-20260804/heat/periodic/smooth_grf/low/000203": {
+      "target_physical_time_values": [
+        0.017857142857142856,
+        0.03571428571428571,
+        0.05357142857142857
+      ],
+      "target_source_frame_indices": [
+        11,
+        22,
+        33
+      ],
+      "target_stored_positions": [
+        1,
+        2,
+        3
+      ]
+    },
+    "seed-20260804/heat/periodic/smooth_grf/low/000226": {
+      "target_physical_time_values": [
+        0.017857142857142856,
+        0.03571428571428571,
+        0.05357142857142857
+      ],
+      "target_source_frame_indices": [
+        11,
+        22,
+        33
+      ],
+      "target_stored_positions": [
+        1,
+        2,
+        3
+      ]
+    },
+    "seed-20260804/heat/periodic/smooth_grf/low/000229": {
+      "target_physical_time_values": [
+        0.017857142857142856,
+        0.03571428571428571,
+        0.05357142857142857
+      ],
+      "target_source_frame_indices": [
+        11,
+        22,
+        33
+      ],
+      "target_stored_positions": [
+        1,
+        2,
+        3
+      ]
+    },
+    "seed-20260804/heat/periodic/smooth_grf/low/000253": {
+      "target_physical_time_values": [
+        0.017857142857142856,
+        0.03571428571428571,
+        0.05357142857142857
+      ],
+      "target_source_frame_indices": [
+        11,
+        22,
+        33
+      ],
+      "target_stored_positions": [
+        1,
+        2,
+        3
+      ]
+    },
+    "seed-20260804/heat/periodic/smooth_grf/low/000254": {
+      "target_physical_time_values": [
+        0.017857142857142856,
+        0.03571428571428571,
+        0.05357142857142857
+      ],
+      "target_source_frame_indices": [
+        11,
+        22,
+        33
+      ],
+      "target_stored_positions": [
+        1,
+        2,
+        3
+      ]
+    },
+    "seed-20260804/heat/periodic/smooth_grf/low/000258": {
+      "target_physical_time_values": [
+        0.017857142857142856,
+        0.03571428571428571,
+        0.05357142857142857
+      ],
+      "target_source_frame_indices": [
+        11,
+        22,
+        33
+      ],
+      "target_stored_positions": [
+        1,
+        2,
+        3
+      ]
+    },
+    "seed-20260804/heat/periodic/smooth_grf/low/000272": {
+      "target_physical_time_values": [
+        0.017857142857142856,
+        0.03571428571428571,
+        0.05357142857142857
+      ],
+      "target_source_frame_indices": [
+        11,
+        22,
+        33
+      ],
+      "target_stored_positions": [
+        1,
+        2,
+        3
+      ]
+    },
+    "seed-20260804/heat/periodic/smooth_grf/low/000274": {
+      "target_physical_time_values": [
+        0.017857142857142856,
+        0.03571428571428571,
+        0.05357142857142857
+      ],
+      "target_source_frame_indices": [
+        11,
+        22,
+        33
+      ],
+      "target_stored_positions": [
+        1,
+        2,
+        3
+      ]
+    },
+    "seed-20260804/heat/periodic/smooth_grf/low/000276": {
+      "target_physical_time_values": [
+        0.017857142857142856,
+        0.03571428571428571,
+        0.05357142857142857
+      ],
+      "target_source_frame_indices": [
+        11,
+        22,
+        33
+      ],
+      "target_stored_positions": [
+        1,
+        2,
+        3
+      ]
+    },
+    "seed-20260804/heat/periodic/smooth_grf/low/000291": {
+      "target_physical_time_values": [
+        0.017857142857142856,
+        0.03571428571428571,
+        0.05357142857142857
+      ],
+      "target_source_frame_indices": [
+        11,
+        22,
+        33
+      ],
+      "target_stored_positions": [
+        1,
+        2,
+        3
+      ]
+    },
+    "seed-20260804/heat/periodic/smooth_grf/low/000313": {
+      "target_physical_time_values": [
+        0.017857142857142856,
+        0.03571428571428571,
+        0.05357142857142857
+      ],
+      "target_source_frame_indices": [
+        11,
+        22,
+        33
+      ],
+      "target_stored_positions": [
+        1,
+        2,
+        3
+      ]
+    },
+    "seed-20260804/heat/periodic/smooth_grf/low/000319": {
+      "target_physical_time_values": [
+        0.017857142857142856,
+        0.03571428571428571,
+        0.05357142857142857
+      ],
+      "target_source_frame_indices": [
+        11,
+        22,
+        33
+      ],
+      "target_stored_positions": [
+        1,
+        2,
+        3
+      ]
+    },
+    "seed-20260804/heat/periodic/smooth_grf/low/000332": {
+      "target_physical_time_values": [
+        0.017857142857142856,
+        0.03571428571428571,
+        0.05357142857142857
+      ],
+      "target_source_frame_indices": [
+        11,
+        22,
+        33
+      ],
+      "target_stored_positions": [
+        1,
+        2,
+        3
+      ]
+    },
+    "seed-20260804/heat/periodic/smooth_grf/low/000338": {
+      "target_physical_time_values": [
+        0.017857142857142856,
+        0.03571428571428571,
+        0.05357142857142857
+      ],
+      "target_source_frame_indices": [
+        11,
+        22,
+        33
+      ],
+      "target_stored_positions": [
+        1,
+        2,
+        3
+      ]
+    },
+    "seed-20260804/heat/periodic/smooth_grf/low/000340": {
+      "target_physical_time_values": [
+        0.017857142857142856,
+        0.03571428571428571,
+        0.05357142857142857
+      ],
+      "target_source_frame_indices": [
+        11,
+        22,
+        33
+      ],
+      "target_stored_positions": [
+        1,
+        2,
+        3
+      ]
+    },
+    "seed-20260804/heat/periodic/smooth_grf/low/000347": {
+      "target_physical_time_values": [
+        0.017857142857142856,
+        0.03571428571428571,
+        0.05357142857142857
+      ],
+      "target_source_frame_indices": [
+        11,
+        22,
+        33
+      ],
+      "target_stored_positions": [
+        1,
+        2,
+        3
+      ]
+    },
+    "seed-20260804/heat/periodic/smooth_grf/low/000367": {
+      "target_physical_time_values": [
+        0.017857142857142856,
+        0.03571428571428571,
+        0.05357142857142857
+      ],
+      "target_source_frame_indices": [
+        11,
+        22,
+        33
+      ],
+      "target_stored_positions": [
+        1,
+        2,
+        3
+      ]
+    },
+    "seed-20260804/heat/periodic/smooth_grf/low/000392": {
+      "target_physical_time_values": [
+        0.017857142857142856,
+        0.03571428571428571,
+        0.05357142857142857
+      ],
+      "target_source_frame_indices": [
+        11,
+        22,
+        33
+      ],
+      "target_stored_positions": [
+        1,
+        2,
+        3
+      ]
+    },
+    "seed-20260804/heat/periodic/smooth_grf/low/000410": {
+      "target_physical_time_values": [
+        0.017857142857142856,
+        0.03571428571428571,
+        0.05357142857142857
+      ],
+      "target_source_frame_indices": [
+        11,
+        22,
+        33
+      ],
+      "target_stored_positions": [
+        1,
+        2,
+        3
+      ]
+    },
+    "seed-20260804/heat/periodic/smooth_grf/low/000416": {
+      "target_physical_time_values": [
+        0.017857142857142856,
+        0.03571428571428571,
+        0.05357142857142857
+      ],
+      "target_source_frame_indices": [
+        11,
+        22,
+        33
+      ],
+      "target_stored_positions": [
+        1,
+        2,
+        3
+      ]
+    },
+    "seed-20260804/heat/periodic/smooth_grf/low/000428": {
+      "target_physical_time_values": [
+        0.017857142857142856,
+        0.03571428571428571,
+        0.05357142857142857
+      ],
+      "target_source_frame_indices": [
+        11,
+        22,
+        33
+      ],
+      "target_stored_positions": [
+        1,
+        2,
+        3
+      ]
+    },
+    "seed-20260804/heat/periodic/smooth_grf/low/000431": {
+      "target_physical_time_values": [
+        0.017857142857142856,
+        0.03571428571428571,
+        0.05357142857142857
+      ],
+      "target_source_frame_indices": [
+        11,
+        22,
+        33
+      ],
+      "target_stored_positions": [
+        1,
+        2,
+        3
+      ]
+    },
+    "seed-20260804/heat/periodic/smooth_grf/low/000434": {
+      "target_physical_time_values": [
+        0.017857142857142856,
+        0.03571428571428571,
+        0.05357142857142857
+      ],
+      "target_source_frame_indices": [
+        11,
+        22,
+        33
+      ],
+      "target_stored_positions": [
+        1,
+        2,
+        3
+      ]
+    },
+    "seed-20260804/heat/periodic/smooth_grf/low/000438": {
+      "target_physical_time_values": [
+        0.017857142857142856,
+        0.03571428571428571,
+        0.05357142857142857
+      ],
+      "target_source_frame_indices": [
+        11,
+        22,
+        33
+      ],
+      "target_stored_positions": [
+        1,
+        2,
+        3
+      ]
+    },
+    "seed-20260804/heat/periodic/smooth_grf/low/000442": {
+      "target_physical_time_values": [
+        0.017857142857142856,
+        0.03571428571428571,
+        0.05357142857142857
+      ],
+      "target_source_frame_indices": [
+        11,
+        22,
+        33
+      ],
+      "target_stored_positions": [
+        1,
+        2,
+        3
+      ]
+    },
+    "seed-20260804/heat/periodic/smooth_grf/low/000453": {
+      "target_physical_time_values": [
+        0.017857142857142856,
+        0.03571428571428571,
+        0.05357142857142857
+      ],
+      "target_source_frame_indices": [
+        11,
+        22,
+        33
+      ],
+      "target_stored_positions": [
+        1,
+        2,
+        3
+      ]
+    },
+    "seed-20260804/heat/periodic/smooth_grf/low/000458": {
+      "target_physical_time_values": [
+        0.017857142857142856,
+        0.03571428571428571,
+        0.05357142857142857
+      ],
+      "target_source_frame_indices": [
+        11,
+        22,
+        33
+      ],
+      "target_stored_positions": [
+        1,
+        2,
+        3
+      ]
+    },
+    "seed-20260804/heat/periodic/smooth_grf/low/000473": {
+      "target_physical_time_values": [
+        0.017857142857142856,
+        0.03571428571428571,
+        0.05357142857142857
+      ],
+      "target_source_frame_indices": [
+        11,
+        22,
+        33
+      ],
+      "target_stored_positions": [
+        1,
+        2,
+        3
+      ]
+    },
+    "seed-20260804/heat/periodic/smooth_grf/low/000488": {
+      "target_physical_time_values": [
+        0.017857142857142856,
+        0.03571428571428571,
+        0.05357142857142857
+      ],
+      "target_source_frame_indices": [
+        11,
+        22,
+        33
+      ],
+      "target_stored_positions": [
+        1,
+        2,
+        3
+      ]
+    },
+    "seed-20260804/heat/periodic/smooth_grf/low/000500": {
+      "target_physical_time_values": [
+        0.017857142857142856,
+        0.03571428571428571,
+        0.05357142857142857
+      ],
+      "target_source_frame_indices": [
+        11,
+        22,
+        33
+      ],
+      "target_stored_positions": [
+        1,
+        2,
+        3
+      ]
+    },
+    "seed-20260804/heat/periodic/smooth_grf/low/000506": {
+      "target_physical_time_values": [
+        0.017857142857142856,
+        0.03571428571428571,
+        0.05357142857142857
+      ],
+      "target_source_frame_indices": [
+        11,
+        22,
+        33
+      ],
+      "target_stored_positions": [
+        1,
+        2,
+        3
+      ]
+    },
+    "seed-20260804/heat/periodic/smooth_grf/low/000521": {
+      "target_physical_time_values": [
+        0.017857142857142856,
+        0.03571428571428571,
+        0.05357142857142857
+      ],
+      "target_source_frame_indices": [
+        11,
+        22,
+        33
+      ],
+      "target_stored_positions": [
+        1,
+        2,
+        3
+      ]
+    },
+    "seed-20260804/heat/periodic/smooth_grf/low/000529": {
+      "target_physical_time_values": [
+        0.017857142857142856,
+        0.03571428571428571,
+        0.05357142857142857
+      ],
+      "target_source_frame_indices": [
+        11,
+        22,
+        33
+      ],
+      "target_stored_positions": [
+        1,
+        2,
+        3
+      ]
+    },
+    "seed-20260804/heat/periodic/smooth_grf/low/000551": {
+      "target_physical_time_values": [
+        0.017857142857142856,
+        0.03571428571428571,
+        0.05357142857142857
+      ],
+      "target_source_frame_indices": [
+        11,
+        22,
+        33
+      ],
+      "target_stored_positions": [
+        1,
+        2,
+        3
+      ]
+    },
+    "seed-20260804/heat/periodic/smooth_grf/low/000570": {
+      "target_physical_time_values": [
+        0.017857142857142856,
+        0.03571428571428571,
+        0.05357142857142857
+      ],
+      "target_source_frame_indices": [
+        11,
+        22,
+        33
+      ],
+      "target_stored_positions": [
+        1,
+        2,
+        3
+      ]
+    },
+    "seed-20260804/heat/periodic/smooth_grf/low/000573": {
+      "target_physical_time_values": [
+        0.017857142857142856,
+        0.03571428571428571,
+        0.05357142857142857
+      ],
+      "target_source_frame_indices": [
+        11,
+        22,
+        33
+      ],
+      "target_stored_positions": [
+        1,
+        2,
+        3
+      ]
+    },
+    "seed-20260804/heat/periodic/smooth_grf/low/000587": {
+      "target_physical_time_values": [
+        0.017857142857142856,
+        0.03571428571428571,
+        0.05357142857142857
+      ],
+      "target_source_frame_indices": [
+        11,
+        22,
+        33
+      ],
+      "target_stored_positions": [
+        1,
+        2,
+        3
+      ]
+    },
+    "seed-20260804/heat/periodic/smooth_grf/low/000627": {
+      "target_physical_time_values": [
+        0.017857142857142856,
+        0.03571428571428571,
+        0.05357142857142857
+      ],
+      "target_source_frame_indices": [
+        11,
+        22,
+        33
+      ],
+      "target_stored_positions": [
+        1,
+        2,
+        3
+      ]
+    },
+    "seed-20260804/heat/periodic/smooth_grf/low/000633": {
+      "target_physical_time_values": [
+        0.017857142857142856,
+        0.03571428571428571,
+        0.05357142857142857
+      ],
+      "target_source_frame_indices": [
+        11,
+        22,
+        33
+      ],
+      "target_stored_positions": [
+        1,
+        2,
+        3
+      ]
+    },
+    "seed-20260804/heat/periodic/smooth_grf/low/000636": {
+      "target_physical_time_values": [
+        0.017857142857142856,
+        0.03571428571428571,
+        0.05357142857142857
+      ],
+      "target_source_frame_indices": [
+        11,
+        22,
+        33
+      ],
+      "target_stored_positions": [
+        1,
+        2,
+        3
+      ]
+    },
+    "seed-20260804/heat/periodic/smooth_grf/low/000640": {
+      "target_physical_time_values": [
+        0.017857142857142856,
+        0.03571428571428571,
+        0.05357142857142857
+      ],
+      "target_source_frame_indices": [
+        11,
+        22,
+        33
+      ],
+      "target_stored_positions": [
+        1,
+        2,
+        3
+      ]
+    },
+    "seed-20260804/heat/periodic/smooth_grf/low/000649": {
+      "target_physical_time_values": [
+        0.017857142857142856,
+        0.03571428571428571,
+        0.05357142857142857
+      ],
+      "target_source_frame_indices": [
+        11,
+        22,
+        33
+      ],
+      "target_stored_positions": [
+        1,
+        2,
+        3
+      ]
+    },
+    "seed-20260804/heat/periodic/smooth_grf/low/000658": {
+      "target_physical_time_values": [
+        0.017857142857142856,
+        0.03571428571428571,
+        0.05357142857142857
+      ],
+      "target_source_frame_indices": [
+        11,
+        22,
+        33
+      ],
+      "target_stored_positions": [
+        1,
+        2,
+        3
+      ]
+    },
+    "seed-20260804/heat/periodic/smooth_grf/medium/000006": {
+      "target_physical_time_values": [
+        0.017857142857142856,
+        0.03571428571428571,
+        0.05357142857142857
+      ],
+      "target_source_frame_indices": [
+        11,
+        22,
+        33
+      ],
+      "target_stored_positions": [
+        1,
+        2,
+        3
+      ]
+    },
+    "seed-20260804/heat/periodic/smooth_grf/medium/000016": {
+      "target_physical_time_values": [
+        0.017857142857142856,
+        0.03571428571428571,
+        0.05357142857142857
+      ],
+      "target_source_frame_indices": [
+        11,
+        22,
+        33
+      ],
+      "target_stored_positions": [
+        1,
+        2,
+        3
+      ]
+    },
+    "seed-20260804/heat/periodic/smooth_grf/medium/000019": {
+      "target_physical_time_values": [
+        0.017857142857142856,
+        0.03571428571428571,
+        0.05357142857142857
+      ],
+      "target_source_frame_indices": [
+        11,
+        22,
+        33
+      ],
+      "target_stored_positions": [
+        1,
+        2,
+        3
+      ]
+    },
+    "seed-20260804/heat/periodic/smooth_grf/medium/000022": {
+      "target_physical_time_values": [
+        0.017857142857142856,
+        0.03571428571428571,
+        0.05357142857142857
+      ],
+      "target_source_frame_indices": [
+        11,
+        22,
+        33
+      ],
+      "target_stored_positions": [
+        1,
+        2,
+        3
+      ]
+    },
+    "seed-20260804/heat/periodic/smooth_grf/medium/000027": {
+      "target_physical_time_values": [
+        0.017857142857142856,
+        0.03571428571428571,
+        0.05357142857142857
+      ],
+      "target_source_frame_indices": [
+        11,
+        22,
+        33
+      ],
+      "target_stored_positions": [
+        1,
+        2,
+        3
+      ]
+    },
+    "seed-20260804/heat/periodic/smooth_grf/medium/000046": {
+      "target_physical_time_values": [
+        0.017857142857142856,
+        0.03571428571428571,
+        0.05357142857142857
+      ],
+      "target_source_frame_indices": [
+        11,
+        22,
+        33
+      ],
+      "target_stored_positions": [
+        1,
+        2,
+        3
+      ]
+    },
+    "seed-20260804/heat/periodic/smooth_grf/medium/000064": {
+      "target_physical_time_values": [
+        0.017857142857142856,
+        0.03571428571428571,
+        0.05357142857142857
+      ],
+      "target_source_frame_indices": [
+        11,
+        22,
+        33
+      ],
+      "target_stored_positions": [
+        1,
+        2,
+        3
+      ]
+    },
+    "seed-20260804/heat/periodic/smooth_grf/medium/000066": {
+      "target_physical_time_values": [
+        0.017857142857142856,
+        0.03571428571428571,
+        0.05357142857142857
+      ],
+      "target_source_frame_indices": [
+        11,
+        22,
+        33
+      ],
+      "target_stored_positions": [
+        1,
+        2,
+        3
+      ]
+    },
+    "seed-20260804/heat/periodic/smooth_grf/medium/000068": {
+      "target_physical_time_values": [
+        0.017857142857142856,
+        0.03571428571428571,
+        0.05357142857142857
+      ],
+      "target_source_frame_indices": [
+        11,
+        22,
+        33
+      ],
+      "target_stored_positions": [
+        1,
+        2,
+        3
+      ]
+    },
+    "seed-20260804/heat/periodic/smooth_grf/medium/000072": {
+      "target_physical_time_values": [
+        0.017857142857142856,
+        0.03571428571428571,
+        0.05357142857142857
+      ],
+      "target_source_frame_indices": [
+        11,
+        22,
+        33
+      ],
+      "target_stored_positions": [
+        1,
+        2,
+        3
+      ]
+    },
+    "seed-20260804/heat/periodic/smooth_grf/medium/000074": {
+      "target_physical_time_values": [
+        0.017857142857142856,
+        0.03571428571428571,
+        0.05357142857142857
+      ],
+      "target_source_frame_indices": [
+        11,
+        22,
+        33
+      ],
+      "target_stored_positions": [
+        1,
+        2,
+        3
+      ]
+    },
+    "seed-20260804/heat/periodic/smooth_grf/medium/000100": {
+      "target_physical_time_values": [
+        0.017857142857142856,
+        0.03571428571428571,
+        0.05357142857142857
+      ],
+      "target_source_frame_indices": [
+        11,
+        22,
+        33
+      ],
+      "target_stored_positions": [
+        1,
+        2,
+        3
+      ]
+    },
+    "seed-20260804/heat/periodic/smooth_grf/medium/000103": {
+      "target_physical_time_values": [
+        0.017857142857142856,
+        0.03571428571428571,
+        0.05357142857142857
+      ],
+      "target_source_frame_indices": [
+        11,
+        22,
+        33
+      ],
+      "target_stored_positions": [
+        1,
+        2,
+        3
+      ]
+    },
+    "seed-20260804/heat/periodic/smooth_grf/medium/000116": {
+      "target_physical_time_values": [
+        0.017857142857142856,
+        0.03571428571428571,
+        0.05357142857142857
+      ],
+      "target_source_frame_indices": [
+        11,
+        22,
+        33
+      ],
+      "target_stored_positions": [
+        1,
+        2,
+        3
+      ]
+    },
+    "seed-20260804/heat/periodic/smooth_grf/medium/000119": {
+      "target_physical_time_values": [
+        0.017857142857142856,
+        0.03571428571428571,
+        0.05357142857142857
+      ],
+      "target_source_frame_indices": [
+        11,
+        22,
+        33
+      ],
+      "target_stored_positions": [
+        1,
+        2,
+        3
+      ]
+    },
+    "seed-20260804/heat/periodic/smooth_grf/medium/000125": {
+      "target_physical_time_values": [
+        0.017857142857142856,
+        0.03571428571428571,
+        0.05357142857142857
+      ],
+      "target_source_frame_indices": [
+        11,
+        22,
+        33
+      ],
+      "target_stored_positions": [
+        1,
+        2,
+        3
+      ]
+    },
+    "seed-20260804/heat/periodic/smooth_grf/medium/000145": {
+      "target_physical_time_values": [
+        0.017857142857142856,
+        0.03571428571428571,
+        0.05357142857142857
+      ],
+      "target_source_frame_indices": [
+        11,
+        22,
+        33
+      ],
+      "target_stored_positions": [
+        1,
+        2,
+        3
+      ]
+    },
+    "seed-20260804/heat/periodic/smooth_grf/medium/000153": {
+      "target_physical_time_values": [
+        0.017857142857142856,
+        0.03571428571428571,
+        0.05357142857142857
+      ],
+      "target_source_frame_indices": [
+        11,
+        22,
+        33
+      ],
+      "target_stored_positions": [
+        1,
+        2,
+        3
+      ]
+    },
+    "seed-20260804/heat/periodic/smooth_grf/medium/000184": {
+      "target_physical_time_values": [
+        0.017857142857142856,
+        0.03571428571428571,
+        0.05357142857142857
+      ],
+      "target_source_frame_indices": [
+        11,
+        22,
+        33
+      ],
+      "target_stored_positions": [
+        1,
+        2,
+        3
+      ]
+    },
+    "seed-20260804/heat/periodic/smooth_grf/medium/000186": {
+      "target_physical_time_values": [
+        0.017857142857142856,
+        0.03571428571428571,
+        0.05357142857142857
+      ],
+      "target_source_frame_indices": [
+        11,
+        22,
+        33
+      ],
+      "target_stored_positions": [
+        1,
+        2,
+        3
+      ]
+    },
+    "seed-20260804/heat/periodic/smooth_grf/medium/000196": {
+      "target_physical_time_values": [
+        0.017857142857142856,
+        0.03571428571428571,
+        0.05357142857142857
+      ],
+      "target_source_frame_indices": [
+        11,
+        22,
+        33
+      ],
+      "target_stored_positions": [
+        1,
+        2,
+        3
+      ]
+    },
+    "seed-20260804/heat/periodic/smooth_grf/medium/000198": {
+      "target_physical_time_values": [
+        0.017857142857142856,
+        0.03571428571428571,
+        0.05357142857142857
+      ],
+      "target_source_frame_indices": [
+        11,
+        22,
+        33
+      ],
+      "target_stored_positions": [
+        1,
+        2,
+        3
+      ]
+    },
+    "seed-20260804/heat/periodic/smooth_grf/medium/000199": {
+      "target_physical_time_values": [
+        0.017857142857142856,
+        0.03571428571428571,
+        0.05357142857142857
+      ],
+      "target_source_frame_indices": [
+        11,
+        22,
+        33
+      ],
+      "target_stored_positions": [
+        1,
+        2,
+        3
+      ]
+    },
+    "seed-20260804/heat/periodic/smooth_grf/medium/000211": {
+      "target_physical_time_values": [
+        0.017857142857142856,
+        0.03571428571428571,
+        0.05357142857142857
+      ],
+      "target_source_frame_indices": [
+        11,
+        22,
+        33
+      ],
+      "target_stored_positions": [
+        1,
+        2,
+        3
+      ]
+    },
+    "seed-20260804/heat/periodic/smooth_grf/medium/000223": {
+      "target_physical_time_values": [
+        0.017857142857142856,
+        0.03571428571428571,
+        0.05357142857142857
+      ],
+      "target_source_frame_indices": [
+        11,
+        22,
+        33
+      ],
+      "target_stored_positions": [
+        1,
+        2,
+        3
+      ]
+    },
+    "seed-20260804/heat/periodic/smooth_grf/medium/000233": {
+      "target_physical_time_values": [
+        0.017857142857142856,
+        0.03571428571428571,
+        0.05357142857142857
+      ],
+      "target_source_frame_indices": [
+        11,
+        22,
+        33
+      ],
+      "target_stored_positions": [
+        1,
+        2,
+        3
+      ]
+    },
+    "seed-20260804/heat/periodic/smooth_grf/medium/000237": {
+      "target_physical_time_values": [
+        0.017857142857142856,
+        0.03571428571428571,
+        0.05357142857142857
+      ],
+      "target_source_frame_indices": [
+        11,
+        22,
+        33
+      ],
+      "target_stored_positions": [
+        1,
+        2,
+        3
+      ]
+    },
+    "seed-20260804/heat/periodic/smooth_grf/medium/000240": {
+      "target_physical_time_values": [
+        0.017857142857142856,
+        0.03571428571428571,
+        0.05357142857142857
+      ],
+      "target_source_frame_indices": [
+        11,
+        22,
+        33
+      ],
+      "target_stored_positions": [
+        1,
+        2,
+        3
+      ]
+    },
+    "seed-20260804/heat/periodic/smooth_grf/medium/000275": {
+      "target_physical_time_values": [
+        0.017857142857142856,
+        0.03571428571428571,
+        0.05357142857142857
+      ],
+      "target_source_frame_indices": [
+        11,
+        22,
+        33
+      ],
+      "target_stored_positions": [
+        1,
+        2,
+        3
+      ]
+    },
+    "seed-20260804/heat/periodic/smooth_grf/medium/000280": {
+      "target_physical_time_values": [
+        0.017857142857142856,
+        0.03571428571428571,
+        0.05357142857142857
+      ],
+      "target_source_frame_indices": [
+        11,
+        22,
+        33
+      ],
+      "target_stored_positions": [
+        1,
+        2,
+        3
+      ]
+    },
+    "seed-20260804/heat/periodic/smooth_grf/medium/000298": {
+      "target_physical_time_values": [
+        0.017857142857142856,
+        0.03571428571428571,
+        0.05357142857142857
+      ],
+      "target_source_frame_indices": [
+        11,
+        22,
+        33
+      ],
+      "target_stored_positions": [
+        1,
+        2,
+        3
+      ]
+    },
+    "seed-20260804/heat/periodic/smooth_grf/medium/000303": {
+      "target_physical_time_values": [
+        0.017857142857142856,
+        0.03571428571428571,
+        0.05357142857142857
+      ],
+      "target_source_frame_indices": [
+        11,
+        22,
+        33
+      ],
+      "target_stored_positions": [
+        1,
+        2,
+        3
+      ]
+    },
+    "seed-20260804/heat/periodic/smooth_grf/medium/000312": {
+      "target_physical_time_values": [
+        0.017857142857142856,
+        0.03571428571428571,
+        0.05357142857142857
+      ],
+      "target_source_frame_indices": [
+        11,
+        22,
+        33
+      ],
+      "target_stored_positions": [
+        1,
+        2,
+        3
+      ]
+    },
+    "seed-20260804/heat/periodic/smooth_grf/medium/000319": {
+      "target_physical_time_values": [
+        0.017857142857142856,
+        0.03571428571428571,
+        0.05357142857142857
+      ],
+      "target_source_frame_indices": [
+        11,
+        22,
+        33
+      ],
+      "target_stored_positions": [
+        1,
+        2,
+        3
+      ]
+    },
+    "seed-20260804/heat/periodic/smooth_grf/medium/000324": {
+      "target_physical_time_values": [
+        0.017857142857142856,
+        0.03571428571428571,
+        0.05357142857142857
+      ],
+      "target_source_frame_indices": [
+        11,
+        22,
+        33
+      ],
+      "target_stored_positions": [
+        1,
+        2,
+        3
+      ]
+    },
+    "seed-20260804/heat/periodic/smooth_grf/medium/000329": {
+      "target_physical_time_values": [
+        0.017857142857142856,
+        0.03571428571428571,
+        0.05357142857142857
+      ],
+      "target_source_frame_indices": [
+        11,
+        22,
+        33
+      ],
+      "target_stored_positions": [
+        1,
+        2,
+        3
+      ]
+    },
+    "seed-20260804/heat/periodic/smooth_grf/medium/000335": {
+      "target_physical_time_values": [
+        0.017857142857142856,
+        0.03571428571428571,
+        0.05357142857142857
+      ],
+      "target_source_frame_indices": [
+        11,
+        22,
+        33
+      ],
+      "target_stored_positions": [
+        1,
+        2,
+        3
+      ]
+    },
+    "seed-20260804/heat/periodic/smooth_grf/medium/000351": {
+      "target_physical_time_values": [
+        0.017857142857142856,
+        0.03571428571428571,
+        0.05357142857142857
+      ],
+      "target_source_frame_indices": [
+        11,
+        22,
+        33
+      ],
+      "target_stored_positions": [
+        1,
+        2,
+        3
+      ]
+    },
+    "seed-20260804/heat/periodic/smooth_grf/medium/000369": {
+      "target_physical_time_values": [
+        0.017857142857142856,
+        0.03571428571428571,
+        0.05357142857142857
+      ],
+      "target_source_frame_indices": [
+        11,
+        22,
+        33
+      ],
+      "target_stored_positions": [
+        1,
+        2,
+        3
+      ]
+    },
+    "seed-20260804/heat/periodic/smooth_grf/medium/000371": {
+      "target_physical_time_values": [
+        0.017857142857142856,
+        0.03571428571428571,
+        0.05357142857142857
+      ],
+      "target_source_frame_indices": [
+        11,
+        22,
+        33
+      ],
+      "target_stored_positions": [
+        1,
+        2,
+        3
+      ]
+    },
+    "seed-20260804/heat/periodic/smooth_grf/medium/000375": {
+      "target_physical_time_values": [
+        0.017857142857142856,
+        0.03571428571428571,
+        0.05357142857142857
+      ],
+      "target_source_frame_indices": [
+        11,
+        22,
+        33
+      ],
+      "target_stored_positions": [
+        1,
+        2,
+        3
+      ]
+    },
+    "seed-20260804/heat/periodic/smooth_grf/medium/000377": {
+      "target_physical_time_values": [
+        0.017857142857142856,
+        0.03571428571428571,
+        0.05357142857142857
+      ],
+      "target_source_frame_indices": [
+        11,
+        22,
+        33
+      ],
+      "target_stored_positions": [
+        1,
+        2,
+        3
+      ]
+    },
+    "seed-20260804/heat/periodic/smooth_grf/medium/000380": {
+      "target_physical_time_values": [
+        0.017857142857142856,
+        0.03571428571428571,
+        0.05357142857142857
+      ],
+      "target_source_frame_indices": [
+        11,
+        22,
+        33
+      ],
+      "target_stored_positions": [
+        1,
+        2,
+        3
+      ]
+    },
+    "seed-20260804/heat/periodic/smooth_grf/medium/000396": {
+      "target_physical_time_values": [
+        0.017857142857142856,
+        0.03571428571428571,
+        0.05357142857142857
+      ],
+      "target_source_frame_indices": [
+        11,
+        22,
+        33
+      ],
+      "target_stored_positions": [
+        1,
+        2,
+        3
+      ]
+    },
+    "seed-20260804/heat/periodic/smooth_grf/medium/000422": {
+      "target_physical_time_values": [
+        0.017857142857142856,
+        0.03571428571428571,
+        0.05357142857142857
+      ],
+      "target_source_frame_indices": [
+        11,
+        22,
+        33
+      ],
+      "target_stored_positions": [
+        1,
+        2,
+        3
+      ]
+    },
+    "seed-20260804/heat/periodic/smooth_grf/medium/000438": {
+      "target_physical_time_values": [
+        0.017857142857142856,
+        0.03571428571428571,
+        0.05357142857142857
+      ],
+      "target_source_frame_indices": [
+        11,
+        22,
+        33
+      ],
+      "target_stored_positions": [
+        1,
+        2,
+        3
+      ]
+    },
+    "seed-20260804/heat/periodic/smooth_grf/medium/000451": {
+      "target_physical_time_values": [
+        0.017857142857142856,
+        0.03571428571428571,
+        0.05357142857142857
+      ],
+      "target_source_frame_indices": [
+        11,
+        22,
+        33
+      ],
+      "target_stored_positions": [
+        1,
+        2,
+        3
+      ]
+    },
+    "seed-20260804/heat/periodic/smooth_grf/medium/000482": {
+      "target_physical_time_values": [
+        0.017857142857142856,
+        0.03571428571428571,
+        0.05357142857142857
+      ],
+      "target_source_frame_indices": [
+        11,
+        22,
+        33
+      ],
+      "target_stored_positions": [
+        1,
+        2,
+        3
+      ]
+    },
+    "seed-20260804/heat/periodic/smooth_grf/medium/000483": {
+      "target_physical_time_values": [
+        0.017857142857142856,
+        0.03571428571428571,
+        0.05357142857142857
+      ],
+      "target_source_frame_indices": [
+        11,
+        22,
+        33
+      ],
+      "target_stored_positions": [
+        1,
+        2,
+        3
+      ]
+    },
+    "seed-20260804/heat/periodic/smooth_grf/medium/000490": {
+      "target_physical_time_values": [
+        0.017857142857142856,
+        0.03571428571428571,
+        0.05357142857142857
+      ],
+      "target_source_frame_indices": [
+        11,
+        22,
+        33
+      ],
+      "target_stored_positions": [
+        1,
+        2,
+        3
+      ]
+    },
+    "seed-20260804/heat/periodic/smooth_grf/medium/000504": {
+      "target_physical_time_values": [
+        0.017857142857142856,
+        0.03571428571428571,
+        0.05357142857142857
+      ],
+      "target_source_frame_indices": [
+        11,
+        22,
+        33
+      ],
+      "target_stored_positions": [
+        1,
+        2,
+        3
+      ]
+    },
+    "seed-20260804/heat/periodic/smooth_grf/medium/000513": {
+      "target_physical_time_values": [
+        0.017857142857142856,
+        0.03571428571428571,
+        0.05357142857142857
+      ],
+      "target_source_frame_indices": [
+        11,
+        22,
+        33
+      ],
+      "target_stored_positions": [
+        1,
+        2,
+        3
+      ]
+    },
+    "seed-20260804/heat/periodic/smooth_grf/medium/000515": {
+      "target_physical_time_values": [
+        0.017857142857142856,
+        0.03571428571428571,
+        0.05357142857142857
+      ],
+      "target_source_frame_indices": [
+        11,
+        22,
+        33
+      ],
+      "target_stored_positions": [
+        1,
+        2,
+        3
+      ]
+    },
+    "seed-20260804/heat/periodic/smooth_grf/medium/000532": {
+      "target_physical_time_values": [
+        0.017857142857142856,
+        0.03571428571428571,
+        0.05357142857142857
+      ],
+      "target_source_frame_indices": [
+        11,
+        22,
+        33
+      ],
+      "target_stored_positions": [
+        1,
+        2,
+        3
+      ]
+    },
+    "seed-20260804/heat/periodic/smooth_grf/medium/000536": {
+      "target_physical_time_values": [
+        0.017857142857142856,
+        0.03571428571428571,
+        0.05357142857142857
+      ],
+      "target_source_frame_indices": [
+        11,
+        22,
+        33
+      ],
+      "target_stored_positions": [
+        1,
+        2,
+        3
+      ]
+    },
+    "seed-20260804/heat/periodic/smooth_grf/medium/000550": {
+      "target_physical_time_values": [
+        0.017857142857142856,
+        0.03571428571428571,
+        0.05357142857142857
+      ],
+      "target_source_frame_indices": [
+        11,
+        22,
+        33
+      ],
+      "target_stored_positions": [
+        1,
+        2,
+        3
+      ]
+    },
+    "seed-20260804/heat/periodic/smooth_grf/medium/000554": {
+      "target_physical_time_values": [
+        0.017857142857142856,
+        0.03571428571428571,
+        0.05357142857142857
+      ],
+      "target_source_frame_indices": [
+        11,
+        22,
+        33
+      ],
+      "target_stored_positions": [
+        1,
+        2,
+        3
+      ]
+    },
+    "seed-20260804/heat/periodic/smooth_grf/medium/000563": {
+      "target_physical_time_values": [
+        0.017857142857142856,
+        0.03571428571428571,
+        0.05357142857142857
+      ],
+      "target_source_frame_indices": [
+        11,
+        22,
+        33
+      ],
+      "target_stored_positions": [
+        1,
+        2,
+        3
+      ]
+    },
+    "seed-20260804/heat/periodic/smooth_grf/medium/000580": {
+      "target_physical_time_values": [
+        0.017857142857142856,
+        0.03571428571428571,
+        0.05357142857142857
+      ],
+      "target_source_frame_indices": [
+        11,
+        22,
+        33
+      ],
+      "target_stored_positions": [
+        1,
+        2,
+        3
+      ]
+    },
+    "seed-20260804/heat/periodic/smooth_grf/medium/000591": {
+      "target_physical_time_values": [
+        0.017857142857142856,
+        0.03571428571428571,
+        0.05357142857142857
+      ],
+      "target_source_frame_indices": [
+        11,
+        22,
+        33
+      ],
+      "target_stored_positions": [
+        1,
+        2,
+        3
+      ]
+    },
+    "seed-20260804/heat/periodic/smooth_grf/medium/000597": {
+      "target_physical_time_values": [
+        0.017857142857142856,
+        0.03571428571428571,
+        0.05357142857142857
+      ],
+      "target_source_frame_indices": [
+        11,
+        22,
+        33
+      ],
+      "target_stored_positions": [
+        1,
+        2,
+        3
+      ]
+    },
+    "seed-20260804/heat/periodic/smooth_grf/medium/000602": {
+      "target_physical_time_values": [
+        0.017857142857142856,
+        0.03571428571428571,
+        0.05357142857142857
+      ],
+      "target_source_frame_indices": [
+        11,
+        22,
+        33
+      ],
+      "target_stored_positions": [
+        1,
+        2,
+        3
+      ]
+    },
+    "seed-20260804/heat/periodic/smooth_grf/medium/000624": {
+      "target_physical_time_values": [
+        0.017857142857142856,
+        0.03571428571428571,
+        0.05357142857142857
+      ],
+      "target_source_frame_indices": [
+        11,
+        22,
+        33
+      ],
+      "target_stored_positions": [
+        1,
+        2,
+        3
+      ]
+    },
+    "seed-20260804/heat/periodic/smooth_grf/medium/000629": {
+      "target_physical_time_values": [
+        0.017857142857142856,
+        0.03571428571428571,
+        0.05357142857142857
+      ],
+      "target_source_frame_indices": [
+        11,
+        22,
+        33
+      ],
+      "target_stored_positions": [
+        1,
+        2,
+        3
+      ]
+    },
+    "seed-20260804/heat/periodic/smooth_grf/medium/000654": {
+      "target_physical_time_values": [
+        0.017857142857142856,
+        0.03571428571428571,
+        0.05357142857142857
+      ],
+      "target_source_frame_indices": [
+        11,
+        22,
+        33
+      ],
+      "target_stored_positions": [
+        1,
+        2,
+        3
+      ]
+    },
+    "seed-20260804/heat/periodic/smooth_grf/medium/000657": {
+      "target_physical_time_values": [
+        0.017857142857142856,
+        0.03571428571428571,
+        0.05357142857142857
+      ],
+      "target_source_frame_indices": [
+        11,
+        22,
+        33
+      ],
+      "target_stored_positions": [
+        1,
+        2,
+        3
+      ]
+    },
+    "seed-20260804/heat/periodic/smooth_grf/medium/000663": {
+      "target_physical_time_values": [
+        0.017857142857142856,
+        0.03571428571428571,
+        0.05357142857142857
+      ],
+      "target_source_frame_indices": [
+        11,
+        22,
+        33
+      ],
+      "target_stored_positions": [
+        1,
+        2,
+        3
+      ]
+    }
+  },
+  "historical_split_sha256": "d85f957a12fa6950e870dc9411da184dddd26c42940f7bcb0cd965dec66cad66",
+  "identity": "heat/deeponet/mixed_nine_views",
+  "mask_config": {
+    "num_lines": 64,
+    "orientation": "vertical",
+    "protocol": "line_sensors"
+  },
+  "observation_id": "vertical_lines_50pct",
+  "projection": false,
+  "schema_version": "pdeobs-strict-contract-v1",
+  "split": "paper-test",
+  "target_time_indices": [
+    1,
+    2,
+    3
+  ],
+  "task": "rollout",
+  "time_index_semantics": "stored_frame_positions; per_identity_source_mapping_bound",
+  "training_cohort": "mixed_pattern_study",
+  "training_mask_spec": "random_3pct(ratio=0.5) + random_3pct(ratio=0.65) + random_3pct(ratio=0.8) + block_missing(missing_fraction=0.49) + line_sensors(num_lines=76, orientation=both) + line_sensors(num_lines=64, orientation=horizontal) + line_sensors(num_lines=64, orientation=vertical) + boundary_sensors(width=19) + clustered_sensors(ratio=0.5)",
+  "training_protocol": "pdeobs.fixed500-last-checkpoint/v7",
+  "training_view": "mixed_nine_views",
+  "verification_adapter": "pdeobs-archived-prediction-verification-v1",
+  "view_kind": "frozen_paper_view"
+}

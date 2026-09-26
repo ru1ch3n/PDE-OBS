@@ -1,0 +1,41 @@
+include: default.yaml
+
+# One small deterministic pass through every PDE x boundary pair.  This is a
+# numerical preflight only; observation masks are applied later by datasets.
+name: pdeobs-numerics-boundary-demo
+tier: tiny
+stored_trajectory_steps: 30
+settings: [smooth_grf]
+
+trajectory_steps_by_family:
+  heat: 146
+  reaction_diffusion: 262
+  burgers: 262
+
+trajectory_steps_by_case:
+  burgers/periodic/threshold_level_set: 523
+  burgers/dirichlet/threshold_level_set: 523
+  burgers/neumann/threshold_level_set: 523
+  burgers/robin_obstacle/threshold_level_set: 523
+  navier_stokes/periodic: 59
+  navier_stokes/dirichlet: 262
+  navier_stokes/neumann: 59
+  navier_stokes/robin_obstacle: 262
+
+solver_options_by_case:
+  navier_stokes/periodic: {solver: fno_spectral_vorticity}
+  navier_stokes/dirichlet: {solver: dst_no_slip_vorticity}
+  navier_stokes/neumann: {solver: dst_free_slip_vorticity}
+  navier_stokes/robin_obstacle: {solver: masked_obstacle_vorticity}
+
+quality:
+  profile: strict
+  require_pde_loss: true
+  thresholds:
+    pde_loss_normalized_max: 0.05
+    divergence_loss_normalized_max: 1.0e-6
+
+output:
+  root: ${PDEOBS_DATA:-datasets}/numerics-boundary-demo
+  atomic: true
+  checksum: sha256

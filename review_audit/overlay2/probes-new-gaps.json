@@ -1,0 +1,121 @@
+[
+ {
+  "case": "B_duplicate_target_ids",
+  "result": "invalid"
+ },
+ {
+  "case": "B_extra_target_id_3_rows",
+  "result": "invalid"
+ },
+ {
+  "case": "B_missing_target_id_1_row",
+  "result": "invalid"
+ },
+ {
+  "case": "B_wrong_ids_same_count",
+  "result": "invalid"
+ },
+ {
+  "case": "B_int_target_ids",
+  "result": "invalid"
+ },
+ {
+  "case": "B_numpy_int_target_ids",
+  "result": "invalid"
+ },
+ {
+  "case": "B_duplicate_prediction_ids",
+  "exception": "ValueError",
+  "message": "sample_ids must be unique and match the batch size"
+ },
+ {
+  "case": "B_input_ids_differ_from_prediction_ids",
+  "result": "invalid"
+ },
+ {
+  "case": "E_nan_prediction",
+  "result": "invalid"
+ },
+ {
+  "case": "E_huge_finite_error_stays_valid",
+  "result": [
+   "valid",
+   999999.0
+  ]
+ },
+ {
+  "case": "E_nan_target",
+  "result": "invalid"
+ },
+ {
+  "case": "A_bool_mask_accepted",
+  "result": 32.0
+ },
+ {
+  "case": "A_uint8_mask_accepted",
+  "result": 32.0
+ },
+ {
+  "case": "A_mask_shape_broadcastable_HW1",
+  "exception": "ValueError",
+  "message": "mask shape (4, 4, 1, 1) must match observations (2, 4, 4, 1) with a single trailing channel"
+ },
+ {
+  "case": "A_mask_shape_wrong_N",
+  "exception": "ValueError",
+  "message": "mask shape (3, 4, 4, 1) must match observations (2, 4, 4, 1) with a single trailing channel"
+ },
+ {
+  "case": "A_mask_shape_missing_channel",
+  "result": [
+   2,
+   4,
+   4,
+   1
+  ]
+ },
+ {
+  "case": "A_obs_3d_no_channel",
+  "exception": "ValueError",
+  "message": "observations must be channels-last (N,H,W,C) or (N,T,H,W,C)"
+ },
+ {
+  "case": "A_geometry_shape_mismatch",
+  "exception": "ValueError",
+  "message": "geometry shape (2, 5, 5, 1) must be (N,H,W,1)"
+ },
+ {
+  "case": "A_sample_ids_count_mismatch",
+  "exception": "ValueError",
+  "message": "sample_ids must be unique and match the batch size"
+ },
+ {
+  "case": "A_duplicate_sample_ids",
+  "exception": "ValueError",
+  "message": "sample_ids must be unique and match the batch size"
+ },
+ {
+  "case": "C_target_extra_singleton_dim",
+  "result": "invalid"
+ },
+ {
+  "case": "C_target_ids_string_numeric_mix",
+  "result": "invalid"
+ },
+ {
+  "case": "C_time_index_bool_in_bundle",
+  "result": [
+   true
+  ]
+ },
+ {
+  "case": "C_time_index_float_in_bundle",
+  "result": [
+   0.9
+  ]
+ },
+ {
+  "case": "C_negative_time_index",
+  "result": "invalid"
+ }
+]

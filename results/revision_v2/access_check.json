@@ -1,0 +1,184 @@
+{
+ "access": {
+  "PDE-OBS/pdeobs-data": {
+   "api": {
+    "content_length": "1737523",
+    "etag": "W/\"1a8333-484s1ohKDCGYNczi27E/HypWz04\"",
+    "final_url": "https://huggingface.co/api/datasets/PDE-OBS/pdeobs-data",
+    "status": 200,
+    "url": "https://huggingface.co/api/datasets/PDE-OBS/pdeobs-data"
+   },
+   "declared_role": "de-identified re-emission of the generated corpus: data/<family>/<boundary>/<construction>/<regime>/shard_*.h5 with sidecars (paper slice = data/<family>/<paper boundary>/smooth_grf/, 84 shards), release_manifest.json (slice), release_manifest_full.json (all 3,360 shards), scrub-manifest.json (rewritten files with their published digests), summary.json and summary.quality.* (de-identified generation-time summaries)",
+   "files": {
+    "data/heat/periodic/smooth_grf/high/shard_00000.h5": {
+     "content_length": "148654344",
+     "etag": "\"b982c0e857e484b391eb5e67380490e0056f0363afa32dc9eedc9cc03c398cdf\"",
+     "final_url": "https://us.aws.cdn.hf.co/xet-bridge-us/6ab73a09a13bdc0c6f1600da/b982c0e857e484b391eb5e67380490e0056f0363afa32dc9eedc9cc03c398cdf?response-content-disposition=inline%3B+filename*%3DUTF-8%27%27shard_00000.h5%3B+filename%3D%22shard_00000.h5%22%3B&user_id=public&X-Xet-Cas-Uid=public&xip=y4leofgyX60&Expires=1790410359&Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly91cy5hd3MuY2RuLmhmLmNvL3hldC1icmlkZ2UtdXMvNmFiNzNhMDlhMTNiZGMwYzZmMTYwMGRhL2I5ODJjMGU4NTdlNDg0YjM5MWViNWU2NzM4MDQ5MGUwMDU2ZjAzNjNhZmEzMmRjOWVlZGM5Y2MwM2MzOThjZGZcXD9yZXNwb25zZS1jb250ZW50LWRpc3Bvc2l0aW9uPWlubGluZSUzQitmaWxlbmFtZSUyQSUzRFVURi04JTI3JTI3c2hhcmRfMDAwMDAuaDUlM0IrZmlsZW5hbWUlM0QlMjJzaGFyZF8wMDAwMC5oNSUyMiUzQiZ1c2VyX2lkPXB1YmxpYyZYLVhldC1DYXMtVWlkPXB1YmxpYyZ4aXA9eTRsZW9mZ3lYNjAiLCJDb25kaXRpb24iOnsiRGF0ZUxlc3NUaGFuIjp7IkVwb2NoVGltZSI6MTc5MDQxMDM1OX19fV19&Signature=MEYCIQDK55UB9qShl0Y5eNxMtShJEBPmcUJxq503Ry1PA3q5GwIhAKWwFbFK0XEPr23wqqJCOapGANZRX%7EwXhkqbZbAogbYn&Key-Pair-Id=01KXEF4KZ1B6FV465MAWR4M21F&Hash-Algorithm=SHA256",
+     "status": 200,
+     "url": "https://huggingface.co/datasets/PDE-OBS/pdeobs-data/resolve/main/data/heat/periodic/smooth_grf/high/shard_00000.h5"
+    },
+    "data/poisson/dirichlet/smooth_grf/high/shard_00000.h5": {
+     "content_length": "20339691",
+     "etag": "\"c764178997bff5cb36eb98de9120481ed1b55d746a7a0ff0d63de4026e15a756\"",
+     "final_url": "https://us.aws.cdn.hf.co/xet-bridge-us/6ab73a09a13bdc0c6f1600da/c764178997bff5cb36eb98de9120481ed1b55d746a7a0ff0d63de4026e15a756?response-content-disposition=inline%3B+filename*%3DUTF-8%27%27shard_00000.h5%3B+filename%3D%22shard_00000.h5%22%3B&user_id=public&xip=y4leofgyX60&X-Xet-Cas-Uid=public&Expires=1790410358&Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly91cy5hd3MuY2RuLmhmLmNvL3hldC1icmlkZ2UtdXMvNmFiNzNhMDlhMTNiZGMwYzZmMTYwMGRhL2M3NjQxNzg5OTdiZmY1Y2IzNmViOThkZTkxMjA0ODFlZDFiNTVkNzQ2YTdhMGZmMGQ2M2RlNDAyNmUxNWE3NTZcXD9yZXNwb25zZS1jb250ZW50LWRpc3Bvc2l0aW9uPWlubGluZSUzQitmaWxlbmFtZSUyQSUzRFVURi04JTI3JTI3c2hhcmRfMDAwMDAuaDUlM0IrZmlsZW5hbWUlM0QlMjJzaGFyZF8wMDAwMC5oNSUyMiUzQiZ1c2VyX2lkPXB1YmxpYyZ4aXA9eTRsZW9mZ3lYNjAmWC1YZXQtQ2FzLVVpZD1wdWJsaWMiLCJDb25kaXRpb24iOnsiRGF0ZUxlc3NUaGFuIjp7IkVwb2NoVGltZSI6MTc5MDQxMDM1OH19fV19&Signature=MEYCIQDxAqZAUH6gSJi-zxQOdYI6pZkxe4kDnpt9V0DfWPzOhQIhAK2s7FAp5T9vc5GpYpxeXZnTdoA9Bp2Ty9T0uRmipnHM&Key-Pair-Id=01KXEF4KZ1B6FV465MAWR4M21F&Hash-Algorithm=SHA256",
+     "status": 200,
+     "url": "https://huggingface.co/datasets/PDE-OBS/pdeobs-data/resolve/main/data/poisson/dirichlet/smooth_grf/high/shard_00000.h5"
+    },
+    "data/poisson/dirichlet/smooth_grf/high/shard_00000.manifest.json": {
+     "content_length": "32685",
+     "etag": "\"b31b7ed413110d256965fc1176cfda9f141d6141\"",
+     "final_url": "https://huggingface.co/api/resolve-cache/datasets/PDE-OBS/pdeobs-data/b17797d3980586bfb16c6c0f434b42c4620fbf1e/data%2Fpoisson%2Fdirichlet%2Fsmooth_grf%2Fhigh%2Fshard_00000.manifest.json?%2Fdatasets%2FPDE-OBS%2Fpdeobs-data%2Fresolve%2Fmain%2Fdata%2Fpoisson%2Fdirichlet%2Fsmooth_grf%2Fhigh%2Fshard_00000.manifest.json=&etag=%22b31b7ed413110d256965fc1176cfda9f141d6141%22",
+     "status": 200,
+     "url": "https://huggingface.co/datasets/PDE-OBS/pdeobs-data/resolve/main/data/poisson/dirichlet/smooth_grf/high/shard_00000.manifest.json"
+    },
+    "release_manifest.json": {
+     "content_length": "117954",
+     "etag": "\"88e66172371c086f506c3a217f313826c324bdfb\"",
+     "final_url": "https://huggingface.co/api/resolve-cache/datasets/PDE-OBS/pdeobs-data/b17797d3980586bfb16c6c0f434b42c4620fbf1e/release_manifest.json?%2Fdatasets%2FPDE-OBS%2Fpdeobs-data%2Fresolve%2Fmain%2Frelease_manifest.json=&etag=%2288e66172371c086f506c3a217f313826c324bdfb%22",
+     "status": 200,
+     "url": "https://huggingface.co/datasets/PDE-OBS/pdeobs-data/resolve/main/release_manifest.json"
+    },
+    "release_manifest_full.json": {
+     "content_length": "4867969",
+     "etag": "\"3a75c181f727d59769f1ca115b1b0b5b52ce85da\"",
+     "final_url": "https://huggingface.co/api/resolve-cache/datasets/PDE-OBS/pdeobs-data/b17797d3980586bfb16c6c0f434b42c4620fbf1e/release_manifest_full.json?%2Fdatasets%2FPDE-OBS%2Fpdeobs-data%2Fresolve%2Fmain%2Frelease_manifest_full.json=&etag=%223a75c181f727d59769f1ca115b1b0b5b52ce85da%22",
+     "status": 200,
+     "url": "https://huggingface.co/datasets/PDE-OBS/pdeobs-data/resolve/main/release_manifest_full.json"
+    },
+    "scrub-manifest.json": {
+     "content_length": "608301",
+     "etag": "\"7bb53d7e1669342c0a5587e29cd94382875b7da7\"",
+     "final_url": "https://huggingface.co/api/resolve-cache/datasets/PDE-OBS/pdeobs-data/b17797d3980586bfb16c6c0f434b42c4620fbf1e/scrub-manifest.json?%2Fdatasets%2FPDE-OBS%2Fpdeobs-data%2Fresolve%2Fmain%2Fscrub-manifest.json=&etag=%227bb53d7e1669342c0a5587e29cd94382875b7da7%22",
+     "status": 200,
+     "url": "https://huggingface.co/datasets/PDE-OBS/pdeobs-data/resolve/main/scrub-manifest.json"
+    },
+    "summary.json": {
+     "content_length": "185383149",
+     "etag": "\"904e9ec216969ae583777e5ba6ec0f2c762f6a31e5aa10a42a354d25539bb75e\"",
+     "final_url": "https://us.aws.cdn.hf.co/xet-bridge-us/6ab73a09a13bdc0c6f1600da/904e9ec216969ae583777e5ba6ec0f2c762f6a31e5aa10a42a354d25539bb75e?xip=y4leofgyX60&X-Xet-Cas-Uid=public&user_id=public&response-content-type=application%2Fjson%3B+charset%3Dutf-8&response-content-disposition=inline%3B+filename*%3DUTF-8%27%27summary.json%3B+filename%3D%22summary.json%22%3B&Expires=1790410358&Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly91cy5hd3MuY2RuLmhmLmNvL3hldC1icmlkZ2UtdXMvNmFiNzNhMDlhMTNiZGMwYzZmMTYwMGRhLzkwNGU5ZWMyMTY5NjlhZTU4Mzc3N2U1YmE2ZWMwZjJjNzYyZjZhMzFlNWFhMTBhNDJhMzU0ZDI1NTM5YmI3NWVcXD94aXA9eTRsZW9mZ3lYNjAmWC1YZXQtQ2FzLVVpZD1wdWJsaWMmdXNlcl9pZD1wdWJsaWMmcmVzcG9uc2UtY29udGVudC10eXBlPWFwcGxpY2F0aW9uJTJGanNvbiUzQitjaGFyc2V0JTNEdXRmLTgmcmVzcG9uc2UtY29udGVudC1kaXNwb3NpdGlvbj1pbmxpbmUlM0IrZmlsZW5hbWUlMkElM0RVVEYtOCUyNyUyN3N1bW1hcnkuanNvbiUzQitmaWxlbmFtZSUzRCUyMnN1bW1hcnkuanNvbiUyMiUzQiIsIkNvbmRpdGlvbiI6eyJEYXRlTGVzc1RoYW4iOnsiRXBvY2hUaW1lIjoxNzkwNDEwMzU4fX19XX0_&Signature=MEQCIB8ZByl4Vzygzu0VtQiXsY9Y68KZBDQeb80T1mmT8uDyAiBL33XL6X8w9ayDY1eXZNZQ1F5Ivjf0L%7EAOZ3zQ1KffkA__&Key-Pair-Id=01KXEF4KZ1B6FV465MAWR4M21F&Hash-Algorithm=SHA256",
+     "status": 200,
+     "url": "https://huggingface.co/datasets/PDE-OBS/pdeobs-data/resolve/main/summary.json"
+    }
+   },
+   "reachable_unauthenticated": true,
+   "readme_status": 200,
+   "type": "dataset"
+  },
+  "PDE-OBS/pdeobs-models": {
+   "api": {
+    "content_length": "619509",
+    "etag": "W/\"973f5-IyEXH70kqqTOezIjxxSPYASOeC0\"",
+    "final_url": "https://huggingface.co/api/models/PDE-OBS/pdeobs-models",
+    "status": 200,
+    "url": "https://huggingface.co/api/models/PDE-OBS/pdeobs-models"
+   },
+   "declared_role": "441 released weights-only checkpoints under models/<cluster-label>/<pde>/<method>/<train_view>/ with their de-identified training records; models_manifest.cluster-{A,B,C}.json (published digests only, manifest v3) and scrub-manifest.json at the repository root",
+   "files": {
+    "models/cluster-A/burgers/cno/block_observed_50pct/checkpoints/last.pt": {
+     "content_length": "556885",
+     "etag": "\"a02956834febccc0c4a036dd4435239b7fa8865aa1a776a742a0ed3f094e8bc4\"",
+     "final_url": "https://us.aws.cdn.hf.co/xet-bridge-us/6ab7477edfb506bf824c913a/a02956834febccc0c4a036dd4435239b7fa8865aa1a776a742a0ed3f094e8bc4?X-Xet-Cas-Uid=public&response-content-disposition=inline%3B+filename*%3DUTF-8%27%27last.pt%3B+filename%3D%22last.pt%22%3B&user_id=public&xip=y4leofgyX60&Expires=1790410361&Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly91cy5hd3MuY2RuLmhmLmNvL3hldC1icmlkZ2UtdXMvNmFiNzQ3N2VkZmI1MDZiZjgyNGM5MTNhL2EwMjk1NjgzNGZlYmNjYzBjNGEwMzZkZDQ0MzUyMzliN2ZhODg2NWFhMWE3NzZhNzQyYTBlZDNmMDk0ZThiYzRcXD9YLVhldC1DYXMtVWlkPXB1YmxpYyZyZXNwb25zZS1jb250ZW50LWRpc3Bvc2l0aW9uPWlubGluZSUzQitmaWxlbmFtZSUyQSUzRFVURi04JTI3JTI3bGFzdC5wdCUzQitmaWxlbmFtZSUzRCUyMmxhc3QucHQlMjIlM0ImdXNlcl9pZD1wdWJsaWMmeGlwPXk0bGVvZmd5WDYwIiwiQ29uZGl0aW9uIjp7IkRhdGVMZXNzVGhhbiI6eyJFcG9jaFRpbWUiOjE3OTA0MTAzNjF9fX1dfQ__&Signature=MEUCIQDULBZzlw5nypCjh8IqL-UUGvXQ1Ads0nkW1-R-Jpm7rwIgXCCPVAb3o5OnXz50-JFasdWPZNziV4JfnnXMkv9cBX0_&Key-Pair-Id=01KXEF4KZ1B6FV465MAWR4M21F&Hash-Algorithm=SHA256",
+     "status": 200,
+     "url": "https://huggingface.co/PDE-OBS/pdeobs-models/resolve/main/models/cluster-A/burgers/cno/block_observed_50pct/checkpoints/last.pt"
+    },
+    "models/cluster-B/burgers/cno/boundary_band_50pct/resolved.yaml": {
+     "content_length": "1647",
+     "etag": "\"8c3e2cbdd182155f2767536ba9797f4c0bcb9a30\"",
+     "final_url": "https://huggingface.co/api/resolve-cache/models/PDE-OBS/pdeobs-models/15274b8e3704a6ac7a6b41409c7eaf44ce714d86/models%2Fcluster-B%2Fburgers%2Fcno%2Fboundary_band_50pct%2Fresolved.yaml?%2FPDE-OBS%2Fpdeobs-models%2Fresolve%2Fmain%2Fmodels%2Fcluster-B%2Fburgers%2Fcno%2Fboundary_band_50pct%2Fresolved.yaml=&etag=%228c3e2cbdd182155f2767536ba9797f4c0bcb9a30%22",
+     "status": 200,
+     "url": "https://huggingface.co/PDE-OBS/pdeobs-models/resolve/main/models/cluster-B/burgers/cno/boundary_band_50pct/resolved.yaml"
+    },
+    "models/cluster-C/burgers/gnot/block_observed_50pct/checkpoints/last.pt": {
+     "content_length": "8592054",
+     "etag": "\"e828cced6c5f75096876ca38b58c966a6fb1adbab9a1a1f9817980fe911708c2\"",
+     "final_url": "https://us.aws.cdn.hf.co/xet-bridge-us/6ab7477edfb506bf824c913a/e828cced6c5f75096876ca38b58c966a6fb1adbab9a1a1f9817980fe911708c2?X-Xet-Cas-Uid=public&response-content-disposition=inline%3B+filename*%3DUTF-8%27%27last.pt%3B+filename%3D%22last.pt%22%3B&user_id=public&xip=y4leofgyX60&Expires=1790410361&Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly91cy5hd3MuY2RuLmhmLmNvL3hldC1icmlkZ2UtdXMvNmFiNzQ3N2VkZmI1MDZiZjgyNGM5MTNhL2U4MjhjY2VkNmM1Zjc1MDk2ODc2Y2EzOGI1OGM5NjZhNmZiMWFkYmFiOWExYTFmOTgxNzk4MGZlOTExNzA4YzJcXD9YLVhldC1DYXMtVWlkPXB1YmxpYyZyZXNwb25zZS1jb250ZW50LWRpc3Bvc2l0aW9uPWlubGluZSUzQitmaWxlbmFtZSUyQSUzRFVURi04JTI3JTI3bGFzdC5wdCUzQitmaWxlbmFtZSUzRCUyMmxhc3QucHQlMjIlM0ImdXNlcl9pZD1wdWJsaWMmeGlwPXk0bGVvZmd5WDYwIiwiQ29uZGl0aW9uIjp7IkRhdGVMZXNzVGhhbiI6eyJFcG9jaFRpbWUiOjE3OTA0MTAzNjF9fX1dfQ__&Signature=MEUCIQCoW3EbGP-X1to5cnojz33cT-0XtHQEwdzsLRNP69x0RAIgNI-n5jB0fIZzqxX4wiSMLRKH9x1IgC30rY461NIhCfc_&Key-Pair-Id=01KXEF4KZ1B6FV465MAWR4M21F&Hash-Algorithm=SHA256",
+     "status": 200,
+     "url": "https://huggingface.co/PDE-OBS/pdeobs-models/resolve/main/models/cluster-C/burgers/gnot/block_observed_50pct/checkpoints/last.pt"
+    },
+    "models_manifest.cluster-A.json": {
+     "content_length": "753679",
+     "etag": "\"c69592e52c8aa6e6db15b725a10d2b0dd7149acd\"",
+     "final_url": "https://huggingface.co/api/resolve-cache/models/PDE-OBS/pdeobs-models/15274b8e3704a6ac7a6b41409c7eaf44ce714d86/models_manifest.cluster-A.json?%2FPDE-OBS%2Fpdeobs-models%2Fresolve%2Fmain%2Fmodels_manifest.cluster-A.json=&etag=%22c69592e52c8aa6e6db15b725a10d2b0dd7149acd%22",
+     "status": 200,
+     "url": "https://huggingface.co/PDE-OBS/pdeobs-models/resolve/main/models_manifest.cluster-A.json"
+    },
+    "models_manifest.cluster-B.json": {
+     "content_length": "231993",
+     "etag": "\"ebce8a811c3d54b69a56bf3f636350e59d9de66c\"",
+     "final_url": "https://huggingface.co/api/resolve-cache/models/PDE-OBS/pdeobs-models/15274b8e3704a6ac7a6b41409c7eaf44ce714d86/models_manifest.cluster-B.json?%2FPDE-OBS%2Fpdeobs-models%2Fresolve%2Fmain%2Fmodels_manifest.cluster-B.json=&etag=%22ebce8a811c3d54b69a56bf3f636350e59d9de66c%22",
+     "status": 200,
+     "url": "https://huggingface.co/PDE-OBS/pdeobs-models/resolve/main/models_manifest.cluster-B.json"
+    },
+    "models_manifest.cluster-C.json": {
+     "content_length": "235493",
+     "etag": "\"0e5a8e2dd8475e8864a41a4a21579f83f90c082e\"",
+     "final_url": "https://huggingface.co/api/resolve-cache/models/PDE-OBS/pdeobs-models/15274b8e3704a6ac7a6b41409c7eaf44ce714d86/models_manifest.cluster-C.json?%2FPDE-OBS%2Fpdeobs-models%2Fresolve%2Fmain%2Fmodels_manifest.cluster-C.json=&etag=%220e5a8e2dd8475e8864a41a4a21579f83f90c082e%22",
+     "status": 200,
+     "url": "https://huggingface.co/PDE-OBS/pdeobs-models/resolve/main/models_manifest.cluster-C.json"
+    },
+    "scrub-manifest.json": {
+     "content_length": "179372",
+     "etag": "\"2120ee303afe5e1f6a5afd1370dfd325f201a865\"",
+     "final_url": "https://huggingface.co/api/resolve-cache/models/PDE-OBS/pdeobs-models/15274b8e3704a6ac7a6b41409c7eaf44ce714d86/scrub-manifest.json?%2FPDE-OBS%2Fpdeobs-models%2Fresolve%2Fmain%2Fscrub-manifest.json=&etag=%222120ee303afe5e1f6a5afd1370dfd325f201a865%22",
+     "status": 200,
+     "url": "https://huggingface.co/PDE-OBS/pdeobs-models/resolve/main/scrub-manifest.json"
+    }
+   },
+   "reachable_unauthenticated": true,
+   "readme_status": 200,
+   "type": "model"
+  }
+ },
+ "anonymity": [
+  {
+   "characters": 6375,
+   "clean": true,
+   "identifying_strings": [],
+   "source": "PDE-OBS/pdeobs-data/README.md (downloaded)"
+  },
+  {
+   "characters": 4767,
+   "clean": true,
+   "identifying_strings": [],
+   "source": "PDE-OBS/pdeobs-models/README.md (downloaded)"
+  },
+  {
+   "characters": 34984,
+   "clean": true,
+   "identifying_strings": [],
+   "source": "docs/dataset_card.md"
+  },
+  {
+   "characters": 44685,
+   "clean": true,
+   "identifying_strings": [],
+   "source": "docs/methods_card.md"
+  },
+  {
+   "characters": 27977,
+   "clean": true,
+   "identifying_strings": [],
+   "source": "README.md"
+  }
+ ],
+ "credentials": {
+  "client_library": "none (urllib), no cookies",
+  "environment_tokens_ignored": [],
+  "token_file_used": false
+ },
+ "execution": {
+  "reason": "requires access and integrity to succeed",
+  "status": "not_run"
+ },
+ "generated_utc": "2026-09-26T07:12:37+00:00",
+ "integrity": {},
+ "schema": "pdeobs-revision-access-check/20260926-v1",
+ "summary": {
+  "all_repositories_reachable_unauthenticated": true,
+  "anonymity_clean": true,
+  "statuses": {
+   "PDE-OBS/pdeobs-data": 200,
+   "PDE-OBS/pdeobs-models": 200
+  }
+ }
+}

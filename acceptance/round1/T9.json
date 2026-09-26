@@ -1,0 +1,203 @@
+{
+  "commands": {
+    "demo E1": {
+      "rc": 0,
+      "seconds": 0.3,
+      "stderr_tail": "",
+      "stdout_tail": ".0-124-generic-x86_64-with-glibc2.35\", \"python\": \"3.11.13\"}, \"example\": \"E1\", \"exit_code\": 0, \"gpu_requested\": 0, \"output_directory\": \"/workspace/pdeobs/sweep-run/work/full/t9/demo-runs-E1/E1\", \"peak_process_rss_bytes\": 3646390272, \"scope\": \"small workflow demonstration\", \"status\": \"passed\"}\n"
+    },
+    "demo E2": {
+      "rc": 0,
+      "seconds": 1.0,
+      "stderr_tail": "",
+      "stdout_tail": ".0-124-generic-x86_64-with-glibc2.35\", \"python\": \"3.11.13\"}, \"example\": \"E2\", \"exit_code\": 0, \"gpu_requested\": 0, \"output_directory\": \"/workspace/pdeobs/sweep-run/work/full/t9/demo-runs-E2/E2\", \"peak_process_rss_bytes\": 3646390272, \"scope\": \"small workflow demonstration\", \"status\": \"passed\"}\n"
+    },
+    "demo E3": {
+      "rc": 0,
+      "seconds": 1.0,
+      "stderr_tail": "",
+      "stdout_tail": ".0-124-generic-x86_64-with-glibc2.35\", \"python\": \"3.11.13\"}, \"example\": \"E3\", \"exit_code\": 0, \"gpu_requested\": 0, \"output_directory\": \"/workspace/pdeobs/sweep-run/work/full/t9/demo-runs-E3/E3\", \"peak_process_rss_bytes\": 3646390272, \"scope\": \"small workflow demonstration\", \"status\": \"passed\"}\n"
+    },
+    "demo E4": {
+      "rc": 0,
+      "seconds": 0.2,
+      "stderr_tail": "",
+      "stdout_tail": ".0-124-generic-x86_64-with-glibc2.35\", \"python\": \"3.11.13\"}, \"example\": \"E4\", \"exit_code\": 0, \"gpu_requested\": 0, \"output_directory\": \"/workspace/pdeobs/sweep-run/work/full/t9/demo-runs-E4/E4\", \"peak_process_rss_bytes\": 3646390272, \"scope\": \"small workflow demonstration\", \"status\": \"passed\"}\n"
+    },
+    "demo E5": {
+      "rc": 0,
+      "seconds": 2.5,
+      "stderr_tail": "",
+      "stdout_tail": ".0-124-generic-x86_64-with-glibc2.35\", \"python\": \"3.11.13\"}, \"example\": \"E5\", \"exit_code\": 0, \"gpu_requested\": 0, \"output_directory\": \"/workspace/pdeobs/sweep-run/work/full/t9/demo-runs-E5/E5\", \"peak_process_rss_bytes\": 3646390272, \"scope\": \"small workflow demonstration\", \"status\": \"passed\"}\n"
+    },
+    "demo E6": {
+      "rc": 0,
+      "seconds": 1.0,
+      "stderr_tail": "",
+      "stdout_tail": ".0-124-generic-x86_64-with-glibc2.35\", \"python\": \"3.11.13\"}, \"example\": \"E6\", \"exit_code\": 0, \"gpu_requested\": 0, \"output_directory\": \"/workspace/pdeobs/sweep-run/work/full/t9/demo-runs-E6/E6\", \"peak_process_rss_bytes\": 3646390272, \"scope\": \"small workflow demonstration\", \"status\": \"passed\"}\n"
+    },
+    "doctor": {
+      "rc": 0,
+      "seconds": 0.1,
+      "stderr_tail": "",
+      "stdout_tail": "n >= 3.10: 3.11.13\n[PASS] package: numpy: numpy\n[PASS] package: scipy: scipy\n[PASS] package: h5py: h5py\n[PASS] package: yaml: yaml\n[PASS] package: torch: needed for learned baselines\n[PASS] data root: not configured\n[PASS] run root: not configured\n[PASS] offline mode: no network operation requested\n"
+    },
+    "easy data generate": {
+      "rc": 0,
+      "seconds": 0.3,
+      "stderr_tail": "",
+      "stdout_tail": "lts:\n  - job_id: heat/periodic/smooth_grf/low/shard-00000\n    output_path: d/heat/shard_00000.h5\n    sample_count: 6\n    skipped: false\n    sha256: 86affb9dfd4e5adf96a5aa5d4b5c834fed7e02d7ef6a9b8da59a54c303ba378b\n  solver_version: 0.1.0\n  pdeobs_version: 0.2.0\n  created_utc: '2026-09-21T14:54:32Z'\n\n"
+    },
+    "easy data local": {
+      "rc": 0,
+      "seconds": 0.1,
+      "stderr_tail": "",
+      "stdout_tail": "    pde:\n    - heat\n    boundary:\n    - periodic\n    setting:\n    - smooth_grf\n    regime:\n    - low\n  seeds:\n  - 560072622\n  - 579443505\n  - 1945093261\n  - 2941453600\n  - 3386334655\n  - 4071361498\nsample_ids_sha256: 84e5d06f361e2936b08e7e004209041300a286dccbe0f2e5eb770d66d99a9da1\ngeneration: null\n\n"
+    },
+    "easy describe bad": {
+      "rc": 2,
+      "seconds": 0.1,
+      "stderr_tail": "pdeobs: error: unknown model 'nope'; public models: bilinear, cno, convlstm, deeponet, fno, gappy_pod, gnot, mae_small, mean, nearest, paper_cno, paper_fno, paper_unet, persistence, pino, rbf, transolver, ufno, unet, unet_paper_guided, zero\npdeobs easy describe: ValueError\n",
+      "stdout_tail": ""
+    },
+    "easy describe transolver": {
+      "rc": 0,
+      "seconds": 0.1,
+      "stderr_tail": "",
+      "stdout_tail": "temporal_presets:\n  paper:\n    hidden: 256\n    layers: 8\n    heads: 8\n    slices: 32\n    mlp_ratio: 1\nrollout_adapter: autoregressive\nnotes: ''\nupstream_wrapper: false\nexample: pdeobs easy train --data <dataset> --task recovery --model transolver --model-param\n  hidden=16 --model-param layers=1\n\n"
+    },
+    "easy eval predictions": {
+      "rc": 0,
+      "seconds": 0.1,
+      "stderr_tail": "",
+      "stdout_tail": "ms:\n        ratio: 0.5\n      version: pdeobs-observation-general/v1\n    predictor:\n      artifact: r/fno/model\n      kind: smoke_or_example_checkpoint\n      weights_sha256: c455339689f05f683d6ae76c4cf3ce3a85104a488ad2f33cb66fc6c98becd6a7\n    seconds: 0.2419\n    targets_used: false\n    warnings: []\n\n"
+    },
+    "easy eval records": {
+      "rc": 0,
+      "seconds": 1.3,
+      "stderr_tail": "",
+      "stdout_tail": "/000003\n- seed-0/heat/periodic/smooth_grf/low/000004\n- seed-0/heat/periodic/smooth_grf/low/000005\nepsilon: 1.0e-12\nreduction: float64 per-identity relative L2, then arithmetic mean\nprojection_applied: false\nraw_arrays_checked: true\nartifact_contract_binding: pdeobs-strict-inference-v1_sha256_bound\n\n"
+    },
+    "easy infer package": {
+      "rc": 0,
+      "seconds": 1.3,
+      "stderr_tail": "",
+      "stdout_tail": "c7227afebe61f\n  horizon: 3\n  device: cuda:0\n  batch_size: 4\n  seconds: 0.2419\n  warnings: []\n  targets_used: false\n  executable_range:\n    resolution:\n    - 16\n    - 16\n    horizon: 3\n  evaluated_range:\n    resolution:\n    - 16\n    - 16\n    horizon: 3\n  api_version: pdeobs-easy-api/v1\nfinite: true\n\n"
+    },
+    "easy infer records": {
+      "rc": 0,
+      "seconds": 1.3,
+      "stderr_tail": "",
+      "stdout_tail": "\n  batch_size: 4\n  seconds: 0.2426\n  warnings: []\n  targets_used: false\n  executable_range:\n    resolution:\n    - 16\n    - 16\n    horizon: 3\n  evaluated_range:\n    resolution:\n    - 16\n    - 16\n    horizon: 3\n  api_version: pdeobs-easy-api/v1\n  hidden_targets_available_to_caller: true\nfinite: true\n\n"
+    },
+    "easy list models": {
+      "rc": 0,
+      "seconds": 0.1,
+      "stderr_tail": "",
+      "stdout_tail": "checkout)\n  family: official\n  tasks:\n  - recovery\n  main_paper_model: false\n  presets: []\n  aliases: []\n- name: paper_cno\n  label: Official upstream wrapper paper_cno (requires pinned external checkout)\n  family: official\n  tasks:\n  - recovery\n  main_paper_model: false\n  presets: []\n  aliases: []\n\n"
+    },
+    "easy list observations": {
+      "rc": 0,
+      "seconds": 0.1,
+      "stderr_tail": "",
+      "stdout_tail": " small demo grids must not reuse the\n  fixed 128 counts\n- block observes everything outside a non-wrapping missing square; boundary is an\n  outer array band, not a boundary condition\n- mask (observation protocol) and geometry (solid/obstacle field) are different inputs\n  and are never interchanged\n\n"
+    },
+    "easy list pdes": {
+      "rc": 0,
+      "seconds": 0.1,
+      "stderr_tail": "",
+      "stdout_tail": "cy_fourier\n  - multi_frequency_fourier\n  - gaussian_blobs\n  - piecewise_blocks\n  - threshold_level_set\n  - dipole_vortex_pair\n  - front_ring_shock\n  regimes:\n  - low\n  - medium\n  - high\n  paper:\n    task: rollout\n    boundary: periodic\n    setting: smooth_grf\n    state_representation: vorticity\n\n"
+    },
+    "easy list presets": {
+      "rc": 0,
+      "seconds": 0.1,
+      "stderr_tail": "",
+      "stdout_tail": "paper\n- smoke\nunet:\n- paper\n- smoke\nunet_paper_guided:\n- smoke\nconvlstm:\n- smoke\nmae_small:\n- smoke\nzero:\n- paper\n- smoke\nmean:\n- paper\n- smoke\nnearest:\n- paper\n- smoke\nbilinear:\n- paper\n- smoke\nrbf:\n- paper\n- smoke\npersistence:\n- paper\n- smoke\ngappy_pod:\n- paper\n- smoke\n\n"
+    },
+    "easy plan": {
+      "rc": 0,
+      "seconds": 0.1,
+      "stderr_tail": "",
+      "stdout_tail": "dom_3pct', 'ratio': 0.5}\nmodel: cno (smoke) {'width': 8, 'in_channels': 1, 'out_channels': 1, 'geometry_channels': 1} task=recovery\ntrain: budget={'epochs': None, 'max_steps': 2, 'kind': 'software_step_budget'} split=all batch_size=2\npredict: {'out': 'predictions.npz'}\nevaluate: {'mode': 'records'}\n"
+    },
+    "easy run dry": {
+      "rc": 0,
+      "seconds": 0.1,
+      "stderr_tail": "",
+      "stdout_tail": "    width: 8\n        in_channels: 1\n        out_channels: 1\n        geometry_channels: 1\n    warnings: []\n  train:\n    budget:\n      epochs: null\n      max_steps: 2\n      kind: software_step_budget\n    batch_size: 2\n  predict:\n    out: predictions.npz\n  evaluate:\n    mode: records\n  task: recovery\n\n"
+    },
+    "easy run json": {
+      "rc": 0,
+      "seconds": 2.4,
+      "stderr_tail": "",
+      "stdout_tail": "65196\n        observed_common_denominator_mean: 27.801140546362376\n        hidden_common_denominator_mean: 42.407120517078255\n        hidden_only_applicable_count: 4\n        hidden_only_status: valid\n        hidden_only_rel_l2_mean: 48.967524938791215\n    errors: []\nstatus: complete\nseconds: 1.978\n\n"
+    },
+    "easy run yaml": {
+      "rc": 0,
+      "seconds": 2.4,
+      "stderr_tail": " file an issue at https://github.com/pytorch/pytorch/issues to help us prioritize adding deterministic support for this operation. (Triggered internally at /pytorch/aten/src/ATen/Context.cpp:93.)\n  return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass\n",
+      "stdout_tail": "08837187\n        observed_common_denominator_mean: 7.489121719650971\n        hidden_common_denominator_mean: 7.847679586276605\n        hidden_only_applicable_count: 4\n        hidden_only_status: valid\n        hidden_only_rel_l2_mean: 11.211304888597823\n    errors: []\nstatus: complete\nseconds: 1.99\n\n"
+    },
+    "easy train": {
+      "rc": 0,
+      "seconds": 2.1,
+      "stderr_tail": "",
+      "stdout_tail": "ord\n    log_every: 20\n    epochs: 1\n    checkpoint_dir: r/fno/checkpoints\n  device_used: cuda:0\n  optimizer_steps: 3\n  training_config_sha256: cf437983c3cdb2dcac3701b707b4d85e5c8ff1f6c244a8ec2210861444fd88a8\n  training_recipe_sha256: 46d5a6df750f4870e34b6fa76de8f134dfca3a5e361b3ce36400b4299eba615f\n\n"
+    },
+    "easy train bad param": {
+      "rc": 2,
+      "seconds": 0.1,
+      "stderr_tail": "pdeobs: error: model 'fno' does not accept ['widht']; valid parameters: ['geometry_channels', 'in_channels', 'layers', 'modes', 'out_channels', 'width']\npdeobs easy train: ValueError\n",
+      "stdout_tail": ""
+    },
+    "easy validate": {
+      "rc": 0,
+      "seconds": 0.1,
+      "stderr_tail": "",
+      "stdout_tail": ":\n    name: cno\n    kwargs:\n      width: 8\n      in_channels: 1\n      out_channels: 1\n      geometry_channels: 1\n  warnings: []\ntrain:\n  budget:\n    epochs: null\n    max_steps: 2\n    kind: software_step_budget\n  batch_size: 2\npredict:\n  out: predictions.npz\nevaluate:\n  mode: records\ntask: recovery\n\n"
+    },
+    "generate-case": {
+      "rc": 0,
+      "seconds": 0.3,
+      "stderr_tail": "",
+      "stdout_tail": "0921T093314Z/work/full/t9/gc/pdeobs_cases/poisson/periodic/smooth_grf/low/shard_00000.h5\",\n      \"sample_count\": 3,\n      \"sha256\": \"afc98fe5b18bfc9a9562a3a468eff7eb47f9bb97b7a9eb4b9d9b6cabd0ac9074\",\n      \"skipped\": false\n    }\n  ],\n  \"sample_count\": 3,\n  \"status\": \"complete\",\n  \"tier\": \"custom\"\n}\n"
+    },
+    "identity-manifest": {
+      "rc": 2,
+      "seconds": 0.9,
+      "stderr_tail": "pdeobs: error: manifest shard is missing: poisson.h5\n",
+      "stdout_tail": ""
+    },
+    "list": {
+      "rc": 0,
+      "seconds": 1.0,
+      "stderr_tail": "",
+      "stdout_tail": "  \"poisson\",\n    \"reaction_diffusion\"\n  ],\n  \"settings\": [\n    \"dipole_vortex_pair\",\n    \"front_ring_shock\",\n    \"gaussian_blobs\",\n    \"low_frequency_fourier\",\n    \"medium_grf\",\n    \"multi_frequency_fourier\",\n    \"piecewise_blocks\",\n    \"rough_grf\",\n    \"smooth_grf\",\n    \"threshold_level_set\"\n  ]\n}\n"
+    },
+    "paper-row demo": {
+      "rc": 2,
+      "seconds": 0.9,
+      "stderr_tail": "",
+      "stdout_tail": "\"schema_version\": \"pdeobs-paper-row-v1\", \"split_seed\": 20260804, \"stage\": \"manifest_and_metadata\", \"status\": \"failed\", \"test_arrays_accessed_before_final_checkpoint\": 0, \"test_views\": [\"random_50pct\", \"random_80pct\"], \"train_view\": \"random_50pct\", \"training_seed\": 20260804, \"validation_records\": 0}\n"
+    },
+    "paper-row-demo-data": {
+      "rc": 0,
+      "seconds": 1.1,
+      "stderr_tail": "",
+      "stdout_tail": "\": \"high\", \"resolution\": [16, 16], \"sample_count\": 3, \"sample_start\": 0, \"seed\": 20260804, \"setting\": \"smooth_grf\", \"shard_index\": 2, \"stored_time_steps\": null, \"tier\": \"custom\", \"time_steps\": 1}, \"regime\": \"high\", \"samples\": 3}], \"pde\": \"poisson\", \"schema_version\": \"pdeobs-paper-row-demo-data-v1\"}\n"
+    },
+    "protocol --check": {
+      "rc": 0,
+      "seconds": 0.1,
+      "stderr_tail": "",
+      "stdout_tail": "DE Learning\nHow should we evaluate PDE learning under partial observations in a controlled, factorized, and reproducible way?\nDesign: 280 macro cases, 840 regime nodes, 560000 full samples\nTasks: 7; splits: 7; analyses: 15\nOfficial data release: not published (validation-gated)\nProtocol check: PASS\n"
+    }
+  },
+  "summary": {
+    "as_expected": 30,
+    "total": 32
+  },
+  "tier": "T9",
+  "utc": "2026-09-21T14:54:31Z",
+  "what": "every easy CLI subcommand + legacy CLI entry points from the installed package"
+}

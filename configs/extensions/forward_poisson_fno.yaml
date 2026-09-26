@@ -1,0 +1,6 @@
+include: ../experiment/forward_poisson_fno.yaml
+name: extension-forward-poisson-fno
+data:
+  root: ${PDEOBS_DATA:-./extension-data}
+output:
+  root: ${PDEOBS_RUNS:-./extension-runs}

@@ -1,0 +1,281 @@
+schema_version: pdeobs.paper-settings/v1
+
+# A setting may enter a formal pdeobs.training-campaign/v2 plan only when its
+# status is "verified" and every required source/revision/config attestation is
+# present. These three existing implementations are intentionally fail-closed:
+# they remain useful smoke/pilot references but are not exact paper settings.
+settings:
+  compact_mask_unet_v1:
+    method: unet
+    status: reference_only
+    current_config: configs/experiment/core_pilot_unet.yaml
+    current_implementation: src/pdeobs/methods/neural.py::MaskChannelUNet
+    paper_url: https://arxiv.org/abs/1505.04597
+    original_implementation_url: http://lmb.informatik.uni-freiburg.de/people/ronneber/u-net
+    reason: >-
+      The original U-Net is a biomedical segmentation network with valid
+      convolutions, four down/up stages, a segmentation objective, and its own
+      augmentation/training recipe. The repository model is a smaller
+      mask-conditioned PDE regressor, so no exact original-paper setting exists
+      for this adapted task yet.
+
+  compact_fno2d_v1:
+    method: fno
+    status: reference_only
+    current_config: configs/experiment/core_pilot_fno.yaml
+    current_implementation: src/pdeobs/methods/neural.py::CompactFNO2d
+    paper_url: https://arxiv.org/abs/2010.08895
+    official_code_url: https://github.com/zongyi-li/fourier_neural_operator
+    reason: >-
+      Four Fourier layers, width 32, and 12 modes overlap the paper's reported
+      two-dimensional setting, but the local normalization, activations,
+      mask-conditioning, projection, optimizer, and sparse-recovery objective
+      are not an exact reproduction of the paper or its official code.
+
+  compact_cno2d_v1:
+    method: cno
+    status: reference_only
+    current_config: configs/experiment/core_pilot_cno.yaml
+    current_implementation: src/pdeobs/methods/neural.py::CompactCNO2d
+    paper_url: https://arxiv.org/abs/2302.01178
+    official_code_url: https://github.com/camlab-ethz/ConvolutionalNeuralOperator
+    official_setting_root: CNO2d_classic
+    reason: >-
+      This repository contains a compact anti-aliased CNO-like model, not the
+      NeurIPS 2023 CNO2d_classic architecture. The official repository uses
+      PDE-specific selected hyperparameters; those must be mapped and pinned
+      before a formal setting can be marked verified.
+
+  cno2023_poisson_unet:
+    method: paper_unet
+    status: verified
+    supported_pdes: [poisson]
+    reproduction_scope: paper_architecture_training_with_declared_task_adapter
+    paper_url: https://arxiv.org/abs/2302.01178
+    supplement_url: https://proceedings.neurips.cc/paper_files/paper/2023/file/f3c1951b34f7f55ffaecada7fde6bd5a-Supplemental-Conference.pdf
+    official_code_url: https://github.com/camlab-ethz/ConvolutionalNeuralOperator
+    official_code_revision: bd9362c8c192d6f160129a7a85b1fe00d6c41523
+    official_source_file: _OtherModels/BaselinesModules.py
+    official_source_sha256: b0899a7047a8240dc365550e7d2dae7214bfad1b1500def604bd38236f5ed8dd
+    source_setting_locator: >-
+      Supplement C.2 and Table 7 Poisson row; author source
+      _OtherModels/BaselinesModules.py::UNetOrg and _OtherModels/TrainUNet.py.
+    local_config: configs/experiment/paper_cno2023_poisson_unet.yaml
+    local_config_sha256: f871a291dcbc2c72e53c8c2d83295a188e183893f8a8815e320a25ac44c5a1d5
+    paper_setting:
+      epochs: 1000
+      optimizer: adam
+      loss: relative_l1
+      batch_size: 10
+      learning_rate: 0.001
+      scheduler_gamma_each_epoch: 0.98
+      weight_decay: 0.0
+      channels: 32
+      training_samples: 1024
+      validation_samples: 128
+      test_samples: 256
+    task_adapter:
+      input_policy: zero_filled_visible_target_field
+      spatial_adapter: deterministic_area_average_128_to_64_before_mask_v1
+      mask_channel_added: false
+      official_architecture_unchanged: true
+      full_observation_control: required
+      normalization: canonical_pdeobs_physical_units
+      claim_limit: not_an_exact_reproduction_of_the_paper_forward_operator_dataset
+
+  cno2023_poisson_fno:
+    method: paper_fno
+    status: verified
+    supported_pdes: [poisson]
+    reproduction_scope: paper_architecture_training_with_declared_task_adapter
+    paper_url: https://arxiv.org/abs/2302.01178
+    supplement_url: https://proceedings.neurips.cc/paper_files/paper/2023/file/f3c1951b34f7f55ffaecada7fde6bd5a-Supplemental-Conference.pdf
+    official_code_url: https://github.com/camlab-ethz/ConvolutionalNeuralOperator
+    official_code_revision: bd9362c8c192d6f160129a7a85b1fe00d6c41523
+    official_source_file: _OtherModels/FNOModules.py
+    official_source_sha256: a0872e258ff7b2d51e67f3c2b51cc8ce9db911116bd158087e5b9f1336af7608
+    source_setting_locator: >-
+      Supplement C.1.7, C.2 and Table 11 Poisson row; author source
+      _OtherModels/FNOModules.py::FNO2d and _OtherModels/TrainFNO.py.
+    local_config: configs/experiment/paper_cno2023_poisson_fno.yaml
+    local_config_sha256: 62c48dc5cd8510b7c26759c65a90eee285343b25117fffbd06df93a2ac06eabc
+    paper_setting:
+      epochs: 1000
+      optimizer: adam
+      loss: relative_l1
+      batch_size: 32
+      learning_rate: 0.001
+      scheduler_gamma_each_epoch: 0.98
+      weight_decay: 0.000001
+      modes: 16
+      width: 16
+      layers: 5
+      padding: 0
+      training_samples: 1024
+      validation_samples: 128
+      test_samples: 256
+    task_adapter:
+      input_policy: zero_filled_visible_target_field
+      spatial_adapter: deterministic_area_average_128_to_64_before_mask_v1
+      mask_channel_added: false
+      official_architecture_unchanged: true
+      full_observation_control: required
+      normalization: canonical_pdeobs_physical_units
+      claim_limit: not_an_exact_reproduction_of_the_paper_forward_operator_dataset
+
+  cno2023_poisson_cno:
+    method: paper_cno
+    status: verified
+    supported_pdes: [poisson]
+    reproduction_scope: paper_architecture_training_with_declared_task_adapter
+    paper_url: https://arxiv.org/abs/2302.01178
+    supplement_url: https://proceedings.neurips.cc/paper_files/paper/2023/file/f3c1951b34f7f55ffaecada7fde6bd5a-Supplemental-Conference.pdf
+    official_code_url: https://github.com/camlab-ethz/ConvolutionalNeuralOperator
+    official_code_revision: bd9362c8c192d6f160129a7a85b1fe00d6c41523
+    official_source_file: CNOModule.py
+    official_source_sha256: ce87fc2f839a9aec802cf72a96777aa279b4e87b9edb3985632d5ccee279f8c7
+    source_setting_locator: >-
+      Supplement C.1.4, C.2 and Table 12 Poisson row; author source
+      CNOModule.py::CNO and TrainCNO.py.
+    local_config: configs/experiment/paper_cno2023_poisson_cno.yaml
+    local_config_sha256: dfcd8c0063168134a125223eb8d46349a62c14deeab5be92b49802c61ba63dd5
+    paper_setting:
+      epochs: 1000
+      optimizer: adam
+      loss: relative_l1
+      batch_size: 32
+      learning_rate: 0.001
+      scheduler_gamma_each_epoch: 0.98
+      weight_decay: 0.000001
+      layers: 3
+      channels: 16
+      neck_residuals: 6
+      level_residuals: 4
+      training_samples: 1024
+      validation_samples: 128
+      test_samples: 256
+    task_adapter:
+      input_policy: zero_filled_visible_target_field
+      spatial_adapter: deterministic_area_average_128_to_64_before_mask_v1
+      mask_channel_added: false
+      official_architecture_unchanged: true
+      full_observation_control: required
+      normalization: canonical_pdeobs_physical_units
+      claim_limit: not_an_exact_reproduction_of_the_paper_forward_operator_dataset
+
+  cno2023_navier_stokes_unet:
+    method: paper_unet
+    status: verified
+    supported_pdes: [navier_stokes]
+    reproduction_scope: paper_architecture_training_with_declared_task_adapter
+    paper_url: https://arxiv.org/abs/2302.01178
+    supplement_url: https://proceedings.neurips.cc/paper_files/paper/2023/file/f3c1951b34f7f55ffaecada7fde6bd5a-Supplemental-Conference.pdf
+    official_code_url: https://github.com/camlab-ethz/ConvolutionalNeuralOperator
+    official_code_revision: bd9362c8c192d6f160129a7a85b1fe00d6c41523
+    official_source_file: _OtherModels/BaselinesModules.py
+    official_source_sha256: b0899a7047a8240dc365550e7d2dae7214bfad1b1500def604bd38236f5ed8dd
+    source_setting_locator: >-
+      Supplement C.2, C.3.5 and Table 7 Navier-Stokes row; author source
+      _OtherModels/BaselinesModules.py::UNetOrg and _OtherModels/TrainUNet.py.
+    local_config: configs/experiment/paper_cno2023_navier_stokes_unet.yaml
+    local_config_sha256: cd6164df18d3110c4a1fb981e39c4c7da0a5d4ac83ec72f1cd72b0b8841e07c6
+    paper_setting:
+      epochs: 1000
+      optimizer: adam
+      loss: relative_l1
+      batch_size: 10
+      learning_rate: 0.0005
+      scheduler_gamma_each_epoch: 0.98
+      weight_decay: 0.000001
+      channels: 64
+      training_samples: 750
+      validation_samples: 128
+      test_samples: 128
+    task_adapter:
+      input_policy: zero_filled_visible_target_vorticity
+      spatial_adapter: deterministic_area_average_128_to_64_before_mask_v1
+      mask_channel_added: false
+      official_architecture_unchanged: true
+      full_observation_control: required
+      normalization: canonical_pdeobs_physical_units
+      claim_limit: not_an_exact_reproduction_of_the_paper_velocity_operator_dataset
+
+  cno2023_navier_stokes_fno:
+    method: paper_fno
+    status: verified
+    supported_pdes: [navier_stokes]
+    reproduction_scope: paper_architecture_training_with_declared_task_adapter
+    paper_url: https://arxiv.org/abs/2302.01178
+    supplement_url: https://proceedings.neurips.cc/paper_files/paper/2023/file/f3c1951b34f7f55ffaecada7fde6bd5a-Supplemental-Conference.pdf
+    official_code_url: https://github.com/camlab-ethz/ConvolutionalNeuralOperator
+    official_code_revision: bd9362c8c192d6f160129a7a85b1fe00d6c41523
+    official_source_file: _OtherModels/FNOModules.py
+    official_source_sha256: a0872e258ff7b2d51e67f3c2b51cc8ce9db911116bd158087e5b9f1336af7608
+    source_setting_locator: >-
+      Supplement C.1.7, C.2, C.3.5 and Table 11 Navier-Stokes row; author source
+      _OtherModels/FNOModules.py::FNO2d and _OtherModels/TrainFNO.py.
+    local_config: configs/experiment/paper_cno2023_navier_stokes_fno.yaml
+    local_config_sha256: 1b9cc3754f02898ad1ff08b8e1068966e90c962ea70c646908b7c65c06d8be65
+    paper_setting:
+      epochs: 1000
+      optimizer: adam
+      loss: relative_l1
+      batch_size: 32
+      learning_rate: 0.001
+      scheduler_gamma_each_epoch: 0.98
+      weight_decay: 0.000001
+      modes: 16
+      width: 128
+      layers: 5
+      padding: 0
+      training_samples: 750
+      validation_samples: 128
+      test_samples: 128
+    task_adapter:
+      input_policy: zero_filled_visible_target_vorticity
+      spatial_adapter: deterministic_area_average_128_to_64_before_mask_v1
+      mask_channel_added: false
+      official_architecture_unchanged: true
+      full_observation_control: required
+      normalization: canonical_pdeobs_physical_units
+      claim_limit: not_an_exact_reproduction_of_the_paper_velocity_operator_dataset
+
+  cno2023_navier_stokes_cno:
+    method: paper_cno
+    status: verified
+    supported_pdes: [navier_stokes]
+    reproduction_scope: paper_architecture_training_with_declared_task_adapter
+    paper_url: https://arxiv.org/abs/2302.01178
+    supplement_url: https://proceedings.neurips.cc/paper_files/paper/2023/file/f3c1951b34f7f55ffaecada7fde6bd5a-Supplemental-Conference.pdf
+    official_code_url: https://github.com/camlab-ethz/ConvolutionalNeuralOperator
+    official_code_revision: bd9362c8c192d6f160129a7a85b1fe00d6c41523
+    official_source_file: CNOModule.py
+    official_source_sha256: ce87fc2f839a9aec802cf72a96777aa279b4e87b9edb3985632d5ccee279f8c7
+    source_setting_locator: >-
+      Supplement C.1.4, C.2, C.3.5 and Table 12 Navier-Stokes row; author source
+      CNOModule.py::CNO and TrainCNO.py.
+    local_config: configs/experiment/paper_cno2023_navier_stokes_cno.yaml
+    local_config_sha256: 643ca314e28507168a3a188b6b024964f62b78aa27f368e198aef980c0af0ac3
+    paper_setting:
+      epochs: 1000
+      optimizer: adam
+      loss: relative_l1
+      batch_size: 32
+      learning_rate: 0.001
+      scheduler_gamma_each_epoch: 0.98
+      weight_decay: 0.0000000001
+      layers: 3
+      channels: 32
+      neck_residuals: 8
+      level_residuals: 1
+      training_samples: 750
+      validation_samples: 128
+      test_samples: 128
+    task_adapter:
+      input_policy: zero_filled_visible_target_vorticity
+      spatial_adapter: deterministic_area_average_128_to_64_before_mask_v1
+      mask_channel_added: false
+      official_architecture_unchanged: true
+      full_observation_control: required
+      normalization: canonical_pdeobs_physical_units
+      claim_limit: not_an_exact_reproduction_of_the_paper_velocity_operator_dataset

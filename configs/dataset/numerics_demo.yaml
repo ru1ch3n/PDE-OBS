@@ -1,0 +1,36 @@
+include: default.yaml
+
+name: pdeobs-numerics-demo
+tier: tiny
+stored_trajectory_steps: 30
+families:
+  - darcy
+  - poisson
+  - helmholtz
+  - heat
+  - reaction_diffusion
+  - burgers
+  - navier_stokes
+boundaries: [periodic]
+settings: [smooth_grf]
+
+trajectory_steps_by_family:
+  heat: 146
+  reaction_diffusion: 262
+  burgers: 262
+  navier_stokes: 59
+
+solver_options_by_case:
+  navier_stokes/periodic: {solver: fno_spectral_vorticity}
+
+quality:
+  profile: strict
+  require_pde_loss: true
+  thresholds:
+    pde_loss_normalized_max: 0.05
+    divergence_loss_normalized_max: 1.0e-6
+
+output:
+  root: ${PDEOBS_DATA:-datasets}/numerics-demo
+  atomic: true
+  checksum: sha256

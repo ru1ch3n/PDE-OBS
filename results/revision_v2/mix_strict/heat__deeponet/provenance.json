@@ -1,0 +1,331 @@
+{
+  "adapter": "pdeobs-archived-prediction-verification-v1",
+  "cuda_version": "11.8",
+  "dataset_manifest": {
+    "original_summary_sha256": "b0141eec2199615a27facc75e2517ec4ec7e00913638e48c84ab2c88a2be77c1",
+    "shards": [
+      {
+        "bytes": 148656844,
+        "mtime_ns": 1787045911000000000,
+        "path": "heat/periodic/smooth_grf/high/shard_00000.h5",
+        "sha256": "20d6a7d2c92fa82a09bb6e60802ca71c11ba0b96aae4db869c171a8ccef47f55"
+      },
+      {
+        "bytes": 149003898,
+        "mtime_ns": 1787046585000000000,
+        "path": "heat/periodic/smooth_grf/high/shard_00001.h5",
+        "sha256": "e8fa51477f2cfb165ca6600b62bcb93151c41496d78af1a31ebcb7d55c48e479"
+      },
+      {
+        "bytes": 148730935,
+        "mtime_ns": 1787044315000000000,
+        "path": "heat/periodic/smooth_grf/high/shard_00002.h5",
+        "sha256": "e3675b5f8c52219f5174a367351497379ab4c740e0ca9ac98536b5ddaf2e525b"
+      },
+      {
+        "bytes": 49221854,
+        "mtime_ns": 1787051827000000000,
+        "path": "heat/periodic/smooth_grf/high/shard_00003.h5",
+        "sha256": "044140f2ff687229d3f10e3a67141e0cb35b62aea2022d9784a96b2560732f58"
+      },
+      {
+        "bytes": 147163559,
+        "mtime_ns": 1787045910000000000,
+        "path": "heat/periodic/smooth_grf/low/shard_00000.h5",
+        "sha256": "d2c3ca4f59639d839fddde07fe7ab21538f5b0d2b23472183f92658d9cc477d0"
+      },
+      {
+        "bytes": 147254300,
+        "mtime_ns": 1787046575000000000,
+        "path": "heat/periodic/smooth_grf/low/shard_00001.h5",
+        "sha256": "ee9b2f6cac18c388d4193bc0f74a7faaff9f0d17ea5ec86d7da2a377702e4fe1"
+      },
+      {
+        "bytes": 146812365,
+        "mtime_ns": 1787044298000000000,
+        "path": "heat/periodic/smooth_grf/low/shard_00002.h5",
+        "sha256": "f78969d0ada49e70882c1e9b39487d0034d3ed40a6df8ea3b7cb4ab0ac0f0222"
+      },
+      {
+        "bytes": 49507819,
+        "mtime_ns": 1787051816000000000,
+        "path": "heat/periodic/smooth_grf/low/shard_00003.h5",
+        "sha256": "41ce7e239c3b7549aa930a92a9182259163a2900c45034de545f67f577c83806"
+      },
+      {
+        "bytes": 148579463,
+        "mtime_ns": 1787045902000000000,
+        "path": "heat/periodic/smooth_grf/medium/shard_00000.h5",
+        "sha256": "28659649dc8c6ec1b97360dfe2d6a66e44fd8fbf4b6c6087d8c1a36fc8bffbb3"
+      },
+      {
+        "bytes": 148992977,
+        "mtime_ns": 1787046585000000000,
+        "path": "heat/periodic/smooth_grf/medium/shard_00001.h5",
+        "sha256": "dc7518f45445ef03c93683eaeca847ccde0f1039887c7062288ee45fb226245e"
+      },
+      {
+        "bytes": 148276137,
+        "mtime_ns": 1787044250000000000,
+        "path": "heat/periodic/smooth_grf/medium/shard_00002.h5",
+        "sha256": "f23b785bc2eb84ef1764c8843d2683671c19c4b8723e4914fcbe2540616d635d"
+      },
+      {
+        "bytes": 49874419,
+        "mtime_ns": 1787051817000000000,
+        "path": "heat/periodic/smooth_grf/medium/shard_00003.h5",
+        "sha256": "19e33ddbc4b4c1b5b35eb361930e35614d89c452fe78350a6c931e94dd1dd423"
+      }
+    ]
+  },
+  "device_name": "NVIDIA Tesla V100S-PCIE-32GB",
+  "identity": "heat/deeponet/mixed_nine_views",
+  "inference_batch_size": 4,
+  "inference_code": {
+    "driver_sha256": "281e1d347058ae780f98a3e888bf38cf32ac0abf31f196d57d00722b8465052c",
+    "files": {
+      "driver/mix_strict_inference.py": "281e1d347058ae780f98a3e888bf38cf32ac0abf31f196d57d00722b8465052c",
+      "inputs/dataset_bindings.json": "7eed0fa6641e26048cf5960ba7c4e9b5df4be605b78fab24785cec0ca6348fe5",
+      "source/configs/campaign/all_pde_one_setting_10method_9x9.yaml": "4ed7e7de03557c1b95a6b544cc1e7c292b575130b427a8e4fdc34a4e87f48966",
+      "source/src/pdeobs/__init__.py": "6bb908ccc71cf3c19722c83371a64acb05e0d7ec7546968d56fed7a11f16215f",
+      "source/src/pdeobs/__main__.py": "8b0eb839b58ac5f56db61c3f78b2ecfdb9573c0d90136cda1fd1a7f4f371da88",
+      "source/src/pdeobs/aggregate.py": "049a19c55376ec5eb85ac31616be1fd957d16aeb2f6a760af1f02b844ca26b0c",
+      "source/src/pdeobs/api/__init__.py": "b1ca501eb6cae7cb20d246e60e1cd9f766430d958171b5c202d8dcbf4318fddc",
+      "source/src/pdeobs/api/artifacts.py": "79d5e148523cb20fcda65487df2c2b8016ae7bc1357f6559c59b505eb48fd2c2",
+      "source/src/pdeobs/api/cli.py": "0e62a971c3014d8d7c4020decac906c1542db734170af36916728e9b8d193326",
+      "source/src/pdeobs/api/data.py": "9c343ebba773cb2ffd1819e7ad08732f8762ed32f471278acdb8637d2916e62b",
+      "source/src/pdeobs/api/evaluate.py": "5ab05d256472a1a7712e57c399446ae81447f65a34bf282d9e9bd7fc7599b028",
+      "source/src/pdeobs/api/infer.py": "8dcdcf69af0ef4bbd35c03dc64aaf8c27c9fc7bfff1abddb906eccc3dcdb63a5",
+      "source/src/pdeobs/api/models.py": "3014817742608a4c64ea836f10427f8b34c1f5ca1c112f1eb6520326886a4184",
+      "source/src/pdeobs/api/observation.py": "22db37a9747b3020406f7da632a2dadfb09f4af36f97b383924a41b242caac9e",
+      "source/src/pdeobs/api/pipeline.py": "033774397cafbd081f2789752933bd6b2c8c6c86928c8189e30ce7e4195ba146",
+      "source/src/pdeobs/api/specs.py": "631ce78a117aecccc5d8eb5e5f86dda557476e14d42c138f9b041387a5e09541",
+      "source/src/pdeobs/api/train.py": "09967a3f8e48ad7a082d7ce9520a53551b3dc9858ad185ea6425f6f7a48fd193",
+      "source/src/pdeobs/archived_verification.py": "8d0e38183159bf91ae73425719572664e044e0a174bb28ef1fb8933b43162d80",
+      "source/src/pdeobs/campaign.py": "5c56e1bfb1386ce4499c7ca0e9be386b8591d45873f8c0f835fb840e8cf1f049",
+      "source/src/pdeobs/cli.py": "d772ecb99a2461d71501ddfeb76dce0da8c2ddad7ff8fa7a38e137be811bf2fd",
+      "source/src/pdeobs/config.py": "5ad2e9a58a62c995ac43daa0b38631679d9f8304a08a08adec36882449122669",
+      "source/src/pdeobs/coverage.py": "70ed5aa5744c4812bc9660ae2bcc4480b8a0da878504c916d6c964178cd13c16",
+      "source/src/pdeobs/dataset.py": "2bdae0ae7977a19a980831318bacecb923ddc91da0fe1c4ba9d790693ebd88ed",
+      "source/src/pdeobs/difficulty.py": "2653b2c4ec6b88a99bcde654aa62894509f99c69e29ff7961c9c35f874ef2461",
+      "source/src/pdeobs/doctor.py": "bd4e85a555e038a6bd794fadb4b9512129a025e8ea4a147e2307f2a820d94c43",
+      "source/src/pdeobs/download.py": "4a94d571f284d7f55317eb0b23184f35594ebf5fd698fed660fed7f7cf8d5eed",
+      "source/src/pdeobs/evaluation.py": "93a6d2ae0ad52a937e6db86d28f0b4419c2b6abae4e0832c6f2add9055c4a77a",
+      "source/src/pdeobs/evidence.py": "b7b43267bb309d1e73a6849ea2dd5bef48f8172487db2bd6f65420be5bd69bac",
+      "source/src/pdeobs/full_to_partial.py": "fe371c5d1297cc36380a49033fe7f7007956ad3f072b20d385868dbb5ef84ee1",
+      "source/src/pdeobs/full_to_partial_execution.py": "64b3b2d1aa87e33b68becc61d36c9fb6bd86489992dd78824fcf73ac828dad1f",
+      "source/src/pdeobs/generation.py": "be64a5b5331fc6cdea8548a0c8c5191fbfd43cff092059df13028b74ea72ec29",
+      "source/src/pdeobs/mask_specs.py": "5b32812b8c542fd2a32c5eca3b65fe804f96a019a69105445b5a404c850dd46b",
+      "source/src/pdeobs/masks.py": "a05083c0e0cc63d2b5c3d918e6a93c365c5237f88577e0dac6e9866af32cef00",
+      "source/src/pdeobs/methods/__init__.py": "97dc55614b125665d8a4ccc622d482d8b6b73ea4ce91d759b61dd52d7c6aa8c9",
+      "source/src/pdeobs/methods/base.py": "6c73f8aae9920303c5aa273ab5b3e187c028f6773c327c258fcc765835332cd8",
+      "source/src/pdeobs/methods/interpolation.py": "d1e00c43498179563c5391f584a69ed0e0d4a4ed65b29b87be901e1054fbc3a2",
+      "source/src/pdeobs/methods/neural.py": "424e3d056e10eea0662c4593046f5c366b43954f0b8f5e304446d4eb508df3d1",
+      "source/src/pdeobs/methods/operator_networks.py": "b2f556c73a5f3bc676c13add2963cb06f3b4b4ffc4d6ba4cbc458083f1896fc0",
+      "source/src/pdeobs/methods/paper_official.py": "64d4bfb2ca745f16627473ac201e7588a655b506aaadfdffe5ab107306b0bd17",
+      "source/src/pdeobs/methods/reduced_order.py": "5358f659845ca8a108dc61df75f02ca3c6faecf2f8372340338a19ec4c41fabb",
+      "source/src/pdeobs/metrics.py": "0788c520a70acfa7c422856c2d2acef7fb3fc96c1b99755c4be20929e6f1bf36",
+      "source/src/pdeobs/migration.py": "ae49c403777d4e5221eae3e90f6530be0721122c990fb4fee411332e523e8619",
+      "source/src/pdeobs/one_setting.py": "f1eed0bed85e0c91c8a18b694ec9022f3e2c0dc5d5fb165f9e9d37f2030653e7",
+      "source/src/pdeobs/paper_row.py": "1ca84008d504d933c044ad2510fefd3a2281532278ef44ec988d0b745b651316",
+      "source/src/pdeobs/pdes/__init__.py": "512de65acb6ddc124e1332023135df06d4ab70e95da0ca3266296f74923549f9",
+      "source/src/pdeobs/pdes/burgers.py": "f52af6c535552e9ce1863d431436cfc72c803e54069ca3395e203ad194a75b4f",
+      "source/src/pdeobs/pdes/common.py": "f0e3884c664d28fc42fc09489e6d36a7d0c0f5fe0188c3e6d4b20c283e051cc6",
+      "source/src/pdeobs/pdes/darcy.py": "66a470be2a3b0dbe0e9fb8ea43467e83b09477e7db0ba2535e10763b3b049a6c",
+      "source/src/pdeobs/pdes/heat.py": "0a661958733f2886e4877512bd5d90d2bb39eaf9dc36b6e259699ce28e03a204",
+      "source/src/pdeobs/pdes/helmholtz.py": "47f5d17b0c6cf9d52a01e9ed41c97b83d75d767df54a1fe3eaeb621ca5699f66",
+      "source/src/pdeobs/pdes/navier_stokes.py": "f6feb2bf52063882fb7c7b60f21f6e40a75b1ee034ef47139b00861a100d18ae",
+      "source/src/pdeobs/pdes/numerics.py": "4f8ac1f8fd067a56b5025bb46d74ad015a87d5c3d0f892b26cb73127f53d438a",
+      "source/src/pdeobs/pdes/poisson.py": "45e0798bfcc7d624d609e40db0ed4eac4916c549277143a3b66182892d77b7c5",
+      "source/src/pdeobs/pdes/reaction_diffusion.py": "ec97fa7e8b0da2d6218f3911e194ed8383330cba4fed200e2c980a8b09ef954b",
+      "source/src/pdeobs/physical_inputs.py": "a68766b07f65e71c80293eddc39ce13383e646d310ffa9f34a451bb6d62a6798",
+      "source/src/pdeobs/pino.py": "a4484938487454d9cd9d4bf7d946e676db099a893df8f5924540dc4d2f703710",
+      "source/src/pdeobs/presets.py": "101d61bd47d35b56e5931f8f6b73f446bab5c7c4e63cc1a16b3d4691caf38d5f",
+      "source/src/pdeobs/protocol.py": "11ad2b99c709d3eacb17caf0778132b5c0b8226a74669d7b4274068352ae18fc",
+      "source/src/pdeobs/provenance.py": "c235d689eaa47f917ece55271bcca8d067f9842114d0ef464314ed84a8d3dc2b",
+      "source/src/pdeobs/quality.py": "93fe1c126ed852d40fb1c049f1610013244f693c3372c635c56ce35149fbe3e7",
+      "source/src/pdeobs/registry.py": "3fd783ea436c693678378ad7b83de9535b6c41b499ccc3e6f670dd786d031d7e",
+      "source/src/pdeobs/release_demo.py": "1a4a6bec2995fcf1d20ce52ce6efb93a1ae73a3ab7ffc97da7b775b1c0ef76c8",
+      "source/src/pdeobs/reports.py": "b92653bdebf84cd32b1fc11f91d160e6e1a0bdf12f5a439908872cd42e8f4c25",
+      "source/src/pdeobs/retrieval.py": "d72f9f6efd58f96041dacb3b7e81111b121da148a637a23d97efb9b0b9ec80b0",
+      "source/src/pdeobs/routing.py": "40bb2b9c4536ee58a3b3c4894675d8376fcdea732dcf8f45c4a70d41797dd848",
+      "source/src/pdeobs/runner.py": "06039f0654fcdb7bff9768adb20e7f92052111b7c64645d9dea88512fe00ad60",
+      "source/src/pdeobs/schema.py": "fae274baad440e329a01dcfb19ce1ca4ba6010d8a7ff2cb05e1bb2aeded00b64",
+      "source/src/pdeobs/settings.py": "8e16e11c9cc79d03905e6624ea79b6427b717763882344a8ba7aef08dcd4f235",
+      "source/src/pdeobs/splits.py": "4e9e6da1b78de2bff726192fb47e8853b62213024d555e50bea0342bfdf39452",
+      "source/src/pdeobs/storage.py": "f05f6c50446aac122e5bb0d351c0f29d7b4e96079b42b0c4f1d762226dd0c127",
+      "source/src/pdeobs/strict_inference.py": "cdd23f450b9953e0ab8f32c6863e5eb8d8aed39018048a78c8626527fd776750",
+      "source/src/pdeobs/strict_score.py": "d4613f8517a0686242cf244f88d55bb36ca8672c78b2fb4401ce41a53260fc0c",
+      "source/src/pdeobs/training.py": "48d421a1729852261b0992db5cbaab764926b862d77e61a8f6bfe249e9a3400d"
+    },
+    "note": "anon repository HEAD source; the driver file is tracked in the same commit only after the launch commit",
+    "repository_commit": "<COMMIT-6>",
+    "schema": "pdeobs-revision-inference-source/v1"
+  },
+  "mask_seed": 20260804,
+  "note": "Inference only; the study's training receipts and legacy evaluation are unchanged.",
+  "resolved_config": {
+    "data": {
+      "filters": {
+        "boundary": "periodic",
+        "pde": "heat",
+        "setting": "smooth_grf"
+      },
+      "input_horizon": 1,
+      "mask": {
+        "protocol": "random_3pct(ratio=0.5) + random_3pct(ratio=0.65) + random_3pct(ratio=0.8) + block_missing(missing_fraction=0.49) + line_sensors(num_lines=76, orientation=both) + line_sensors(num_lines=64, orientation=horizontal) + line_sensors(num_lines=64, orientation=vertical) + boundary_sensors(width=19) + clustered_sensors(ratio=0.5)"
+      },
+      "root": "<data-root>",
+      "split": "iid",
+      "state_representation": "native",
+      "train_glob": "heat/periodic/smooth_grf/**/*.h5",
+      "training_horizons": [
+        3
+      ],
+      "verify_shards": false
+    },
+    "evaluation": {
+      "horizons": [
+        1,
+        2,
+        3
+      ]
+    },
+    "method": {
+      "base": {
+        "kwargs": {
+          "branch_grid": 4,
+          "branch_layers": 2,
+          "branch_mode": "spatial_cnn",
+          "branch_width": 64,
+          "geometry_channels": 1,
+          "hidden": 128,
+          "in_channels": 1,
+          "latent": 128,
+          "out_channels": 1,
+          "trunk_layers": 2
+        },
+        "name": "deeponet"
+      },
+      "name": "autoregressive"
+    },
+    "name": "v7-heat-deeponet-mixed_nine_views-500epoch",
+    "schema_version": "pdeobs.experiment/v1",
+    "seed": 20260804,
+    "task": "rollout",
+    "training": {
+      "batch_size": 4,
+      "checkpoint_every": 1,
+      "collapse_consecutive_windows": 20,
+      "data_loss_weight": 1.0,
+      "deterministic": true,
+      "early_stopping_patience": null,
+      "epochs": 500,
+      "grad_clip": 1.0,
+      "gradient_norm_warning": 1000.0,
+      "gradient_warning_consecutive_windows": 3,
+      "gradient_warning_fatal": true,
+      "health_policy": "fail",
+      "learning_rate": 0.001,
+      "loss": "relative_l2",
+      "loss_spike_consecutive_windows": 3,
+      "loss_spike_ratio": 10.0,
+      "loss_spike_scope": "epoch",
+      "mixed_precision": false,
+      "num_workers": 4,
+      "optimizer": "adam",
+      "output_std_ratio_collapse_max": 0.0001,
+      "persistent_workers": true,
+      "physics_loss": "none",
+      "physics_loss_epsilon": 1e-12,
+      "physics_loss_weight": 0.0,
+      "pin_memory": true,
+      "scheduler": "step",
+      "scheduler_anneal_strategy": "cos",
+      "scheduler_div_factor": 25.0,
+      "scheduler_final_div_factor": 10000.0,
+      "scheduler_gamma": 0.5,
+      "scheduler_pct_start": 0.3,
+      "scheduler_step_size": 100,
+      "scheduler_steps_per_epoch": 450,
+      "teacher_forcing_ratio": 0.0,
+      "validation_improvement_min_fraction": null,
+      "weight_decay": 0.0
+    }
+  },
+  "resolved_config_sha256": "f0a38b366cf71c68ca61682e6b30b217f2f17f609f80c8d06094915296962b3c",
+  "schema_version": "pdeobs-mixed-strict-inference/20260926-v1",
+  "split": {
+    "algorithm": "sha256_rank_within_regime_largest_remainder_exact_ten_percent_test",
+    "macrodomain_identity": "heat|periodic|smooth_grf",
+    "records": 2000,
+    "regime_counts": {
+      "high": {
+        "records": 666,
+        "test": 66,
+        "train": 600
+      },
+      "low": {
+        "records": 667,
+        "test": 67,
+        "train": 600
+      },
+      "medium": {
+        "records": 667,
+        "test": 67,
+        "train": 600
+      }
+    },
+    "schema_version": "pdeobs.one-setting-split/v1",
+    "seed": 20260804,
+    "test_records": 200,
+    "test_sample_ids_sha256": "35aa2bd5ed84e8fe16d567a69f659a0aee51e1c79cd3d5b2553e906e2b56e001",
+    "train_records": 1800,
+    "train_sample_ids_sha256": "7b3796080fb70ffdcbd55ccff4347ab70f25007551fa2e4484a7dc44b91a6122",
+    "validation_records": 0
+  },
+  "study_completion_receipt": {
+    "accepted": true,
+    "actual_epochs": 500,
+    "base_view": "random_50pct",
+    "campaign_sha256": "5fb5aae1a1f098537c286db020759b2578f124fd70df2f7520103c02e403080b",
+    "checkpoint_sha256": "1f6b099a3365f1791818420940060c980fa3780f2aeb7232a4f768ff5f0793e7",
+    "completed_unix": 1790365386.5830503,
+    "dataset_summary_sha256": "b0141eec2199615a27facc75e2517ec4ec7e00913638e48c84ab2c88a2be77c1",
+    "early_stopping": false,
+    "epochs_completed": 500,
+    "formal_credit": 0,
+    "job_id": null,
+    "mask_seed": 20260804,
+    "mask_spec": "random_3pct(ratio=0.5) + random_3pct(ratio=0.65) + random_3pct(ratio=0.8) + block_missing(missing_fraction=0.49) + line_sensors(num_lines=76, orientation=both) + line_sensors(num_lines=64, orientation=horizontal) + line_sensors(num_lines=64, orientation=vertical) + boundary_sensors(width=19) + clustered_sensors(ratio=0.5)",
+    "method": "deeponet",
+    "node": null,
+    "overlay_manifest_sha256": "9c4b75d3a43a42005dca4c776b9ff86144eb3c9c5f1054853e58f5db44dc6ff0",
+    "paper_cell": false,
+    "pde": "heat",
+    "planned_epochs": 500,
+    "protocol_adapter_sha256": "ebd4bc8e900fed7db84a6e259260da2e2b9ee2eebe233a7e2aabc1ed37f7dc35",
+    "registry_sha256": "7d56a79c9ac7f08252a15e8bf0707c7dc3c630e1a7c9448034ba1b50d1f738da",
+    "repository_commit": "<COMMIT-1>",
+    "schema_version": "pdeobs.one-setting-completion/v7",
+    "scientific_credit": "preliminary",
+    "started_unix": 1790359681.609624,
+    "status": "completed",
+    "stop_reason": "max_epochs_500",
+    "study_adapter_sha256": "ebd4bc8e900fed7db84a6e259260da2e2b9ee2eebe233a7e2aabc1ed37f7dc35",
+    "study_id": "mixed-nine-views-20260925",
+    "test_records_touched": 0,
+    "training_protocol": "pdeobs.fixed500-last-checkpoint/v7",
+    "training_view": "mixed_nine_views",
+    "training_view_kind": "mixture",
+    "validation_used": false
+  },
+  "torch_version": "2.2.0",
+  "training_mask_spec": "random_3pct(ratio=0.5) + random_3pct(ratio=0.65) + random_3pct(ratio=0.8) + block_missing(missing_fraction=0.49) + line_sensors(num_lines=76, orientation=both) + line_sensors(num_lines=64, orientation=horizontal) + line_sensors(num_lines=64, orientation=vertical) + boundary_sensors(width=19) + clustered_sensors(ratio=0.5)",
+  "training_mask_view_id": "random_3pct-ratio-0.5__random_3pct-ratio-0.65__random_3pct-ratio-0.8__block_missing-missing_fraction-0.49__line_sensors-num_lines-76-orientation-both__line_sensors-num_lines-64-orientation-horizontal__line_sensors-num_lines-64-orientation-vertical__boundary_sensors-width-19__clustered_sensors-ratio-0.5",
+  "weights": {
+    "checkpoint_original_sha256": "1f6b099a3365f1791818420940060c980fa3780f2aeb7232a4f768ff5f0793e7",
+    "loaded_from": "<study-root>/benchmark-runs/_study-mixed-pattern/mixed-nine-views-20260925/heat/deeponet/mixed_nine_views/checkpoints/last.pt",
+    "state_repair": null
+  }
+}

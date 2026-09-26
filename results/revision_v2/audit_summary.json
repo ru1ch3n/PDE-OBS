@@ -1,0 +1,156 @@
+{
+ "analysis_code": {
+  "commit": "<COMMIT-7>",
+  "dirty_paths": [
+   "M configs/revision/result_sources.yaml",
+   " M results/revision_v2/mixed_comparison_inputs.json",
+   " M results/revision_v2/mixed_comparisons.csv",
+   " M results/revision_v2/mixed_extra_views.csv",
+   " M results/revision_v2/mixed_summary.json",
+   " M results/revision_v2/mixture_assignments.csv",
+   " M results/revision_v2/mixture_counts.csv",
+   " M results/revision_v2/trial_inventory.json",
+   "?? results/mixed_pattern_study/receipts/navier_stokes__ufno_2d/",
+   "?? results/revision_v2/mix_strict/navier_stokes__ufno_2d/"
+  ]
+ },
+ "checks": {
+  "archived_and_verified_checkpoints_agree": true,
+  "mask_spec": "random_3pct(ratio=0.5) + random_3pct(ratio=0.65) + random_3pct(ratio=0.8) + block_missing(missing_fraction=0.49) + line_sensors(num_lines=76, orientation=both) + line_sensors(num_lines=64, orientation=horizontal) + line_sensors(num_lines=64, orientation=vertical) + boundary_sensors(width=19) + clustered_sensors(ratio=0.5)",
+  "mixture": {
+   "heat": {
+    "order_independent": true,
+    "spatial": [
+     128,
+     128
+    ],
+    "split_digests_reproduced": true,
+    "stage_audit_agreement": {
+     "heat__deeponet": {
+      "matches_reproduction": true
+     }
+    },
+    "test_total": 200,
+    "train_counts_per_component": {
+     "block_missing-missing_fraction-0.49": 197,
+     "boundary_sensors-width-19": 206,
+     "clustered_sensors-ratio-0.5": 198,
+     "line_sensors-num_lines-64-orientation-horizontal": 198,
+     "line_sensors-num_lines-64-orientation-vertical": 204,
+     "line_sensors-num_lines-76-orientation-both": 197,
+     "random_3pct-ratio-0.5": 195,
+     "random_3pct-ratio-0.65": 201,
+     "random_3pct-ratio-0.8": 204
+    },
+    "train_total": 1800
+   },
+   "helmholtz": {
+    "order_independent": true,
+    "spatial": [
+     128,
+     128
+    ],
+    "split_digests_reproduced": true,
+    "stage_audit_agreement": {
+     "helmholtz__deeponet": {
+      "matches_reproduction": true
+     },
+     "helmholtz__fno": {
+      "matches_reproduction": true
+     }
+    },
+    "test_total": 200,
+    "train_counts_per_component": {
+     "block_missing-missing_fraction-0.49": 202,
+     "boundary_sensors-width-19": 203,
+     "clustered_sensors-ratio-0.5": 193,
+     "line_sensors-num_lines-64-orientation-horizontal": 207,
+     "line_sensors-num_lines-64-orientation-vertical": 190,
+     "line_sensors-num_lines-76-orientation-both": 195,
+     "random_3pct-ratio-0.5": 205,
+     "random_3pct-ratio-0.65": 197,
+     "random_3pct-ratio-0.8": 208
+    },
+    "train_total": 1800
+   },
+   "navier_stokes": {
+    "order_independent": true,
+    "spatial": [
+     128,
+     128
+    ],
+    "split_digests_reproduced": true,
+    "stage_audit_agreement": {
+     "navier_stokes__ufno_2d": {
+      "matches_reproduction": true
+     }
+    },
+    "test_total": 200,
+    "train_counts_per_component": {
+     "block_missing-missing_fraction-0.49": 197,
+     "boundary_sensors-width-19": 204,
+     "clustered_sensors-ratio-0.5": 202,
+     "line_sensors-num_lines-64-orientation-horizontal": 198,
+     "line_sensors-num_lines-64-orientation-vertical": 199,
+     "line_sensors-num_lines-76-orientation-both": 200,
+     "random_3pct-ratio-0.5": 201,
+     "random_3pct-ratio-0.65": 200,
+     "random_3pct-ratio-0.8": 199
+    },
+    "train_total": 1800
+   },
+   "poisson": {
+    "order_independent": true,
+    "spatial": [
+     128,
+     128
+    ],
+    "split_digests_reproduced": true,
+    "stage_audit_agreement": {
+     "poisson__ufno_2d": {
+      "matches_reproduction": true
+     }
+    },
+    "test_total": 200,
+    "train_counts_per_component": {
+     "block_missing-missing_fraction-0.49": 195,
+     "boundary_sensors-width-19": 195,
+     "clustered_sensors-ratio-0.5": 207,
+     "line_sensors-num_lines-64-orientation-horizontal": 202,
+     "line_sensors-num_lines-64-orientation-vertical": 203,
+     "line_sensors-num_lines-76-orientation-both": 205,
+     "random_3pct-ratio-0.5": 202,
+     "random_3pct-ratio-0.65": 197,
+     "random_3pct-ratio-0.8": 194
+    },
+    "train_total": 1800
+   }
+  },
+  "resolved_config_digests_bound": true
+ },
+ "counts": {
+  "assignments": 8000,
+  "count_rows": 216,
+  "inventory_rows": 441
+ },
+ "generated_utc": "2026-09-26T04:50:45+00:00",
+ "inputs": {
+  "archived_index_sha256": "56cbe439e90ff244211ebb23f335a522f70c4c3dbd940306ac50058d6a1cdff9",
+  "campaign_sha256": "4ed7e7de03557c1b95a6b544cc1e7c292b575130b427a8e4fdc34a4e87f48966",
+  "resolved_configs_sha256": "8bb8c2fda2c51f1eceb5c2607c24337e7462ed8c8227abfa079fd5686f3fae87",
+  "stage_audits": {
+   "heat__deeponet": "0acd8b67fbb3bdd7709fe08cf562fe47cc7141dbb7e44f5c6040149eaa755f40",
+   "helmholtz__deeponet": "bd31d82965cba92ced14bab8461265d113ce2487842653cd3873e5cd8c02a27b",
+   "helmholtz__fno": "0046ead028b7b42fba6de6f1643ca35cc4b803fbcf21512087d1135d14331a9c",
+   "navier_stokes__ufno_2d": "73296649f422e71bb9f6e5c0fbdc5d7678349492dba72bfc8b6ff294be99b9df",
+   "poisson__ufno_2d": "155dc91924819ce6c75163ca266534cd7fa2bb17c8ccca86b5664fb28ff4981f"
+  },
+  "verification_index_sha256": "5ae567e151c71fda46aa0cf3c6c08861f7d3ed01096fb2e89a9bf22e817b09d1"
+ },
+ "notes": [
+  "main-grid optimizer updates come from health.json step counters; for continued runs the counter may cover the last segment only (parent_attempt_id column)",
+  "examples processed are derived from completed epochs and the loader semantics; they are not an independent observation",
+  "code: src/pdeobs/runner.py::_loader batches the 1800 training records without drop_last in one process; src/pdeobs/training.py takes one optimizer update per batch (no gradient accumulation)"
+ ],
+ "schema": "pdeobs-revision-audit-training/20260926-v2"
+}

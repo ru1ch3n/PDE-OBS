@@ -1,0 +1,182 @@
+schema_version: pdeobs.paper-guided-settings/v1
+claim_scope: paper_guided_sparse_recovery_adaptations_not_exact_paper_reproductions
+status: implemented_unattested
+
+shared_training_recipe:
+  purpose: isolate_architecture_and_observation_protocol_under_one_optimizer_budget
+  epochs_max: 100
+  optimizer: adamw
+  learning_rate: 0.001
+  weight_decay: 0.0001
+  loss: mse
+  loss_spike_scope: epoch
+  scheduler: exponential_step
+  scheduler_gamma_each_epoch: 0.98
+  early_stopping_patience: 20
+  seed: 20260804
+  note: >-
+    Architecture parameters are anchored to original papers or author code;
+    optimization is deliberately standardized because the original tasks,
+    datasets, and objectives differ from sparse recovery.
+
+settings:
+  rbf_gaussian:
+    slot: rbf
+    local_config: configs/experiment/full_to_partial_rbf.yaml
+    implementation: src/pdeobs/methods/interpolation.py::RBFInterpolation
+    source: scipy.interpolate.RBFInterpolator
+    resolved: {kernel: gaussian, epsilon: 2.0, smoothing: 0.000001, max_centers: 512}
+    status: implemented_unattested
+
+  gappy_pod_everson_sirovich:
+    slot: gappy_pod
+    paper_url: https://empslocal.ex.ac.uk/people/staff/reverson/archive/pubs/gappy-abs.html
+    publication: JOSA A 12(8), 1657--1664, 1995
+    local_config: configs/experiment/full_to_partial_gappy_pod.yaml
+    implementation: src/pdeobs/methods/reduced_order.py::GappyPOD
+    resolved:
+      rank_candidates: [8, 16, 32, 64, 128]
+      rank_selection: validation_only_across_all_nine_partial_protocols
+      fit_fields: complete_training_split_only
+      coefficient_solver: geometry_aware_masked_ridge_least_squares
+    status: implemented_unattested
+
+  unet_2015_adaptation:
+    slot: unet
+    paper_url: https://arxiv.org/abs/1505.04597
+    original_implementation_url: http://lmb.informatik.uni-freiburg.de/people/ronneber/u-net
+    source_locator: Figure_1_and_Section_2_architecture
+    local_config: configs/experiment/full_to_partial_unet.yaml
+    implementation: src/pdeobs/methods/operator_networks.py::PaperGuidedMaskUNet
+    resolved:
+      width: 64
+      levels: 4
+      convolutions_per_level: 2
+      channel_policy: double_after_each_downsampling
+      adaptation: same_padding_scalar_regression_plus_mask_and_geometry_channels
+      mixed_precision: false
+      full_train_learning_rate: 0.001
+      mixed_partial_train_learning_rate: 0.0003
+      optimization_evidence: >-
+        Full-scale Darcy and Helmholtz mixed-partial diagnostics at 0.0003 each
+        completed 7000 optimizer steps without a health event after the 0.001
+        runs failed closed for constant-output collapse. Full-observation and
+        other-method learning rates remain unchanged.
+    status: implemented_unattested
+
+  fno_2021_adaptation:
+    slot: fno
+    paper_url: https://arxiv.org/abs/2010.08895
+    official_code_url: https://github.com/zongyi-li/fourier_neural_operator
+    reviewed_revision: 00b7d86f8d74ff0af55da53eb585fe26df9c71f0
+    reviewed_license: MIT
+    source_locator: original_2d_Darcy_FNO_setting_and_architecture
+    local_config: configs/experiment/full_to_partial_fno.yaml
+    implementation: src/pdeobs/methods/neural.py::CompactFNO2d
+    resolved:
+      width: 32
+      layers: 4
+      modes_per_axis: 12
+      adaptation: mask_and_geometry_channels_plus_group_normalization
+      mixed_precision: false
+    status: implemented_unattested
+
+  cno_2023_adaptation:
+    slot: cno
+    paper_url: https://arxiv.org/abs/2302.01178
+    official_code_url: https://github.com/camlab-ethz/ConvolutionalNeuralOperator
+    reviewed_revision: bd9362c8c192d6f160129a7a85b1fe00d6c41523
+    reviewed_license: see_upstream_attestation
+    source_locator: CNO2d_classic_and_supplement_C.1.4
+    local_config: configs/experiment/full_to_partial_cno.yaml
+    implementation: src/pdeobs/methods/neural.py::CompactCNO2d
+    resolved:
+      width: 32
+      anti_aliasing: fixed_binomial_low_pass_before_learned_convolution
+      adaptation: compact_scalar_recovery_network_with_mask_geometry_and_coordinates
+    status: implemented_unattested
+
+  deeponet_2021_variable_sensor_adaptation:
+    slot: deeponet
+    paper_url: https://www.nature.com/articles/s42256-021-00302-5
+    official_code_url: https://github.com/lululxvi/deeponet
+    reviewed_revision: 8d62345afd39e1df9c2c8c8d0e7c41882b06a9bf
+    reviewed_source_file: src/deeponet_pde.py
+    reviewed_source_sha256: 6273d8010cf7b1bb2d604f5919af41c6a417b9119c135e05995736cf4c267ba5
+    reviewed_license: CC-BY-NC-SA-4.0
+    local_code_policy: independent_implementation_no_upstream_code_copied
+    local_config: configs/experiment/full_to_partial_deeponet.yaml
+    implementation: src/pdeobs/methods/operator_networks.py::VariableSensorDeepONet
+    resolved:
+      branch_hidden: 128
+      trunk_hidden: 128
+      latent: 128
+      hidden_layers_each: 2
+      activation: relu
+      initialization: glorot_normal
+      adaptation: mask_weighted_set_branch_for_variable_sensor_locations
+    status: implemented_unattested
+
+  transolver_2024_masked_grid_adaptation:
+    slot: transolver
+    paper_url: https://arxiv.org/abs/2402.02366
+    official_code_url: https://github.com/thuml/Transolver
+    reviewed_revision: 75e0f67643806a81cd1d3f6adc88dd8c02416fe7
+    reviewed_license: MIT
+    reviewed_source_files:
+      - path: PDE-Solving-StandardBenchmark/model/Transolver_Structured_Mesh_2D.py
+        sha256: b75c05b93bfe899c29cfa9f64b1134cabe194b0c88f6c3daea04b1110fe715b4
+      - path: PDE-Solving-StandardBenchmark/model/Physics_Attention.py
+        sha256: d746cd641f9c81313e205126bac6e0a9bb5bdbe5a9ef107e093a4fe065dbe0f5
+    local_config: configs/experiment/full_to_partial_transolver.yaml
+    implementation: src/pdeobs/methods/operator_networks.py::MaskConditionedTransolver
+    resolved:
+      hidden: 256
+      layers: 5
+      heads: 8
+      physics_slices: 32
+      mlp_ratio: 1
+      adaptation: values_mask_geometry_coordinates_as_structured_mesh_features
+      mixed_precision: false
+      learning_rate: 0.001
+      optimization_evidence: >-
+        Full-scale Darcy full-observation and mixed-partial K80 diagnostics in
+        FP32 completed 56000 optimizer steps with accepted health, finite
+        checkpoints, complete factor coverage, and no pathology event. The
+        mixed-precision runs failed closed with non-finite loss within 21 steps;
+        the learning rate and every health threshold remain unchanged.
+    status: implemented_unattested
+
+  gnot_2023_masked_grid_adaptation:
+    slot: gnot
+    paper_url: https://proceedings.mlr.press/v202/hao23c.html
+    official_code_url: https://github.com/thu-ml/GNOT
+    reviewed_revision: 5ee2e6925a43f9a340a6016bad4da2c82a452cbe
+    reviewed_license: no_license_file_found_do_not_copy
+    reviewed_source_files:
+      - path: models/mmgpt.py
+        sha256: 4a592af53bf8d2578942932eae7b5e5b061fb6776e056e2541f2591f15276755
+      - path: readme.md
+        sha256: b6e567384410cfe96afc618afe7d0bf18693ba8097148e3cadd0ea5c3c77f07f
+    local_code_policy: independent_implementation_no_upstream_code_copied
+    local_config: configs/experiment/full_to_partial_gnot.yaml
+    implementation: src/pdeobs/methods/operator_networks.py::MaskConditionedGNOT
+    resolved:
+      hidden: 128
+      layers: 3
+      heads: 1
+      experts: 2
+      expert_inner_ratio: 4
+      attention: normalized_linear_cross_and_self_attention
+      adaptation: visible_sensor_tokens_and_geometry_gated_query_experts
+      optimization_status: pde_specific_diagnostics_not_promotable
+      optimization_evidence: >-
+        Full-scale Helmholtz, heat, and Darcy full-observation and mixed-partial
+        diagnostics in FP32 at 0.0003 completed 56000 optimizer steps with
+        accepted health, finite checkpoints, complete factor coverage, and no
+        pathology event. Poisson full and mixed diagnostics nevertheless
+        collapsed at the same setting on V100S, so 0.0003 is rejected as a
+        universal GNOT protocol. Poisson passes at 0.0001, while cross-PDE
+        validation at that lower rate remains incomplete. Every health
+        threshold remains unchanged and no campaign-wide override is active.
+    status: implemented_unattested

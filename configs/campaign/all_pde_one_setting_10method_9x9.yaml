@@ -1,0 +1,175 @@
+schema_version: pdeobs.one-setting-cross-observation-campaign/v1
+name: all-pde-one-setting-10method-9x9
+status: candidate_preflight_only
+release_eligible: false
+formal_credit: 0
+seed: 20260804
+
+immutable_inputs:
+  dataset_summary_sha256: b0141eec2199615a27facc75e2517ec4ec7e00913638e48c84ab2c88a2be77c1
+  records_per_macrodomain: 2000
+  split:
+    algorithm: sha256_rank_within_regime_largest_remainder_exact_ten_percent_test
+    train: 1800
+    validation: 0
+    test: 200
+    shared_across_methods_and_views: true
+    test_hidden_until_epoch_500_acceptance: true
+
+# One representative physical macrodomain is frozen for each PDE family.  The
+# static recovery choice avoids a null-space/obstacle confounder; the temporal
+# choice is periodic because the spectral rollout and PINO residual assume it.
+problem_settings:
+  darcy:
+    task: recovery
+    boundary: dirichlet
+    setting: smooth_grf
+    state_representation: native
+  poisson:
+    task: recovery
+    boundary: dirichlet
+    setting: smooth_grf
+    state_representation: native
+  helmholtz:
+    task: recovery
+    boundary: dirichlet
+    setting: smooth_grf
+    state_representation: native
+  heat:
+    task: rollout
+    boundary: periodic
+    setting: smooth_grf
+    state_representation: native
+  reaction_diffusion:
+    task: rollout
+    boundary: periodic
+    setting: smooth_grf
+    state_representation: native
+  burgers:
+    task: rollout
+    boundary: periodic
+    setting: smooth_grf
+    state_representation: native
+  navier_stokes:
+    task: rollout
+    boundary: periodic
+    setting: smooth_grf
+    state_representation: vorticity
+
+temporal_contract:
+  schema_version: pdeobs.free-autoregressive-rollout/v1
+  spatial_dimension: 2
+  input_frames: [t0]
+  prediction_frames: [t1, t2, t3]
+  recurrence:
+    t1: model(masked_t0)
+    t2: model(predicted_t1)
+    t3: model(predicted_t2)
+  mask_applied_only_at: t0
+  teacher_forcing_ratio: 0.0
+  ground_truth_future_as_recurrent_input: forbidden
+  target_role: loss_and_post_training_evaluation_only
+  stored_time_mapping: first_four_monotone_stored_frames
+
+views:
+  random_50pct:
+    mask: {protocol: random_3pct, ratio: 0.50}
+    minimum_realized_fraction: 0.50
+  random_65pct:
+    mask: {protocol: random_3pct, ratio: 0.65}
+    minimum_realized_fraction: 0.65
+  random_80pct:
+    mask: {protocol: random_3pct, ratio: 0.80}
+    minimum_realized_fraction: 0.79
+  block_observed_50pct:
+    mask: {protocol: block_missing, missing_fraction: 0.49}
+    minimum_realized_fraction: 0.50
+  line_sensors_50pct:
+    mask: {protocol: line_sensors, num_lines: 76, orientation: both}
+    minimum_realized_fraction: 0.50
+  horizontal_lines_50pct:
+    mask: {protocol: line_sensors, num_lines: 64, orientation: horizontal}
+    minimum_realized_fraction: 0.50
+  vertical_lines_50pct:
+    mask: {protocol: line_sensors, num_lines: 64, orientation: vertical}
+    minimum_realized_fraction: 0.50
+  boundary_band_50pct:
+    mask: {protocol: boundary_sensors, width: 19}
+    minimum_realized_fraction: 0.50
+  clustered_50pct:
+    mask: {protocol: clustered_sensors, ratio: 0.50}
+    minimum_realized_fraction: 0.50
+
+methods:
+  classical: [gaussian_rbf, gappy_pod]
+  learned: [ufno_2d, fno, cno, deeponet, gnot, transolver, jeno, pino]
+  forbidden_slot: generic_unet
+  registry: configs/method/all_pde_source_faithful_registry.yaml
+
+preflight:
+  epochs: 3
+  purpose: optimization_and_contract_gate_not_benchmark_result
+  training_identity: random_50pct
+  deterministic_train_records: 90
+  subset_source: immutable_canonical_train_records_only
+  balanced_regimes: [low, medium, high]
+  required_checks:
+    - all_504_learned_pde_view_identities_forward_backward_one_batch
+    - all_56_learned_pde_method_identities_three_complete_epochs
+    - all_126_classical_pde_view_blocks_finite
+    - dynamic_rollout_uses_predictions_not_future_truth
+    - finite_loss_gradient_parameter_and_checkpoint
+    - no_constant_output_collapse
+    - exact_method_reference_and_dataset_receipts
+  loss_gate:
+    compare: epoch_1_to_best_of_epochs_2_and_3
+    minimum_relative_reduction: 0.01
+    maximum_final_over_first_ratio: 1.25
+    # Three epochs are an implementation/stability smoke test, not a convergence run.
+    # Keep a ten-fold margin above the online 1e-4 constant-output collapse threshold.
+    minimum_final_output_std_ratio: 0.001
+    nonfinite_allowed: false
+    pathology_events_allowed: 0
+
+production_training:
+  epochs: 500
+  termination_unit: epoch
+  records_per_epoch: 1800
+  validation_records: 0
+  early_stopping: false
+  checkpoint_selection: epoch_500_last_checkpoint_only
+  loss: mean_per_sample_relative_l2
+  scheduler:
+    policy: source_faithful_by_method
+    default: {name: step, unit: epoch, step_size_epochs: 100, gamma: 0.5}
+    gnot: {name: one_cycle, unit: optimizer_step, pct_start: 0.2, div_factor: 10000.0, final_div_factor: 10000.0}
+    transolver: {name: one_cycle, unit: optimizer_step, pct_start: 0.3, div_factor: 25.0, final_div_factor: 10000.0}
+  views_trained_independently: true
+  pdes_trained_independently: true
+  resume: exact_last_checkpoint_only
+  health_policy: fail_closed
+
+evaluation:
+  learned:
+    training_rows: 504  # 7 PDE x 8 learned methods x 9 training views
+    test_views_per_checkpoint: 9
+    unique_blocks: 4536
+  classical:
+    # RBF and POD have no learned training-view axis.  Repeating them nine
+    # times would be pseudoreplication, so each has only PDE x test-view rows.
+    methods: 2
+    unique_blocks: 126  # 7 PDE x 2 methods x 9 test views
+  unique_blocks_total: 4662
+  test_records_per_block: 200
+  cross_test_all_nine_views: true
+  after_epoch_500_acceptance_only: true
+
+prohibitions:
+  undeclared_accelerator_substitution: true
+  mixed_pde_training: true
+  mixed_observation_view_training: true
+  validation_or_test_checkpoint_selection: true
+  future_truth_teacher_forcing: true
+  evaluation_before_epoch_500_acceptance: true
+  overwrite_or_delete_prior_evidence: true
+  claim_guaranteed_small_loss_before_measurement: true

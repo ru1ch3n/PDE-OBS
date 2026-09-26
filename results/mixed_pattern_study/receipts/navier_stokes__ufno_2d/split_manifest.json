@@ -1,0 +1,29 @@
+{
+ "algorithm": "sha256_rank_within_regime_largest_remainder_exact_ten_percent_test",
+ "macrodomain_identity": "navier_stokes|periodic|smooth_grf",
+ "records": 2000,
+ "regime_counts": {
+  "high": {
+   "records": 666,
+   "test": 66,
+   "train": 600
+  },
+  "low": {
+   "records": 667,
+   "test": 67,
+   "train": 600
+  },
+  "medium": {
+   "records": 667,
+   "test": 67,
+   "train": 600
+  }
+ },
+ "schema_version": "pdeobs.one-setting-split/v7",
+ "seed": 20260804,
+ "test_records": 200,
+ "test_sample_ids_sha256": "47f5416cf0bac204f3767f0aa20cc988273ec4c0d82d85be197da3ab47e12690",
+ "train_records": 1800,
+ "train_sample_ids_sha256": "36cd356276a9e5497746e3505df8318c3b33ff1499ee5b9344ff209083c897c0",
+ "validation_records": 0
+}

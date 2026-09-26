@@ -1,0 +1,46 @@
+{
+ "aggregate": {
+  "cross_blocks": 1512,
+  "cross_median_observed_share": 0.4577167508646512,
+  "cross_median_projected_over_raw": 0.7325371438197342,
+  "matched_blocks": 189,
+  "matched_median_observed_share": 0.4343526281313448,
+  "matched_median_projected_over_raw": 0.7361033480867571
+ },
+ "blocks": 1701,
+ "definitions": {
+  "observed_squared_error_share": "sum_i e_obs,i^2 / sum_i e_i^2 over the 200 identities of a block; a share of squared error, not a fraction of wrong cells",
+  "projected": "where(mask, supplied observation, raw prediction); observations are noiseless so the observed entries become exact"
+ },
+ "identities_per_block": 200,
+ "per_identity_checks": "raw equals the sealed score (1e-12), raw^2 = observed^2 + hidden^2 (rel 1e-9), projected = hidden contribution and projected <= raw (1e-9); enforced by the score step, a violation aborts",
+ "per_identity_rows": 340200,
+ "schema": "pdeobs-revision-static-diagnostics/20260926-v1",
+ "scoring_receipts": {
+  "darcy": {
+   "blocks": 567,
+   "identities": 63,
+   "pde": "darcy",
+   "schema": "pdeobs-revision-static-diagnostics/20260926-v1",
+   "seconds": 498.745010137558,
+   "status": "complete"
+  },
+  "helmholtz": {
+   "blocks": 567,
+   "identities": 63,
+   "pde": "helmholtz",
+   "schema": "pdeobs-revision-static-diagnostics/20260926-v1",
+   "seconds": 499.230352640152,
+   "status": "complete"
+  },
+  "poisson": {
+   "blocks": 567,
+   "identities": 63,
+   "pde": "poisson",
+   "schema": "pdeobs-revision-static-diagnostics/20260926-v1",
+   "seconds": 506.6904556751251,
+   "status": "complete"
+  }
+ },
+ "worst_raw_mean_vs_released_index": 5.684341886080802e-14
+}

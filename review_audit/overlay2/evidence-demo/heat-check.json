@@ -1,0 +1,123 @@
+{
+  "bundle_schema": "pdeobs-evidence-bundle/v1",
+  "checks": {
+    "artifact_completeness": {
+      "details": [
+        "13 artifact(s) present, 0 missing"
+      ],
+      "status": "passed"
+    },
+    "checkpoint_binding": {
+      "details": [
+        "training_completion.split_sha256 equals the canonical hash of the split receipt",
+        "checkpoint f38e0eee47aa... is the checkpoint_id in the receipt, the completion record and every contract; dataset_manifest_sha256 equals the canonical hash of the identity manifest; final_last_only selection recorded"
+      ],
+      "status": "passed"
+    },
+    "external_reproduction": {
+      "details": [
+        "not attempted: this tool checks internal consistency of the supplied artifacts only; an external reproduction needs an independent run from the resolved configuration, identity manifest and split receipt"
+      ],
+      "status": "not_attempted"
+    },
+    "identity_shape_finiteness": {
+      "details": [
+        "random_50pct: 3 identities, shape [3, 16, 16, 1], all arrays finite",
+        "random_80pct: 3 identities, shape [3, 16, 16, 1], all arrays finite"
+      ],
+      "status": "passed"
+    },
+    "metric_recomputation": {
+      "details": [
+        "random_50pct: re-scored 3 identities with pdeobs-strict-v1; mean and per-identity values reproduce the stored report",
+        "random_80pct: re-scored 3 identities with pdeobs-strict-v1; mean and per-identity values reproduce the stored report"
+      ],
+      "status": "passed"
+    },
+    "numerical_reference_evidence": {
+      "details": [
+        "no numerical-reference report declared; independent accuracy of the evaluated targets is not established here"
+      ],
+      "status": "not_attempted"
+    },
+    "purpose_guard": {
+      "details": [
+        "purpose 'software-demo' is consistent with the artifacts (derived 'software-demo')",
+        "this guard catches accidental mislabeling; it is not a tamper-proof provenance authentication"
+      ],
+      "status": "passed"
+    },
+    "split_provenance": {
+      "details": [
+        "demo: 6 train / 3 test identities, disjoint, seed 20260804, macrodomain heat|periodic|smooth_grf; every block contract lists exactly the split's test identities in order"
+      ],
+      "status": "passed"
+    }
+  },
+  "claims": {
+    "local_artifact_consistency": "complete",
+    "note": "passed means the supplied files are mutually consistent and the stored score follows from the stored arrays; it does not authenticate data origin, numerical fidelity, or that the run matches the paper table",
+    "scientific_reproduction": "not established by this tool"
+  },
+  "cohort": "demo",
+  "exit_code": 0,
+  "experiment_id": "demo-heat-fno-r50/demo-attempt-1",
+  "files": {
+    "checkpoints/last.pt": {
+      "bytes": 28444749,
+      "sha256": "f38e0eee47aaeb71f52ff4a2a49ded1db4e3c003f0fbe045e3c438b0d2d2b65b"
+    },
+    "checkpoints/training_config.json": {
+      "bytes": 1466,
+      "sha256": "1ee168072f50710331103854f501baefb814a7cc05893b451f84a9a6e63b0195"
+    },
+    "evaluation/random_50pct/contract.json": {
+      "bytes": 1476,
+      "sha256": "d94d9118ad6a647170f1d728b9102be18a3f7dd890fd5430c19a9b1a181c781c"
+    },
+    "evaluation/random_50pct/predictions.h5": {
+      "bytes": 88232,
+      "sha256": "21704c182689a17598ccc0097443276410557ed356ad84505bf971253a831b82"
+    },
+    "evaluation/random_50pct/score.json": {
+      "bytes": 4810,
+      "sha256": "2f825b447cddc8b6ebe973c494b87fbdd116dea525108d05e9b8a9de7055b406"
+    },
+    "evaluation/random_80pct/contract.json": {
+      "bytes": 1476,
+      "sha256": "d8ac7bd796de34254f92a72881c65b2fb9d365482b08a6e6e136d86fba7443e8"
+    },
+    "evaluation/random_80pct/predictions.h5": {
+      "bytes": 89222,
+      "sha256": "9111c3fbc736949b23689ddd95b76c7251e41fc6f0a2ae5b6c1c35ba9bf573d8"
+    },
+    "evaluation/random_80pct/score.json": {
+      "bytes": 4814,
+      "sha256": "0b87a991e13f36e7f04415f9532f01e8f60f1a0be91ef758bb250796ac66d231"
+    },
+    "identity_manifest.json": {
+      "bytes": 1013,
+      "sha256": "e7b543edee5f8d9487e4f6139749ebb858d977a53576f08088e63db3b4699836"
+    },
+    "receipt.json": {
+      "bytes": 1965,
+      "sha256": "f43f3b2c9dfcfa9e3d062b243f3a036350bf1fb0496b3a49ced321ccaf388035"
+    },
+    "row_resolved.json": {
+      "bytes": 3341,
+      "sha256": "59c9365f90457d88f97eb7b3b842707d2a60b649d0a0b70609181d5aa5523889"
+    },
+    "split.json": {
+      "bytes": 1134,
+      "sha256": "0446451fdbf525ac3383ce1057d11fff989eb92571a94fb3bc1c79256b66a1ac"
+    },
+    "training_completion.json": {
+      "bytes": 1684,
+      "sha256": "18e43fb3dc6e5d22354da31bf3d3571bfdf2e2df010fddcf0356dd79115ab862"
+    }
+  },
+  "purpose": "software-demo",
+  "root": "<WORK>\\fixtures\\row-demo-runs\\heat",
+  "schema_version": "pdeobs-evidence-check/v1",
+  "verification_status": "complete"
+}

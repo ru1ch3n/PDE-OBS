@@ -1,0 +1,280 @@
+{
+  "runs": {
+    "cno:recovery@128 bs=8": {
+      "estimate": {
+        "epoch_min": 0.05,
+        "epoch_s": 2.8,
+        "epochs_500_h": 0.39,
+        "note": "extrapolated from 3x2 timed steps at 128^2 on this GPU; no training performed beyond that",
+        "step_s": 0.0123,
+        "steps_per_epoch_1800": 225
+      },
+      "first_step_s": 0.038,
+      "loss": 31.048757553100586,
+      "optimizer": "adamw",
+      "params": 103617,
+      "peak_gpu_mb": 523.8,
+      "physics_loss": null,
+      "scheduler": "none",
+      "status": "passed"
+    },
+    "cno:rollout@128 bs=8": {
+      "estimate": {
+        "epoch_min": 0.09,
+        "epoch_s": 5.6,
+        "epochs_500_h": 0.78,
+        "note": "extrapolated from 3x2 timed steps at 128^2 on this GPU; no training performed beyond that",
+        "step_s": 0.0249,
+        "steps_per_epoch_1800": 225
+      },
+      "first_step_s": 0.046,
+      "loss": 1.0369529724121094,
+      "optimizer": "adamw",
+      "params": 103617,
+      "peak_gpu_mb": 1247.8,
+      "physics_loss": null,
+      "scheduler": "none",
+      "status": "passed"
+    },
+    "deeponet:recovery@128 bs=4": {
+      "estimate": {
+        "epoch_min": 0.04,
+        "epoch_s": 2.7,
+        "epochs_500_h": 0.37,
+        "note": "extrapolated from 3x2 timed steps at 128^2 on this GPU; no training performed beyond that",
+        "step_s": 0.006,
+        "steps_per_epoch_1800": 450
+      },
+      "first_step_s": 0.022,
+      "loss": 4.034471035003662,
+      "optimizer": "adam",
+      "params": 221121,
+      "peak_gpu_mb": 342.5,
+      "physics_loss": null,
+      "scheduler": "none",
+      "status": "passed"
+    },
+    "deeponet:rollout@128 bs=4": {
+      "estimate": {
+        "epoch_min": 0.07,
+        "epoch_s": 4.4,
+        "epochs_500_h": 0.61,
+        "note": "extrapolated from 3x2 timed steps at 128^2 on this GPU; no training performed beyond that",
+        "step_s": 0.0097,
+        "steps_per_epoch_1800": 450
+      },
+      "first_step_s": 0.025,
+      "loss": 1.0031472444534302,
+      "optimizer": "adam",
+      "params": 221121,
+      "peak_gpu_mb": 682.3,
+      "physics_loss": null,
+      "scheduler": "none",
+      "status": "passed"
+    },
+    "fno:recovery@128 bs=8": {
+      "estimate": {
+        "epoch_min": 0.05,
+        "epoch_s": 3.1,
+        "epochs_500_h": 0.44,
+        "note": "extrapolated from 3x2 timed steps at 128^2 on this GPU; no training performed beyond that",
+        "step_s": 0.014,
+        "steps_per_epoch_1800": 225
+      },
+      "first_step_s": 0.06,
+      "loss": 20.407102584838867,
+      "optimizer": "adam",
+      "params": 2366145,
+      "peak_gpu_mb": 441.7,
+      "physics_loss": null,
+      "scheduler": "none",
+      "status": "passed"
+    },
+    "fno:rollout@128 bs=8": {
+      "estimate": {
+        "epoch_min": 0.09,
+        "epoch_s": 5.2,
+        "epochs_500_h": 0.72,
+        "note": "extrapolated from 3x2 timed steps at 128^2 on this GPU; no training performed beyond that",
+        "step_s": 0.0231,
+        "steps_per_epoch_1800": 225
+      },
+      "first_step_s": 0.07,
+      "loss": 0.9969943165779114,
+      "optimizer": "adam",
+      "params": 2366145,
+      "peak_gpu_mb": 1026.8,
+      "physics_loss": null,
+      "scheduler": "none",
+      "status": "passed"
+    },
+    "gnot:recovery@128 bs=4": {
+      "estimate": {
+        "epoch_min": 0.78,
+        "epoch_s": 46.9,
+        "epochs_500_h": 6.51,
+        "note": "extrapolated from 3x2 timed steps at 128^2 on this GPU; no training performed beyond that",
+        "step_s": 0.1041,
+        "steps_per_epoch_1800": 450
+      },
+      "first_step_s": 0.173,
+      "loss": 85.46820068359375,
+      "optimizer": "adamw",
+      "params": 2099975,
+      "peak_gpu_mb": 6738.8,
+      "physics_loss": null,
+      "scheduler": "one_cycle",
+      "status": "passed"
+    },
+    "gnot:rollout@128 bs=4": {
+      "estimate": {
+        "epoch_min": 1.85,
+        "epoch_s": 111.1,
+        "epochs_500_h": 15.43,
+        "note": "extrapolated from 3x2 timed steps at 128^2 on this GPU; no training performed beyond that",
+        "step_s": 0.2469,
+        "steps_per_epoch_1800": 450
+      },
+      "first_step_s": 0.311,
+      "loss": 1.1817377805709839,
+      "optimizer": "adamw",
+      "params": 2099975,
+      "peak_gpu_mb": 19930.1,
+      "physics_loss": null,
+      "scheduler": "one_cycle",
+      "status": "passed"
+    },
+    "pino:recovery@128 bs=4": {
+      "estimate": {
+        "epoch_min": 0.18,
+        "epoch_s": 11.0,
+        "epochs_500_h": 1.52,
+        "note": "extrapolated from 3x2 timed steps at 128^2 on this GPU; no training performed beyond that",
+        "step_s": 0.0243,
+        "steps_per_epoch_1800": 450
+      },
+      "first_step_s": 0.306,
+      "loss": 92.55523681640625,
+      "optimizer": "adam",
+      "params": 32798273,
+      "peak_gpu_mb": 727.7,
+      "physics_loss": "pino_static_fd_v1",
+      "scheduler": "step",
+      "status": "passed"
+    },
+    "pino:rollout@128 bs=4": {
+      "estimate": {
+        "epoch_min": 0.35,
+        "epoch_s": 20.9,
+        "epochs_500_h": 2.91,
+        "note": "extrapolated from 3x2 timed steps at 128^2 on this GPU; no training performed beyond that",
+        "step_s": 0.0465,
+        "steps_per_epoch_1800": 450
+      },
+      "first_step_s": 0.321,
+      "loss": 5.934051513671875,
+      "optimizer": "adam",
+      "params": 32798273,
+      "peak_gpu_mb": 1705.6,
+      "physics_loss": "pino_rollout_spectral_v1",
+      "scheduler": "step",
+      "status": "passed"
+    },
+    "transolver:recovery@128 bs=4": {
+      "estimate": {
+        "epoch_min": 0.85,
+        "epoch_s": 51.3,
+        "epochs_500_h": 7.12,
+        "note": "extrapolated from 3x2 timed steps at 128^2 on this GPU; no training performed beyond that",
+        "step_s": 0.114,
+        "steps_per_epoch_1800": 450
+      },
+      "first_step_s": 0.193,
+      "loss": 14.2345609664917,
+      "optimizer": "adamw",
+      "params": 2811457,
+      "peak_gpu_mb": 5217.8,
+      "physics_loss": null,
+      "scheduler": "one_cycle",
+      "status": "passed"
+    },
+    "transolver:rollout@128 bs=2": {
+      "estimate": {
+        "epoch_min": 4.19,
+        "epoch_s": 251.6,
+        "epochs_500_h": 34.95,
+        "note": "extrapolated from 3x2 timed steps at 128^2 on this GPU; no training performed beyond that",
+        "step_s": 0.2796,
+        "steps_per_epoch_1800": 900
+      },
+      "first_step_s": 0.382,
+      "loss": 1.0146000385284424,
+      "optimizer": "adamw",
+      "params": 11196737,
+      "peak_gpu_mb": 9684.7,
+      "physics_loss": null,
+      "scheduler": "one_cycle",
+      "status": "passed"
+    },
+    "ufno:recovery@128 bs=4": {
+      "estimate": {
+        "epoch_min": 0.25,
+        "epoch_s": 15.1,
+        "epochs_500_h": 2.1,
+        "note": "extrapolated from 3x2 timed steps at 128^2 on this GPU; no training performed beyond that",
+        "step_s": 0.0337,
+        "steps_per_epoch_1800": 450
+      },
+      "first_step_s": 0.123,
+      "loss": 1.499171257019043,
+      "optimizer": "adam",
+      "params": 5049545,
+      "peak_gpu_mb": 426.0,
+      "physics_loss": null,
+      "scheduler": "none",
+      "status": "passed"
+    },
+    "ufno:rollout@128 bs=4": {
+      "estimate": {
+        "epoch_min": 0.41,
+        "epoch_s": 24.4,
+        "epochs_500_h": 3.39,
+        "note": "extrapolated from 3x2 timed steps at 128^2 on this GPU; no training performed beyond that",
+        "step_s": 0.0543,
+        "steps_per_epoch_1800": 450
+      },
+      "first_step_s": 0.135,
+      "loss": 0.9998655319213867,
+      "optimizer": "adam",
+      "params": 5049545,
+      "peak_gpu_mb": 956.5,
+      "physics_loss": null,
+      "scheduler": "none",
+      "status": "passed"
+    }
+  },
+  "summary": {
+    "epochs_500_hours": {
+      "cno:recovery@128 bs=8": 0.39,
+      "cno:rollout@128 bs=8": 0.78,
+      "deeponet:recovery@128 bs=4": 0.37,
+      "deeponet:rollout@128 bs=4": 0.61,
+      "fno:recovery@128 bs=8": 0.44,
+      "fno:rollout@128 bs=8": 0.72,
+      "gnot:recovery@128 bs=4": 6.51,
+      "gnot:rollout@128 bs=4": 15.43,
+      "pino:recovery@128 bs=4": 1.52,
+      "pino:rollout@128 bs=4": 2.91,
+      "transolver:recovery@128 bs=4": 7.12,
+      "transolver:rollout@128 bs=2": 34.95,
+      "ufno:recovery@128 bs=4": 2.1,
+      "ufno:rollout@128 bs=4": 3.39
+    },
+    "max_peak_gpu_mb": 19930.1,
+    "passed": 14,
+    "total": 14
+  },
+  "tier": "T13",
+  "utc": "2026-09-21T14:55:08Z",
+  "what": "paper structures at 128^2 with the paper batch sizes: peak memory + per-step timing -> epoch / 500-epoch estimate, then stop (no training)"
+}

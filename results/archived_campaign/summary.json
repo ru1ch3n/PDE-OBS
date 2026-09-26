@@ -1,0 +1,29 @@
+{
+  "blocks_indexed": 3969,
+  "by_training_cohort": {
+    "budget200_min120": 44,
+    "budget200_patience10_no_floor": 10,
+    "fixed200_recovered": 36,
+    "interrupted_or_recovered": 28,
+    "original500": 257,
+    "original500_recovered": 66
+  },
+  "by_verification_status": {
+    "consistent": 441
+  },
+  "identities_with_selected_evaluation": 441,
+  "identities_without_completed_evaluation": 0,
+  "not_established": [
+    "numerical-reference accuracy of the evaluated targets",
+    "external reproduction of any run",
+    "recomputation of any metric from arrays",
+    "checkpoint file re-hash unless the scan ran with --hash-checkpoints"
+  ],
+  "planned_identities": 441,
+  "schema_version": "pdeobs-archived-results-index/v1",
+  "scoring": "campaign evaluator relative L2 (legacy family); no strict-v1 blocks and no prediction tensors exist for these runs",
+  "selection_rules": [
+    "explicit_selection",
+    "unique_complete_evaluation"
+  ]
+}

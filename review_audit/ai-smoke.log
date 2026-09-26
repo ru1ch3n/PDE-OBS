@@ -1,0 +1,35 @@
+{
+  "schema_version": "pdeobs-ai-smoke/v1",
+  "status": "passed",
+  "scope": "software acceptance ONLY; 16x16 demo data, NOT paper results",
+  "device": "cpu",
+  "threads": 1,
+  "torch": "2.10.0+cpu",
+  "cases": [
+    {
+      "pde": "poisson",
+      "task": "recovery",
+      "train_count": 4,
+      "test_count": 2,
+      "train_test_overlap": 0,
+      "optimizer_steps": 2,
+      "strict_status": "valid",
+      "reload_identical": true,
+      "targets_used_for_predict": false,
+      "note": "same-process fresh model reload; not independent production reproduction"
+    },
+    {
+      "pde": "heat",
+      "task": "rollout",
+      "train_count": 4,
+      "test_count": 2,
+      "train_test_overlap": 0,
+      "optimizer_steps": 2,
+      "strict_status": "valid",
+      "reload_identical": true,
+      "targets_used_for_predict": false,
+      "note": "same-process fresh model reload; not independent production reproduction"
+    }
+  ],
+  "seconds": 1.082
+}

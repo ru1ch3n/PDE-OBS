@@ -1,0 +1,86 @@
+{
+  "budget_conflict": {
+    "error": "ValueError: give exactly one of budget.epochs or budget.max_steps",
+    "status": "rejected_ok"
+  },
+  "budget_required": {
+    "error": "ValueError: training needs an explicit budget: {'epochs': N} or {'max_steps': N}; no default long run is started",
+    "status": "rejected_ok"
+  },
+  "epoch_budget": {
+    "epochs": 1,
+    "expected_steps": 2,
+    "steps": 2
+  },
+  "explicit": {
+    "test": 2,
+    "train": 5
+  },
+  "explicit_overlap_rejected": {
+    "error": "ValueError: explicit split has overlapping train/test identities",
+    "status": "rejected_ok"
+  },
+  "holdout": {
+    "overlap": 0,
+    "test": 400,
+    "train": 1600
+  },
+  "identity": {
+    "custom_origin": "custom",
+    "paper_label": "paper",
+    "paper_origin": "paper",
+    "recipe_hashes_differ": true
+  },
+  "overwrite_refused": {
+    "error": "FileExistsError: output directory /workspace/pdeobs/sweep-run/work/full/t7/custom already holds a run; choose a new directory (runs are never overwritten by default)",
+    "status": "rejected_ok"
+  },
+  "paper_split_wrong_count_rejected": {
+    "error": "ValueError: production split requires exactly 2000 rows, found 100",
+    "status": "rejected_ok"
+  },
+  "paper_split": {
+    "overlap": 0,
+    "receipt_schema": "pdeobs.one-setting-split/v1",
+    "regime_counts": {
+      "high": {
+        "records": 666,
+        "test": 66,
+        "train": 600
+      },
+      "low": {
+        "records": 667,
+        "test": 67,
+        "train": 600
+      },
+      "medium": {
+        "records": 667,
+        "test": 67,
+        "train": 600
+      }
+    },
+    "test": 200,
+    "train": 1800
+  },
+  "paper_view_on_16grid_rejected": {
+    "error": "ValueError: paper views are defined at 128x128; the records are [16, 16]. Use the general namespace for other grids",
+    "status": "rejected_ok"
+  },
+  "records": 2000,
+  "stored": {
+    "test": 299,
+    "train": 1400
+  },
+  "summary": {
+    "all_rejections_ok": true,
+    "paper_split_1800_200": true
+  },
+  "tier": "T7",
+  "train_on_paper_split": {
+    "steps": 2,
+    "test_records": 200,
+    "train_records": 1800
+  },
+  "utc": "2026-09-21T15:59:00Z",
+  "what": "splits (paper 2000-record, holdout, explicit, stored), budgets, identities, overwrite"
+}

@@ -1,0 +1,55 @@
+== non-editable install check, started 2026-09-23T01:22:25Z ==
+-- 1. copy the source tree (no caches) to a build copy, so the delivered tree stays free of build/ and egg-info
+copied; sha256 over src/**/*.py (path+content): a08a2712434f47101afd30103549feaf3fe0b1aca71032f7ceccd3c98c955894
+base setuptools 82.0.0
+base wheel 0.46.3
+-- 2. build the wheel from the copy (--no-deps --no-build-isolation: reuses the base environment's setuptools)
+Processing .\.
+  Preparing metadata (pyproject.toml): started
+  Preparing metadata (pyproject.toml): finished with status 'done'
+Building wheels for collected packages: pdeobs
+  Building wheel for pdeobs (pyproject.toml): started
+  Building wheel for pdeobs (pyproject.toml): finished with status 'done'
+  Created wheel for pdeobs: filename=pdeobs-0.2.0-py3-none-any.whl size=349524 sha256=d5a79cf7032e9ff4b64a0d60d41f6c8b8c3008bc03c1f3515a2525bfeb4a5691
+  Stored in directory: <PIP_CACHE>\wheels\46\e6\0d\8243a68bfc001f427ea6da7dd0fa5710f9d1d1fde81507b627
+Successfully built pdeobs
+
+[notice] A new release of pip is available: 26.0.1 -> 26.2.1
+[notice] To update, run: python.exe -m pip install --upgrade pip
+pip wheel exit=0
+total 348
+drwxr-xr-x 1 <USER> 197609      0 Sep 22 21:22 .
+drwxr-xr-x 1 <USER> 197609      0 Sep 22 21:22 ..
+-rw-r--r-- 1 <USER> 197609 349524 Sep 22 21:22 pdeobs-0.2.0-py3-none-any.whl
+-- 3. fresh venv that can see the base environment's dependencies, then install the wheel non-editable
+venv exit=0
+Processing <WORK>\wheel\pdeobs-0.2.0-py3-none-any.whl
+Installing collected packages: pdeobs
+Successfully installed pdeobs-0.2.0
+
+[notice] A new release of pip is available: 24.3.1 -> 26.2.1
+[notice] To update, run: <WORK>\venv-install\Scripts\python.exe -m pip install --upgrade pip
+pip install exit=0
+-- 4. use the installed package from a neutral directory, PYTHONPATH unset
+pdeobs file: <WORK>\venv-install\Lib\site-packages\pdeobs\__init__.py
+evidence file: <WORK>\venv-install\Lib\site-packages\pdeobs\evidence.py
+sys.prefix: <WORK>\venv-install
+import-source-check: installed site-packages, not the source tree
+import-check exit=0
+deps seen by venv: torch 2.7.1+cu118 numpy 2.0.1 scipy 1.17.1 h5py 3.16.0 PyYAML 6.0.3 cuda False
+easy list models exit=0
+easy describe fno exit=0
+console entry point exit=0
+installed evidence plan exit=0
+installed evidence check exit=0
+installed evidence check verification_status: complete
+installed evidence export without --allow-demo exit=2 (2 expected)
+{"schema_version": "pdeobs-evidence-error/v1", "status": "error", "category": "demo_into_paper_export", "reason": "bundle purpose is 'software-demo'; the paper export path refuses it", "next_step": "pass --allow-demo to export a software-demo bundle into a clearly labelled demo directory"}
+h5py==3.16.0
+numpy==1.26.4
+pdeobs==0.2.0
+pytest==9.1.1
+PyYAML==6.0.3
+scipy==1.16.0
+torch==2.7.1+cu118
+== finished 2026-09-23T01:22:44Z ==

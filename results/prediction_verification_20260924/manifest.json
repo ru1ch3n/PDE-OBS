@@ -1,0 +1,65 @@
+{
+  "schema": "pdeobs-prediction-verification/20260925-v1",
+  "files": {
+    "dataset_bindings.json": {
+      "sha256": "7eed0fa6641e26048cf5960ba7c4e9b5df4be605b78fab24785cec0ca6348fe5",
+      "bytes": 510058
+    },
+    "fixed117_config_recheck.json": {
+      "sha256": "db58d26a05c461cea776c055e994e7c26d1699c892242a1affaedce560321b40",
+      "bytes": 3645
+    },
+    "historical_score_comparison.json": {
+      "sha256": "50c7cce15dc381ba23f69c20d9c412a6800b34fbd73b36a490e764c0a2a6e95f",
+      "bytes": 2323360
+    },
+    "index.json": {
+      "sha256": "5ae567e151c71fda46aa0cf3c6c08861f7d3ed01096fb2e89a9bf22e817b09d1",
+      "bytes": 7248009
+    },
+    "per_identity_burgers.jsonl.gz": {
+      "sha256": "736d9afaa6d627979abb8bad4e9cd799e3dcc66e80a3a1513754bf1d50026fe0",
+      "bytes": 5220164
+    },
+    "per_identity_darcy.jsonl.gz": {
+      "sha256": "a93670fca718408ba588a76895a1d36920d57e8d8617455fbdaeba3d2c4052bd",
+      "bytes": 1748309
+    },
+    "per_identity_heat.jsonl.gz": {
+      "sha256": "fea33bfe18cc2690f843b1b7fcc0d87fd0f65ee495c164820b48f086b982c1da",
+      "bytes": 5211788
+    },
+    "per_identity_helmholtz.jsonl.gz": {
+      "sha256": "094c32d01c66c65cc9690423004ba8eb53b6d06c3b366a4bb7215b8533178b29",
+      "bytes": 1767098
+    },
+    "per_identity_navier_stokes.jsonl.gz": {
+      "sha256": "55567b7e7d795103f5ef9261c2facc924f589d88af35bf62022107e65adc99e9",
+      "bytes": 5227039
+    },
+    "per_identity_poisson.jsonl.gz": {
+      "sha256": "cb1b5d2509ad6a50c6355af12f1eb7e1457ace77609c28e15bff5eb521ce70ca",
+      "bytes": 1766854
+    },
+    "per_identity_reaction_diffusion.jsonl.gz": {
+      "sha256": "628203783399979c2fc8c387ca7de4cb41cea7c7ad4fb9625e65ed6215701b82",
+      "bytes": 5233830
+    },
+    "README.md": {
+      "sha256": "5e52e364211c98dd458324d3dc29f8aa758b80500777e280e091c3cac8b95da2",
+      "bytes": 4630
+    },
+    "statistics.json": {
+      "sha256": "923c337a16b2e9401bffc547b5bdcfb3e2d27bed621b789e91d3181720c6a706",
+      "bytes": 2258687
+    }
+  },
+  "counts": {
+    "old_strict": 3646,
+    "minor_le_1pct": 314,
+    "difference_gt_1pct": 9
+  },
+  "new_inference_during_final_audit": 0,
+  "training_during_final_audit": 0,
+  "all_original_artifacts_retained": true
+}

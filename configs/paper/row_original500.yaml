@@ -1,0 +1,12 @@
+schema_version: pdeobs-paper-row-v1
+cohort: original500
+campaign: ../campaign/all_pde_one_setting_10method_9x9.yaml
+registry: ../method/all_pde_source_faithful_registry.yaml
+pde: poisson
+method: fno
+train_view: random_50pct
+training_seed: 20260804
+run_id: poisson-fno-r50-seed20260804-c500
+attempt_id: attempt-1
+# Exactly 2,000 explicit source identities, 1,800/200 split, 500 epochs,
+# and all nine test views are enforced by the executable original500 path.

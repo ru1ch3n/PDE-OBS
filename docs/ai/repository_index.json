@@ -1,0 +1,93 @@
+{
+  "schema_version": "pdeobs-ai-repository-index/v1",
+  "entrypoints": {
+    "human": "README.md",
+    "agent": "AI_START_HERE.md",
+    "rules": "AGENTS.md",
+    "bounded_tool": "tools/ai_assist.py",
+    "evidence_tool": "src/pdeobs/evidence.py",
+    "acceptance_index": "docs/ai/acceptance_index.json"
+  },
+  "tasks": {
+    "overview": [
+      "AI_START_HERE.md",
+      "docs/ai/QUICKSTART.md",
+      "docs/ai/PROTOCOLS.md",
+      "configs/paper/protocol.yaml"
+    ],
+    "model": [
+      "src/pdeobs/api/specs.py",
+      "src/pdeobs/api/models.py",
+      "docs/model_parameter_reference.md",
+      "tests/test_api_specs.py"
+    ],
+    "scoring": [
+      "src/pdeobs/strict_score.py",
+      "src/pdeobs/api/evaluate.py",
+      "src/pdeobs/api/infer.py",
+      "tests/test_ai_facade_regressions.py",
+      "tests/test_ai_overlay2_regressions.py",
+      "docs/scoring.md"
+    ],
+    "data": [
+      "src/pdeobs/api/data.py",
+      "src/pdeobs/generation.py",
+      "docs/data_schema.md"
+    ],
+    "paper": [
+      "configs/paper/protocol.yaml",
+      "configs/paper/observations.yaml",
+      "configs/paper/training_cohorts.yaml",
+      "src/pdeobs/paper_row.py",
+      "docs/reproducing_the_paper.md"
+    ],
+    "evidence": [
+      "docs/paper_evidence.md",
+      "src/pdeobs/evidence.py",
+      "docs/archived_results.md",
+      "tools/archived_results.py",
+      "results/archived_campaign/README.md",
+      "results/archived_campaign/summary.json",
+      "tests/test_evidence_bundle.py",
+      "docs/ai/evidence_status.json",
+      "docs/ai/acceptance_index.json",
+      "docs/ai/ACCEPTANCE_REPORT_overlay2.md"
+    ],
+    "acceptance": [
+      "docs/ai/ACCEPTANCE_INDEX.md",
+      "docs/ai/acceptance_index.json",
+      "tools/build_acceptance_index.py",
+      "acceptance/README.md",
+      "acceptance/FULL_COVERAGE_REPORT_round2.md",
+      "acceptance/FULL_COVERAGE_REPORT_round1.md",
+      "ACCEPTANCE_SUMMARY.md",
+      "RELEASE_NOTES_v0.2.0.md"
+    ]
+  },
+  "never_auto_execute": [
+    "paper-row original500",
+    "campaign launch",
+    "full dataset generation",
+    "download",
+    "cloud or scheduler commands"
+  ],
+  "not_distributed": [
+    "production dataset",
+    "production learned checkpoints",
+    "historical raw prediction tensors (none were retained by the campaign runner)",
+    "strict-v1 scored paper tables (the archived index carries legacy campaign-evaluator metrics)"
+  ],
+  "offline_commands": [
+    "python tools/ai_assist.py doctor --json",
+    "python tools/ai_assist.py context --task overview",
+    "python -m pdeobs.evidence plan --root <paper-row output dir>",
+    "python -m pdeobs.evidence check --bundle <manifest.json> --root <paper-row output dir>",
+    "python tools/archived_results.py scan --training-root <dir> --evaluation-root <dir> --label <name> --out <new file>",
+    "python tools/archived_results.py pair --scan <scan files> --selection <selection.json> --out <new file>"
+  ],
+  "write_only_into_a_new_directory": [
+    "python tools/ai_assist.py smoke --out <new dir>",
+    "python -m pdeobs.evidence export --bundle <manifest.json> --root <paper-row output dir> --out <new dir>",
+    "python tools/archived_results.py index --paired <paired.json> --out-dir <new dir>"
+  ]
+}

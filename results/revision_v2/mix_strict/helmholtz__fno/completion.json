@@ -1,0 +1,230 @@
+{
+  "adapter": "pdeobs-archived-prediction-verification-v1",
+  "blocks": [
+    {
+      "extra_view_spec": null,
+      "mask_config": {
+        "protocol": "random_3pct",
+        "ratio": 0.5
+      },
+      "predictions_sha256": "54e4b33daaf9770293b7308879a61ee3f2b97ebb1c0cdcde09a48ba8fc3d8a5d",
+      "projected_rel_l2_joint_mean": 0.011836012904478497,
+      "projected_status": "valid",
+      "realized_observed_fraction": null,
+      "rel_l2_joint_mean": 0.016009795365644928,
+      "samples": 200,
+      "score_sha256": "2481d56c93b5fa7e00a7325b30258a78636b01bec69c49263317019ba8ac7031",
+      "seconds": 9.25369119644165,
+      "status": "valid",
+      "test_view": "random_50pct",
+      "view_kind": "frozen_paper_view"
+    },
+    {
+      "extra_view_spec": null,
+      "mask_config": {
+        "protocol": "random_3pct",
+        "ratio": 0.65
+      },
+      "predictions_sha256": "a9b8fe231afb25e2b367bcc58515c9d17d4e93b8fb095210c93b1165d8cce3c5",
+      "projected_rel_l2_joint_mean": 0.010307323409279028,
+      "projected_status": "valid",
+      "realized_observed_fraction": null,
+      "rel_l2_joint_mean": 0.015410891990801761,
+      "samples": 200,
+      "score_sha256": "c24c8749b66a314006f32a58ed8cb8fa80e91f3d37a10a21c2d1a120d4c1d313",
+      "seconds": 8.44958233833313,
+      "status": "valid",
+      "test_view": "random_65pct",
+      "view_kind": "frozen_paper_view"
+    },
+    {
+      "extra_view_spec": null,
+      "mask_config": {
+        "protocol": "random_3pct",
+        "ratio": 0.8
+      },
+      "predictions_sha256": "41fd137661bc7ca3498ce1412dc0238c079d312859c1a30c3017e4d4398d174a",
+      "projected_rel_l2_joint_mean": 0.008159880028338118,
+      "projected_status": "valid",
+      "realized_observed_fraction": null,
+      "rel_l2_joint_mean": 0.016553388701130257,
+      "samples": 200,
+      "score_sha256": "2832269d28b6f429f73698a1d05c84a3d9685bba8ffb7a3d2372de64c3f088de",
+      "seconds": 8.45199966430664,
+      "status": "valid",
+      "test_view": "random_80pct",
+      "view_kind": "frozen_paper_view"
+    },
+    {
+      "extra_view_spec": null,
+      "mask_config": {
+        "missing_fraction": 0.49,
+        "protocol": "block_missing"
+      },
+      "predictions_sha256": "cfc0e5f3f6ab34a1e269fccce7f447017fe0d83e8fe3c141d748c0a5c2d1f844",
+      "projected_rel_l2_joint_mean": 0.1570939353690284,
+      "projected_status": "valid",
+      "realized_observed_fraction": null,
+      "rel_l2_joint_mean": 0.1600718035639877,
+      "samples": 200,
+      "score_sha256": "9008b3d42c082a4cfdeef4d3edc217f036093209a9bdd471fcc517e78bff19ff",
+      "seconds": 7.455119371414185,
+      "status": "valid",
+      "test_view": "block_observed_50pct",
+      "view_kind": "frozen_paper_view"
+    },
+    {
+      "extra_view_spec": null,
+      "mask_config": {
+        "num_lines": 76,
+        "orientation": "both",
+        "protocol": "line_sensors"
+      },
+      "predictions_sha256": "709576fdf32f2120fa5e27a5cb3e5b3ca9c921b4fcb1f7cc67c0ab9c70a48900",
+      "projected_rel_l2_joint_mean": 0.015382265442309407,
+      "projected_status": "valid",
+      "realized_observed_fraction": null,
+      "rel_l2_joint_mean": 0.020094558773789482,
+      "samples": 200,
+      "score_sha256": "a0caa84419c4017f6bab38f100c111ace7ffa72eed577f867711bde0ad08b1e4",
+      "seconds": 8.046359777450562,
+      "status": "valid",
+      "test_view": "line_sensors_50pct",
+      "view_kind": "frozen_paper_view"
+    },
+    {
+      "extra_view_spec": null,
+      "mask_config": {
+        "num_lines": 64,
+        "orientation": "horizontal",
+        "protocol": "line_sensors"
+      },
+      "predictions_sha256": "43e2282cbd8b24c6f81d61bfcfe148e792214418b57f2b30cc0357afb4d52360",
+      "projected_rel_l2_joint_mean": 0.016199540851313726,
+      "projected_status": "valid",
+      "realized_observed_fraction": null,
+      "rel_l2_joint_mean": 0.02099579541586002,
+      "samples": 200,
+      "score_sha256": "4412b694c9af0e0756932ff52109a80630963abbad246e8fb1a492c8f9ac2267",
+      "seconds": 7.413501501083374,
+      "status": "valid",
+      "test_view": "horizontal_lines_50pct",
+      "view_kind": "frozen_paper_view"
+    },
+    {
+      "extra_view_spec": null,
+      "mask_config": {
+        "num_lines": 64,
+        "orientation": "vertical",
+        "protocol": "line_sensors"
+      },
+      "predictions_sha256": "772fd1b263b5a8b19054e603e1755396dd212cca13cfea7e1845cf23205dcce5",
+      "projected_rel_l2_joint_mean": 0.016595786055677103,
+      "projected_status": "valid",
+      "realized_observed_fraction": null,
+      "rel_l2_joint_mean": 0.021985814774911842,
+      "samples": 200,
+      "score_sha256": "a4b928e62c24028a5e71a65ccee04ccd1d6c3e7b9f4db720afff60b229506b27",
+      "seconds": 7.94483494758606,
+      "status": "valid",
+      "test_view": "vertical_lines_50pct",
+      "view_kind": "frozen_paper_view"
+    },
+    {
+      "extra_view_spec": null,
+      "mask_config": {
+        "protocol": "boundary_sensors",
+        "width": 19
+      },
+      "predictions_sha256": "457f66b7cdec4a4ac56ab954e11aa860b4f56782133a21770cc6dd963d6df5fd",
+      "projected_rel_l2_joint_mean": 0.059854504082077084,
+      "projected_status": "valid",
+      "realized_observed_fraction": null,
+      "rel_l2_joint_mean": 0.06295480774091149,
+      "samples": 200,
+      "score_sha256": "51324b58f92e67d55626517ef287499c1ed752afb394a7e631e2d44efc4c87aa",
+      "seconds": 7.424633026123047,
+      "status": "valid",
+      "test_view": "boundary_band_50pct",
+      "view_kind": "frozen_paper_view"
+    },
+    {
+      "extra_view_spec": null,
+      "mask_config": {
+        "protocol": "clustered_sensors",
+        "ratio": 0.5
+      },
+      "predictions_sha256": "d9d0256800c12c005b643fc64e9c531d15643250debbb54087652fb3991e2e65",
+      "projected_rel_l2_joint_mean": 0.13729373162705924,
+      "projected_status": "valid",
+      "realized_observed_fraction": null,
+      "rel_l2_joint_mean": 0.14387958835074005,
+      "samples": 200,
+      "score_sha256": "18167505b509f8f612ff5bfdbad153ef6533b3a5e99689a2d17b69bd59d36010",
+      "seconds": 8.38869833946228,
+      "status": "valid",
+      "test_view": "clustered_50pct",
+      "view_kind": "frozen_paper_view"
+    },
+    {
+      "extra_view_spec": "random_3pct 20",
+      "mask_config": {
+        "protocol": "random_3pct",
+        "ratio": 0.2
+      },
+      "predictions_sha256": "04746b0e00547664fe1d3ce85db8f2cada2d083fa641641c62757bf0a75fa42e",
+      "projected_rel_l2_joint_mean": 0.13093592219105388,
+      "projected_status": "valid",
+      "realized_observed_fraction": null,
+      "rel_l2_joint_mean": 0.14219628968666784,
+      "samples": 200,
+      "score_sha256": "14eb0657482e423061139fafe3a7dada411082f61daceed015ab92dba8f76a88",
+      "seconds": 7.502848386764526,
+      "status": "valid",
+      "test_view": "random_3pct-p20",
+      "view_kind": "extra_view"
+    },
+    {
+      "extra_view_spec": "random_3pct 35",
+      "mask_config": {
+        "protocol": "random_3pct",
+        "ratio": 0.35
+      },
+      "predictions_sha256": "ba041b8faaba63e945daf0f7d2b2c792211786b8820d382af82307fde16004af",
+      "projected_rel_l2_joint_mean": 0.035838251540858124,
+      "projected_status": "valid",
+      "realized_observed_fraction": null,
+      "rel_l2_joint_mean": 0.04337647351852558,
+      "samples": 200,
+      "score_sha256": "e10f8ba18a002d1f35e99de641ef4b4189b7e4d9a0b3426fca3bbc80ce5209cb",
+      "seconds": 7.986302375793457,
+      "status": "valid",
+      "test_view": "random_3pct-p35",
+      "view_kind": "extra_view"
+    },
+    {
+      "extra_view_spec": "line_sensors(orientation=both) 30 + random_3pct 20",
+      "mask_config": {
+        "protocol": "line_sensors(orientation=both) 30 + random_3pct 20"
+      },
+      "predictions_sha256": "8f37ea4a58ca968506a9aabc053826f041345f1e99521643e5c891d73f641a79",
+      "projected_rel_l2_joint_mean": 0.10522155000000716,
+      "projected_status": "valid",
+      "realized_observed_fraction": null,
+      "rel_l2_joint_mean": 0.11495328233276571,
+      "samples": 200,
+      "score_sha256": "3fac2df836e487bf7c74b4e2c66c8446748b41c3e724e3dc42dcd1c003a51933",
+      "seconds": 7.505458116531372,
+      "status": "valid",
+      "test_view": "line_sensors-orientation-both-p30__random_3pct-p20",
+      "view_kind": "extra_view"
+    }
+  ],
+  "finished_unix": 1790390457.8530114,
+  "identity": "helmholtz/fno/mixed_nine_views",
+  "optimizer_updates": 0,
+  "schema_version": "pdeobs-mixed-strict-inference/20260926-v1",
+  "seconds": 104.88176321983337,
+  "started_unix": 1790390352.971249,
+  "status": "complete"
+}

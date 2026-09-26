@@ -1,0 +1,173 @@
+--- a/README.md
++++ b/README.md
+@@ -1,4 +1,6 @@
+ # PDE-OBS
++
++> **AI/review overlay:** start at [AI_START_HERE.md](AI_START_HERE.md). Changes and test scope are in [AI_PATCH_NOTES.md](AI_PATCH_NOTES.md). This is not an official upstream release or paper-results update.
+ 
+ ![PDE-OBS: a partial-observation PDE benchmark. One solved record, the frozen view applied to it, and the cells a method must recover.](docs/figures/hero.png)
+ 
+--- a/src/pdeobs/api/cli.py
++++ b/src/pdeobs/api/cli.py
+@@ -209,7 +209,7 @@
+         with np.load(args.targets, allow_pickle=False) as data:
+             targets = data["target"]
+             ids = [str(s) for s in data["target_ids"]] if "target_ids" in data.files else None
+-            times = [int(v) for v in data["target_time_indices"]] if "target_time_indices" in data.files else None
++            times = data["target_time_indices"].tolist() if "target_time_indices" in data.files else None
+         report = evaluate(args.predictions, targets, target_ids=ids, target_time_indices=times, out=args.out)
+     elif args.model_from and args.data and args.obs:
+         predictor = load_predictor(args.model_from, device=args.device)
+--- a/src/pdeobs/api/data.py
++++ b/src/pdeobs/api/data.py
+@@ -362,15 +362,28 @@
+             raise ValueError(f"mask shape {mask.shape} must match observations {obs.shape} with a single trailing channel")
+         if not np.isfinite(obs).all():
+             raise ValueError("observations contain non-finite values")
++        # Validate BEFORE conversion: NaN/Inf or soft masks must not become valid
++        # binary observations merely by passing through the convenience API.
++        if mask.dtype.kind not in "biuf" or not np.isfinite(mask).all():
++            raise ValueError("mask must contain finite real binary values")
++        if not np.isin(mask, (0, 1)).all():
++            raise ValueError("mask must contain only 0 and 1")
+         self.observations = obs
+-        self.mask = (mask > 0).astype(np.float32)
++        self.mask = mask.astype(np.float32)
+         if self.geometry is not None:
+             geom = np.asarray(self.geometry, dtype=np.float32)
+             if geom.ndim == 3:
+                 geom = geom[..., None]
+             if geom.shape != (obs.shape[0], *obs.shape[-3:-1], 1):
+                 raise ValueError(f"geometry shape {geom.shape} must be (N,H,W,1)")
++            if not np.isfinite(geom).all():
++                raise ValueError("geometry contains non-finite values")
+             self.geometry = geom
++        if self.time_indices is not None:
++            from ..strict_score import _times
++            self.time_indices = _times(self.time_indices, "input time_indices")
++            if len(self.time_indices) != (obs.shape[1] if obs.ndim == 5 else 1):
++                raise ValueError("input time_indices length differs from observation history")
+         n = obs.shape[0]
+         if not self.sample_ids:
+             self.sample_ids = [f"input-{i:06d}" for i in range(n)]
+@@ -441,7 +454,7 @@
+             return cls(observations=data["observations"], mask=data["mask"],
+                        geometry=data["geometry"] if "geometry" in keys else None,
+                        sample_ids=[str(s) for s in data["sample_ids"]] if "sample_ids" in keys else [],
+-                       time_indices=[int(v) for v in data["time_indices"]] if "time_indices" in keys else None,
++                       time_indices=data["time_indices"].tolist() if "time_indices" in keys else None,
+                        physical_times=[float(v) for v in data["physical_times"]] if "physical_times" in keys else None,
+                        condition=data["condition"] if "condition" in keys else None, metadata=meta)
+ 
+--- a/src/pdeobs/api/evaluate.py
++++ b/src/pdeobs/api/evaluate.py
+@@ -60,9 +60,16 @@
+         targets = hidden
+     target = np.asarray(targets, dtype=np.float64)
+     ids = list(bundle.sample_ids)
+-    tids = [str(s) for s in (target_ids or ids)]
++    tids = list(ids if target_ids is None else target_ids)
+     times = list(bundle.time_indices)
+-    ttimes = [int(v) for v in (target_time_indices or times)]
++    ttimes = list(times if target_time_indices is None else target_time_indices)
++    # Preserve invalid dtypes for strict rejection, instead of truncating 0.9 to 0.
++    from ..strict_score import StrictValidationError, _times
++    try:
++        times = _times(times, "prediction_time_indices")
++        ttimes = _times(ttimes, "target_time_indices")
++    except (StrictValidationError, TypeError, ValueError) as exc:
++        return _invalid([str(exc)], out)
+     if target.shape != bundle.predictions.shape:
+         return _invalid([f"target shape {target.shape} differs from prediction shape {bundle.predictions.shape}"], out)
+     obs_meta = bundle.provenance.get("observation", {}) if bundle.provenance else {}
+@@ -74,8 +81,18 @@
+     if bundle.task == "recovery":
+         if bundle.inputs is None:
+             return _invalid(["recovery scoring requires the observation and mask used for prediction"], out)
+-        mask = bundle.inputs.mask.astype(bool)
++        mask = np.asarray(bundle.inputs.mask)
+         observation = bundle.inputs.observations
++        # score_arrays expects observations in TARGET order. The bundle carries
++        # them in INPUT order, which can differ from the independently supplied targets.
++        input_ids = list(bundle.inputs.sample_ids)
++        if len(input_ids) != len(set(input_ids)) or set(input_ids) != set(ids):
++            return _invalid(["input identities differ from prediction identities"], out)
++        if all(isinstance(s, str) for s in tids) and len(tids) == len(ids) and set(tids) == set(ids):
++            positions = {identity: index for index, identity in enumerate(input_ids)}
++            order = [positions[identity] for identity in tids]
++            mask = mask[order]
++            observation = observation[order]
+     report = score_arrays(np.asarray(bundle.predictions, dtype=np.float64), target, prediction_ids=ids, target_ids=tids,
+                           prediction_time_indices=times, target_time_indices=ttimes, contract=contract, mask=mask, observation=observation)
+     report["easy_api"] = {"api_version": S.API_VERSION, "prediction_provenance": bundle.provenance}
+--- a/src/pdeobs/api/infer.py
++++ b/src/pdeobs/api/infer.py
+@@ -73,28 +73,35 @@
+     @classmethod
+     def load(cls, path: str | Path) -> PredictionBundle:
+         target = Path(path)
++        from ..strict_score import _times
+         if target.suffix.lower() == ".npz":
+             with np.load(target, allow_pickle=False) as data:
+                 meta = json.loads(str(data["schema"]))
++                if meta.get("schema_version") != S.PREDICTION_BUNDLE_VERSION:
++                    raise ValueError("unsupported prediction bundle schema")
+                 inputs = None
+                 if "observation" in data.files and "mask" in data.files:
+                     inputs = InferenceInput(observations=data["observation"], mask=data["mask"],
+                                             geometry=data["geometry"] if "geometry" in data.files else None,
+                                             sample_ids=[str(s) for s in data["prediction_ids"]])
+                 return cls(predictions=data["prediction"], sample_ids=[str(s) for s in data["prediction_ids"]],
+-                           time_indices=[int(v) for v in data["prediction_time_indices"]], task=meta["task"],
++                           time_indices=_times(data["prediction_time_indices"], "prediction_time_indices"), task=meta["task"],
+                            provenance=meta.get("provenance", {}), inputs=inputs)
+         if target.suffix.lower() in {".h5", ".hdf5"}:
+             import h5py
+             with h5py.File(target, "r") as handle:
+                 meta = json.loads(str(handle.attrs["schema_json"]))
++                if meta.get("schema_version") != S.PREDICTION_BUNDLE_VERSION:
++                    raise ValueError("unsupported prediction bundle schema")
++                if handle.attrs.get("artifact_version") != S.PREDICTION_BUNDLE_VERSION:
++                    raise ValueError("unsupported prediction bundle artifact version")
+                 ids = [s.decode("utf-8") if isinstance(s, bytes) else str(s) for s in handle["prediction_ids"][()]]
+                 inputs = None
+                 if "observation" in handle and "mask" in handle:
+                     inputs = InferenceInput(observations=handle["observation"][()], mask=handle["mask"][()],
+                                             geometry=handle["geometry"][()] if "geometry" in handle else None, sample_ids=ids)
+                 return cls(predictions=handle["prediction"][()], sample_ids=ids,
+-                           time_indices=[int(v) for v in handle["prediction_time_indices"][()]], task=meta["task"],
++                           time_indices=_times(handle["prediction_time_indices"][()], "prediction_time_indices"), task=meta["task"],
+                            provenance=meta.get("provenance", {}), inputs=inputs)
+         raise ValueError("unsupported prediction file format")
+ 
+--- a/src/pdeobs/api/pipeline.py
++++ b/src/pdeobs/api/pipeline.py
+@@ -52,6 +52,19 @@
+     resolved: dict[str, Any] = {"schema_version": S.PIPELINE_CONFIG_VERSION, "api_version": S.API_VERSION, "name": cfg.get("name"),
+                                 "seed": int(cfg.get("seed", 0)), "device": cfg.get("device", "auto"), "out": cfg.get("out"),
+                                 "stages": list(cfg.get("stages") or [s for s in STAGES if s in cfg])}
++    requested_stages = cfg.get("stages", [s for s in STAGES if s in cfg])
++    if not isinstance(requested_stages, list) or not requested_stages:
++        raise ValueError("stages must be a non-empty list of known pipeline stages")
++    if any(not isinstance(s, str) or s not in STAGES for s in requested_stages):
++        raise ValueError(f"unknown pipeline stage; valid stages: {list(STAGES)}")
++    if len(set(requested_stages)) != len(requested_stages):
++        raise ValueError("pipeline stages must not contain duplicates")
++    if any(stage not in cfg for stage in requested_stages):
++        raise ValueError("each requested stage needs its corresponding configuration section")
++    # Execution is in canonical dependency order; preserve that order in the plan.
++    resolved["stages"] = [stage for stage in STAGES if stage in requested_stages]
++    if "train" in requested_stages and not {"data", "model", "observation"}.issubset(requested_stages):
++        raise ValueError("train execution requires data, observation and model stages")
+     task = cfg.get("task")
+     data = cfg.get("data")
+     if data is not None:
+@@ -210,6 +223,8 @@
+                     raise ValueError("evaluate in bundle mode needs a predict stage in the same run (or use mode: records)")
+                 report = evaluate(bundle, out=out_root / ev.get("out", "evaluation"))
+             receipt["stages"]["evaluate"] = {"status": report.get("status"), "summary": report.get("summary"), "errors": report.get("errors", [])}
++            if report.get("status") != "valid":
++                raise ValueError(f"strict evaluation was not valid: {report.get('errors', [])}")
+         receipt["status"] = "complete"
+     except Exception as exc:  # noqa: BLE001 - the receipt records the failure and re-raises
+         receipt["status"] = "failed"

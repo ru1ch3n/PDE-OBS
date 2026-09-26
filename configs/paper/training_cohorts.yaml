@@ -1,0 +1,42 @@
+schema_version: pdeobs.training-cohort-description/v1
+purpose: historical_protocol_metadata_not_an_early_stopping_implementation
+selection:
+  criterion: declared_attempt_last_checkpoint
+  validation_records: 0
+  test_selection: forbidden
+cohorts:
+  original500:
+    max_epochs: 500
+    records_per_epoch: 1800
+    early_stopping: false
+    original_resolver_supported: true
+  fixed200:
+    max_epochs: 200
+    early_stopping: false
+    original_resolver_supported: false
+    settings_source: actual_attempt_resolved_configuration
+  budget200_min120:
+    max_epochs: 200
+    minimum_completed_epochs_before_stale_accumulation: 120
+    patience_epochs: 10
+    min_delta: 0.0
+    monitored_value: training_data_loss
+    improvement: strictly_less_than_historical_best
+    earliest_patience_stop_epoch: 130
+    original_resolver_supported: false
+    implementation_scope: separately_versioned_attempt_adapter
+  interrupted_or_recovered:
+    max_epochs: null
+    require_actual_epoch: true
+    require_original_attempt_identity: true
+    require_recovery_and_stop_reason: true
+    budget_complete_by_default: false
+required_result_fields:
+  - training_cohort
+  - actual_epochs
+  - attempt_identity
+  - checkpoint_identity
+  - resolved_config_identity
+  - score_version
+  - stop_reason
+historical_results_relabeling_allowed: false

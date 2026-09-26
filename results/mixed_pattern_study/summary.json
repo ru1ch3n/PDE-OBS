@@ -1,0 +1,163 @@
+{
+  "mask_spec": "random_3pct(ratio=0.5) + random_3pct(ratio=0.65) + random_3pct(ratio=0.8) + block_missing(missing_fraction=0.49) + line_sensors(num_lines=76, orientation=both) + line_sensors(num_lines=64, orientation=horizontal) + line_sensors(num_lines=64, orientation=vertical) + boundary_sensors(width=19) + clustered_sensors(ratio=0.5)",
+  "poll_utc": "2026-09-26T04:53:02.163715+00:00",
+  "rows": {
+    "heat/deeponet/mixed_nine_views": {
+      "actual_epochs": 500,
+      "checkpoint_sha256": "1f6b099a3365f1791818420940060c980fa3780f2aeb7232a4f768ff5f0793e7",
+      "extra_views": {
+        "line_sensors-orientation-both-p30__random_3pct-p20": {
+          "realized_observed_fraction": 0.2490924072265625,
+          "relative_l2": 0.18917037873644588,
+          "spec": "line_sensors(orientation=both) 30 + random_3pct 20"
+        },
+        "random_3pct-p20": {
+          "realized_observed_fraction": 0.20001220703125,
+          "relative_l2": 0.2320756530264889,
+          "spec": "random_3pct 20"
+        },
+        "random_3pct-p35": {
+          "realized_observed_fraction": 0.3499755859375,
+          "relative_l2": 0.13222529709296493,
+          "spec": "random_3pct 35"
+        }
+      },
+      "geomean_ratio": 1.3194016464028553,
+      "mean_mixed": 0.13292543050293734,
+      "mean_specialist": 0.09825639088327164,
+      "nine_view_evaluated": true,
+      "planned_epochs": 500,
+      "protocol": "pdeobs.fixed500-last-checkpoint/v7",
+      "stop_reason": "max_epochs_500"
+    },
+    "helmholtz/deeponet/mixed_nine_views": {
+      "actual_epochs": 500,
+      "checkpoint_sha256": "763ece950ca0219942a47dd252cef9053e3c15f6d8361e25ca9009d47df309b0",
+      "extra_views": {
+        "line_sensors-orientation-both-p30__random_3pct-p20": {
+          "realized_observed_fraction": 0.245550537109375,
+          "relative_l2": 0.1502771808716071,
+          "spec": "line_sensors(orientation=both) 30 + random_3pct 20"
+        },
+        "random_3pct-p20": {
+          "realized_observed_fraction": 0.20001220703125,
+          "relative_l2": 0.18311106716227843,
+          "spec": "random_3pct 20"
+        },
+        "random_3pct-p35": {
+          "realized_observed_fraction": 0.3499755859375,
+          "relative_l2": 0.06728446220684711,
+          "spec": "random_3pct 35"
+        }
+      },
+      "geomean_ratio": 2.5619308464097577,
+      "mean_mixed": 0.12144442031161927,
+      "mean_specialist": 0.050113990711576545,
+      "nine_view_evaluated": true,
+      "planned_epochs": 500,
+      "protocol": "pdeobs.fixed500-last-checkpoint/v7",
+      "stop_reason": "max_epochs_500"
+    },
+    "helmholtz/fno/mixed_nine_views": {
+      "actual_epochs": 500,
+      "checkpoint_sha256": "463929123b38777bc7471159388f5a0e406c8388ecd2c199914813e18c5ca7bb",
+      "extra_views": {
+        "line_sensors-orientation-both-p30__random_3pct-p20": {
+          "realized_observed_fraction": 0.245550537109375,
+          "relative_l2": 0.11495328233276574,
+          "spec": "line_sensors(orientation=both) 30 + random_3pct 20"
+        },
+        "random_3pct-p20": {
+          "realized_observed_fraction": 0.20001220703125,
+          "relative_l2": 0.14219628968666786,
+          "spec": "random_3pct 20"
+        },
+        "random_3pct-p35": {
+          "realized_observed_fraction": 0.3499755859375,
+          "relative_l2": 0.043376473518525575,
+          "spec": "random_3pct 35"
+        }
+      },
+      "geomean_ratio": 2.083026226010161,
+      "mean_mixed": 0.053106271630864156,
+      "mean_specialist": 0.021152152204019913,
+      "nine_view_evaluated": true,
+      "planned_epochs": 500,
+      "protocol": "pdeobs.fixed500-last-checkpoint/v7",
+      "stop_reason": "max_epochs_500"
+    },
+    "helmholtz/gnot/mixed_nine_views": {
+      "actual_epochs": null,
+      "checkpoint_sha256": null,
+      "extra_views": {},
+      "nine_view_evaluated": false,
+      "planned_epochs": 500,
+      "protocol": "pdeobs.fixed500-last-checkpoint/v7",
+      "stop_reason": null
+    },
+    "navier_stokes/ufno_2d/mixed_nine_views": {
+      "actual_epochs": 500,
+      "checkpoint_sha256": "be05345dec760c5a252e8b185710135c67b713c309a5ef237d8bde146fdef084",
+      "extra_views": {
+        "line_sensors-orientation-both-p30__random_3pct-p20": {
+          "realized_observed_fraction": 0.243526611328125,
+          "relative_l2": 0.06269548662583478,
+          "spec": "line_sensors(orientation=both) 30 + random_3pct 20"
+        },
+        "random_3pct-p20": {
+          "realized_observed_fraction": 0.20001220703125,
+          "relative_l2": 0.08389261787887124,
+          "spec": "random_3pct 20"
+        },
+        "random_3pct-p35": {
+          "realized_observed_fraction": 0.3499755859375,
+          "relative_l2": 0.017360167840547402,
+          "spec": "random_3pct 35"
+        }
+      },
+      "geomean_ratio": 1.186324405276721,
+      "mean_mixed": 0.03493117123765619,
+      "mean_specialist": 0.02554716025175881,
+      "nine_view_evaluated": true,
+      "planned_epochs": 500,
+      "protocol": "pdeobs.fixed500-last-checkpoint/v7",
+      "stop_reason": "max_epochs_500"
+    },
+    "poisson/ufno_2d/mixed_nine_views": {
+      "actual_epochs": 200,
+      "checkpoint_sha256": "3a6658ddd58ceb8833b6143c3a5b3b0085667f650f680d2e0207c1c385754a6b",
+      "extra_views": {
+        "line_sensors-orientation-both-p30__random_3pct-p20": {
+          "realized_observed_fraction": 0.2470684814453125,
+          "relative_l2": 0.12486780617074066,
+          "spec": "line_sensors(orientation=both) 30 + random_3pct 20"
+        },
+        "random_3pct-p20": {
+          "realized_observed_fraction": 0.20001220703125,
+          "relative_l2": 0.152959730272075,
+          "spec": "random_3pct 20"
+        },
+        "random_3pct-p35": {
+          "realized_observed_fraction": 0.3499755859375,
+          "relative_l2": 0.04465601791075557,
+          "spec": "random_3pct 35"
+        }
+      },
+      "geomean_ratio": 0.4604286552913772,
+      "mean_mixed": 0.0712436953168372,
+      "mean_specialist": 0.11649227327489672,
+      "nine_view_evaluated": true,
+      "note": "the mixed row ran the settings-v3 recipe (one_cycle, lr 5e-4, 200-epoch ceiling); only the specialists for block_observed_50pct, boundary_band_50pct, clustered_50pct ran that recipe, the other six ran the step schedule with patience stops, so the recipe-matched ratio is the like-for-like number",
+      "planned_epochs": 200,
+      "protocol": "pdeobs.max200-min120-then-train-data-patience10/20260920",
+      "recipe_matched_geomean_ratio": 3.0506253342661185,
+      "recipe_matched_views": [
+        "block_observed_50pct",
+        "boundary_band_50pct",
+        "clustered_50pct"
+      ],
+      "stop_reason": "max_epochs_200"
+    }
+  },
+  "study_id": "mixed-nine-views-20260925"
+}

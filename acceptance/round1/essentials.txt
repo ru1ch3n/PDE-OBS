@@ -1,0 +1,56 @@
+...............F..............F...                                       [100%]
+=================================== FAILURES ===================================
+_________________ test_E_trivial_baselines_have_expected_order _________________
+
+tmp_path = PosixPath('/workspace/pdeobs/sweep-run/work/ess-temp/test_E_trivial_baselines_have_0')
+
+    def test_E_trivial_baselines_have_expected_order(tmp_path):
+        pytest.importorskip("h5py")
+        h = api.create_dataset(pde="poisson", out=tmp_path / "d", boundary="periodic", setting="smooth_grf", regime="low", num_samples=3, resolution=16, seed=2)
+        obs = api.make_observation("random", ratio=0.5)
+        scores = {}
+        for m in ("zero", "mean", "nearest"):
+            r = api.train(h, task="recovery", model=m, observation=obs, out=tmp_path / m, budget={"max_steps": 1}, device="cpu")
+            pkg, tg = api.inference_input_from_dataset(h, obs, task="recovery")
+>           rep = api.evaluate(api.predict(api.load_predictor(r.artifact.path), pkg), tg)
+                                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+work/exact/PDE_OBS_code/tests/test_benchmark_essentials.py:138: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+envs/v020/lib/python3.11/site-packages/pdeobs/api/artifacts.py:170: in load_predictor
+    weights = art.weights
+              ^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = ModelArtifact(path=PosixPath('/workspace/pdeobs/sweep-run/work/ess-temp/test_E_trivial_baselines_have_0/zero/mo...: 'pdeobs-model-artifact/v1', 'task': 'recovery', 'training_contract_file': 'training_contract.json', 'weights': None})
+
+    @property
+    def weights(self) -> Path | None:
+>       name = self.manifest.get("weights", {}).get("file")
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       AttributeError: 'NoneType' object has no attribute 'get'
+
+envs/v020/lib/python3.11/site-packages/pdeobs/api/artifacts.py:56: AttributeError
+______________________ test_I_same_seed_same_weights_cpu _______________________
+
+tmp_path = PosixPath('/workspace/pdeobs/sweep-run/work/ess-temp/test_I_same_seed_same_weights_0')
+
+    def test_I_same_seed_same_weights_cpu(tmp_path):
+        pytest.importorskip("torch"); pytest.importorskip("h5py")
+        h = api.create_dataset(pde="poisson", out=tmp_path / "d", boundary="periodic", setting="smooth_grf", regime="low", num_samples=4, resolution=16, seed=2)
+        obs = api.make_observation("random", ratio=0.5)
+        shas = []
+        for i in range(2):
+            r = api.train(h, task="recovery", model="fno", preset="smoke", observation=obs, out=tmp_path / f"r{i}", budget={"max_steps": 2}, batch_size=2, device="cpu", seed=9)
+            shas.append(hashlib.sha256(r.artifact.weights.read_bytes()).hexdigest())
+>       assert shas[0] == shas[1]
+E       AssertionError: assert 'd7ba4e0e309a...946747d3253b3' == '4b0610a52bc3...e8c6d251089b9'
+E         
+E         - 4b0610a52bc366935c18043324d14e05a5bd0ec0fad08619f8fe8c6d251089b9
+E         + d7ba4e0e309a9ae58ede9989e3b82c6232c006bcacb0f4db5eb946747d3253b3
+
+work/exact/PDE_OBS_code/tests/test_benchmark_essentials.py:213: AssertionError
+=========================== short test summary info ============================
+FAILED work/exact/PDE_OBS_code/tests/test_benchmark_essentials.py::test_E_trivial_baselines_have_expected_order
+FAILED work/exact/PDE_OBS_code/tests/test_benchmark_essentials.py::test_I_same_seed_same_weights_cpu
+2 failed, 32 passed in 2.45s

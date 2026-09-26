@@ -1,0 +1,114 @@
+{
+  "evaluate_bad_prediction_still_scored": {
+    "rel_l2": null,
+    "status": "invalid"
+  },
+  "evaluate_identity_mismatch_invalid": {
+    "errors": [
+      "target_ids: missing=['seed-11/poisson/dirichlet/smooth_grf/low/000000', 'seed-11/poisson/dirichlet/smooth_grf/low/000001', 'seed-11/poisson/dirichlet/smooth_grf/low/000002', 'seed-11/poisson/dirichlet/smooth_grf/low/000003']; extra=['xseed-11/poisson/dirichlet/smooth_grf/low/000000', 'xseed-11/poisson/dirichlet/smooth_grf/low/000001', 'xseed-11/poisson/dirichlet/smooth_grf/low/000002', 'xseed-11/poisson/dirichlet/smooth_grf/low/000003']"
+    ],
+    "status": "invalid"
+  },
+  "evaluate_nonfinite_target_invalid": {
+    "status": "invalid"
+  },
+  "evaluate_shape_mismatch_invalid": {
+    "errors": [
+      "target shape (4, 16, 16, 1) differs from prediction shape (4, 32, 32, 1)"
+    ],
+    "status": "invalid"
+  },
+  "evaluate_without_target_refused": {
+    "error": "ValueError: evaluate needs the independent target field; the prediction bundle carries none (predictions made from observation-only inputs cannot be scored without targets)",
+    "status": "rejected_ok"
+  },
+  "free_geometry_declared": {
+    "status": "passed",
+    "warning": [
+      "geometry declared obstacle-free (all zeros) by free_geometry=True"
+    ]
+  },
+  "geometry_required_refused": {
+    "error": "ValueError: this model consumes a geometry channel (1=solid); supply inputs.geometry or pass free_geometry=True to declare an obstacle-free domain explicitly",
+    "status": "rejected_ok"
+  },
+  "horizon_beyond_trained_warned": {
+    "shape": [
+      4,
+      5,
+      32,
+      32,
+      1
+    ],
+    "time_indices": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "warnings": [
+      "horizon 5 exceeds the trained horizon 3: executable, but not an evaluated range",
+      "predicted frame indices extrapolated from the input history stride"
+    ]
+  },
+  "legacy_checkpoint_adapter": {
+    "status": "passed",
+    "unknown_fields": [
+      "observation",
+      "data identity",
+      "normalization",
+      "training budget"
+    ]
+  },
+  "legacy_wrong_task_refused": {
+    "error": "FileNotFoundError: Checkpoint does not exist: /workspace/pdeobs/sweep-run/work/full/t8/base/model/checkpoints/last.pt",
+    "status": "rejected_ok"
+  },
+  "npz_package_roundtrip": {
+    "status": "passed",
+    "targets_used": false
+  },
+  "records_with_stored_refused": {
+    "error": "ValueError: benchmark-mode inputs (complete records) need an explicit synthetic observation; 'stored' is only valid for observation packages that carry their own mask",
+    "status": "rejected_ok"
+  },
+  "resolution_mismatch_warned_but_runs": {
+    "shape": [
+      4,
+      64,
+      64,
+      1
+    ],
+    "warnings": [
+      "inputs are [64, 64] but the model was trained at [32, 32]; the model executes but this resolution was not evaluated"
+    ]
+  },
+  "static_input_to_rollout_refused": {
+    "error": "ValueError: predictor task 'rollout' expects a history (N,T,H,W,C), got observations of shape (4, 32, 32, 1)",
+    "status": "rejected_ok"
+  },
+  "stored_package_with_new_obs_refused": {
+    "error": "ValueError: an observation package already carries its mask; observation must be 'stored' (generating a new mask would hide the user's actual sensor positions)",
+    "status": "rejected_ok"
+  },
+  "structure_mismatch_refused": {
+    "error": "ValueError: requested structure fno {'in_channels': 1, 'out_channels': 1, 'width': 40, 'geometry_channels': 1} differs from the artifact fno {'geometry_channels': 1, 'in_channels': 1, 'layers': 2, 'modes': 6, 'ou",
+    "status": "rejected_ok"
+  },
+  "summary": {
+    "invalid_scores_flagged": true,
+    "refusals_ok": true
+  },
+  "tampered_weights_refused": {
+    "error": "ValueError: artifact weights do not match the recorded sha256; refusing to load altered weights",
+    "status": "rejected_ok"
+  },
+  "tier": "T8",
+  "untrained_predictor_refused": {
+    "error": "ValueError: this predictor has no trained weights (development mode); learned inference is refused",
+    "status": "rejected_ok"
+  },
+  "utc": "2026-09-21T15:53:30Z",
+  "what": "artifact / inference / evaluation edge cases and refusals"
+}

@@ -1,0 +1,41 @@
+{
+ "accepted": true,
+ "actual_epochs": 500,
+ "base_view": "random_50pct",
+ "best_reduction_fraction": 0.9476546271515287,
+ "device": {
+  "capability": [
+   7,
+   0
+  ],
+  "cuda_visible_devices": "<GPU-3>",
+  "name": "NVIDIA Tesla V100S-PCIE-32GB",
+  "type": "cuda",
+  "visible_devices": 1
+ },
+ "early_stopping": false,
+ "epochs_completed": 500,
+ "events": [],
+ "final_output_std_ratio_min": 0.9360181598122891,
+ "mask_seed": 20260804,
+ "mask_spec": "random_3pct(ratio=0.5) + random_3pct(ratio=0.65) + random_3pct(ratio=0.8) + block_missing(missing_fraction=0.49) + line_sensors(num_lines=76, orientation=both) + line_sensors(num_lines=64, orientation=horizontal) + line_sensors(num_lines=64, orientation=vertical) + boundary_sensors(width=19) + clustered_sensors(ratio=0.5)",
+ "optimizer_steps": 225000,
+ "overlay_manifest_sha256": "9c4b75d3a43a42005dca4c776b9ff86144eb3c9c5f1054853e58f5db44dc6ff0",
+ "paper_cell": false,
+ "planned_epochs": 500,
+ "protocol_adapter_sha256": "ebd4bc8e900fed7db84a6e259260da2e2b9ee2eebe233a7e2aabc1ed37f7dc35",
+ "schema_version": "pdeobs.one-setting-training-health/v7",
+ "status": "completed",
+ "stop_reason": "max_epochs_500",
+ "study_adapter_sha256": "ebd4bc8e900fed7db84a6e259260da2e2b9ee2eebe233a7e2aabc1ed37f7dc35",
+ "study_id": "mixed-nine-views-20260925",
+ "test_records_touched": 0,
+ "train_loss_best_after_first": 0.042931619787381754,
+ "train_loss_final": 0.04312459571493996,
+ "train_loss_first": 0.820160741077529,
+ "training_protocol": "pdeobs.fixed500-last-checkpoint/v7",
+ "training_records_per_epoch": 1800,
+ "training_view_kind": "mixture",
+ "validation_records": 0,
+ "warnings": []
+}

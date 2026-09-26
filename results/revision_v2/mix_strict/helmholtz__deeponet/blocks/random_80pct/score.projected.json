@@ -1,0 +1,5074 @@
+{
+  "actual_prediction_identity_count": 200,
+  "actual_target_identity_count": 200,
+  "checkpoint_id": "763ece950ca0219942a47dd252cef9053e3c15f6d8361e25ca9009d47df309b0",
+  "config": {
+    "actual_epochs": 500,
+    "checkpoint_id": "763ece950ca0219942a47dd252cef9053e3c15f6d8361e25ca9009d47df309b0",
+    "dataset_manifest_sha256": "5820891701d6770aa820af5b569b520d31109999d095ad6665643eeda96f8a2b",
+    "driver": "pdeobs-mixed-strict-inference/20260926-v1",
+    "expected_ids": [
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/high/000107",
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/high/000482",
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/high/000423",
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/high/000160",
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/high/000641",
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/high/000612",
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/high/000256",
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/high/000525",
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/high/000559",
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/high/000495",
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/high/000355",
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/high/000074",
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/high/000237",
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/high/000380",
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/high/000522",
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/high/000394",
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/high/000553",
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/high/000384",
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/high/000361",
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/high/000248",
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/high/000125",
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/high/000386",
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/high/000286",
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/high/000292",
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/high/000490",
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/high/000366",
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/high/000085",
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/high/000148",
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/high/000163",
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/high/000408",
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/high/000631",
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/high/000499",
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/high/000646",
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/high/000542",
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/high/000102",
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/high/000207",
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/high/000324",
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/high/000362",
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/high/000549",
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/high/000597",
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/high/000182",
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/high/000585",
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/high/000447",
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/high/000368",
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/high/000481",
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/high/000535",
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/high/000147",
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/high/000515",
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/high/000273",
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/high/000154",
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/high/000065",
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/high/000277",
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/high/000267",
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/high/000225",
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/high/000278",
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/high/000018",
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/high/000333",
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/high/000270",
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/high/000007",
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/high/000200",
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/high/000340",
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/high/000116",
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/high/000595",
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/high/000171",
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/high/000662",
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/high/000459",
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/low/000275",
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/low/000494",
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/low/000098",
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/low/000297",
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/low/000144",
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/low/000160",
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/low/000230",
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/low/000573",
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/low/000044",
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/low/000141",
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/low/000476",
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/low/000332",
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/low/000331",
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/low/000591",
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/low/000263",
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/low/000392",
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/low/000209",
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/low/000306",
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/low/000220",
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/low/000224",
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/low/000002",
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/low/000432",
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/low/000518",
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/low/000519",
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/low/000649",
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/low/000219",
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/low/000508",
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/low/000360",
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/low/000328",
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/low/000312",
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/low/000408",
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/low/000512",
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/low/000483",
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/low/000125",
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/low/000031",
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/low/000177",
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/low/000493",
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/low/000084",
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/low/000172",
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/low/000496",
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/low/000067",
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/low/000443",
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/low/000515",
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/low/000571",
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/low/000152",
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/low/000181",
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/low/000576",
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/low/000087",
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/low/000652",
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/low/000226",
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/low/000410",
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/low/000638",
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/low/000436",
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/low/000159",
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/low/000213",
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/low/000406",
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/low/000259",
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/low/000503",
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/low/000055",
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/low/000100",
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/low/000658",
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/low/000380",
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/low/000036",
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/low/000635",
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/low/000344",
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/low/000486",
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/low/000266",
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/medium/000156",
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/medium/000558",
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/medium/000132",
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/medium/000552",
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/medium/000652",
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/medium/000252",
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/medium/000427",
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/medium/000060",
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/medium/000240",
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/medium/000269",
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/medium/000553",
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/medium/000506",
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/medium/000473",
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/medium/000416",
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/medium/000395",
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/medium/000407",
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/medium/000514",
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/medium/000231",
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/medium/000555",
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/medium/000170",
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/medium/000368",
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/medium/000525",
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/medium/000076",
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/medium/000008",
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/medium/000126",
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/medium/000483",
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/medium/000649",
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/medium/000282",
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/medium/000031",
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/medium/000003",
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/medium/000107",
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/medium/000400",
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/medium/000193",
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/medium/000303",
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/medium/000122",
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/medium/000211",
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/medium/000055",
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/medium/000296",
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/medium/000385",
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/medium/000083",
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/medium/000382",
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/medium/000491",
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/medium/000504",
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/medium/000312",
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/medium/000332",
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/medium/000316",
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/medium/000493",
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/medium/000435",
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/medium/000408",
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/medium/000486",
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/medium/000292",
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/medium/000043",
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/medium/000664",
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/medium/000484",
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/medium/000283",
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/medium/000538",
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/medium/000135",
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/medium/000033",
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/medium/000314",
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/medium/000530",
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/medium/000630",
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/medium/000338",
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/medium/000049",
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/medium/000329",
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/medium/000105",
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/medium/000508",
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/medium/000662"
+    ],
+    "expected_shape": [
+      128,
+      128,
+      1
+    ],
+    "extra_view_spec": null,
+    "frame_mapping_by_identity": {
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/high/000007": {
+        "target_physical_time_values": null,
+        "target_source_frame_indices": [
+          0
+        ],
+        "target_stored_positions": [
+          0
+        ]
+      },
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/high/000018": {
+        "target_physical_time_values": null,
+        "target_source_frame_indices": [
+          0
+        ],
+        "target_stored_positions": [
+          0
+        ]
+      },
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/high/000065": {
+        "target_physical_time_values": null,
+        "target_source_frame_indices": [
+          0
+        ],
+        "target_stored_positions": [
+          0
+        ]
+      },
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/high/000074": {
+        "target_physical_time_values": null,
+        "target_source_frame_indices": [
+          0
+        ],
+        "target_stored_positions": [
+          0
+        ]
+      },
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/high/000085": {
+        "target_physical_time_values": null,
+        "target_source_frame_indices": [
+          0
+        ],
+        "target_stored_positions": [
+          0
+        ]
+      },
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/high/000102": {
+        "target_physical_time_values": null,
+        "target_source_frame_indices": [
+          0
+        ],
+        "target_stored_positions": [
+          0
+        ]
+      },
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/high/000107": {
+        "target_physical_time_values": null,
+        "target_source_frame_indices": [
+          0
+        ],
+        "target_stored_positions": [
+          0
+        ]
+      },
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/high/000116": {
+        "target_physical_time_values": null,
+        "target_source_frame_indices": [
+          0
+        ],
+        "target_stored_positions": [
+          0
+        ]
+      },
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/high/000125": {
+        "target_physical_time_values": null,
+        "target_source_frame_indices": [
+          0
+        ],
+        "target_stored_positions": [
+          0
+        ]
+      },
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/high/000147": {
+        "target_physical_time_values": null,
+        "target_source_frame_indices": [
+          0
+        ],
+        "target_stored_positions": [
+          0
+        ]
+      },
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/high/000148": {
+        "target_physical_time_values": null,
+        "target_source_frame_indices": [
+          0
+        ],
+        "target_stored_positions": [
+          0
+        ]
+      },
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/high/000154": {
+        "target_physical_time_values": null,
+        "target_source_frame_indices": [
+          0
+        ],
+        "target_stored_positions": [
+          0
+        ]
+      },
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/high/000160": {
+        "target_physical_time_values": null,
+        "target_source_frame_indices": [
+          0
+        ],
+        "target_stored_positions": [
+          0
+        ]
+      },
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/high/000163": {
+        "target_physical_time_values": null,
+        "target_source_frame_indices": [
+          0
+        ],
+        "target_stored_positions": [
+          0
+        ]
+      },
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/high/000171": {
+        "target_physical_time_values": null,
+        "target_source_frame_indices": [
+          0
+        ],
+        "target_stored_positions": [
+          0
+        ]
+      },
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/high/000182": {
+        "target_physical_time_values": null,
+        "target_source_frame_indices": [
+          0
+        ],
+        "target_stored_positions": [
+          0
+        ]
+      },
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/high/000200": {
+        "target_physical_time_values": null,
+        "target_source_frame_indices": [
+          0
+        ],
+        "target_stored_positions": [
+          0
+        ]
+      },
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/high/000207": {
+        "target_physical_time_values": null,
+        "target_source_frame_indices": [
+          0
+        ],
+        "target_stored_positions": [
+          0
+        ]
+      },
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/high/000225": {
+        "target_physical_time_values": null,
+        "target_source_frame_indices": [
+          0
+        ],
+        "target_stored_positions": [
+          0
+        ]
+      },
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/high/000237": {
+        "target_physical_time_values": null,
+        "target_source_frame_indices": [
+          0
+        ],
+        "target_stored_positions": [
+          0
+        ]
+      },
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/high/000248": {
+        "target_physical_time_values": null,
+        "target_source_frame_indices": [
+          0
+        ],
+        "target_stored_positions": [
+          0
+        ]
+      },
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/high/000256": {
+        "target_physical_time_values": null,
+        "target_source_frame_indices": [
+          0
+        ],
+        "target_stored_positions": [
+          0
+        ]
+      },
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/high/000267": {
+        "target_physical_time_values": null,
+        "target_source_frame_indices": [
+          0
+        ],
+        "target_stored_positions": [
+          0
+        ]
+      },
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/high/000270": {
+        "target_physical_time_values": null,
+        "target_source_frame_indices": [
+          0
+        ],
+        "target_stored_positions": [
+          0
+        ]
+      },
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/high/000273": {
+        "target_physical_time_values": null,
+        "target_source_frame_indices": [
+          0
+        ],
+        "target_stored_positions": [
+          0
+        ]
+      },
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/high/000277": {
+        "target_physical_time_values": null,
+        "target_source_frame_indices": [
+          0
+        ],
+        "target_stored_positions": [
+          0
+        ]
+      },
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/high/000278": {
+        "target_physical_time_values": null,
+        "target_source_frame_indices": [
+          0
+        ],
+        "target_stored_positions": [
+          0
+        ]
+      },
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/high/000286": {
+        "target_physical_time_values": null,
+        "target_source_frame_indices": [
+          0
+        ],
+        "target_stored_positions": [
+          0
+        ]
+      },
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/high/000292": {
+        "target_physical_time_values": null,
+        "target_source_frame_indices": [
+          0
+        ],
+        "target_stored_positions": [
+          0
+        ]
+      },
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/high/000324": {
+        "target_physical_time_values": null,
+        "target_source_frame_indices": [
+          0
+        ],
+        "target_stored_positions": [
+          0
+        ]
+      },
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/high/000333": {
+        "target_physical_time_values": null,
+        "target_source_frame_indices": [
+          0
+        ],
+        "target_stored_positions": [
+          0
+        ]
+      },
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/high/000340": {
+        "target_physical_time_values": null,
+        "target_source_frame_indices": [
+          0
+        ],
+        "target_stored_positions": [
+          0
+        ]
+      },
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/high/000355": {
+        "target_physical_time_values": null,
+        "target_source_frame_indices": [
+          0
+        ],
+        "target_stored_positions": [
+          0
+        ]
+      },
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/high/000361": {
+        "target_physical_time_values": null,
+        "target_source_frame_indices": [
+          0
+        ],
+        "target_stored_positions": [
+          0
+        ]
+      },
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/high/000362": {
+        "target_physical_time_values": null,
+        "target_source_frame_indices": [
+          0
+        ],
+        "target_stored_positions": [
+          0
+        ]
+      },
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/high/000366": {
+        "target_physical_time_values": null,
+        "target_source_frame_indices": [
+          0
+        ],
+        "target_stored_positions": [
+          0
+        ]
+      },
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/high/000368": {
+        "target_physical_time_values": null,
+        "target_source_frame_indices": [
+          0
+        ],
+        "target_stored_positions": [
+          0
+        ]
+      },
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/high/000380": {
+        "target_physical_time_values": null,
+        "target_source_frame_indices": [
+          0
+        ],
+        "target_stored_positions": [
+          0
+        ]
+      },
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/high/000384": {
+        "target_physical_time_values": null,
+        "target_source_frame_indices": [
+          0
+        ],
+        "target_stored_positions": [
+          0
+        ]
+      },
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/high/000386": {
+        "target_physical_time_values": null,
+        "target_source_frame_indices": [
+          0
+        ],
+        "target_stored_positions": [
+          0
+        ]
+      },
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/high/000394": {
+        "target_physical_time_values": null,
+        "target_source_frame_indices": [
+          0
+        ],
+        "target_stored_positions": [
+          0
+        ]
+      },
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/high/000408": {
+        "target_physical_time_values": null,
+        "target_source_frame_indices": [
+          0
+        ],
+        "target_stored_positions": [
+          0
+        ]
+      },
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/high/000423": {
+        "target_physical_time_values": null,
+        "target_source_frame_indices": [
+          0
+        ],
+        "target_stored_positions": [
+          0
+        ]
+      },
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/high/000447": {
+        "target_physical_time_values": null,
+        "target_source_frame_indices": [
+          0
+        ],
+        "target_stored_positions": [
+          0
+        ]
+      },
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/high/000459": {
+        "target_physical_time_values": null,
+        "target_source_frame_indices": [
+          0
+        ],
+        "target_stored_positions": [
+          0
+        ]
+      },
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/high/000481": {
+        "target_physical_time_values": null,
+        "target_source_frame_indices": [
+          0
+        ],
+        "target_stored_positions": [
+          0
+        ]
+      },
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/high/000482": {
+        "target_physical_time_values": null,
+        "target_source_frame_indices": [
+          0
+        ],
+        "target_stored_positions": [
+          0
+        ]
+      },
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/high/000490": {
+        "target_physical_time_values": null,
+        "target_source_frame_indices": [
+          0
+        ],
+        "target_stored_positions": [
+          0
+        ]
+      },
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/high/000495": {
+        "target_physical_time_values": null,
+        "target_source_frame_indices": [
+          0
+        ],
+        "target_stored_positions": [
+          0
+        ]
+      },
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/high/000499": {
+        "target_physical_time_values": null,
+        "target_source_frame_indices": [
+          0
+        ],
+        "target_stored_positions": [
+          0
+        ]
+      },
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/high/000515": {
+        "target_physical_time_values": null,
+        "target_source_frame_indices": [
+          0
+        ],
+        "target_stored_positions": [
+          0
+        ]
+      },
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/high/000522": {
+        "target_physical_time_values": null,
+        "target_source_frame_indices": [
+          0
+        ],
+        "target_stored_positions": [
+          0
+        ]
+      },
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/high/000525": {
+        "target_physical_time_values": null,
+        "target_source_frame_indices": [
+          0
+        ],
+        "target_stored_positions": [
+          0
+        ]
+      },
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/high/000535": {
+        "target_physical_time_values": null,
+        "target_source_frame_indices": [
+          0
+        ],
+        "target_stored_positions": [
+          0
+        ]
+      },
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/high/000542": {
+        "target_physical_time_values": null,
+        "target_source_frame_indices": [
+          0
+        ],
+        "target_stored_positions": [
+          0
+        ]
+      },
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/high/000549": {
+        "target_physical_time_values": null,
+        "target_source_frame_indices": [
+          0
+        ],
+        "target_stored_positions": [
+          0
+        ]
+      },
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/high/000553": {
+        "target_physical_time_values": null,
+        "target_source_frame_indices": [
+          0
+        ],
+        "target_stored_positions": [
+          0
+        ]
+      },
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/high/000559": {
+        "target_physical_time_values": null,
+        "target_source_frame_indices": [
+          0
+        ],
+        "target_stored_positions": [
+          0
+        ]
+      },
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/high/000585": {
+        "target_physical_time_values": null,
+        "target_source_frame_indices": [
+          0
+        ],
+        "target_stored_positions": [
+          0
+        ]
+      },
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/high/000595": {
+        "target_physical_time_values": null,
+        "target_source_frame_indices": [
+          0
+        ],
+        "target_stored_positions": [
+          0
+        ]
+      },
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/high/000597": {
+        "target_physical_time_values": null,
+        "target_source_frame_indices": [
+          0
+        ],
+        "target_stored_positions": [
+          0
+        ]
+      },
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/high/000612": {
+        "target_physical_time_values": null,
+        "target_source_frame_indices": [
+          0
+        ],
+        "target_stored_positions": [
+          0
+        ]
+      },
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/high/000631": {
+        "target_physical_time_values": null,
+        "target_source_frame_indices": [
+          0
+        ],
+        "target_stored_positions": [
+          0
+        ]
+      },
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/high/000641": {
+        "target_physical_time_values": null,
+        "target_source_frame_indices": [
+          0
+        ],
+        "target_stored_positions": [
+          0
+        ]
+      },
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/high/000646": {
+        "target_physical_time_values": null,
+        "target_source_frame_indices": [
+          0
+        ],
+        "target_stored_positions": [
+          0
+        ]
+      },
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/high/000662": {
+        "target_physical_time_values": null,
+        "target_source_frame_indices": [
+          0
+        ],
+        "target_stored_positions": [
+          0
+        ]
+      },
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/low/000002": {
+        "target_physical_time_values": null,
+        "target_source_frame_indices": [
+          0
+        ],
+        "target_stored_positions": [
+          0
+        ]
+      },
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/low/000031": {
+        "target_physical_time_values": null,
+        "target_source_frame_indices": [
+          0
+        ],
+        "target_stored_positions": [
+          0
+        ]
+      },
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/low/000036": {
+        "target_physical_time_values": null,
+        "target_source_frame_indices": [
+          0
+        ],
+        "target_stored_positions": [
+          0
+        ]
+      },
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/low/000044": {
+        "target_physical_time_values": null,
+        "target_source_frame_indices": [
+          0
+        ],
+        "target_stored_positions": [
+          0
+        ]
+      },
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/low/000055": {
+        "target_physical_time_values": null,
+        "target_source_frame_indices": [
+          0
+        ],
+        "target_stored_positions": [
+          0
+        ]
+      },
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/low/000067": {
+        "target_physical_time_values": null,
+        "target_source_frame_indices": [
+          0
+        ],
+        "target_stored_positions": [
+          0
+        ]
+      },
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/low/000084": {
+        "target_physical_time_values": null,
+        "target_source_frame_indices": [
+          0
+        ],
+        "target_stored_positions": [
+          0
+        ]
+      },
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/low/000087": {
+        "target_physical_time_values": null,
+        "target_source_frame_indices": [
+          0
+        ],
+        "target_stored_positions": [
+          0
+        ]
+      },
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/low/000098": {
+        "target_physical_time_values": null,
+        "target_source_frame_indices": [
+          0
+        ],
+        "target_stored_positions": [
+          0
+        ]
+      },
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/low/000100": {
+        "target_physical_time_values": null,
+        "target_source_frame_indices": [
+          0
+        ],
+        "target_stored_positions": [
+          0
+        ]
+      },
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/low/000125": {
+        "target_physical_time_values": null,
+        "target_source_frame_indices": [
+          0
+        ],
+        "target_stored_positions": [
+          0
+        ]
+      },
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/low/000141": {
+        "target_physical_time_values": null,
+        "target_source_frame_indices": [
+          0
+        ],
+        "target_stored_positions": [
+          0
+        ]
+      },
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/low/000144": {
+        "target_physical_time_values": null,
+        "target_source_frame_indices": [
+          0
+        ],
+        "target_stored_positions": [
+          0
+        ]
+      },
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/low/000152": {
+        "target_physical_time_values": null,
+        "target_source_frame_indices": [
+          0
+        ],
+        "target_stored_positions": [
+          0
+        ]
+      },
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/low/000159": {
+        "target_physical_time_values": null,
+        "target_source_frame_indices": [
+          0
+        ],
+        "target_stored_positions": [
+          0
+        ]
+      },
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/low/000160": {
+        "target_physical_time_values": null,
+        "target_source_frame_indices": [
+          0
+        ],
+        "target_stored_positions": [
+          0
+        ]
+      },
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/low/000172": {
+        "target_physical_time_values": null,
+        "target_source_frame_indices": [
+          0
+        ],
+        "target_stored_positions": [
+          0
+        ]
+      },
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/low/000177": {
+        "target_physical_time_values": null,
+        "target_source_frame_indices": [
+          0
+        ],
+        "target_stored_positions": [
+          0
+        ]
+      },
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/low/000181": {
+        "target_physical_time_values": null,
+        "target_source_frame_indices": [
+          0
+        ],
+        "target_stored_positions": [
+          0
+        ]
+      },
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/low/000209": {
+        "target_physical_time_values": null,
+        "target_source_frame_indices": [
+          0
+        ],
+        "target_stored_positions": [
+          0
+        ]
+      },
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/low/000213": {
+        "target_physical_time_values": null,
+        "target_source_frame_indices": [
+          0
+        ],
+        "target_stored_positions": [
+          0
+        ]
+      },
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/low/000219": {
+        "target_physical_time_values": null,
+        "target_source_frame_indices": [
+          0
+        ],
+        "target_stored_positions": [
+          0
+        ]
+      },
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/low/000220": {
+        "target_physical_time_values": null,
+        "target_source_frame_indices": [
+          0
+        ],
+        "target_stored_positions": [
+          0
+        ]
+      },
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/low/000224": {
+        "target_physical_time_values": null,
+        "target_source_frame_indices": [
+          0
+        ],
+        "target_stored_positions": [
+          0
+        ]
+      },
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/low/000226": {
+        "target_physical_time_values": null,
+        "target_source_frame_indices": [
+          0
+        ],
+        "target_stored_positions": [
+          0
+        ]
+      },
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/low/000230": {
+        "target_physical_time_values": null,
+        "target_source_frame_indices": [
+          0
+        ],
+        "target_stored_positions": [
+          0
+        ]
+      },
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/low/000259": {
+        "target_physical_time_values": null,
+        "target_source_frame_indices": [
+          0
+        ],
+        "target_stored_positions": [
+          0
+        ]
+      },
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/low/000263": {
+        "target_physical_time_values": null,
+        "target_source_frame_indices": [
+          0
+        ],
+        "target_stored_positions": [
+          0
+        ]
+      },
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/low/000266": {
+        "target_physical_time_values": null,
+        "target_source_frame_indices": [
+          0
+        ],
+        "target_stored_positions": [
+          0
+        ]
+      },
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/low/000275": {
+        "target_physical_time_values": null,
+        "target_source_frame_indices": [
+          0
+        ],
+        "target_stored_positions": [
+          0
+        ]
+      },
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/low/000297": {
+        "target_physical_time_values": null,
+        "target_source_frame_indices": [
+          0
+        ],
+        "target_stored_positions": [
+          0
+        ]
+      },
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/low/000306": {
+        "target_physical_time_values": null,
+        "target_source_frame_indices": [
+          0
+        ],
+        "target_stored_positions": [
+          0
+        ]
+      },
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/low/000312": {
+        "target_physical_time_values": null,
+        "target_source_frame_indices": [
+          0
+        ],
+        "target_stored_positions": [
+          0
+        ]
+      },
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/low/000328": {
+        "target_physical_time_values": null,
+        "target_source_frame_indices": [
+          0
+        ],
+        "target_stored_positions": [
+          0
+        ]
+      },
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/low/000331": {
+        "target_physical_time_values": null,
+        "target_source_frame_indices": [
+          0
+        ],
+        "target_stored_positions": [
+          0
+        ]
+      },
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/low/000332": {
+        "target_physical_time_values": null,
+        "target_source_frame_indices": [
+          0
+        ],
+        "target_stored_positions": [
+          0
+        ]
+      },
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/low/000344": {
+        "target_physical_time_values": null,
+        "target_source_frame_indices": [
+          0
+        ],
+        "target_stored_positions": [
+          0
+        ]
+      },
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/low/000360": {
+        "target_physical_time_values": null,
+        "target_source_frame_indices": [
+          0
+        ],
+        "target_stored_positions": [
+          0
+        ]
+      },
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/low/000380": {
+        "target_physical_time_values": null,
+        "target_source_frame_indices": [
+          0
+        ],
+        "target_stored_positions": [
+          0
+        ]
+      },
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/low/000392": {
+        "target_physical_time_values": null,
+        "target_source_frame_indices": [
+          0
+        ],
+        "target_stored_positions": [
+          0
+        ]
+      },
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/low/000406": {
+        "target_physical_time_values": null,
+        "target_source_frame_indices": [
+          0
+        ],
+        "target_stored_positions": [
+          0
+        ]
+      },
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/low/000408": {
+        "target_physical_time_values": null,
+        "target_source_frame_indices": [
+          0
+        ],
+        "target_stored_positions": [
+          0
+        ]
+      },
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/low/000410": {
+        "target_physical_time_values": null,
+        "target_source_frame_indices": [
+          0
+        ],
+        "target_stored_positions": [
+          0
+        ]
+      },
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/low/000432": {
+        "target_physical_time_values": null,
+        "target_source_frame_indices": [
+          0
+        ],
+        "target_stored_positions": [
+          0
+        ]
+      },
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/low/000436": {
+        "target_physical_time_values": null,
+        "target_source_frame_indices": [
+          0
+        ],
+        "target_stored_positions": [
+          0
+        ]
+      },
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/low/000443": {
+        "target_physical_time_values": null,
+        "target_source_frame_indices": [
+          0
+        ],
+        "target_stored_positions": [
+          0
+        ]
+      },
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/low/000476": {
+        "target_physical_time_values": null,
+        "target_source_frame_indices": [
+          0
+        ],
+        "target_stored_positions": [
+          0
+        ]
+      },
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/low/000483": {
+        "target_physical_time_values": null,
+        "target_source_frame_indices": [
+          0
+        ],
+        "target_stored_positions": [
+          0
+        ]
+      },
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/low/000486": {
+        "target_physical_time_values": null,
+        "target_source_frame_indices": [
+          0
+        ],
+        "target_stored_positions": [
+          0
+        ]
+      },
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/low/000493": {
+        "target_physical_time_values": null,
+        "target_source_frame_indices": [
+          0
+        ],
+        "target_stored_positions": [
+          0
+        ]
+      },
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/low/000494": {
+        "target_physical_time_values": null,
+        "target_source_frame_indices": [
+          0
+        ],
+        "target_stored_positions": [
+          0
+        ]
+      },
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/low/000496": {
+        "target_physical_time_values": null,
+        "target_source_frame_indices": [
+          0
+        ],
+        "target_stored_positions": [
+          0
+        ]
+      },
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/low/000503": {
+        "target_physical_time_values": null,
+        "target_source_frame_indices": [
+          0
+        ],
+        "target_stored_positions": [
+          0
+        ]
+      },
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/low/000508": {
+        "target_physical_time_values": null,
+        "target_source_frame_indices": [
+          0
+        ],
+        "target_stored_positions": [
+          0
+        ]
+      },
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/low/000512": {
+        "target_physical_time_values": null,
+        "target_source_frame_indices": [
+          0
+        ],
+        "target_stored_positions": [
+          0
+        ]
+      },
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/low/000515": {
+        "target_physical_time_values": null,
+        "target_source_frame_indices": [
+          0
+        ],
+        "target_stored_positions": [
+          0
+        ]
+      },
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/low/000518": {
+        "target_physical_time_values": null,
+        "target_source_frame_indices": [
+          0
+        ],
+        "target_stored_positions": [
+          0
+        ]
+      },
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/low/000519": {
+        "target_physical_time_values": null,
+        "target_source_frame_indices": [
+          0
+        ],
+        "target_stored_positions": [
+          0
+        ]
+      },
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/low/000571": {
+        "target_physical_time_values": null,
+        "target_source_frame_indices": [
+          0
+        ],
+        "target_stored_positions": [
+          0
+        ]
+      },
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/low/000573": {
+        "target_physical_time_values": null,
+        "target_source_frame_indices": [
+          0
+        ],
+        "target_stored_positions": [
+          0
+        ]
+      },
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/low/000576": {
+        "target_physical_time_values": null,
+        "target_source_frame_indices": [
+          0
+        ],
+        "target_stored_positions": [
+          0
+        ]
+      },
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/low/000591": {
+        "target_physical_time_values": null,
+        "target_source_frame_indices": [
+          0
+        ],
+        "target_stored_positions": [
+          0
+        ]
+      },
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/low/000635": {
+        "target_physical_time_values": null,
+        "target_source_frame_indices": [
+          0
+        ],
+        "target_stored_positions": [
+          0
+        ]
+      },
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/low/000638": {
+        "target_physical_time_values": null,
+        "target_source_frame_indices": [
+          0
+        ],
+        "target_stored_positions": [
+          0
+        ]
+      },
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/low/000649": {
+        "target_physical_time_values": null,
+        "target_source_frame_indices": [
+          0
+        ],
+        "target_stored_positions": [
+          0
+        ]
+      },
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/low/000652": {
+        "target_physical_time_values": null,
+        "target_source_frame_indices": [
+          0
+        ],
+        "target_stored_positions": [
+          0
+        ]
+      },
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/low/000658": {
+        "target_physical_time_values": null,
+        "target_source_frame_indices": [
+          0
+        ],
+        "target_stored_positions": [
+          0
+        ]
+      },
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/medium/000003": {
+        "target_physical_time_values": null,
+        "target_source_frame_indices": [
+          0
+        ],
+        "target_stored_positions": [
+          0
+        ]
+      },
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/medium/000008": {
+        "target_physical_time_values": null,
+        "target_source_frame_indices": [
+          0
+        ],
+        "target_stored_positions": [
+          0
+        ]
+      },
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/medium/000031": {
+        "target_physical_time_values": null,
+        "target_source_frame_indices": [
+          0
+        ],
+        "target_stored_positions": [
+          0
+        ]
+      },
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/medium/000033": {
+        "target_physical_time_values": null,
+        "target_source_frame_indices": [
+          0
+        ],
+        "target_stored_positions": [
+          0
+        ]
+      },
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/medium/000043": {
+        "target_physical_time_values": null,
+        "target_source_frame_indices": [
+          0
+        ],
+        "target_stored_positions": [
+          0
+        ]
+      },
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/medium/000049": {
+        "target_physical_time_values": null,
+        "target_source_frame_indices": [
+          0
+        ],
+        "target_stored_positions": [
+          0
+        ]
+      },
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/medium/000055": {
+        "target_physical_time_values": null,
+        "target_source_frame_indices": [
+          0
+        ],
+        "target_stored_positions": [
+          0
+        ]
+      },
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/medium/000060": {
+        "target_physical_time_values": null,
+        "target_source_frame_indices": [
+          0
+        ],
+        "target_stored_positions": [
+          0
+        ]
+      },
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/medium/000076": {
+        "target_physical_time_values": null,
+        "target_source_frame_indices": [
+          0
+        ],
+        "target_stored_positions": [
+          0
+        ]
+      },
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/medium/000083": {
+        "target_physical_time_values": null,
+        "target_source_frame_indices": [
+          0
+        ],
+        "target_stored_positions": [
+          0
+        ]
+      },
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/medium/000105": {
+        "target_physical_time_values": null,
+        "target_source_frame_indices": [
+          0
+        ],
+        "target_stored_positions": [
+          0
+        ]
+      },
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/medium/000107": {
+        "target_physical_time_values": null,
+        "target_source_frame_indices": [
+          0
+        ],
+        "target_stored_positions": [
+          0
+        ]
+      },
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/medium/000122": {
+        "target_physical_time_values": null,
+        "target_source_frame_indices": [
+          0
+        ],
+        "target_stored_positions": [
+          0
+        ]
+      },
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/medium/000126": {
+        "target_physical_time_values": null,
+        "target_source_frame_indices": [
+          0
+        ],
+        "target_stored_positions": [
+          0
+        ]
+      },
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/medium/000132": {
+        "target_physical_time_values": null,
+        "target_source_frame_indices": [
+          0
+        ],
+        "target_stored_positions": [
+          0
+        ]
+      },
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/medium/000135": {
+        "target_physical_time_values": null,
+        "target_source_frame_indices": [
+          0
+        ],
+        "target_stored_positions": [
+          0
+        ]
+      },
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/medium/000156": {
+        "target_physical_time_values": null,
+        "target_source_frame_indices": [
+          0
+        ],
+        "target_stored_positions": [
+          0
+        ]
+      },
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/medium/000170": {
+        "target_physical_time_values": null,
+        "target_source_frame_indices": [
+          0
+        ],
+        "target_stored_positions": [
+          0
+        ]
+      },
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/medium/000193": {
+        "target_physical_time_values": null,
+        "target_source_frame_indices": [
+          0
+        ],
+        "target_stored_positions": [
+          0
+        ]
+      },
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/medium/000211": {
+        "target_physical_time_values": null,
+        "target_source_frame_indices": [
+          0
+        ],
+        "target_stored_positions": [
+          0
+        ]
+      },
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/medium/000231": {
+        "target_physical_time_values": null,
+        "target_source_frame_indices": [
+          0
+        ],
+        "target_stored_positions": [
+          0
+        ]
+      },
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/medium/000240": {
+        "target_physical_time_values": null,
+        "target_source_frame_indices": [
+          0
+        ],
+        "target_stored_positions": [
+          0
+        ]
+      },
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/medium/000252": {
+        "target_physical_time_values": null,
+        "target_source_frame_indices": [
+          0
+        ],
+        "target_stored_positions": [
+          0
+        ]
+      },
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/medium/000269": {
+        "target_physical_time_values": null,
+        "target_source_frame_indices": [
+          0
+        ],
+        "target_stored_positions": [
+          0
+        ]
+      },
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/medium/000282": {
+        "target_physical_time_values": null,
+        "target_source_frame_indices": [
+          0
+        ],
+        "target_stored_positions": [
+          0
+        ]
+      },
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/medium/000283": {
+        "target_physical_time_values": null,
+        "target_source_frame_indices": [
+          0
+        ],
+        "target_stored_positions": [
+          0
+        ]
+      },
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/medium/000292": {
+        "target_physical_time_values": null,
+        "target_source_frame_indices": [
+          0
+        ],
+        "target_stored_positions": [
+          0
+        ]
+      },
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/medium/000296": {
+        "target_physical_time_values": null,
+        "target_source_frame_indices": [
+          0
+        ],
+        "target_stored_positions": [
+          0
+        ]
+      },
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/medium/000303": {
+        "target_physical_time_values": null,
+        "target_source_frame_indices": [
+          0
+        ],
+        "target_stored_positions": [
+          0
+        ]
+      },
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/medium/000312": {
+        "target_physical_time_values": null,
+        "target_source_frame_indices": [
+          0
+        ],
+        "target_stored_positions": [
+          0
+        ]
+      },
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/medium/000314": {
+        "target_physical_time_values": null,
+        "target_source_frame_indices": [
+          0
+        ],
+        "target_stored_positions": [
+          0
+        ]
+      },
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/medium/000316": {
+        "target_physical_time_values": null,
+        "target_source_frame_indices": [
+          0
+        ],
+        "target_stored_positions": [
+          0
+        ]
+      },
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/medium/000329": {
+        "target_physical_time_values": null,
+        "target_source_frame_indices": [
+          0
+        ],
+        "target_stored_positions": [
+          0
+        ]
+      },
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/medium/000332": {
+        "target_physical_time_values": null,
+        "target_source_frame_indices": [
+          0
+        ],
+        "target_stored_positions": [
+          0
+        ]
+      },
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/medium/000338": {
+        "target_physical_time_values": null,
+        "target_source_frame_indices": [
+          0
+        ],
+        "target_stored_positions": [
+          0
+        ]
+      },
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/medium/000368": {
+        "target_physical_time_values": null,
+        "target_source_frame_indices": [
+          0
+        ],
+        "target_stored_positions": [
+          0
+        ]
+      },
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/medium/000382": {
+        "target_physical_time_values": null,
+        "target_source_frame_indices": [
+          0
+        ],
+        "target_stored_positions": [
+          0
+        ]
+      },
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/medium/000385": {
+        "target_physical_time_values": null,
+        "target_source_frame_indices": [
+          0
+        ],
+        "target_stored_positions": [
+          0
+        ]
+      },
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/medium/000395": {
+        "target_physical_time_values": null,
+        "target_source_frame_indices": [
+          0
+        ],
+        "target_stored_positions": [
+          0
+        ]
+      },
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/medium/000400": {
+        "target_physical_time_values": null,
+        "target_source_frame_indices": [
+          0
+        ],
+        "target_stored_positions": [
+          0
+        ]
+      },
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/medium/000407": {
+        "target_physical_time_values": null,
+        "target_source_frame_indices": [
+          0
+        ],
+        "target_stored_positions": [
+          0
+        ]
+      },
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/medium/000408": {
+        "target_physical_time_values": null,
+        "target_source_frame_indices": [
+          0
+        ],
+        "target_stored_positions": [
+          0
+        ]
+      },
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/medium/000416": {
+        "target_physical_time_values": null,
+        "target_source_frame_indices": [
+          0
+        ],
+        "target_stored_positions": [
+          0
+        ]
+      },
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/medium/000427": {
+        "target_physical_time_values": null,
+        "target_source_frame_indices": [
+          0
+        ],
+        "target_stored_positions": [
+          0
+        ]
+      },
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/medium/000435": {
+        "target_physical_time_values": null,
+        "target_source_frame_indices": [
+          0
+        ],
+        "target_stored_positions": [
+          0
+        ]
+      },
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/medium/000473": {
+        "target_physical_time_values": null,
+        "target_source_frame_indices": [
+          0
+        ],
+        "target_stored_positions": [
+          0
+        ]
+      },
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/medium/000483": {
+        "target_physical_time_values": null,
+        "target_source_frame_indices": [
+          0
+        ],
+        "target_stored_positions": [
+          0
+        ]
+      },
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/medium/000484": {
+        "target_physical_time_values": null,
+        "target_source_frame_indices": [
+          0
+        ],
+        "target_stored_positions": [
+          0
+        ]
+      },
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/medium/000486": {
+        "target_physical_time_values": null,
+        "target_source_frame_indices": [
+          0
+        ],
+        "target_stored_positions": [
+          0
+        ]
+      },
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/medium/000491": {
+        "target_physical_time_values": null,
+        "target_source_frame_indices": [
+          0
+        ],
+        "target_stored_positions": [
+          0
+        ]
+      },
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/medium/000493": {
+        "target_physical_time_values": null,
+        "target_source_frame_indices": [
+          0
+        ],
+        "target_stored_positions": [
+          0
+        ]
+      },
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/medium/000504": {
+        "target_physical_time_values": null,
+        "target_source_frame_indices": [
+          0
+        ],
+        "target_stored_positions": [
+          0
+        ]
+      },
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/medium/000506": {
+        "target_physical_time_values": null,
+        "target_source_frame_indices": [
+          0
+        ],
+        "target_stored_positions": [
+          0
+        ]
+      },
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/medium/000508": {
+        "target_physical_time_values": null,
+        "target_source_frame_indices": [
+          0
+        ],
+        "target_stored_positions": [
+          0
+        ]
+      },
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/medium/000514": {
+        "target_physical_time_values": null,
+        "target_source_frame_indices": [
+          0
+        ],
+        "target_stored_positions": [
+          0
+        ]
+      },
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/medium/000525": {
+        "target_physical_time_values": null,
+        "target_source_frame_indices": [
+          0
+        ],
+        "target_stored_positions": [
+          0
+        ]
+      },
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/medium/000530": {
+        "target_physical_time_values": null,
+        "target_source_frame_indices": [
+          0
+        ],
+        "target_stored_positions": [
+          0
+        ]
+      },
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/medium/000538": {
+        "target_physical_time_values": null,
+        "target_source_frame_indices": [
+          0
+        ],
+        "target_stored_positions": [
+          0
+        ]
+      },
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/medium/000552": {
+        "target_physical_time_values": null,
+        "target_source_frame_indices": [
+          0
+        ],
+        "target_stored_positions": [
+          0
+        ]
+      },
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/medium/000553": {
+        "target_physical_time_values": null,
+        "target_source_frame_indices": [
+          0
+        ],
+        "target_stored_positions": [
+          0
+        ]
+      },
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/medium/000555": {
+        "target_physical_time_values": null,
+        "target_source_frame_indices": [
+          0
+        ],
+        "target_stored_positions": [
+          0
+        ]
+      },
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/medium/000558": {
+        "target_physical_time_values": null,
+        "target_source_frame_indices": [
+          0
+        ],
+        "target_stored_positions": [
+          0
+        ]
+      },
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/medium/000630": {
+        "target_physical_time_values": null,
+        "target_source_frame_indices": [
+          0
+        ],
+        "target_stored_positions": [
+          0
+        ]
+      },
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/medium/000649": {
+        "target_physical_time_values": null,
+        "target_source_frame_indices": [
+          0
+        ],
+        "target_stored_positions": [
+          0
+        ]
+      },
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/medium/000652": {
+        "target_physical_time_values": null,
+        "target_source_frame_indices": [
+          0
+        ],
+        "target_stored_positions": [
+          0
+        ]
+      },
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/medium/000662": {
+        "target_physical_time_values": null,
+        "target_source_frame_indices": [
+          0
+        ],
+        "target_stored_positions": [
+          0
+        ]
+      },
+      "seed-20260804/helmholtz/dirichlet/smooth_grf/medium/000664": {
+        "target_physical_time_values": null,
+        "target_source_frame_indices": [
+          0
+        ],
+        "target_stored_positions": [
+          0
+        ]
+      }
+    },
+    "historical_split_sha256": "55fae6ee02ee2ef04b558eec8cf0639a6c3906934d2c07e3e064858bec98938c",
+    "identity": "helmholtz/deeponet/mixed_nine_views",
+    "mask_config": {
+      "protocol": "random_3pct",
+      "ratio": 0.8
+    },
+    "observation_id": "random_80pct",
+    "projection": true,
+    "schema_version": "pdeobs-strict-contract-v1",
+    "split": "paper-test",
+    "target_time_indices": [
+      0
+    ],
+    "task": "recovery",
+    "time_index_semantics": "stored_frame_positions; per_identity_source_mapping_bound",
+    "training_cohort": "mixed_pattern_study",
+    "training_mask_spec": "random_3pct(ratio=0.5) + random_3pct(ratio=0.65) + random_3pct(ratio=0.8) + block_missing(missing_fraction=0.49) + line_sensors(num_lines=76, orientation=both) + line_sensors(num_lines=64, orientation=horizontal) + line_sensors(num_lines=64, orientation=vertical) + boundary_sensors(width=19) + clustered_sensors(ratio=0.5)",
+    "training_protocol": "pdeobs.fixed500-last-checkpoint/v7",
+    "training_view": "mixed_nine_views",
+    "verification_adapter": "pdeobs-archived-prediction-verification-v1",
+    "view_kind": "frozen_paper_view"
+  },
+  "config_sha256": "288609148b183804b31b64d0c1e413974f52813c576cb24be88928d07bc231f5",
+  "diagnostic_note": "projection applied to the retained raw predictions; a separately labelled diagnostic, not a replacement of the raw score",
+  "epsilon": 1e-12,
+  "errors": [],
+  "expected_identity_count": 200,
+  "expected_identity_order": [
+    "seed-20260804/helmholtz/dirichlet/smooth_grf/high/000107",
+    "seed-20260804/helmholtz/dirichlet/smooth_grf/high/000482",
+    "seed-20260804/helmholtz/dirichlet/smooth_grf/high/000423",
+    "seed-20260804/helmholtz/dirichlet/smooth_grf/high/000160",
+    "seed-20260804/helmholtz/dirichlet/smooth_grf/high/000641",
+    "seed-20260804/helmholtz/dirichlet/smooth_grf/high/000612",
+    "seed-20260804/helmholtz/dirichlet/smooth_grf/high/000256",
+    "seed-20260804/helmholtz/dirichlet/smooth_grf/high/000525",
+    "seed-20260804/helmholtz/dirichlet/smooth_grf/high/000559",
+    "seed-20260804/helmholtz/dirichlet/smooth_grf/high/000495",
+    "seed-20260804/helmholtz/dirichlet/smooth_grf/high/000355",
+    "seed-20260804/helmholtz/dirichlet/smooth_grf/high/000074",
+    "seed-20260804/helmholtz/dirichlet/smooth_grf/high/000237",
+    "seed-20260804/helmholtz/dirichlet/smooth_grf/high/000380",
+    "seed-20260804/helmholtz/dirichlet/smooth_grf/high/000522",
+    "seed-20260804/helmholtz/dirichlet/smooth_grf/high/000394",
+    "seed-20260804/helmholtz/dirichlet/smooth_grf/high/000553",
+    "seed-20260804/helmholtz/dirichlet/smooth_grf/high/000384",
+    "seed-20260804/helmholtz/dirichlet/smooth_grf/high/000361",
+    "seed-20260804/helmholtz/dirichlet/smooth_grf/high/000248",
+    "seed-20260804/helmholtz/dirichlet/smooth_grf/high/000125",
+    "seed-20260804/helmholtz/dirichlet/smooth_grf/high/000386",
+    "seed-20260804/helmholtz/dirichlet/smooth_grf/high/000286",
+    "seed-20260804/helmholtz/dirichlet/smooth_grf/high/000292",
+    "seed-20260804/helmholtz/dirichlet/smooth_grf/high/000490",
+    "seed-20260804/helmholtz/dirichlet/smooth_grf/high/000366",
+    "seed-20260804/helmholtz/dirichlet/smooth_grf/high/000085",
+    "seed-20260804/helmholtz/dirichlet/smooth_grf/high/000148",
+    "seed-20260804/helmholtz/dirichlet/smooth_grf/high/000163",
+    "seed-20260804/helmholtz/dirichlet/smooth_grf/high/000408",
+    "seed-20260804/helmholtz/dirichlet/smooth_grf/high/000631",
+    "seed-20260804/helmholtz/dirichlet/smooth_grf/high/000499",
+    "seed-20260804/helmholtz/dirichlet/smooth_grf/high/000646",
+    "seed-20260804/helmholtz/dirichlet/smooth_grf/high/000542",
+    "seed-20260804/helmholtz/dirichlet/smooth_grf/high/000102",
+    "seed-20260804/helmholtz/dirichlet/smooth_grf/high/000207",
+    "seed-20260804/helmholtz/dirichlet/smooth_grf/high/000324",
+    "seed-20260804/helmholtz/dirichlet/smooth_grf/high/000362",
+    "seed-20260804/helmholtz/dirichlet/smooth_grf/high/000549",
+    "seed-20260804/helmholtz/dirichlet/smooth_grf/high/000597",
+    "seed-20260804/helmholtz/dirichlet/smooth_grf/high/000182",
+    "seed-20260804/helmholtz/dirichlet/smooth_grf/high/000585",
+    "seed-20260804/helmholtz/dirichlet/smooth_grf/high/000447",
+    "seed-20260804/helmholtz/dirichlet/smooth_grf/high/000368",
+    "seed-20260804/helmholtz/dirichlet/smooth_grf/high/000481",
+    "seed-20260804/helmholtz/dirichlet/smooth_grf/high/000535",
+    "seed-20260804/helmholtz/dirichlet/smooth_grf/high/000147",
+    "seed-20260804/helmholtz/dirichlet/smooth_grf/high/000515",
+    "seed-20260804/helmholtz/dirichlet/smooth_grf/high/000273",
+    "seed-20260804/helmholtz/dirichlet/smooth_grf/high/000154",
+    "seed-20260804/helmholtz/dirichlet/smooth_grf/high/000065",
+    "seed-20260804/helmholtz/dirichlet/smooth_grf/high/000277",
+    "seed-20260804/helmholtz/dirichlet/smooth_grf/high/000267",
+    "seed-20260804/helmholtz/dirichlet/smooth_grf/high/000225",
+    "seed-20260804/helmholtz/dirichlet/smooth_grf/high/000278",
+    "seed-20260804/helmholtz/dirichlet/smooth_grf/high/000018",
+    "seed-20260804/helmholtz/dirichlet/smooth_grf/high/000333",
+    "seed-20260804/helmholtz/dirichlet/smooth_grf/high/000270",
+    "seed-20260804/helmholtz/dirichlet/smooth_grf/high/000007",
+    "seed-20260804/helmholtz/dirichlet/smooth_grf/high/000200",
+    "seed-20260804/helmholtz/dirichlet/smooth_grf/high/000340",
+    "seed-20260804/helmholtz/dirichlet/smooth_grf/high/000116",
+    "seed-20260804/helmholtz/dirichlet/smooth_grf/high/000595",
+    "seed-20260804/helmholtz/dirichlet/smooth_grf/high/000171",
+    "seed-20260804/helmholtz/dirichlet/smooth_grf/high/000662",
+    "seed-20260804/helmholtz/dirichlet/smooth_grf/high/000459",
+    "seed-20260804/helmholtz/dirichlet/smooth_grf/low/000275",
+    "seed-20260804/helmholtz/dirichlet/smooth_grf/low/000494",
+    "seed-20260804/helmholtz/dirichlet/smooth_grf/low/000098",
+    "seed-20260804/helmholtz/dirichlet/smooth_grf/low/000297",
+    "seed-20260804/helmholtz/dirichlet/smooth_grf/low/000144",
+    "seed-20260804/helmholtz/dirichlet/smooth_grf/low/000160",
+    "seed-20260804/helmholtz/dirichlet/smooth_grf/low/000230",
+    "seed-20260804/helmholtz/dirichlet/smooth_grf/low/000573",
+    "seed-20260804/helmholtz/dirichlet/smooth_grf/low/000044",
+    "seed-20260804/helmholtz/dirichlet/smooth_grf/low/000141",
+    "seed-20260804/helmholtz/dirichlet/smooth_grf/low/000476",
+    "seed-20260804/helmholtz/dirichlet/smooth_grf/low/000332",
+    "seed-20260804/helmholtz/dirichlet/smooth_grf/low/000331",
+    "seed-20260804/helmholtz/dirichlet/smooth_grf/low/000591",
+    "seed-20260804/helmholtz/dirichlet/smooth_grf/low/000263",
+    "seed-20260804/helmholtz/dirichlet/smooth_grf/low/000392",
+    "seed-20260804/helmholtz/dirichlet/smooth_grf/low/000209",
+    "seed-20260804/helmholtz/dirichlet/smooth_grf/low/000306",
+    "seed-20260804/helmholtz/dirichlet/smooth_grf/low/000220",
+    "seed-20260804/helmholtz/dirichlet/smooth_grf/low/000224",
+    "seed-20260804/helmholtz/dirichlet/smooth_grf/low/000002",
+    "seed-20260804/helmholtz/dirichlet/smooth_grf/low/000432",
+    "seed-20260804/helmholtz/dirichlet/smooth_grf/low/000518",
+    "seed-20260804/helmholtz/dirichlet/smooth_grf/low/000519",
+    "seed-20260804/helmholtz/dirichlet/smooth_grf/low/000649",
+    "seed-20260804/helmholtz/dirichlet/smooth_grf/low/000219",
+    "seed-20260804/helmholtz/dirichlet/smooth_grf/low/000508",
+    "seed-20260804/helmholtz/dirichlet/smooth_grf/low/000360",
+    "seed-20260804/helmholtz/dirichlet/smooth_grf/low/000328",
+    "seed-20260804/helmholtz/dirichlet/smooth_grf/low/000312",
+    "seed-20260804/helmholtz/dirichlet/smooth_grf/low/000408",
+    "seed-20260804/helmholtz/dirichlet/smooth_grf/low/000512",
+    "seed-20260804/helmholtz/dirichlet/smooth_grf/low/000483",
+    "seed-20260804/helmholtz/dirichlet/smooth_grf/low/000125",
+    "seed-20260804/helmholtz/dirichlet/smooth_grf/low/000031",
+    "seed-20260804/helmholtz/dirichlet/smooth_grf/low/000177",
+    "seed-20260804/helmholtz/dirichlet/smooth_grf/low/000493",
+    "seed-20260804/helmholtz/dirichlet/smooth_grf/low/000084",
+    "seed-20260804/helmholtz/dirichlet/smooth_grf/low/000172",
+    "seed-20260804/helmholtz/dirichlet/smooth_grf/low/000496",
+    "seed-20260804/helmholtz/dirichlet/smooth_grf/low/000067",
+    "seed-20260804/helmholtz/dirichlet/smooth_grf/low/000443",
+    "seed-20260804/helmholtz/dirichlet/smooth_grf/low/000515",
+    "seed-20260804/helmholtz/dirichlet/smooth_grf/low/000571",
+    "seed-20260804/helmholtz/dirichlet/smooth_grf/low/000152",
+    "seed-20260804/helmholtz/dirichlet/smooth_grf/low/000181",
+    "seed-20260804/helmholtz/dirichlet/smooth_grf/low/000576",
+    "seed-20260804/helmholtz/dirichlet/smooth_grf/low/000087",
+    "seed-20260804/helmholtz/dirichlet/smooth_grf/low/000652",
+    "seed-20260804/helmholtz/dirichlet/smooth_grf/low/000226",
+    "seed-20260804/helmholtz/dirichlet/smooth_grf/low/000410",
+    "seed-20260804/helmholtz/dirichlet/smooth_grf/low/000638",
+    "seed-20260804/helmholtz/dirichlet/smooth_grf/low/000436",
+    "seed-20260804/helmholtz/dirichlet/smooth_grf/low/000159",
+    "seed-20260804/helmholtz/dirichlet/smooth_grf/low/000213",
+    "seed-20260804/helmholtz/dirichlet/smooth_grf/low/000406",
+    "seed-20260804/helmholtz/dirichlet/smooth_grf/low/000259",
+    "seed-20260804/helmholtz/dirichlet/smooth_grf/low/000503",
+    "seed-20260804/helmholtz/dirichlet/smooth_grf/low/000055",
+    "seed-20260804/helmholtz/dirichlet/smooth_grf/low/000100",
+    "seed-20260804/helmholtz/dirichlet/smooth_grf/low/000658",
+    "seed-20260804/helmholtz/dirichlet/smooth_grf/low/000380",
+    "seed-20260804/helmholtz/dirichlet/smooth_grf/low/000036",
+    "seed-20260804/helmholtz/dirichlet/smooth_grf/low/000635",
+    "seed-20260804/helmholtz/dirichlet/smooth_grf/low/000344",
+    "seed-20260804/helmholtz/dirichlet/smooth_grf/low/000486",
+    "seed-20260804/helmholtz/dirichlet/smooth_grf/low/000266",
+    "seed-20260804/helmholtz/dirichlet/smooth_grf/medium/000156",
+    "seed-20260804/helmholtz/dirichlet/smooth_grf/medium/000558",
+    "seed-20260804/helmholtz/dirichlet/smooth_grf/medium/000132",
+    "seed-20260804/helmholtz/dirichlet/smooth_grf/medium/000552",
+    "seed-20260804/helmholtz/dirichlet/smooth_grf/medium/000652",
+    "seed-20260804/helmholtz/dirichlet/smooth_grf/medium/000252",
+    "seed-20260804/helmholtz/dirichlet/smooth_grf/medium/000427",
+    "seed-20260804/helmholtz/dirichlet/smooth_grf/medium/000060",
+    "seed-20260804/helmholtz/dirichlet/smooth_grf/medium/000240",
+    "seed-20260804/helmholtz/dirichlet/smooth_grf/medium/000269",
+    "seed-20260804/helmholtz/dirichlet/smooth_grf/medium/000553",
+    "seed-20260804/helmholtz/dirichlet/smooth_grf/medium/000506",
+    "seed-20260804/helmholtz/dirichlet/smooth_grf/medium/000473",
+    "seed-20260804/helmholtz/dirichlet/smooth_grf/medium/000416",
+    "seed-20260804/helmholtz/dirichlet/smooth_grf/medium/000395",
+    "seed-20260804/helmholtz/dirichlet/smooth_grf/medium/000407",
+    "seed-20260804/helmholtz/dirichlet/smooth_grf/medium/000514",
+    "seed-20260804/helmholtz/dirichlet/smooth_grf/medium/000231",
+    "seed-20260804/helmholtz/dirichlet/smooth_grf/medium/000555",
+    "seed-20260804/helmholtz/dirichlet/smooth_grf/medium/000170",
+    "seed-20260804/helmholtz/dirichlet/smooth_grf/medium/000368",
+    "seed-20260804/helmholtz/dirichlet/smooth_grf/medium/000525",
+    "seed-20260804/helmholtz/dirichlet/smooth_grf/medium/000076",
+    "seed-20260804/helmholtz/dirichlet/smooth_grf/medium/000008",
+    "seed-20260804/helmholtz/dirichlet/smooth_grf/medium/000126",
+    "seed-20260804/helmholtz/dirichlet/smooth_grf/medium/000483",
+    "seed-20260804/helmholtz/dirichlet/smooth_grf/medium/000649",
+    "seed-20260804/helmholtz/dirichlet/smooth_grf/medium/000282",
+    "seed-20260804/helmholtz/dirichlet/smooth_grf/medium/000031",
+    "seed-20260804/helmholtz/dirichlet/smooth_grf/medium/000003",
+    "seed-20260804/helmholtz/dirichlet/smooth_grf/medium/000107",
+    "seed-20260804/helmholtz/dirichlet/smooth_grf/medium/000400",
+    "seed-20260804/helmholtz/dirichlet/smooth_grf/medium/000193",
+    "seed-20260804/helmholtz/dirichlet/smooth_grf/medium/000303",
+    "seed-20260804/helmholtz/dirichlet/smooth_grf/medium/000122",
+    "seed-20260804/helmholtz/dirichlet/smooth_grf/medium/000211",
+    "seed-20260804/helmholtz/dirichlet/smooth_grf/medium/000055",
+    "seed-20260804/helmholtz/dirichlet/smooth_grf/medium/000296",
+    "seed-20260804/helmholtz/dirichlet/smooth_grf/medium/000385",
+    "seed-20260804/helmholtz/dirichlet/smooth_grf/medium/000083",
+    "seed-20260804/helmholtz/dirichlet/smooth_grf/medium/000382",
+    "seed-20260804/helmholtz/dirichlet/smooth_grf/medium/000491",
+    "seed-20260804/helmholtz/dirichlet/smooth_grf/medium/000504",
+    "seed-20260804/helmholtz/dirichlet/smooth_grf/medium/000312",
+    "seed-20260804/helmholtz/dirichlet/smooth_grf/medium/000332",
+    "seed-20260804/helmholtz/dirichlet/smooth_grf/medium/000316",
+    "seed-20260804/helmholtz/dirichlet/smooth_grf/medium/000493",
+    "seed-20260804/helmholtz/dirichlet/smooth_grf/medium/000435",
+    "seed-20260804/helmholtz/dirichlet/smooth_grf/medium/000408",
+    "seed-20260804/helmholtz/dirichlet/smooth_grf/medium/000486",
+    "seed-20260804/helmholtz/dirichlet/smooth_grf/medium/000292",
+    "seed-20260804/helmholtz/dirichlet/smooth_grf/medium/000043",
+    "seed-20260804/helmholtz/dirichlet/smooth_grf/medium/000664",
+    "seed-20260804/helmholtz/dirichlet/smooth_grf/medium/000484",
+    "seed-20260804/helmholtz/dirichlet/smooth_grf/medium/000283",
+    "seed-20260804/helmholtz/dirichlet/smooth_grf/medium/000538",
+    "seed-20260804/helmholtz/dirichlet/smooth_grf/medium/000135",
+    "seed-20260804/helmholtz/dirichlet/smooth_grf/medium/000033",
+    "seed-20260804/helmholtz/dirichlet/smooth_grf/medium/000314",
+    "seed-20260804/helmholtz/dirichlet/smooth_grf/medium/000530",
+    "seed-20260804/helmholtz/dirichlet/smooth_grf/medium/000630",
+    "seed-20260804/helmholtz/dirichlet/smooth_grf/medium/000338",
+    "seed-20260804/helmholtz/dirichlet/smooth_grf/medium/000049",
+    "seed-20260804/helmholtz/dirichlet/smooth_grf/medium/000329",
+    "seed-20260804/helmholtz/dirichlet/smooth_grf/medium/000105",
+    "seed-20260804/helmholtz/dirichlet/smooth_grf/medium/000508",
+    "seed-20260804/helmholtz/dirichlet/smooth_grf/medium/000662"
+  ],
+  "identity_set_sha256": "b14ce65d4e5efb0a73e58a88de4b7d33ca5825ff6c775db4dcdc69586ee95663",
+  "observation_id": "random_80pct",
+  "per_identity": [
+    {
+      "identity": "seed-20260804/helmholtz/dirichlet/smooth_grf/high/000107",
+      "projected_rel_l2_joint": 0.010223052931587834,
+      "rel_l2_joint": 0.02283325853280412,
+      "static_diagnostics": {
+        "full_common_denominator": 0.02283325853280412,
+        "hidden_common_denominator": 0.010223052931587834,
+        "hidden_only_rel_l2": 0.02272377981236002,
+        "hidden_only_status": "valid",
+        "hidden_scalar_count": 3277,
+        "observed_common_denominator": 0.020416828450663574,
+        "observed_scalar_count": 13107
+      }
+    },
+    {
+      "identity": "seed-20260804/helmholtz/dirichlet/smooth_grf/high/000482",
+      "projected_rel_l2_joint": 0.02078784929902174,
+      "rel_l2_joint": 0.04645648887822222,
+      "static_diagnostics": {
+        "full_common_denominator": 0.04645648887822222,
+        "hidden_common_denominator": 0.02078784929902174,
+        "hidden_only_rel_l2": 0.04658920403970676,
+        "hidden_only_status": "valid",
+        "hidden_scalar_count": 3277,
+        "observed_common_denominator": 0.04154600679263346,
+        "observed_scalar_count": 13107
+      }
+    },
+    {
+      "identity": "seed-20260804/helmholtz/dirichlet/smooth_grf/high/000423",
+      "projected_rel_l2_joint": 0.025079276731371617,
+      "rel_l2_joint": 0.05541716462631566,
+      "static_diagnostics": {
+        "full_common_denominator": 0.05541716462631566,
+        "hidden_common_denominator": 0.025079276731371617,
+        "hidden_only_rel_l2": 0.0553747974829737,
+        "hidden_only_status": "valid",
+        "hidden_scalar_count": 3277,
+        "observed_common_denominator": 0.04941752739516065,
+        "observed_scalar_count": 13107
+      }
+    },
+    {
+      "identity": "seed-20260804/helmholtz/dirichlet/smooth_grf/high/000160",
+      "projected_rel_l2_joint": 0.0337162409229912,
+      "rel_l2_joint": 0.07592162018568936,
+      "static_diagnostics": {
+        "full_common_denominator": 0.07592162018568936,
+        "hidden_common_denominator": 0.03371624092299119,
+        "hidden_only_rel_l2": 0.07540708273609067,
+        "hidden_only_status": "valid",
+        "hidden_scalar_count": 3277,
+        "observed_common_denominator": 0.06802431557643845,
+        "observed_scalar_count": 13107
+      }
+    },
+    {
+      "identity": "seed-20260804/helmholtz/dirichlet/smooth_grf/high/000641",
+      "projected_rel_l2_joint": 0.012319652831502926,
+      "rel_l2_joint": 0.027669558853169064,
+      "static_diagnostics": {
+        "full_common_denominator": 0.027669558853169064,
+        "hidden_common_denominator": 0.012319652831502926,
+        "hidden_only_rel_l2": 0.027753992891138127,
+        "hidden_only_status": "valid",
+        "hidden_scalar_count": 3277,
+        "observed_common_denominator": 0.02477560576938995,
+        "observed_scalar_count": 13107
+      }
+    },
+    {
+      "identity": "seed-20260804/helmholtz/dirichlet/smooth_grf/high/000612",
+      "projected_rel_l2_joint": 0.021620760896383633,
+      "rel_l2_joint": 0.04717685489426171,
+      "static_diagnostics": {
+        "full_common_denominator": 0.04717685489426171,
+        "hidden_common_denominator": 0.02162076089638364,
+        "hidden_only_rel_l2": 0.04721007073468402,
+        "hidden_only_status": "valid",
+        "hidden_scalar_count": 3277,
+        "observed_common_denominator": 0.04193087568815649,
+        "observed_scalar_count": 13107
+      }
+    },
+    {
+      "identity": "seed-20260804/helmholtz/dirichlet/smooth_grf/high/000256",
+      "projected_rel_l2_joint": 0.01970648613154881,
+      "rel_l2_joint": 0.044045285360771805,
+      "static_diagnostics": {
+        "full_common_denominator": 0.044045285360771805,
+        "hidden_common_denominator": 0.01970648613154881,
+        "hidden_only_rel_l2": 0.04418015350636975,
+        "hidden_only_status": "valid",
+        "hidden_scalar_count": 3277,
+        "observed_common_denominator": 0.039390881773056226,
+        "observed_scalar_count": 13107
+      }
+    },
+    {
+      "identity": "seed-20260804/helmholtz/dirichlet/smooth_grf/high/000525",
+      "projected_rel_l2_joint": 0.03340449633380655,
+      "rel_l2_joint": 0.07524638925470242,
+      "static_diagnostics": {
+        "full_common_denominator": 0.07524638925470242,
+        "hidden_common_denominator": 0.03340449633380655,
+        "hidden_only_rel_l2": 0.07572805840461863,
+        "hidden_only_status": "valid",
+        "hidden_scalar_count": 3277,
+        "observed_common_denominator": 0.06742520834639594,
+        "observed_scalar_count": 13107
+      }
+    },
+    {
+      "identity": "seed-20260804/helmholtz/dirichlet/smooth_grf/high/000559",
+      "projected_rel_l2_joint": 0.017326087276667228,
+      "rel_l2_joint": 0.037807422955627425,
+      "static_diagnostics": {
+        "full_common_denominator": 0.037807422955627425,
+        "hidden_common_denominator": 0.017326087276667228,
+        "hidden_only_rel_l2": 0.03826492143305635,
+        "hidden_only_status": "valid",
+        "hidden_scalar_count": 3277,
+        "observed_common_denominator": 0.03360368923536543,
+        "observed_scalar_count": 13107
+      }
+    },
+    {
+      "identity": "seed-20260804/helmholtz/dirichlet/smooth_grf/high/000495",
+      "projected_rel_l2_joint": 0.02405104144570822,
+      "rel_l2_joint": 0.054699151407295525,
+      "static_diagnostics": {
+        "full_common_denominator": 0.054699151407295525,
+        "hidden_common_denominator": 0.024051041445708216,
+        "hidden_only_rel_l2": 0.05425640604908761,
+        "hidden_only_status": "valid",
+        "hidden_scalar_count": 3277,
+        "observed_common_denominator": 0.04912783905338262,
+        "observed_scalar_count": 13107
+      }
+    },
+    {
+      "identity": "seed-20260804/helmholtz/dirichlet/smooth_grf/high/000355",
+      "projected_rel_l2_joint": 0.02934022964265219,
+      "rel_l2_joint": 0.06737271248566017,
+      "static_diagnostics": {
+        "full_common_denominator": 0.06737271248566017,
+        "hidden_common_denominator": 0.02934022964265219,
+        "hidden_only_rel_l2": 0.06454291092856515,
+        "hidden_only_status": "valid",
+        "hidden_scalar_count": 3277,
+        "observed_common_denominator": 0.06064844031128801,
+        "observed_scalar_count": 13107
+      }
+    },
+    {
+      "identity": "seed-20260804/helmholtz/dirichlet/smooth_grf/high/000074",
+      "projected_rel_l2_joint": 0.009986233633214499,
+      "rel_l2_joint": 0.022399937074179026,
+      "static_diagnostics": {
+        "full_common_denominator": 0.022399937074179026,
+        "hidden_common_denominator": 0.009986233633214499,
+        "hidden_only_rel_l2": 0.02238494972388685,
+        "hidden_only_status": "valid",
+        "hidden_scalar_count": 3277,
+        "observed_common_denominator": 0.02005074359593767,
+        "observed_scalar_count": 13107
+      }
+    },
+    {
+      "identity": "seed-20260804/helmholtz/dirichlet/smooth_grf/high/000237",
+      "projected_rel_l2_joint": 0.01666167640994731,
+      "rel_l2_joint": 0.037297742467900685,
+      "static_diagnostics": {
+        "full_common_denominator": 0.037297742467900685,
+        "hidden_common_denominator": 0.01666167640994731,
+        "hidden_only_rel_l2": 0.037949486057345945,
+        "hidden_only_status": "valid",
+        "hidden_scalar_count": 3277,
+        "observed_common_denominator": 0.03336929924964035,
+        "observed_scalar_count": 13107
+      }
+    },
+    {
+      "identity": "seed-20260804/helmholtz/dirichlet/smooth_grf/high/000380",
+      "projected_rel_l2_joint": 0.02910443749250904,
+      "rel_l2_joint": 0.06566407341214549,
+      "static_diagnostics": {
+        "full_common_denominator": 0.06566407341214549,
+        "hidden_common_denominator": 0.02910443749250904,
+        "hidden_only_rel_l2": 0.06544262967413758,
+        "hidden_only_status": "valid",
+        "hidden_scalar_count": 3277,
+        "observed_common_denominator": 0.05886172147771645,
+        "observed_scalar_count": 13107
+      }
+    },
+    {
+      "identity": "seed-20260804/helmholtz/dirichlet/smooth_grf/high/000522",
+      "projected_rel_l2_joint": 0.01416193722072955,
+      "rel_l2_joint": 0.03151254221518735,
+      "static_diagnostics": {
+        "full_common_denominator": 0.03151254221518735,
+        "hidden_common_denominator": 0.01416193722072955,
+        "hidden_only_rel_l2": 0.031305540518661086,
+        "hidden_only_status": "valid",
+        "hidden_scalar_count": 3277,
+        "observed_common_denominator": 0.02815101864977677,
+        "observed_scalar_count": 13107
+      }
+    },
+    {
+      "identity": "seed-20260804/helmholtz/dirichlet/smooth_grf/high/000394",
+      "projected_rel_l2_joint": 0.015401471015051427,
+      "rel_l2_joint": 0.03459814868047014,
+      "static_diagnostics": {
+        "full_common_denominator": 0.03459814868047014,
+        "hidden_common_denominator": 0.015401471015051427,
+        "hidden_only_rel_l2": 0.03400418368809788,
+        "hidden_only_status": "valid",
+        "hidden_scalar_count": 3277,
+        "observed_common_denominator": 0.030981068133433497,
+        "observed_scalar_count": 13107
+      }
+    },
+    {
+      "identity": "seed-20260804/helmholtz/dirichlet/smooth_grf/high/000553",
+      "projected_rel_l2_joint": 0.02315543972441235,
+      "rel_l2_joint": 0.051807898635364426,
+      "static_diagnostics": {
+        "full_common_denominator": 0.051807898635364426,
+        "hidden_common_denominator": 0.02315543972441235,
+        "hidden_only_rel_l2": 0.05138933887996053,
+        "hidden_only_status": "valid",
+        "hidden_scalar_count": 3277,
+        "observed_common_denominator": 0.04634526914563449,
+        "observed_scalar_count": 13107
+      }
+    },
+    {
+      "identity": "seed-20260804/helmholtz/dirichlet/smooth_grf/high/000384",
+      "projected_rel_l2_joint": 0.024930324370237206,
+      "rel_l2_joint": 0.058170941172024024,
+      "static_diagnostics": {
+        "full_common_denominator": 0.058170941172024024,
+        "hidden_common_denominator": 0.024930324370237206,
+        "hidden_only_rel_l2": 0.057188893737708045,
+        "hidden_only_status": "valid",
+        "hidden_scalar_count": 3277,
+        "observed_common_denominator": 0.052557942536155616,
+        "observed_scalar_count": 13107
+      }
+    },
+    {
+      "identity": "seed-20260804/helmholtz/dirichlet/smooth_grf/high/000361",
+      "projected_rel_l2_joint": 0.016885976140600275,
+      "rel_l2_joint": 0.03764352484117374,
+      "static_diagnostics": {
+        "full_common_denominator": 0.03764352484117374,
+        "hidden_common_denominator": 0.016885976140600275,
+        "hidden_only_rel_l2": 0.0376171521542394,
+        "hidden_only_status": "valid",
+        "hidden_scalar_count": 3277,
+        "observed_common_denominator": 0.03364370330756028,
+        "observed_scalar_count": 13107
+      }
+    },
+    {
+      "identity": "seed-20260804/helmholtz/dirichlet/smooth_grf/high/000248",
+      "projected_rel_l2_joint": 0.010718811751802584,
+      "rel_l2_joint": 0.023865757184961176,
+      "static_diagnostics": {
+        "full_common_denominator": 0.023865757184961176,
+        "hidden_common_denominator": 0.010718811751802584,
+        "hidden_only_rel_l2": 0.02372772247379455,
+        "hidden_only_status": "valid",
+        "hidden_scalar_count": 3277,
+        "observed_common_denominator": 0.02132326055369921,
+        "observed_scalar_count": 13107
+      }
+    },
+    {
+      "identity": "seed-20260804/helmholtz/dirichlet/smooth_grf/high/000125",
+      "projected_rel_l2_joint": 0.021720243444139534,
+      "rel_l2_joint": 0.04855461998661644,
+      "static_diagnostics": {
+        "full_common_denominator": 0.04855461998661644,
+        "hidden_common_denominator": 0.02172024344413954,
+        "hidden_only_rel_l2": 0.047975399532321744,
+        "hidden_only_status": "valid",
+        "hidden_scalar_count": 3277,
+        "observed_common_denominator": 0.04342559322302973,
+        "observed_scalar_count": 13107
+      }
+    },
+    {
+      "identity": "seed-20260804/helmholtz/dirichlet/smooth_grf/high/000386",
+      "projected_rel_l2_joint": 0.030364328316911278,
+      "rel_l2_joint": 0.06817848842057403,
+      "static_diagnostics": {
+        "full_common_denominator": 0.06817848842057403,
+        "hidden_common_denominator": 0.030364328316911278,
+        "hidden_only_rel_l2": 0.06720051861471003,
+        "hidden_only_status": "valid",
+        "hidden_scalar_count": 3277,
+        "observed_common_denominator": 0.06104354060158346,
+        "observed_scalar_count": 13107
+      }
+    },
+    {
+      "identity": "seed-20260804/helmholtz/dirichlet/smooth_grf/high/000286",
+      "projected_rel_l2_joint": 0.01388992382080542,
+      "rel_l2_joint": 0.031167029603830942,
+      "static_diagnostics": {
+        "full_common_denominator": 0.031167029603830942,
+        "hidden_common_denominator": 0.013889923820805417,
+        "hidden_only_rel_l2": 0.030948833802584685,
+        "hidden_only_status": "valid",
+        "hidden_scalar_count": 3277,
+        "observed_common_denominator": 0.027900784049526218,
+        "observed_scalar_count": 13107
+      }
+    },
+    {
+      "identity": "seed-20260804/helmholtz/dirichlet/smooth_grf/high/000292",
+      "projected_rel_l2_joint": 0.02434563298620986,
+      "rel_l2_joint": 0.05472959602702477,
+      "static_diagnostics": {
+        "full_common_denominator": 0.05472959602702477,
+        "hidden_common_denominator": 0.02434563298620986,
+        "hidden_only_rel_l2": 0.05487035807844473,
+        "hidden_only_status": "valid",
+        "hidden_scalar_count": 3277,
+        "observed_common_denominator": 0.04901651594903595,
+        "observed_scalar_count": 13107
+      }
+    },
+    {
+      "identity": "seed-20260804/helmholtz/dirichlet/smooth_grf/high/000490",
+      "projected_rel_l2_joint": 0.010811499616994952,
+      "rel_l2_joint": 0.02417614695039761,
+      "static_diagnostics": {
+        "full_common_denominator": 0.02417614695039761,
+        "hidden_common_denominator": 0.010811499616994952,
+        "hidden_only_rel_l2": 0.024257093388262284,
+        "hidden_only_status": "valid",
+        "hidden_scalar_count": 3277,
+        "observed_common_denominator": 0.021624004194388646,
+        "observed_scalar_count": 13107
+      }
+    },
+    {
+      "identity": "seed-20260804/helmholtz/dirichlet/smooth_grf/high/000366",
+      "projected_rel_l2_joint": 0.0236604137836446,
+      "rel_l2_joint": 0.05350603750083138,
+      "static_diagnostics": {
+        "full_common_denominator": 0.05350603750083138,
+        "hidden_common_denominator": 0.0236604137836446,
+        "hidden_only_rel_l2": 0.053152378402324306,
+        "hidden_only_status": "valid",
+        "hidden_scalar_count": 3277,
+        "observed_common_denominator": 0.047990424759811155,
+        "observed_scalar_count": 13107
+      }
+    },
+    {
+      "identity": "seed-20260804/helmholtz/dirichlet/smooth_grf/high/000085",
+      "projected_rel_l2_joint": 0.0205441915316992,
+      "rel_l2_joint": 0.04677191545421604,
+      "static_diagnostics": {
+        "full_common_denominator": 0.04677191545421604,
+        "hidden_common_denominator": 0.0205441915316992,
+        "hidden_only_rel_l2": 0.045634036959904506,
+        "hidden_only_status": "valid",
+        "hidden_scalar_count": 3277,
+        "observed_common_denominator": 0.042018427737900814,
+        "observed_scalar_count": 13107
+      }
+    },
+    {
+      "identity": "seed-20260804/helmholtz/dirichlet/smooth_grf/high/000148",
+      "projected_rel_l2_joint": 0.018497220310853116,
+      "rel_l2_joint": 0.04206619272148276,
+      "static_diagnostics": {
+        "full_common_denominator": 0.04206619272148276,
+        "hidden_common_denominator": 0.018497220310853116,
+        "hidden_only_rel_l2": 0.0417143566512971,
+        "hidden_only_status": "valid",
+        "hidden_scalar_count": 3277,
+        "observed_common_denominator": 0.03778117799715478,
+        "observed_scalar_count": 13107
+      }
+    },
+    {
+      "identity": "seed-20260804/helmholtz/dirichlet/smooth_grf/high/000163",
+      "projected_rel_l2_joint": 0.01679357977232341,
+      "rel_l2_joint": 0.03712733307425371,
+      "static_diagnostics": {
+        "full_common_denominator": 0.03712733307425371,
+        "hidden_common_denominator": 0.016793579772323406,
+        "hidden_only_rel_l2": 0.037400922035122776,
+        "hidden_only_status": "valid",
+        "hidden_scalar_count": 3277,
+        "observed_common_denominator": 0.03311215093643395,
+        "observed_scalar_count": 13107
+      }
+    },
+    {
+      "identity": "seed-20260804/helmholtz/dirichlet/smooth_grf/high/000408",
+      "projected_rel_l2_joint": 0.012778722558370682,
+      "rel_l2_joint": 0.029178584233643178,
+      "static_diagnostics": {
+        "full_common_denominator": 0.029178584233643178,
+        "hidden_common_denominator": 0.012778722558370682,
+        "hidden_only_rel_l2": 0.02860329823768323,
+        "hidden_only_status": "valid",
+        "hidden_scalar_count": 3277,
+        "observed_common_denominator": 0.026231546421360642,
+        "observed_scalar_count": 13107
+      }
+    },
+    {
+      "identity": "seed-20260804/helmholtz/dirichlet/smooth_grf/high/000631",
+      "projected_rel_l2_joint": 0.012044236020987356,
+      "rel_l2_joint": 0.02666608419726558,
+      "static_diagnostics": {
+        "full_common_denominator": 0.02666608419726558,
+        "hidden_common_denominator": 0.012044236020987356,
+        "hidden_only_rel_l2": 0.026497743567790073,
+        "hidden_only_status": "valid",
+        "hidden_scalar_count": 3277,
+        "observed_common_denominator": 0.023791099703174876,
+        "observed_scalar_count": 13107
+      }
+    },
+    {
+      "identity": "seed-20260804/helmholtz/dirichlet/smooth_grf/high/000499",
+      "projected_rel_l2_joint": 0.031308658869138556,
+      "rel_l2_joint": 0.07045466933761126,
+      "static_diagnostics": {
+        "full_common_denominator": 0.07045466933761126,
+        "hidden_common_denominator": 0.031308658869138556,
+        "hidden_only_rel_l2": 0.07006869218158453,
+        "hidden_only_status": "valid",
+        "hidden_scalar_count": 3277,
+        "observed_common_denominator": 0.0631159909316811,
+        "observed_scalar_count": 13107
+      }
+    },
+    {
+      "identity": "seed-20260804/helmholtz/dirichlet/smooth_grf/high/000646",
+      "projected_rel_l2_joint": 0.02237707682238479,
+      "rel_l2_joint": 0.04965683467759472,
+      "static_diagnostics": {
+        "full_common_denominator": 0.04965683467759472,
+        "hidden_common_denominator": 0.02237707682238479,
+        "hidden_only_rel_l2": 0.049732361817019316,
+        "hidden_only_status": "valid",
+        "hidden_scalar_count": 3277,
+        "observed_common_denominator": 0.044329083715807426,
+        "observed_scalar_count": 13107
+      }
+    },
+    {
+      "identity": "seed-20260804/helmholtz/dirichlet/smooth_grf/high/000542",
+      "projected_rel_l2_joint": 0.015081111178080413,
+      "rel_l2_joint": 0.03347892854044434,
+      "static_diagnostics": {
+        "full_common_denominator": 0.03347892854044434,
+        "hidden_common_denominator": 0.015081111178080413,
+        "hidden_only_rel_l2": 0.03328478422180705,
+        "hidden_only_status": "valid",
+        "hidden_scalar_count": 3277,
+        "observed_common_denominator": 0.029889776544005087,
+        "observed_scalar_count": 13107
+      }
+    },
+    {
+      "identity": "seed-20260804/helmholtz/dirichlet/smooth_grf/high/000102",
+      "projected_rel_l2_joint": 0.021737534325206778,
+      "rel_l2_joint": 0.04857152962848995,
+      "static_diagnostics": {
+        "full_common_denominator": 0.04857152962848995,
+        "hidden_common_denominator": 0.021737534325206778,
+        "hidden_only_rel_l2": 0.048045026914191255,
+        "hidden_only_status": "valid",
+        "hidden_scalar_count": 3277,
+        "observed_common_denominator": 0.043435850307225875,
+        "observed_scalar_count": 13107
+      }
+    },
+    {
+      "identity": "seed-20260804/helmholtz/dirichlet/smooth_grf/high/000207",
+      "projected_rel_l2_joint": 0.020422355359896692,
+      "rel_l2_joint": 0.04538077113681136,
+      "static_diagnostics": {
+        "full_common_denominator": 0.04538077113681136,
+        "hidden_common_denominator": 0.020422355359896692,
+        "hidden_only_rel_l2": 0.04556215942793622,
+        "hidden_only_status": "valid",
+        "hidden_scalar_count": 3277,
+        "observed_common_denominator": 0.04052581634619777,
+        "observed_scalar_count": 13107
+      }
+    },
+    {
+      "identity": "seed-20260804/helmholtz/dirichlet/smooth_grf/high/000324",
+      "projected_rel_l2_joint": 0.03386894422328631,
+      "rel_l2_joint": 0.07567642963567336,
+      "static_diagnostics": {
+        "full_common_denominator": 0.07567642963567336,
+        "hidden_common_denominator": 0.03386894422328631,
+        "hidden_only_rel_l2": 0.07711352620533425,
+        "hidden_only_status": "valid",
+        "hidden_scalar_count": 3277,
+        "observed_common_denominator": 0.06767434240244188,
+        "observed_scalar_count": 13107
+      }
+    },
+    {
+      "identity": "seed-20260804/helmholtz/dirichlet/smooth_grf/high/000362",
+      "projected_rel_l2_joint": 0.016376541787119628,
+      "rel_l2_joint": 0.036602910731800276,
+      "static_diagnostics": {
+        "full_common_denominator": 0.036602910731800276,
+        "hidden_common_denominator": 0.016376541787119628,
+        "hidden_only_rel_l2": 0.03632291313279156,
+        "hidden_only_status": "valid",
+        "hidden_scalar_count": 3277,
+        "observed_common_denominator": 0.032735026395817435,
+        "observed_scalar_count": 13107
+      }
+    },
+    {
+      "identity": "seed-20260804/helmholtz/dirichlet/smooth_grf/high/000549",
+      "projected_rel_l2_joint": 0.020995115004581268,
+      "rel_l2_joint": 0.04649241230147784,
+      "static_diagnostics": {
+        "full_common_denominator": 0.04649241230147784,
+        "hidden_common_denominator": 0.020995115004581268,
+        "hidden_only_rel_l2": 0.04654002288006415,
+        "hidden_only_status": "valid",
+        "hidden_scalar_count": 3277,
+        "observed_common_denominator": 0.04148191832057691,
+        "observed_scalar_count": 13107
+      }
+    },
+    {
+      "identity": "seed-20260804/helmholtz/dirichlet/smooth_grf/high/000597",
+      "projected_rel_l2_joint": 0.015414901063744617,
+      "rel_l2_joint": 0.03450307217909162,
+      "static_diagnostics": {
+        "full_common_denominator": 0.03450307217909162,
+        "hidden_common_denominator": 0.01541490106374462,
+        "hidden_only_rel_l2": 0.0342859503667013,
+        "hidden_only_status": "valid",
+        "hidden_scalar_count": 3277,
+        "observed_common_denominator": 0.030868152114931845,
+        "observed_scalar_count": 13107
+      }
+    },
+    {
+      "identity": "seed-20260804/helmholtz/dirichlet/smooth_grf/high/000182",
+      "projected_rel_l2_joint": 0.026384107704003748,
+      "rel_l2_joint": 0.05508995409286445,
+      "static_diagnostics": {
+        "full_common_denominator": 0.05508995409286445,
+        "hidden_common_denominator": 0.026384107704003748,
+        "hidden_only_rel_l2": 0.05613274144931976,
+        "hidden_only_status": "valid",
+        "hidden_scalar_count": 3277,
+        "observed_common_denominator": 0.048360954318721235,
+        "observed_scalar_count": 13107
+      }
+    },
+    {
+      "identity": "seed-20260804/helmholtz/dirichlet/smooth_grf/high/000585",
+      "projected_rel_l2_joint": 0.012787570656562252,
+      "rel_l2_joint": 0.02876170598633953,
+      "static_diagnostics": {
+        "full_common_denominator": 0.02876170598633953,
+        "hidden_common_denominator": 0.012787570656562252,
+        "hidden_only_rel_l2": 0.028684771926505447,
+        "hidden_only_status": "valid",
+        "hidden_scalar_count": 3277,
+        "observed_common_denominator": 0.02576264287583996,
+        "observed_scalar_count": 13107
+      }
+    },
+    {
+      "identity": "seed-20260804/helmholtz/dirichlet/smooth_grf/high/000447",
+      "projected_rel_l2_joint": 0.016148090429114845,
+      "rel_l2_joint": 0.03558275664553137,
+      "static_diagnostics": {
+        "full_common_denominator": 0.03558275664553137,
+        "hidden_common_denominator": 0.016148090429114845,
+        "hidden_only_rel_l2": 0.036045447507916516,
+        "hidden_only_status": "valid",
+        "hidden_scalar_count": 3277,
+        "observed_common_denominator": 0.031707597606697294,
+        "observed_scalar_count": 13107
+      }
+    },
+    {
+      "identity": "seed-20260804/helmholtz/dirichlet/smooth_grf/high/000368",
+      "projected_rel_l2_joint": 0.01671598897632988,
+      "rel_l2_joint": 0.0364145231876738,
+      "static_diagnostics": {
+        "full_common_denominator": 0.0364145231876738,
+        "hidden_common_denominator": 0.01671598897632988,
+        "hidden_only_rel_l2": 0.03711993757072557,
+        "hidden_only_status": "valid",
+        "hidden_scalar_count": 3277,
+        "observed_common_denominator": 0.03235109289543169,
+        "observed_scalar_count": 13107
+      }
+    },
+    {
+      "identity": "seed-20260804/helmholtz/dirichlet/smooth_grf/high/000481",
+      "projected_rel_l2_joint": 0.01377454062632699,
+      "rel_l2_joint": 0.02985527588070413,
+      "static_diagnostics": {
+        "full_common_denominator": 0.02985527588070413,
+        "hidden_common_denominator": 0.01377454062632699,
+        "hidden_only_rel_l2": 0.03079337119646544,
+        "hidden_only_status": "valid",
+        "hidden_scalar_count": 3277,
+        "observed_common_denominator": 0.026487724108473748,
+        "observed_scalar_count": 13107
+      }
+    },
+    {
+      "identity": "seed-20260804/helmholtz/dirichlet/smooth_grf/high/000535",
+      "projected_rel_l2_joint": 0.02024240835556828,
+      "rel_l2_joint": 0.04618207867095747,
+      "static_diagnostics": {
+        "full_common_denominator": 0.04618207867095747,
+        "hidden_common_denominator": 0.02024240835556828,
+        "hidden_only_rel_l2": 0.044462824465677925,
+        "hidden_only_status": "valid",
+        "hidden_scalar_count": 3277,
+        "observed_common_denominator": 0.041509388026528704,
+        "observed_scalar_count": 13107
+      }
+    },
+    {
+      "identity": "seed-20260804/helmholtz/dirichlet/smooth_grf/high/000147",
+      "projected_rel_l2_joint": 0.015910131615696328,
+      "rel_l2_joint": 0.03608405245696421,
+      "static_diagnostics": {
+        "full_common_denominator": 0.03608405245696421,
+        "hidden_common_denominator": 0.015910131615696328,
+        "hidden_only_rel_l2": 0.036463251937447705,
+        "hidden_only_status": "valid",
+        "hidden_scalar_count": 3277,
+        "observed_common_denominator": 0.032387135620307095,
+        "observed_scalar_count": 13107
+      }
+    },
+    {
+      "identity": "seed-20260804/helmholtz/dirichlet/smooth_grf/high/000515",
+      "projected_rel_l2_joint": 0.021890791199341487,
+      "rel_l2_joint": 0.04830899722121812,
+      "static_diagnostics": {
+        "full_common_denominator": 0.04830899722121812,
+        "hidden_common_denominator": 0.021890791199341487,
+        "hidden_only_rel_l2": 0.04867992103723699,
+        "hidden_only_status": "valid",
+        "hidden_scalar_count": 3277,
+        "observed_common_denominator": 0.04306451524383496,
+        "observed_scalar_count": 13107
+      }
+    },
+    {
+      "identity": "seed-20260804/helmholtz/dirichlet/smooth_grf/high/000273",
+      "projected_rel_l2_joint": 0.019999363470376397,
+      "rel_l2_joint": 0.0443211140491572,
+      "static_diagnostics": {
+        "full_common_denominator": 0.0443211140491572,
+        "hidden_common_denominator": 0.019999363470376397,
+        "hidden_only_rel_l2": 0.04464503890902252,
+        "hidden_only_status": "valid",
+        "hidden_scalar_count": 3277,
+        "observed_common_denominator": 0.039552327508481394,
+        "observed_scalar_count": 13107
+      }
+    },
+    {
+      "identity": "seed-20260804/helmholtz/dirichlet/smooth_grf/high/000154",
+      "projected_rel_l2_joint": 0.024807097244197798,
+      "rel_l2_joint": 0.05658182788633085,
+      "static_diagnostics": {
+        "full_common_denominator": 0.05658182788633085,
+        "hidden_common_denominator": 0.024807097244197798,
+        "hidden_only_rel_l2": 0.056007391265032305,
+        "hidden_only_status": "valid",
+        "hidden_scalar_count": 3277,
+        "observed_common_denominator": 0.05085382161917904,
+        "observed_scalar_count": 13107
+      }
+    },
+    {
+      "identity": "seed-20260804/helmholtz/dirichlet/smooth_grf/high/000065",
+      "projected_rel_l2_joint": 0.015281531887894636,
+      "rel_l2_joint": 0.033801208302522125,
+      "static_diagnostics": {
+        "full_common_denominator": 0.033801208302522125,
+        "hidden_common_denominator": 0.015281531887894636,
+        "hidden_only_rel_l2": 0.03347464558257897,
+        "hidden_only_status": "valid",
+        "hidden_scalar_count": 3277,
+        "observed_common_denominator": 0.030149568253455137,
+        "observed_scalar_count": 13107
+      }
+    },
+    {
+      "identity": "seed-20260804/helmholtz/dirichlet/smooth_grf/high/000277",
+      "projected_rel_l2_joint": 0.014837455985719483,
+      "rel_l2_joint": 0.033225602823612886,
+      "static_diagnostics": {
+        "full_common_denominator": 0.033225602823612886,
+        "hidden_common_denominator": 0.014837455985719483,
+        "hidden_only_rel_l2": 0.03288721854377418,
+        "hidden_only_status": "valid",
+        "hidden_scalar_count": 3277,
+        "observed_common_denominator": 0.0297286155557959,
+        "observed_scalar_count": 13107
+      }
+    },
+    {
+      "identity": "seed-20260804/helmholtz/dirichlet/smooth_grf/high/000267",
+      "projected_rel_l2_joint": 0.022705900790617947,
+      "rel_l2_joint": 0.05160922586220837,
+      "static_diagnostics": {
+        "full_common_denominator": 0.05160922586220837,
+        "hidden_common_denominator": 0.02270590079061795,
+        "hidden_only_rel_l2": 0.051737496731316515,
+        "hidden_only_status": "valid",
+        "hidden_scalar_count": 3277,
+        "observed_common_denominator": 0.0463460274822239,
+        "observed_scalar_count": 13107
+      }
+    },
+    {
+      "identity": "seed-20260804/helmholtz/dirichlet/smooth_grf/high/000225",
+      "projected_rel_l2_joint": 0.026587240456058255,
+      "rel_l2_joint": 0.061323960016423144,
+      "static_diagnostics": {
+        "full_common_denominator": 0.061323960016423144,
+        "hidden_common_denominator": 0.026587240456058255,
+        "hidden_only_rel_l2": 0.05978622022727389,
+        "hidden_only_status": "valid",
+        "hidden_scalar_count": 3277,
+        "observed_common_denominator": 0.055260715856995594,
+        "observed_scalar_count": 13107
+      }
+    },
+    {
+      "identity": "seed-20260804/helmholtz/dirichlet/smooth_grf/high/000278",
+      "projected_rel_l2_joint": 0.014297053466434121,
+      "rel_l2_joint": 0.03197570571908066,
+      "static_diagnostics": {
+        "full_common_denominator": 0.03197570571908066,
+        "hidden_common_denominator": 0.014297053466434121,
+        "hidden_only_rel_l2": 0.03138888707588648,
+        "hidden_only_status": "valid",
+        "hidden_scalar_count": 3277,
+        "observed_common_denominator": 0.028601398889060867,
+        "observed_scalar_count": 13107
+      }
+    },
+    {
+      "identity": "seed-20260804/helmholtz/dirichlet/smooth_grf/high/000018",
+      "projected_rel_l2_joint": 0.010195717638094872,
+      "rel_l2_joint": 0.023008411559733467,
+      "static_diagnostics": {
+        "full_common_denominator": 0.023008411559733467,
+        "hidden_common_denominator": 0.010195717638094872,
+        "hidden_only_rel_l2": 0.023064423574373237,
+        "hidden_only_status": "valid",
+        "hidden_scalar_count": 3277,
+        "observed_common_denominator": 0.02062605983571069,
+        "observed_scalar_count": 13107
+      }
+    },
+    {
+      "identity": "seed-20260804/helmholtz/dirichlet/smooth_grf/high/000333",
+      "projected_rel_l2_joint": 0.03224593373170908,
+      "rel_l2_joint": 0.07204747431709299,
+      "static_diagnostics": {
+        "full_common_denominator": 0.07204747431709299,
+        "hidden_common_denominator": 0.03224593373170908,
+        "hidden_only_rel_l2": 0.07193770452694159,
+        "hidden_only_status": "valid",
+        "hidden_scalar_count": 3277,
+        "observed_common_denominator": 0.06442855200330364,
+        "observed_scalar_count": 13107
+      }
+    },
+    {
+      "identity": "seed-20260804/helmholtz/dirichlet/smooth_grf/high/000270",
+      "projected_rel_l2_joint": 0.019485342098358033,
+      "rel_l2_joint": 0.04316254445048205,
+      "static_diagnostics": {
+        "full_common_denominator": 0.04316254445048205,
+        "hidden_common_denominator": 0.019485342098358033,
+        "hidden_only_rel_l2": 0.04283595949615481,
+        "hidden_only_status": "valid",
+        "hidden_scalar_count": 3277,
+        "observed_common_denominator": 0.03851398040646793,
+        "observed_scalar_count": 13107
+      }
+    },
+    {
+      "identity": "seed-20260804/helmholtz/dirichlet/smooth_grf/high/000007",
+      "projected_rel_l2_joint": 0.013318905857306914,
+      "rel_l2_joint": 0.030355246025735468,
+      "static_diagnostics": {
+        "full_common_denominator": 0.030355246025735468,
+        "hidden_common_denominator": 0.013318905857306915,
+        "hidden_only_rel_l2": 0.029786802675697884,
+        "hidden_only_status": "valid",
+        "hidden_scalar_count": 3277,
+        "observed_common_denominator": 0.027277237910886883,
+        "observed_scalar_count": 13107
+      }
+    },
+    {
+      "identity": "seed-20260804/helmholtz/dirichlet/smooth_grf/high/000200",
+      "projected_rel_l2_joint": 0.011897170128794576,
+      "rel_l2_joint": 0.026284788674758867,
+      "static_diagnostics": {
+        "full_common_denominator": 0.026284788674758867,
+        "hidden_common_denominator": 0.011897170128794576,
+        "hidden_only_rel_l2": 0.02621773799262307,
+        "hidden_only_status": "valid",
+        "hidden_scalar_count": 3277,
+        "observed_common_denominator": 0.02343816244084101,
+        "observed_scalar_count": 13107
+      }
+    },
+    {
+      "identity": "seed-20260804/helmholtz/dirichlet/smooth_grf/high/000340",
+      "projected_rel_l2_joint": 0.010995772289947525,
+      "rel_l2_joint": 0.02519365172683399,
+      "static_diagnostics": {
+        "full_common_denominator": 0.02519365172683399,
+        "hidden_common_denominator": 0.010995772289947525,
+        "hidden_only_rel_l2": 0.024408830655867384,
+        "hidden_only_status": "valid",
+        "hidden_scalar_count": 3277,
+        "observed_common_denominator": 0.022667445358500973,
+        "observed_scalar_count": 13107
+      }
+    },
+    {
+      "identity": "seed-20260804/helmholtz/dirichlet/smooth_grf/high/000116",
+      "projected_rel_l2_joint": 0.026017768539832824,
+      "rel_l2_joint": 0.058388192510855676,
+      "static_diagnostics": {
+        "full_common_denominator": 0.058388192510855676,
+        "hidden_common_denominator": 0.026017768539832824,
+        "hidden_only_rel_l2": 0.057503521025641414,
+        "hidden_only_status": "valid",
+        "hidden_scalar_count": 3277,
+        "observed_common_denominator": 0.0522709933413593,
+        "observed_scalar_count": 13107
+      }
+    },
+    {
+      "identity": "seed-20260804/helmholtz/dirichlet/smooth_grf/high/000595",
+      "projected_rel_l2_joint": 0.02652230749258333,
+      "rel_l2_joint": 0.05865321159390057,
+      "static_diagnostics": {
+        "full_common_denominator": 0.05865321159390057,
+        "hidden_common_denominator": 0.02652230749258333,
+        "hidden_only_rel_l2": 0.05976774228641916,
+        "hidden_only_status": "valid",
+        "hidden_scalar_count": 3277,
+        "observed_common_denominator": 0.05231411315837946,
+        "observed_scalar_count": 13107
+      }
+    },
+    {
+      "identity": "seed-20260804/helmholtz/dirichlet/smooth_grf/high/000171",
+      "projected_rel_l2_joint": 0.013998850079601994,
+      "rel_l2_joint": 0.03140074340531151,
+      "static_diagnostics": {
+        "full_common_denominator": 0.03140074340531151,
+        "hidden_common_denominator": 0.013998850079601994,
+        "hidden_only_rel_l2": 0.03077517518994791,
+        "hidden_only_status": "valid",
+        "hidden_scalar_count": 3277,
+        "observed_common_denominator": 0.028107630331549498,
+        "observed_scalar_count": 13107
+      }
+    },
+    {
+      "identity": "seed-20260804/helmholtz/dirichlet/smooth_grf/high/000662",
+      "projected_rel_l2_joint": 0.01438501915269837,
+      "rel_l2_joint": 0.0330621005967906,
+      "static_diagnostics": {
+        "full_common_denominator": 0.0330621005967906,
+        "hidden_common_denominator": 0.014385019152698367,
+        "hidden_only_rel_l2": 0.0323066002726669,
+        "hidden_only_status": "valid",
+        "hidden_scalar_count": 3277,
+        "observed_common_denominator": 0.02976867010547838,
+        "observed_scalar_count": 13107
+      }
+    },
+    {
+      "identity": "seed-20260804/helmholtz/dirichlet/smooth_grf/high/000459",
+      "projected_rel_l2_joint": 0.022325104025870405,
+      "rel_l2_joint": 0.050669217309510864,
+      "static_diagnostics": {
+        "full_common_denominator": 0.050669217309510864,
+        "hidden_common_denominator": 0.022325104025870405,
+        "hidden_only_rel_l2": 0.049661430099724665,
+        "hidden_only_status": "valid",
+        "hidden_scalar_count": 3277,
+        "observed_common_denominator": 0.04548581441496349,
+        "observed_scalar_count": 13107
+      }
+    },
+    {
+      "identity": "seed-20260804/helmholtz/dirichlet/smooth_grf/low/000275",
+      "projected_rel_l2_joint": 0.013163415310041187,
+      "rel_l2_joint": 0.029434355213999577,
+      "static_diagnostics": {
+        "full_common_denominator": 0.029434355213999577,
+        "hidden_common_denominator": 0.013163415310041187,
+        "hidden_only_rel_l2": 0.029397254843075697,
+        "hidden_only_status": "valid",
+        "hidden_scalar_count": 3277,
+        "observed_common_denominator": 0.02632690191114931,
+        "observed_scalar_count": 13107
+      }
+    },
+    {
+      "identity": "seed-20260804/helmholtz/dirichlet/smooth_grf/low/000494",
+      "projected_rel_l2_joint": 0.013917397609112592,
+      "rel_l2_joint": 0.03096852770879914,
+      "static_diagnostics": {
+        "full_common_denominator": 0.03096852770879914,
+        "hidden_common_denominator": 0.013917397609112592,
+        "hidden_only_rel_l2": 0.03075356687595826,
+        "hidden_only_status": "valid",
+        "hidden_scalar_count": 3277,
+        "observed_common_denominator": 0.0276650637490776,
+        "observed_scalar_count": 13107
+      }
+    },
+    {
+      "identity": "seed-20260804/helmholtz/dirichlet/smooth_grf/low/000098",
+      "projected_rel_l2_joint": 0.01693662036745978,
+      "rel_l2_joint": 0.03783137582068865,
+      "static_diagnostics": {
+        "full_common_denominator": 0.03783137582068865,
+        "hidden_common_denominator": 0.01693662036745978,
+        "hidden_only_rel_l2": 0.03756117000489093,
+        "hidden_only_status": "valid",
+        "hidden_scalar_count": 3277,
+        "observed_common_denominator": 0.03382844789544345,
+        "observed_scalar_count": 13107
+      }
+    },
+    {
+      "identity": "seed-20260804/helmholtz/dirichlet/smooth_grf/low/000297",
+      "projected_rel_l2_joint": 0.010042484010273177,
+      "rel_l2_joint": 0.02204476432855749,
+      "static_diagnostics": {
+        "full_common_denominator": 0.02204476432855749,
+        "hidden_common_denominator": 0.010042484010273177,
+        "hidden_only_rel_l2": 0.022448582596188215,
+        "hidden_only_status": "valid",
+        "hidden_scalar_count": 3277,
+        "observed_common_denominator": 0.019624478316761656,
+        "observed_scalar_count": 13107
+      }
+    },
+    {
+      "identity": "seed-20260804/helmholtz/dirichlet/smooth_grf/low/000144",
+      "projected_rel_l2_joint": 0.033902406486469784,
+      "rel_l2_joint": 0.07551424176733743,
+      "static_diagnostics": {
+        "full_common_denominator": 0.07551424176733743,
+        "hidden_common_denominator": 0.03390240648646978,
+        "hidden_only_rel_l2": 0.07577256423035172,
+        "hidden_only_status": "valid",
+        "hidden_scalar_count": 3277,
+        "observed_common_denominator": 0.06747612573438148,
+        "observed_scalar_count": 13107
+      }
+    },
+    {
+      "identity": "seed-20260804/helmholtz/dirichlet/smooth_grf/low/000160",
+      "projected_rel_l2_joint": 0.016887778342099636,
+      "rel_l2_joint": 0.03813037101585906,
+      "static_diagnostics": {
+        "full_common_denominator": 0.03813037101585906,
+        "hidden_common_denominator": 0.016887778342099636,
+        "hidden_only_rel_l2": 0.03723262597456262,
+        "hidden_only_status": "valid",
+        "hidden_scalar_count": 3277,
+        "observed_common_denominator": 0.034186666062591936,
+        "observed_scalar_count": 13107
+      }
+    },
+    {
+      "identity": "seed-20260804/helmholtz/dirichlet/smooth_grf/low/000230",
+      "projected_rel_l2_joint": 0.012878777917458686,
+      "rel_l2_joint": 0.028922513740569235,
+      "static_diagnostics": {
+        "full_common_denominator": 0.028922513740569235,
+        "hidden_common_denominator": 0.012878777917458685,
+        "hidden_only_rel_l2": 0.029233981849503304,
+        "hidden_only_status": "valid",
+        "hidden_scalar_count": 3277,
+        "observed_common_denominator": 0.025896889396724743,
+        "observed_scalar_count": 13107
+      }
+    },
+    {
+      "identity": "seed-20260804/helmholtz/dirichlet/smooth_grf/low/000573",
+      "projected_rel_l2_joint": 0.022768946466304747,
+      "rel_l2_joint": 0.05060400421969137,
+      "static_diagnostics": {
+        "full_common_denominator": 0.05060400421969137,
+        "hidden_common_denominator": 0.022768946466304747,
+        "hidden_only_rel_l2": 0.05022834611932468,
+        "hidden_only_status": "valid",
+        "hidden_scalar_count": 3277,
+        "observed_common_denominator": 0.04519225951289767,
+        "observed_scalar_count": 13107
+      }
+    },
+    {
+      "identity": "seed-20260804/helmholtz/dirichlet/smooth_grf/low/000044",
+      "projected_rel_l2_joint": 0.016541071935306684,
+      "rel_l2_joint": 0.037130296321353236,
+      "static_diagnostics": {
+        "full_common_denominator": 0.037130296321353236,
+        "hidden_common_denominator": 0.016541071935306684,
+        "hidden_only_rel_l2": 0.03745683322786188,
+        "hidden_only_status": "valid",
+        "hidden_scalar_count": 3277,
+        "observed_common_denominator": 0.033242320077613526,
+        "observed_scalar_count": 13107
+      }
+    },
+    {
+      "identity": "seed-20260804/helmholtz/dirichlet/smooth_grf/low/000141",
+      "projected_rel_l2_joint": 0.03632951922832141,
+      "rel_l2_joint": 0.0819470496415831,
+      "static_diagnostics": {
+        "full_common_denominator": 0.0819470496415831,
+        "hidden_common_denominator": 0.03632951922832141,
+        "hidden_only_rel_l2": 0.0819804338799733,
+        "hidden_only_status": "valid",
+        "hidden_scalar_count": 3277,
+        "observed_common_denominator": 0.07345396502299321,
+        "observed_scalar_count": 13107
+      }
+    },
+    {
+      "identity": "seed-20260804/helmholtz/dirichlet/smooth_grf/low/000476",
+      "projected_rel_l2_joint": 0.024686314922560782,
+      "rel_l2_joint": 0.055027600706731836,
+      "static_diagnostics": {
+        "full_common_denominator": 0.055027600706731836,
+        "hidden_common_denominator": 0.024686314922560782,
+        "hidden_only_rel_l2": 0.055356546129271954,
+        "hidden_only_status": "valid",
+        "hidden_scalar_count": 3277,
+        "observed_common_denominator": 0.049179494660718776,
+        "observed_scalar_count": 13107
+      }
+    },
+    {
+      "identity": "seed-20260804/helmholtz/dirichlet/smooth_grf/low/000332",
+      "projected_rel_l2_joint": 0.012317415534482842,
+      "rel_l2_joint": 0.02739992084872848,
+      "static_diagnostics": {
+        "full_common_denominator": 0.02739992084872848,
+        "hidden_common_denominator": 0.012317415534482842,
+        "hidden_only_rel_l2": 0.02802524299140453,
+        "hidden_only_status": "valid",
+        "hidden_scalar_count": 3277,
+        "observed_common_denominator": 0.024475231093239277,
+        "observed_scalar_count": 13107
+      }
+    },
+    {
+      "identity": "seed-20260804/helmholtz/dirichlet/smooth_grf/low/000331",
+      "projected_rel_l2_joint": 0.02016044749848159,
+      "rel_l2_joint": 0.04531334139742594,
+      "static_diagnostics": {
+        "full_common_denominator": 0.04531334139742594,
+        "hidden_common_denominator": 0.020160447498481587,
+        "hidden_only_rel_l2": 0.04443058757368004,
+        "hidden_only_status": "valid",
+        "hidden_scalar_count": 3277,
+        "observed_common_denominator": 0.04058146455292912,
+        "observed_scalar_count": 13107
+      }
+    },
+    {
+      "identity": "seed-20260804/helmholtz/dirichlet/smooth_grf/low/000591",
+      "projected_rel_l2_joint": 0.022333328197731334,
+      "rel_l2_joint": 0.0495293259484819,
+      "static_diagnostics": {
+        "full_common_denominator": 0.0495293259484819,
+        "hidden_common_denominator": 0.022333328197731334,
+        "hidden_only_rel_l2": 0.05016923750680139,
+        "hidden_only_status": "valid",
+        "hidden_scalar_count": 3277,
+        "observed_common_denominator": 0.04420833157362288,
+        "observed_scalar_count": 13107
+      }
+    },
+    {
+      "identity": "seed-20260804/helmholtz/dirichlet/smooth_grf/low/000263",
+      "projected_rel_l2_joint": 0.02169125329753783,
+      "rel_l2_joint": 0.048545660180916064,
+      "static_diagnostics": {
+        "full_common_denominator": 0.048545660180916064,
+        "hidden_common_denominator": 0.02169125329753783,
+        "hidden_only_rel_l2": 0.04872268899637844,
+        "hidden_only_status": "valid",
+        "hidden_scalar_count": 3277,
+        "observed_common_denominator": 0.043430066230470264,
+        "observed_scalar_count": 13107
+      }
+    },
+    {
+      "identity": "seed-20260804/helmholtz/dirichlet/smooth_grf/low/000392",
+      "projected_rel_l2_joint": 0.0128147389286583,
+      "rel_l2_joint": 0.028869876385560277,
+      "static_diagnostics": {
+        "full_common_denominator": 0.028869876385560277,
+        "hidden_common_denominator": 0.0128147389286583,
+        "hidden_only_rel_l2": 0.0284088538502355,
+        "hidden_only_status": "valid",
+        "hidden_scalar_count": 3277,
+        "observed_common_denominator": 0.025869909715881507,
+        "observed_scalar_count": 13107
+      }
+    },
+    {
+      "identity": "seed-20260804/helmholtz/dirichlet/smooth_grf/low/000209",
+      "projected_rel_l2_joint": 0.0221097280296247,
+      "rel_l2_joint": 0.05025474192285306,
+      "static_diagnostics": {
+        "full_common_denominator": 0.05025474192285306,
+        "hidden_common_denominator": 0.0221097280296247,
+        "hidden_only_rel_l2": 0.05009217784390827,
+        "hidden_only_status": "valid",
+        "hidden_scalar_count": 3277,
+        "observed_common_denominator": 0.045129801818627496,
+        "observed_scalar_count": 13107
+      }
+    },
+    {
+      "identity": "seed-20260804/helmholtz/dirichlet/smooth_grf/low/000306",
+      "projected_rel_l2_joint": 0.027347949798074898,
+      "rel_l2_joint": 0.06245272956013474,
+      "static_diagnostics": {
+        "full_common_denominator": 0.06245272956013474,
+        "hidden_common_denominator": 0.027347949798074898,
+        "hidden_only_rel_l2": 0.060967964823697554,
+        "hidden_only_status": "valid",
+        "hidden_scalar_count": 3277,
+        "observed_common_denominator": 0.05614653214004676,
+        "observed_scalar_count": 13107
+      }
+    },
+    {
+      "identity": "seed-20260804/helmholtz/dirichlet/smooth_grf/low/000220",
+      "projected_rel_l2_joint": 0.011702535176800729,
+      "rel_l2_joint": 0.02642996378595945,
+      "static_diagnostics": {
+        "full_common_denominator": 0.02642996378595945,
+        "hidden_common_denominator": 0.011702535176800729,
+        "hidden_only_rel_l2": 0.026009253932066826,
+        "hidden_only_status": "valid",
+        "hidden_scalar_count": 3277,
+        "observed_common_denominator": 0.0236979673424298,
+        "observed_scalar_count": 13107
+      }
+    },
+    {
+      "identity": "seed-20260804/helmholtz/dirichlet/smooth_grf/low/000224",
+      "projected_rel_l2_joint": 0.017704014848015318,
+      "rel_l2_joint": 0.039208288661296796,
+      "static_diagnostics": {
+        "full_common_denominator": 0.039208288661296796,
+        "hidden_common_denominator": 0.017704014848015318,
+        "hidden_only_rel_l2": 0.03972452383011256,
+        "hidden_only_status": "valid",
+        "hidden_scalar_count": 3277,
+        "observed_common_denominator": 0.03498367845165554,
+        "observed_scalar_count": 13107
+      }
+    },
+    {
+      "identity": "seed-20260804/helmholtz/dirichlet/smooth_grf/low/000002",
+      "projected_rel_l2_joint": 0.023438578095703225,
+      "rel_l2_joint": 0.05225415706953829,
+      "static_diagnostics": {
+        "full_common_denominator": 0.05225415706953829,
+        "hidden_common_denominator": 0.023438578095703228,
+        "hidden_only_rel_l2": 0.05248107260008869,
+        "hidden_only_status": "valid",
+        "hidden_scalar_count": 3277,
+        "observed_common_denominator": 0.04670256939291027,
+        "observed_scalar_count": 13107
+      }
+    },
+    {
+      "identity": "seed-20260804/helmholtz/dirichlet/smooth_grf/low/000432",
+      "projected_rel_l2_joint": 0.014149611382307931,
+      "rel_l2_joint": 0.03152485643141789,
+      "static_diagnostics": {
+        "full_common_denominator": 0.03152485643141789,
+        "hidden_common_denominator": 0.014149611382307931,
+        "hidden_only_rel_l2": 0.03190195198505207,
+        "hidden_only_status": "valid",
+        "hidden_scalar_count": 3277,
+        "observed_common_denominator": 0.028170996978296167,
+        "observed_scalar_count": 13107
+      }
+    },
+    {
+      "identity": "seed-20260804/helmholtz/dirichlet/smooth_grf/low/000518",
+      "projected_rel_l2_joint": 0.011754237246694216,
+      "rel_l2_joint": 0.025896780713124724,
+      "static_diagnostics": {
+        "full_common_denominator": 0.025896780713124724,
+        "hidden_common_denominator": 0.011754237246694216,
+        "hidden_only_rel_l2": 0.02603114819226669,
+        "hidden_only_status": "valid",
+        "hidden_scalar_count": 3277,
+        "observed_common_denominator": 0.02307555325560137,
+        "observed_scalar_count": 13107
+      }
+    },
+    {
+      "identity": "seed-20260804/helmholtz/dirichlet/smooth_grf/low/000519",
+      "projected_rel_l2_joint": 0.012995744568694905,
+      "rel_l2_joint": 0.029627837603660733,
+      "static_diagnostics": {
+        "full_common_denominator": 0.029627837603660733,
+        "hidden_common_denominator": 0.012995744568694904,
+        "hidden_only_rel_l2": 0.028540644473978277,
+        "hidden_only_status": "valid",
+        "hidden_scalar_count": 3277,
+        "observed_common_denominator": 0.026625540072909886,
+        "observed_scalar_count": 13107
+      }
+    },
+    {
+      "identity": "seed-20260804/helmholtz/dirichlet/smooth_grf/low/000649",
+      "projected_rel_l2_joint": 0.014369417080131766,
+      "rel_l2_joint": 0.03248263937292675,
+      "static_diagnostics": {
+        "full_common_denominator": 0.03248263937292675,
+        "hidden_common_denominator": 0.014369417080131766,
+        "hidden_only_rel_l2": 0.033121177647133584,
+        "hidden_only_status": "valid",
+        "hidden_scalar_count": 3277,
+        "observed_common_denominator": 0.029131455737893164,
+        "observed_scalar_count": 13107
+      }
+    },
+    {
+      "identity": "seed-20260804/helmholtz/dirichlet/smooth_grf/low/000219",
+      "projected_rel_l2_joint": 0.02275481838276465,
+      "rel_l2_joint": 0.051781968798611154,
+      "static_diagnostics": {
+        "full_common_denominator": 0.051781968798611154,
+        "hidden_common_denominator": 0.022754818382764642,
+        "hidden_only_rel_l2": 0.05058865132674663,
+        "hidden_only_status": "valid",
+        "hidden_scalar_count": 3277,
+        "observed_common_denominator": 0.04651441210020541,
+        "observed_scalar_count": 13107
+      }
+    },
+    {
+      "identity": "seed-20260804/helmholtz/dirichlet/smooth_grf/low/000508",
+      "projected_rel_l2_joint": 0.01476379152076316,
+      "rel_l2_joint": 0.03284946213612877,
+      "static_diagnostics": {
+        "full_common_denominator": 0.03284946213612877,
+        "hidden_common_denominator": 0.014763791520763164,
+        "hidden_only_rel_l2": 0.03366879115041866,
+        "hidden_only_status": "valid",
+        "hidden_scalar_count": 3277,
+        "observed_common_denominator": 0.02934480571693054,
+        "observed_scalar_count": 13107
+      }
+    },
+    {
+      "identity": "seed-20260804/helmholtz/dirichlet/smooth_grf/low/000360",
+      "projected_rel_l2_joint": 0.0220593504180771,
+      "rel_l2_joint": 0.05004306079846198,
+      "static_diagnostics": {
+        "full_common_denominator": 0.05004306079846198,
+        "hidden_common_denominator": 0.022059350418077096,
+        "hidden_only_rel_l2": 0.05072215019901716,
+        "hidden_only_status": "valid",
+        "hidden_scalar_count": 3277,
+        "observed_common_denominator": 0.04491873766270646,
+        "observed_scalar_count": 13107
+      }
+    },
+    {
+      "identity": "seed-20260804/helmholtz/dirichlet/smooth_grf/low/000328",
+      "projected_rel_l2_joint": 0.021748115977374808,
+      "rel_l2_joint": 0.04959011391195895,
+      "static_diagnostics": {
+        "full_common_denominator": 0.04959011391195895,
+        "hidden_common_denominator": 0.021748115977374808,
+        "hidden_only_rel_l2": 0.04860970972356853,
+        "hidden_only_status": "valid",
+        "hidden_scalar_count": 3277,
+        "observed_common_denominator": 0.04456679087881154,
+        "observed_scalar_count": 13107
+      }
+    },
+    {
+      "identity": "seed-20260804/helmholtz/dirichlet/smooth_grf/low/000312",
+      "projected_rel_l2_joint": 0.012679461137393709,
+      "rel_l2_joint": 0.028823222524448536,
+      "static_diagnostics": {
+        "full_common_denominator": 0.028823222524448536,
+        "hidden_common_denominator": 0.012679461137393709,
+        "hidden_only_rel_l2": 0.028146659751698326,
+        "hidden_only_status": "valid",
+        "hidden_scalar_count": 3277,
+        "observed_common_denominator": 0.02588454021146986,
+        "observed_scalar_count": 13107
+      }
+    },
+    {
+      "identity": "seed-20260804/helmholtz/dirichlet/smooth_grf/low/000408",
+      "projected_rel_l2_joint": 0.021760834836694717,
+      "rel_l2_joint": 0.047614312315258714,
+      "static_diagnostics": {
+        "full_common_denominator": 0.047614312315258714,
+        "hidden_common_denominator": 0.021760834836694717,
+        "hidden_only_rel_l2": 0.04855259487465515,
+        "hidden_only_status": "valid",
+        "hidden_scalar_count": 3277,
+        "observed_common_denominator": 0.04235078280817357,
+        "observed_scalar_count": 13107
+      }
+    },
+    {
+      "identity": "seed-20260804/helmholtz/dirichlet/smooth_grf/low/000512",
+      "projected_rel_l2_joint": 0.030015420785111827,
+      "rel_l2_joint": 0.06611416485893262,
+      "static_diagnostics": {
+        "full_common_denominator": 0.06611416485893262,
+        "hidden_common_denominator": 0.030015420785111827,
+        "hidden_only_rel_l2": 0.06752597605670714,
+        "hidden_only_status": "valid",
+        "hidden_scalar_count": 3277,
+        "observed_common_denominator": 0.05890804113265691,
+        "observed_scalar_count": 13107
+      }
+    },
+    {
+      "identity": "seed-20260804/helmholtz/dirichlet/smooth_grf/low/000483",
+      "projected_rel_l2_joint": 0.014870053740324803,
+      "rel_l2_joint": 0.033322932958168024,
+      "static_diagnostics": {
+        "full_common_denominator": 0.033322932958168024,
+        "hidden_common_denominator": 0.014870053740324803,
+        "hidden_only_rel_l2": 0.032813165916622075,
+        "hidden_only_status": "valid",
+        "hidden_scalar_count": 3277,
+        "observed_common_denominator": 0.029821122760459787,
+        "observed_scalar_count": 13107
+      }
+    },
+    {
+      "identity": "seed-20260804/helmholtz/dirichlet/smooth_grf/low/000125",
+      "projected_rel_l2_joint": 0.019204499311662807,
+      "rel_l2_joint": 0.04208532194168084,
+      "static_diagnostics": {
+        "full_common_denominator": 0.04208532194168084,
+        "hidden_common_denominator": 0.019204499311662807,
+        "hidden_only_rel_l2": 0.04212735900920652,
+        "hidden_only_status": "valid",
+        "hidden_scalar_count": 3277,
+        "observed_common_denominator": 0.037448117831518114,
+        "observed_scalar_count": 13107
+      }
+    },
+    {
+      "identity": "seed-20260804/helmholtz/dirichlet/smooth_grf/low/000031",
+      "projected_rel_l2_joint": 0.02956392385470204,
+      "rel_l2_joint": 0.06608601842265541,
+      "static_diagnostics": {
+        "full_common_denominator": 0.06608601842265541,
+        "hidden_common_denominator": 0.02956392385470204,
+        "hidden_only_rel_l2": 0.06683723252910548,
+        "hidden_only_status": "valid",
+        "hidden_scalar_count": 3277,
+        "observed_common_denominator": 0.05910445192430879,
+        "observed_scalar_count": 13107
+      }
+    },
+    {
+      "identity": "seed-20260804/helmholtz/dirichlet/smooth_grf/low/000177",
+      "projected_rel_l2_joint": 0.015658289697924606,
+      "rel_l2_joint": 0.03544886495729402,
+      "static_diagnostics": {
+        "full_common_denominator": 0.03544886495729402,
+        "hidden_common_denominator": 0.015658289697924606,
+        "hidden_only_rel_l2": 0.03511315675489945,
+        "hidden_only_status": "valid",
+        "hidden_scalar_count": 3277,
+        "observed_common_denominator": 0.031803144349204476,
+        "observed_scalar_count": 13107
+      }
+    },
+    {
+      "identity": "seed-20260804/helmholtz/dirichlet/smooth_grf/low/000493",
+      "projected_rel_l2_joint": 0.013191141653027335,
+      "rel_l2_joint": 0.030161364681609314,
+      "static_diagnostics": {
+        "full_common_denominator": 0.030161364681609314,
+        "hidden_common_denominator": 0.013191141653027335,
+        "hidden_only_rel_l2": 0.029626238744214356,
+        "hidden_only_status": "valid",
+        "hidden_scalar_count": 3277,
+        "observed_common_denominator": 0.027123821658217657,
+        "observed_scalar_count": 13107
+      }
+    },
+    {
+      "identity": "seed-20260804/helmholtz/dirichlet/smooth_grf/low/000084",
+      "projected_rel_l2_joint": 0.014716185836520467,
+      "rel_l2_joint": 0.033085355868743976,
+      "static_diagnostics": {
+        "full_common_denominator": 0.033085355868743976,
+        "hidden_common_denominator": 0.014716185836520467,
+        "hidden_only_rel_l2": 0.03297832387134394,
+        "hidden_only_status": "valid",
+        "hidden_scalar_count": 3277,
+        "observed_common_denominator": 0.029632324366921103,
+        "observed_scalar_count": 13107
+      }
+    },
+    {
+      "identity": "seed-20260804/helmholtz/dirichlet/smooth_grf/low/000172",
+      "projected_rel_l2_joint": 0.0139644923772664,
+      "rel_l2_joint": 0.031055735668007053,
+      "static_diagnostics": {
+        "full_common_denominator": 0.031055735668007053,
+        "hidden_common_denominator": 0.013964492377266404,
+        "hidden_only_rel_l2": 0.03097157898750621,
+        "hidden_only_status": "valid",
+        "hidden_scalar_count": 3277,
+        "observed_common_denominator": 0.02773899188013857,
+        "observed_scalar_count": 13107
+      }
+    },
+    {
+      "identity": "seed-20260804/helmholtz/dirichlet/smooth_grf/low/000496",
+      "projected_rel_l2_joint": 0.01163280934734853,
+      "rel_l2_joint": 0.02560085958272737,
+      "static_diagnostics": {
+        "full_common_denominator": 0.02560085958272737,
+        "hidden_common_denominator": 0.01163280934734853,
+        "hidden_only_rel_l2": 0.02640490698934412,
+        "hidden_only_status": "valid",
+        "hidden_scalar_count": 3277,
+        "observed_common_denominator": 0.022805301095639243,
+        "observed_scalar_count": 13107
+      }
+    },
+    {
+      "identity": "seed-20260804/helmholtz/dirichlet/smooth_grf/low/000067",
+      "projected_rel_l2_joint": 0.029592782103166994,
+      "rel_l2_joint": 0.06534288102975856,
+      "static_diagnostics": {
+        "full_common_denominator": 0.06534288102975856,
+        "hidden_common_denominator": 0.02959278210316699,
+        "hidden_only_rel_l2": 0.06585709777040664,
+        "hidden_only_status": "valid",
+        "hidden_scalar_count": 3277,
+        "observed_common_denominator": 0.058257697763159685,
+        "observed_scalar_count": 13107
+      }
+    },
+    {
+      "identity": "seed-20260804/helmholtz/dirichlet/smooth_grf/low/000443",
+      "projected_rel_l2_joint": 0.0199947420295533,
+      "rel_l2_joint": 0.04382713474454283,
+      "static_diagnostics": {
+        "full_common_denominator": 0.04382713474454283,
+        "hidden_common_denominator": 0.0199947420295533,
+        "hidden_only_rel_l2": 0.045207783960920817,
+        "hidden_only_status": "valid",
+        "hidden_scalar_count": 3277,
+        "observed_common_denominator": 0.03900035937126642,
+        "observed_scalar_count": 13107
+      }
+    },
+    {
+      "identity": "seed-20260804/helmholtz/dirichlet/smooth_grf/low/000515",
+      "projected_rel_l2_joint": 0.025970487536879847,
+      "rel_l2_joint": 0.05805897936919644,
+      "static_diagnostics": {
+        "full_common_denominator": 0.05805897936919644,
+        "hidden_common_denominator": 0.025970487536879847,
+        "hidden_only_rel_l2": 0.05859068699373391,
+        "hidden_only_status": "valid",
+        "hidden_scalar_count": 3277,
+        "observed_common_denominator": 0.05192666812428415,
+        "observed_scalar_count": 13107
+      }
+    },
+    {
+      "identity": "seed-20260804/helmholtz/dirichlet/smooth_grf/low/000571",
+      "projected_rel_l2_joint": 0.023355422037444618,
+      "rel_l2_joint": 0.051502933714119514,
+      "static_diagnostics": {
+        "full_common_denominator": 0.051502933714119514,
+        "hidden_common_denominator": 0.023355422037444618,
+        "hidden_only_rel_l2": 0.05200106092790943,
+        "hidden_only_status": "valid",
+        "hidden_scalar_count": 3277,
+        "observed_common_denominator": 0.045902902333227635,
+        "observed_scalar_count": 13107
+      }
+    },
+    {
+      "identity": "seed-20260804/helmholtz/dirichlet/smooth_grf/low/000152",
+      "projected_rel_l2_joint": 0.019346756936943734,
+      "rel_l2_joint": 0.043227367207046674,
+      "static_diagnostics": {
+        "full_common_denominator": 0.043227367207046674,
+        "hidden_common_denominator": 0.019346756936943734,
+        "hidden_only_rel_l2": 0.04267530011873392,
+        "hidden_only_status": "valid",
+        "hidden_scalar_count": 3277,
+        "observed_common_denominator": 0.03865628372820742,
+        "observed_scalar_count": 13107
+      }
+    },
+    {
+      "identity": "seed-20260804/helmholtz/dirichlet/smooth_grf/low/000181",
+      "projected_rel_l2_joint": 0.013308088234080234,
+      "rel_l2_joint": 0.02949653217806562,
+      "static_diagnostics": {
+        "full_common_denominator": 0.02949653217806562,
+        "hidden_common_denominator": 0.013308088234080234,
+        "hidden_only_rel_l2": 0.029531774437131224,
+        "hidden_only_status": "valid",
+        "hidden_scalar_count": 3277,
+        "observed_common_denominator": 0.0263237572942313,
+        "observed_scalar_count": 13107
+      }
+    },
+    {
+      "identity": "seed-20260804/helmholtz/dirichlet/smooth_grf/low/000576",
+      "projected_rel_l2_joint": 0.026773226880594574,
+      "rel_l2_joint": 0.05943669000626352,
+      "static_diagnostics": {
+        "full_common_denominator": 0.05943669000626352,
+        "hidden_common_denominator": 0.026773226880594574,
+        "hidden_only_rel_l2": 0.06027690684586965,
+        "hidden_only_status": "valid",
+        "hidden_scalar_count": 3277,
+        "observed_common_denominator": 0.053065190485862515,
+        "observed_scalar_count": 13107
+      }
+    },
+    {
+      "identity": "seed-20260804/helmholtz/dirichlet/smooth_grf/low/000087",
+      "projected_rel_l2_joint": 0.022342087452442462,
+      "rel_l2_joint": 0.05083361942942588,
+      "static_diagnostics": {
+        "full_common_denominator": 0.05083361942942588,
+        "hidden_common_denominator": 0.022342087452442465,
+        "hidden_only_rel_l2": 0.051209104215570546,
+        "hidden_only_status": "valid",
+        "hidden_scalar_count": 3277,
+        "observed_common_denominator": 0.045660573721353064,
+        "observed_scalar_count": 13107
+      }
+    },
+    {
+      "identity": "seed-20260804/helmholtz/dirichlet/smooth_grf/low/000652",
+      "projected_rel_l2_joint": 0.021402923773749652,
+      "rel_l2_joint": 0.04777500949404284,
+      "static_diagnostics": {
+        "full_common_denominator": 0.04777500949404284,
+        "hidden_common_denominator": 0.021402923773749652,
+        "hidden_only_rel_l2": 0.047219953634327794,
+        "hidden_only_status": "valid",
+        "hidden_scalar_count": 3277,
+        "observed_common_denominator": 0.042712602192923645,
+        "observed_scalar_count": 13107
+      }
+    },
+    {
+      "identity": "seed-20260804/helmholtz/dirichlet/smooth_grf/low/000226",
+      "projected_rel_l2_joint": 0.00987902207208127,
+      "rel_l2_joint": 0.02231851309422424,
+      "static_diagnostics": {
+        "full_common_denominator": 0.02231851309422424,
+        "hidden_common_denominator": 0.00987902207208127,
+        "hidden_only_rel_l2": 0.02154322457334359,
+        "hidden_only_status": "valid",
+        "hidden_scalar_count": 3277,
+        "observed_common_denominator": 0.02001301950322314,
+        "observed_scalar_count": 13107
+      }
+    },
+    {
+      "identity": "seed-20260804/helmholtz/dirichlet/smooth_grf/low/000410",
+      "projected_rel_l2_joint": 0.028681292952831807,
+      "rel_l2_joint": 0.06346562524840468,
+      "static_diagnostics": {
+        "full_common_denominator": 0.06346562524840468,
+        "hidden_common_denominator": 0.028681292952831807,
+        "hidden_only_rel_l2": 0.06415553600320202,
+        "hidden_only_status": "valid",
+        "hidden_scalar_count": 3277,
+        "observed_common_denominator": 0.056615095360908675,
+        "observed_scalar_count": 13107
+      }
+    },
+    {
+      "identity": "seed-20260804/helmholtz/dirichlet/smooth_grf/low/000638",
+      "projected_rel_l2_joint": 0.01126716898515474,
+      "rel_l2_joint": 0.025333995130462916,
+      "static_diagnostics": {
+        "full_common_denominator": 0.025333995130462916,
+        "hidden_common_denominator": 0.01126716898515474,
+        "hidden_only_rel_l2": 0.02525117653616389,
+        "hidden_only_status": "valid",
+        "hidden_scalar_count": 3277,
+        "observed_common_denominator": 0.02269057540765077,
+        "observed_scalar_count": 13107
+      }
+    },
+    {
+      "identity": "seed-20260804/helmholtz/dirichlet/smooth_grf/low/000436",
+      "projected_rel_l2_joint": 0.017500748630657193,
+      "rel_l2_joint": 0.038849529065266175,
+      "static_diagnostics": {
+        "full_common_denominator": 0.038849529065266175,
+        "hidden_common_denominator": 0.017500748630657193,
+        "hidden_only_rel_l2": 0.03912812788572397,
+        "hidden_only_status": "valid",
+        "hidden_scalar_count": 3277,
+        "observed_common_denominator": 0.03468443031043628,
+        "observed_scalar_count": 13107
+      }
+    },
+    {
+      "identity": "seed-20260804/helmholtz/dirichlet/smooth_grf/low/000159",
+      "projected_rel_l2_joint": 0.01494551452775092,
+      "rel_l2_joint": 0.03337411305857963,
+      "static_diagnostics": {
+        "full_common_denominator": 0.03337411305857963,
+        "hidden_common_denominator": 0.01494551452775092,
+        "hidden_only_rel_l2": 0.03320712282510264,
+        "hidden_only_status": "valid",
+        "hidden_scalar_count": 3277,
+        "observed_common_denominator": 0.029840626969747826,
+        "observed_scalar_count": 13107
+      }
+    },
+    {
+      "identity": "seed-20260804/helmholtz/dirichlet/smooth_grf/low/000213",
+      "projected_rel_l2_joint": 0.022528350549986018,
+      "rel_l2_joint": 0.04930914369788924,
+      "static_diagnostics": {
+        "full_common_denominator": 0.04930914369788924,
+        "hidden_common_denominator": 0.022528350549986018,
+        "hidden_only_rel_l2": 0.05028398487390707,
+        "hidden_only_status": "valid",
+        "hidden_scalar_count": 3277,
+        "observed_common_denominator": 0.04386188634470745,
+        "observed_scalar_count": 13107
+      }
+    },
+    {
+      "identity": "seed-20260804/helmholtz/dirichlet/smooth_grf/low/000406",
+      "projected_rel_l2_joint": 0.02147569785048969,
+      "rel_l2_joint": 0.04817265532810681,
+      "static_diagnostics": {
+        "full_common_denominator": 0.04817265532810681,
+        "hidden_common_denominator": 0.02147569785048969,
+        "hidden_only_rel_l2": 0.04804619169126827,
+        "hidden_only_status": "valid",
+        "hidden_scalar_count": 3277,
+        "observed_common_denominator": 0.04312075049433914,
+        "observed_scalar_count": 13107
+      }
+    },
+    {
+      "identity": "seed-20260804/helmholtz/dirichlet/smooth_grf/low/000259",
+      "projected_rel_l2_joint": 0.011000424627151765,
+      "rel_l2_joint": 0.024299988928954058,
+      "static_diagnostics": {
+        "full_common_denominator": 0.024299988928954058,
+        "hidden_common_denominator": 0.011000424627151765,
+        "hidden_only_rel_l2": 0.024302382213365097,
+        "hidden_only_status": "valid",
+        "hidden_scalar_count": 3277,
+        "observed_common_denominator": 0.021667489932376636,
+        "observed_scalar_count": 13107
+      }
+    },
+    {
+      "identity": "seed-20260804/helmholtz/dirichlet/smooth_grf/low/000503",
+      "projected_rel_l2_joint": 0.025380581980587857,
+      "rel_l2_joint": 0.05564298410123743,
+      "static_diagnostics": {
+        "full_common_denominator": 0.05564298410123743,
+        "hidden_common_denominator": 0.025380581980587857,
+        "hidden_only_rel_l2": 0.057777200893301496,
+        "hidden_only_status": "valid",
+        "hidden_scalar_count": 3277,
+        "observed_common_denominator": 0.04951734784918534,
+        "observed_scalar_count": 13107
+      }
+    },
+    {
+      "identity": "seed-20260804/helmholtz/dirichlet/smooth_grf/low/000055",
+      "projected_rel_l2_joint": 0.021082107696280224,
+      "rel_l2_joint": 0.04630863020141107,
+      "static_diagnostics": {
+        "full_common_denominator": 0.04630863020141107,
+        "hidden_common_denominator": 0.021082107696280224,
+        "hidden_only_rel_l2": 0.04656686415273743,
+        "hidden_only_status": "valid",
+        "hidden_scalar_count": 3277,
+        "observed_common_denominator": 0.04123146815496004,
+        "observed_scalar_count": 13107
+      }
+    },
+    {
+      "identity": "seed-20260804/helmholtz/dirichlet/smooth_grf/low/000100",
+      "projected_rel_l2_joint": 0.02443079677718354,
+      "rel_l2_joint": 0.054567680464321124,
+      "static_diagnostics": {
+        "full_common_denominator": 0.054567680464321124,
+        "hidden_common_denominator": 0.024430796777183548,
+        "hidden_only_rel_l2": 0.054031635580465316,
+        "hidden_only_status": "valid",
+        "hidden_scalar_count": 3277,
+        "observed_common_denominator": 0.048793113449422464,
+        "observed_scalar_count": 13107
+      }
+    },
+    {
+      "identity": "seed-20260804/helmholtz/dirichlet/smooth_grf/low/000658",
+      "projected_rel_l2_joint": 0.015599351101394836,
+      "rel_l2_joint": 0.03468546103676164,
+      "static_diagnostics": {
+        "full_common_denominator": 0.03468546103676164,
+        "hidden_common_denominator": 0.015599351101394836,
+        "hidden_only_rel_l2": 0.03592091708351071,
+        "hidden_only_status": "valid",
+        "hidden_scalar_count": 3277,
+        "observed_common_denominator": 0.030979694197136965,
+        "observed_scalar_count": 13107
+      }
+    },
+    {
+      "identity": "seed-20260804/helmholtz/dirichlet/smooth_grf/low/000380",
+      "projected_rel_l2_joint": 0.029143252901628218,
+      "rel_l2_joint": 0.06401190941776892,
+      "static_diagnostics": {
+        "full_common_denominator": 0.06401190941776892,
+        "hidden_common_denominator": 0.029143252901628218,
+        "hidden_only_rel_l2": 0.06520593496861755,
+        "hidden_only_status": "valid",
+        "hidden_scalar_count": 3277,
+        "observed_common_denominator": 0.05699294129644822,
+        "observed_scalar_count": 13107
+      }
+    },
+    {
+      "identity": "seed-20260804/helmholtz/dirichlet/smooth_grf/low/000036",
+      "projected_rel_l2_joint": 0.04690087631814831,
+      "rel_l2_joint": 0.1042272651004344,
+      "static_diagnostics": {
+        "full_common_denominator": 0.1042272651004344,
+        "hidden_common_denominator": 0.04690087631814831,
+        "hidden_only_rel_l2": 0.10486993324240557,
+        "hidden_only_status": "valid",
+        "hidden_scalar_count": 3277,
+        "observed_common_denominator": 0.09307862585419911,
+        "observed_scalar_count": 13107
+      }
+    },
+    {
+      "identity": "seed-20260804/helmholtz/dirichlet/smooth_grf/low/000635",
+      "projected_rel_l2_joint": 0.021354799487821402,
+      "rel_l2_joint": 0.04679053449918486,
+      "static_diagnostics": {
+        "full_common_denominator": 0.04679053449918486,
+        "hidden_common_denominator": 0.0213547994878214,
+        "hidden_only_rel_l2": 0.04852256859474507,
+        "hidden_only_status": "valid",
+        "hidden_scalar_count": 3277,
+        "observed_common_denominator": 0.04163323981573319,
+        "observed_scalar_count": 13107
+      }
+    },
+    {
+      "identity": "seed-20260804/helmholtz/dirichlet/smooth_grf/low/000344",
+      "projected_rel_l2_joint": 0.01920639976692146,
+      "rel_l2_joint": 0.04334931384940085,
+      "static_diagnostics": {
+        "full_common_denominator": 0.04334931384940085,
+        "hidden_common_denominator": 0.01920639976692146,
+        "hidden_only_rel_l2": 0.04281745204338984,
+        "hidden_only_status": "valid",
+        "hidden_scalar_count": 3277,
+        "observed_common_denominator": 0.03886228530602717,
+        "observed_scalar_count": 13107
+      }
+    },
+    {
+      "identity": "seed-20260804/helmholtz/dirichlet/smooth_grf/low/000486",
+      "projected_rel_l2_joint": 0.02220706758732993,
+      "rel_l2_joint": 0.048736372300264875,
+      "static_diagnostics": {
+        "full_common_denominator": 0.048736372300264875,
+        "hidden_common_denominator": 0.02220706758732993,
+        "hidden_only_rel_l2": 0.04890378303338302,
+        "hidden_only_status": "valid",
+        "hidden_scalar_count": 3277,
+        "observed_common_denominator": 0.0433829475043108,
+        "observed_scalar_count": 13107
+      }
+    },
+    {
+      "identity": "seed-20260804/helmholtz/dirichlet/smooth_grf/low/000266",
+      "projected_rel_l2_joint": 0.011844031346969907,
+      "rel_l2_joint": 0.026506796621840713,
+      "static_diagnostics": {
+        "full_common_denominator": 0.026506796621840713,
+        "hidden_common_denominator": 0.011844031346969907,
+        "hidden_only_rel_l2": 0.02640972127930639,
+        "hidden_only_status": "valid",
+        "hidden_scalar_count": 3277,
+        "observed_common_denominator": 0.023713481157426476,
+        "observed_scalar_count": 13107
+      }
+    },
+    {
+      "identity": "seed-20260804/helmholtz/dirichlet/smooth_grf/medium/000156",
+      "projected_rel_l2_joint": 0.01746958467776565,
+      "rel_l2_joint": 0.03911528260142691,
+      "static_diagnostics": {
+        "full_common_denominator": 0.03911528260142691,
+        "hidden_common_denominator": 0.01746958467776565,
+        "hidden_only_rel_l2": 0.03947521804135969,
+        "hidden_only_status": "valid",
+        "hidden_scalar_count": 3277,
+        "observed_common_denominator": 0.03499741339264756,
+        "observed_scalar_count": 13107
+      }
+    },
+    {
+      "identity": "seed-20260804/helmholtz/dirichlet/smooth_grf/medium/000558",
+      "projected_rel_l2_joint": 0.028188697247493868,
+      "rel_l2_joint": 0.06357797123883394,
+      "static_diagnostics": {
+        "full_common_denominator": 0.06357797123883394,
+        "hidden_common_denominator": 0.02818869724749387,
+        "hidden_only_rel_l2": 0.06310711645113075,
+        "hidden_only_status": "valid",
+        "hidden_scalar_count": 3277,
+        "observed_common_denominator": 0.05698732994565657,
+        "observed_scalar_count": 13107
+      }
+    },
+    {
+      "identity": "seed-20260804/helmholtz/dirichlet/smooth_grf/medium/000132",
+      "projected_rel_l2_joint": 0.01890593643211111,
+      "rel_l2_joint": 0.042364914731860326,
+      "static_diagnostics": {
+        "full_common_denominator": 0.042364914731860326,
+        "hidden_common_denominator": 0.01890593643211111,
+        "hidden_only_rel_l2": 0.042133235695136995,
+        "hidden_only_status": "valid",
+        "hidden_scalar_count": 3277,
+        "observed_common_denominator": 0.03791241970466631,
+        "observed_scalar_count": 13107
+      }
+    },
+    {
+      "identity": "seed-20260804/helmholtz/dirichlet/smooth_grf/medium/000552",
+      "projected_rel_l2_joint": 0.027623952023989384,
+      "rel_l2_joint": 0.06127778785109927,
+      "static_diagnostics": {
+        "full_common_denominator": 0.06127778785109927,
+        "hidden_common_denominator": 0.02762395202398938,
+        "hidden_only_rel_l2": 0.06182760870136306,
+        "hidden_only_status": "valid",
+        "hidden_scalar_count": 3277,
+        "observed_common_denominator": 0.05469812207471718,
+        "observed_scalar_count": 13107
+      }
+    },
+    {
+      "identity": "seed-20260804/helmholtz/dirichlet/smooth_grf/medium/000652",
+      "projected_rel_l2_joint": 0.0167954684212059,
+      "rel_l2_joint": 0.0367099935363175,
+      "static_diagnostics": {
+        "full_common_denominator": 0.0367099935363175,
+        "hidden_common_denominator": 0.0167954684212059,
+        "hidden_only_rel_l2": 0.036845333314538604,
+        "hidden_only_status": "valid",
+        "hidden_scalar_count": 3277,
+        "observed_common_denominator": 0.032642546866761914,
+        "observed_scalar_count": 13107
+      }
+    },
+    {
+      "identity": "seed-20260804/helmholtz/dirichlet/smooth_grf/medium/000252",
+      "projected_rel_l2_joint": 0.011575328612200769,
+      "rel_l2_joint": 0.026034114958192783,
+      "static_diagnostics": {
+        "full_common_denominator": 0.026034114958192783,
+        "hidden_common_denominator": 0.011575328612200769,
+        "hidden_only_rel_l2": 0.02628143530719144,
+        "hidden_only_status": "valid",
+        "hidden_scalar_count": 3277,
+        "observed_common_denominator": 0.0233192390350964,
+        "observed_scalar_count": 13107
+      }
+    },
+    {
+      "identity": "seed-20260804/helmholtz/dirichlet/smooth_grf/medium/000427",
+      "projected_rel_l2_joint": 0.02547933040389192,
+      "rel_l2_joint": 0.05694450314062274,
+      "static_diagnostics": {
+        "full_common_denominator": 0.05694450314062274,
+        "hidden_common_denominator": 0.02547933040389192,
+        "hidden_only_rel_l2": 0.05716528114769593,
+        "hidden_only_status": "valid",
+        "hidden_scalar_count": 3277,
+        "observed_common_denominator": 0.050926222715823935,
+        "observed_scalar_count": 13107
+      }
+    },
+    {
+      "identity": "seed-20260804/helmholtz/dirichlet/smooth_grf/medium/000060",
+      "projected_rel_l2_joint": 0.03915471276287679,
+      "rel_l2_joint": 0.08662749828939258,
+      "static_diagnostics": {
+        "full_common_denominator": 0.08662749828939258,
+        "hidden_common_denominator": 0.03915471276287679,
+        "hidden_only_rel_l2": 0.0860865727037916,
+        "hidden_only_status": "valid",
+        "hidden_scalar_count": 3277,
+        "observed_common_denominator": 0.07727374669533843,
+        "observed_scalar_count": 13107
+      }
+    },
+    {
+      "identity": "seed-20260804/helmholtz/dirichlet/smooth_grf/medium/000240",
+      "projected_rel_l2_joint": 0.018146513325057827,
+      "rel_l2_joint": 0.04091943677384761,
+      "static_diagnostics": {
+        "full_common_denominator": 0.04091943677384761,
+        "hidden_common_denominator": 0.018146513325057827,
+        "hidden_only_rel_l2": 0.041370525737659085,
+        "hidden_only_status": "valid",
+        "hidden_scalar_count": 3277,
+        "observed_common_denominator": 0.03667566441160147,
+        "observed_scalar_count": 13107
+      }
+    },
+    {
+      "identity": "seed-20260804/helmholtz/dirichlet/smooth_grf/medium/000269",
+      "projected_rel_l2_joint": 0.014064829903776123,
+      "rel_l2_joint": 0.03160094875189711,
+      "static_diagnostics": {
+        "full_common_denominator": 0.03160094875189711,
+        "hidden_common_denominator": 0.014064829903776123,
+        "hidden_only_rel_l2": 0.031447528447352414,
+        "hidden_only_status": "valid",
+        "hidden_scalar_count": 3277,
+        "observed_common_denominator": 0.028298419068878606,
+        "observed_scalar_count": 13107
+      }
+    },
+    {
+      "identity": "seed-20260804/helmholtz/dirichlet/smooth_grf/medium/000553",
+      "projected_rel_l2_joint": 0.020085271063422797,
+      "rel_l2_joint": 0.04513463315786527,
+      "static_diagnostics": {
+        "full_common_denominator": 0.04513463315786527,
+        "hidden_common_denominator": 0.020085271063422797,
+        "hidden_only_rel_l2": 0.0447217147333738,
+        "hidden_only_status": "valid",
+        "hidden_scalar_count": 3277,
+        "observed_common_denominator": 0.04041926516655025,
+        "observed_scalar_count": 13107
+      }
+    },
+    {
+      "identity": "seed-20260804/helmholtz/dirichlet/smooth_grf/medium/000506",
+      "projected_rel_l2_joint": 0.019619920055315647,
+      "rel_l2_joint": 0.04302143978353736,
+      "static_diagnostics": {
+        "full_common_denominator": 0.04302143978353736,
+        "hidden_common_denominator": 0.01961992005531565,
+        "hidden_only_rel_l2": 0.042964556631631734,
+        "hidden_only_status": "valid",
+        "hidden_scalar_count": 3277,
+        "observed_common_denominator": 0.03828711295033296,
+        "observed_scalar_count": 13107
+      }
+    },
+    {
+      "identity": "seed-20260804/helmholtz/dirichlet/smooth_grf/medium/000473",
+      "projected_rel_l2_joint": 0.015338263817258354,
+      "rel_l2_joint": 0.033997665068886206,
+      "static_diagnostics": {
+        "full_common_denominator": 0.033997665068886206,
+        "hidden_common_denominator": 0.015338263817258354,
+        "hidden_only_rel_l2": 0.033870766149220605,
+        "hidden_only_status": "valid",
+        "hidden_scalar_count": 3277,
+        "observed_common_denominator": 0.030341043047468697,
+        "observed_scalar_count": 13107
+      }
+    },
+    {
+      "identity": "seed-20260804/helmholtz/dirichlet/smooth_grf/medium/000416",
+      "projected_rel_l2_joint": 0.014794166926686782,
+      "rel_l2_joint": 0.03319869571322436,
+      "static_diagnostics": {
+        "full_common_denominator": 0.03319869571322436,
+        "hidden_common_denominator": 0.014794166926686782,
+        "hidden_only_rel_l2": 0.03270348209899019,
+        "hidden_only_status": "valid",
+        "hidden_scalar_count": 3277,
+        "observed_common_denominator": 0.029720128229948618,
+        "observed_scalar_count": 13107
+      }
+    },
+    {
+      "identity": "seed-20260804/helmholtz/dirichlet/smooth_grf/medium/000395",
+      "projected_rel_l2_joint": 0.013826358199442805,
+      "rel_l2_joint": 0.0311423896266285,
+      "static_diagnostics": {
+        "full_common_denominator": 0.0311423896266285,
+        "hidden_common_denominator": 0.013826358199442805,
+        "hidden_only_rel_l2": 0.03075374444183105,
+        "hidden_only_status": "valid",
+        "hidden_scalar_count": 3277,
+        "observed_common_denominator": 0.02790484278037486,
+        "observed_scalar_count": 13107
+      }
+    },
+    {
+      "identity": "seed-20260804/helmholtz/dirichlet/smooth_grf/medium/000407",
+      "projected_rel_l2_joint": 0.020898445201580487,
+      "rel_l2_joint": 0.04640489478510638,
+      "static_diagnostics": {
+        "full_common_denominator": 0.04640489478510638,
+        "hidden_common_denominator": 0.020898445201580487,
+        "hidden_only_rel_l2": 0.047282439104875645,
+        "hidden_only_status": "valid",
+        "hidden_scalar_count": 3277,
+        "observed_common_denominator": 0.041432707468536625,
+        "observed_scalar_count": 13107
+      }
+    },
+    {
+      "identity": "seed-20260804/helmholtz/dirichlet/smooth_grf/medium/000514",
+      "projected_rel_l2_joint": 0.023936253694747358,
+      "rel_l2_joint": 0.05300569058561534,
+      "static_diagnostics": {
+        "full_common_denominator": 0.05300569058561534,
+        "hidden_common_denominator": 0.023936253694747358,
+        "hidden_only_rel_l2": 0.053167138565246325,
+        "hidden_only_status": "valid",
+        "hidden_scalar_count": 3277,
+        "observed_common_denominator": 0.04729332927082512,
+        "observed_scalar_count": 13107
+      }
+    },
+    {
+      "identity": "seed-20260804/helmholtz/dirichlet/smooth_grf/medium/000231",
+      "projected_rel_l2_joint": 0.026417940363282103,
+      "rel_l2_joint": 0.05768478691621981,
+      "static_diagnostics": {
+        "full_common_denominator": 0.05768478691621981,
+        "hidden_common_denominator": 0.026417940363282103,
+        "hidden_only_rel_l2": 0.059474895682157435,
+        "hidden_only_status": "valid",
+        "hidden_scalar_count": 3277,
+        "observed_common_denominator": 0.051279889513646135,
+        "observed_scalar_count": 13107
+      }
+    },
+    {
+      "identity": "seed-20260804/helmholtz/dirichlet/smooth_grf/medium/000555",
+      "projected_rel_l2_joint": 0.03443330456267846,
+      "rel_l2_joint": 0.0765383064843511,
+      "static_diagnostics": {
+        "full_common_denominator": 0.0765383064843511,
+        "hidden_common_denominator": 0.03443330456267846,
+        "hidden_only_rel_l2": 0.07693622288245652,
+        "hidden_only_status": "valid",
+        "hidden_scalar_count": 3277,
+        "observed_common_denominator": 0.06835539405479489,
+        "observed_scalar_count": 13107
+      }
+    },
+    {
+      "identity": "seed-20260804/helmholtz/dirichlet/smooth_grf/medium/000170",
+      "projected_rel_l2_joint": 0.01831674614398134,
+      "rel_l2_joint": 0.040629017813502144,
+      "static_diagnostics": {
+        "full_common_denominator": 0.040629017813502144,
+        "hidden_common_denominator": 0.01831674614398134,
+        "hidden_only_rel_l2": 0.04061249507345973,
+        "hidden_only_status": "valid",
+        "hidden_scalar_count": 3277,
+        "observed_common_denominator": 0.03626587789075041,
+        "observed_scalar_count": 13107
+      }
+    },
+    {
+      "identity": "seed-20260804/helmholtz/dirichlet/smooth_grf/medium/000368",
+      "projected_rel_l2_joint": 0.01394770840539834,
+      "rel_l2_joint": 0.030892132610958866,
+      "static_diagnostics": {
+        "full_common_denominator": 0.030892132610958866,
+        "hidden_common_denominator": 0.01394770840539834,
+        "hidden_only_rel_l2": 0.031217488029963034,
+        "hidden_only_status": "valid",
+        "hidden_scalar_count": 3277,
+        "observed_common_denominator": 0.027564203008450094,
+        "observed_scalar_count": 13107
+      }
+    },
+    {
+      "identity": "seed-20260804/helmholtz/dirichlet/smooth_grf/medium/000525",
+      "projected_rel_l2_joint": 0.015053096841949845,
+      "rel_l2_joint": 0.03372193808329573,
+      "static_diagnostics": {
+        "full_common_denominator": 0.03372193808329573,
+        "hidden_common_denominator": 0.015053096841949845,
+        "hidden_only_rel_l2": 0.03370830495026652,
+        "hidden_only_status": "valid",
+        "hidden_scalar_count": 3277,
+        "observed_common_denominator": 0.030175708501384197,
+        "observed_scalar_count": 13107
+      }
+    },
+    {
+      "identity": "seed-20260804/helmholtz/dirichlet/smooth_grf/medium/000076",
+      "projected_rel_l2_joint": 0.027885181264382216,
+      "rel_l2_joint": 0.06177136821938942,
+      "static_diagnostics": {
+        "full_common_denominator": 0.06177136821938942,
+        "hidden_common_denominator": 0.027885181264382216,
+        "hidden_only_rel_l2": 0.06294712404733417,
+        "hidden_only_status": "valid",
+        "hidden_scalar_count": 3277,
+        "observed_common_denominator": 0.055119130957843855,
+        "observed_scalar_count": 13107
+      }
+    },
+    {
+      "identity": "seed-20260804/helmholtz/dirichlet/smooth_grf/medium/000008",
+      "projected_rel_l2_joint": 0.012905378947725556,
+      "rel_l2_joint": 0.02923459093346264,
+      "static_diagnostics": {
+        "full_common_denominator": 0.02923459093346264,
+        "hidden_common_denominator": 0.012905378947725556,
+        "hidden_only_rel_l2": 0.02878509794586228,
+        "hidden_only_status": "valid",
+        "hidden_scalar_count": 3277,
+        "observed_common_denominator": 0.026231898544758398,
+        "observed_scalar_count": 13107
+      }
+    },
+    {
+      "identity": "seed-20260804/helmholtz/dirichlet/smooth_grf/medium/000126",
+      "projected_rel_l2_joint": 0.016996298226843,
+      "rel_l2_joint": 0.038765077456951534,
+      "static_diagnostics": {
+        "full_common_denominator": 0.038765077456951534,
+        "hidden_common_denominator": 0.016996298226843,
+        "hidden_only_rel_l2": 0.038801422630516794,
+        "hidden_only_status": "valid",
+        "hidden_scalar_count": 3277,
+        "observed_common_denominator": 0.03484045173110798,
+        "observed_scalar_count": 13107
+      }
+    },
+    {
+      "identity": "seed-20260804/helmholtz/dirichlet/smooth_grf/medium/000483",
+      "projected_rel_l2_joint": 0.015531640959558071,
+      "rel_l2_joint": 0.03474288464258559,
+      "static_diagnostics": {
+        "full_common_denominator": 0.03474288464258559,
+        "hidden_common_denominator": 0.015531640959558071,
+        "hidden_only_rel_l2": 0.034940951397429705,
+        "hidden_only_status": "valid",
+        "hidden_scalar_count": 3277,
+        "observed_common_denominator": 0.03107790472974952,
+        "observed_scalar_count": 13107
+      }
+    },
+    {
+      "identity": "seed-20260804/helmholtz/dirichlet/smooth_grf/medium/000649",
+      "projected_rel_l2_joint": 0.015659496458232645,
+      "rel_l2_joint": 0.03512595358836843,
+      "static_diagnostics": {
+        "full_common_denominator": 0.03512595358836843,
+        "hidden_common_denominator": 0.015659496458232645,
+        "hidden_only_rel_l2": 0.034692455391951656,
+        "hidden_only_status": "valid",
+        "hidden_scalar_count": 3277,
+        "observed_common_denominator": 0.03144221344254905,
+        "observed_scalar_count": 13107
+      }
+    },
+    {
+      "identity": "seed-20260804/helmholtz/dirichlet/smooth_grf/medium/000282",
+      "projected_rel_l2_joint": 0.02758198964491657,
+      "rel_l2_joint": 0.06314877300780898,
+      "static_diagnostics": {
+        "full_common_denominator": 0.06314877300780898,
+        "hidden_common_denominator": 0.02758198964491657,
+        "hidden_only_rel_l2": 0.06123296664408721,
+        "hidden_only_status": "valid",
+        "hidden_scalar_count": 3277,
+        "observed_common_denominator": 0.0568067018900015,
+        "observed_scalar_count": 13107
+      }
+    },
+    {
+      "identity": "seed-20260804/helmholtz/dirichlet/smooth_grf/medium/000031",
+      "projected_rel_l2_joint": 0.01711256623800111,
+      "rel_l2_joint": 0.03831430081021063,
+      "static_diagnostics": {
+        "full_common_denominator": 0.03831430081021063,
+        "hidden_common_denominator": 0.01711256623800111,
+        "hidden_only_rel_l2": 0.03853805075965792,
+        "hidden_only_status": "valid",
+        "hidden_scalar_count": 3277,
+        "observed_common_denominator": 0.03428039852926642,
+        "observed_scalar_count": 13107
+      }
+    },
+    {
+      "identity": "seed-20260804/helmholtz/dirichlet/smooth_grf/medium/000003",
+      "projected_rel_l2_joint": 0.037481033489582885,
+      "rel_l2_joint": 0.08468514636311565,
+      "static_diagnostics": {
+        "full_common_denominator": 0.08468514636311565,
+        "hidden_common_denominator": 0.037481033489582885,
+        "hidden_only_rel_l2": 0.08264247769071602,
+        "hidden_only_status": "valid",
+        "hidden_scalar_count": 3277,
+        "observed_common_denominator": 0.07593909495836179,
+        "observed_scalar_count": 13107
+      }
+    },
+    {
+      "identity": "seed-20260804/helmholtz/dirichlet/smooth_grf/medium/000107",
+      "projected_rel_l2_joint": 0.014047989521858527,
+      "rel_l2_joint": 0.031835681123642955,
+      "static_diagnostics": {
+        "full_common_denominator": 0.031835681123642955,
+        "hidden_common_denominator": 0.014047989521858527,
+        "hidden_only_rel_l2": 0.031574816923506714,
+        "hidden_only_status": "valid",
+        "hidden_scalar_count": 3277,
+        "observed_common_denominator": 0.02856859434764037,
+        "observed_scalar_count": 13107
+      }
+    },
+    {
+      "identity": "seed-20260804/helmholtz/dirichlet/smooth_grf/medium/000400",
+      "projected_rel_l2_joint": 0.023751828659031363,
+      "rel_l2_joint": 0.05233381670935612,
+      "static_diagnostics": {
+        "full_common_denominator": 0.05233381670935612,
+        "hidden_common_denominator": 0.023751828659031363,
+        "hidden_only_rel_l2": 0.053087882931790224,
+        "hidden_only_status": "valid",
+        "hidden_scalar_count": 3277,
+        "observed_common_denominator": 0.0466334537292757,
+        "observed_scalar_count": 13107
+      }
+    },
+    {
+      "identity": "seed-20260804/helmholtz/dirichlet/smooth_grf/medium/000193",
+      "projected_rel_l2_joint": 0.015539995776777423,
+      "rel_l2_joint": 0.034435201760467375,
+      "static_diagnostics": {
+        "full_common_denominator": 0.034435201760467375,
+        "hidden_common_denominator": 0.015539995776777423,
+        "hidden_only_rel_l2": 0.03500453210945297,
+        "hidden_only_status": "valid",
+        "hidden_scalar_count": 3277,
+        "observed_common_denominator": 0.030729328849518265,
+        "observed_scalar_count": 13107
+      }
+    },
+    {
+      "identity": "seed-20260804/helmholtz/dirichlet/smooth_grf/medium/000303",
+      "projected_rel_l2_joint": 0.010835378278710115,
+      "rel_l2_joint": 0.023817078205921546,
+      "static_diagnostics": {
+        "full_common_denominator": 0.023817078205921546,
+        "hidden_common_denominator": 0.010835378278710115,
+        "hidden_only_rel_l2": 0.024042912734393646,
+        "hidden_only_status": "valid",
+        "hidden_scalar_count": 3277,
+        "observed_common_denominator": 0.021209615551071172,
+        "observed_scalar_count": 13107
+      }
+    },
+    {
+      "identity": "seed-20260804/helmholtz/dirichlet/smooth_grf/medium/000122",
+      "projected_rel_l2_joint": 0.014318818104144537,
+      "rel_l2_joint": 0.032221036972310116,
+      "static_diagnostics": {
+        "full_common_denominator": 0.032221036972310116,
+        "hidden_common_denominator": 0.014318818104144537,
+        "hidden_only_rel_l2": 0.031917427843351776,
+        "hidden_only_status": "valid",
+        "hidden_scalar_count": 3277,
+        "observed_common_denominator": 0.028864626650476503,
+        "observed_scalar_count": 13107
+      }
+    },
+    {
+      "identity": "seed-20260804/helmholtz/dirichlet/smooth_grf/medium/000211",
+      "projected_rel_l2_joint": 0.018044114093695253,
+      "rel_l2_joint": 0.04004241279269264,
+      "static_diagnostics": {
+        "full_common_denominator": 0.04004241279269264,
+        "hidden_common_denominator": 0.018044114093695253,
+        "hidden_only_rel_l2": 0.040378262460448906,
+        "hidden_only_status": "valid",
+        "hidden_scalar_count": 3277,
+        "observed_common_denominator": 0.03574639518656537,
+        "observed_scalar_count": 13107
+      }
+    },
+    {
+      "identity": "seed-20260804/helmholtz/dirichlet/smooth_grf/medium/000055",
+      "projected_rel_l2_joint": 0.024860645052413186,
+      "rel_l2_joint": 0.05632934254462981,
+      "static_diagnostics": {
+        "full_common_denominator": 0.05632934254462981,
+        "hidden_common_denominator": 0.024860645052413186,
+        "hidden_only_rel_l2": 0.05582969777226234,
+        "hidden_only_status": "valid",
+        "hidden_scalar_count": 3277,
+        "observed_common_denominator": 0.050546445563344665,
+        "observed_scalar_count": 13107
+      }
+    },
+    {
+      "identity": "seed-20260804/helmholtz/dirichlet/smooth_grf/medium/000296",
+      "projected_rel_l2_joint": 0.013775820052247909,
+      "rel_l2_joint": 0.03097008613694854,
+      "static_diagnostics": {
+        "full_common_denominator": 0.03097008613694854,
+        "hidden_common_denominator": 0.013775820052247909,
+        "hidden_only_rel_l2": 0.030869547010754506,
+        "hidden_only_status": "valid",
+        "hidden_scalar_count": 3277,
+        "observed_common_denominator": 0.02773757410477882,
+        "observed_scalar_count": 13107
+      }
+    },
+    {
+      "identity": "seed-20260804/helmholtz/dirichlet/smooth_grf/medium/000385",
+      "projected_rel_l2_joint": 0.013249173976214586,
+      "rel_l2_joint": 0.029457676048013914,
+      "static_diagnostics": {
+        "full_common_denominator": 0.029457676048013914,
+        "hidden_common_denominator": 0.013249173976214586,
+        "hidden_only_rel_l2": 0.028960068326927244,
+        "hidden_only_status": "valid",
+        "hidden_scalar_count": 3277,
+        "observed_common_denominator": 0.02630996136632912,
+        "observed_scalar_count": 13107
+      }
+    },
+    {
+      "identity": "seed-20260804/helmholtz/dirichlet/smooth_grf/medium/000083",
+      "projected_rel_l2_joint": 0.017823199449386314,
+      "rel_l2_joint": 0.03950229660264319,
+      "static_diagnostics": {
+        "full_common_denominator": 0.03950229660264319,
+        "hidden_common_denominator": 0.017823199449386314,
+        "hidden_only_rel_l2": 0.0402343855563424,
+        "hidden_only_status": "valid",
+        "hidden_scalar_count": 3277,
+        "observed_common_denominator": 0.035252872198880354,
+        "observed_scalar_count": 13107
+      }
+    },
+    {
+      "identity": "seed-20260804/helmholtz/dirichlet/smooth_grf/medium/000382",
+      "projected_rel_l2_joint": 0.02374425496975504,
+      "rel_l2_joint": 0.05264427642970129,
+      "static_diagnostics": {
+        "full_common_denominator": 0.05264427642970129,
+        "hidden_common_denominator": 0.02374425496975504,
+        "hidden_only_rel_l2": 0.053173327597353374,
+        "hidden_only_status": "valid",
+        "hidden_scalar_count": 3277,
+        "observed_common_denominator": 0.046985425365086,
+        "observed_scalar_count": 13107
+      }
+    },
+    {
+      "identity": "seed-20260804/helmholtz/dirichlet/smooth_grf/medium/000491",
+      "projected_rel_l2_joint": 0.03687035601395137,
+      "rel_l2_joint": 0.08226306609159456,
+      "static_diagnostics": {
+        "full_common_denominator": 0.08226306609159456,
+        "hidden_common_denominator": 0.03687035601395137,
+        "hidden_only_rel_l2": 0.08380853146923471,
+        "hidden_only_status": "valid",
+        "hidden_scalar_count": 3277,
+        "observed_common_denominator": 0.0735376698719407,
+        "observed_scalar_count": 13107
+      }
+    },
+    {
+      "identity": "seed-20260804/helmholtz/dirichlet/smooth_grf/medium/000504",
+      "projected_rel_l2_joint": 0.018926318140293323,
+      "rel_l2_joint": 0.04157524425598221,
+      "static_diagnostics": {
+        "full_common_denominator": 0.04157524425598221,
+        "hidden_common_denominator": 0.018926318140293323,
+        "hidden_only_rel_l2": 0.042061259034211096,
+        "hidden_only_status": "valid",
+        "hidden_scalar_count": 3277,
+        "observed_common_denominator": 0.037017501490470506,
+        "observed_scalar_count": 13107
+      }
+    },
+    {
+      "identity": "seed-20260804/helmholtz/dirichlet/smooth_grf/medium/000312",
+      "projected_rel_l2_joint": 0.01827166895808305,
+      "rel_l2_joint": 0.04004744858063349,
+      "static_diagnostics": {
+        "full_common_denominator": 0.04004744858063349,
+        "hidden_common_denominator": 0.018271668958083055,
+        "hidden_only_rel_l2": 0.0402020481022128,
+        "hidden_only_status": "valid",
+        "hidden_scalar_count": 3277,
+        "observed_common_denominator": 0.035636277180770545,
+        "observed_scalar_count": 13107
+      }
+    },
+    {
+      "identity": "seed-20260804/helmholtz/dirichlet/smooth_grf/medium/000332",
+      "projected_rel_l2_joint": 0.015209087847378986,
+      "rel_l2_joint": 0.03390344276816931,
+      "static_diagnostics": {
+        "full_common_denominator": 0.03390344276816931,
+        "hidden_common_denominator": 0.015209087847378986,
+        "hidden_only_rel_l2": 0.03433505109159836,
+        "hidden_only_status": "valid",
+        "hidden_scalar_count": 3277,
+        "observed_common_denominator": 0.030300611848364394,
+        "observed_scalar_count": 13107
+      }
+    },
+    {
+      "identity": "seed-20260804/helmholtz/dirichlet/smooth_grf/medium/000316",
+      "projected_rel_l2_joint": 0.019895453069139417,
+      "rel_l2_joint": 0.04392967174255803,
+      "static_diagnostics": {
+        "full_common_denominator": 0.04392967174255803,
+        "hidden_common_denominator": 0.019895453069139417,
+        "hidden_only_rel_l2": 0.04449183554762199,
+        "hidden_only_status": "valid",
+        "hidden_scalar_count": 3277,
+        "observed_common_denominator": 0.03916614617986524,
+        "observed_scalar_count": 13107
+      }
+    },
+    {
+      "identity": "seed-20260804/helmholtz/dirichlet/smooth_grf/medium/000493",
+      "projected_rel_l2_joint": 0.017944465327067984,
+      "rel_l2_joint": 0.03977417530887026,
+      "static_diagnostics": {
+        "full_common_denominator": 0.03977417530887026,
+        "hidden_common_denominator": 0.017944465327067984,
+        "hidden_only_rel_l2": 0.0396406248753412,
+        "hidden_only_status": "valid",
+        "hidden_scalar_count": 3277,
+        "observed_common_denominator": 0.035496213680143385,
+        "observed_scalar_count": 13107
+      }
+    },
+    {
+      "identity": "seed-20260804/helmholtz/dirichlet/smooth_grf/medium/000435",
+      "projected_rel_l2_joint": 0.012014934011174289,
+      "rel_l2_joint": 0.027293845571816196,
+      "static_diagnostics": {
+        "full_common_denominator": 0.027293845571816196,
+        "hidden_common_denominator": 0.012014934011174289,
+        "hidden_only_rel_l2": 0.026798881264332813,
+        "hidden_only_status": "valid",
+        "hidden_scalar_count": 3277,
+        "observed_common_denominator": 0.024507047288591866,
+        "observed_scalar_count": 13107
+      }
+    },
+    {
+      "identity": "seed-20260804/helmholtz/dirichlet/smooth_grf/medium/000408",
+      "projected_rel_l2_joint": 0.018328361376742257,
+      "rel_l2_joint": 0.04086889599670859,
+      "static_diagnostics": {
+        "full_common_denominator": 0.04086889599670859,
+        "hidden_common_denominator": 0.01832836137674226,
+        "hidden_only_rel_l2": 0.04083446265972626,
+        "hidden_only_status": "valid",
+        "hidden_scalar_count": 3277,
+        "observed_common_denominator": 0.03652858920398277,
+        "observed_scalar_count": 13107
+      }
+    },
+    {
+      "identity": "seed-20260804/helmholtz/dirichlet/smooth_grf/medium/000486",
+      "projected_rel_l2_joint": 0.02374633407989465,
+      "rel_l2_joint": 0.05293877627072898,
+      "static_diagnostics": {
+        "full_common_denominator": 0.05293877627072898,
+        "hidden_common_denominator": 0.02374633407989465,
+        "hidden_only_rel_l2": 0.05276667521659149,
+        "hidden_only_status": "valid",
+        "hidden_scalar_count": 3277,
+        "observed_common_denominator": 0.04731411682371691,
+        "observed_scalar_count": 13107
+      }
+    },
+    {
+      "identity": "seed-20260804/helmholtz/dirichlet/smooth_grf/medium/000292",
+      "projected_rel_l2_joint": 0.014155284351037257,
+      "rel_l2_joint": 0.03157447725537727,
+      "static_diagnostics": {
+        "full_common_denominator": 0.03157447725537727,
+        "hidden_common_denominator": 0.01415528435103726,
+        "hidden_only_rel_l2": 0.03254087927650516,
+        "hidden_only_status": "valid",
+        "hidden_scalar_count": 3277,
+        "observed_common_denominator": 0.02822366983387554,
+        "observed_scalar_count": 13107
+      }
+    },
+    {
+      "identity": "seed-20260804/helmholtz/dirichlet/smooth_grf/medium/000043",
+      "projected_rel_l2_joint": 0.013739254006990297,
+      "rel_l2_joint": 0.03052817553035502,
+      "static_diagnostics": {
+        "full_common_denominator": 0.03052817553035502,
+        "hidden_common_denominator": 0.013739254006990297,
+        "hidden_only_rel_l2": 0.030372801107161455,
+        "hidden_only_status": "valid",
+        "hidden_scalar_count": 3277,
+        "observed_common_denominator": 0.027261738765962242,
+        "observed_scalar_count": 13107
+      }
+    },
+    {
+      "identity": "seed-20260804/helmholtz/dirichlet/smooth_grf/medium/000664",
+      "projected_rel_l2_joint": 0.027806082109164573,
+      "rel_l2_joint": 0.0625855688381944,
+      "static_diagnostics": {
+        "full_common_denominator": 0.0625855688381944,
+        "hidden_common_denominator": 0.027806082109164573,
+        "hidden_only_rel_l2": 0.06228566223446218,
+        "hidden_only_status": "valid",
+        "hidden_scalar_count": 3277,
+        "observed_common_denominator": 0.056069378670882096,
+        "observed_scalar_count": 13107
+      }
+    },
+    {
+      "identity": "seed-20260804/helmholtz/dirichlet/smooth_grf/medium/000484",
+      "projected_rel_l2_joint": 0.018235355843089624,
+      "rel_l2_joint": 0.04054124091199217,
+      "static_diagnostics": {
+        "full_common_denominator": 0.04054124091199217,
+        "hidden_common_denominator": 0.01823535584308962,
+        "hidden_only_rel_l2": 0.04045235209832296,
+        "hidden_only_status": "valid",
+        "hidden_scalar_count": 3277,
+        "observed_common_denominator": 0.036208617923915366,
+        "observed_scalar_count": 13107
+      }
+    },
+    {
+      "identity": "seed-20260804/helmholtz/dirichlet/smooth_grf/medium/000283",
+      "projected_rel_l2_joint": 0.02283634376606412,
+      "rel_l2_joint": 0.05170249704918245,
+      "static_diagnostics": {
+        "full_common_denominator": 0.05170249704918245,
+        "hidden_common_denominator": 0.02283634376606412,
+        "hidden_only_rel_l2": 0.051986203973425134,
+        "hidden_only_status": "valid",
+        "hidden_scalar_count": 3277,
+        "observed_common_denominator": 0.04638587720975927,
+        "observed_scalar_count": 13107
+      }
+    },
+    {
+      "identity": "seed-20260804/helmholtz/dirichlet/smooth_grf/medium/000538",
+      "projected_rel_l2_joint": 0.015566410273834496,
+      "rel_l2_joint": 0.03566302116853068,
+      "static_diagnostics": {
+        "full_common_denominator": 0.03566302116853068,
+        "hidden_common_denominator": 0.015566410273834496,
+        "hidden_only_rel_l2": 0.03503519520253173,
+        "hidden_only_status": "valid",
+        "hidden_scalar_count": 3277,
+        "observed_common_denominator": 0.03208641379234717,
+        "observed_scalar_count": 13107
+      }
+    },
+    {
+      "identity": "seed-20260804/helmholtz/dirichlet/smooth_grf/medium/000135",
+      "projected_rel_l2_joint": 0.017301101620083095,
+      "rel_l2_joint": 0.038922930761748624,
+      "static_diagnostics": {
+        "full_common_denominator": 0.038922930761748624,
+        "hidden_common_denominator": 0.0173011016200831,
+        "hidden_only_rel_l2": 0.03875750881180678,
+        "hidden_only_status": "valid",
+        "hidden_scalar_count": 3277,
+        "observed_common_denominator": 0.03486640821500597,
+        "observed_scalar_count": 13107
+      }
+    },
+    {
+      "identity": "seed-20260804/helmholtz/dirichlet/smooth_grf/medium/000033",
+      "projected_rel_l2_joint": 0.028918022709692737,
+      "rel_l2_joint": 0.06439337698018827,
+      "static_diagnostics": {
+        "full_common_denominator": 0.06439337698018827,
+        "hidden_common_denominator": 0.028918022709692737,
+        "hidden_only_rel_l2": 0.06623747164960503,
+        "hidden_only_status": "valid",
+        "hidden_scalar_count": 3277,
+        "observed_common_denominator": 0.05753481521195958,
+        "observed_scalar_count": 13107
+      }
+    },
+    {
+      "identity": "seed-20260804/helmholtz/dirichlet/smooth_grf/medium/000314",
+      "projected_rel_l2_joint": 0.016932467873004675,
+      "rel_l2_joint": 0.038267957982213,
+      "static_diagnostics": {
+        "full_common_denominator": 0.038267957982213,
+        "hidden_common_denominator": 0.016932467873004675,
+        "hidden_only_rel_l2": 0.03796217209062107,
+        "hidden_only_status": "valid",
+        "hidden_scalar_count": 3277,
+        "observed_common_denominator": 0.03431804393985886,
+        "observed_scalar_count": 13107
+      }
+    },
+    {
+      "identity": "seed-20260804/helmholtz/dirichlet/smooth_grf/medium/000530",
+      "projected_rel_l2_joint": 0.0182055429139898,
+      "rel_l2_joint": 0.04094684318850512,
+      "static_diagnostics": {
+        "full_common_denominator": 0.04094684318850512,
+        "hidden_common_denominator": 0.0182055429139898,
+        "hidden_only_rel_l2": 0.0408205147622163,
+        "hidden_only_status": "valid",
+        "hidden_scalar_count": 3277,
+        "observed_common_denominator": 0.03667699789119748,
+        "observed_scalar_count": 13107
+      }
+    },
+    {
+      "identity": "seed-20260804/helmholtz/dirichlet/smooth_grf/medium/000630",
+      "projected_rel_l2_joint": 0.010822192612586122,
+      "rel_l2_joint": 0.024393322895617325,
+      "static_diagnostics": {
+        "full_common_denominator": 0.024393322895617325,
+        "hidden_common_denominator": 0.010822192612586122,
+        "hidden_only_rel_l2": 0.02468970696733111,
+        "hidden_only_status": "valid",
+        "hidden_scalar_count": 3277,
+        "observed_common_denominator": 0.02186125222730699,
+        "observed_scalar_count": 13107
+      }
+    },
+    {
+      "identity": "seed-20260804/helmholtz/dirichlet/smooth_grf/medium/000338",
+      "projected_rel_l2_joint": 0.013181164428674378,
+      "rel_l2_joint": 0.030151436059367855,
+      "static_diagnostics": {
+        "full_common_denominator": 0.030151436059367855,
+        "hidden_common_denominator": 0.013181164428674378,
+        "hidden_only_rel_l2": 0.029414808115635682,
+        "hidden_only_status": "valid",
+        "hidden_scalar_count": 3277,
+        "observed_common_denominator": 0.027117632653799215,
+        "observed_scalar_count": 13107
+      }
+    },
+    {
+      "identity": "seed-20260804/helmholtz/dirichlet/smooth_grf/medium/000049",
+      "projected_rel_l2_joint": 0.02434277612460948,
+      "rel_l2_joint": 0.05301394312255315,
+      "static_diagnostics": {
+        "full_common_denominator": 0.05301394312255315,
+        "hidden_common_denominator": 0.02434277612460948,
+        "hidden_only_rel_l2": 0.053345326028633594,
+        "hidden_only_status": "valid",
+        "hidden_scalar_count": 3277,
+        "observed_common_denominator": 0.04709466441061495,
+        "observed_scalar_count": 13107
+      }
+    },
+    {
+      "identity": "seed-20260804/helmholtz/dirichlet/smooth_grf/medium/000329",
+      "projected_rel_l2_joint": 0.021082680432413296,
+      "rel_l2_joint": 0.04733723856625272,
+      "static_diagnostics": {
+        "full_common_denominator": 0.04733723856625272,
+        "hidden_common_denominator": 0.021082680432413296,
+        "hidden_only_rel_l2": 0.046014785072737666,
+        "hidden_only_status": "valid",
+        "hidden_scalar_count": 3277,
+        "observed_common_denominator": 0.0423831893663403,
+        "observed_scalar_count": 13107
+      }
+    },
+    {
+      "identity": "seed-20260804/helmholtz/dirichlet/smooth_grf/medium/000105",
+      "projected_rel_l2_joint": 0.02961823086682926,
+      "rel_l2_joint": 0.06589317877230592,
+      "static_diagnostics": {
+        "full_common_denominator": 0.06589317877230592,
+        "hidden_common_denominator": 0.02961823086682926,
+        "hidden_only_rel_l2": 0.06648549303720312,
+        "hidden_only_status": "valid",
+        "hidden_scalar_count": 3277,
+        "observed_common_denominator": 0.05886145945385886,
+        "observed_scalar_count": 13107
+      }
+    },
+    {
+      "identity": "seed-20260804/helmholtz/dirichlet/smooth_grf/medium/000508",
+      "projected_rel_l2_joint": 0.02097245785028579,
+      "rel_l2_joint": 0.04662836161074506,
+      "static_diagnostics": {
+        "full_common_denominator": 0.04662836161074506,
+        "hidden_common_denominator": 0.02097245785028579,
+        "hidden_only_rel_l2": 0.04695203637590927,
+        "hidden_only_status": "valid",
+        "hidden_scalar_count": 3277,
+        "observed_common_denominator": 0.0416456494512979,
+        "observed_scalar_count": 13107
+      }
+    },
+    {
+      "identity": "seed-20260804/helmholtz/dirichlet/smooth_grf/medium/000662",
+      "projected_rel_l2_joint": 0.01961281974752123,
+      "rel_l2_joint": 0.04363843620197552,
+      "static_diagnostics": {
+        "full_common_denominator": 0.04363843620197552,
+        "hidden_common_denominator": 0.01961281974752123,
+        "hidden_only_rel_l2": 0.043654169242183814,
+        "hidden_only_status": "valid",
+        "hidden_scalar_count": 3277,
+        "observed_common_denominator": 0.038982693797442076,
+        "observed_scalar_count": 13107
+      }
+    }
+  ],
+  "projection_applied": true,
+  "provenance_note": "Caller-declared contract; identity validation is not provenance authentication.",
+  "raw_arrays_checked": true,
+  "reduction": "float64 per-identity relative L2, then arithmetic mean",
+  "scored_identity_count": 200,
+  "scoring_version": "pdeobs-strict-v1",
+  "status": "valid",
+  "summary": {
+    "identity_count": 200,
+    "projected_rel_l2_joint_mean": 0.0197158179940044,
+    "rel_l2_joint_mean": 0.04405523442435788,
+    "static_diagnostics": {
+      "full_common_denominator_mean": 0.04405523442435788,
+      "hidden_common_denominator_mean": 0.0197158179940044,
+      "hidden_only_applicable_count": 200,
+      "hidden_only_rel_l2_mean": 0.04405914032889978,
+      "hidden_only_status": "valid",
+      "observed_common_denominator_mean": 0.039396160968665744
+    }
+  },
+  "task": "recovery"
+}

@@ -1,0 +1,162 @@
+{
+  "actual_prediction_identity_count": 2,
+  "actual_target_identity_count": 2,
+  "checkpoint_id": "4aa00d92a349b61d0480900206c5e005b1c4a7b66b6aa635f3c16d3a94906a22",
+  "config": {
+    "checkpoint_id": "4aa00d92a349b61d0480900206c5e005b1c4a7b66b6aa635f3c16d3a94906a22",
+    "expected_ids": [
+      "seed-17/poisson/periodic/smooth_grf/low/000004",
+      "seed-17/poisson/periodic/smooth_grf/low/000005"
+    ],
+    "expected_shape": [
+      16,
+      16,
+      1
+    ],
+    "mask_config": {
+      "protocol": "random_3pct",
+      "ratio": 0.5
+    },
+    "observation_id": "general:random:caadf48d0a2d",
+    "projection": false,
+    "schema_version": "pdeobs-strict-contract-v1",
+    "scope": "user evaluation through the easy API; not a paper performance estimate",
+    "split": "demo",
+    "target_time_indices": [
+      0
+    ],
+    "task": "recovery"
+  },
+  "config_sha256": "d2e78b939ccc892a075fabda17459a9e39bacac3858764781e399ad3d7564332",
+  "easy_api": {
+    "api_version": "pdeobs-easy-api/v1",
+    "prediction_provenance": {
+      "api_version": "pdeobs-easy-api/v1",
+      "batch_size": 2,
+      "device": "cpu",
+      "evaluated_range": {
+        "horizon": 1,
+        "resolution": [
+          16,
+          16
+        ]
+      },
+      "executable_range": {
+        "horizon": null,
+        "resolution": [
+          16,
+          16
+        ]
+      },
+      "horizon": null,
+      "inputs_sha256": "0f13789c4a3deeee900b7268b3d3abaa844a3f260e261b33bf1b18e89fa43a1d",
+      "model": {
+        "kwargs": {
+          "geometry_channels": 1,
+          "in_channels": 1,
+          "layers": 2,
+          "modes": 6,
+          "out_channels": 1,
+          "width": 16
+        },
+        "method": {
+          "kwargs": {
+            "geometry_channels": 1,
+            "in_channels": 1,
+            "layers": 2,
+            "modes": 6,
+            "out_channels": 1,
+            "width": 16
+          },
+          "name": "fno"
+        },
+        "name": "fno",
+        "origin": "smoke",
+        "physics_contract": null,
+        "preset": "smoke",
+        "task": "recovery",
+        "temporal_wrapper": null,
+        "warnings": []
+      },
+      "observation": {
+        "label": "random",
+        "mask_config": {
+          "protocol": "random_3pct",
+          "ratio": 0.5
+        },
+        "name": "random",
+        "namespace": "general",
+        "observation_id": "general:random:caadf48d0a2d",
+        "params": {
+          "ratio": 0.5
+        },
+        "version": "pdeobs-observation-general/v1"
+      },
+      "predictor": {
+        "artifact": "<AUDIT_ROOT>/ai-smoke-001/poisson/train/model",
+        "kind": "smoke_or_example_checkpoint",
+        "weights_sha256": "4aa00d92a349b61d0480900206c5e005b1c4a7b66b6aa635f3c16d3a94906a22"
+      },
+      "seconds": 0.0018,
+      "targets_used": false,
+      "warnings": []
+    }
+  },
+  "epsilon": 1e-12,
+  "errors": [],
+  "expected_identity_count": 2,
+  "expected_identity_order": [
+    "seed-17/poisson/periodic/smooth_grf/low/000004",
+    "seed-17/poisson/periodic/smooth_grf/low/000005"
+  ],
+  "identity_set_sha256": "b78bfc326013fff69a2ecfd7ed1574525d5717e661d7a2f1a68c6688ff24eac2",
+  "observation_id": "general:random:caadf48d0a2d",
+  "per_identity": [
+    {
+      "identity": "seed-17/poisson/periodic/smooth_grf/low/000004",
+      "rel_l2_joint": 11.810626677587768,
+      "static_diagnostics": {
+        "full_common_denominator": 11.810626677587768,
+        "hidden_common_denominator": 11.334733468550517,
+        "hidden_only_rel_l2": 16.54734154178994,
+        "hidden_only_status": "valid",
+        "hidden_scalar_count": 128,
+        "observed_common_denominator": 3.318843128903288,
+        "observed_scalar_count": 128
+      }
+    },
+    {
+      "identity": "seed-17/poisson/periodic/smooth_grf/low/000005",
+      "rel_l2_joint": 13.467498888161066,
+      "static_diagnostics": {
+        "full_common_denominator": 13.467498888161066,
+        "hidden_common_denominator": 13.063865902322588,
+        "hidden_only_rel_l2": 17.59084181635285,
+        "hidden_only_status": "valid",
+        "hidden_scalar_count": 128,
+        "observed_common_denominator": 3.272450761853078,
+        "observed_scalar_count": 128
+      }
+    }
+  ],
+  "projection_applied": false,
+  "provenance_note": "Caller-declared contract; identity validation is not provenance authentication.",
+  "raw_arrays_checked": true,
+  "reduction": "float64 per-identity relative L2, then arithmetic mean",
+  "scored_identity_count": 2,
+  "scoring_version": "pdeobs-strict-v1",
+  "status": "valid",
+  "summary": {
+    "identity_count": 2,
+    "rel_l2_joint_mean": 12.639062782874417,
+    "static_diagnostics": {
+      "full_common_denominator_mean": 12.639062782874417,
+      "hidden_common_denominator_mean": 12.199299685436554,
+      "hidden_only_applicable_count": 2,
+      "hidden_only_rel_l2_mean": 17.069091679071395,
+      "hidden_only_status": "valid",
+      "observed_common_denominator_mean": 3.295646945378183
+    }
+  },
+  "task": "recovery"
+}

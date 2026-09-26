@@ -1,0 +1,58 @@
+{
+ "blocks": {
+  "line_sensors-orientation-both-p30__random_3pct-p20": {
+   "metrics_sha256": "7c2ed119bdb111d37d3e762968440d98b89e5bf62cf2c43354c49713dcf13d08",
+   "realized_observation_ratio": 0.2470684814453125,
+   "relative_l2": 0.12486780617074066,
+   "resolved_mask": {
+    "protocol": "line_sensors(orientation=both) 30 + random_3pct 20"
+   },
+   "samples": 200,
+   "spec": "line_sensors(orientation=both) 30 + random_3pct 20",
+   "test_sample_ids_sha256": "22fbbba10e437d29e34f9b9a687dfde7d147a42f8feeabb8972ccbd54009786d"
+  },
+  "random_3pct-p20": {
+   "metrics_sha256": "3f5fcc0e99f86aa003e647e44bc96b6267e1b7396443782cba0e432b75c1c9ca",
+   "realized_observation_ratio": 0.20001220703125,
+   "relative_l2": 0.152959730272075,
+   "resolved_mask": {
+    "protocol": "random_3pct",
+    "ratio": 0.2
+   },
+   "samples": 200,
+   "spec": "random_3pct 20",
+   "test_sample_ids_sha256": "22fbbba10e437d29e34f9b9a687dfde7d147a42f8feeabb8972ccbd54009786d"
+  },
+  "random_3pct-p35": {
+   "metrics_sha256": "0eb9f241eaf315803ef8609dae948595b4390a2c43c4289c931bcde195f339d2",
+   "realized_observation_ratio": 0.3499755859375,
+   "relative_l2": 0.04465601791075557,
+   "resolved_mask": {
+    "protocol": "random_3pct",
+    "ratio": 0.35
+   },
+   "samples": 200,
+   "spec": "random_3pct 35",
+   "test_sample_ids_sha256": "22fbbba10e437d29e34f9b9a687dfde7d147a42f8feeabb8972ccbd54009786d"
+  }
+ },
+ "checkpoint_sha256": "3a6658ddd58ceb8833b6143c3a5b3b0085667f650f680d2e0207c1c385754a6b",
+ "completed_unix": 1790367361.6006758,
+ "device": {
+  "name": "NVIDIA Tesla V100S-PCIE-32GB",
+  "type": "cuda",
+  "uuid": "<GPU-2>"
+ },
+ "eligibility_sha256": "1e0c616fd7232f43e546d8cde84fdb8f41a99d0a453d97522c265d81c2ee0b37",
+ "extra_adapter_sha256": "f4d4c52ed48c6f3bc96fc269796e0454da046c298e839e591d5ce912292d3d49",
+ "method": "ufno_2d",
+ "paper_cell": false,
+ "pde": "poisson",
+ "schema_version": "pdeobs.mixed-study-extra-views/v1",
+ "started_unix": 1790367350.9462624,
+ "status": "completed",
+ "study_id": "mixed-nine-views-20260925",
+ "test_sample_ids_sha256": "22fbbba10e437d29e34f9b9a687dfde7d147a42f8feeabb8972ccbd54009786d",
+ "training_protocol": "pdeobs.max200-min120-then-train-data-patience10/20260920",
+ "training_view": "mixed_nine_views"
+}

@@ -1,0 +1,28 @@
+include: full_to_partial_base.yaml
+name: full-to-partial-pino-free-rollout
+task: rollout
+data:
+  input_horizon: 1
+  training_horizons: [3]
+method:
+  name: autoregressive
+  base:
+    name: pino
+    kwargs:
+      in_channels: 1
+      out_channels: 1
+      width: 32
+      layers: 4
+      modes: 12
+      geometry_channels: 1
+      physics_contract: pino_rollout_spectral_v1
+training:
+  batch_size: 4
+  mixed_precision: false
+  teacher_forcing_ratio: 0.0
+  data_loss_weight: 1.0
+  physics_loss: pino_rollout_spectral_v1
+  physics_loss_weight: 1.0
+  physics_loss_epsilon: 1.0e-12
+evaluation:
+  horizons: [1, 2, 3]

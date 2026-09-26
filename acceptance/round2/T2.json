@@ -1,0 +1,1060 @@
+{
+  "errors": {
+    "boundary_width_too_large": {
+      "error": "ValueError: width must fit inside the field",
+      "status": "rejected_ok"
+    },
+    "conflict_ratio_count": {
+      "error": "ValueError: observation 'random': parameters ['ratio', 'count'] conflict; give only one of ['ratio', 'count']",
+      "status": "rejected_ok"
+    },
+    "full_with_param": {
+      "error": "ValueError: observation 'full' does not accept ['ratio']; valid parameters: [] (+ seed)",
+      "status": "rejected_ok"
+    },
+    "paper_view_in_general_ns": {
+      "error": "ValueError: 'random_65pct' is a paper view; request it with namespace='paper' (or 'paper:random_65pct') so the frozen definition is used explicitly",
+      "status": "rejected_ok"
+    },
+    "paper_view_with_param": {
+      "error": "ValueError: paper views are frozen; they accept no parameters (use the general namespace to vary them)",
+      "status": "rejected_ok"
+    },
+    "unknown_param": {
+      "error": "ValueError: observation 'random' does not accept ['clusters']; valid parameters: ['count', 'ratio'] (+ seed)",
+      "status": "rejected_ok"
+    }
+  },
+  "general": {
+    "block@128:{\"block_shape\": 6}": {
+      "count": 16348,
+      "deterministic": true,
+      "mask_config": {
+        "block_shape": [
+          6,
+          6
+        ],
+        "protocol": "block_missing"
+      },
+      "ratio": 0.9978,
+      "seed_sensitive_count": false,
+      "status": "ok"
+    },
+    "block@128:{\"missing_fraction\": 0.49}": {
+      "count": 8284,
+      "deterministic": true,
+      "mask_config": {
+        "missing_fraction": 0.49,
+        "protocol": "block_missing"
+      },
+      "ratio": 0.5056,
+      "seed_sensitive_count": false,
+      "status": "ok"
+    },
+    "block@128:{}": {
+      "count": 12288,
+      "deterministic": true,
+      "mask_config": {
+        "protocol": "block_missing"
+      },
+      "ratio": 0.75,
+      "seed_sensitive_count": false,
+      "status": "ok"
+    },
+    "block@16:{\"block_shape\": 6}": {
+      "count": 220,
+      "deterministic": true,
+      "mask_config": {
+        "block_shape": [
+          6,
+          6
+        ],
+        "protocol": "block_missing"
+      },
+      "ratio": 0.8594,
+      "seed_sensitive_count": false,
+      "status": "ok"
+    },
+    "block@16:{\"missing_fraction\": 0.49}": {
+      "count": 135,
+      "deterministic": true,
+      "mask_config": {
+        "missing_fraction": 0.49,
+        "protocol": "block_missing"
+      },
+      "ratio": 0.5273,
+      "seed_sensitive_count": false,
+      "status": "ok"
+    },
+    "block@16:{}": {
+      "count": 192,
+      "deterministic": true,
+      "mask_config": {
+        "protocol": "block_missing"
+      },
+      "ratio": 0.75,
+      "seed_sensitive_count": false,
+      "status": "ok"
+    },
+    "block@32:{\"block_shape\": 6}": {
+      "count": 988,
+      "deterministic": true,
+      "mask_config": {
+        "block_shape": [
+          6,
+          6
+        ],
+        "protocol": "block_missing"
+      },
+      "ratio": 0.9648,
+      "seed_sensitive_count": false,
+      "status": "ok"
+    },
+    "block@32:{\"missing_fraction\": 0.49}": {
+      "count": 540,
+      "deterministic": true,
+      "mask_config": {
+        "missing_fraction": 0.49,
+        "protocol": "block_missing"
+      },
+      "ratio": 0.5273,
+      "seed_sensitive_count": false,
+      "status": "ok"
+    },
+    "block@32:{}": {
+      "count": 768,
+      "deterministic": true,
+      "mask_config": {
+        "protocol": "block_missing"
+      },
+      "ratio": 0.75,
+      "seed_sensitive_count": false,
+      "status": "ok"
+    },
+    "block@64:{\"block_shape\": 6}": {
+      "count": 4060,
+      "deterministic": true,
+      "mask_config": {
+        "block_shape": [
+          6,
+          6
+        ],
+        "protocol": "block_missing"
+      },
+      "ratio": 0.9912,
+      "seed_sensitive_count": false,
+      "status": "ok"
+    },
+    "block@64:{\"missing_fraction\": 0.49}": {
+      "count": 2071,
+      "deterministic": true,
+      "mask_config": {
+        "missing_fraction": 0.49,
+        "protocol": "block_missing"
+      },
+      "ratio": 0.5056,
+      "seed_sensitive_count": false,
+      "status": "ok"
+    },
+    "block@64:{}": {
+      "count": 3072,
+      "deterministic": true,
+      "mask_config": {
+        "protocol": "block_missing"
+      },
+      "ratio": 0.75,
+      "seed_sensitive_count": false,
+      "status": "ok"
+    },
+    "boundary@128:{\"count\": 40, \"width\": 2}": {
+      "count": 40,
+      "deterministic": true,
+      "mask_config": {
+        "count": 40,
+        "protocol": "boundary_sensors",
+        "width": 2
+      },
+      "ratio": 0.0024,
+      "seed_sensitive_count": false,
+      "status": "ok"
+    },
+    "boundary@128:{\"width\": 3}": {
+      "count": 1500,
+      "deterministic": true,
+      "mask_config": {
+        "protocol": "boundary_sensors",
+        "width": 3
+      },
+      "ratio": 0.0916,
+      "seed_sensitive_count": false,
+      "status": "ok"
+    },
+    "boundary@128:{}": {
+      "count": 508,
+      "deterministic": true,
+      "mask_config": {
+        "protocol": "boundary_sensors"
+      },
+      "ratio": 0.031,
+      "seed_sensitive_count": false,
+      "status": "ok"
+    },
+    "boundary@16:{\"count\": 40, \"width\": 2}": {
+      "count": 40,
+      "deterministic": true,
+      "mask_config": {
+        "count": 40,
+        "protocol": "boundary_sensors",
+        "width": 2
+      },
+      "ratio": 0.1562,
+      "seed_sensitive_count": false,
+      "status": "ok"
+    },
+    "boundary@16:{\"width\": 3}": {
+      "count": 156,
+      "deterministic": true,
+      "mask_config": {
+        "protocol": "boundary_sensors",
+        "width": 3
+      },
+      "ratio": 0.6094,
+      "seed_sensitive_count": false,
+      "status": "ok"
+    },
+    "boundary@16:{}": {
+      "count": 60,
+      "deterministic": true,
+      "mask_config": {
+        "protocol": "boundary_sensors"
+      },
+      "ratio": 0.2344,
+      "seed_sensitive_count": false,
+      "status": "ok"
+    },
+    "boundary@32:{\"count\": 40, \"width\": 2}": {
+      "count": 40,
+      "deterministic": true,
+      "mask_config": {
+        "count": 40,
+        "protocol": "boundary_sensors",
+        "width": 2
+      },
+      "ratio": 0.0391,
+      "seed_sensitive_count": false,
+      "status": "ok"
+    },
+    "boundary@32:{\"width\": 3}": {
+      "count": 348,
+      "deterministic": true,
+      "mask_config": {
+        "protocol": "boundary_sensors",
+        "width": 3
+      },
+      "ratio": 0.3398,
+      "seed_sensitive_count": false,
+      "status": "ok"
+    },
+    "boundary@32:{}": {
+      "count": 124,
+      "deterministic": true,
+      "mask_config": {
+        "protocol": "boundary_sensors"
+      },
+      "ratio": 0.1211,
+      "seed_sensitive_count": false,
+      "status": "ok"
+    },
+    "boundary@64:{\"count\": 40, \"width\": 2}": {
+      "count": 40,
+      "deterministic": true,
+      "mask_config": {
+        "count": 40,
+        "protocol": "boundary_sensors",
+        "width": 2
+      },
+      "ratio": 0.0098,
+      "seed_sensitive_count": false,
+      "status": "ok"
+    },
+    "boundary@64:{\"width\": 3}": {
+      "count": 732,
+      "deterministic": true,
+      "mask_config": {
+        "protocol": "boundary_sensors",
+        "width": 3
+      },
+      "ratio": 0.1787,
+      "seed_sensitive_count": false,
+      "status": "ok"
+    },
+    "boundary@64:{}": {
+      "count": 252,
+      "deterministic": true,
+      "mask_config": {
+        "protocol": "boundary_sensors"
+      },
+      "ratio": 0.0615,
+      "seed_sensitive_count": false,
+      "status": "ok"
+    },
+    "clustered@128:{\"clusters\": 2, \"ratio\": 0.2, \"spread\": 0.1}": {
+      "count": 3277,
+      "deterministic": true,
+      "mask_config": {
+        "clusters": 2,
+        "protocol": "clustered_sensors",
+        "ratio": 0.2,
+        "spread": 0.1
+      },
+      "ratio": 0.2,
+      "seed_sensitive_count": false,
+      "status": "ok"
+    },
+    "clustered@128:{}": {
+      "count": 492,
+      "deterministic": true,
+      "mask_config": {
+        "protocol": "clustered_sensors"
+      },
+      "ratio": 0.03,
+      "seed_sensitive_count": false,
+      "status": "ok"
+    },
+    "clustered@16:{\"clusters\": 2, \"ratio\": 0.2, \"spread\": 0.1}": {
+      "count": 51,
+      "deterministic": true,
+      "mask_config": {
+        "clusters": 2,
+        "protocol": "clustered_sensors",
+        "ratio": 0.2,
+        "spread": 0.1
+      },
+      "ratio": 0.1992,
+      "seed_sensitive_count": false,
+      "status": "ok"
+    },
+    "clustered@16:{}": {
+      "count": 8,
+      "deterministic": true,
+      "mask_config": {
+        "protocol": "clustered_sensors"
+      },
+      "ratio": 0.0312,
+      "seed_sensitive_count": false,
+      "status": "ok"
+    },
+    "clustered@32:{\"clusters\": 2, \"ratio\": 0.2, \"spread\": 0.1}": {
+      "count": 205,
+      "deterministic": true,
+      "mask_config": {
+        "clusters": 2,
+        "protocol": "clustered_sensors",
+        "ratio": 0.2,
+        "spread": 0.1
+      },
+      "ratio": 0.2002,
+      "seed_sensitive_count": false,
+      "status": "ok"
+    },
+    "clustered@32:{}": {
+      "count": 31,
+      "deterministic": true,
+      "mask_config": {
+        "protocol": "clustered_sensors"
+      },
+      "ratio": 0.0303,
+      "seed_sensitive_count": false,
+      "status": "ok"
+    },
+    "clustered@64:{\"clusters\": 2, \"ratio\": 0.2, \"spread\": 0.1}": {
+      "count": 819,
+      "deterministic": true,
+      "mask_config": {
+        "clusters": 2,
+        "protocol": "clustered_sensors",
+        "ratio": 0.2,
+        "spread": 0.1
+      },
+      "ratio": 0.2,
+      "seed_sensitive_count": false,
+      "status": "ok"
+    },
+    "clustered@64:{}": {
+      "count": 123,
+      "deterministic": true,
+      "mask_config": {
+        "protocol": "clustered_sensors"
+      },
+      "ratio": 0.03,
+      "seed_sensitive_count": false,
+      "status": "ok"
+    },
+    "custom:cov_checker@16": {
+      "count": 128,
+      "status": "ok"
+    },
+    "full@128:{}": {
+      "count": 16384,
+      "deterministic": true,
+      "mask_config": {
+        "protocol": "full"
+      },
+      "ratio": 1.0,
+      "seed_sensitive_count": false,
+      "status": "ok"
+    },
+    "full@16:{}": {
+      "count": 256,
+      "deterministic": true,
+      "mask_config": {
+        "protocol": "full"
+      },
+      "ratio": 1.0,
+      "seed_sensitive_count": false,
+      "status": "ok"
+    },
+    "full@32:{}": {
+      "count": 1024,
+      "deterministic": true,
+      "mask_config": {
+        "protocol": "full"
+      },
+      "ratio": 1.0,
+      "seed_sensitive_count": false,
+      "status": "ok"
+    },
+    "full@64:{}": {
+      "count": 4096,
+      "deterministic": true,
+      "mask_config": {
+        "protocol": "full"
+      },
+      "ratio": 1.0,
+      "seed_sensitive_count": false,
+      "status": "ok"
+    },
+    "grid@128:{\"random_offset\": true, \"spacing\": 4}": {
+      "count": 1024,
+      "deterministic": true,
+      "mask_config": {
+        "protocol": "regular_grid",
+        "random_offset": true,
+        "spacing": 4
+      },
+      "ratio": 0.0625,
+      "seed_sensitive_count": false,
+      "status": "ok"
+    },
+    "grid@128:{\"ratio\": 0.1}": {
+      "count": 1849,
+      "deterministic": true,
+      "mask_config": {
+        "protocol": "regular_grid",
+        "ratio": 0.1
+      },
+      "ratio": 0.1129,
+      "seed_sensitive_count": false,
+      "status": "ok"
+    },
+    "grid@128:{}": {
+      "count": 441,
+      "deterministic": true,
+      "mask_config": {
+        "protocol": "regular_grid"
+      },
+      "ratio": 0.0269,
+      "seed_sensitive_count": false,
+      "status": "ok"
+    },
+    "grid@16:{\"random_offset\": true, \"spacing\": 4}": {
+      "count": 16,
+      "deterministic": true,
+      "mask_config": {
+        "protocol": "regular_grid",
+        "random_offset": true,
+        "spacing": 4
+      },
+      "ratio": 0.0625,
+      "seed_sensitive_count": false,
+      "status": "ok"
+    },
+    "grid@16:{\"ratio\": 0.1}": {
+      "count": 25,
+      "deterministic": true,
+      "mask_config": {
+        "protocol": "regular_grid",
+        "ratio": 0.1
+      },
+      "ratio": 0.0977,
+      "seed_sensitive_count": false,
+      "status": "ok"
+    },
+    "grid@16:{}": {
+      "count": 9,
+      "deterministic": true,
+      "mask_config": {
+        "protocol": "regular_grid"
+      },
+      "ratio": 0.0352,
+      "seed_sensitive_count": false,
+      "status": "ok"
+    },
+    "grid@32:{\"random_offset\": true, \"spacing\": 4}": {
+      "count": 64,
+      "deterministic": true,
+      "mask_config": {
+        "protocol": "regular_grid",
+        "random_offset": true,
+        "spacing": 4
+      },
+      "ratio": 0.0625,
+      "seed_sensitive_count": false,
+      "status": "ok"
+    },
+    "grid@32:{\"ratio\": 0.1}": {
+      "count": 121,
+      "deterministic": true,
+      "mask_config": {
+        "protocol": "regular_grid",
+        "ratio": 0.1
+      },
+      "ratio": 0.1182,
+      "seed_sensitive_count": false,
+      "status": "ok"
+    },
+    "grid@32:{}": {
+      "count": 25,
+      "deterministic": true,
+      "mask_config": {
+        "protocol": "regular_grid"
+      },
+      "ratio": 0.0244,
+      "seed_sensitive_count": false,
+      "status": "ok"
+    },
+    "grid@64:{\"random_offset\": true, \"spacing\": 4}": {
+      "count": 256,
+      "deterministic": true,
+      "mask_config": {
+        "protocol": "regular_grid",
+        "random_offset": true,
+        "spacing": 4
+      },
+      "ratio": 0.0625,
+      "seed_sensitive_count": false,
+      "status": "ok"
+    },
+    "grid@64:{\"ratio\": 0.1}": {
+      "count": 441,
+      "deterministic": true,
+      "mask_config": {
+        "protocol": "regular_grid",
+        "ratio": 0.1
+      },
+      "ratio": 0.1077,
+      "seed_sensitive_count": false,
+      "status": "ok"
+    },
+    "grid@64:{}": {
+      "count": 121,
+      "deterministic": true,
+      "mask_config": {
+        "protocol": "regular_grid"
+      },
+      "ratio": 0.0295,
+      "seed_sensitive_count": false,
+      "status": "ok"
+    },
+    "horizontal@128:{\"num_lines\": 4}": {
+      "count": 512,
+      "deterministic": true,
+      "mask_config": {
+        "num_lines": 4,
+        "orientation": "horizontal",
+        "protocol": "line_sensors"
+      },
+      "ratio": 0.0312,
+      "seed_sensitive_count": false,
+      "status": "ok"
+    },
+    "horizontal@128:{}": {
+      "count": 512,
+      "deterministic": true,
+      "mask_config": {
+        "orientation": "horizontal",
+        "protocol": "line_sensors"
+      },
+      "ratio": 0.0312,
+      "seed_sensitive_count": false,
+      "status": "ok"
+    },
+    "horizontal@16:{\"num_lines\": 4}": {
+      "count": 64,
+      "deterministic": true,
+      "mask_config": {
+        "num_lines": 4,
+        "orientation": "horizontal",
+        "protocol": "line_sensors"
+      },
+      "ratio": 0.25,
+      "seed_sensitive_count": false,
+      "status": "ok"
+    },
+    "horizontal@16:{}": {
+      "count": 16,
+      "deterministic": true,
+      "mask_config": {
+        "orientation": "horizontal",
+        "protocol": "line_sensors"
+      },
+      "ratio": 0.0625,
+      "seed_sensitive_count": false,
+      "status": "ok"
+    },
+    "horizontal@32:{\"num_lines\": 4}": {
+      "count": 128,
+      "deterministic": true,
+      "mask_config": {
+        "num_lines": 4,
+        "orientation": "horizontal",
+        "protocol": "line_sensors"
+      },
+      "ratio": 0.125,
+      "seed_sensitive_count": false,
+      "status": "ok"
+    },
+    "horizontal@32:{}": {
+      "count": 32,
+      "deterministic": true,
+      "mask_config": {
+        "orientation": "horizontal",
+        "protocol": "line_sensors"
+      },
+      "ratio": 0.0312,
+      "seed_sensitive_count": false,
+      "status": "ok"
+    },
+    "horizontal@64:{\"num_lines\": 4}": {
+      "count": 256,
+      "deterministic": true,
+      "mask_config": {
+        "num_lines": 4,
+        "orientation": "horizontal",
+        "protocol": "line_sensors"
+      },
+      "ratio": 0.0625,
+      "seed_sensitive_count": false,
+      "status": "ok"
+    },
+    "horizontal@64:{}": {
+      "count": 128,
+      "deterministic": true,
+      "mask_config": {
+        "orientation": "horizontal",
+        "protocol": "line_sensors"
+      },
+      "ratio": 0.0312,
+      "seed_sensitive_count": false,
+      "status": "ok"
+    },
+    "line@128:{\"num_lines\": 6, \"orientation\": \"both\"}": {
+      "count": 759,
+      "deterministic": true,
+      "mask_config": {
+        "num_lines": 6,
+        "orientation": "both",
+        "protocol": "line_sensors"
+      },
+      "ratio": 0.0463,
+      "seed_sensitive_count": false,
+      "status": "ok"
+    },
+    "line@128:{}": {
+      "count": 508,
+      "deterministic": true,
+      "mask_config": {
+        "protocol": "line_sensors"
+      },
+      "ratio": 0.031,
+      "seed_sensitive_count": false,
+      "status": "ok"
+    },
+    "line@16:{\"num_lines\": 6, \"orientation\": \"both\"}": {
+      "count": 87,
+      "deterministic": true,
+      "mask_config": {
+        "num_lines": 6,
+        "orientation": "both",
+        "protocol": "line_sensors"
+      },
+      "ratio": 0.3398,
+      "seed_sensitive_count": false,
+      "status": "ok"
+    },
+    "line@16:{}": {
+      "count": 16,
+      "deterministic": true,
+      "mask_config": {
+        "protocol": "line_sensors"
+      },
+      "ratio": 0.0625,
+      "seed_sensitive_count": false,
+      "status": "ok"
+    },
+    "line@32:{\"num_lines\": 6, \"orientation\": \"both\"}": {
+      "count": 183,
+      "deterministic": true,
+      "mask_config": {
+        "num_lines": 6,
+        "orientation": "both",
+        "protocol": "line_sensors"
+      },
+      "ratio": 0.1787,
+      "seed_sensitive_count": false,
+      "status": "ok"
+    },
+    "line@32:{}": {
+      "count": 32,
+      "deterministic": true,
+      "mask_config": {
+        "protocol": "line_sensors"
+      },
+      "ratio": 0.0312,
+      "seed_sensitive_count": false,
+      "status": "ok"
+    },
+    "line@64:{\"num_lines\": 6, \"orientation\": \"both\"}": {
+      "count": 375,
+      "deterministic": true,
+      "mask_config": {
+        "num_lines": 6,
+        "orientation": "both",
+        "protocol": "line_sensors"
+      },
+      "ratio": 0.0916,
+      "seed_sensitive_count": false,
+      "status": "ok"
+    },
+    "line@64:{}": {
+      "count": 127,
+      "deterministic": true,
+      "mask_config": {
+        "protocol": "line_sensors"
+      },
+      "ratio": 0.031,
+      "seed_sensitive_count": false,
+      "status": "ok"
+    },
+    "random@128:{\"count\": 37}": {
+      "count": 37,
+      "deterministic": true,
+      "mask_config": {
+        "count": 37,
+        "protocol": "random_3pct"
+      },
+      "ratio": 0.0023,
+      "seed_sensitive_count": false,
+      "status": "ok"
+    },
+    "random@128:{\"ratio\": 0.5}": {
+      "count": 8192,
+      "deterministic": true,
+      "mask_config": {
+        "protocol": "random_3pct",
+        "ratio": 0.5
+      },
+      "ratio": 0.5,
+      "seed_sensitive_count": false,
+      "status": "ok"
+    },
+    "random@128:{}": {
+      "count": 500,
+      "deterministic": true,
+      "mask_config": {
+        "protocol": "random_3pct"
+      },
+      "ratio": 0.0305,
+      "seed_sensitive_count": false,
+      "status": "ok"
+    },
+    "random@16:{\"count\": 37}": {
+      "count": 37,
+      "deterministic": true,
+      "mask_config": {
+        "count": 37,
+        "protocol": "random_3pct"
+      },
+      "ratio": 0.1445,
+      "seed_sensitive_count": false,
+      "status": "ok"
+    },
+    "random@16:{\"ratio\": 0.5}": {
+      "count": 128,
+      "deterministic": true,
+      "mask_config": {
+        "protocol": "random_3pct",
+        "ratio": 0.5
+      },
+      "ratio": 0.5,
+      "seed_sensitive_count": false,
+      "status": "ok"
+    },
+    "random@16:{}": {
+      "count": 8,
+      "deterministic": true,
+      "mask_config": {
+        "protocol": "random_3pct"
+      },
+      "ratio": 0.0312,
+      "seed_sensitive_count": false,
+      "status": "ok"
+    },
+    "random@32:{\"count\": 37}": {
+      "count": 37,
+      "deterministic": true,
+      "mask_config": {
+        "count": 37,
+        "protocol": "random_3pct"
+      },
+      "ratio": 0.0361,
+      "seed_sensitive_count": false,
+      "status": "ok"
+    },
+    "random@32:{\"ratio\": 0.5}": {
+      "count": 512,
+      "deterministic": true,
+      "mask_config": {
+        "protocol": "random_3pct",
+        "ratio": 0.5
+      },
+      "ratio": 0.5,
+      "seed_sensitive_count": false,
+      "status": "ok"
+    },
+    "random@32:{}": {
+      "count": 31,
+      "deterministic": true,
+      "mask_config": {
+        "protocol": "random_3pct"
+      },
+      "ratio": 0.0303,
+      "seed_sensitive_count": false,
+      "status": "ok"
+    },
+    "random@64:{\"count\": 37}": {
+      "count": 37,
+      "deterministic": true,
+      "mask_config": {
+        "count": 37,
+        "protocol": "random_3pct"
+      },
+      "ratio": 0.009,
+      "seed_sensitive_count": false,
+      "status": "ok"
+    },
+    "random@64:{\"ratio\": 0.5}": {
+      "count": 2048,
+      "deterministic": true,
+      "mask_config": {
+        "protocol": "random_3pct",
+        "ratio": 0.5
+      },
+      "ratio": 0.5,
+      "seed_sensitive_count": false,
+      "status": "ok"
+    },
+    "random@64:{}": {
+      "count": 123,
+      "deterministic": true,
+      "mask_config": {
+        "protocol": "random_3pct"
+      },
+      "ratio": 0.03,
+      "seed_sensitive_count": false,
+      "status": "ok"
+    },
+    "stored": {
+      "label": "stored",
+      "mask_config": {
+        "protocol": "stored"
+      },
+      "name": "stored",
+      "namespace": "stored",
+      "observation_id": "stored:stored:ca3b007ef187",
+      "params": {},
+      "status": "ok",
+      "version": "pdeobs-inference-input/v1"
+    },
+    "vertical@128:{\"num_lines\": 4}": {
+      "count": 512,
+      "deterministic": true,
+      "mask_config": {
+        "num_lines": 4,
+        "orientation": "vertical",
+        "protocol": "line_sensors"
+      },
+      "ratio": 0.0312,
+      "seed_sensitive_count": false,
+      "status": "ok"
+    },
+    "vertical@128:{}": {
+      "count": 512,
+      "deterministic": true,
+      "mask_config": {
+        "orientation": "vertical",
+        "protocol": "line_sensors"
+      },
+      "ratio": 0.0312,
+      "seed_sensitive_count": false,
+      "status": "ok"
+    },
+    "vertical@16:{\"num_lines\": 4}": {
+      "count": 64,
+      "deterministic": true,
+      "mask_config": {
+        "num_lines": 4,
+        "orientation": "vertical",
+        "protocol": "line_sensors"
+      },
+      "ratio": 0.25,
+      "seed_sensitive_count": false,
+      "status": "ok"
+    },
+    "vertical@16:{}": {
+      "count": 16,
+      "deterministic": true,
+      "mask_config": {
+        "orientation": "vertical",
+        "protocol": "line_sensors"
+      },
+      "ratio": 0.0625,
+      "seed_sensitive_count": false,
+      "status": "ok"
+    },
+    "vertical@32:{\"num_lines\": 4}": {
+      "count": 128,
+      "deterministic": true,
+      "mask_config": {
+        "num_lines": 4,
+        "orientation": "vertical",
+        "protocol": "line_sensors"
+      },
+      "ratio": 0.125,
+      "seed_sensitive_count": false,
+      "status": "ok"
+    },
+    "vertical@32:{}": {
+      "count": 32,
+      "deterministic": true,
+      "mask_config": {
+        "orientation": "vertical",
+        "protocol": "line_sensors"
+      },
+      "ratio": 0.0312,
+      "seed_sensitive_count": false,
+      "status": "ok"
+    },
+    "vertical@64:{\"num_lines\": 4}": {
+      "count": 256,
+      "deterministic": true,
+      "mask_config": {
+        "num_lines": 4,
+        "orientation": "vertical",
+        "protocol": "line_sensors"
+      },
+      "ratio": 0.0625,
+      "seed_sensitive_count": false,
+      "status": "ok"
+    },
+    "vertical@64:{}": {
+      "count": 128,
+      "deterministic": true,
+      "mask_config": {
+        "orientation": "vertical",
+        "protocol": "line_sensors"
+      },
+      "ratio": 0.0312,
+      "seed_sensitive_count": false,
+      "status": "ok"
+    }
+  },
+  "invariants": {
+    "block": {
+      "mask_is_not_geometry": true,
+      "observed_equals_target": true,
+      "record_unchanged": true
+    },
+    "random": {
+      "mask_is_not_geometry": true,
+      "observed_equals_target": true,
+      "record_unchanged": true
+    },
+    "stored_record_bytes_unchanged": true
+  },
+  "paper": {
+    "block_observed_50pct": {
+      "exact": true,
+      "expected_128": 8284,
+      "label": "BL",
+      "realized_128": 8284
+    },
+    "boundary_band_50pct": {
+      "exact": true,
+      "expected_128": 8284,
+      "label": "BD",
+      "realized_128": 8284
+    },
+    "clustered_50pct": {
+      "exact": true,
+      "expected_128": 8192,
+      "label": "CL",
+      "realized_128": 8192
+    },
+    "horizontal_lines_50pct": {
+      "exact": true,
+      "expected_128": 8192,
+      "label": "H",
+      "realized_128": 8192
+    },
+    "line_sensors_50pct": {
+      "exact": true,
+      "expected_128": 8284,
+      "label": "LI",
+      "realized_128": 8284
+    },
+    "random_50pct": {
+      "exact": true,
+      "expected_128": 8192,
+      "label": "R50",
+      "realized_128": 8192
+    },
+    "random_65pct": {
+      "exact": true,
+      "expected_128": 10650,
+      "label": "R65",
+      "realized_128": 10650
+    },
+    "random_80pct": {
+      "exact": true,
+      "expected_128": 13107,
+      "label": "R80",
+      "realized_128": 13107
+    },
+    "vertical_lines_50pct": {
+      "exact": true,
+      "expected_128": 8192,
+      "label": "V",
+      "realized_128": 8192
+    }
+  },
+  "summary": {
+    "errors_rejected": true,
+    "general_ok": 86,
+    "general_total": 86,
+    "paper_exact": true
+  },
+  "tier": "T2",
+  "utc": "2026-09-21T15:48:27Z",
+  "what": "observation protocol coverage"
+}

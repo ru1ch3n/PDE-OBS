@@ -1,0 +1,71 @@
+{
+ "boundary": "periodic",
+ "checkpoint_sha256": "1f6b099a3365f1791818420940060c980fa3780f2aeb7232a4f768ff5f0793e7",
+ "config_hash": "533abd0ae0661d20",
+ "evaluation_config": {
+  "channel_axis": -1,
+  "data_layout": "auto",
+  "device": "auto",
+  "history_steps": 1,
+  "horizon": 3,
+  "horizons": [
+   1,
+   2,
+   3
+  ],
+  "include_frequency_bands": true,
+  "include_stability": true,
+  "mask_protocols": [],
+  "observation_mode": "matched",
+  "observation_protocols": [],
+  "ood_views": [],
+  "physical_representation": null,
+  "predictions_path": null,
+  "report_path": null,
+  "rollout_target_offset": 0,
+  "spatial_axes": [
+   -3,
+   -2
+  ],
+  "target_step": -1,
+  "task": "rollout"
+ },
+ "evaluation_view": "boundary_band_50pct",
+ "mask_protocol": "boundary_sensors",
+ "method": "autoregressive",
+ "metrics": {
+  "growth_failure_rate": 0.0,
+  "high_frequency_energy_error": 2034302074.80737,
+  "mae": 0.07799092599030837,
+  "max_norm_growth": 1.0954569355608854,
+  "mse": 0.011423045923990212,
+  "mse_h1": 0.0077468346177086925,
+  "mse_h2": 0.010504489404813777,
+  "mse_h3": 0.01601781374944817,
+  "nonfinite_rate": 0.0,
+  "rel_l2_h1": 0.08531256871913324,
+  "rel_l2_h2": 0.10174824959476433,
+  "rel_l2_h3": 0.1269323808223397,
+  "rel_l2_rollout": 0.10562183761041753,
+  "relative_l2": 0.10562183761041753,
+  "rollout_rel_l2": 0.10562183761041753,
+  "spectral_centroid_error": 5.330818234177837e-05,
+  "spectral_high": 43848.280937566,
+  "spectral_low": 0.10559647780687177,
+  "spectral_mid": 117553.79358216922,
+  "stability_failure_rate": 0.0
+ },
+ "observation_mode": "matched",
+ "pde": "heat",
+ "regime_values": [
+  "high",
+  "low",
+  "medium"
+ ],
+ "samples": 200,
+ "setting": "smooth_grf",
+ "split": "test",
+ "task": "rollout",
+ "test_sample_ids_sha256": "35aa2bd5ed84e8fe16d567a69f659a0aee51e1c79cd3d5b2553e906e2b56e001",
+ "training_view": "mixed_nine_views"
+}

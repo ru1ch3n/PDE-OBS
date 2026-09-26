@@ -1,0 +1,146 @@
+{
+  "utc": "2026-09-21T15:47:06Z",
+  "tiers": {
+    "T1": {
+      "status": "done",
+      "summary": {
+        "combos": 840,
+        "supported": 840,
+        "unsupported_or_error": 0,
+        "seconds": 79.2
+      },
+      "seconds": 79.2
+    },
+    "T2": {
+      "status": "done",
+      "summary": {
+        "general_ok": 86,
+        "general_total": 86,
+        "paper_exact": true,
+        "errors_rejected": true
+      },
+      "seconds": 0.1
+    },
+    "T3": {
+      "status": "done",
+      "summary": {
+        "passed": 26,
+        "total": 26
+      },
+      "seconds": 4.8
+    },
+    "T4": {
+      "status": "done",
+      "summary": {
+        "passed": 16,
+        "total": 16
+      },
+      "seconds": 18.0
+    },
+    "T5": {
+      "status": "done",
+      "summary": {
+        "passed": 14,
+        "total": 14
+      },
+      "seconds": 261.3
+    },
+    "T6": {
+      "status": "done",
+      "summary": {
+        "passed": 24,
+        "total": 24
+      },
+      "seconds": 5.0
+    },
+    "T7": {
+      "status": "done",
+      "summary": {
+        "paper_split_1800_200": true,
+        "all_rejections_ok": true
+      },
+      "seconds": 4.0
+    },
+    "T8": {
+      "status": "done",
+      "summary": {
+        "refusals_ok": true,
+        "invalid_scores_flagged": true
+      },
+      "seconds": 0.2
+    },
+    "T9": {
+      "status": "done",
+      "summary": {
+        "as_expected": 32,
+        "total": 32
+      },
+      "seconds": 62.9
+    },
+    "T10": {
+      "status": "done",
+      "summary": {
+        "all_within_tol": true
+      },
+      "seconds": 2.3
+    },
+    "T11": {
+      "status": "done",
+      "summary": {
+        "gpu_bitwise": true,
+        "cpu_bitwise": true
+      },
+      "seconds": 1.8
+    },
+    "T12": {
+      "status": "done",
+      "summary": {
+        "core_passed": 521,
+        "core_failed": 0,
+        "api": "42 passed in 14.78s"
+      },
+      "seconds": 44.0
+    },
+    "T13": {
+      "status": "done",
+      "summary": {
+        "passed": 14,
+        "total": 14,
+        "max_peak_gpu_mb": 19955.3,
+        "epochs_500_hours": {
+          "fno:recovery@128 bs=8": 1.32,
+          "fno:rollout@128 bs=8": 2.56,
+          "pino:recovery@128 bs=4": 4.84,
+          "pino:rollout@128 bs=4": 6.38,
+          "ufno:recovery@128 bs=4": 6.3,
+          "ufno:rollout@128 bs=4": 9.11,
+          "cno:recovery@128 bs=8": 0.83,
+          "cno:rollout@128 bs=8": 1.39,
+          "deeponet:recovery@128 bs=4": 0.99,
+          "deeponet:rollout@128 bs=4": 1.95,
+          "gnot:recovery@128 bs=4": 10.94,
+          "gnot:rollout@128 bs=4": 19.78,
+          "transolver:recovery@128 bs=4": 10.89,
+          "transolver:rollout@128 bs=2": 44.51
+        }
+      },
+      "seconds": 43.0
+    },
+    "T14": {
+      "status": "done",
+      "summary": {
+        "gated": true
+      },
+      "seconds": 0.0
+    }
+  },
+  "env": {
+    "torch": "2.7.1+cu128",
+    "cuda": "12.8",
+    "device": "NVIDIA GeForce RTX 5090",
+    "capability": [
+      12,
+      0
+    ]
+  }
+}

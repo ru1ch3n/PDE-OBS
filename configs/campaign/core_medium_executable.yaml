@@ -1,0 +1,55 @@
+schema_version: pdeobs.training-campaign/v1
+name: core-medium-executable
+task: recovery
+
+# Phase A contains only implementations that are executable and tested in this
+# repository. Planning-only methods remain excluded until their architecture or
+# external prior is reviewed; the plan builder must never invent commands.
+dataset:
+  summary_file: summary.json
+  summary_sha256: b0141eec2199615a27facc75e2517ec4ec7e00913638e48c84ab2c88a2be77c1
+  expected_shards: 3360
+  expected_samples: 560000
+  selected_release_tier: medium
+  expected_selected_samples: 140000
+  expected_selected_samples_per_pde: 20000
+  required_pdes:
+    - burgers
+    - darcy
+    - heat
+    - helmholtz
+    - navier_stokes
+    - poisson
+    - reaction_diffusion
+  strict_max_pde_loss: 0.05
+
+matrix:
+  pdes: [burgers, darcy, heat, helmholtz, navier_stokes, poisson, reaction_diffusion]
+  observation_protocols:
+    - random_1pct
+    - random_3pct
+    - random_5pct
+    - random_10pct
+    - regular_grid
+    - block_missing
+    - line_sensors
+    - boundary_sensors
+    - clustered_sensors
+  seeds: [20260804]
+  methods:
+    - id: unet
+      config: configs/experiment/core_medium_unet.yaml
+    - id: fno
+      config: configs/experiment/core_medium_fno.yaml
+      # FNO owns complex64 spectral parameters. PyTorch's CUDA GradScaler
+      # cannot unscale ComplexFloat gradients, so this method runs in fp32.
+      overrides:
+        - training.mixed_precision=false
+    - id: cno
+      config: configs/experiment/core_medium_cno.yaml
+
+artifacts:
+  prediction_example_samples: 64
+  require_best_checkpoint: true
+  require_last_checkpoint: true
+  require_finite_metrics: true

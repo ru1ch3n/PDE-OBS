@@ -1,0 +1,97 @@
+{
+  "archive_installation_evidence": "The accompanying release_manifest.json reports acceptance of the exact frozen archive; this in-archive file is limited to pre-freeze evidence.",
+  "counts_are_overlapping_not_additive": true,
+  "created_utc": "2026-09-21T06:23:50.605287+00:00",
+  "current_run_results": [
+    {
+      "command": "python release/run_core_tests.py --source-root . --output-dir ../core-results --basetemp ../core-temp",
+      "counts": {
+        "collected": 521,
+        "collection_errors": 0,
+        "collection_skips": 0,
+        "failed": 0,
+        "not_run": 0,
+        "passed": 521,
+        "skipped": 0
+      },
+      "junit_sha256": "778ce1ef5e7deffa68bfea13a1b97b99c32514c002697ea9b1a2ed912fffc2bf",
+      "platform": "Windows CPU, Python 3.12.8",
+      "pytest_seconds": 42.44,
+      "receipt_duration_seconds": 44.16085849999217,
+      "scope": "portable_core_source",
+      "source_log_sha256": "b555c363c3f876fafed296eeca15653639d76d90826a7ee565b39b72f20d66b8",
+      "versions": {
+        "PyYAML": "6.0.3",
+        "h5py": "3.16.0",
+        "numpy": "1.26.4",
+        "pytest": "9.1.1",
+        "scipy": "1.16.0",
+        "torch": "2.7.1+cpu"
+      },
+      "warnings": "Three retained legacy CPU pin_memory-without-accelerator warnings; no test failed."
+    },
+    {
+      "failed": 0,
+      "limitation": "Base lower bounds only; not all Python/optional-backend version combinations.",
+      "passed": 106,
+      "platform": "Windows CPU, Python 3.10.21",
+      "scope": "declared_base_dependency_floor_source_subset",
+      "skipped": 0,
+      "tests": [
+        "test_dependency_floor.py",
+        "test_numerics.py",
+        "test_pdes.py",
+        "test_doctor.py"
+      ],
+      "versions": {
+        "PyYAML": "6.0",
+        "h5py": "3.8.0",
+        "numpy": "1.24.0",
+        "scipy": "1.12.0",
+        "torch": null
+      }
+    }
+  ],
+  "excluded_tests": "test_scope.json records pre-existing deployment and missing-fixture exclusions; excluded cases are never counted as passed.",
+  "historical_results_automatically_rescored": false,
+  "interface_evidence": {
+    "fixed200_min120_recovered_adapter": "not_implemented_in_this_portable_entry",
+    "historical_raw_prediction_replay": "not_executed",
+    "original500_exact_split_metadata": "executed_in_portable_core",
+    "paper_scale_original500_training": "not_executed",
+    "small_static_and_rollout_paper_row_training": "executed_in_portable_core",
+    "static_and_rollout_strict_inference": "executed_in_portable_core"
+  },
+  "preserved_initial_failure": "The first revision source run had one solver-version provenance regression after the package bump. Package 0.1.1 and unchanged numerical-kernel version 0.1.0 are now separate; the original assertion is unchanged. The final 521-case run passes.",
+  "production_jobs_changed": false,
+  "public_release": {
+    "checkpoints": {
+      "bytes_approx": 13000000000,
+      "credited": 441,
+      "form": "weights only; optimizer, scaler and RNG states removed",
+      "published": 441,
+      "repository": "huggingface.co/PDE-OBS/pdeobs-models",
+      "usage_verified": "poisson/fno/random_50pct loaded with api.load_legacy_checkpoint, predicted on eight R50 records and scored valid by pdeobs-strict-v1",
+      "verification": "each file's SHA-256 compared against the per-cluster release manifest; 0 mismatches; every published checkpoint's ORIGINAL SHA-256 equals the one the campaign credited for that identity; anonymity audit over 5805 text files and all checkpoint metadata found 0 identifying strings"
+    },
+    "not_published": [
+      "production prediction arrays (none were retained)",
+      "independent numerical-reference or grid-convergence study"
+    ],
+    "records": {
+      "bytes": 244394899766,
+      "manifest": "release_manifest.json (release-manifest v1)",
+      "manifests": {
+        "release_manifest.json": "paper-evaluated slice, 84 shards + 252 sidecars, 6.5 GB",
+        "release_manifest_full.json": "complete factorial corpus, 3,360 shards + 10,080 sidecars, 244 GB"
+      },
+      "repository": "huggingface.co/datasets/PDE-OBS/pdeobs-data",
+      "shards": 3360,
+      "verification": "every shard's SHA-256 compared against its generation-time .sha256 sidecar; 3360/3360 matched, 0 size mismatches; one shard fetched through pdeobs download from its manifest entry and accepted by api.load_dataset(verify=True)"
+    }
+  },
+  "public_upload_verified": true,
+  "release_id": "pdeobs-anonymous-candidate-0.1.1-20260921",
+  "schema_version": "pdeobs.release-validation/v2",
+  "status": "source_cpu_acceptance_passed_before_archive_freeze"
+}

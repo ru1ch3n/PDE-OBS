@@ -1,0 +1,141 @@
+{
+  "schema_version": "pdeobs-portable-core-test-scope-v1",
+  "status": "selection_manifest_not_an_execution_receipt",
+  "purpose": "CPU numerical, data, observation, task, model-interface, scoring, and portable campaign-contract tests for the source release.",
+  "requirements": [
+    "Install the core and test extra; install the train extra to execute optional neural tests rather than skip them.",
+    "Git must be available for a synthetic local repository provenance test.",
+    "No cluster account, scheduler, production dataset, or public download endpoint is required."
+  ],
+  "selection_counts": {
+    "whole_files": 31,
+    "individual_nodes": 20
+  },
+  "selected_files": [
+    "tests/test_aggregate.py",
+    "tests/test_cli.py",
+    "tests/test_config.py",
+    "tests/test_coverage.py",
+    "tests/test_dataset.py",
+    "tests/test_dependency_floor.py",
+    "tests/test_difficulty.py",
+    "tests/test_doctor.py",
+    "tests/test_download.py",
+    "tests/test_evaluation.py",
+    "tests/test_generation.py",
+    "tests/test_masks.py",
+    "tests/test_methods.py",
+    "tests/test_metrics.py",
+    "tests/test_numerics.py",
+    "tests/test_paper_row.py",
+    "tests/test_pdes.py",
+    "tests/test_presets.py",
+    "tests/test_protocol.py",
+    "tests/test_quality.py",
+    "tests/test_quality_regressions.py",
+    "tests/test_registry.py",
+    "tests/test_release_contracts.py",
+    "tests/test_retrieval.py",
+    "tests/test_routing.py",
+    "tests/test_runner.py",
+    "tests/test_settings.py",
+    "tests/test_splits.py",
+    "tests/test_strict_inference.py",
+    "tests/test_strict_score.py",
+    "tests/test_training.py"
+  ],
+  "selected_nodes": [
+    "tests/test_campaign.py::test_core_pilot_expands_to_27_unique_owned_outputs",
+    "tests/test_campaign.py::test_core_rbf_baseline_expands_to_nine_evaluation_rows",
+    "tests/test_campaign.py::test_core_medium_executable_expands_to_189_nonoverlapping_rows",
+    "tests/test_campaign.py::test_core_full_anchors_expand_to_112_executable_rows",
+    "tests/test_campaign.py::test_dataset_attestation_requires_exact_summary_digest",
+    "tests/test_campaign.py::test_full_observation_diagnosis_requires_a_preregistered_cutoff",
+    "tests/test_campaign.py::test_v2_campaign_requires_and_attests_exact_verified_paper_setting",
+    "tests/test_campaign.py::test_paper_campaigns_cover_only_verified_poisson_and_navier_stokes",
+    "tests/test_full_to_partial_execution.py::test_preflight_bundle_requires_four_consistent_pathology_free_replicas",
+    "tests/test_one_setting.py::test_campaign_rejects_noncanonical_scalar_representation",
+    "tests/test_one_setting.py::test_campaign_has_unique_non_pseudoreplicated_accounting",
+    "tests/test_one_setting.py::test_public_configs_preserve_static_and_free_rollout_contracts",
+    "tests/test_one_setting.py::test_exact_production_split_and_preflight_subset_are_disjoint_contracts",
+    "tests/test_pino.py::test_static_pino_residual_is_differentiable_and_equation_exact",
+    "tests/test_pino.py::test_static_pino_residual_matches_registered_dataset_equations",
+    "tests/test_pino.py::test_temporal_final_field_fails_closed",
+    "tests/test_pino.py::test_temporal_pino_residual_is_finite_and_differentiable",
+    "tests/test_pino.py::test_heat_temporal_normalization_has_no_artificial_amplitude_gradient",
+    "tests/test_pino.py::test_temporal_pino_trainer_uses_free_three_step_rollout",
+    "tests/test_pino.py::test_pino_model_and_trainer_contract_is_fail_closed"
+  ],
+  "excluded_files": [
+    {
+      "id": "private-deployment-file-01",
+      "category": "deployment_not_in_portable_release",
+      "reason": "Already excluded in the prior candidate; omitted from this public export. Original and exact mapping retained in the internal provenance record."
+    },
+    {
+      "id": "private-deployment-file-02",
+      "category": "deployment_not_in_portable_release",
+      "reason": "Already excluded in the prior candidate; omitted from this public export. Original and exact mapping retained in the internal provenance record."
+    },
+    {
+      "id": "private-deployment-file-03",
+      "category": "website_not_in_portable_release",
+      "reason": "Already excluded in the prior candidate; omitted from this public export. Original and exact mapping retained in the internal provenance record."
+    },
+    {
+      "id": "private-deployment-file-04",
+      "category": "deployment_not_in_portable_release",
+      "reason": "Already excluded in the prior candidate; omitted from this public export. Original and exact mapping retained in the internal provenance record."
+    },
+    {
+      "id": "private-deployment-file-05",
+      "category": "historical_private_campaign_not_in_portable_release",
+      "reason": "Already excluded in the prior candidate; omitted from this public export. Original and exact mapping retained in the internal provenance record."
+    }
+  ],
+  "excluded_nodes": [
+    {
+      "id": "private-historical-node-01",
+      "category": "missing_historical_script",
+      "reason": "Already excluded in the prior candidate; unavailable deployment or hash-pinned fixture. Original test retained internally, not counted as passed."
+    },
+    {
+      "id": "private-historical-node-02",
+      "category": "missing_hash_pinned_historical_fixture",
+      "reason": "Already excluded in the prior candidate; unavailable deployment or hash-pinned fixture. Original test retained internally, not counted as passed."
+    },
+    {
+      "id": "private-historical-node-03",
+      "category": "missing_historical_fixture",
+      "reason": "Already excluded in the prior candidate; unavailable deployment or hash-pinned fixture. Original test retained internally, not counted as passed."
+    },
+    {
+      "id": "private-historical-node-04",
+      "category": "deployment_not_in_portable_release",
+      "reason": "Already excluded in the prior candidate; unavailable deployment or hash-pinned fixture. Original test retained internally, not counted as passed."
+    },
+    {
+      "id": "private-historical-node-05",
+      "category": "missing_historical_launcher",
+      "reason": "Already excluded in the prior candidate; unavailable deployment or hash-pinned fixture. Original test retained internally, not counted as passed."
+    },
+    {
+      "id": "private-historical-node-06",
+      "category": "missing_historical_launcher",
+      "reason": "Already excluded in the prior candidate; unavailable deployment or hash-pinned fixture. Original test retained internally, not counted as passed."
+    },
+    {
+      "id": "private-historical-node-07",
+      "category": "missing_historical_launcher",
+      "reason": "Already excluded in the prior candidate; unavailable deployment or hash-pinned fixture. Original test retained internally, not counted as passed."
+    }
+  ],
+  "reporting_rules": [
+    "Every previously selected portable test is retained; already-excluded deployment/fixture tests are omitted from the public export and preserved internally.",
+    "Excluded tests are not executed by this command and are never counted as passed.",
+    "Parameterized pytest cases determine the actual collected count; 31 files plus 20 nodes is a selection count, not a pass count.",
+    "Optional-dependency skips, collection errors, test failures, and unexecuted cases remain distinct in the execution receipt.",
+    "This scope is not a complete deployment test suite or an independent numerical convergence study.",
+    "The runner does not install packages, contact a scheduler, or alter scientific assertions."
+  ]
+}

@@ -1,0 +1,8 @@
+construct time_indices=[0.9]      -> object keeps [0.9]    | saved as [0]    | reload+evaluate -> valid
+construct time_indices=[True]     -> object keeps [True]   | saved as [1]    | reload+evaluate -> valid
+construct time_indices=[2, 1]     -> object keeps [2, 1]   | saved as [2, 1] | reload+evaluate -> StrictValidationError
+construct time_indices=[0, 0]     -> object keeps [0, 0]   | saved as [0, 0] | reload+evaluate -> StrictValidationError
+construct sample_ids=['a', 'a']       -> ACCEPTED (predictions n=2)
+construct sample_ids=['a']            -> ACCEPTED (predictions n=2)
+construct sample_ids=['a', 'b', 'c']  -> ACCEPTED (predictions n=2)
+construct sample_ids=['', 'b']        -> ACCEPTED (predictions n=2)

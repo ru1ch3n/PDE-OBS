@@ -1,0 +1,55 @@
+schema_version: pdeobs.paper-protocol-description/v1
+name: selected-seven-method-nine-view-study
+purpose: descriptive_protocol_not_job_submission
+status: anonymous_release_candidate
+seed: 20260804
+resolution: [128, 128]
+records_per_macrodomain: 2000
+split:
+  implementation: pdeobs.one_setting.stable_split
+  algorithm: sha256_rank_within_regime_largest_remainder_exact_ten_percent_test
+  train: 1800
+  validation: 0
+  test: 200
+  require_explicit_identity_lists: true
+  shared_across_methods_and_views: true
+tasks:
+  primary: [recovery, rollout]
+  implemented_extensions_not_primary_experiments: [forward, inverse]
+problems:
+  darcy: {task: recovery, boundary: dirichlet, setting: smooth_grf, state: native}
+  poisson: {task: recovery, boundary: dirichlet, setting: smooth_grf, state: native}
+  helmholtz: {task: recovery, boundary: dirichlet, setting: smooth_grf, state: native}
+  heat: {task: rollout, boundary: periodic, setting: smooth_grf, state: native}
+  reaction_diffusion: {task: rollout, boundary: periodic, setting: smooth_grf, state: native}
+  burgers: {task: rollout, boundary: periodic, setting: smooth_grf, state: native}
+  navier_stokes: {task: rollout, boundary: periodic, setting: smooth_grf, state: vorticity}
+temporal:
+  history_steps: 1
+  horizon: 3
+  input_frames: [0]
+  target_frames: [1, 2, 3]
+  time_semantics: first_four_monotone_stored_frames_with_physical_time_metadata
+  teacher_forcing_ratio: 0.0
+  recurrent_input: previous_prediction
+  detach_between_predictions: false
+  future_ground_truth_as_input: forbidden
+supervision:
+  target: complete_field_or_future_trajectory
+  pino_physical_context: declared_training_loss_only
+  test_used_for_checkpoint_selection: false
+learned_methods: [ufno_2d, fno, cno, deeponet, gnot, transolver, pino]
+training_rows: 441
+test_views_per_checkpoint: 9
+possible_learned_blocks: 3969
+observation_definition: observations.yaml
+training_cohort_definition: training_cohorts.yaml
+scoring:
+  release_default: pdeobs-strict-v1
+  preserve_historical_scoring_version: true
+  legacy_results_automatically_strict_validated: false
+  test_records_per_paper_block: 200
+  missing_result_marker: RESULT_PENDING
+paths:
+  data_root: ${PDEOBS_DATA:-./paper-data}
+  output_root: ${PDEOBS_RUNS:-./paper-runs}
