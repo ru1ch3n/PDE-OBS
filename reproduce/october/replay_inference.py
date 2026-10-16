@@ -23,6 +23,7 @@ import os
 import sys
 import tempfile
 import time
+from pathlib import Path
 
 import numpy as np
 import yaml
@@ -102,7 +103,7 @@ def main() -> int:
     model.load_state_dict(state)
     device = torch.device(a.device)
     model.to(device).eval()
-    tconf = _training_config(cfg, tempfile.mkdtemp(prefix="pdeobs-replay-"), None)
+    tconf = _training_config(cfg, Path(tempfile.gettempdir()) / "pdeobs-replay", None)   # inference only: nothing is written
     grid = int(recipe.get("grid") or 128)
     if a.suite == "v2eval7":
         views = []
