@@ -12,10 +12,15 @@ The script:
 
 The V2 store is the directory that holds the V2 views (e.g. v2_poisson_ell009_ref128/). Scores are compared with a
 relative tolerance (default 1e-4); bit-identical agreement is not expected across devices.
+
+FNO checkpoints on a CPU: the October FNOs were trained and scored with cuFFT, whose large-batch inverse real FFT keeps
+the imaginary parts of the kx = 0 / Nyquist bins that CPU FFT libraries drop (see pdeobs.revision.fftcompat). With
+--fft auto (default) a CPU replay uses the cuFFT-compatible transform; --fft native shows the plain CPU result.
 """
 from __future__ import annotations
 
 import argparse
+import contextlib
 import csv
 import glob
 import json
@@ -80,6 +85,8 @@ def main() -> int:
     ap.add_argument("--results", default="results/revision_october")
     ap.add_argument("--rtol", type=float, default=1e-4)
     ap.add_argument("--out", default=None, help="write the report JSON here")
+    ap.add_argument("--fft", default="auto", choices=("auto", "native", "cufft"),
+                    help="inverse real 2-D FFT of FNO layers on CPU: cuFFT-compatible (auto on CPU, cufft) or the CPU library's")
     a = ap.parse_args()
     import torch
     from torch.utils.data import DataLoader
@@ -87,6 +94,7 @@ def main() -> int:
     from pdeobs.runner import _training_config
     from pdeobs.training import _forward, prepare_batch_with_context
     from pdeobs.revision.data import apply_layout, input_setup, v2_config, v2_split
+    from pdeobs.revision.fftcompat import cufft_c2r_on_cpu
     from pdeobs.revision.models import build_model
     from pdeobs.revision.v2masks import protocol_mask
 
@@ -116,9 +124,10 @@ def main() -> int:
     else:
         views = [(f"U{k}", q, f"U{k}__q{q}") for k in NESTED_K for q in range(3)]
     stored = stored_scores(a.run, a.suite, a.results)
+    fft = "cufft" if a.fft == "cufft" or (a.fft == "auto" and device.type == "cpu") else "native"
     report = {"run": a.run, "suite": a.suite, "recipe": recipe, "test_receipt": receipt, "device": str(device),
-              "torch": torch.__version__, "views": {}}
-    with torch.no_grad():
+              "torch": torch.__version__, "fft": fft if device.type == "cpu" else "native (cuda)", "views": {}}
+    with torch.no_grad(), (cufft_c2r_on_cpu() if fft == "cufft" else contextlib.nullcontext()):
         for proto, rep, label in views:
             apply_layout(test, proto, pde=recipe["pde"], rep=rep)
             errs = []

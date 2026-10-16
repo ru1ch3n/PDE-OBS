@@ -115,3 +115,38 @@ def test_rpb_constants():
     assert "L256" not in rpb.FEASIBLE_VIEWS and rpb.MIXTURE == "MXR2_K256"
     for v in rpb.FEASIBLE_VIEWS:
         assert int(VM.protocol_mask(v, "poisson", "rpb/poisson/in/00000", rep=0, n=64).sum()) == int(v[1:])
+
+
+def test_cufft_compatible_irfft2_matches_native_on_hermitian_spectra():
+    torch = pytest.importorskip("torch")
+    from pdeobs.revision.fftcompat import irfft2_cufft
+    x = torch.fft.rfft2(torch.randn(3, 2, 16, 12, generator=torch.Generator().manual_seed(0)), norm="ortho")
+    ref = torch.fft.irfft2(x, s=(16, 12), norm="ortho")
+    assert torch.allclose(irfft2_cufft(x, s=(16, 12), norm="ortho"), ref, atol=1e-6)
+
+
+def test_cufft_compatible_irfft2_keeps_the_redundant_imaginary_parts():
+    torch = pytest.importorskip("torch")
+    from pdeobs.revision.fftcompat import irfft2_cufft
+    h, w = 8, 8
+    sign = torch.tensor([(-1.0) ** j for j in range(w)])
+    x = torch.zeros(h, w // 2 + 1, dtype=torch.complex64)
+    x[0, 0] = 1j                                               # Im of the DC bin: dropped on CPU, kept by large-batch cuFFT
+    assert torch.allclose(torch.fft.irfft2(x, s=(h, w), norm="ortho"), torch.zeros(h, w), atol=1e-7)
+    assert torch.allclose(irfft2_cufft(x, s=(h, w), norm="ortho"), (-sign / (h * w) ** 0.5).expand(h, w), atol=1e-7)
+    x = torch.zeros(h, w // 2 + 1, dtype=torch.complex64)
+    x[0, w // 2] = 1j                                          # Im of the Nyquist bin
+    assert torch.allclose(irfft2_cufft(x, s=(h, w), norm="ortho"), torch.full((h, w), -1.0 / (h * w) ** 0.5), atol=1e-7)
+    with pytest.raises(NotImplementedError):
+        irfft2_cufft(x, s=(h, w), norm="backward")
+
+
+def test_cufft_c2r_context_patches_cpu_calls_only_inside_the_block():
+    torch = pytest.importorskip("torch")
+    from pdeobs.revision.fftcompat import cufft_c2r_on_cpu, irfft2_cufft
+    native = torch.fft.irfft2
+    x = torch.zeros(4, 3, dtype=torch.complex64)
+    x[0, 0] = 1j
+    with cufft_c2r_on_cpu():
+        assert torch.allclose(torch.fft.irfft2(x, s=(4, 4), norm="ortho"), irfft2_cufft(x, s=(4, 4), norm="ortho"))
+    assert torch.fft.irfft2 is native
