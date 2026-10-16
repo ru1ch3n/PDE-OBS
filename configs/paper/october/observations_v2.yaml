@@ -1,0 +1,38 @@
+# Observation layouts of the October 2026 revision.
+schema: pdeobs-october-observations/v1
+contract: pdeobs.rev8k.v2.masks/1 (pdeobs.revision.v2masks)
+layouts:
+  U<K>: uniform random over eligible cells (Dirichlet boundary excluded), per parent and replicate
+  C<K>: 'clustered: 4 Gaussian clusters, sigma = 0.08 x grid'
+  L<K>: K/64 rows x 64 distinct columns per row
+  G<K>: sqrt(K) x sqrt(K) centre-of-bin grid (evaluation)
+  U16384: every cell (NS full initial state)
+mixtures:
+  MXR3_K256:
+  - U256
+  - C256
+  - L256
+  MXR6_K256_K1024:
+  - U256
+  - C256
+  - L256
+  - U1024
+  - C1024
+  - L1024
+  MXR2_K256:
+  - U256
+  - C256
+mixture_rule: component (j + epoch) mod q; epoch 0 = rep-0 layouts; positions re-drawn for epoch >= 1
+nested_K:
+- 64
+- 128
+- 256
+- 512
+- 1024
+- 4096
+grid_perturbation:
+  GT<d><x|y>_K256: coherent shift by d cells
+  GJ<r>_K256_r<q>: within-bin jitter of radius r, fixed realization q
+  GJ2_K256: 'training augmentation: fresh jitter per (parent, epoch)'
+infeasible:
+  L256 / L1024 on 64^2 Dirichlet grids: refused (needs 64 interior columns, 62 exist); never silently replaced
