@@ -1,0 +1,74 @@
+{
+ "schema": "pdeobs-october-results/v1",
+ "part": "A",
+ "content": "static Poisson / Darcy V2 (all slices), NS medium (P4 / N5), N1-N8 except NS rough, N7 static + NS medium, RPB, E2 re-evaluations",
+ "committed_files": {
+  "runs_long.part-A.csv": {
+   "sha256": "6d89a17791df33de0aab71c9e0807fe6861424d7020cff4e39a7fa4935376608",
+   "rows": 7454
+  },
+  "classical_long.part-A.csv": {
+   "sha256": "89eb8a17666f76052db977c1fd863f78ca47c8d25e2f044fc289557f60257a2f",
+   "rows": 312
+  }
+ },
+ "export_files": {
+  "runs_long.csv.gz": {
+   "sha256": "1737d062c3ab3cb1d6dae3e08453e3d15df70573106466057c47f9ffd893c5c5",
+   "rows": 7454,
+   "bytes": 347621
+  },
+  "classical_long.csv.gz": {
+   "sha256": "4f0f36a9eab8a6da721a147c1c68195257f4702d1f43cd23a52b51d5b88fa6e4",
+   "rows": 312,
+   "bytes": 8511
+  },
+  "per_record/n2noise.csv.gz": {
+   "sha256": "2a0eda4e1b032cbca27cf3ce80597d493e11e9a7e112bec6ffb478247250cab6",
+   "rows": 2332800,
+   "bytes": 31022054
+  },
+  "per_record/n3geom.csv.gz": {
+   "sha256": "5f883f8b092e562cfd02dcf3cb3b820e68bec7f7b48fa095622a85c38b843fa9",
+   "rows": 972000,
+   "bytes": 22287954
+  },
+  "per_record/n4shift.csv.gz": {
+   "sha256": "bf2228b6b8c5491cca52299ebfbb8cb65ba67888d730540c49d8da6eba2e57bc",
+   "rows": 216000,
+   "bytes": 2881874
+  },
+  "per_record/n5nested.csv.gz": {
+   "sha256": "427ca3aa72685f5dd82abec09eca76d3d4b0d528a268db3ede8f7dbf7fc6fe37",
+   "rows": 583200,
+   "bytes": 7551179
+  },
+  "per_record/n7confirm.csv.gz": {
+   "sha256": "e26b8a0c8dc0e25599b28e5ff38d73b48a988c62163204d868dbe2a070e0604d",
+   "rows": 1071000,
+   "bytes": 14210807
+  },
+  "per_record/rpbood.csv.gz": {
+   "sha256": "ccfc9e83eac4a546519e8050d485b7711199fd242765a6f9fdfe5d0edbb7d247",
+   "rows": 46080,
+   "bytes": 1274311
+  },
+  "per_record/v2eval7.csv.gz": {
+   "sha256": "4dcbdb129e76ff743165a7cbd4e4d86ebcdf89aca8fc475b1e5a75c1f2e1a91a",
+   "rows": 4861440,
+   "bytes": 64311597
+  },
+  "per_record/v2eval7_prefix_pass250.csv.gz": {
+   "sha256": "37c8262e0a7f3d84c371eee2839e04770a2d11c5dd478972ddc40f8d3fcea765",
+   "rows": 302400,
+   "bytes": 4013659
+  },
+  "per_record/v2noise14.csv.gz": {
+   "sha256": "dd5ead90d999ddd421a08502ddfa2d8fa1101e50c6637a1737b140351b5b23bd",
+   "rows": 378000,
+   "bytes": 5037021
+  }
+ },
+ "per_record_location": "kept outside this repository (see README); hashes above identify the exported files",
+ "private_string_check": "clean"
+}
