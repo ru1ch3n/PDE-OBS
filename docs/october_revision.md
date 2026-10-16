@@ -111,17 +111,17 @@ over three training seeds, unless stated otherwise.
 3. **Changing the observation pattern is costly and asymmetric for every neural model.** On the confirmation set the
    off-pattern / matched error ratio is 1.2-2.2 in every seed.
 4. **Measurement geometry and density are predictor-specific failure modes, and training exposure removes them.**
-   - A grid-trained FNO goes from 0.031 to 0.24 / 0.39 / 0.51 under 1 / 2 / 3-cell jitter. Jitter-augmented training
-     keeps it at 0.045-0.070.
-   - A zero-fill FNO trained on 256 NS sensors scores 0.038 at 256 sensors and 0.58 at 1,024. Two-density training gives
-     0.054 / 0.027.
+   - On the confirmation set, a grid-trained FNO goes from 0.031 to 0.24 / 0.39 / 0.51 under 1 / 2 / 3-cell jitter.
+     Jitter-augmented training keeps it at 0.045-0.070.
+   - A zero-fill FNO trained on 256 NS medium sensors scores 0.038 at 256 sensors and 0.58 at 1,024 (confirmation set).
+     Two-density training gives 0.054 / 0.027.
    - Voronoi-CNN improves monotonically with more sensors.
 5. **NS rough is limited by partial observation of the initial state, not by the learned dynamics.**
    - With the full initial state FNO forecasts at 0.014-0.015 (linear dynamics: 0.44).
    - With partial observation every model sits near 0.75.
 6. **Frozen recipes caused several baseline failures.**
    - A training-set normaliser turns the Darcy FNO from a training-mean predictor into a working model.
-   - It brings Poisson medium CNO from 0.836 to 0.059 (learning rate alone: 0.167).
+   - It brings Poisson medium CNO from 0.836 to 0.059 on the U256 view (learning rate alone: 0.167).
    - On RPB the frozen Voronoi-CNN recipe failed 9 / 9 with a gradient pathology (fields of size about 1e-3) and trained
      normally with the normaliser.
 7. **External data.** RPB in-distribution solutions lie in a low-dimensional span:
