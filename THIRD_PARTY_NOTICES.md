@@ -88,3 +88,14 @@ This repository provides an original benchmark harness. It **does not redistribu
   https://github.com/maziarraissi/PINNs
   ```
 - License/terms: see upstream repository.
+
+## Representative PDE Benchmarks (RPB), Poisson part - October 2026 revision
+- Data record (CNO authors):
+  ```text
+  https://zenodo.org/records/10406879
+  ```
+- Paper: Raonic et al., Convolutional Neural Operators for robust and accurate learning of PDEs (NeurIPS 2023).
+- Licence: CC BY 4.0 (data). PDE-OBS does **not** redistribute the RPB files. Download `data.zip`
+  (md5 268a51a9c90f4ee01cd0c1495664ec25) from Zenodo; `pdeobs.revision.external.rpb` converts the two
+  Poisson files without changing values and keeps the authors' train / validation / test / OOD split.
+  Results derived from these data must attribute the source.
