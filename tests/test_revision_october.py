@@ -150,3 +150,27 @@ def test_cufft_c2r_context_patches_cpu_calls_only_inside_the_block():
     with cufft_c2r_on_cpu():
         assert torch.allclose(torch.fft.irfft2(x, s=(4, 4), norm="ortho"), irfft2_cufft(x, s=(4, 4), norm="ortho"))
     assert torch.fft.irfft2 is native
+
+
+class _Records:
+    """Minimal stand-in for a V2 split: records with a stored trajectory, addressed through base / indices."""
+
+    def __init__(self, trajectories):
+        from types import SimpleNamespace
+        self.base = [SimpleNamespace(trajectory=t) for t in trajectories]
+        self.indices = list(range(len(trajectories)))
+
+    def __len__(self):
+        return len(self.indices)
+
+
+def test_train_scalar_stats_pools_every_training_value():
+    from pdeobs.revision.data import train_scalar_stats
+    a = np.arange(8, dtype=np.float64).reshape(2, 2, 2)
+    b = np.full((2, 2, 2), 3.0)
+    st = train_scalar_stats(_Records([a, b]), "poisson")          # static: the solution (last stored frame) only
+    assert st["values"] == 8 and st["records"] == 2
+    assert st["mu"] == pytest.approx(4.25) and st["sigma"] == pytest.approx(2.1875 ** 0.5)
+    st = train_scalar_stats(_Records([a, b]), "navier_stokes")    # temporal: every stored frame of the t4 view
+    assert st["values"] == 16
+    assert st["mu"] == pytest.approx(3.25) and st["sigma"] == pytest.approx(2.6875 ** 0.5)

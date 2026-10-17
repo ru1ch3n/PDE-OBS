@@ -187,5 +187,24 @@ def input_setup(recipe: Mapping[str, Any], ds: V2Dataset) -> None:
         ds.fill = "euclid" if recipe["pde"] in STATIC else "torus"
 
 
-__all__ = ["V2Dataset", "apply_layout", "campaign_and_registry", "experiment_config", "input_setup", "v2_config",
-           "v2_layout", "v2_split", "v2_view"]
+def train_scalar_stats(ds: V2Dataset, pde: str) -> dict:
+    """Training-set scalar normaliser of the method-tuned (V4) recipes: population mean / std (float64) over every value of
+    the slice's training targets (static families: the solution field; temporal families: frames 0-3 of the t4 view). One
+    scalar pair per slice, from the training split only; validation and test records are never read."""
+    total = total2 = 0.0
+    n = 0
+    for i in range(len(ds)):
+        tr = np.asarray(ds.base[ds.indices[i]].trajectory, dtype=np.float64)
+        u = tr[-1] if pde in STATIC else tr
+        total += float(u.sum())
+        total2 += float((u * u).sum())
+        n += u.size
+    if n == 0:
+        raise ValueError("no training values")
+    mean = total / n
+    return {"mu": mean, "sigma": max(total2 / n - mean * mean, 0.0) ** 0.5, "records": len(ds), "values": n,
+            "field": "solution" if pde in STATIC else "vorticity frames 0-3"}
+
+
+__all__ = ["V2Dataset", "apply_layout", "campaign_and_registry", "experiment_config", "input_setup", "train_scalar_stats",
+           "v2_config", "v2_layout", "v2_split", "v2_view"]
