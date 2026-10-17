@@ -38,7 +38,7 @@ Recorded checks (2026-10-16; fresh virtual environments from the built wheel, Py
 | Run | Suite (views) | CUDA, NVIDIA H200: max relative difference | CPU: max relative difference |
 |---|---|---|---|
 | V4C Poisson medium FNO U256 s1101 | v2eval7 (7) | 1.0e-6 | 1.0e-6 (`--fft auto`); 1.2e-2 with `--fft native` |
-| P4 Poisson medium Voronoi-CNN U256 s1101 | v2eval7 (7) | 2.7e-5 | running |
+| P4 Poisson medium Voronoi-CNN U256 s1101 | v2eval7 (7) | 2.7e-5 | 0 (every view mean identical) |
 | P4 NS medium FNO U256 s1101 | n5nested (18) | 6.9e-8 | 1.8e-7 (`--fft auto`); 6.9e-5 with `--fft native` |
 
 **FNO checkpoints and CPU inference.** The FNO spectral layer has independent weights for +ky and -ky, so the half spectrum it
