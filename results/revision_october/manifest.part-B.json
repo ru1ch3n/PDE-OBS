@@ -1,0 +1,58 @@
+{
+ "schema": "pdeobs-october-results/v1",
+ "part": "B",
+ "content": "NS smooth / medium / rough P4; NS rough P6 / P7, V4-C / V4-D / V4-E and the V4 P6 / P7 re-checks; N7 NS rough confirmation; N8 resolution runs of Poisson rough and NS rough",
+ "committed_files": {
+  "runs_long.part-B.csv": {
+   "sha256": "477ba99971925e21b2fad4e0fb8fa0602ff5f50c1394f5e3b3f9de6275501766",
+   "rows": 2289
+  },
+  "classical_long.part-B.csv": {
+   "sha256": "7c01e0e8b7758b62b93a49faafe48f59087a49f5bb8f265d4de64f2fb881a11d",
+   "rows": 282
+  }
+ },
+ "export_files": {
+  "runs_long.csv.gz": {
+   "sha256": "20f55f83ba14d9dfa9aeffa971e267a0d69da2653625b103a558d02c7c0b6722",
+   "rows": 2291,
+   "bytes": 107167
+  },
+  "classical_long.csv.gz": {
+   "sha256": "90ab3ec987deb6bc3823ac0a18639916216258c1f57eae3f3fadac4bd4f802ee",
+   "rows": 450,
+   "bytes": 12149
+  },
+  "per_record/n7confirm.csv.gz": {
+   "sha256": "c8d6fcc100368b8bd4dc07b9b55f8a38faf4ab3f7ca1641e85419096ef05de43",
+   "rows": 208800,
+   "bytes": 2718126
+  },
+  "per_record/v2eval7.csv.gz": {
+   "sha256": "533176d440c4abfb8e0b8525158f1a639081d18691bce1bf7aa8a8be1c594ee1",
+   "rows": 2943000,
+   "bytes": 38166153
+  },
+  "per_record/v2eval7_prefix_pass250.csv.gz": {
+   "sha256": "025b5a348872023ab6f532107ee2abc2b8d6db2265637f08e941dcbc1aa22fb4",
+   "rows": 226800,
+   "bytes": 2921752
+  },
+  "per_record/v2full1.csv.gz": {
+   "sha256": "e99d3a3b5b61bcc2be38305311b4796bad54c080207a708f5e6d82b81a32de0c",
+   "rows": 21600,
+   "bytes": 282659
+  },
+  "per_record/v2noise14.csv.gz": {
+   "sha256": "f6a7449b67fe54822dc080a4ee32af407ffd2792a1769be8f6c00473ee216f34",
+   "rows": 302400,
+   "bytes": 3911390
+  }
+ },
+ "excluded": [
+  "2 rows of voided attempts (P4 NS rough Voronoi-CNN MXR3 seeds 1101 / 1102, voided 2026-10-08): an infrastructure failure (checkpoint loading) after which both runs were trained again under the same ids; the repeated runs are included",
+  "168 classical rows (Darcy and Poisson V4-D references of the 128^2 slices) that equal part A exactly: both accounts computed them independently and agree in every mean and selected setting; part A keeps them"
+ ],
+ "per_record_location": "kept outside this repository (see README); hashes above identify the exported files (the per-record files still contain the 2 voided attempts)",
+ "private_string_check": "clean"
+}
