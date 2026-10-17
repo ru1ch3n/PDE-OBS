@@ -65,11 +65,29 @@ the release notes state the same under "Explicitly not done this round" in
 overlap and must not be added (`counts_are_overlapping_not_additive: true`).
 
 Package and kernel versions are deliberately separate: `pyproject.toml` and
-`src/pdeobs/__init__.py` declare package version `0.2.0`, while
+`src/pdeobs/__init__.py` declare the package version (`0.2.1` in this tree), while
 `__solver_version__` stays `0.1.0`, so a packaging bump never relabels the
 numerical implementation that produced a record. (The `release_id` string inside
 `release/validation_status.json` still carries an earlier candidate label; the
 version in the source tree is the one that identifies this code.)
+
+### Install check of the October 2026 release candidate
+
+Run 2026-10-16 on Linux x86_64 cluster nodes, from the **built** artifacts (`python -m build`: sdist, then the wheel
+from the sdist), each in a fresh virtual environment without system site packages. Dependencies were resolved from
+PyPI at that date.
+
+| Environment | Interpreter and key versions | Checks | Result |
+|---|---|---|---|
+| core, from the wheel | CPython 3.13.5; NumPy 2.5.4, SciPy 1.18.1, h5py 3.16.0, PyYAML 6.0.3; no PyTorch | `pdeobs --help`, `--version`, demos E1-E4 and E6, `generate-case`, `identity-manifest`, `doctor --offline`, imports of `pdeobs.revision` (covariance, dc, stats, v2masks, external.rpb, classical) | all pass |
+| core, from the sdist | CPython 3.13.5, same versions | `pdeobs --help`, demo E2 | pass |
+| core, oldest interpreter available | CPython 3.10.0; NumPy 2.2.6, SciPy 1.15.3 | `pdeobs --help`, demo E2, revision imports | pass |
+| `[train,test]` + CPU PyTorch | CPython 3.13.5; PyTorch 2.14.1+cpu, pytest 9.1.1 | demo E5; the full test suite | E5 pass; 745 passed, 0 failed, 0 skipped |
+| `[train]` + PyPI PyTorch (CUDA 13.0 build) | CPython 3.13.5; PyTorch 2.14.1+cu130; NVIDIA H200, driver 595.71 | `pdeobs --help`, `torch.cuda` device check, the October weights-inference replays (`reproduce/october/README.md`) | pass |
+
+Python 3.11 and 3.12, macOS and Windows were not part of this check. On a cluster login node, large PyTorch wheels may
+be killed while they unpack; download them there (`pip download -d <dir>`) and install offline in a batch job
+(`pip install --no-index --find-links <dir> ...`), with `TMPDIR` on a scratch file system.
 
 ## Extras, and what each unlocks
 
