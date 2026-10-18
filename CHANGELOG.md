@@ -1,6 +1,6 @@
 # Changelog
 
-## Unreleased (review branches, not published)
+## Unreleased (October 2026 revision; no tagged release yet)
 
 - `pdeobs.revision`: the October 2026 revision modules.
   - V2 data specification and generator, reference solvers and numerical checks.
