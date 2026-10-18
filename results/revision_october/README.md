@@ -48,7 +48,7 @@ in the file but reported separately.
 
 - **Per-record errors.** About 150 MB of compressed CSV for part A. Their SHA-256 are in `manifest.part-A.json`. They
   are published beside the data in the dataset `huggingface.co/datasets/ru1ch3n/PDE-OBS` under
-  `october2026/results/part-A/`, with a copy of the manifest; part B's per-record files follow under `part-B/` (its
+  `october2026/results/part-A/`, with a copy of the manifest; part B's per-record files are under `part-B/` (its
   run-level export is not published there because two voided-attempt rows carry a machine path; `runs_long.part-B.csv`
   here is its run-level table).
 - **Model weights** of every scored run are in the model repository `huggingface.co/ru1ch3n/PDE-OBS` under `october2026/`.
