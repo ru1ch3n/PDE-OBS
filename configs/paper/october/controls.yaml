@@ -1,0 +1,17 @@
+# Single-factor control cohorts: one change against the named base cohort.
+schema: pdeobs-october-controls/v1
+N6:
+  base: V4C Poisson medium CNO MXR3
+  change: training-set normaliser off
+  darcy: 'Darcy rough FNO: the frozen P4 runs are the control'
+RPBn:
+  base: RPB Voronoi-CNN frozen recipe
+  change: training-set scalar normaliser added (filled input normalised on every cell)
+E6:
+  base:
+  - V4D Poisson rough FNO G256
+  - N3GJ2 Poisson rough FNO
+  - P4 NS medium FNO U256
+  - N5MXR6 NS medium FNO
+  change: nearest-observation fill (mask kept)
+  same: recipe, normaliser, loss, data, seeds, initial weights, updates

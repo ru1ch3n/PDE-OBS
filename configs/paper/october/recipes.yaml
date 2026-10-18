@@ -1,0 +1,952 @@
+# Frozen training recipes of every October 2026 cohort, exported from the task files that ran.
+# One entry per (cohort, dataset, method); the recipe is identical across the listed protocols and seeds.
+# Historical (P4 / P5) and method-tuned (V4-*) cohorts are separate and are never re-interpreted by newer defaults.
+schema: pdeobs-october-recipes/v1
+cohorts:
+  P4: V2 main matrix, frozen V2 recipe (FNO / Voronoi-CNN); historical cohort, recipes chosen on the V2 dev screen
+  P5: V2 CNO, frozen V2 recipe
+  V4C: V4-C method-tuned formal runs (recipe = top-2 variant with the best validation score at 20,000 updates)
+  V4D: V4-D layout / density specialists (FNO V4-C recipe; Voronoi-CNN frozen recipe)
+  V4E: V4-E NS rough information control (partial / full initial state x viscosity hidden / provided)
+  N3GJ2: N3 jitter-augmented grid training (GJ2_K256), G256 specialist recipe
+  N5MXR6: N5 NS medium two-density mixture (MXR6_K256_K1024), P4 recipe
+  N6: 'N6 normalisation-only control: V4 recipe with the training-set normaliser OFF'
+  RPB: external RPB Poisson, frozen Poisson recipes (FNO V4-C, Voronoi-CNN frozen V2)
+  RPBn: 'RPB control: frozen Voronoi-CNN recipe + training-set normaliser (only change)'
+  E6: 'E6 control: zero-fill FNO cohort copied with nearest-observation fill (only change)'
+groups:
+- cohort: E6
+  dataset_id: v2_ns_ell009_ref128
+  method: fno
+  protocols:
+  - MXR6_K256_K1024
+  - U256
+  seeds:
+  - 1101
+  - 1102
+  - 1103
+  recipe:
+    method: fno
+    lr: 0.0003
+    batch_size: 8
+    epochs: 250
+    fill_input: nearest
+    n_train: 9000
+- cohort: E6
+  dataset_id: v2_poisson_ell0025_ref128
+  method: fno
+  protocols:
+  - G256
+  - GJ2_K256
+  seeds:
+  - 1101
+  - 1102
+  - 1103
+  recipe:
+    method: fno
+    lr: 0.0003
+    batch_size: 8
+    epochs: 250
+    v4_norm: train_scalar
+    v4_variant: n3
+    fill_input: nearest
+    n_train: 9000
+- cohort: N3GJ2
+  dataset_id: v2_poisson_ell0025_ref128
+  method: fno
+  protocols:
+  - GJ2_K256
+  seeds:
+  - 1101
+  - 1102
+  - 1103
+  recipe:
+    method: fno
+    lr: 0.0003
+    batch_size: 8
+    epochs: 250
+    v4_norm: train_scalar
+    v4_variant: n3
+    n_train: 9000
+- cohort: N3GJ2
+  dataset_id: v2_poisson_ell0025_ref128
+  method: voronoi_cnn
+  protocols:
+  - GJ2_K256
+  seeds:
+  - 1101
+  - 1102
+  - 1103
+  recipe:
+    method: voronoi_cnn
+    lr: 0.0001
+    batch_size: 4
+    epochs: 250
+    input_representation: voronoi_mask_geometry
+    adapter: rev8k
+    recipe: fno
+    n_train: 9000
+- cohort: N5MXR6
+  dataset_id: v2_ns_ell009_ref128
+  method: fno
+  protocols:
+  - MXR6_K256_K1024
+  seeds:
+  - 1101
+  - 1102
+  - 1103
+  recipe:
+    method: fno
+    lr: 0.0003
+    batch_size: 8
+    epochs: 250
+    n_train: 9000
+- cohort: N6
+  dataset_id: v2_poisson_ell009_ref128
+  method: cno_classic
+  protocols:
+  - MXR3_K256
+  seeds:
+  - 1101
+  - 1102
+  - 1103
+  recipe:
+    method: cno_classic
+    lr: 0.0001
+    batch_size: 4
+    epochs: 250
+    v4_variant: n1_normaliser_off
+    adapter: rev8k
+    recipe: fno
+    n_train: 9000
+- cohort: P4
+  dataset_id: v2_darcy_ell0025_ref128
+  method: fno
+  protocols:
+  - C256
+  - L256
+  - MXR3_K256
+  - U1024
+  - U256
+  seeds:
+  - 1101
+  - 1102
+  - 1103
+  recipe:
+    method: fno
+    lr: 0.0003
+    batch_size: 8
+    epochs: 250
+    n_train: 9000
+- cohort: P4
+  dataset_id: v2_darcy_ell0025_ref128
+  method: voronoi_cnn
+  protocols:
+  - C256
+  - L256
+  - MXR3_K256
+  - U1024
+  - U256
+  seeds:
+  - 1101
+  - 1102
+  - 1103
+  - 1104
+  - 1105
+  recipe:
+    method: voronoi_cnn
+    lr: 0.0001
+    batch_size: 4
+    epochs: 250
+    input_representation: voronoi_mask_geometry
+    adapter: rev8k
+    recipe: fno
+    n_train: 9000
+- cohort: P4
+  dataset_id: v2_darcy_ell009_ref128
+  method: fno
+  protocols:
+  - C256
+  - L256
+  - MXR3_K256
+  - U256
+  seeds:
+  - 1101
+  - 1102
+  - 1103
+  recipe:
+    method: fno
+    lr: 0.0001
+    batch_size: 8
+    epochs: 250
+    n_train: 9000
+- cohort: P4
+  dataset_id: v2_darcy_ell009_ref128
+  method: voronoi_cnn
+  protocols:
+  - C256
+  - L256
+  - MXR3_K256
+  - U256
+  seeds:
+  - 1101
+  - 1102
+  - 1103
+  - 1104
+  - 1105
+  recipe:
+    method: voronoi_cnn
+    lr: 0.0001
+    batch_size: 4
+    epochs: 250
+    input_representation: voronoi_mask_geometry
+    adapter: rev8k
+    recipe: fno
+    n_train: 9000
+- cohort: P4
+  dataset_id: v2_darcy_ell022_ref128
+  method: fno
+  protocols:
+  - C256
+  - L256
+  - MXR3_K256
+  - U256
+  seeds:
+  - 1101
+  - 1102
+  - 1103
+  recipe:
+    method: fno
+    lr: 0.001
+    batch_size: 8
+    epochs: 250
+    n_train: 9000
+- cohort: P4
+  dataset_id: v2_darcy_ell022_ref128
+  method: voronoi_cnn
+  protocols:
+  - C256
+  - L256
+  - MXR3_K256
+  - U256
+  seeds:
+  - 1101
+  - 1102
+  - 1103
+  - 1104
+  - 1105
+  recipe:
+    method: voronoi_cnn
+    lr: 0.0001
+    batch_size: 4
+    epochs: 250
+    input_representation: voronoi_mask_geometry
+    adapter: rev8k
+    recipe: fno
+    n_train: 9000
+- cohort: P4
+  dataset_id: v2_ns_ell0025_ref128
+  method: fno
+  protocols:
+  - C256
+  - L256
+  - MXR3_K256
+  - U1024
+  - U256
+  seeds:
+  - 1101
+  - 1102
+  - 1103
+  - 1104
+  - 1105
+  recipe:
+    method: fno
+    lr: 0.0001
+    batch_size: 8
+    epochs: 250
+    n_train: 9000
+- cohort: P4
+  dataset_id: v2_ns_ell0025_ref128
+  method: voronoi_cnn
+  protocols:
+  - C1024
+  - C256
+  - G256
+  - L1024
+  - L256
+  - MXR3_K256
+  - U1024
+  - U256
+  seeds:
+  - 1101
+  - 1102
+  - 1103
+  - 1104
+  - 1105
+  recipe:
+    method: voronoi_cnn
+    lr: 0.0001
+    batch_size: 4
+    epochs: 250
+    input_representation: voronoi_mask_geometry
+    adapter: rev8k
+    recipe: fno
+    n_train: 9000
+- cohort: P4
+  dataset_id: v2_ns_ell009_ref128
+  method: fno
+  protocols:
+  - C256
+  - L256
+  - MXR3_K256
+  - U1024
+  - U256
+  seeds:
+  - 1101
+  - 1102
+  - 1103
+  - 1104
+  - 1105
+  recipe:
+    method: fno
+    lr: 0.0003
+    batch_size: 8
+    epochs: 250
+    n_train: 9000
+- cohort: P4
+  dataset_id: v2_ns_ell009_ref128
+  method: voronoi_cnn
+  protocols:
+  - C256
+  - L256
+  - MXR3_K256
+  - U256
+  seeds:
+  - 1101
+  - 1102
+  - 1103
+  - 1104
+  - 1105
+  recipe:
+    method: voronoi_cnn
+    lr: 0.0001
+    batch_size: 4
+    epochs: 250
+    input_representation: voronoi_mask_geometry
+    adapter: rev8k
+    recipe: fno
+    n_train: 9000
+- cohort: P4
+  dataset_id: v2_ns_ell022_ref128
+  method: fno
+  protocols:
+  - C256
+  - L256
+  - MXR3_K256
+  - U256
+  seeds:
+  - 1101
+  - 1102
+  - 1103
+  - 1104
+  - 1105
+  recipe:
+    method: fno
+    lr: 0.0003
+    batch_size: 8
+    epochs: 250
+    n_train: 9000
+- cohort: P4
+  dataset_id: v2_ns_ell022_ref128
+  method: voronoi_cnn
+  protocols:
+  - C256
+  - L256
+  - MXR3_K256
+  - U256
+  seeds:
+  - 1101
+  - 1102
+  - 1103
+  - 1104
+  - 1105
+  recipe:
+    method: voronoi_cnn
+    lr: 0.0001
+    batch_size: 4
+    epochs: 250
+    input_representation: voronoi_mask_geometry
+    adapter: rev8k
+    recipe: fno
+    n_train: 9000
+- cohort: P4
+  dataset_id: v2_poisson_ell0025_ref128
+  method: voronoi_cnn
+  protocols:
+  - C256
+  - L256
+  - MXR3_K256
+  - U1024
+  - U256
+  seeds:
+  - 1101
+  - 1102
+  - 1103
+  - 1104
+  - 1105
+  recipe:
+    method: voronoi_cnn
+    lr: 0.0001
+    batch_size: 4
+    epochs: 250
+    input_representation: voronoi_mask_geometry
+    adapter: rev8k
+    recipe: fno
+    n_train: 9000
+- cohort: P4
+  dataset_id: v2_poisson_ell009_ref128
+  method: fno
+  protocols:
+  - C256
+  - L256
+  - MXR3_K256
+  - U256
+  seeds:
+  - 1101
+  - 1102
+  - 1103
+  recipe:
+    method: fno
+    lr: 0.0001
+    batch_size: 8
+    epochs: 250
+    n_train: 9000
+- cohort: P4
+  dataset_id: v2_poisson_ell009_ref128
+  method: voronoi_cnn
+  protocols:
+  - C256
+  - L256
+  - MXR3_K256
+  - U256
+  seeds:
+  - 1101
+  - 1102
+  - 1103
+  - 1104
+  - 1105
+  recipe:
+    method: voronoi_cnn
+    lr: 0.0001
+    batch_size: 4
+    epochs: 250
+    input_representation: voronoi_mask_geometry
+    adapter: rev8k
+    recipe: fno
+    n_train: 9000
+- cohort: P4
+  dataset_id: v2_poisson_ell022_ref128
+  method: fno
+  protocols:
+  - C256
+  - L256
+  - MXR3_K256
+  - U256
+  seeds:
+  - 1101
+  - 1102
+  - 1103
+  - 1104
+  - 1105
+  recipe:
+    method: fno
+    lr: 0.0001
+    batch_size: 8
+    epochs: 250
+    n_train: 9000
+- cohort: P4
+  dataset_id: v2_poisson_ell022_ref128
+  method: voronoi_cnn
+  protocols:
+  - C256
+  - L256
+  - MXR3_K256
+  - U256
+  seeds:
+  - 1101
+  - 1102
+  - 1103
+  - 1104
+  - 1105
+  recipe:
+    method: voronoi_cnn
+    lr: 0.0001
+    batch_size: 4
+    epochs: 250
+    input_representation: voronoi_mask_geometry
+    adapter: rev8k
+    recipe: fno
+    n_train: 9000
+- cohort: P5
+  dataset_id: v2_darcy_ell0025_ref128
+  method: cno_classic
+  protocols:
+  - C256
+  - MXR3_K256
+  - U256
+  seeds:
+  - 1101
+  - 1102
+  - 1103
+  recipe:
+    method: cno_classic
+    lr: 0.0001
+    batch_size: 4
+    epochs: 250
+    adapter: rev8k
+    recipe: fno
+    n_train: 9000
+- cohort: P5
+  dataset_id: v2_darcy_ell009_ref128
+  method: cno_classic
+  protocols:
+  - C256
+  - MXR3_K256
+  - U256
+  seeds:
+  - 1101
+  - 1102
+  - 1103
+  recipe:
+    method: cno_classic
+    lr: 0.0003
+    batch_size: 4
+    epochs: 250
+    adapter: rev8k
+    recipe: fno
+    n_train: 9000
+- cohort: P5
+  dataset_id: v2_poisson_ell009_ref128
+  method: cno_classic
+  protocols:
+  - C256
+  - MXR3_K256
+  - U256
+  seeds:
+  - 1101
+  - 1102
+  - 1103
+  recipe:
+    method: cno_classic
+    lr: 0.001
+    batch_size: 4
+    epochs: 250
+    adapter: rev8k
+    recipe: fno
+    n_train: 9000
+- cohort: RPB
+  dataset_id: v2_poisson_rpb_ref128
+  method: fno
+  protocols:
+  - C256
+  - MXR2_K256
+  - U256
+  seeds:
+  - 1101
+  - 1102
+  - 1103
+  recipe:
+    method: fno
+    lr: 0.0003
+    batch_size: 8
+    epochs: 250
+    v4_norm: train_scalar
+    v4_variant: n3
+    n_train: 1024
+    grid: 64
+- cohort: RPB
+  dataset_id: v2_poisson_rpb_ref128
+  method: voronoi_cnn
+  protocols:
+  - C256
+  - MXR2_K256
+  - U256
+  seeds:
+  - 1101
+  - 1102
+  - 1103
+  recipe:
+    method: voronoi_cnn
+    lr: 0.0001
+    batch_size: 4
+    epochs: 250
+    input_representation: voronoi_mask_geometry
+    adapter: rev8k
+    recipe: fno
+    n_train: 1024
+    grid: 64
+- cohort: RPBn
+  dataset_id: v2_poisson_rpb_ref128
+  method: voronoi_cnn
+  protocols:
+  - C256
+  - MXR2_K256
+  - U256
+  seeds:
+  - 1101
+  - 1102
+  - 1103
+  recipe:
+    method: voronoi_cnn
+    lr: 0.0001
+    batch_size: 4
+    epochs: 250
+    v4_norm: train_scalar
+    input_representation: voronoi_mask_geometry
+    adapter: rev8k
+    recipe: fno
+    n_train: 1024
+    grid: 64
+- cohort: V4C
+  dataset_id: v2_darcy_ell0025_ref128
+  method: cno_classic
+  protocols:
+  - C256
+  - MXR3_K256
+  - U256
+  seeds:
+  - 1101
+  - 1102
+  - 1103
+  recipe:
+    method: cno_classic
+    lr: 0.0001
+    batch_size: 4
+    epochs: 250
+    v4_norm: train_scalar
+    v4_variant: n1
+    adapter: rev8k
+    recipe: fno
+    n_train: 9000
+- cohort: V4C
+  dataset_id: v2_darcy_ell0025_ref128
+  method: fno
+  protocols:
+  - C256
+  - L256
+  - MXR3_K256
+  - U256
+  seeds:
+  - 1101
+  - 1102
+  - 1103
+  recipe:
+    method: fno
+    lr: 0.0003
+    batch_size: 8
+    epochs: 250
+    v4_norm: train_scalar
+    v4_variant: n3
+    n_train: 9000
+- cohort: V4C
+  dataset_id: v2_darcy_ell0025_ref128
+  method: senseiver_v2
+  protocols:
+  - C256
+  - MXR3_K256
+  - U256
+  seeds:
+  - 1101
+  - 1102
+  - 1103
+  recipe:
+    method: senseiver_v2
+    lr: 0.0001
+    batch_size: 4
+    epochs: 250
+    v4_norm: train_scalar
+    v4_loss: nmse
+    v4_variant: m1
+    adapter: rev8k
+    recipe: fno
+    n_train: 9000
+- cohort: V4C
+  dataset_id: v2_darcy_ell009_ref128
+  method: fno
+  protocols:
+  - C256
+  - L256
+  - MXR3_K256
+  - U256
+  seeds:
+  - 1101
+  - 1102
+  - 1103
+  recipe:
+    method: fno
+    lr: 0.0003
+    batch_size: 8
+    epochs: 250
+    v4_norm: train_scalar
+    v4_variant: n3
+    n_train: 9000
+- cohort: V4C
+  dataset_id: v2_ns_ell0025_ref128
+  method: fno
+  protocols:
+  - C256
+  - L256
+  - MXR3_K256
+  - U256
+  seeds:
+  - 1101
+  - 1102
+  - 1103
+  recipe:
+    method: fno
+    lr: 0.0003
+    batch_size: 8
+    epochs: 250
+    v4_norm: train_scalar
+    v4_variant: n3
+    n_train: 9000
+- cohort: V4C
+  dataset_id: v2_poisson_ell0025_ref128
+  method: fno
+  protocols:
+  - C256
+  - L256
+  - MXR3_K256
+  - U256
+  seeds:
+  - 1101
+  - 1102
+  - 1103
+  recipe:
+    method: fno
+    lr: 0.0003
+    batch_size: 8
+    epochs: 250
+    v4_norm: train_scalar
+    v4_variant: n3
+    n_train: 9000
+- cohort: V4C
+  dataset_id: v2_poisson_ell009_ref128
+  method: cno_classic
+  protocols:
+  - C256
+  - MXR3_K256
+  - U256
+  seeds:
+  - 1101
+  - 1102
+  - 1103
+  recipe:
+    method: cno_classic
+    lr: 0.0001
+    batch_size: 4
+    epochs: 250
+    v4_norm: train_scalar
+    v4_variant: n1
+    adapter: rev8k
+    recipe: fno
+    n_train: 9000
+- cohort: V4C
+  dataset_id: v2_poisson_ell009_ref128
+  method: fno
+  protocols:
+  - C256
+  - L256
+  - MXR3_K256
+  - U256
+  seeds:
+  - 1101
+  - 1102
+  - 1103
+  recipe:
+    method: fno
+    lr: 0.0003
+    batch_size: 8
+    epochs: 250
+    v4_norm: train_scalar
+    v4_variant: n3
+    n_train: 9000
+- cohort: V4C
+  dataset_id: v2_poisson_ell009_ref128
+  method: senseiver_v2
+  protocols:
+  - C256
+  - MXR3_K256
+  - U256
+  seeds:
+  - 1101
+  - 1102
+  - 1103
+  recipe:
+    method: senseiver_v2
+    lr: 0.0001
+    batch_size: 4
+    epochs: 250
+    v4_norm: train_scalar
+    v4_variant: n1
+    adapter: rev8k
+    recipe: fno
+    n_train: 9000
+- cohort: V4D
+  dataset_id: v2_ns_ell0025_ref128
+  method: fno
+  protocols:
+  - C1024
+  - G256
+  - L1024
+  - U1024
+  seeds:
+  - 1101
+  - 1102
+  - 1103
+  recipe:
+    method: fno
+    lr: 0.0003
+    batch_size: 8
+    epochs: 250
+    v4_norm: train_scalar
+    v4_variant: n3
+    n_train: 9000
+- cohort: V4D
+  dataset_id: v2_poisson_ell0025_ref128
+  method: fno
+  protocols:
+  - C1024
+  - G256
+  - L1024
+  - U1024
+  seeds:
+  - 1101
+  - 1102
+  - 1103
+  recipe:
+    method: fno
+    lr: 0.0003
+    batch_size: 8
+    epochs: 250
+    v4_norm: train_scalar
+    v4_variant: n3
+    n_train: 9000
+- cohort: V4D
+  dataset_id: v2_poisson_ell0025_ref128
+  method: voronoi_cnn
+  protocols:
+  - C1024
+  - G256
+  - L1024
+  seeds:
+  - 1101
+  - 1102
+  - 1103
+  recipe:
+    method: voronoi_cnn
+    lr: 0.0001
+    batch_size: 4
+    epochs: 250
+    input_representation: voronoi_mask_geometry
+    adapter: rev8k
+    recipe: fno
+    n_train: 9000
+- cohort: V4E
+  dataset_id: v2_ns_ell0025_ref128
+  method: fno
+  protocols:
+  - MXR3_K256
+  - U16384
+  seeds:
+  - 1101
+  - 1102
+  - 1103
+  cells:
+  - method: fno
+    lr: 0.0003
+    batch_size: 8
+    epochs: 250
+    v4_norm: train_scalar
+    v4_variant: n3
+    param_channel: hidden
+    v4_info_cell: full observation of the initial state u0; nu hidden (zero slot)
+    n_train: 9000
+  - method: fno
+    lr: 0.0003
+    batch_size: 8
+    epochs: 250
+    v4_norm: train_scalar
+    v4_variant: n3
+    param_channel: supplied
+    v4_info_cell: full observation of the initial state u0; nu provided in the slot
+    n_train: 9000
+  - method: fno
+    lr: 0.0003
+    batch_size: 8
+    epochs: 250
+    v4_norm: train_scalar
+    v4_variant: n3
+    param_channel: hidden
+    v4_info_cell: partial observation (MXR3_K256) of the initial state u0; nu hidden (zero slot)
+    n_train: 9000
+  - method: fno
+    lr: 0.0003
+    batch_size: 8
+    epochs: 250
+    v4_norm: train_scalar
+    v4_variant: n3
+    param_channel: supplied
+    v4_info_cell: partial observation (MXR3_K256) of the initial state u0; nu provided in the slot
+    n_train: 9000
+- cohort: V4E
+  dataset_id: v2_ns_ell0025_ref128
+  method: voronoi_cnn
+  protocols:
+  - MXR3_K256
+  - U16384
+  seeds:
+  - 1101
+  - 1102
+  - 1103
+  cells:
+  - method: voronoi_cnn
+    lr: 0.0001
+    batch_size: 4
+    epochs: 250
+    input_representation: voronoi_mask_geometry
+    adapter: rev8k
+    recipe: fno
+    param_channel: hidden
+    v4_info_cell: full observation of the initial state u0; nu hidden (zero slot)
+    n_train: 9000
+  - method: voronoi_cnn
+    lr: 0.0001
+    batch_size: 4
+    epochs: 250
+    input_representation: voronoi_mask_geometry
+    adapter: rev8k
+    recipe: fno
+    param_channel: supplied
+    v4_info_cell: full observation of the initial state u0; nu provided in the slot
+    n_train: 9000
+  - method: voronoi_cnn
+    lr: 0.0001
+    batch_size: 4
+    epochs: 250
+    input_representation: voronoi_mask_geometry
+    adapter: rev8k
+    recipe: fno
+    param_channel: hidden
+    v4_info_cell: partial observation (MXR3_K256) of the initial state u0; nu hidden (zero slot)
+    n_train: 9000
+  - method: voronoi_cnn
+    lr: 0.0001
+    batch_size: 4
+    epochs: 250
+    input_representation: voronoi_mask_geometry
+    adapter: rev8k
+    recipe: fno
+    param_channel: supplied
+    v4_info_cell: partial observation (MXR3_K256) of the initial state u0; nu provided in the slot
+    n_train: 9000

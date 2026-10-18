@@ -1,0 +1,26 @@
+# External RPB Poisson (the CNO authors' benchmark).
+schema: pdeobs-october-rpb/v1
+source:
+  zenodo_record: 10406879
+  file: data.zip
+  bytes: 2379635051
+  md5: 268a51a9c90f4ee01cd0c1495664ec25
+  license: CC-BY-4.0
+  used:
+  - PoissonData_64x64_IN.h5
+  - PoissonData_64x64_OUT.h5
+splits:
+  train: IN Sample_0..1023
+  validation: IN Sample_1024..1151
+  test: IN Sample_1152..1407
+  ood: OUT Sample_0..255
+grid: 64
+views:
+- U256
+- C256
+- U1024
+- C1024
+- G256
+mixture: MXR2_K256
+permissions: solution observed at the sensors and predicted; source f never a model input
+adapter: pdeobs.revision.external.rpb

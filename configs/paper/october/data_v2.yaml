@@ -1,0 +1,52 @@
+# V2 data of the October 2026 revision (pdeobs.revision.v2spec / v2data).
+schema: pdeobs-october-data/v1
+pdes:
+- poisson
+- darcy
+- navier_stokes
+slices:
+  ell022:
+    length_scale: 0.22
+    construction: smooth_grf
+  ell009:
+    length_scale: 0.09
+    construction: medium_grf
+  ell0025:
+    length_scale: 0.025
+    construction: rough_grf
+regimes:
+- low
+- medium
+- high
+splits_per_regime:
+  train:
+  - 0
+  - 3000
+  validation:
+  - 3000
+  - 3300
+  test:
+  - 3300
+  - 3900
+  confirm:
+  - 3900
+  - 4100
+grid: 128
+addon_grids:
+  poisson:
+  - 64
+  - 256
+  navier_stokes:
+  - 64
+  - 256
+addon_slice: ell0025
+counts:
+  unique_parents: 35100
+  slice_records: 105300
+  note: 3 PDEs x 3 regimes x 3,900 parents; each parent is written once per slice (ell). Burgers V2 did not pass the numerical
+    gate and is not included. Addon grids are views of the same parents, not new samples.
+confirmation:
+  parents_per_slice: 600
+  split: confirm
+  sealed_until: every model, view list and classical setting was frozen
+temporal_view: t4 (u0 + frames 1-3) for Navier-Stokes; full 15-frame trajectories kept in the full view

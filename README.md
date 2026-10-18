@@ -18,9 +18,16 @@ contains five completed models. The main grid is in
 [`results/prediction_verification_20260924/`](results/prediction_verification_20260924/)
 and the strict mixed-pattern comparisons, bootstrap intervals and stationary
 diagnostics are in [`results/revision_v2/`](results/revision_v2/).
-Historical results remain clearly separated. No new training or inference was
-performed to prepare this public copy. This is a preprint, not an accepted
-conference publication; an arXiv identifier has not yet been assigned.
+Historical results remain clearly separated. This is a preprint, not an accepted
+conference publication: [arXiv:2609.36521](https://arxiv.org/abs/2609.36521).
+
+**October 2026 revision.** The revision adds three things:
+- new rougher V2 data (Poisson, Darcy, Navier-Stokes);
+- method-tuned baselines;
+- strong observation-conditioned linear references.
+
+It also adds a sealed confirmation set, single-factor controls and an external dataset (the CNO authors' RPB Poisson). It
+is a separate, versioned layer; the September grid is unchanged. See [The October 2026 revision](docs/october_revision.md).
 
 ```bash
 git clone https://github.com/ru1ch3n/PDE-OBS.git
@@ -58,9 +65,10 @@ only thing that changes between two evaluations.
   replayed verbatim from one namespace with realized cell counts, never nominal ratios.
 - **Strict scoring, no silent shrinkage.** Raw predictions are validated before any metric. A missing,
   repeated, extra or non-finite entry invalidates the score instead of quietly leaving the denominator.
-- **Everything is generated here.** Seven PDE families, ten condition-field constructions, seeded
-  identities, resumable shards. Nothing is downloaded or converted from another corpus, and the same
-  specification reproduces the same record.
+- **Generated here, plus one documented external source.** Seven PDE families, ten condition-field
+  constructions, seeded identities, resumable shards; the same specification reproduces the same
+  record. The only external data is the October revision's RPB Poisson set, which you download from
+  its authors and convert with `pdeobs.revision.external.rpb` (licence CC BY 4.0, authors' split kept).
 - **Hash-bound evidence.** The new prediction result cut covers all 441 retained checkpoints and
   3,969 full-200 blocks. Data/weight hashes were checked in the verification environment;
   current external anonymous download access remains a separate release check.
@@ -141,9 +149,8 @@ The downloader validates the manifest's schema, status, tiers and digests before
 resumes interrupted files, and verifies every file's SHA-256 on arrival. It has **no default
 endpoint**: omitting `--manifest` fails before any network request. Local regeneration remains the
 route that produces *new* records ([Dataset card](docs/dataset_card.md)).
-The copied manifests currently retain absolute shard URLs at the original deposit;
-using the new manifest link does not yet guarantee that every shard is fetched
-from the new namespace ([release scope](docs/public_release.md)).
+Every entry of both manifests resolves to `huggingface.co/datasets/ru1ch3n/PDE-OBS`
+(336 and 13,440 entries, checked 2026-10-16; [release scope](docs/public_release.md)).
 
 ### 2. Build a task instance
 
@@ -361,6 +368,7 @@ the full run bundle are in [Reproducing the paper](docs/reproducing_the_paper.md
 | Start here | Question it answers |
 |---|---|
 | [Benchmark overview](docs/benchmark_overview.md) | What is the grid, how does 441 decompose, and what do the two accountings mean? |
+| [The October 2026 revision](docs/october_revision.md) | What do the V2 data, method-tuned baselines, linear references, confirmation set and RPB study add, and what do they show? |
 | [Install and first run](docs/installation.md) | How do I install it, and what do the six demos prove and not prove? |
 | [Command reference](docs/cli_reference.md) | What is every CLI command, argument and exit code? |
 | [Repository map](docs/repository_map.md) | What is in each directory, and which pointers here are stale? |
@@ -472,5 +480,14 @@ metadata and must be reviewed before sharing.
 
 ## Citation
 
-Anonymous submission under double-blind review. A citation block will replace this section in the
-camera-ready version.
+```bibtex
+@article{xu2026pdeobs,
+  title   = {{PDE-OBS}: Controlled Evaluation Across Observation Patterns},
+  author  = {Xu, Ruichen and Wang, Siyao and Wan, Fang and Qiu, Jiacheng and Gao, Wenhan and Zhang, Jiaxing and
+             Pang, Linsey and Shwartz-Ziv, Ravid and LeCun, Yann and Deng, Yuefan},
+  journal = {arXiv preprint arXiv:2609.36521},
+  year    = {2026}
+}
+```
+
+The machine-readable citation is in [`CITATION.cff`](CITATION.cff).

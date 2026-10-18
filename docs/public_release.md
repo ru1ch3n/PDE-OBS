@@ -6,10 +6,10 @@ after their de-identified re-emission (`results/revision_v2/access_check.json`,
 `results/revision_v2/REPORT.md`, section 7). The current user-owned copies are
 public, have the same file counts and byte-identical root manifests, and representative
 data and checkpoint objects have matching size and ETag. A second complete per-file
-audit of the copies has not been performed. The copied dataset manifests still
-contain absolute URLs to the original deposit, so downloading through a manifest
-at the new address can still fetch shards from the old address. Historical audit
-records are retained unchanged.
+audit of the copies has not been performed. Both dataset manifests at the new address
+resolve every entry to `huggingface.co/datasets/ru1ch3n/PDE-OBS` (336 and 13,440 entries,
+checked 2026-10-16), so a manifest download no longer depends on the original deposit.
+Historical audit records are retained unchanged.
 
 | Resource | Location | Size |
 |---|---|---|

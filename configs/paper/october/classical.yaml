@@ -1,0 +1,33 @@
+# Classical references and their selection rules.
+schema: pdeobs-october-classical/v1
+gappy_pod:
+  ranks:
+  - 16
+  - 32
+  - 64
+  - 128
+  - 256
+  - 512
+  regs:
+  - 0.0
+  - 1.0e-08
+  - 1.0e-06
+  - 0.0001
+  - 0.01
+  lam: reg * trace(A^T A) / r, A = S U_r
+  selection: mean validation relative L2 over U256 / C256 / L256 (views absent on the grid skipped)
+covariance:
+  modes: 2048
+  prior: eigenvalues of the training covariance on the retained modes
+  regs:
+  - 1.0e-08
+  - 1.0e-06
+  - 0.0001
+  - 0.001
+  - 0.01
+  - 0.1
+  lam: reg * trace(S C S^T) / K
+  selection: validation only (never test / confirmation / ood)
+  implementation: pdeobs.revision.covariance
+noise_aware: 'N2: regularisation re-chosen on noisy validation data'
+dynamic: 'NS: POD affine dynamics / covariance-weighted u0 + affine dynamics'
