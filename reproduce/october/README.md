@@ -56,3 +56,48 @@ rows of 1-D transforms, which every October training and evaluation shape exceed
 on NVIDIA GPUs, so on a CPU the replay uses `pdeobs.revision.fftcompat` (`--fft auto`, the default), which reproduces the
 large-batch cuFFT result. The FNO layer itself is unchanged. The batch threshold was measured with cuFFT 13.0 on an RTX PRO
 6000 and may differ with the cuFFT version or GPU; the replay's own CUDA check ran on an H200.
+
+# Training reproduction (path D)
+
+`train_run.py` retrains a run from the public package and the frozen recipes (`configs/paper/october/recipes.yaml`):
+the same training split, per-parent sensor layout, input representation, network, optimiser settings, epochs and seed;
+for the method-tuned (V4) recipes the training-set normaliser is recomputed from the training split. `--set KEY=VALUE`
+overrides one recipe field for a controlled variant (recorded in `completion.json`; replay such a model with the same
+`--set`). A run whose `checkpoints/last.pt` exists is resumed exactly, so a training can span several jobs.
+
+```bash
+python reproduce/october/train_run.py --run P4__poisson__ell009__voronoi_cnn__U256__s1101 --data-root <V2 store> --out <dir> --device cuda
+python reproduce/october/replay_inference.py --run P4__poisson__ell009__voronoi_cnn__U256__s1101 --checkpoint <dir>/checkpoints/last.pt --data-root <V2 store> --device cuda
+```
+
+Recorded retrains (2026-10-18 to 2026-10-20; fresh virtual environment from the built wheel, PyTorch 2.14.1, NVIDIA B40,
+several trainings sharing one GPU; the campaign ran on H200 / B40 GPUs with PyTorch 2.7.1). Poisson medium, U256, seeds
+1101-1103, nine runs of the three recipes the script covers. Values are retrain / original campaign run:
+
+| Run | Outcome | Final training loss | U256 test error | G256 test error |
+|---|---|---|---|---|
+| P4 fno U256 s1101 | failed: constant-output collapse at epoch 40 (original: epoch 35) | 1.00 / 1.00 (never left the trivial plateau) | - | - |
+| P4 fno U256 s1102 | completed, 250 epochs | 0.0586 / 0.0712 | 0.0717 / 0.0809 | 0.0616 / 0.0617 |
+| P4 fno U256 s1103 | failed: constant-output collapse at epoch 36 (original: epoch 33) | 1.00 / 1.00 (never left the trivial plateau) | - | - |
+| P4 voronoi_cnn U256 s1101 | completed, 250 epochs | 0.0200 / 0.0200 | 0.0186 / 0.0216 | 0.0253 / 0.0284 |
+| P4 voronoi_cnn U256 s1102 | completed, 250 epochs | 0.0204 / 0.0203 | 0.0198 / 0.0193 | 0.0268 / 0.0257 |
+| P4 voronoi_cnn U256 s1103 | completed, 250 epochs | 0.0200 / 0.0205 | 0.0227 / 0.0190 | 0.0303 / 0.0260 |
+| V4C fno U256 s1101 | completed, 250 epochs | 0.0249 / 0.0253 | 0.0264 / 0.0255 | 0.0180 / 0.0215 |
+| V4C fno U256 s1102 | completed, 250 epochs | 0.0265 / 0.0269 | 0.0292 / 0.0262 | 0.0198 / 0.0168 |
+| V4C fno U256 s1103 | completed, 250 epochs | 0.0259 / 0.0260 | 0.0256 / 0.0276 | 0.0215 / 0.0243 |
+
+- **Matched view.** On the training layout (U256) every completed retrain lands within about 10-20 % of the original
+  seed's score, in both directions; the 250-epoch training losses agree to about 2 % for the Voronoi-CNN and V4C
+  runs and differ by 18 % for the P4 FNO seed 1102 (0.0586 against 0.0712). Retraining is not
+  bit-identical (different GPU, PyTorch 2.14 against 2.7, several trainings per GPU), so `replay_inference.py` reports
+  `agrees: false` for a retrain by design (its tolerance, 1e-4, is for replaying the original checkpoint).
+- **Off-pattern views.** The transfer errors of a specialist (C256 / L256 / U1024 / C1024 / L1024 of a U256-trained
+  model) differ between the retrain and the original by factors of up to 2-3 in either direction, as they do between
+  seeds of the original campaign: the off-pattern failure is large and unstable, the matched accuracy is not.
+- **The P4 FNO failure reproduces.** The frozen P4 recipe (no normaliser, lr 1e-4) trains the FNO on raw Poisson medium
+  solutions of standard deviation about 0.012. Seeds 1101 and 1103 never leave the trivial plateau (training loss 1.00
+  from the first epoch), the output standard deviation decays geometrically and the health check stops them with
+  `constant_output_collapse` at epochs 40 / 36 (original campaign: 35 / 33) with the same per-epoch trajectory; seed
+  1102 escapes the plateau at epoch 8-10 in both. A controlled variant with the training-set normaliser as the only
+  change (`--set v4_norm=train_scalar`, output name P4n) is being trained for the three seeds; its result will be added
+  here.
