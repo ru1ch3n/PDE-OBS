@@ -28,6 +28,8 @@ conference publication: [arXiv:2609.36521](https://arxiv.org/abs/2609.36521).
 
 It also adds a sealed confirmation set, single-factor controls and an external dataset (the CNO authors' RPB Poisson). It
 is a separate, versioned layer; the September grid is unchanged. See [The October 2026 revision](docs/october_revision.md).
+The V2 data, the confirmation set, the per-record errors and the weights of the 651 scored October runs are on Hugging Face
+under `october2026/` (see [`reproduce/october/README.md`](reproduce/october/README.md)).
 
 ```bash
 git clone https://github.com/ru1ch3n/PDE-OBS.git

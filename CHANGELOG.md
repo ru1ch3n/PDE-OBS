@@ -17,6 +17,11 @@
 - `docs/public_release.md` / README: both dataset manifests at `ru1ch3n/PDE-OBS` resolve every entry to the
   new address (checked 2026-10-16).
 - `THIRD_PARTY_NOTICES.md`: RPB attribution (not redistributed).
+- `results/revision_october/`: run-level results of the revision (parts A and B) with manifests and a column legend.
+- `reproduce/october/`: table rebuild, weights-inference replay (path C) and training reproduction (path D) from the public
+  package, with `--set KEY=VALUE` recipe overrides for controlled variants.
+- `pdeobs.revision.fftcompat`: cuFFT-compatible inverse real FFT for CPU replays of the FNO checkpoints.
+- `docs/installation.md`: October release-candidate install check.
 - Hugging Face `ru1ch3n/PDE-OBS`, `october2026/`: weights of the 651 scored October runs, the V2 data the code reads,
   and the run-level / per-record results (part B without its run-level export); `reproduce/october/README.md` and `results/revision_october/README.md`
   point there.
