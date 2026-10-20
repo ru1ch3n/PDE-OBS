@@ -12,13 +12,13 @@ python reproduce/october/rebuild_tables.py            # writes reproduce/october
 
 | File | Content |
 |---|---|
-| `runs_long.part-A.csv` | 7,454 rows. Static Poisson / Darcy V2 (smooth, medium, rough); NS medium (P4, N5); N1-N8 except the NS rough parts; N7 static + NS medium; RPB in-distribution and OOD; E2 re-evaluations |
+| `runs_long.part-A.csv` | 7,736 rows. Static Poisson / Darcy V2 (smooth, medium, rough); NS medium (P4, N5); N1-N8 except the NS rough parts; N7 static + NS medium; RPB in-distribution and OOD; E2 re-evaluations; E6 nearest-fill trainings (12) and their grid-jitter / nested-density evaluation suites (added 2026-10-20) |
 | `classical_long.part-A.csv` | 312 rows: classical references per (task, view, method) with the validation-selected settings |
-| `manifest.part-A.json` | SHA-256 and row counts of the committed files and of the exported per-record files |
+| `manifest.part-A.json` | SHA-256 and row counts of the committed files and of the exported per-record files; `update_20261020` records the E6 / E6ev rows added on 2026-10-20 (their per-record files are not on Hugging Face) |
 | `runs_long.part-B.csv` | 2,289 rows. NS smooth / medium / rough P4; NS rough P6 / P7, V4-C / V4-D / V4-E and the V4 P6 / P7 re-checks; N7 NS rough confirmation; N8 resolution runs of Poisson rough and NS rough |
 | `classical_long.part-B.csv` | 282 rows: classical references of the NS slices and of the 64^2 / 256^2 resolution views. 168 further rows (Darcy / Poisson) were computed on both accounts, agree exactly with part A and are kept only there |
 | `manifest.part-B.json` | SHA-256 and row counts as for part A; lists what was left out (2 voided attempts, 168 duplicate classical rows) |
-| still to come | E5 (composition reference) and E6 (nearest-fill trainings and their evaluations), added when they finish |
+| still to come | E5 (composition reference, run on the second account) is added to part B when that export is refreshed |
 
 ## Columns of `runs_long`
 
