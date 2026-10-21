@@ -85,6 +85,9 @@ several trainings sharing one GPU; the campaign ran on H200 / B40 GPUs with PyTo
 | V4C fno U256 s1101 | completed, 250 epochs | 0.0249 / 0.0253 | 0.0264 / 0.0255 | 0.0180 / 0.0215 |
 | V4C fno U256 s1102 | completed, 250 epochs | 0.0265 / 0.0269 | 0.0292 / 0.0262 | 0.0198 / 0.0168 |
 | V4C fno U256 s1103 | completed, 250 epochs | 0.0259 / 0.0260 | 0.0256 / 0.0276 | 0.0215 / 0.0243 |
+| P4n fno U256 s1101 (P4 recipe + training-set normaliser) | completed, 250 epochs | 0.0332 / - | 0.0333 / - | 0.0244 / - |
+| P4n fno U256 s1102 (P4 recipe + training-set normaliser) | completed, 250 epochs | 0.0329 / - | 0.0313 / - | 0.0264 / - |
+| P4n fno U256 s1103 (P4 recipe + training-set normaliser) | completed, 250 epochs | 0.0328 / - | 0.0328 / - | 0.0246 / - |
 
 - **Matched view.** On the training layout (U256) every completed retrain lands within about 10-20 % of the original
   seed's score, in both directions; the 250-epoch training losses agree to about 2 % for the Voronoi-CNN and V4C
@@ -99,5 +102,7 @@ several trainings sharing one GPU; the campaign ran on H200 / B40 GPUs with PyTo
   from the first epoch), the output standard deviation decays geometrically and the health check stops them with
   `constant_output_collapse` at epochs 40 / 36 (original campaign: 35 / 33) with the same per-epoch trajectory; seed
   1102 escapes the plateau at epoch 8-10 in both. A controlled variant with the training-set normaliser as the only
-  change (`--set v4_norm=train_scalar`, output name P4n) is being trained for the three seeds; its result will be added
-  here.
+  change (`--set v4_norm=train_scalar`, output name P4n, rows above) trains all three seeds to 250 epochs (final
+  training loss 0.033) and scores 0.031-0.033 on U256 and 0.024-0.026 on G256 (2026-10-21): the normaliser removes the
+  collapse and most of the gap to the V4C recipe (0.0255-0.0276 on U256), whose remaining difference is the learning
+  rate (3e-4 against 1e-4).
