@@ -86,7 +86,7 @@ Classical references (fitted on the training split, settings chosen on the valid
 | N5 | NS medium sensor density; two-density mixture (MXR6) | 3 runs + nested evaluations |
 | N6 | normalisation-only control | 3 runs |
 | N8 | resolution 64^2 / 128^2 / 256^2 | 48 runs |
-| N7 + T7 | sealed confirmation set; paired parent statistics | 237 evaluations |
+| N7 + T7 | sealed confirmation set; paired parent statistics | 243 evaluations (six added 2026-10-21: the P4 U1024 specialists of Poisson / Darcy rough) |
 | T8 | fit / inference cost | |
 | RPB | external data: the CNO authors' Representative PDE Benchmarks, Poisson | 18 runs + 9-run normaliser control |
 | P6 / P7, V4P6 / V4P7 | training-set size (1,800 / 5,400 / 9,000), sensor noise, nearest fill and MXR6 with the frozen and the V4 recipes | 66 + 18 runs |
