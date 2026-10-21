@@ -17,6 +17,9 @@
 - `docs/public_release.md` / README: both dataset manifests at `ru1ch3n/PDE-OBS` resolve every entry to the
   new address (checked 2026-10-16).
 - `THIRD_PARTY_NOTICES.md`: RPB attribution (not redistributed).
+- Hugging Face `ru1ch3n/PDE-OBS`, `october2026/`: weights of the 651 scored October runs, the V2 data the code reads,
+  and the run-level / per-record results (part B without its run-level export); `reproduce/october/README.md` and `results/revision_october/README.md`
+  point there.
 
 ## 0.2.1 (2026-09-26)
 

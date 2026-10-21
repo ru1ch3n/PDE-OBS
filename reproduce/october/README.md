@@ -30,7 +30,15 @@ python reproduce/october/replay_inference.py --run V4C__poisson__ell009__fno__U2
 ```
 
 Needs the `train` extra (PyTorch), the V2 views of the slice (`<V2 store>/<dataset_id>[__grid<N>][__t4]/`) and the
-checkpoint. The October checkpoints and V2 data are not yet public; they are planned for `huggingface.co/ru1ch3n/PDE-OBS`.
+checkpoint. Both are on Hugging Face: the V2 views in the dataset `huggingface.co/datasets/ru1ch3n/PDE-OBS` under
+`october2026/v2/` (that directory is the `--data-root`), the weights of every scored October run in the model repository
+`huggingface.co/ru1ch3n/PDE-OBS` as `october2026/models/<cohort>/<run_id>/weights.pt` (pass that file as `--checkpoint`).
+
+```python
+from huggingface_hub import snapshot_download
+data = snapshot_download("ru1ch3n/PDE-OBS", repo_type="dataset", allow_patterns=["october2026/v2/v2_poisson_ell009_ref128/*"])
+model = snapshot_download("ru1ch3n/PDE-OBS", allow_patterns=["october2026/models/V4C/V4C__poisson__ell009__fno__U256__s1101/*"])
+```
 The script exits 1 when a view mean differs from the stored one by more than `--rtol` (default 1e-4).
 
 Recorded checks (2026-10-16; fresh virtual environments from the built wheel, PyTorch 2.14.1, 1,800 test parents):
