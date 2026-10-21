@@ -1,11 +1,11 @@
 {
  "schema": "pdeobs-october-results/v1",
  "part": "A",
- "content": "static Poisson / Darcy V2 (all slices); NS medium: N5 (MXR6 trainings, nested-density evaluations of the P4 runs; the P4 NS runs are in part B); N1-N7 and 21 of the 48 N8 resolution runs (the other 27 in part B); N7 static + NS medium; RPB; E2 re-evaluations; E6 nearest-fill trainings and their n3geom / n5nested evaluation suites (added 2026-10-20)",
+ "content": "static Poisson / Darcy V2 (all slices); NS medium: N5 (MXR6 trainings, nested-density evaluations of the P4 runs; the P4 NS runs are in part B); N1-N7 and 21 of the 48 N8 resolution runs (the other 27 in part B); N7 static + NS medium; RPB; E2 re-evaluations; E6 nearest-fill trainings and their n3geom / n5nested evaluation suites (added 2026-10-20); N7 confirmation of the P4 Voronoi-CNN U1024 specialists of Poisson rough and Darcy rough (added 2026-10-21)",
  "committed_files": {
   "runs_long.part-A.csv": {
-   "sha256": "d43ab39fa5c0088fc8342bed8b57143f766704a3dbe60754a22303878a2176b7",
-   "rows": 7736
+   "sha256": "a0a4ffe82e4e928850fcbf09d0840001c2a6196e7027105b6c95d2b80e148dcd",
+   "rows": 7778
   },
   "classical_long.part-A.csv": {
    "sha256": "89eb8a17666f76052db977c1fd863f78ca47c8d25e2f044fc289557f60257a2f",
@@ -131,6 +131,70 @@
    },
    "per_record/v2noise14.csv.gz": {
     "sha256": "02cd313f847b5beba61a64fed2415632d2898ee45d236bf5513973162470c8ff",
+    "rows": 378000,
+    "bytes": 5037021
+   }
+  }
+ },
+ "update_20261021": {
+  "added_rows": 42,
+  "added_by_cohort": {
+   "N7ev": 42
+  },
+  "note": "runs_long.part-A.csv now equals the 2026-10-21 export of the same account (the earlier rows unchanged, in the same order, plus the N7ev rows of the six P4 Voronoi-CNN U1024 specialists, Poisson rough and Darcy rough, seeds 1101-1103, scored on the sealed confirmation set). The per-record files on Hugging Face (october2026/results/part-A/) remain those of the 2026-10-17 export; the 2026-10-21 export's per-record files (listed here) are not published there.",
+  "export_files_20261021": {
+   "runs_long.csv.gz": {
+    "sha256": "f62026de43142d9b7b050ae3c2e4a83749a4896eafdcf48a8b75a060978fc376",
+    "rows": 7778,
+    "bytes": 367522
+   },
+   "classical_long.csv.gz": {
+    "sha256": "4f0f36a9eab8a6da721a147c1c68195257f4702d1f43cd23a52b51d5b88fa6e4",
+    "rows": 312,
+    "bytes": 8511
+   },
+   "per_record/n2noise.csv.gz": {
+    "sha256": "98f855c23b8c919b4d2a4643c26bf92feae3b675b8071e15df0390f7b4ae717d",
+    "rows": 2332800,
+    "bytes": 31022054
+   },
+   "per_record/n3geom.csv.gz": {
+    "sha256": "b48993183c9cd7c6538ff99a1e44cb9d9e8e44ee47be88dfaa923d9541978d76",
+    "rows": 1134000,
+    "bytes": 29194959
+   },
+   "per_record/n4shift.csv.gz": {
+    "sha256": "8d77a4326461cfd5deeba2435618ce3bdbdd9054c16c9e30fa42fe0ed8c65c52",
+    "rows": 216000,
+    "bytes": 2881874
+   },
+   "per_record/n5nested.csv.gz": {
+    "sha256": "d06662431b758dc5e9d744bb2d9bcc79d793edf852aa06c0f53f4a1c21f54991",
+    "rows": 777600,
+    "bytes": 10124151
+   },
+   "per_record/n7confirm.csv.gz": {
+    "sha256": "7bc54272e00acc14305873256e74f6b434002fe16286c3993fb13f19c93c176a",
+    "rows": 1096200,
+    "bytes": 15274479
+   },
+   "per_record/rpbood.csv.gz": {
+    "sha256": "de927e1cd0721e50af2946ea82720aadc9f5b56e1a4c48651d98f0c74b887389",
+    "rows": 46080,
+    "bytes": 1274311
+   },
+   "per_record/v2eval7.csv.gz": {
+    "sha256": "9b9e64be99e26e196f51e5491934fc28e529f51a145fc2487b8a739d463b44ec",
+    "rows": 5012640,
+    "bytes": 68503689
+   },
+   "per_record/v2eval7_prefix_pass250.csv.gz": {
+    "sha256": "51ad46c380e21a0a7f344538e18d3946f8fd0a3f2464d4e91812399e26908ce8",
+    "rows": 302400,
+    "bytes": 4013659
+   },
+   "per_record/v2noise14.csv.gz": {
+    "sha256": "407d6648da05879999d589c43a0d2af0985caf0e1e0f9da6cad2c204c6419684",
     "rows": 378000,
     "bytes": 5037021
    }
