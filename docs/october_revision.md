@@ -154,7 +154,8 @@ over three training seeds, unless stated otherwise.
 | Results | `results/revision_october/` (run-level tables, parts A and B; column legend in its README) |
 | Table rebuild, weights-inference replay, training reproduction | `reproduce/october/` |
 | V2 data, confirmation set, per-record errors | `huggingface.co/datasets/ru1ch3n/PDE-OBS`, directory `october2026/` |
-| Weights of the 651 scored October runs | `huggingface.co/ru1ch3n/PDE-OBS`, directory `october2026/models/` |
+| Weights of the 663 scored October runs | `huggingface.co/ru1ch3n/PDE-OBS`, directory `october2026/models/` |
+| Weights of the ten completed path D retrains (Poisson medium U256, P4n included) | `huggingface.co/ru1ch3n/PDE-OBS`, directory `october2026/retrains/` |
 
 ## Final analyses (E1-E6, 2026-10-16 to 2026-10-20)
 

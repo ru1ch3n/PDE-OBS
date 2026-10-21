@@ -106,3 +106,10 @@ several trainings sharing one GPU; the campaign ran on H200 / B40 GPUs with PyTo
   training loss 0.033) and scores 0.031-0.033 on U256 and 0.024-0.026 on G256 (2026-10-21): the normaliser removes the
   collapse and most of the gap to the V4C recipe (0.0255-0.0276 on U256), whose remaining difference is the learning
   rate (3e-4 against 1e-4).
+
+**Published retrains.** The ten completed retrains (the three P4n runs included) are in the model repository
+`huggingface.co/ru1ch3n/PDE-OBS` under `october2026/retrains/<name>/`: `weights.pt` (the format of the October models),
+`model.json` (recipe run, `--set` overrides, final training loss, the seven v2eval7 view means of the retrain) and
+`history.json`; `october2026/retrains/manifest.json` lists them. The two collapsed P4 FNO retrains have no model. Replay a
+retrain with its recipe run and the same `--set`, for example `--run P4__poisson__ell009__fno__U256__s1101 --set
+v4_norm=train_scalar --checkpoint october2026/retrains/P4n__poisson__ell009__fno__U256__s1101/weights.pt`.
