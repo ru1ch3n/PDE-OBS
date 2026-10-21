@@ -61,8 +61,10 @@ Two recipe cohorts are kept apart:
 - **Method-tuned V4 recipes** (cohort V4-C). Each adds a fixed training-set scalar normaliser where needed. The recipe is
   the top-2 variant with the best validation score at 20,000 updates.
 
-Test data never chose a recipe. Every recipe that ran is listed in
-[`recipes.yaml`](../configs/paper/october/recipes.yaml).
+Test data never chose a recipe. The recipes of the P4 / P5, V4, N3 / N5 / N6, RPB and E6 cohorts are listed in
+[`recipes.yaml`](../configs/paper/october/recipes.yaml); the P6 / P7, V4P6 / V4P7 and N8 re-checks reuse the P4 or V4C
+recipe of their slice with one change (training-set size, noise, input fill, mixture or grid) and are described in
+`results/revision_october/README.md`.
 
 Classical references (fitted on the training split, settings chosen on the validation split):
 - gappy POD;
@@ -87,6 +89,8 @@ Classical references (fitted on the training split, settings chosen on the valid
 | N7 + T7 | sealed confirmation set; paired parent statistics | 237 evaluations |
 | T8 | fit / inference cost | |
 | RPB | external data: the CNO authors' Representative PDE Benchmarks, Poisson | 18 runs + 9-run normaliser control |
+| P6 / P7, V4P6 / V4P7 | training-set size (1,800 / 5,400 / 9,000), sensor noise, nearest fill and MXR6 with the frozen and the V4 recipes | 66 + 18 runs |
+| E1-E6 | final analyses: RPB OOD diagnosis, data-consistent error split, finer targets, RPB paired statistics, composition reference, input fill x training exposure | 4 analyses + 30 re-evaluations + 1 reference + 12 trainings with 12 evaluation suites |
 
 Single-factor controls are listed in [`controls.yaml`](../configs/paper/october/controls.yaml).
 
@@ -106,8 +110,9 @@ over three training seeds, unless stated otherwise.
 2. **The linear reference is not robust by default.**
    - With regularisation tuned on clean data it diverges under sensor noise.
    - Re-tuned on noisy validation data it stays at or below the neural models.
-   - Out of distribution (RPB OUT) it extrapolates badly on 256-sensor views, while neural predictions and interpolation
-     stay bounded.
+   - Out of distribution (RPB OUT) it extrapolates badly on the random and clustered views (U256, C256, C1024; errors
+     39-331), while neural predictions and interpolation stay bounded; the failure is a selection effect of the
+     in-distribution regulariser (E1): a regulariser of 1e-2 bounds the OOD error at 0.62 for a test error of 0.31.
 3. **Changing the observation pattern is costly and asymmetric for every neural model.** On the confirmation set the
    off-pattern / matched error ratio is 1.2-2.2 in every seed.
 4. **Measurement geometry and density are predictor-specific failure modes, and training exposure removes them.**
@@ -146,4 +151,31 @@ over three training seeds, unless stated otherwise.
 | Library | `src/pdeobs/revision/`: V2 data, layouts, references, `covariance`, `dc` (raw / observed / hidden split), `stats` (paired parent bootstrap), `external/rpb` |
 | Frozen configs | `configs/paper/october/` |
 | Tests | `tests/test_revision_october.py` |
-| Results and table rebuilds | `results/revision_october/` (separate review step) |
+| Results | `results/revision_october/` (run-level tables, parts A and B; column legend in its README) |
+| Table rebuild, weights-inference replay, training reproduction | `reproduce/october/` |
+| V2 data, confirmation set, per-record errors | `huggingface.co/datasets/ru1ch3n/PDE-OBS`, directory `october2026/` |
+| Weights of the 651 scored October runs | `huggingface.co/ru1ch3n/PDE-OBS`, directory `october2026/models/` |
+
+## Final analyses (E1-E6, 2026-10-16 to 2026-10-20)
+
+Analyses of the stored results (E1-E4), one composition reference (E5) and twelve trainings (E6), all fixed before they ran.
+
+1. **E1 - why the linear references fail out of distribution.** The RPB OOD solutions keep 45 % of their norm outside the
+   256-mode span of the training fields; the in-distribution-selected regulariser (1e-8) turns that into errors of 39-331 on
+   the random / clustered views. A regulariser of 1e-2 bounds the OOD error at 0.62 at the cost of the in-distribution
+   accuracy (0.31 instead of 0.07): a selection effect, not a solver error.
+2. **E2 - where the transfer cost sits.** Re-scoring the transfer blocks with the data-consistent split (observed cells
+   kept, prediction in the hidden region): the hidden-region C / D equals the raw C / D within 0.3 % on the V2 and RPB data.
+3. **E3 - finer reference targets** (48 test parents per slice re-solved on a finer route): no ranking changes.
+4. **E4 - paired statistics on RPB.** MXR2 mixtures beat the destination specialists on their own views for every model and
+   seed, in and out of distribution (parent bootstrap, B = 2,000).
+5. **E5 - composition reference (NS rough).** Reconstructing the initial state with the covariance prior and forecasting with
+   the frozen full-state FNO reaches 0.083 with 1,024 uniform sensors, half the best end-to-end model (0.164); with 256
+   sensors it only matches the end-to-end models (U256 0.535 vs 0.545).
+6. **E6 - input fill x training exposure.** Changing only the input representation of the zero-fill FNO specialists to the
+   nearest-observation fill removes most of their transfer failure: the G256-trained Poisson rough FNO goes from 1.80 to
+   0.061 on U1024 and tolerates 1 / 2 / 3-cell grid jitter at 0.061 / 0.086 / 0.108 instead of 0.24 / 0.39 / 0.51; the
+   U256-trained NS medium FNO goes from 0.58 to 0.10 at 1,024 sensors. Only the Voronoi-CNN improves monotonically with
+   density.
+
+The run-level rows of E2 and E6 are in `results/revision_october/` (part A); E5 joins part B with the next export.

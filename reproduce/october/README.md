@@ -54,4 +54,5 @@ inverts is not conjugate-symmetric in the kx = 0 and Nyquist columns. The real i
 imaginary parts of those bins, and libraries differ: CPU FFTs drop them, cuFFT keeps them for large batches (from about 4,096
 rows of 1-D transforms, which every October training and evaluation shape exceeds). The October FNOs were trained and scored
 on NVIDIA GPUs, so on a CPU the replay uses `pdeobs.revision.fftcompat` (`--fft auto`, the default), which reproduces the
-large-batch cuFFT result. The FNO layer itself is unchanged.
+large-batch cuFFT result. The FNO layer itself is unchanged. The batch threshold was measured with cuFFT 13.0 on an RTX PRO
+6000 and may differ with the cuFFT version or GPU; the replay's own CUDA check ran on an H200.

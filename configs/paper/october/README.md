@@ -16,6 +16,6 @@ They are exported from the configurations that actually ran. The historical conf
 | `data_v2.yaml` | PDEs, slices, regimes, splits (incl. the sealed confirmation split), grids, exact counts |
 | `observations_v2.yaml` | U / C / L / G layouts, mixtures MXR3 / MXR6 / MXR2, nested sets, grid perturbations, infeasible layouts |
 | `classical.yaml` | gappy POD and covariance reconstruction, grids and validation-only selection |
-| `recipes.yaml` | training recipe of every (cohort, dataset, method), with protocols and seeds |
+| `recipes.yaml` | training recipe per (cohort, dataset, method) of the P4 / P5, V4, N3 / N5 / N6, RPB and E6 cohorts, with protocols and seeds (the P6 / P7, V4P6 / V4P7 and N8 re-checks reuse the P4 / V4C recipes with one change) |
 | `controls.yaml` | N6, RPBn and E6 single-factor controls |
 | `external_rpb.yaml` | RPB source, licence, authors' split, permissions, views |
