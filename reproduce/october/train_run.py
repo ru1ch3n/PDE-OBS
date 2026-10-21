@@ -16,6 +16,10 @@ Evaluate the trained model with reproduce/october/replay_inference.py --checkpoi
 The stored scores of the original run are then a reference, not a target: retraining is not bit-identical across hardware
 or library versions. A run whose <dir>/checkpoints/last.pt exists is resumed from it (exact state: weights, optimizer,
 scheduler, random generators). Mixture, jitter-augmented and parameter-channel recipes are not covered by this script.
+
+Controlled variants: --set KEY=VALUE (repeatable) overrides one field of the frozen recipe, e.g. --set v4_norm=train_scalar
+trains the frozen recipe with the training-set scalar normaliser as the only change. The overrides are recorded in
+completion.json; replay such a model with replay_inference.py and the same --set.
 """
 from __future__ import annotations
 
@@ -28,7 +32,7 @@ import sys
 import time
 from pathlib import Path
 
-from replay_inference import recipe_of
+from replay_inference import parse_overrides, recipe_of
 
 
 def sha256_file(path: Path) -> str:
@@ -49,6 +53,8 @@ def main() -> int:
     ap.add_argument("--repo-root", default=".")
     ap.add_argument("--max-train", type=int, default=None, help="smoke tests only: first N training records")
     ap.add_argument("--epochs", type=int, default=None, help="smoke tests only: override the recipe's epochs")
+    ap.add_argument("--set", action="append", default=[], metavar="KEY=VALUE",
+                    help="controlled variant: override one recipe field (e.g. v4_norm=train_scalar); recorded in completion.json")
     a = ap.parse_args()
     import torch
     import pdeobs.training as T
@@ -61,6 +67,8 @@ def main() -> int:
     out = Path(a.out)
     (out / "checkpoints").mkdir(parents=True, exist_ok=True)
     recipe = recipe_of(a.run, os.path.join(a.repo_root, "configs/paper/october/recipes.yaml"))
+    overrides = parse_overrides(a.set)
+    recipe.update(overrides)
     proto = recipe["protocol"]
     if proto.startswith(("MX", "GJ")) or recipe.get("param_channel") or recipe.get("records_per_epoch"):
         raise SystemExit(f"{a.run}: mixture / jitter / parameter-channel / pass-sampled recipes are not covered by this script")
@@ -111,6 +119,7 @@ def main() -> int:
            "optimizer_steps": trainer._optimizer_steps, "expected_optimizer_steps": expected,
            "final_train_loss": float(hist[-1]["train_loss"]) if hist else None, "train_records": len(train),
            "train_receipt": receipt, "normaliser": norm, "resumed": resume is not None, "smoke": bool(a.max_train or a.epochs),
+           "overrides": overrides,
            "checkpoint_sha256": sha256_file(last) if last.exists() else None, "recipe": recipe, "torch": torch.__version__,
            "training_config": {k: getattr(tconf, k, None) for k in ("epochs", "learning_rate", "batch_size", "amp", "loss",
                                                                      "health_policy", "early_stopping_patience", "deterministic",

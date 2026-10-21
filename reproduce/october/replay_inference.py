@@ -61,6 +61,20 @@ def recipe_of(run: str, recipes_path: str) -> dict:
     raise SystemExit(f"no frozen recipe for {run} in {recipes_path}")
 
 
+def parse_overrides(items) -> dict:
+    """--set KEY=VALUE items -> recipe overrides (VALUE read as JSON when it parses, else as a string)."""
+    out = {}
+    for item in items or []:
+        key, sep, value = item.partition("=")
+        if not sep or not key:
+            raise SystemExit(f"--set needs KEY=VALUE, got {item!r}")
+        try:
+            out[key] = json.loads(value)
+        except ValueError:
+            out[key] = value
+    return out
+
+
 def stored_scores(run: str, suite: str, results: str) -> dict:
     out = {}
     for f in sorted(glob.glob(os.path.join(results, "runs_long.part-*.csv"))):
@@ -85,6 +99,8 @@ def main() -> int:
     ap.add_argument("--results", default="results/revision_october")
     ap.add_argument("--rtol", type=float, default=1e-4)
     ap.add_argument("--out", default=None, help="write the report JSON here")
+    ap.add_argument("--set", action="append", default=[], metavar="KEY=VALUE",
+                    help="recipe override of a controlled variant trained with train_run.py --set (e.g. v4_norm=train_scalar)")
     ap.add_argument("--fft", default="auto", choices=("auto", "native", "cufft"),
                     help="inverse real 2-D FFT of FNO layers on CPU: cuFFT-compatible (auto on CPU, cufft) or the CPU library's")
     a = ap.parse_args()
@@ -102,6 +118,8 @@ def main() -> int:
     torch.backends.cudnn.allow_tf32 = False
     t0 = time.time()
     recipe = recipe_of(a.run, os.path.join(a.repo_root, "configs/paper/october/recipes.yaml"))
+    overrides = parse_overrides(a.set)
+    recipe.update(overrides)
     cfg = v2_config(recipe, a.data_root, a.repo_root)
     test, receipt = v2_split(cfg, recipe, "test")
     input_setup(recipe, test)
@@ -125,7 +143,7 @@ def main() -> int:
         views = [(f"U{k}", q, f"U{k}__q{q}") for k in NESTED_K for q in range(3)]
     stored = stored_scores(a.run, a.suite, a.results)
     fft = "cufft" if a.fft == "cufft" or (a.fft == "auto" and device.type == "cpu") else "native"
-    report = {"run": a.run, "suite": a.suite, "recipe": recipe, "test_receipt": receipt, "device": str(device),
+    report = {"run": a.run, "suite": a.suite, "recipe": recipe, "overrides": overrides, "test_receipt": receipt, "device": str(device),
               "torch": torch.__version__, "fft": fft if device.type == "cpu" else "native (cuda)", "views": {}}
     with torch.no_grad(), (cufft_c2r_on_cpu() if fft == "cufft" else contextlib.nullcontext()):
         for proto, rep, label in views:

@@ -174,3 +174,21 @@ def test_train_scalar_stats_pools_every_training_value():
     st = train_scalar_stats(_Records([a, b]), "navier_stokes")    # temporal: every stored frame of the t4 view
     assert st["values"] == 16
     assert st["mu"] == pytest.approx(3.25) and st["sigma"] == pytest.approx(2.6875 ** 0.5)
+
+
+def _replay_module():
+    import importlib.util
+    import pathlib
+    path = pathlib.Path(__file__).resolve().parents[1] / "reproduce" / "october" / "replay_inference.py"
+    spec = importlib.util.spec_from_file_location("replay_inference_for_tests", path)
+    module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(module)
+    return module
+
+
+def test_recipe_overrides_parse_json_and_strings():
+    parse = _replay_module().parse_overrides
+    assert parse(["v4_norm=train_scalar", "lr=0.0003", "epochs=2"]) == {"v4_norm": "train_scalar", "lr": 0.0003, "epochs": 2}
+    assert parse([]) == {}
+    with pytest.raises(SystemExit):
+        parse(["v4_norm"])
