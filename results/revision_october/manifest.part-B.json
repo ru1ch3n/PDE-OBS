@@ -1,11 +1,11 @@
 {
  "schema": "pdeobs-october-results/v1",
  "part": "B",
- "content": "NS smooth / medium / rough P4; NS rough P6 / P7, V4-C / V4-D / V4-E and the V4 P6 / P7 re-checks; N7 NS rough confirmation; N8 resolution runs of Poisson rough and NS rough",
+ "content": "NS smooth / medium / rough P4; NS rough P6 / P7, V4-C / V4-D / V4-E and the V4 P6 / P7 re-checks; N7 NS rough confirmation; N8 resolution runs of Poisson rough and NS rough; E5 composition reference, NS rough (added 2026-10-21)",
  "committed_files": {
   "runs_long.part-B.csv": {
-   "sha256": "477ba99971925e21b2fad4e0fb8fa0602ff5f50c1394f5e3b3f9de6275501766",
-   "rows": 2289
+   "sha256": "95fadf7e1693ab07359c72e39e23d5578a902ee8ac8fa0de632b862f805b4975",
+   "rows": 2316
   },
   "classical_long.part-B.csv": {
    "sha256": "7c01e0e8b7758b62b93a49faafe48f59087a49f5bb8f265d4de64f2fb881a11d",
@@ -54,5 +54,54 @@
   "168 classical rows (Darcy and Poisson V4-D references of the 128^2 slices) that equal part A exactly: both accounts computed them independently and agree in every mean and selected setting; part A keeps them"
  ],
  "per_record_location": "kept outside this repository (see README); hashes above identify the exported files (the per-record files still contain the 2 voided attempts)",
- "private_string_check": "clean"
+ "private_string_check": "clean",
+ "update_20261021": {
+  "added_rows": 27,
+  "added_by_cohort": {
+   "E5compose": 27
+  },
+  "note": "runs_long.part-B.csv now equals the 2026-10-21 export of the same account minus the 2 voided attempts (the earlier rows unchanged, in the same order, plus the E5 rows). export_files above still describe the 2026-10-17 export, whose per-record and classical files are the ones published on Hugging Face (october2026/results/part-B/); the 2026-10-21 export's per-record files (listed here) are not published there.",
+  "export_files_20261021": {
+   "runs_long.csv.gz": {
+    "sha256": "5b110876318d7bd21a99c98ea08ba8140467c2ff493554f78b721bca50df222d",
+    "rows": 2318,
+    "bytes": 108430
+   },
+   "classical_long.csv.gz": {
+    "sha256": "90ab3ec987deb6bc3823ac0a18639916216258c1f57eae3f3fadac4bd4f802ee",
+    "rows": 450,
+    "bytes": 12149
+   },
+   "per_record/e5compose.csv.gz": {
+    "sha256": "4f347d2736a95d147ddc5b6207dab320f74a4df2770c4ce40a0eb6067f01bb0b",
+    "rows": 48600,
+    "bytes": 623493
+   },
+   "per_record/n7confirm.csv.gz": {
+    "sha256": "b75e1bfd383869a545e9d8a2dd368f1776b8d99f74ba874c77541ad85bcc14e6",
+    "rows": 208800,
+    "bytes": 2718126
+   },
+   "per_record/v2eval7.csv.gz": {
+    "sha256": "258aeb688fd10b13ff95463f3382e16fb2d820d84a65ba377082adb5780c5379",
+    "rows": 2943000,
+    "bytes": 38166153
+   },
+   "per_record/v2eval7_prefix_pass250.csv.gz": {
+    "sha256": "44c5891a26b924831a9d48371b950dc63df79ecf889c2723a54ebf98b9d9e31e",
+    "rows": 226800,
+    "bytes": 2921752
+   },
+   "per_record/v2full1.csv.gz": {
+    "sha256": "675130ccff416d532621fa04a475b960118cd13b95a791c0eec02616a480774d",
+    "rows": 21600,
+    "bytes": 282659
+   },
+   "per_record/v2noise14.csv.gz": {
+    "sha256": "7979763ddbe92d813bbe3ec557ac413d7b02123eda29c36ae21dfc2f55f6e5ea",
+    "rows": 302400,
+    "bytes": 3911390
+   }
+  }
+ }
 }

@@ -1,11 +1,11 @@
 {
  "schema": "pdeobs-october-results/v1",
  "part": "A",
- "content": "static Poisson / Darcy V2 (all slices), NS medium (P4 / N5), N1-N8 except NS rough, N7 static + NS medium, RPB, E2 re-evaluations",
+ "content": "static Poisson / Darcy V2 (all slices); NS medium: N5 (MXR6 trainings, nested-density evaluations of the P4 runs; the P4 NS runs are in part B); N1-N7 and 21 of the 48 N8 resolution runs (the other 27 in part B); N7 static + NS medium; RPB; E2 re-evaluations; E6 nearest-fill trainings and their n3geom / n5nested evaluation suites (added 2026-10-20)",
  "committed_files": {
   "runs_long.part-A.csv": {
-   "sha256": "6d89a17791df33de0aab71c9e0807fe6861424d7020cff4e39a7fa4935376608",
-   "rows": 7454
+   "sha256": "d43ab39fa5c0088fc8342bed8b57143f766704a3dbe60754a22303878a2176b7",
+   "rows": 7736
   },
   "classical_long.part-A.csv": {
    "sha256": "89eb8a17666f76052db977c1fd863f78ca47c8d25e2f044fc289557f60257a2f",
@@ -70,5 +70,70 @@
   }
  },
  "per_record_location": "kept outside this repository (see README); hashes above identify the exported files",
- "private_string_check": "clean"
+ "private_string_check": "clean",
+ "update_20261020": {
+  "added_rows": 282,
+  "added_by_cohort": {
+   "E6": 84,
+   "E6ev": 198
+  },
+  "note": "runs_long.part-A.csv now equals the 2026-10-20 export of the same account (the 2026-10-17 rows unchanged, in the same order, plus the E6 / E6ev rows). export_files above still describe the 2026-10-17 export, whose per-record files are the ones published on Hugging Face (october2026/results/part-A/); the 2026-10-20 export's per-record files (listed here) are not published there.",
+  "export_files_20261020": {
+   "runs_long.csv.gz": {
+    "sha256": "901bbd3c061f451070bf4a3222c4baf58cbd85e4768db890fb11e36339c136e3",
+    "rows": 7736,
+    "bytes": 364193
+   },
+   "classical_long.csv.gz": {
+    "sha256": "4f0f36a9eab8a6da721a147c1c68195257f4702d1f43cd23a52b51d5b88fa6e4",
+    "rows": 312,
+    "bytes": 8511
+   },
+   "per_record/n2noise.csv.gz": {
+    "sha256": "132c4a39bc061d0c40af1f95481ac31748bd5e94f9daefb37e5ad76cc4287187",
+    "rows": 2332800,
+    "bytes": 31022054
+   },
+   "per_record/n3geom.csv.gz": {
+    "sha256": "72def59c35f0b78d885eeada0b660f305cc922ebce0bc7794e1e8fd62f35dd14",
+    "rows": 1134000,
+    "bytes": 29194959
+   },
+   "per_record/n4shift.csv.gz": {
+    "sha256": "4fdfb8ce6c77f8573b9ffbedcc23373c3330025ea22d174046e0e2cecc000265",
+    "rows": 216000,
+    "bytes": 2881874
+   },
+   "per_record/n5nested.csv.gz": {
+    "sha256": "a2e8c25ad3d30db284646fe65e40ae517901e3f2a4e90465924db0f848662563",
+    "rows": 777600,
+    "bytes": 10124151
+   },
+   "per_record/n7confirm.csv.gz": {
+    "sha256": "21995e17cb967a8050e83b4a00217cb87d82b258bc0f97b90d056bc0223bb180",
+    "rows": 1071000,
+    "bytes": 14210807
+   },
+   "per_record/rpbood.csv.gz": {
+    "sha256": "d9585b8d177e82de32c924f50ddadf01befff734b2265c31e5cd0e22ccdd70ad",
+    "rows": 46080,
+    "bytes": 1274311
+   },
+   "per_record/v2eval7.csv.gz": {
+    "sha256": "e9de3dcd9ff875f1f7ce244f477dec49fd31180dec461b081f5a452ae1aa448d",
+    "rows": 5012640,
+    "bytes": 68503689
+   },
+   "per_record/v2eval7_prefix_pass250.csv.gz": {
+    "sha256": "3d30cc217f808a0e717f1de01d336a5d6bac8f61bded5c87225641054b4481b5",
+    "rows": 302400,
+    "bytes": 4013659
+   },
+   "per_record/v2noise14.csv.gz": {
+    "sha256": "02cd313f847b5beba61a64fed2415632d2898ee45d236bf5513973162470c8ff",
+    "rows": 378000,
+    "bytes": 5037021
+   }
+  }
+ }
 }
