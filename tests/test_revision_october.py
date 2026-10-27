@@ -217,6 +217,9 @@ def test_score_method_recipe_and_predictor_parsing():
     rec = sm.recipe_for("v2_poisson_ell009_ref128", "nearest")
     assert rec["pde"] == "poisson" and rec["fill_input"] == "nearest" and rec["method"] == "fno"
     assert "fill_input" not in sm.recipe_for("v2_darcy_ell0025_ref128", None)
+    assert rec["grid"] == 128
+    assert sm.recipe_for("v2_poisson_rpb_ref128", None)["grid"] == 64          # the converted RPB view is 64^2
+    assert sm.recipe_for("v2_poisson_ell009_ref128", None, 256)["grid"] == 256  # N8 resolution view
     assert sm.load_predictor("covariance") == "covariance"
     assert sm.load_predictor("json:dumps") is __import__("json").dumps
     import pytest

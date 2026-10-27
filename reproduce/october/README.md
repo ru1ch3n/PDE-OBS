@@ -33,6 +33,8 @@ python reproduce/october/score_method.py --dataset-id v2_ns_ell009_ref128 --data
 python reproduce/october/score_method.py --dataset-id v2_poisson_rpb_ref128 --data-root <RPB store> --part ood --method nearest
 ```
 
+The RPB store is the output of `python -m pdeobs.revision.external.rpb`; its view is 64^2 (`v2_poisson_rpb_ref128__grid64/`) and the script selects it for the rpb slice. `--grid 64` / `--grid 256` select the N8 resolution views (`<dataset_id>__grid<N>/`) of the V2 store.
+
 A custom predictor is `module:callable` with the signature `predict(inputs, mask, geometry, metadata) -> prediction`:
 static families get `inputs` [B, C, H, W] (observed values, hidden cells 0, or nearest-filled with `--fill nearest`),
 `mask` [B, 1, H, W] and `geometry`; temporal families get the observed initial state [B, 1, C, H, W] and must return

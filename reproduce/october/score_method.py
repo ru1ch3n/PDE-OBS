@@ -28,7 +28,9 @@ per-record relative L2 of the complete predicted field (float64; temporal famili
 same statistic as `mean` in results/revision_october.
 
 The V2 store is the directory that holds the views (`<dataset_id>[__t4]/`, from huggingface.co/datasets/ru1ch3n/PDE-OBS,
-`october2026/v2/`). The RPB store is the output of `python -m pdeobs.revision.external.rpb` (parts `test` and `ood`).
+`october2026/v2/`). The RPB store is the output of `python -m pdeobs.revision.external.rpb` (parts `test` and `ood`): its
+view is 64^2 (`v2_poisson_rpb_ref128__grid64/`), which the script selects for the rpb slice; `--grid` picks another side
+(the N8 resolution views `<dataset_id>__grid64/` and `__grid256/`).
 """
 from __future__ import annotations
 
@@ -58,10 +60,16 @@ def parse_dataset_id(dataset_id: str) -> tuple[str, str]:
     return {"ns": "navier_stokes"}.get(p[1], p[1]), p[2]
 
 
-def recipe_for(dataset_id: str, fill: str | None) -> dict:
-    """A minimal recipe: the frozen FNO settings of the slice give the data configuration; no network is built."""
+def recipe_for(dataset_id: str, fill: str | None, grid: int | None = None) -> dict:
+    """A minimal recipe: the frozen FNO settings of the slice give the data configuration; no network is built.
+
+    `grid` is the side of the view's grid: 128 for the V2 views (default), 64 for the converted RPB data (default when
+    the slice is rpb; its view directory is v2_poisson_rpb_ref128__grid64), 64 or 256 for the N8 resolution views
+    (<dataset_id>__grid<N>)."""
     pde, ell = parse_dataset_id(dataset_id)
-    rec = {"id": f"score_method__{dataset_id}", "pde": pde, "dataset_id": dataset_id, "method": "fno", "seed": 0, "grid": 128,
+    if grid is None:
+        grid = 64 if ell == "rpb" else 128
+    rec = {"id": f"score_method__{dataset_id}", "pde": pde, "dataset_id": dataset_id, "method": "fno", "seed": 0, "grid": int(grid),
            "protocol": "U256", "n_train": 9000}
     if fill == "nearest":
         rec["fill_input"] = "nearest"
@@ -123,6 +131,9 @@ def main() -> int:
     ap.add_argument("--method", default="nearest", help="zero | nearest | covariance | module:callable")
     ap.add_argument("--fill", default=None, choices=(None, "nearest"), help="nearest-fill the observation channel before a custom predictor")
     ap.add_argument("--part", default="test", choices=("test", "confirm", "ood"))
+    ap.add_argument("--grid", type=int, default=None,
+                    help="grid side of the view: 128 for the V2 views (default), 64 for the converted RPB data (default for the rpb "
+                         "slice), 64 or 256 for the N8 resolution views <dataset_id>__grid<N>")
     ap.add_argument("--views", nargs="*", default=None, help="layouts to score (default: the seven v2eval7 views that exist on the grid)")
     ap.add_argument("--device", default="cpu")
     ap.add_argument("--batch", type=int, default=32)
@@ -147,7 +158,7 @@ def main() -> int:
     fill = "nearest" if (predictor == "nearest" or a.fill == "nearest") else None
     if predictor == "covariance" and pde not in STATIC:
         raise SystemExit("the covariance reconstruction is a static reference; use it on Poisson / Darcy views")
-    recipe = recipe_for(a.dataset_id, fill)
+    recipe = recipe_for(a.dataset_id, fill, a.grid)
     cfg = v2_config(recipe, a.data_root, a.repo_root)
     if a.device == "cpu":
         cfg["training"]["device"] = "cpu"
@@ -156,7 +167,7 @@ def main() -> int:
         views = []
         for v in (RPB_VIEWS if ell == "rpb" else V2EVAL7):
             try:
-                protocol_mask(v, pde, "feasibility", rep=0, n=128)
+                protocol_mask(v, pde, "feasibility", rep=0, n=int(recipe["grid"]))
             except ValueError:
                 continue
             views.append(v)
@@ -171,7 +182,7 @@ def main() -> int:
         test = subset_dataset(test, list(range(min(a.max_records, len(test)))))
     tconf = _training_config(cfg, Path(tempfile.gettempdir()) / "pdeobs-score-method", None)
     device = torch.device(a.device)
-    report = {"dataset_id": a.dataset_id, "part": a.part, "method": a.method, "fill": fill, "receipt": receipt,
+    report = {"dataset_id": a.dataset_id, "part": a.part, "grid": int(recipe["grid"]), "method": a.method, "fill": fill, "receipt": receipt,
               "covariance": cov_info, "device": str(device), "torch": torch.__version__, "views": {}}
     with torch.no_grad():
         for v in views:

@@ -23,7 +23,8 @@
 - `pdeobs.revision.fftcompat`: cuFFT-compatible inverse real FFT for CPU replays of the FNO checkpoints.
 - `docs/installation.md`: October release-candidate install check.
 - `reproduce/october/score_method.py`: score any predictor (or the built-in zero / nearest / covariance references) on the
-  V2 views and on converted RPB data with the revision's protocol; `rebuild_tables.py --latex`.
+  V2 views and on converted RPB data with the revision's protocol (`--grid`: the 64^2 RPB view and the N8 resolution views);
+  `rebuild_tables.py --latex`.
 - `results/revision_october/final_analyses/` (E1-E5 outputs as JSON) and `paper_assets.json` (every main table bound to
   its data, models, protocol, scoring and result files).
 - README rewritten as a researcher entry (current results, four reproduction levels, own method); the September grid
