@@ -70,7 +70,7 @@
       "credited": 441,
       "form": "weights only; optimizer, scaler and RNG states removed",
       "published": 441,
-      "repository": "huggingface.co/PDE-OBS/pdeobs-models",
+      "repository": "huggingface.co/ru1ch3n/PDE-OBS",
       "usage_verified": "poisson/fno/random_50pct loaded with api.load_legacy_checkpoint, predicted on eight R50 records and scored valid by pdeobs-strict-v1",
       "verification": "each file's SHA-256 compared against the per-cluster release manifest; 0 mismatches; every published checkpoint's ORIGINAL SHA-256 equals the one the campaign credited for that identity; anonymity audit over 5805 text files and all checkpoint metadata found 0 identifying strings"
     },
@@ -85,7 +85,7 @@
         "release_manifest.json": "paper-evaluated slice, 84 shards + 252 sidecars, 6.5 GB",
         "release_manifest_full.json": "complete factorial corpus, 3,360 shards + 10,080 sidecars, 244 GB"
       },
-      "repository": "huggingface.co/datasets/PDE-OBS/pdeobs-data",
+      "repository": "huggingface.co/datasets/ru1ch3n/PDE-OBS",
       "shards": 3360,
       "verification": "every shard's SHA-256 compared against its generation-time .sha256 sidecar; 3360/3360 matched, 0 size mismatches; one shard fetched through pdeobs download from its manifest entry and accepted by api.load_dataset(verify=True)"
     }

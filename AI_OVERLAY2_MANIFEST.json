@@ -1,9 +1,9 @@
 {
   "schema_version": "pdeobs-ai-overlay-manifest/v1",
-  "base_archive": "pdeobs-review-ai-ready.zip",
+  "base_archive": "<SNAPSHOT-2>.zip",
   "base_archive_sha256": "43dbd102bf7ae703d8ae42e20fe25a4c52e364864e34ca7c8fd71576bfb05112",
   "base_of_base": {
-    "archive": "pdeobs-review-main.zip",
+    "archive": "<SNAPSHOT-1>.zip",
     "sha256": "ece1024b4d32b699e80a2918e77f3cd569ed57b4102dad2eb008035916ce0b79"
   },
   "overlay_id": "pdeobs-ai-review-overlay-2",
@@ -20,7 +20,7 @@
     "AI_PATCH_NOTES.md": {
       "action": "modified",
       "base_sha256": "5c1884981c8b7ed992e65f9a1bba6a5e956035996f57e0ef9c343583fbe5c815",
-      "overlay_sha256": "35a2461aa70fd163ff687892e1e81309ca57054ed65c9eaec48cdfc69cf0e590"
+      "overlay_sha256": "3a886a19568337ba244c998de13dfaf0d1a3ea26700a5f77c6f67a79c9b0e0c9"
     },
     "AI_START_HERE.md": {
       "action": "modified",
@@ -35,17 +35,17 @@
     "docs/ai/ACCEPTANCE_INDEX.md": {
       "action": "added",
       "base_sha256": null,
-      "overlay_sha256": "351e890d5fc8c9926a2a5a535d6431861455ce28bf62343afa7047cbf9ff50be"
+      "overlay_sha256": "aa75a86895666768ba512b4ceeed8c8d22373309944b5500c61ac1387f751138"
     },
     "docs/ai/ACCEPTANCE_REPORT_overlay2.md": {
       "action": "added",
       "base_sha256": null,
-      "overlay_sha256": "411879d25d44e355115b7a2d744154631be623000a0306a2dfb166b67a57e30f"
+      "overlay_sha256": "509cc173aa8b81fe41c3199b7de2957570b302df92460bf61e22c7c3a2eb627f"
     },
     "docs/ai/AUDIT.md": {
       "action": "added",
       "base_sha256": null,
-      "overlay_sha256": "938648fdf73d835716f3f19af795565cede7e13ffb576c6cfe278b9bb8c0e9b4"
+      "overlay_sha256": "181314c5d81f65dd9ad914899459d5f63ba5c0febb68bb5160db4ddf77387ccf"
     },
     "docs/ai/AUDIT.zh-CN.md": {
       "action": "deleted",
@@ -70,7 +70,7 @@
     "docs/ai/acceptance_index.json": {
       "action": "added",
       "base_sha256": null,
-      "overlay_sha256": "9ec17d96fc27f619ae4e3762fa0182fa4f84a1b74aff96b47fcee6dd0a087009"
+      "overlay_sha256": "e81f759d41ea10cd3d28e7386d39e9b3917df3014c73b56a4ba352c682639c91"
     },
     "docs/ai/evidence_status.json": {
       "action": "modified",
@@ -420,12 +420,12 @@
     "review_audit/overlay2/baseline-before-overlay2-pytest.log": {
       "action": "added",
       "base_sha256": null,
-      "overlay_sha256": "78b127677ba93227d9e86bbf98d8890312fd0ad57b891171eb2653932ab99771"
+      "overlay_sha256": "e7003be2118f351ea37c2b817895783307c13dfc32429f43216cba4ffb08d167"
     },
     "review_audit/overlay2/baseline-doctor.json": {
       "action": "added",
       "base_sha256": null,
-      "overlay_sha256": "a4130dcccdd5fee6694a4e083f41f2c98246275e0beedd43f35ef3a0601ffc92"
+      "overlay_sha256": "7d2c7a732aef423b7a046794bbc3a60b0484aced0495dfa694da41ba40e1c8cf"
     },
     "review_audit/overlay2/evidence-demo/heat-bundle.json": {
       "action": "added",
@@ -480,7 +480,7 @@
     "review_audit/overlay2/final-doctor.json": {
       "action": "added",
       "base_sha256": null,
-      "overlay_sha256": "a4130dcccdd5fee6694a4e083f41f2c98246275e0beedd43f35ef3a0601ffc92"
+      "overlay_sha256": "7d2c7a732aef423b7a046794bbc3a60b0484aced0495dfa694da41ba40e1c8cf"
     },
     "review_audit/overlay2/final-junit.xml": {
       "action": "added",
@@ -490,7 +490,7 @@
     "review_audit/overlay2/final-pytest.log": {
       "action": "added",
       "base_sha256": null,
-      "overlay_sha256": "480369e961ad344224b36a868c9968ff5fd80d3a0e55eec06d30191ee37e10ea"
+      "overlay_sha256": "a5ce4fee9801e7b424befa60b0d8a939d6c34116de75dac3d5cb7a23b724c08d"
     },
     "review_audit/overlay2/install-check.log": {
       "action": "added",

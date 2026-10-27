@@ -9,7 +9,7 @@
 ..................................................                       [100%]
 =============================== warnings summary ===============================
 tests/test_pino.py::test_heat_temporal_normalization_has_no_artificial_amplitude_gradient
-  <AUDIT_ROOT>/enhanced/pdeobs-review-main/tests/test_pino.py:185: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+  <AUDIT_ROOT>/enhanced/<SNAPSHOT-1>/tests/test_pino.py:185: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
   Consider using tensor.detach() first. (Triggered internally at /pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:836.)
     assert abs(float(radial_derivative)) <= 2.0e-5 * max(abs(float(loss)), 1.0)
 

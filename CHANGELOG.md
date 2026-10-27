@@ -22,6 +22,7 @@
   package, with `--set KEY=VALUE` recipe overrides for controlled variants.
 - `pdeobs.revision.fftcompat`: cuFFT-compatible inverse real FFT for CPU replays of the FNO checkpoints.
 - `docs/installation.md`: October release-candidate install check.
+- Public deposits: the package points to the `ru1ch3n/PDE-OBS` dataset and model repositories (`configs/revision/public_deposits.yaml`, `results/public_deposits/release_map.json`, release metadata); review-archive names relabelled; receipt `results/public_deposits/relabel_receipt_20261026.json`; `results/revision_v2/access_check.json` regenerated (2026-10-26).
 - Hugging Face `ru1ch3n/PDE-OBS`, `october2026/`: weights of the 663 scored October runs (the 12 E6 runs added 2026-10-21) and of
   the ten completed path D retrains (`october2026/retrains/`), the V2 data the code reads,
   and the run-level / per-record results (part B without its run-level export); `reproduce/october/README.md` and `results/revision_october/README.md`

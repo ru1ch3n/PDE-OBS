@@ -99,5 +99,5 @@ Raw files (SHA-256 prefix): `coverage.json` e79504e82499, `coverage.log` 053d30a
 | `acceptance/FULL_COVERAGE_REPORT_round2.md` | `3b34f00cdb1ca65e14537f7d9ea9589c85689a2738ce72672b8d99e8950d61ed` | 9069 |
 | `acceptance/harness/remote_full_coverage.py` | `0bc69f40f5d749acf8eba5f96395b897970374a58a1c911f3cac8c73d03384d8` | 50115 |
 | `acceptance/harness/remote_coverage.sh` | `c9371558adb8f8b7852b25e4517893e9b1ff96c25056337982ee6a94f549f8f2` | 1571 |
-| `docs/ai/evidence_status.json` | `27c39af3babecac140e85af6338272a37b661c8dad4a2ca4d64b8b5c59142882` | 17207 |
+| `docs/ai/evidence_status.json` | `c3df6ad55ddb89eaf3af427ae4f1849f07dbd40cfb92cc9413d2d7035c6123c3` | 17181 |
 | `src/pdeobs/api/specs.py` | `631ce78a117aecccc5d8eb5e5f86dda557476e14d42c138f9b041387a5e09541` | 28253 |

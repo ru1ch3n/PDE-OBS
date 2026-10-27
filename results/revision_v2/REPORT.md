@@ -140,17 +140,19 @@ repository, and none is claimed.
 
 ## 7. Anonymous access of the public deposits: re-published and verified
 
+*2026-10-26:* the public deposits this package points to are the `ru1ch3n/PDE-OBS` dataset and model repositories; their files are byte-identical copies of the deposits checked below (441 checkpoint digests, every release-manifest digest and the corpus summaries re-verified without credentials on 2026-10-26; `access_check.json` regenerated the same day). The account- and history-specific statements below record the check of 2026-09-26 with identifiers relabelled.
+
 The deposits that the paper points to had been removed on 2026-09-24 because the first upload embedded
 author-identifying generation provenance (paths, host and node names, scheduler jobs, the non-anonymous source
 commit) in shard attributes, sidecars, the corpus summary and 117 model record files. On 2026-09-26 they were
 re-published from de-identified copies:
 
-- **Dataset `PDE-OBS/pdeobs-data`**: every shard re-emitted with the provenance fields replaced (numerical chunks
+- **Dataset deposit**: every shard re-emitted with the provenance fields replaced (numerical chunks
   copied verbatim, bit-identical arrays), every sidecar and the corpus summaries rewritten, structured and byte audits of
   all 3,360 shards with zero findings; `scrub-manifest.json` maps every generation-time digest to the published digest.
   The paper slice (84 shards, 510 files, 6.9 GB) was uploaded first; the complete corpus (20,167 files, 250.6 GB,
   `release_manifest_full.json`) followed the same night.
-- **Models `PDE-OBS/pdeobs-models`**: 441 checkpoints (bytes unchanged) with a second de-identification pass over
+- **Model deposit**: 441 checkpoints (bytes unchanged) with a second de-identification pass over
   1,028 record files (scheduler blocks, job ids, node/host names, GPU identifiers, partitions); the one byte-level hit
   inside a checkpoint (`GPU-`, four printable bytes inside tensor data) was confirmed a chance match.
 
@@ -158,8 +160,8 @@ re-published from de-identified copies:
 
 | deposit | API | README | declared files |
 |---|---|---|---|
-| dataset `PDE-OBS/pdeobs-data` | 200 | 200 | 200 (both release manifests, scrub manifest, summary, shards and sidecars) |
-| models `PDE-OBS/pdeobs-models` | 200 | 200 | 200 (three cluster manifests, scrub manifest, checkpoints, records) |
+| dataset deposit | 200 | 200 | 200 (both release manifests, scrub manifest, summary, shards and sidecars) |
+| model deposit | 200 | 200 | 200 (three cluster manifests, scrub manifest, checkpoints, records) |
 
 Integrity was checked without credentials, file by file, against the staged digests: dataset 20,167 of 20,167 files
 (3,363 large files by SHA-256, the rest by git blob id; the paper slice of 510 files was verified separately first),
@@ -191,10 +193,10 @@ updated as follows; the Git checks below cover the advertised branch histories:
   `results/prediction_verification_20260924`) now lives in this repository, `results/public_deposits/release_map.json`
   (441 checkpoints, all bindings agree with both indexes; `summary.json` b0141eec... -> 671a185d...). The verification tools read
   it (`tools/verify_archived_predictions.py --release-map`, `pdeobs.archived_verification.released_digests`).
-- **Histories squashed:** `super_squash_history` on `PDE-OBS/pdeobs-models` (15274b8e3704), `PDE-OBS/pdeobs-data`
-  (b17797d39805) and the stray empty `PDE-OBS/pdeobs-model`; each current `main` branch then had exactly one commit. Fresh unauthenticated
+- **Histories squashed:** `super_squash_history` on the model deposit (`<DEPOSIT-COMMIT-1>`), the dataset deposit
+  (`<DEPOSIT-COMMIT-2>`) and a stray empty repository; each current `main` branch then had exactly one commit. Fresh unauthenticated
   bare clones of all three (`git clone --bare`, no credentials) list 3 commits in total
-  with author PDE-OBS <PDE-OBS@users.noreply.huggingface.co> and committer `system <system@users.noreply.huggingface.co>`; the
+  with the deposit author and committer identities `<DEPOSIT-AUTHOR>`; the
   string that the audit flagged does not occur in the raw commit objects reachable from these `main` branches. This
   verification does not certify removal of unadvertised historical objects or third-party caches.
 - **This repository:** the same labels applied to 42 files (receipts, inventories, `results/archived_campaign/index.json`,
