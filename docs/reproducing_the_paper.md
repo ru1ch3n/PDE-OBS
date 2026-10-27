@@ -1,5 +1,11 @@
 # Reproducing the paper protocol
 
+> **Scope.** This page fixes the **September 2026** protocol of the preprint's grid: 1,800 / 200 records per PDE,
+> no validation split, the nine original views and the historical training cohorts. The **October 2026 revision**
+> uses a different protocol (V2 data with 9,000 / 900 / 1,800 records per slice plus a sealed confirmation set,
+> method-tuned recipes, the RPB authors' split); it is described in [The October 2026 revision](october_revision.md)
+> and reproduced by [`reproduce/october/`](../reproduce/october/README.md). Nothing here is reinterpreted by it.
+
 The software implements a broader resource than the paper's primary experiment.
 This page fixes the intended interpretation of the selected experiment and its
 historical cohorts. It is not a launch instruction for an unbounded sweep, and

@@ -192,3 +192,77 @@ def test_recipe_overrides_parse_json_and_strings():
     assert parse([]) == {}
     with pytest.raises(SystemExit):
         parse(["v4_norm"])
+
+
+# ---------------------------------------------------------------- reproduce/october/score_method.py and rebuild_tables.py --latex
+def _october_scripts():
+    import importlib.util
+    import pathlib
+    root = pathlib.Path(__file__).resolve().parents[1] / "reproduce" / "october"
+    mods = {}
+    for name in ("replay_inference", "score_method", "rebuild_tables"):
+        spec = importlib.util.spec_from_file_location(name, root / f"{name}.py")
+        mod = importlib.util.module_from_spec(spec)
+        import sys
+        sys.modules[name] = mod
+        spec.loader.exec_module(mod)
+        mods[name] = mod
+    return mods
+
+
+def test_score_method_recipe_and_predictor_parsing():
+    sm = _october_scripts()["score_method"]
+    assert sm.parse_dataset_id("v2_ns_ell009_ref128") == ("navier_stokes", "ell009")
+    assert sm.parse_dataset_id("v2_poisson_rpb_ref128") == ("poisson", "rpb")
+    rec = sm.recipe_for("v2_poisson_ell009_ref128", "nearest")
+    assert rec["pde"] == "poisson" and rec["fill_input"] == "nearest" and rec["method"] == "fno"
+    assert "fill_input" not in sm.recipe_for("v2_darcy_ell0025_ref128", None)
+    assert sm.load_predictor("covariance") == "covariance"
+    assert sm.load_predictor("json:dumps") is __import__("json").dumps
+    import pytest
+    with pytest.raises(SystemExit):
+        sm.load_predictor("not-a-builtin")
+
+
+def test_score_method_persistence_shapes():
+    torch = __import__("pytest").importorskip("torch")
+    sm = _october_scripts()["score_method"]
+    static_in = torch.arange(2 * 1 * 4 * 4, dtype=torch.float32).reshape(2, 1, 4, 4)
+    assert torch.equal(sm.persistence(static_in, torch.zeros(2, 1, 4, 4)), static_in)
+    hist = torch.arange(2 * 1 * 1 * 4 * 4, dtype=torch.float32).reshape(2, 1, 1, 4, 4)
+    pred = sm.persistence(hist, torch.zeros(2, 3, 1, 4, 4))
+    assert pred.shape == (2, 3, 1, 4, 4)
+    assert torch.equal(pred[:, 2], hist[:, -1])
+
+
+def test_rebuild_tables_latex_writer(tmp_path):
+    rt = _october_scripts()["rebuild_tables"]
+    assert rt.tex_escape("a_b & 5% <x>") == "a\\_b \\& 5\\% $<$x$>$"
+    rt.write_tex(str(tmp_path), "demo", ["PDE", "view"], [["Poisson", "U256"], ["NS", "C1024"]], "1. Demo", note="a note")
+    text = (tmp_path / "demo.tex").read_text(encoding="utf-8")
+    assert text.startswith("% 1. Demo") and "\\begin{tabular}{ll}" in text and "Poisson & U256 \\\\" in text and text.endswith("\\end{tabular}\n")
+
+
+def test_rebuild_tables_reproduces_frozen_cells(tmp_path):
+    """Path B: the committed run-level results rebuild the published table values (a few frozen cells; standard library)."""
+    import csv
+    import pathlib
+    import subprocess
+    import sys
+    root = pathlib.Path(__file__).resolve().parents[1]
+    res = root / "results" / "revision_october"
+    if not (res / "runs_long.part-A.csv").exists():
+        __import__("pytest").skip("results/revision_october is not part of this checkout")
+    r = subprocess.run([sys.executable, str(root / "reproduce" / "october" / "rebuild_tables.py"), "--results", str(res), "--out", str(tmp_path), "--latex"],
+                       capture_output=True, text=True, timeout=600)
+    assert r.returncode == 0, r.stderr[-800:]
+    rows = {(x["PDE"], x["slice"], x["view"]): x for x in csv.DictReader(open(tmp_path / "static_calibration.csv", encoding="utf-8"))}
+    cell = rows[("Poisson", "medium", "U256")]
+    assert cell["covariance"] == "8.0e-05" and cell["best neural (envelope)"] == "0.020" and cell["model"] == "P4 voronoi_cnn U256"
+    assert rows[("Darcy", "rough", "U1024")]["best neural (envelope)"] == "0.015"
+    dens = {(x["model"], x["trained on"]): x for x in csv.DictReader(open(tmp_path / "ns_medium_density.csv", encoding="utf-8"))}
+    assert dens[("fno", "MXR6_K256_K1024")]["256"] == "0.054" and dens[("fno", "MXR6_K256_K1024")]["1,024"] == "0.027"
+    rpb = {(x["population"], x["method"], x["trained on"]): x for x in csv.DictReader(open(tmp_path / "rpb.csv", encoding="utf-8"))}
+    assert rpb[("ID test", "fno", "MXR2_K256")]["U256"] == "0.376"
+    assert sum(1 for _ in open(tmp_path / "failures.csv", encoding="utf-8")) - 1 == 53
+    assert (tmp_path / "static_calibration.tex").read_text(encoding="utf-8").count("\\\\") >= 40

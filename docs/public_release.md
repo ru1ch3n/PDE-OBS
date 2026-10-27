@@ -4,9 +4,11 @@ This page records the data and model release inventory and verification procedur
 The 2026-09-26 archived report audited the original neutral-namespace deposits
 after their de-identified re-emission (`results/revision_v2/access_check.json`,
 `results/revision_v2/REPORT.md`, section 7). The current user-owned copies are
-public, have the same file counts and byte-identical root manifests, and representative
-data and checkpoint objects have matching size and ETag. A second complete per-file
-audit of the copies has not been performed. Both dataset manifests at the new address
+public and have the same file counts and byte-identical root manifests; on 2026-10-26 every
+checkpoint digest of `results/public_deposits/release_map.json` (441), every digest of both release
+manifests and the corpus summaries were verified against the copies without credentials, and the
+package now points only at the copies (`configs/revision/public_deposits.yaml`, receipt
+`results/public_deposits/relabel_receipt_20261026.json`). Both dataset manifests at the new address
 resolve every entry to `huggingface.co/datasets/ru1ch3n/PDE-OBS` (336 and 13,440 entries,
 checked 2026-10-16), so a manifest download no longer depends on the original deposit.
 Historical audit records are retained unchanged.
@@ -99,10 +101,14 @@ against its release digest before use; external availability remains distinct.
 arrays from the same checkpoints. A running verification is not a completed
 all-model audit, and its artifacts do not silently replace the historical scores.
 
-**Production consistency, not independent reference validation.** The
+**Production consistency, not independent reference validation (September grid).** The
 [hash-bound quality summary](../results/numerical_quality/README.md) reports
-actual generation-time residual and consistency checks. No independent
-reference-solution or grid-convergence study ships with it.
+actual generation-time residual and consistency checks of the September corpus. No independent
+reference-solution or grid-convergence study ships with that corpus. The October V2 data are
+different: their labels are reference-qualified (`pdeobs.revision.reference`, `numchecks`), 48 test parents
+per slice were re-solved on a finer route (final analysis E3,
+`results/revision_october/final_analyses/e3_stored_vs_finer_targets.json`) and the resolution study N8 trains at
+64^2 / 128^2 / 256^2; see [The October 2026 revision](october_revision.md).
 
 ## Licences
 

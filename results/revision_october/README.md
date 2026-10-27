@@ -19,6 +19,8 @@ python reproduce/october/rebuild_tables.py            # writes reproduce/october
 | `classical_long.part-B.csv` | 282 rows: classical references of the NS slices and of the 64^2 / 256^2 resolution views. 168 further rows (Darcy / Poisson) were computed on both accounts, agree exactly with part A and are kept only there |
 | `manifest.part-B.json` | SHA-256 and row counts as for part A; lists what was left out (2 voided attempts, 168 duplicate classical rows); `update_20261021` records the E5 rows added on 2026-10-21; the per-record files of that export are on Hugging Face under `october2026/results/part-B/update_20261021/` (without the run-level export) |
 | updates | E6 trainings and E6ev suites added to part A (2026-10-20); E5 added to part B (2026-10-21); N7 confirmation of the P4 U1024 specialists added to part A (2026-10-21). Nothing pending. |
+| `final_analyses/` | the analysis outputs E1-E5 as JSON (RPB OOD diagnostics, data-consistent split, stored vs finer targets, RPB paired bootstrap, composition reference); legend in its README |
+| `paper_assets.json` | every main table of the revision bound to its data, models, observation protocol, scoring definition, result files (with SHA-256) and rebuild script |
 
 ## Columns of `runs_long`
 

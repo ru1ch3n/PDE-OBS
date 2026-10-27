@@ -18,6 +18,30 @@ The script uses the standard library only. It rebuilds nine tables from the run-
 "Best neural" columns are descriptive envelopes over every trained model of the listed cohorts, not methods selected on
 test data. The outputs are generated files; they are not committed.
 
+# Score your own method on the October protocol
+
+`score_method.py` builds the test (or confirmation / OOD) split of a V2 view with the same per-parent sensor layouts,
+input representation and float64 full-field scorer as the replay, and takes the predictions from a callable instead of
+a checkpoint. Three predictors are built in: `zero` (the masked field; persistence for the temporal families),
+`nearest` (the nearest-observation fill, `pdeobs.revision.fill`) and `covariance` (the covariance-weighted
+reconstruction of `pdeobs.revision.covariance`, fitted on the training split with the regularisation chosen on the
+validation split from the frozen candidate list in `configs/paper/october/classical.yaml`; static families only).
+
+```bash
+python reproduce/october/score_method.py --dataset-id v2_poisson_ell009_ref128 --data-root <V2 store> --method covariance --out cov.json
+python reproduce/october/score_method.py --dataset-id v2_ns_ell009_ref128 --data-root <V2 store> --method my_package.my_module:predict
+python reproduce/october/score_method.py --dataset-id v2_poisson_rpb_ref128 --data-root <RPB store> --part ood --method nearest
+```
+
+A custom predictor is `module:callable` with the signature `predict(inputs, mask, geometry, metadata) -> prediction`:
+static families get `inputs` [B, C, H, W] (observed values, hidden cells 0, or nearest-filled with `--fill nearest`),
+`mask` [B, 1, H, W] and `geometry`; temporal families get the observed initial state [B, 1, C, H, W] and must return
+the next three frames. The callable never sees the target. Reported per view: mean / median / p90 / max of the
+per-record relative L2 and the number of records, the same statistic as `mean` in `results/revision_october`.
+`--max-records N` scores the first N records for a smoke test. The RPB store is the output of
+`python -m pdeobs.revision.external.rpb` (the data are not redistributed; download them from the authors' Zenodo
+record and convert them).
+
 # Weights-inference replay (path C)
 
 `replay_inference.py` rebuilds a run's network from its frozen recipe (`configs/paper/october/recipes.yaml`), loads the run's
