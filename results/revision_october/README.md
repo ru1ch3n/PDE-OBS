@@ -14,10 +14,10 @@ python reproduce/october/rebuild_tables.py            # writes reproduce/october
 |---|---|
 | `runs_long.part-A.csv` | 7,778 rows. Static Poisson / Darcy V2 (smooth, medium, rough); NS medium: the N5 MXR6 trainings and the nested-density evaluations of the P4 runs (the P4 NS runs themselves are in part B); N1-N7 and 21 of the 48 N8 resolution runs (mostly the 256^2 runs; the other 27 are in part B); N7 static + NS medium; RPB in-distribution and OOD; E2 re-evaluations; E6 nearest-fill trainings (12) and their grid-jitter / nested-density evaluation suites (added 2026-10-20); N7 confirmation of the six P4 Voronoi-CNN U1024 specialists of Poisson rough and Darcy rough (added 2026-10-21) |
 | `classical_long.part-A.csv` | 312 rows: classical references per (task, view, method) with the validation-selected settings |
-| `manifest.part-A.json` | SHA-256 and row counts of the committed files and of the exported per-record files; `update_20261020` records the E6 / E6ev rows added on 2026-10-20 and `update_20261021` the N7ev rows added on 2026-10-21 (their per-record files are not on Hugging Face) |
+| `manifest.part-A.json` | SHA-256 and row counts of the committed files and of the exported per-record files; `update_20261020` records the E6 / E6ev rows added on 2026-10-20 and `update_20261021` the N7ev rows added on 2026-10-21; the per-record files of the 2026-10-21 export are on Hugging Face under `october2026/results/part-A/update_20261021/` |
 | `runs_long.part-B.csv` | 2,316 rows. NS smooth / medium / rough P4; NS rough P6 / P7, V4-C / V4-D / V4-E and the V4 P6 / P7 re-checks; N7 NS rough confirmation; N8 resolution runs of Poisson rough and NS rough; E5 composition reference, NS rough (added 2026-10-21) |
 | `classical_long.part-B.csv` | 282 rows: classical references of the NS slices and of the 64^2 / 256^2 resolution views. 168 further rows (Darcy / Poisson) were computed on both accounts, agree exactly with part A and are kept only there |
-| `manifest.part-B.json` | SHA-256 and row counts as for part A; lists what was left out (2 voided attempts, 168 duplicate classical rows); `update_20261021` records the E5 rows added on 2026-10-21 (their per-record files are not on Hugging Face) |
+| `manifest.part-B.json` | SHA-256 and row counts as for part A; lists what was left out (2 voided attempts, 168 duplicate classical rows); `update_20261021` records the E5 rows added on 2026-10-21; the per-record files of that export are on Hugging Face under `october2026/results/part-B/update_20261021/` (without the run-level export) |
 | updates | E6 trainings and E6ev suites added to part A (2026-10-20); E5 added to part B (2026-10-21); N7 confirmation of the P4 U1024 specialists added to part A (2026-10-21). Nothing pending. |
 
 ## Columns of `runs_long`
@@ -46,11 +46,11 @@ in the file but reported separately.
 
 ## Not in this directory
 
-- **Per-record errors.** About 150 MB of compressed CSV for part A. Their SHA-256 are in `manifest.part-A.json`. They
+- **Per-record errors.** About 170 MB of compressed CSV for part A. Their SHA-256 are in `manifest.part-A.json`. They
   are published beside the data in the dataset `huggingface.co/datasets/ru1ch3n/PDE-OBS` under
   `october2026/results/part-A/`, with a copy of the manifest; part B's per-record files are under `part-B/` (its
   run-level export is not published there because two voided-attempt rows carry a machine path; `runs_long.part-B.csv`
-  here is its run-level table).
+  here is its run-level table). The 2026-10-21 exports are under `update_20261021/` in both part folders (part B again without the run-level export).
 - **Model weights** of every scored run are in the model repository `huggingface.co/ru1ch3n/PDE-OBS` under `october2026/`.
 - **Raw predictions.**
 - **Classical per-record errors and the classical confirmation, noise and rank studies.** Their summaries are in the
