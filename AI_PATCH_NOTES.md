@@ -29,9 +29,9 @@ The notes below are historical and remain unchanged.
 
 ## Overlay 2 (2026-09-23 UTC, CPU only)
 
-Base: the overlay-1 archive `pdeobs-review-ai-ready.zip`, SHA-256
+Base: the overlay-1 archive `<SNAPSHOT-2>.zip`, SHA-256
 `43dbd102bf7ae703d8ae42e20fe25a4c52e364864e34ca7c8fd71576bfb05112` (304 files), which itself sits on
-`pdeobs-review-main.zip` `ece1024b4d32b699e80a2918e77f3cd569ed57b4102dad2eb008035916ce0b79`.
+`<SNAPSHOT-1>.zip` `ece1024b4d32b699e80a2918e77f3cd569ed57b4102dad2eb008035916ce0b79`.
 File-level manifest: `AI_OVERLAY2_MANIFEST.json`. Logs: `review_audit/overlay2/`.
 
 ### Source change (1 facade file)

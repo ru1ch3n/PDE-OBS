@@ -10,8 +10,8 @@ earlier rounds are cited only and never added to this round's.
 
 | Item | Value |
 |---|---|
-| Input archive | `pdeobs-review-ai-ready.zip`, SHA-256 `43dbd102bf7ae703d8ae42e20fe25a4c52e364864e34ca7c8fd71576bfb05112`, 304 files (the overlay-1 result) |
-| Base of the input | `pdeobs-review-main.zip`, SHA-256 `ece1024b4d32b699e80a2918e77f3cd569ed57b4102dad2eb008035916ce0b79`, 268 files (comparison only, unmodified) |
+| Input archive | `<SNAPSHOT-2>.zip`, SHA-256 `43dbd102bf7ae703d8ae42e20fe25a4c52e364864e34ca7c8fd71576bfb05112`, 304 files (the overlay-1 result) |
+| Base of the input | `<SNAPSHOT-1>.zip`, SHA-256 `ece1024b4d32b699e80a2918e77f3cd569ed57b4102dad2eb008035916ce0b79`, 268 files (comparison only, unmodified) |
 | Output | the overlay-2 tree (top-level directory unchanged); the archive's own SHA-256 is delivered next to it, never inside it |
 | Package version | `pdeobs` 0.2.0 unchanged; the overlay is identified separately as `pdeobs-ai-review-overlay-2` |
 | File-level manifest | `AI_OVERLAY2_MANIFEST.json` (input and output hash of every added or modified file); `docs/ai/frozen_science_sha256.json` is the input baseline and was not rewritten |

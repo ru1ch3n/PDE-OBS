@@ -107,21 +107,21 @@ def main() -> int:
             report["anonymity"].append(inspect_text(f"{rid}/README.md (downloaded)", readme["body"].decode("utf-8", "replace")))
         entry["readme_status"] = readme["status"]
         entry["reachable_unauthenticated"] = entry["api"]["status"] == 200 and all(f["status"] in (200, 302) for f in entry["files"].values())
-        report["access"][rid] = entry
+        report["access"][f"{rid} ({kind})" if sum(r["id"] == rid for r in deposits["repositories"]) > 1 else rid] = entry
     for card in deposits.get("local_cards", []):
         path = REPO / card if not Path(card).is_absolute() else Path(card)
         if path.exists():
             report["anonymity"].append(inspect_text(str(card), path.read_text(encoding="utf-8", errors="replace")))
     reachable = all(e["reachable_unauthenticated"] for e in report["access"].values())
     report["summary"] = {"all_repositories_reachable_unauthenticated": reachable,
-                         "statuses": {rid: e["api"]["status"] for rid, e in report["access"].items()},
+                         "statuses": {key: e["api"]["status"] for key, e in report["access"].items()},
                          "anonymity_clean": all(a["clean"] for a in report["anonymity"])}
     if reachable and args.smoke:
         root = args.download_dir or (args.out / "access_smoke")
         root.mkdir(parents=True, exist_ok=True)
         results = {}
         for item in deposits.get("smoke_test", []):
-            repo = next(r for r in deposits["repositories"] if r["id"] == item["repository"])
+            repo = next(r for r in deposits["repositories"] if r["id"] == item["repository"] and (item.get("type") in (None, r["type"])))
             base = f"https://huggingface.co/{'datasets/' if repo['type'] == 'dataset' else ''}{repo['id']}/resolve/{repo.get('revision', 'main')}"
             results[item["path"]] = download(f"{base}/{item['path']}", root / item["path"], item.get("sha256"))
         report["integrity"] = {"downloads": results, "all_match": all(r.get("matches_manifest", False) for r in results.values())}

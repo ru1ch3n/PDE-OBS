@@ -16,7 +16,7 @@ queried, and "not in the ZIP" does not mean "not done elsewhere".
 
 ## Scope and versions
 
-- Input: `pdeobs-review-main.zip`, 268 files, about 2.87 MiB unpacked; no production data, weights or
+- Input: `<SNAPSHOT-1>.zip`, 268 files, about 2.87 MiB unpacked; no production data, weights or
   paper PDF.
 - SHA-256: `ece1024b4d32b699e80a2918e77f3cd569ed57b4102dad2eb008035916ce0b79`.
 - Software version 0.2.0, numerical kernel version 0.1.0; the added AI overlay is identified separately

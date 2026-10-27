@@ -1,8 +1,9 @@
-# Public deposits that the paper points to, as declared by the release tooling and cards.
+# Public deposits of this package: the ru1ch3n/PDE-OBS dataset and model repositories (the same de-identified files,
+# 441 checkpoint digests, release-manifest digests and corpus summaries as recorded in results/public_deposits/release_map.json).
 # tools/revision/check_access.py checks every entry without credentials and records the status codes.
 schema: pdeobs-revision-public-deposits/v1
 repositories:
-  - id: PDE-OBS/pdeobs-data
+  - id: ru1ch3n/PDE-OBS
     type: dataset
     revision: main
     role: >-
@@ -18,7 +19,7 @@ repositories:
       - data/poisson/dirichlet/smooth_grf/high/shard_00000.h5
       - data/poisson/dirichlet/smooth_grf/high/shard_00000.manifest.json
       - data/heat/periodic/smooth_grf/high/shard_00000.h5
-  - id: PDE-OBS/pdeobs-models
+  - id: ru1ch3n/PDE-OBS
     type: model
     revision: main
     role: >-
@@ -39,7 +40,9 @@ local_cards:
   - README.md
 smoke_test:
   # one stationary and one temporal evaluation; digests are taken from the release manifests at run time when present
-  - repository: PDE-OBS/pdeobs-data
+  - repository: ru1ch3n/PDE-OBS
+    type: dataset
     path: release_manifest.json
-  - repository: PDE-OBS/pdeobs-models
+  - repository: ru1ch3n/PDE-OBS
+    type: model
     path: models_manifest.cluster-A.json
