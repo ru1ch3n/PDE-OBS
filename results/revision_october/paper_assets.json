@@ -1,0 +1,240 @@
+{
+ "schema": "pdeobs-october-paper-assets/v1",
+ "generated": "2026-10-27",
+ "scope": "every main table of the October 2026 revision (unified report of 2026-10-26, version 18) and the final analyses E1-E6",
+ "code": {
+  "repository": "https://github.com/ru1ch3n/PDE-OBS",
+  "layer": "October 2026 revision (CHANGELOG: Unreleased); package version 0.2.1 + revision modules",
+  "scripts": {
+   "tables": "reproduce/october/rebuild_tables.py",
+   "weights_replay": "reproduce/october/replay_inference.py",
+   "retrain": "reproduce/october/train_run.py",
+   "own_method": "reproduce/october/score_method.py"
+  }
+ },
+ "common": {
+  "data": {
+   "v2_views": "huggingface.co/datasets/ru1ch3n/PDE-OBS, october2026/v2/<view>/ (digests: october2026/data_manifest.part-1.json, part-2.json)",
+   "confirmation_set": "october2026/v2-confirm/<view>/ (same manifests)",
+   "specification": "configs/paper/october/data_v2.yaml (pdeobs.revision.v2spec / v2data); 35,100 parents = 3 PDEs x 3 regimes x 3,900; per slice 9,000 train / 900 validation / 1,800 test / 600 confirmation records",
+   "rpb": "the CNO authors' RPB Poisson set (Zenodo 10406879, CC BY 4.0), not redistributed; python -m pdeobs.revision.external.rpb converts it (authors' split; 256 ID test, 256 OOD records)"
+  },
+  "observations": "configs/paper/october/observations_v2.yaml; layouts built at access time by pdeobs.revision.v2masks from (parent id, protocol, replicate); exact sensor counts (256 / 1,024 / 16,384)",
+  "models": {
+   "weights": "huggingface.co/ru1ch3n/PDE-OBS, october2026/models/<cohort>/<run_id>/weights.pt; digests in october2026/models_manifest.part-1..3.json (663 runs)",
+   "recipes": "configs/paper/october/recipes.yaml (frozen per cohort x dataset x method), controls.yaml (N6, RPBn, E6)",
+   "seeds": "1101, 1102, 1103 (main); 1104, 1105 only where a table says so"
+  },
+  "scoring": {
+   "metric": "per-record relative L2 of the complete predicted field in physical units, float64; temporal families: joint over the predicted frames",
+   "block": "every record of the split exactly once (strict identity check; a block with a missing, repeated or non-finite record is void)",
+   "aggregation": "arithmetic mean over the block's records, then over the training seeds listed",
+   "failures": "training pathologies are kept as failed rows (results/revision_october, run_status) and never replaced",
+   "classical": "references fitted on the training split, settings chosen on the validation split (configs/paper/october/classical.yaml)"
+  },
+  "rebuild": "python reproduce/october/rebuild_tables.py [--latex]  ->  reproduce/october/out/<table>.csv|.tex, tables.md"
+ },
+ "result_files": {
+  "runs_long.part-A.csv": {
+   "sha256": "a0a4ffe82e4e928850fcbf09d0840001c2a6196e7027105b6c95d2b80e148dcd",
+   "rows": 7778
+  },
+  "runs_long.part-B.csv": {
+   "sha256": "95fadf7e1693ab07359c72e39e23d5578a902ee8ac8fa0de632b862f805b4975",
+   "rows": 2316
+  },
+  "classical_long.part-A.csv": {
+   "sha256": "89eb8a17666f76052db977c1fd863f78ca47c8d25e2f044fc289557f60257a2f",
+   "rows": 312
+  },
+  "classical_long.part-B.csv": {
+   "sha256": "7c01e0e8b7758b62b93a49faafe48f59087a49f5bb8f265d4de64f2fb881a11d",
+   "rows": 282
+  },
+  "manifest.part-A.json": {
+   "sha256": "7d7f4e08ae8668dfc5531087f21ee552a72d0065dc1cff05589a4bc49a37f837",
+   "rows": null
+  },
+  "manifest.part-B.json": {
+   "sha256": "5374097fac80ce3b03e5ec7c39183baa44a8be924d5235b7737f1676b22c51d1",
+   "rows": null
+  },
+  "final_analyses/e1_rpb_ood_diagnostics.json": {
+   "sha256": "b5bccddd009ed3a1b279467f90b2bca65d1e1dc3a53fa23c62a314cc7cc0a04a"
+  },
+  "final_analyses/e2_data_consistent_transfer.json": {
+   "sha256": "cd416e48445fd664a7330c913d3d6ffe6dafc1d4cd1d9a23a2567c6baa839e7e"
+  },
+  "final_analyses/e3_stored_vs_finer_targets.json": {
+   "sha256": "226af9e7456792b494d78f1b03c76179de29def89aac3eb66115ad67855c0bca"
+  },
+  "final_analyses/e4_rpb_paired_bootstrap.json": {
+   "sha256": "adee84fac3ab54d37237c4cf07884e34b7d9f3443dd6e14e799b340638f574c3"
+  },
+  "final_analyses/e5_composition_reference.json": {
+   "sha256": "74bcbcca91423e5aec872ff4c918b100541cbfac9dd0ca7865f8e00675a9f6b2"
+  }
+ },
+ "tables": [
+  {
+   "id": "static_calibration",
+   "title": "Static calibration (V2 test)",
+   "rebuilt_table": "reproduce/october/out/static_calibration.csv",
+   "unified_report_section": "5.1 / 5.7",
+   "sources": {
+    "runs": "part A (Poisson / Darcy), cohorts P4, P5, V4C, suite v2eval7",
+    "classical": "classical_long.part-A.csv (cov_linear, gappy_pod_ridge, interpolation)"
+   },
+   "population": "1,800 test parents per slice (600 per regime)",
+   "note": ""
+  },
+  {
+   "id": "transfer",
+   "title": "Observation transfer (D3 / C3 per seed)",
+   "rebuilt_table": "reproduce/october/out/transfer.csv",
+   "unified_report_section": "5.4 / 7.1",
+   "sources": {
+    "runs": "parts A and B, cohorts P4, V4C, V4D, suite v2eval7, views U256 / C256 / L256 (+ MXR3_K256 mixtures)"
+   },
+   "population": "1,800 test parents per slice",
+   "note": "D3 = matched view, C3 = mean of the two other 256-sensor views; per seed"
+  },
+  {
+   "id": "grid_jitter",
+   "title": "Grid jitter (Poisson rough)",
+   "rebuilt_table": "reproduce/october/out/grid_jitter.csv",
+   "unified_report_section": "8.3 / 12.6",
+   "sources": {
+    "runs": "part A, cohorts V4D, N3GJ2, E6 (G256 / GJ2 trained), suite n3geom; E2ev rows carry the data-consistent split"
+   },
+   "population": "1,800 test parents; GT1x / GT1y / GT2x / GT2y coherent shifts, GJ1-3 x 3 realisations",
+   "note": ""
+  },
+  {
+   "id": "ns_medium_density",
+   "title": "NS medium sensor density (nested sets)",
+   "rebuilt_table": "reproduce/october/out/ns_medium_density.csv",
+   "unified_report_section": "8.5 / 12.6",
+   "sources": {
+    "runs": "part A, cohorts P4 (U256, U1024, MXR3), N5MXR6, E6, suite n5nested",
+    "classical": "classical_long.part-A.csv (NS medium, nested views)"
+   },
+   "population": "1,800 test parents; K = 64 .. 4,096, three nested realisations averaged",
+   "note": ""
+  },
+  {
+   "id": "resolution",
+   "title": "Resolution 64^2 / 128^2 / 256^2",
+   "rebuilt_table": "reproduce/october/out/resolution.csv",
+   "unified_report_section": "8.7",
+   "sources": {
+    "runs": "parts A and B, cohort N8 (grid variants) + V4C / P4 128^2 anchors, suite v2eval7",
+    "classical": "classical_long parts A and B (v4classical per grid)"
+   },
+   "population": "1,800 test parents per grid view of the same parents",
+   "note": ""
+  },
+  {
+   "id": "rpb",
+   "title": "External RPB Poisson, in-distribution and OOD",
+   "rebuilt_table": "reproduce/october/out/rpb.csv",
+   "unified_report_section": "11 / 12.1 / 12.4",
+   "sources": {
+    "runs": "part A, cohorts RPB, RPBn, suites v2eval7 (ID test) and rpbood",
+    "classical": "classical_long.part-A.csv (rpb task)",
+    "analyses": "final_analyses/e1_rpb_ood_diagnostics.json, e4_rpb_paired_bootstrap.json"
+   },
+   "population": "256 ID test and 256 OOD records (authors' split)",
+   "note": ""
+  },
+  {
+   "id": "normalisation",
+   "title": "Normalisation-only attribution",
+   "rebuilt_table": "reproduce/october/out/normalisation.csv",
+   "unified_report_section": "8.6",
+   "sources": {
+    "runs": "parts A and B, cohorts N6 (normaliser off), V4C, P4 / P5 (frozen), suite v2eval7"
+   },
+   "population": "1,800 test parents per slice",
+   "note": ""
+  },
+  {
+   "id": "confirmation_neural",
+   "title": "Confirmation set, neural models",
+   "rebuilt_table": "reproduce/october/out/confirmation_neural.csv",
+   "unified_report_section": "9.1 / 9.2",
+   "sources": {
+    "runs": "parts A and B, cohort N7ev (suite n7confirm) over V4C, V4D, V4E, P4 specialists incl. the U1024 specialists",
+    "classical": "N7 classical references are summarised in the unified report (not part of the run-level export)"
+   },
+   "population": "600 sealed confirmation parents per slice (200 per regime), scored once after every setting was frozen",
+   "note": ""
+  },
+  {
+   "id": "failures",
+   "title": "Training failures",
+   "rebuilt_table": "reproduce/october/out/failures.csv",
+   "unified_report_section": "13",
+   "sources": {
+    "runs": "parts A and B, run_status starting with failed"
+   },
+   "population": "35 failed trained runs, kept",
+   "note": ""
+  },
+  {
+   "id": "e1",
+   "title": "Final analysis E1",
+   "file": "results/revision_october/final_analyses/e1_rpb_ood_diagnostics.json",
+   "unified_report_section": "12.1",
+   "sources": {
+    "library": "pdeobs.revision.covariance"
+   }
+  },
+  {
+   "id": "e2",
+   "title": "Final analysis E2",
+   "file": "results/revision_october/final_analyses/e2_data_consistent_transfer.json",
+   "unified_report_section": "12.2",
+   "sources": {
+    "library": "pdeobs.revision.dc"
+   }
+  },
+  {
+   "id": "e3",
+   "title": "Final analysis E3",
+   "file": "results/revision_october/final_analyses/e3_stored_vs_finer_targets.json",
+   "unified_report_section": "12.3",
+   "sources": {
+    "library": "pdeobs.revision.reference / numchecks"
+   }
+  },
+  {
+   "id": "e4",
+   "title": "Final analysis E4",
+   "file": "results/revision_october/final_analyses/e4_rpb_paired_bootstrap.json",
+   "unified_report_section": "12.4",
+   "sources": {
+    "library": "pdeobs.revision.stats"
+   }
+  },
+  {
+   "id": "e5",
+   "title": "Final analysis E5",
+   "file": "results/revision_october/final_analyses/e5_composition_reference.json",
+   "unified_report_section": "12.5",
+   "sources": {
+    "library": "pdeobs.revision.covariance + the frozen V4-E full-state FNO"
+   }
+  },
+  {
+   "id": "e6",
+   "title": "Final analysis E6 (input fill x training exposure)",
+   "rebuilt_table": "reproduce/october/out/grid_jitter.csv and ns_medium_density.csv (E6 rows)",
+   "unified_report_section": "12.6",
+   "sources": {
+    "runs": "part A, cohort E6 (12 trainings) and E6ev (12 suites)",
+    "recipes": "configs/paper/october/controls.yaml, recipes.yaml (cohort E6)"
+   }
+  }
+ ]
+}

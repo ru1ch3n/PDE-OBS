@@ -22,6 +22,13 @@
   package, with `--set KEY=VALUE` recipe overrides for controlled variants.
 - `pdeobs.revision.fftcompat`: cuFFT-compatible inverse real FFT for CPU replays of the FNO checkpoints.
 - `docs/installation.md`: October release-candidate install check.
+- `reproduce/october/score_method.py`: score any predictor (or the built-in zero / nearest / covariance references) on the
+  V2 views and on converted RPB data with the revision's protocol (`--grid`: the 64^2 RPB view and the N8 resolution views);
+  `rebuild_tables.py --latex`.
+- `results/revision_october/final_analyses/` (E1-E5 outputs as JSON) and `paper_assets.json` (every main table bound to
+  its data, models, protocol, scoring and result files).
+- README rewritten as a researcher entry (current results, four reproduction levels, own method); the September grid
+  is the historical layer; `docs/public_release.md` and `docs/reproducing_the_paper.md` state their scope.
 - Hugging Face dataset `october2026/results/part-A/update_20261021/` and `part-B/update_20261021/`: the per-record files of the 2026-10-21 exports (E6 / E6ev, N7 confirmation of the P4 U1024 specialists, E5), beside the unchanged 2026-10-17 files (2026-10-26).
 - Public deposits: the package points to the `ru1ch3n/PDE-OBS` dataset and model repositories (`configs/revision/public_deposits.yaml`, `results/public_deposits/release_map.json`, release metadata); review-archive names relabelled; receipt `results/public_deposits/relabel_receipt_20261026.json`; `results/revision_v2/access_check.json` regenerated (2026-10-26).
 - Hugging Face `ru1ch3n/PDE-OBS`, `october2026/`: weights of the 663 scored October runs (the 12 E6 runs added 2026-10-21) and of

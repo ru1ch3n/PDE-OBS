@@ -2,6 +2,10 @@
 
 Add your own PDE, method, or observation view.
 
+> For the **October 2026 protocol** (V2 views, confirmation set, RPB) a predictor does not need to be registered: pass it
+> to [`reproduce/october/score_method.py`](../reproduce/october/score_method.py) as `module:callable` and it is scored with
+> the revision's layouts and scorer. The registries below belong to the September API and the historical grid.
+
 The preferred extension changes the smallest relevant layer. A new observation
 view does not require a new physical dataset, and a new method does not require
 a new PDE solver. Five axes are extensible through public registries, and each

@@ -152,7 +152,7 @@ over three training seeds, unless stated otherwise.
 | Frozen configs | `configs/paper/october/` |
 | Tests | `tests/test_revision_october.py` |
 | Results | `results/revision_october/` (run-level tables, parts A and B; column legend in its README) |
-| Table rebuild, weights-inference replay, training reproduction | `reproduce/october/` |
+| Table rebuild (`--latex` for the paper), weights-inference replay, training reproduction, own-method scoring | `reproduce/october/` |
 | V2 data, confirmation set, per-record errors | `huggingface.co/datasets/ru1ch3n/PDE-OBS`, directory `october2026/` |
 | Weights of the 663 scored October runs | `huggingface.co/ru1ch3n/PDE-OBS`, directory `october2026/models/` |
 | Weights of the ten completed path D retrains (Poisson medium U256, P4n included) | `huggingface.co/ru1ch3n/PDE-OBS`, directory `october2026/retrains/` |
@@ -179,4 +179,8 @@ Analyses of the stored results (E1-E4), one composition reference (E5) and twelv
    U256-trained NS medium FNO goes from 0.58 to 0.10 at 1,024 sensors. Only the Voronoi-CNN improves monotonically with
    density.
 
-The run-level rows of E2 and E6 are in `results/revision_october/` (part A); E5 joins part B with the next export.
+The run-level rows of E2 and E6 are in `results/revision_october/` (part A) and the E5 forecast rows in part B; the
+analysis outputs themselves (E1-E5) are JSON files in `results/revision_october/final_analyses/` (see its README). Every
+main table is bound to its data, models, protocol, scoring definition and result files in
+`results/revision_october/paper_assets.json`; `reproduce/october/score_method.py` scores any predictor (or the built-in
+covariance / nearest-fill references) on the V2 views and on the converted RPB data with the revision's protocol.

@@ -12,24 +12,13 @@ Ruichen Xu†, Siyao Wang, Fang Wan, Jiacheng Qiu, Wenhan Gao, Jiaxing Zhang\*,
 Linsey Pang, Ravid Shwartz-Ziv, Prakhar Mehrotra, Yann LeCun, and Yuefan Deng†.
 \*Work done outside of company. †Corresponding authors. See the paper for affiliations.
 
-The current paper reports 441 retained checkpoints and 3,969 complete evaluation
-blocks, each containing 200 held-out records; the separate mixed-pattern study
-contains five completed models. The main grid is in
-[`results/prediction_verification_20260924/`](results/prediction_verification_20260924/)
-and the strict mixed-pattern comparisons, bootstrap intervals and stationary
-diagnostics are in [`results/revision_v2/`](results/revision_v2/).
-Historical results remain clearly separated. This is a preprint, not an accepted
-conference publication: [arXiv:2609.36521](https://arxiv.org/abs/2609.36521).
-
-**October 2026 revision.** The revision adds three things:
-- new rougher V2 data (Poisson, Darcy, Navier-Stokes);
-- method-tuned baselines;
-- strong observation-conditioned linear references.
-
-It also adds a sealed confirmation set, single-factor controls and an external dataset (the CNO authors' RPB Poisson). It
-is a separate, versioned layer; the September grid is unchanged. See [The October 2026 revision](docs/october_revision.md).
-The V2 data, the confirmation set, the per-record errors, the weights of the 663 scored October runs and those of the ten
-completed path D retrains are on Hugging Face under `october2026/` (see [`reproduce/october/README.md`](reproduce/october/README.md)).
+Two result layers, kept apart. The **September 2026 grid** of the preprint ([arXiv:2609.36521](https://arxiv.org/abs/2609.36521)):
+441 retained checkpoints, 3,969 complete evaluation blocks of 200 held-out records each, in
+[`results/prediction_verification_20260924/`](results/prediction_verification_20260924/) and
+[`results/revision_v2/`](results/revision_v2/). The **October 2026 revision**: harder V2 data, method-tuned
+baselines, strong linear references, a sealed confirmation set and an external dataset; 663 scored runs in
+[`results/revision_october/`](results/revision_october/), reproduced from public data and weights by
+[`reproduce/october/`](reproduce/october/). This is a preprint, not an accepted conference publication.
 
 ```bash
 git clone https://github.com/ru1ch3n/PDE-OBS.git
@@ -40,7 +29,7 @@ cd PDE-OBS
 [![Code: MIT](https://img.shields.io/badge/code-MIT-2ea44f)](LICENSE)
 [![Data: CC BY 4.0](https://img.shields.io/badge/data-CC%20BY%204.0-8a8f98)](https://huggingface.co/datasets/ru1ch3n/PDE-OBS)
 [![Dataset](https://img.shields.io/badge/%F0%9F%A4%97%20dataset-3%2C360%20shards-ffd21e)](https://huggingface.co/datasets/ru1ch3n/PDE-OBS)
-[![Checkpoints](https://img.shields.io/badge/%F0%9F%A4%97%20checkpoints-441-ffd21e)](https://huggingface.co/ru1ch3n/PDE-OBS)
+[![Checkpoints](https://img.shields.io/badge/%F0%9F%A4%97%20checkpoints-441%20%2B%20663-ffd21e)](https://huggingface.co/ru1ch3n/PDE-OBS)
 [![Grid](https://img.shields.io/badge/grid-7%20PDEs%20%C3%97%207%20methods%20%C3%97%209%20views-1b3a6b)](docs/benchmark_overview.md)
 [![Scoring](https://img.shields.io/badge/scoring-pdeobs--strict--v1-36c5d8)](docs/scoring.md)
 [![Public release](https://img.shields.io/badge/status-public%20preprint-214A55)](paper/PDE_OBS_preprint.pdf)
@@ -53,39 +42,65 @@ only thing that changes between two evaluations.
 
 ![PDE-OBS: a partial-observation PDE benchmark. One solved record, the frozen view applied to it, and the cells a method must recover.](docs/figures/hero.png)
 
-> **Reviewers and audit tools:** start at [AI_START_HERE.md](AI_START_HERE.md). It indexes the two
-> review overlays, the patch notes, the cost-levelled command list and the acceptance records.
-
 ---
 
-## Why PDE-OBS
+## Current results: the October 2026 revision
 
-- **One control.** The observation operator applied to a physical record is varied while the record,
-  its prediction target and the train/test split stay fixed. Every cross-view number in the grid is a
-  like-for-like comparison on identical test records.
-- **Nine frozen views, exact counts.** Random, block, line, band and clustered patterns at 128 x 128,
-  replayed verbatim from one namespace with realized cell counts, never nominal ratios.
-- **Strict scoring, no silent shrinkage.** Raw predictions are validated before any metric. A missing,
-  repeated, extra or non-finite entry invalidates the score instead of quietly leaving the denominator.
-- **Generated here, plus one documented external source.** Seven PDE families, ten condition-field
-  constructions, seeded identities, resumable shards; the same specification reproduces the same
-  record. The only external data is the October revision's RPB Poisson set, which you download from
-  its authors and convert with `pdeobs.revision.external.rpb` (licence CC BY 4.0, authors' split kept).
-- **Hash-bound evidence.** The new prediction result cut covers all 441 retained checkpoints and
-  3,969 full-200 blocks. Data/weight hashes were checked in the verification environment;
-  current external anonymous download access remains a separate release check.
+The revision asks how far the September picture holds once the fields are harder, the neural baselines are tuned on
+validation data and strong linear references are added. Everything below is a mean per-record relative L2 over the test
+parents and three training seeds; the full account, with what is **not** claimed, is
+[The October 2026 revision](docs/october_revision.md).
 
-## What you get
+| | |
+|---|---|
+| Data (V2) | Poisson, Darcy (static recovery), Navier-Stokes (forecast u0 -> frames 1-3); smooth / medium / rough slices; 35,100 parents, 105,300 slice records; per slice 9,000 train / 900 validation / 1,800 test / 600 sealed confirmation records; [`configs/paper/october/data_v2.yaml`](configs/paper/october/data_v2.yaml) |
+| Observations | uniform / clustered / line / grid layouts with exact counts (256, 1,024 sensors), mixtures (MXR3, MXR6, MXR2), nested sets, grid jitter; built at access time from the parent identity ([`pdeobs.revision.v2masks`](src/pdeobs/revision/v2masks.py)) |
+| Methods | FNO, Voronoi-CNN, CNO, Senseiver (method-tuned recipes, three seeds), covariance-weighted reconstruction, gappy POD, interpolation; frozen recipes in [`configs/paper/october/recipes.yaml`](configs/paper/october/recipes.yaml) |
+| External data | the CNO authors' RPB Poisson set (authors' split, in-distribution and OOD), converted by `python -m pdeobs.revision.external.rpb` |
 
-| | Contents | Where |
-|---|---|---|
-| **Records** | Darcy, Poisson, Helmholtz (stationary); Heat, reaction-diffusion, Burgers, Navier-Stokes (temporal). 2,000 records per family x boundary x construction at 128 x 128, 15 stored frames for temporal families. | [Dataset card](docs/dataset_card.md) · [🤗 PDE-OBS data](https://huggingface.co/datasets/ru1ch3n/PDE-OBS) |
-| **Views** | R50, R65, R80, BL, LI, H, V, BD, CL: nine frozen observation patterns with exact observed-cell counts. | [Observation views](docs/observations.md) |
-| **Tasks** | Recovery (stationary) and rollout (temporal) in the paper; forward and inverse interfaces also ship. | [Tasks and permissions](docs/tasks_and_permissions.md) |
-| **Methods** | U-FNO, FNO, CNO, DeepONet, GNOT, Transolver, PINO as public learned baselines, plus classical interpolators and reduced-order comparators. | [Methods card](docs/methods_card.md) |
-| **Checkpoints** | All 441 credited (PDE, method, training view) rows, weights only, with de-identified training records; `results/public_deposits/release_map.json` binds the published digests to the campaign's checkpoint identities. | [Public release](docs/public_release.md) · [🤗 PDE-OBS models](https://huggingface.co/ru1ch3n/PDE-OBS) |
-| **Results** | New prediction-checked scores for 441 checkpoints and 3,969 full-200 blocks, per-record errors and mean ± sample SD; historical scores retained separately. | [New results](results/prediction_verification_20260924/README.md) · [Verification](docs/prediction_verification.md) |
-| **Scorer** | `pdeobs-strict-v1`: contract, identity set, shapes and time indices fixed in advance; float64 per-identity relative L2, arithmetic mean over the complete expected set. | [Scoring](docs/scoring.md) |
+1. **A strong linear reference changes the picture on static data.** The covariance reconstruction beats every neural
+   model on all 16 Poisson / Darcy cells (Poisson medium U256: about 1e-4 against 0.020) and in all 1,425 paired
+   comparisons on the confirmation set; on NS the neural models lead on 6 of 8 cells.
+2. **The linear reference is not robust by default.** It diverges under sensor noise unless re-tuned on noisy data, and
+   out of distribution (RPB OUT) it extrapolates badly on the random and clustered views (errors 39-331) while neural
+   predictions stay bounded: a selection effect of the in-distribution regulariser (1e-2 bounds the OOD error at 0.62).
+3. **Changing the observation pattern is costly and asymmetric for every neural model:** off-pattern / matched error
+   ratio 1.2-2.2 in every seed on the confirmation set.
+4. **Geometry and density are predictor-specific failure modes that training exposure removes.** A grid-trained FNO goes
+   from 0.031 to 0.24 / 0.39 / 0.51 under 1 / 2 / 3-cell jitter (0.045-0.070 with jitter-augmented training); a zero-fill
+   FNO trained on 256 NS sensors scores 0.038 at 256 and 0.58 at 1,024 sensors (0.054 / 0.027 with two-density training).
+   Changing only the input representation to the nearest-observation fill removes most of the failure (E6).
+5. **NS rough is limited by the partial observation of the initial state, not by the learned dynamics:** 0.014-0.015 with
+   the full initial state, about 0.75 for every model under partial observation. A composition reference (covariance
+   reconstruction of u0, then the frozen full-state FNO) reaches 0.083 with 1,024 sensors (E5).
+6. **Frozen recipes caused several baseline failures;** a training-set normaliser turns the Darcy FNO from a training-mean
+   predictor into a working model and brings Poisson medium CNO from 0.836 to 0.059.
+
+Where the evidence is: run-level results and their manifests in [`results/revision_october/`](results/revision_october/)
+(column legend in its README; final analyses E1-E5 as JSON in
+[`final_analyses/`](results/revision_october/final_analyses/); every main table bound to its data, models, protocol and
+scoring in [`paper_assets.json`](results/revision_october/paper_assets.json)); the V2 views, the confirmation set and the
+per-record errors in the dataset repository and the weights of all 663 scored runs (plus ten retrains from the public
+package) in the model repository, both under `october2026/` ([release scope](docs/public_release.md)).
+
+## Reproduce the October results
+
+Four levels, each with a recorded check. None needs a cluster account, a private path or a scheduler.
+
+| Level | What you do | Command | Recorded check |
+|---|---|---|---|
+| A. Smoke | a small CPU example: generate, mask, recover, strict-score | `pdeobs demo --example E2 ...` | [installation](docs/installation.md): fresh venvs from the built wheel / sdist |
+| B. Tables | rebuild the nine main tables from the committed run-level results (standard library only; `--latex` writes `tabular`s) | `python reproduce/october/rebuild_tables.py --latex` | the values of the unified report |
+| C. Weights replay | download a V2 view and a run's `weights.pt`, re-predict its test views, compare with the stored scores | `python reproduce/october/replay_inference.py --run <run_id> --checkpoint weights.pt --data-root <download>/october2026/v2` | Poisson medium V4C FNO U256 (7 views) 1.0e-6 on CUDA and CPU; P4 Voronoi-CNN 2.7e-5 / 0; NS medium P4 FNO nested density (18 views) 6.9e-8 / 1.8e-7 ([details](reproduce/october/README.md)) |
+| D. Retrain | train a run from the frozen recipe and the public data; replay the result | `python reproduce/october/train_run.py --run <run_id> --data-root <download>/october2026/v2 --out <dir>` | nine Poisson medium U256 retrains within 10-20 % of the original seeds on the matched view, the P4 FNO collapse reproduced and explained (P4n control) |
+
+**Your own method, or another dataset.** [`reproduce/october/score_method.py`](reproduce/october/score_method.py) scores any
+predictor on a V2 view with the same per-parent layouts, input representation and float64 full-field scorer as the
+replay: `--method zero | nearest | covariance | my_module:predict`. The built-ins reproduce the interpolation and
+covariance references of the tables; a custom callable receives exactly what the October models receive (observed values,
+mask, geometry, metadata) and never the target. The converted RPB set is scored the same way (`--dataset-id
+v2_poisson_rpb_ref128 --part test|ood`). The September API (`pdeobs.methods.register_method`, [Extend](#extend)) is
+unchanged for the historical grid.
 
 ## Quick start
 
@@ -120,12 +135,48 @@ The other five demos and what each proves, the extras (`train`, `paper`, `analys
 tested lower-bound environment are in [Install and first run](docs/installation.md); every command,
 argument and exit code is in the [Command reference](docs/cli_reference.md).
 
-## How to use PDE-OBS
+## Why PDE-OBS
+
+- **One control.** The observation operator applied to a physical record is varied while the record,
+  its prediction target and the train/test split stay fixed. Every cross-view number in the grid is a
+  like-for-like comparison on identical test records.
+- **Nine frozen views, exact counts.** Random, block, line, band and clustered patterns at 128 x 128,
+  replayed verbatim from one namespace with realized cell counts, never nominal ratios.
+- **Strict scoring, no silent shrinkage.** Raw predictions are validated before any metric. A missing,
+  repeated, extra or non-finite entry invalidates the score instead of quietly leaving the denominator.
+- **Generated here, plus one documented external source.** Seven PDE families, ten condition-field
+  constructions, seeded identities, resumable shards; the same specification reproduces the same
+  record. The only external data is the October revision's RPB Poisson set, which you download from
+  its authors and convert with `pdeobs.revision.external.rpb` (licence CC BY 4.0, authors' split kept).
+- **Hash-bound evidence.** The new prediction result cut covers all 441 retained checkpoints and
+  3,969 full-200 blocks. Data/weight hashes were checked in the verification environment;
+  current external anonymous download access remains a separate release check.
+
+## The September 2026 grid (historical layer)
+
+The sections below describe the preprint's original experiment: seven PDE families x seven learned methods x nine frozen
+views on smooth fields, 1,800 training / 200 test records per PDE and no validation split, scored with
+`pdeobs-strict-v1`. Its configs, results and API are unchanged by the October revision; the two layers are never mixed in
+one table.
+
+### What you get
+
+| | Contents | Where |
+|---|---|---|
+| **Records** | Darcy, Poisson, Helmholtz (stationary); Heat, reaction-diffusion, Burgers, Navier-Stokes (temporal). 2,000 records per family x boundary x construction at 128 x 128, 15 stored frames for temporal families. | [Dataset card](docs/dataset_card.md) · [🤗 PDE-OBS data](https://huggingface.co/datasets/ru1ch3n/PDE-OBS) |
+| **Views** | R50, R65, R80, BL, LI, H, V, BD, CL: nine frozen observation patterns with exact observed-cell counts. | [Observation views](docs/observations.md) |
+| **Tasks** | Recovery (stationary) and rollout (temporal) in the paper; forward and inverse interfaces also ship. | [Tasks and permissions](docs/tasks_and_permissions.md) |
+| **Methods** | U-FNO, FNO, CNO, DeepONet, GNOT, Transolver, PINO as public learned baselines, plus classical interpolators and reduced-order comparators. | [Methods card](docs/methods_card.md) |
+| **Checkpoints** | All 441 credited (PDE, method, training view) rows, weights only, with de-identified training records; `results/public_deposits/release_map.json` binds the published digests to the campaign's checkpoint identities. | [Public release](docs/public_release.md) · [🤗 PDE-OBS models](https://huggingface.co/ru1ch3n/PDE-OBS) |
+| **Results** | New prediction-checked scores for 441 checkpoints and 3,969 full-200 blocks, per-record errors and mean ± sample SD; historical scores retained separately. | [New results](results/prediction_verification_20260924/README.md) · [Verification](docs/prediction_verification.md) |
+| **Scorer** | `pdeobs-strict-v1`: contract, identity set, shapes and time indices fixed in advance; float64 per-identity relative L2, arithmetic mean over the complete expected set. | [Scoring](docs/scoring.md) |
+
+### How to use PDE-OBS
 
 Six workflows cover what most people come here to do. Every snippet below was executed against the
 published artifacts before it was written down.
 
-### 1. Get the records
+#### 1. Get the records
 
 Two checksum manifests are published beside the data. Both are the release-manifest v1 contract of
 [`src/pdeobs/download.py`](src/pdeobs/download.py): one entry per file with its SHA-256, byte size
@@ -154,7 +205,7 @@ route that produces *new* records ([Dataset card](docs/dataset_card.md)).
 Every entry of both manifests resolves to `huggingface.co/datasets/ru1ch3n/PDE-OBS`
 (336 and 13,440 entries, checked 2026-10-16; [release scope](docs/public_release.md)).
 
-### 2. Build a task instance
+#### 2. Build a task instance
 
 ```python
 from pdeobs import api
@@ -170,7 +221,7 @@ else. `targets` is returned to the caller only so that a later `evaluate` can sc
 sees it. For a temporal family use `task="rollout"` with `history_steps=1` and pass `horizon=` to
 `predict`.
 
-### 3. Score a released checkpoint
+#### 3. Score a released checkpoint
 
 ```python
 pred = api.load_legacy_checkpoint(
@@ -190,7 +241,7 @@ The architecture of every published checkpoint is recorded in the `resolved.yaml
 The loader cross-checks the checkpoint's own stored training configuration for task and physics
 contract, and its provenance records the checkpoint's SHA-256 and epoch.
 
-### 4. Evaluate your own method
+#### 4. Evaluate your own method
 
 Register a class with `register_method` and implement `predict(observations, mask=None, **kwargs)`.
 Unobserved entries arrive filled with `0.0`, which is why the mask is supplied separately: a physical
@@ -224,7 +275,7 @@ comparable on the same identities under the same view. The full method contract,
 including what a method may and may not receive per task, is in
 [Extending PDE-OBS](docs/extending.md#how-do-i-add-a-new-method).
 
-### 5. Train under the frozen protocol
+#### 5. Train under the frozen protocol
 
 `api.train` trains any registered model on a dataset handle under one observation pattern, with a
 declared budget and split, and writes an artifact that `load_predictor` restores:
@@ -242,7 +293,7 @@ the nine strict evaluations it runs afterwards, is in
 [Reproduce one grid cell](#reproduce-one-grid-cell) and
 [Reproducing the paper](docs/reproducing_the_paper.md).
 
-### 6. Report a result
+#### 6. Report a result
 
 A PDE-OBS number is five things together: long-format rows (one per scored cell, never a
 pre-aggregated table), the resolved configuration, the strict contract and its SHA-256, the scorer
@@ -259,7 +310,7 @@ pdeobs strict-score --predictions ./strict-run/predictions.h5 --contract ./stric
 A table must say which training cohorts and scoring versions it pools. The exact submission format
 is in [Contributing a result](docs/extending.md#contributing-a-result).
 
-## The grid
+### The grid
 
 ![7 families x 7 public learned methods x 9 frozen views = 441 training rows](docs/figures/benchmark_grid.png)
 
@@ -279,7 +330,7 @@ embedded in Git. Historical scalar scores remain unchanged in
 current result source. These checks establish file validity, not model quality,
 uniform training budgets, numerical-reference accuracy or external anonymous access.
 
-## The nine views
+### The nine views
 
 ![The nine frozen observation views at 128 x 128, with their realized observed-cell counts](docs/figures/observation_views.png)
 
@@ -302,7 +353,7 @@ receives. Right: the cells it never sees. The headline metric is the per-identit
 the complete field; the hidden-cell error is reported beside it, never in its place. Regenerate every
 figure with `python docs/figures/make_figures.py`.*
 
-## Results snapshot
+### Results snapshot
 
 Only the new prediction result version `pdeobs-prediction-verification/20260925-v1`
 is used below. Entries are mean ± sample SD (ddof=1) of 63 matched or 504
@@ -328,7 +379,7 @@ All adverse finite results are retained; no bold winner is assigned across
 unmatched methods. See [the full cut](results/prediction_verification_20260924/README.md)
 and [training provenance](docs/training_template_and_records.md).
 
-## Reproduce one grid cell
+### Reproduce one grid cell
 
 One cell is one `pdeobs paper-row` invocation plus the nine strict evaluations it runs afterwards.
 Copy [`configs/paper/row_original500.yaml`](configs/paper/row_original500.yaml), set the axis values
@@ -392,6 +443,9 @@ the full run bundle are in [Reproducing the paper](docs/reproducing_the_paper.md
 | [Claims and limits](docs/claims_and_limits.md) | What does this release assert, and what does it explicitly not? |
 | [Testing checklist](docs/testing_checklist.md) | Which tests must pass, and what is out of scope? |
 
+> **Reviewers and audit tools:** start at [AI_START_HERE.md](AI_START_HERE.md). It indexes the two
+> review overlays, the patch notes, the cost-levelled command list and the acceptance records.
+
 ## Repository layout
 
 ```text
@@ -408,6 +462,9 @@ release/       candidate metadata, the frozen CPU test scope, the validation
                record, and the core test runner
 acceptance/    two software sweeps of the v0.2.0 interface layer, never a paper table
 examples/      one portable script that forwards to the demo entry point
+reproduce/     October 2026: table rebuild, weights replay, retraining, score_method
+configs/paper/october/   frozen data, observation, classical, recipe and control configs
+results/revision_october/ run-level results, manifests, final analyses, paper_assets.json
 ```
 
 [Repository map](docs/repository_map.md) walks every directory, indexes all of `docs/`, and lists
@@ -423,12 +480,16 @@ the pointers in this tree that are known to be stale.
 Registration does not certify a plugin: a registered component has been imported, not validated.
 The `configs/` subdirectories are the legal values of each run axis; several of them are descriptive
 schemas rather than runnable jobs, as [`configs/paper/README.md`](configs/paper/README.md) states.
+- October protocol: score a predictor on the V2 views or on converted RPB data with
+  [`reproduce/october/score_method.py`](reproduce/october/score_method.py) (see above); the V2 library is
+  [`pdeobs.revision`](src/pdeobs/revision/) (`v2masks`, `covariance`, `dc`, `stats`, `external.rpb`).
 
 ## Tests and evidence
 
 ```bash
 python -m pip install ".[train,test]"
 python -m pytest -q -p no:cacheprovider tests/test_benchmark_essentials.py
+python -m pytest -q -p no:cacheprovider tests/test_revision_october.py   # the October layer: layouts, references, scorer helpers
 
 # the broader CPU-only portable scope; both directories must be new, outside the
 # source tree, and distinct from each other
