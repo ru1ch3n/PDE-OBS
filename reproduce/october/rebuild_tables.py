@@ -11,12 +11,21 @@ every trained model of the cohorts listed, not a method selected on test data.
     python reproduce/october/rebuild_tables.py [--results results/revision_october] [--out reproduce/october/out]
 
 With --latex every table is also written as <out>/<table>.tex (a plain `tabular`, no packages needed) for the paper.
+
+Before any table is built the inputs are checked: every result file must match the SHA-256 and row count recorded in
+manifest.part-*.json (--no-verify skips this for result directories of your own), a result key (run, suite, view; task,
+view, method) occurs once (an identical repeated row is dropped, a conflicting one is refused), a valid block has a
+finite mean, and two results never feed the same table cell with different values.
 """
 from __future__ import annotations
 
 import argparse
 import csv
 import glob
+import hashlib
+import io
+import json
+import math
 import os
 import statistics as st
 from collections import defaultdict
@@ -35,15 +44,64 @@ def parse_id(rid: str) -> dict:
     return {"family": p[0], "key": p[1], "ell": p[2], "model": p[3], "protocol": proto, "seed": p[-1][1:]}
 
 
+def verify_manifests(results: str) -> dict:
+    """SHA-256 and row counts of the committed result files against manifest.part-*.json (SystemExit on a difference,
+    on a listed file that is missing, on a result file without a manifest entry, and when there is no manifest)."""
+    manifests = sorted(glob.glob(os.path.join(results, "manifest.part-*.json")))
+    if not manifests:
+        raise SystemExit(f"{results}: no manifest.part-*.json (pass --no-verify to rebuild from unverified result files)")
+    checked = {}
+    for mp in manifests:
+        for fn, info in json.load(open(mp, encoding="utf-8")).get("committed_files", {}).items():
+            path = os.path.join(results, fn)
+            if not os.path.exists(path):
+                raise SystemExit(f"{fn} is listed in {os.path.basename(mp)} but missing from {results}")
+            data = open(path, "rb").read()
+            sha = hashlib.sha256(data).hexdigest()
+            rows = sum(1 for _ in csv.DictReader(io.StringIO(data.decode("utf-8"))))
+            if sha != info["sha256"] or rows != int(info["rows"]):
+                raise SystemExit(f"{fn}: SHA-256 {sha[:12]}.. and {rows} rows differ from {os.path.basename(mp)} "
+                                 f"({info['sha256'][:12]}.., {info['rows']} rows)")
+            checked[fn] = {"sha256": sha, "rows": rows, "manifest": os.path.basename(mp)}
+    files = [os.path.basename(f) for pat in ("runs_long.part-*.csv", "classical_long.part-*.csv")
+             for f in glob.glob(os.path.join(results, pat))]
+    unlisted = sorted(set(files) - set(checked))
+    if unlisted:
+        raise SystemExit(f"result files without a manifest entry: {unlisted}")
+    return checked
+
+
+def unique_rows(rows, key, name):
+    """Every key occurs once: an identical repeated row is dropped, a row with different values is refused (SystemExit)."""
+    seen, out = {}, []
+    for r in rows:
+        k = tuple(r[c] for c in key)
+        if k in seen:
+            if seen[k] == r:
+                continue
+            raise SystemExit(f"{name}: two rows with different values for {k}")
+        seen[k] = r
+        out.append(r)
+    return out
+
+
 def load(results: str):
+    """Run-level and classical rows with unique keys and finite means (standard library)."""
     runs, cls = [], []
     for f in sorted(glob.glob(os.path.join(results, "runs_long.part-*.csv"))):
         runs += list(csv.DictReader(open(f, encoding="utf-8")))
     for f in sorted(glob.glob(os.path.join(results, "classical_long.part-*.csv"))):
         cls += list(csv.DictReader(open(f, encoding="utf-8")))
+    runs = unique_rows(runs, ("run_id", "suite", "view"), "runs_long")
+    cls = unique_rows(cls, ("task", "view", "method"), "classical_long")
     for r in runs:
+        if r["valid"] == "True" and not finite(num(r["mean"])):
+            raise SystemExit(f"runs_long: the valid block {r['run_id']} / {r['suite']} / {r['view']} has a non-finite mean")
         model_id = r["parent_run_id"] or r["run_id"]
         r["_m"] = parse_id(model_id)
+    for c in cls:
+        if not finite(num(c["mean"])):
+            raise SystemExit(f"classical_long: {c['task']} / {c['view']} / {c['method']} has a non-finite mean")
     return runs, cls
 
 
@@ -52,6 +110,10 @@ def num(x):
         return float(x)
     except (TypeError, ValueError):
         return None
+
+
+def finite(x) -> bool:
+    return x is not None and math.isfinite(x)
 
 
 def fmt(x, nd=3):
@@ -74,7 +136,11 @@ def blocks(runs, cohorts, suite):
         m = r["_m"]
         if not m or r["suite"] != suite or m["family"] not in cohorts or r["valid"] != "True":
             continue
-        out[(m["family"], m["key"], m["ell"], m["model"], m["protocol"])][r["view"]][m["seed"]] = num(r["mean"])
+        cell = out[(m["family"], m["key"], m["ell"], m["model"], m["protocol"])][r["view"]]
+        value = num(r["mean"])
+        if m["seed"] in cell and cell[m["seed"]] != value:
+            raise SystemExit(f"two different {suite} results feed one table cell: {r['run_id']} / {r['view']} (seed {m['seed']})")
+        cell[m["seed"]] = value
     return out
 
 
@@ -132,13 +198,17 @@ def main() -> int:
     ap.add_argument("--results", default="results/revision_october")
     ap.add_argument("--out", default="reproduce/october/out")
     ap.add_argument("--latex", action="store_true", help="also write one .tex tabular per table")
+    ap.add_argument("--no-verify", action="store_true", help="skip the manifest check of the result files (result directories of your own)")
     a = ap.parse_args()
     global LATEX
     LATEX = bool(a.latex)
     os.makedirs(a.out, exist_ok=True)
+    checked = {} if a.no_verify else verify_manifests(a.results)
     runs, cls = load(a.results)
     md = ["# October 2026 revision: rebuilt tables\n",
           f"Built from {len(runs)} run-level rows and {len(cls)} classical rows. Seeds {', '.join(MAIN_SEEDS)} unless stated.\n"]
+    if checked:
+        md.append("Inputs verified against the manifests: " + "; ".join(f"{fn} {v['rows']} rows, SHA-256 {v['sha256'][:12]}" for fn, v in sorted(checked.items())) + ".\n")
 
     # 1. static calibration (V2 test, 1,800 parents per slice)
     b = blocks(runs, ("V4C", "P4", "P5", "V4D"), "v2eval7")
@@ -194,7 +264,7 @@ def main() -> int:
         g = defaultdict(lambda: defaultdict(dict))
         dc = defaultdict(lambda: defaultdict(dict))
         for r in runs:
-            if r["cohort"] != fam_eval or r["suite"] != "n3geom" or not r["_m"]:
+            if r["cohort"] != fam_eval or r["suite"] != "n3geom" or not r["_m"] or r["valid"] != "True":
                 continue
             m = r["_m"]
             key = (m["family"], m["model"], m["protocol"])
@@ -220,7 +290,7 @@ def main() -> int:
     rows = []
     g = defaultdict(lambda: defaultdict(dict))
     for r in runs:
-        if r["cohort"] == "N5ev" and r["suite"] == "n5nested" and r["_m"]:
+        if r["cohort"] == "N5ev" and r["suite"] == "n5nested" and r["_m"] and r["valid"] == "True":
             m = r["_m"]
             g[(m["family"], m["model"], m["protocol"])][r["view"]][m["seed"]] = num(r["mean"])
     for key in sorted(g):
@@ -257,7 +327,7 @@ def main() -> int:
         g = defaultdict(lambda: defaultdict(dict))
         for r in runs:
             m = r["_m"]
-            if not m or r["suite"] != suite or m["family"] not in fams or r["cohort"] in ("E2ev",):
+            if not m or r["suite"] != suite or m["family"] not in fams or r["cohort"] in ("E2ev",) or r["valid"] != "True":
                 continue
             g[(m["family"], m["model"], m["protocol"])][r["view"].split("__")[0]][m["seed"]] = num(r["mean"])
         for key in sorted(g):
@@ -286,7 +356,7 @@ def main() -> int:
     rows = []
     gc = defaultdict(lambda: defaultdict(dict))
     for r in runs:
-        if r["cohort"] == "N7ev" and r["_m"]:
+        if r["cohort"] == "N7ev" and r["_m"] and r["valid"] == "True":
             m = r["_m"]
             gc[(m["key"], m["ell"])][(m["family"], m["model"], m["protocol"], r["view"])][m["seed"]] = num(r["mean"])
     for (key, ell), d in sorted(gc.items()):
@@ -306,7 +376,7 @@ def main() -> int:
             rows.append([r["run_id"], r["run_status"].split(":", 2)[-1].strip()[:80]])
     write(a.out, "failures", ["run", "reason"], sorted(rows), md, "9. Training failures")
     open(os.path.join(a.out, "tables.md"), "w", encoding="utf-8", newline="\n").write("\n".join(md) + "\n")
-    print(f"{len(runs)} rows -> {a.out}/tables.md")
+    print(f"{len(runs)} rows -> {a.out}/tables.md" + (f" (inputs verified: {', '.join(sorted(checked))})" if checked else " (inputs not verified)"))
     return 0
 
 

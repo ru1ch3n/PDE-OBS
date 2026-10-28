@@ -91,15 +91,17 @@ Four levels, each with a recorded check. None needs a cluster account, a private
 |---|---|---|---|
 | A. Smoke | a small CPU example: generate, mask, recover, strict-score | `pdeobs demo --example E2 ...` | [installation](docs/installation.md): fresh venvs from the built wheel / sdist |
 | B. Tables | rebuild the nine main tables from the committed run-level results (standard library only; `--latex` writes `tabular`s) | `python reproduce/october/rebuild_tables.py --latex` | the values of the unified report |
-| C. Weights replay | download a V2 view and a run's `weights.pt`, re-predict its test views, compare with the stored scores | `python reproduce/october/replay_inference.py --run <run_id> --checkpoint weights.pt --data-root <download>/october2026/v2` | Poisson medium V4C FNO U256 (7 views) 1.0e-6 on CUDA and CPU; P4 Voronoi-CNN 2.7e-5 / 0; NS medium P4 FNO nested density (18 views) 6.9e-8 / 1.8e-7 ([details](reproduce/october/README.md)) |
+| C. Weights replay | download a V2 view and a run's `weights.pt`, re-predict its test views, compare every view mean and record count with the stored results, and with `--per-record` every record's error by identity | `python reproduce/october/replay_inference.py --run <run_id> --checkpoint weights.pt --data-root <download>/october2026/v2` | Poisson medium V4C FNO U256 (7 views) 1.0e-6 on CUDA and CPU; P4 Voronoi-CNN 2.7e-5 / 0; NS medium P4 FNO nested density (18 views) 6.9e-8 / 1.8e-7; from the public repositories without credentials (CPU, 2026-10-27): 1.0e-6 and 4.2e-7 ([details](reproduce/october/README.md)) |
 | D. Retrain | train a run from the frozen recipe and the public data; replay the result | `python reproduce/october/train_run.py --run <run_id> --data-root <download>/october2026/v2 --out <dir>` | nine Poisson medium U256 retrains within 10-20 % of the original seeds on the matched view, the P4 FNO collapse reproduced and explained (P4n control) |
 
 **Your own method, or another dataset.** [`reproduce/october/score_method.py`](reproduce/october/score_method.py) scores any
 predictor on a V2 view with the same per-parent layouts, input representation and float64 full-field scorer as the
 replay: `--method zero | nearest | covariance | my_module:predict`. The built-ins reproduce the interpolation and
-covariance references of the tables; a custom callable receives exactly what the October models receive (observed values,
-mask, geometry, metadata) and never the target. The converted RPB set is scored the same way (`--dataset-id
-v2_poisson_rpb_ref128 --part test|ood`). The September API (`pdeobs.methods.register_method`, [Extend](#extend)) is
+covariance references of the tables; a custom callable receives the tensors the October models receive (observed values,
+mask, geometry) and the task context of each record (identity, grid, time axis, layout, sensor count), never the target,
+the generating parameters or the parent seed. Every prediction is validated before it is scored: a wrong shape, a
+non-finite value or a missing or repeated record invalidates the run (`status: invalid`, exit code 2) instead of entering
+a mean. The converted RPB set is scored the same way (`--dataset-id v2_poisson_rpb_ref128 --part test|ood`). The September API (`pdeobs.methods.register_method`, [Extend](#extend)) is
 unchanged for the historical grid.
 
 ## Quick start

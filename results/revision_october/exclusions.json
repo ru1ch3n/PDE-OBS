@@ -1,0 +1,31 @@
+{
+ "schema": "pdeobs-october-exclusions/v1",
+ "purpose": "Machine-readable record of what the committed run-level tables leave out and why, so that per-record statistics use the same population.",
+ "voided_attempts": [
+  {
+   "run_id": "P4__ns__ell0025__voronoi_cnn__MXR3_K256__s1101",
+   "voided": "2026-10-08",
+   "reason": "infrastructure failure (checkpoint loading) during the first attempt; the run was trained again under the same id",
+   "run_level_tables": "the repeated run only (runs_long.part-B.csv)",
+   "per_record_exports": "the part-B per_record files on Hugging Face hold the rows of both attempts under this run_id"
+  },
+  {
+   "run_id": "P4__ns__ell0025__voronoi_cnn__MXR3_K256__s1102",
+   "voided": "2026-10-08",
+   "reason": "infrastructure failure (checkpoint loading) during the first attempt; the run was trained again under the same id",
+   "run_level_tables": "the repeated run only (runs_long.part-B.csv)",
+   "per_record_exports": "the part-B per_record files on Hugging Face hold the rows of both attempts under this run_id"
+  }
+ ],
+ "duplicate_classical_rows": {
+  "count": 168,
+  "kept_in": "classical_long.part-A.csv",
+  "dropped_from": "classical_long.part-B.csv",
+  "scope": "Darcy and Poisson V4-D references of the 128^2 slices, computed independently on both accounts with identical means and selected settings"
+ },
+ "run_level_export_of_part_B": {
+  "published": false,
+  "reason": "two voided-attempt rows of the export carry a machine path; runs_long.part-B.csv in this directory is the run-level table of part B"
+ },
+ "rule": "A per-record aggregate of a voided run id must keep the rows of the repeated attempt only; the per-view mean of the kept rows equals the mean column of runs_long.part-B.csv."
+}
