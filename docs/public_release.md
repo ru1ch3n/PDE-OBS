@@ -110,6 +110,43 @@ per slice were re-solved on a finer route (final analysis E3,
 `results/revision_october/final_analyses/e3_stored_vs_finer_targets.json`) and the resolution study N8 trains at
 64^2 / 128^2 / 256^2; see [The October 2026 revision](october_revision.md).
 
+## Inventory at pinned commits (2026-10-28)
+
+`reproduce/october/hf_inventory.py` lists both repositories at a pinned commit through the Hub API (every path with
+its size, its LFS flag and its SHA-256, or the git blob identifier of a file stored outside LFS), reconciles every
+manifest a repository holds with that listing by the rules of the manifest's schema, and writes
+`results/public_deposits/hf_inventory/`: the inventory CSVs, `summary.json`, `reconciliation.json` and
+`release_bindings.json`. The run of 2026-10-28:
+
+| Repository | Commit | Files | Bytes | LFS files | Manifests reconciled |
+|---|---|---:|---:|---:|---|
+| dataset `ru1ch3n/PDE-OBS` | `2f76db9` (2026-10-27) | 58,441 | 287,353,808,021 | 9,770 | `release_manifest.json`, `release_manifest_full.json`, `scrub-manifest.json`, `october2026/data_manifest.part-{1,2}.json`, the results manifests of parts A and B and their `update_20261021/export_manifest.json` |
+| model `ru1ch3n/PDE-OBS` | `ab1197f` (2026-10-21) | 8,501 | 17,731,853,244 | 1,114 | `models_manifest.cluster-{A,B,C}.json`, `scrub-manifest.json`, `october2026/models_manifest.part-{1,2,3}.json`, `october2026/retrains/manifest.json` |
+
+**Dataset.** Every entry of the nine manifests is present at its path with the recorded size, and every recorded
+digest equals the repository's: 23,546 entries over 19,850 distinct files (280.7 GB), the LFS digests taken from the
+Hub's records and the 10,080 sidecars listed by `release_manifest_full.json` hashed after download. The 25 views of the
+data manifests agree in file count, bytes, shard count, file types and shard digest. The run-level export of part B,
+declared not published by `update_20261021/export_manifest.json`, is absent. Of the four result files that
+`manifest.part-A.json` and `manifest.part-B.json` also commit to this repository, both classical tables are verified
+byte for byte and both run tables are superseded by the 2026-10-20 / 2026-10-21 updates recorded in this repository's
+copies of the manifests (7,778 and 2,316 rows against 7,454 and 2,289 in the Hugging Face copies of 2026-10-17). The
+files no manifest lists are the `.metadata.json` / `.metadata.csv` exports of the 3,360 September shards, the five
+sidecars of each October shard (counted in the view aggregates), together 38,580 files and 6.6 GB, the nine manifests
+and the two card files; nothing else.
+
+**Model.** The 6,472 files under `models/` (441 weights-only checkpoints with their training records) are the entries
+of the three cluster manifests, every digest verified, the 6,031 record files hashed after download. The 663 October
+models (`october2026/models/`, three parts) have their `weights.pt` digest verified and their `model.json` and
+`history.json` present; every run id a part declares as held by another part is found there. The ten retrains have
+their weights digest verified and their records present. The 2,366 files rewritten by the de-identification
+(`scrub-manifest.json`) are present. The files no manifest lists are the eight manifests and the two card files;
+nothing else.
+
+`release_bindings.json` binds the two commits, their file counts and bytes, the digest of every manifest and of both
+inventory files, and the result files of this repository (recorded and checkout digests with row counts) in one
+record. No problem was found.
+
 ## Licences
 
 Code is MIT ([LICENSE](../LICENSE)). The dataset repository declares its own terms on its card; the

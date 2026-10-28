@@ -48,8 +48,15 @@
   digests recomputed, declared absences checked, the results manifests' committed files checked against the checkout);
   `release_bindings.json` binds the commits, file counts, bytes, manifest digests, inventory digests and the
   code-repository result files.
+- `results/public_deposits/release_test_receipt_20261028.json`: receipt of the release test of 2026-10-28 (fresh virtual environments
+  from the built wheel; public data, weights and per-record exports fetched without credentials): every step's exit code against its
+  expectation, pytest 758 passed, the built-in scores equal to the 2026-10-27 values, both replays `agrees` with the per-record
+  comparison, the negative cases, the voided-attempt check.
 - `results/revision_october/exclusions.json`: the voided attempts, the duplicate classical rows and the unpublished part-B
-  run-level export in machine-readable form, with the population rule for per-record aggregates.
+  run-level export in machine-readable form, with the population rule for per-record aggregates and the 2026-10-28 check of
+  the part-B per-record export (under the two voided run ids it holds the rows of the repeated attempts: 7 views x 1,800 rows,
+  means equal to `runs_long.part-B.csv`); the per-record note of `manifest.part-B.json` states this now (its digest in
+  `paper_assets.json` updated).
 
 ## 0.2.1 (2026-09-26)
 

@@ -7,14 +7,20 @@
    "voided": "2026-10-08",
    "reason": "infrastructure failure (checkpoint loading) during the first attempt; the run was trained again under the same id",
    "run_level_tables": "the repeated run only (runs_long.part-B.csv)",
-   "per_record_exports": "the part-B per_record files on Hugging Face hold the rows of both attempts under this run_id"
+   "per_record_exports": {
+    "october2026/results/part-B/update_20261021/per_record/v2eval7.csv.gz": "one row per test parent and view for this run id (7 views x 1,800 rows, no repeated identity); the per-view means of these rows equal the mean column of runs_long.part-B.csv (relative difference at most 2.1e-16; checked 2026-10-28)",
+    "october2026/results/part-B/per_record/v2eval7.csv.gz": "the 2026-10-17 copy: the same rows (decompressed content identical to the update_20261021 file; the gzip headers differ in their timestamp only); the same check gives the same result (checked 2026-10-28)"
+   }
   },
   {
    "run_id": "P4__ns__ell0025__voronoi_cnn__MXR3_K256__s1102",
    "voided": "2026-10-08",
    "reason": "infrastructure failure (checkpoint loading) during the first attempt; the run was trained again under the same id",
    "run_level_tables": "the repeated run only (runs_long.part-B.csv)",
-   "per_record_exports": "the part-B per_record files on Hugging Face hold the rows of both attempts under this run_id"
+   "per_record_exports": {
+    "october2026/results/part-B/update_20261021/per_record/v2eval7.csv.gz": "one row per test parent and view for this run id (7 views x 1,800 rows, no repeated identity); the per-view means of these rows equal the mean column of runs_long.part-B.csv (relative difference at most 2.1e-16; checked 2026-10-28)",
+    "october2026/results/part-B/per_record/v2eval7.csv.gz": "the 2026-10-17 copy: the same rows (decompressed content identical to the update_20261021 file; the gzip headers differ in their timestamp only); the same check gives the same result (checked 2026-10-28)"
+   }
   }
  ],
  "duplicate_classical_rows": {
@@ -27,5 +33,28 @@
   "published": false,
   "reason": "two voided-attempt rows of the export carry a machine path; runs_long.part-B.csv in this directory is the run-level table of part B"
  },
- "rule": "A per-record aggregate of a voided run id must keep the rows of the repeated attempt only; the per-view mean of the kept rows equals the mean column of runs_long.part-B.csv."
+ "rule": "A per-record aggregate of a voided run id must keep the rows of the repeated attempt only; the per-view mean of the kept rows equals the mean column of runs_long.part-B.csv.",
+ "voided_attempt_check": {
+  "date": "2026-10-28",
+  "files": {
+   "october2026/results/part-B/update_20261021/per_record/v2eval7.csv.gz": {
+    "sha256": "258aeb688fd10b13ff95463f3382e16fb2d820d84a65ba377082adb5780c5379",
+    "bytes": 38166153
+   },
+   "october2026/results/part-B/per_record/v2eval7.csv.gz": {
+    "sha256": "533176d440c4abfb8e0b8525158f1a639081d18691bce1bf7aa8a8be1c594ee1",
+    "bytes": 38166153
+   }
+  },
+  "decompressed_content_sha256": "95f83942b4eaf8edb3798432aa6ef9d63b14d6c7de2e0ea02d7cd3ddacfab2f4",
+  "decompressed_lines": 2943001,
+  "per_run_id_and_view": {
+   "rows": 1800,
+   "groups_of_identities": 1,
+   "views": 7,
+   "max_relative_difference_to_stored_mean": 2.04e-16
+  },
+  "method": "rows of each voided run id grouped by first repetition of a sample identity; the mean of every group compared with the run-level mean of runs_long.part-B.csv",
+  "receipt": "results/public_deposits/release_test_receipt_20261028.json (update_20261021 file); the 2026-10-17 copy was checked the same day on the same tree"
+ }
 }

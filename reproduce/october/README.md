@@ -88,6 +88,20 @@ Recorded checks (2026-10-16; fresh virtual environments from the built wheel, Py
 | P4 Poisson medium Voronoi-CNN U256 s1101 | v2eval7 (7) | 2.7e-5 | 0 (every view mean identical) |
 | P4 NS medium FNO U256 s1101 | n5nested (18) | 6.9e-8 | 1.8e-7 (`--fft auto`); 6.9e-5 with `--fft native` |
 
+Recorded checks (2026-10-28; fresh virtual environments from the built wheel, PyTorch 2.14.1 on CPU; data, weights and the
+per-record exports fetched from the public repositories without credentials; receipt
+`results/public_deposits/release_test_receipt_20261028.json`):
+
+| Run | Suite (views) | View means: max relative difference | Per-record errors (`--per-record`): records compared; max relative difference | Verdict |
+|---|---|---|---|---|
+| V4C Poisson medium FNO U256 s1101 | v2eval7 (7) | 1.0e-6 | 7 x 1,800, each found once, none missing or repeated; 2.3e-5 | `agrees` |
+| P4 NS medium FNO U1024 s1101 | n5nested (18) | 4.2e-7 | 18 x 1,800, each found once, none missing or repeated; 3.5e-5 | `agrees` |
+
+The same job ran the negative cases: against a results directory lacking one view's stored score the replay reports
+`incomplete` (exit 1); with `--rtol 1e-12` it reports `disagrees` (exit 1); a predictor that returns NaN, Inf or a wrong
+shape, or raises, makes `score_method.py` report `invalid` (exit 2) naming the view, batch and rows; a results CSV whose
+bytes differ from its manifest entry makes `rebuild_tables.py` stop (exit 1) naming the file, both digests and row counts.
+
 **FNO checkpoints and CPU inference.** The FNO spectral layer has independent weights for +ky and -ky, so the half spectrum it
 inverts is not conjugate-symmetric in the kx = 0 and Nyquist columns. The real inverse FFT then has to drop or keep the
 imaginary parts of those bins, and libraries differ: CPU FFTs drop them, cuFFT keeps them for large batches (from about 4,096
@@ -152,3 +166,17 @@ several trainings sharing one GPU; the campaign ran on H200 / B40 GPUs with PyTo
 `history.json`; `october2026/retrains/manifest.json` lists them. The two collapsed P4 FNO retrains have no model. Replay a
 retrain with its recipe run and the same `--set`, for example `--run P4__poisson__ell009__fno__U256__s1101 --set
 v4_norm=train_scalar --checkpoint october2026/retrains/P4n__poisson__ell009__fno__U256__s1101/weights.pt`.
+
+**Deposit inventory.** `hf_inventory.py` lists both repositories at a pinned commit (every path with its size, LFS flag
+and digest), reconciles every manifest they hold by the rules of its schema and writes
+`results/public_deposits/hf_inventory/` (the inventory CSVs, `summary.json`, `reconciliation.json`,
+`release_bindings.json`):
+
+```bash
+python reproduce/october/hf_inventory.py --dataset-revision <commit> --model-revision <commit> --out <dir>
+```
+
+`--offline --cache-dir <dir>` repeats a reconciliation from a cache, `--no-fetch` skips the download of the regular
+files whose digests the manifests record, and the exit code is 1 when a problem is found. The run of 2026-10-28 at
+dataset commit `2f76db9` and model commit `ab1197f` found every manifest entry present with its recorded digest and
+size; [Public release](../../docs/public_release.md) reports it.

@@ -1,0 +1,173 @@
+{
+ "dataset": {
+  "kind": "dataset",
+  "repo": "ru1ch3n/PDE-OBS",
+  "requested_revision": "2f76db925083d1d9d17712dd8aa14b08b28406bd",
+  "commit": "2f76db925083d1d9d17712dd8aa14b08b28406bd",
+  "last_modified": "2026-10-27T01:47:21.000Z",
+  "private": false,
+  "gated": false,
+  "files": 58441,
+  "bytes": 287353808021,
+  "lfs_files": 9770,
+  "pages": 1198,
+  "listed_utc": "2026-10-28T07:32:38Z",
+  "reconciled_utc": "2026-10-28T08:33:12Z",
+  "top_level": {
+   ".": {
+    "files": 8,
+    "bytes": 226873730
+   },
+   "data": {
+    "files": 20160,
+    "bytes": 250357181234
+   },
+   "october2026": {
+    "files": 38273,
+    "bytes": 36769753057
+   }
+  },
+  "inventory": {
+   "file": "inventory_dataset_2f76db9.csv.gz",
+   "csv_sha256": "68de499176947a8e6534869f12e148ed46102ef5b5a77bbeafcc020fcd668c44",
+   "gz_sha256": "7ecfbc797c20c0ab1813b0a19e79755bcd32ab3300fab288ffa5925b20d02fa5",
+   "rows": 58441
+  },
+  "manifests": {
+   "october2026/data_manifest.part-1.json": {
+    "sha256": "23aa44b53df1438b7827a9ff596bc1634341393db624ef8f0da235b12c9fc60d",
+    "bytes": 1210663,
+    "schema": "data"
+   },
+   "october2026/data_manifest.part-2.json": {
+    "sha256": "bae5ac51afa8648dd5f673fe446b7787096443f73ceb4e72f07186341645cee7",
+    "bytes": 93856,
+    "schema": "data"
+   },
+   "october2026/results/part-A/manifest.part-A.json": {
+    "sha256": "253f54257667b3087a48fb3446efd04fefae14f3dad412cfcae42738c9153eba",
+    "bytes": 2472,
+    "schema": "results"
+   },
+   "october2026/results/part-A/update_20261021/export_manifest.json": {
+    "sha256": "6f7e2d99c18477488cbbcb2d7297628b240fbce8bcf6f0317f79df9fca93cf13",
+    "bytes": 2627,
+    "schema": "export"
+   },
+   "october2026/results/part-B/manifest.part-B.json": {
+    "sha256": "0edc1930d3f00520517109ea9bf5e19f8d54332743f01019107454d415e7add2",
+    "bytes": 2334,
+    "schema": "results"
+   },
+   "october2026/results/part-B/update_20261021/export_manifest.json": {
+    "sha256": "c6a84406a51257aec3b3b51d21d3f86b39f32a80f28e440d0def6600e022a281",
+    "bytes": 2058,
+    "schema": "export"
+   },
+   "release_manifest.json": {
+    "sha256": "d4a5c0d0bd637fa8f7b457c42c862e4713df164bfaed48c286653035e955d9cb",
+    "bytes": 116611,
+    "schema": "release"
+   },
+   "release_manifest_full.json": {
+    "sha256": "eab65cdf6c185541c72e8c44ea039e20ba51a53c0434a20f87778f65c6b5845e",
+    "bytes": 4814210,
+    "schema": "release"
+   },
+   "scrub-manifest.json": {
+    "sha256": "2bf64c5da5bcdaf302512ac49f2cc8d3cb0501bc7ad6cd8efdf9d46de2b8c270",
+    "bytes": 608301,
+    "schema": "scrub_dataset"
+   }
+  },
+  "hub": {
+   "requests": 11288,
+   "retries_429": 0,
+   "other_retries": 2,
+   "offline": false
+  }
+ },
+ "model": {
+  "kind": "model",
+  "repo": "ru1ch3n/PDE-OBS",
+  "requested_revision": "ab1197f7302c5ae9fbde557aa2298f9be3971a6e",
+  "commit": "ab1197f7302c5ae9fbde557aa2298f9be3971a6e",
+  "last_modified": "2026-10-21T18:29:57.000Z",
+  "private": false,
+  "gated": false,
+  "files": 8501,
+  "bytes": 17731853244,
+  "lfs_files": 1114,
+  "pages": 248,
+  "listed_utc": "2026-10-28T08:35:19Z",
+  "reconciled_utc": "2026-10-28T09:11:33Z",
+  "top_level": {
+   ".": {
+    "files": 6,
+    "bytes": 1412302
+   },
+   "models": {
+    "files": 6472,
+    "bytes": 12876099073
+   },
+   "october2026": {
+    "files": 2023,
+    "bytes": 4854341869
+   }
+  },
+  "inventory": {
+   "file": "inventory_model_ab1197f.csv.gz",
+   "csv_sha256": "49e6b770ec4b48bf372bec3fa7c42e22f972086ce027688b3428c2f216100485",
+   "gz_sha256": "371cf6237e84a4cbafba760e41d516b2b243dc0a75290be0459ff065c7834ef4",
+   "rows": 8501
+  },
+  "manifests": {
+   "models_manifest.cluster-A.json": {
+    "sha256": "c178fcaa63b8ae4329ddb5ed46d67eac2b359be484f597eb803019589c508f48",
+    "bytes": 753679,
+    "schema": "cluster_models"
+   },
+   "models_manifest.cluster-B.json": {
+    "sha256": "8e3596dfb0a358a473fad552860de006e6300887c3eb1783046e24222546ff8c",
+    "bytes": 231993,
+    "schema": "cluster_models"
+   },
+   "models_manifest.cluster-C.json": {
+    "sha256": "e7c70ec2fdc54c5ddc2fb8413d2cc0f56c5325da4f11b866330b99dd8a90cd5f",
+    "bytes": 235493,
+    "schema": "cluster_models"
+   },
+   "october2026/models_manifest.part-1.json": {
+    "sha256": "1a4af1e8d51df6c5195b6185a5cb0fa7f4f93be55d7050ab59d74287ab414488",
+    "bytes": 548421,
+    "schema": "october_models"
+   },
+   "october2026/models_manifest.part-2.json": {
+    "sha256": "dedc1de778504641efc7d3b17497cff7a38fa67426c3982c0be5ac604334c920",
+    "bytes": 50141,
+    "schema": "october_models"
+   },
+   "october2026/models_manifest.part-3.json": {
+    "sha256": "919bb72f057c939ad4c1c6fb4b53f692ea4ec2a3ca624408cf577030f2aee98d",
+    "bytes": 12109,
+    "schema": "october_models"
+   },
+   "october2026/retrains/manifest.json": {
+    "sha256": "0b3fcfd6d77d58f2383eedc694c2dbffbdf3567e6a0dcdb46de1c5337b7ae498",
+    "bytes": 13881,
+    "schema": "retrains"
+   },
+   "scrub-manifest.json": {
+    "sha256": "c480e99e0fc3c00174c0c5f36df33672fe9094abdc83b8ef1974dda9c17effe0",
+    "bytes": 179372,
+    "schema": "scrub_model"
+   }
+  },
+  "hub": {
+   "requests": 17576,
+   "retries_429": 0,
+   "other_retries": 2,
+   "offline": false
+  }
+ }
+}
