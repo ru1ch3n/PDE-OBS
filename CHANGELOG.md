@@ -35,6 +35,28 @@
   the ten completed path D retrains (`october2026/retrains/`), the V2 data the code reads,
   and the run-level / per-record results (part B without its run-level export); `reproduce/october/README.md` and `results/revision_october/README.md`
   point there.
+- Protocol enforcement of the October scripts (2026-10-28). `score_method.py` validates every prediction (shape, finite
+  values), checks the record identities of every view against the split receipt, hands a custom predictor the task context
+  only (`PREDICTOR_CONTEXT_KEYS`), reports `status` valid / partial / invalid (exit code 2) and refuses non-finite numbers
+  in its report. `replay_inference.py` requires a stored score and the stored record count for every view of the suite,
+  treats a non-finite difference as a failure, reports `status` agrees / disagrees / incomplete, and compares the
+  per-record errors by identity with `--per-record`. `rebuild_tables.py` verifies the result files against the manifests
+  and refuses conflicting repeated rows, non-finite means and two results feeding one cell (`--no-verify` for other inputs).
+- `reproduce/october/hf_inventory.py` and `results/public_deposits/hf_inventory/`: inventory of both Hugging Face
+  repositories at pinned commits (every path, size and digest), reconciled with every manifest they hold by the rules
+  of each manifest schema (every entry present at its path with the recorded digest and size, view aggregates and shard
+  digests recomputed, declared absences checked, the results manifests' committed files checked against the checkout);
+  `release_bindings.json` binds the commits, file counts, bytes, manifest digests, inventory digests and the
+  code-repository result files.
+- `results/public_deposits/release_test_receipt_20261028.json`: receipt of the release test of 2026-10-28 (fresh virtual environments
+  from the built wheel; public data, weights and per-record exports fetched without credentials): every step's exit code against its
+  expectation, pytest 758 passed, the built-in scores equal to the 2026-10-27 values, both replays `agrees` with the per-record
+  comparison, the negative cases, the voided-attempt check.
+- `results/revision_october/exclusions.json`: the voided attempts, the duplicate classical rows and the unpublished part-B
+  run-level export in machine-readable form, with the population rule for per-record aggregates and the 2026-10-28 check of
+  the part-B per-record export (under the two voided run ids it holds the rows of the repeated attempts: 7 views x 1,800 rows,
+  means equal to `runs_long.part-B.csv`); the per-record note of `manifest.part-B.json` states this now (its digest in
+  `paper_assets.json` updated).
 
 ## 0.2.1 (2026-09-26)
 

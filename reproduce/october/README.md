@@ -35,14 +35,20 @@ python reproduce/october/score_method.py --dataset-id v2_poisson_rpb_ref128 --da
 
 The RPB store is the output of `python -m pdeobs.revision.external.rpb`; its view is 64^2 (`v2_poisson_rpb_ref128__grid64/`) and the script selects it for the rpb slice. `--grid 64` / `--grid 256` select the N8 resolution views (`<dataset_id>__grid<N>/`) of the V2 store.
 
-A custom predictor is `module:callable` with the signature `predict(inputs, mask, geometry, metadata) -> prediction`:
+A custom predictor is `module:callable` with the signature `predict(inputs, mask, geometry, context) -> prediction`:
 static families get `inputs` [B, C, H, W] (observed values, hidden cells 0, or nearest-filled with `--fill nearest`),
 `mask` [B, 1, H, W] and `geometry`; temporal families get the observed initial state [B, 1, C, H, W] and must return
-the next three frames. The callable never sees the target. Reported per view: mean / median / p90 / max of the
-per-record relative L2 and the number of records, the same statistic as `mean` in `results/revision_october`.
-`--max-records N` scores the first N records for a smoke test. The RPB store is the output of
-`python -m pdeobs.revision.external.rpb` (the data are not redistributed; download them from the authors' Zenodo
-record and convert them).
+the next three frames. `context` is one dict per record with the task context only (`PREDICTOR_CONTEXT_KEYS` in the
+script: record identity, grid, time axis, layout id and sensor count); the target, the generating parameters, the
+parent seed, the regime and the reference-solver diagnostics of a record are never passed, and the covariance built-in
+reads the observed values from `inputs`. Every prediction is validated before it is scored: a wrong shape, a non-finite
+value, a predictor that raises, or a record set with a missing or repeated identity ends the run with `status: invalid`
+and exit code 2, and no mean is computed from the remaining records. Reported per view: mean / median / p90 / max of the
+per-record relative L2, the number of records and the SHA-256 of the sorted record identities (equal to the split
+receipt's), the same statistic as `mean` in `results/revision_october`; a complete run reports `status: valid`.
+`--max-records N` scores the first N records for a smoke test and reports `status: partial`. The report JSON refuses
+non-finite numbers. The RPB store is the output of `python -m pdeobs.revision.external.rpb` (the data are not
+redistributed; download them from the authors' Zenodo record and convert them).
 
 # Weights-inference replay (path C)
 
@@ -65,7 +71,14 @@ from huggingface_hub import snapshot_download
 data = snapshot_download("ru1ch3n/PDE-OBS", repo_type="dataset", allow_patterns=["october2026/v2/v2_poisson_ell009_ref128/*"])
 model = snapshot_download("ru1ch3n/PDE-OBS", allow_patterns=["october2026/models/V4C/V4C__poisson__ell009__fno__U256__s1101/*"])
 ```
-The script exits 1 when a view mean differs from the stored one by more than `--rtol` (default 1e-4).
+The verdict is `status`: `agrees` (exit 0) when every view of the suite has a stored score, every replayed mean is finite
+and within `--rtol` (default 1e-4) of it with the stored record count, and, with `--per-record <file>`, every record of
+every view is found once in the per-record export and within `--per-record-rtol` (default 1e-3) of its stored error;
+`disagrees` (exit 1) when a difference exceeds its tolerance or a replayed value is not finite; `incomplete` (exit 1)
+when a stored score, a record or a per-record row is missing or repeated. The per-record exports are the
+`per_record/<suite>.csv.gz` files under `october2026/results/part-A/update_20261021/` and `part-B/update_20261021/` of
+the dataset repository (columns `run_id, view, sample_id, error`); `--per-record-out` writes the replayed per-record
+errors in the same layout.
 
 Recorded checks (2026-10-16; fresh virtual environments from the built wheel, PyTorch 2.14.1, 1,800 test parents):
 
@@ -74,6 +87,20 @@ Recorded checks (2026-10-16; fresh virtual environments from the built wheel, Py
 | V4C Poisson medium FNO U256 s1101 | v2eval7 (7) | 1.0e-6 | 1.0e-6 (`--fft auto`); 1.2e-2 with `--fft native` |
 | P4 Poisson medium Voronoi-CNN U256 s1101 | v2eval7 (7) | 2.7e-5 | 0 (every view mean identical) |
 | P4 NS medium FNO U256 s1101 | n5nested (18) | 6.9e-8 | 1.8e-7 (`--fft auto`); 6.9e-5 with `--fft native` |
+
+Recorded checks (2026-10-28; fresh virtual environments from the built wheel, PyTorch 2.14.1 on CPU; data, weights and the
+per-record exports fetched from the public repositories without credentials; receipt
+`results/public_deposits/release_test_receipt_20261028.json`):
+
+| Run | Suite (views) | View means: max relative difference | Per-record errors (`--per-record`): records compared; max relative difference | Verdict |
+|---|---|---|---|---|
+| V4C Poisson medium FNO U256 s1101 | v2eval7 (7) | 1.0e-6 | 7 x 1,800, each found once, none missing or repeated; 2.3e-5 | `agrees` |
+| P4 NS medium FNO U1024 s1101 | n5nested (18) | 4.2e-7 | 18 x 1,800, each found once, none missing or repeated; 3.5e-5 | `agrees` |
+
+The same job ran the negative cases: against a results directory lacking one view's stored score the replay reports
+`incomplete` (exit 1); with `--rtol 1e-12` it reports `disagrees` (exit 1); a predictor that returns NaN, Inf or a wrong
+shape, or raises, makes `score_method.py` report `invalid` (exit 2) naming the view, batch and rows; a results CSV whose
+bytes differ from its manifest entry makes `rebuild_tables.py` stop (exit 1) naming the file, both digests and row counts.
 
 **FNO checkpoints and CPU inference.** The FNO spectral layer has independent weights for +ky and -ky, so the half spectrum it
 inverts is not conjugate-symmetric in the kx = 0 and Nyquist columns. The real inverse FFT then has to drop or keep the
@@ -139,3 +166,17 @@ several trainings sharing one GPU; the campaign ran on H200 / B40 GPUs with PyTo
 `history.json`; `october2026/retrains/manifest.json` lists them. The two collapsed P4 FNO retrains have no model. Replay a
 retrain with its recipe run and the same `--set`, for example `--run P4__poisson__ell009__fno__U256__s1101 --set
 v4_norm=train_scalar --checkpoint october2026/retrains/P4n__poisson__ell009__fno__U256__s1101/weights.pt`.
+
+**Deposit inventory.** `hf_inventory.py` lists both repositories at a pinned commit (every path with its size, LFS flag
+and digest), reconciles every manifest they hold by the rules of its schema and writes
+`results/public_deposits/hf_inventory/` (the inventory CSVs, `summary.json`, `reconciliation.json`,
+`release_bindings.json`):
+
+```bash
+python reproduce/october/hf_inventory.py --dataset-revision <commit> --model-revision <commit> --out <dir>
+```
+
+`--offline --cache-dir <dir>` repeats a reconciliation from a cache, `--no-fetch` skips the download of the regular
+files whose digests the manifests record, and the exit code is 1 when a problem is found. The run of 2026-10-28 at
+dataset commit `2f76db9` and model commit `ab1197f` found every manifest entry present with its recorded digest and
+size; [Public release](../../docs/public_release.md) reports it.
